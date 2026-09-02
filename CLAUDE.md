@@ -4,9 +4,9 @@
 
 The Product Harness is an AI-powered project and product management system. It gives PMs a structured, consistent way to manage client engagements — from project initiation through delivery tracking. The AI co-pilot actively helps shape product strategy, tracks delivery health, processes meetings and documents into structured intelligence, and ensures nothing falls through the cracks.
 
-**Project**: {project-name}
-**Client**: {client-name}
-**PM**: {pm-name}
+**Project**: Second Brain
+**Client**: N/A — personal tool, no client
+**PM**: Marek Pillár
 
 > These placeholders are filled by `/project-initiation` when the project is set up.
 

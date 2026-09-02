@@ -8,10 +8,21 @@
 
 This skill runs when the PM invokes `/project-daily`. It does NOT handle daily creation — that is managed by the CLAUDE.md session startup checklist using the TEMPLATE.md from this skill.
 
-Parse the PM's arguments:
+Before dispatching to a mode, run the **Pending Routing Check** below. Then parse the PM's arguments:
 - No arguments or general review request → run **Review Mode** (Section A)
 - `close` or intent to close the day ("close the day", "wrap up", "end of day") → run **Close Mode** (Section B)
 - A question spanning multiple days ("what happened this week?", "show me all open action items", "what decisions were made since Monday?") → run **Query Mode** (Section C)
+
+### Pending Routing Check
+
+Runs first, regardless of mode. Purpose: the PM has been surprised before by jumping straight to `/project-daily` after a meeting/document upload and finding the discussed action items and updates missing — because routing was presented but never confirmed. This check surfaces that state loudly instead of letting it pass silently.
+
+1. Check `meetings/index.md` and `documents/index.md` for entries dated today.
+2. For each, open the source file and check its `Routing Log` (meetings) or equivalent routing section (documents). If it still reads as the unfilled placeholder (i.e. routing was never confirmed), it's pending.
+3. If any pending items are found, lead with this before anything else in the response — do not bury it under the status/priority/action-item summary:
+   > "⚠️ You have unconfirmed routing from today: {list of meeting/document titles}. Nothing from {them} has been written to the daily or other artifacts yet. Want to confirm now?"
+4. If the PM confirms, run the routing review/write for those sources before continuing with whatever mode was requested.
+5. If nothing is pending, proceed silently — no need to mention the check happened.
 
 ---
 
