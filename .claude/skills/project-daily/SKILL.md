@@ -83,10 +83,20 @@ Set frontmatter `status: closed` and update `last_updated` to today's date.
 2. Read all daily files in `project/daily/` that fall within the range.
 3. Synthesize an answer based on what the PM asked:
    - "What happened?" → summarize Key Events across the range
-   - "Show open action items" → collect all unchecked items from the most recent daily (since carry-forward consolidates them)
+   - "Show open action items" / "list my todos" / "who owes what" → collect all unchecked items from the most recent daily (since carry-forward consolidates them) and present using the **grouped-by-owner format** below
    - "What decisions were made?" → scan Key Events and Audit Log entries for decision signals
    - General question → read the relevant sections and provide a targeted answer
 4. Present the synthesized answer. Follow up if the PM asks more.
+
+### Grouped-by-Owner Format
+
+The standard presentation for any request to list open action items (whether from Query Mode or asked as a follow-up to Review Mode's top-items summary):
+
+- Group all open (`- [ ] `) items by the **Owner** (the bolded name in each item).
+- **The PM's own group goes first** (match against the PM's name from `CLAUDE.md`, e.g. "Marek Pillár"), followed by the remaining owners. Order the remaining owners by open item count, descending.
+- Within a group, preserve each item's label, task text, due date, and source reference as written — don't compress or drop them.
+- Show the owner name as a heading with a count, e.g. `**Marek Pillár** (6)`, then the items as a bullet list.
+- This format is additive — it doesn't replace the flat "count + top items" summary in Review Mode step 2; it's what to produce when the PM asks to see the full list.
 
 ---
 

@@ -1,7 +1,7 @@
 ---
-status: open
+status: closed
 last_updated: 2026-09-02
-last_updated_by: auto — session startup
+last_updated_by: auto — project-daily close
 project_status: Green
 ---
 
@@ -61,6 +61,8 @@ PM resolved several open items from today's action list: Azure DevOps access nee
 
 Processed two more meetings. A first team sync brought Marek and Lukáš Starenko into the logistics/listing streams — reklamace document generation is progressing well (Axapta config and PDF generation done), while Listing is confirmed fully blocked on Dr. Max's undefined category system, leading to a Discovery-first decision (ASM-011). A separate AKS/Atlantis infra sync (Jindřich, Vladislav Tvarůžek, and others) showed real progress on the long-standing AKS access blocker (ETA today/tomorrow) and clarified Atlantis's role as the voicebot's telephony vendor — this closed out the carry-forward action item to push Vláďa on AKS access. PM also gave lasting feedback that requests from direct-authority figures (Jindřich as PM, Honza Sovka as line manager) should be weighted like stakeholder asks when ranking priority, and used a Q&A pass to resolve half of ASM-006's conflicts and fully complete the product-brief's `-tbd-` fields (including a new architectural note: this harness stays the umbrella library across all Dr. Max work, with per-project harnesses possibly splitting off later).
 
+Reviewed today's daily and, at the PM's request, updated the `project-daily` skill itself: Query Mode now has a standard "grouped-by-owner" format for listing open action items (PM's own items first, other owners ordered by open-item count), reusable any time the PM asks to see all todos rather than the flat top-items summary. Closed out the day: no new action-item resolutions since the last check-in, no new staleness triggers beyond the existing project-stakeholders carry-forward (client-overview's `-tbd-` fields are an intentional, documented skeleton — not flagged), and status/priority both hold at Green with no shift. project-lessons captured LL-010 on a priority-derivation blind spot (direct-authority requests and housekeeping-looking tasks need explicit weight).
+
 ## Audit Log
 
 [AUTO] project-stakeholders — added STK-023 (Petr Neuman), STK-024 (Rudolf Zurek), STK-025 (Tomáš Burda); enriched STK-010, STK-017, STK-019 with roadmap-sheet cross-check from roadmap sheet 2026-09-02
@@ -86,3 +88,6 @@ Processed two more meetings. A first team sync brought Marek and Lukáš Starenk
 [AUTO] project-knowledge — enriched Atlantis, AKS, MaxBuddy (historical footnote), Max/Maxi/Lexi (Mertová spelling); added Planning Wizard, ElevenLabs entries from 2026-09-02-aks-atlantis-infra-sync (2026-09-02)
 [MANUAL] project-daily — closed carry-forward action item (Jindřich Tůma: push AKS access with Vláďa Tvarušek) — resolved via 2026-09-02-aks-atlantis-infra-sync (2026-09-02)
 [AUTO] project-lessons — added LL-009 (delivery-process) from 2026-09-02-aks-atlantis-infra-sync (2026-09-02)
+[MANUAL] .claude/skills/project-daily/SKILL.md — added grouped-by-owner action-item format to Query Mode — PM request (2026-09-02)
+[AUTO] project-lessons — added LL-010 (project-management) from project-daily close (2026-09-02)
+[AUTO] project-daily — closed (status: open → closed) via close mode (2026-09-02)

@@ -1,10 +1,30 @@
 ---
 last_updated: 2026-09-02
-last_updated_by: auto — project-lessons (triggered by project-meeting routing, 2026-09-02-aks-atlantis-infra-sync)
+last_updated_by: auto — project-lessons (triggered by project-daily close, 2026-09-02)
 owner: Marek Pillár
 ---
 
 # Lessons Learned
+
+---
+
+### LL-010
+
+| Field | Value |
+|-------|-------|
+| ID | LL-010 |
+| Created | 2026-09-02 |
+| Category | project-management |
+| Source | project-daily-2026-09-02 |
+
+**Lesson**
+When deriving task priority algorithmically (e.g. from milestone proximity, activity type, or "strategic vs. housekeeping" framing), explicitly weight requests from people with direct reporting-line authority as heavily as external stakeholder asks — and don't let a task's housekeeping surface appearance discount it, since the person requesting it may see it as a real delivery blocker even though it doesn't look that way from the outside.
+
+**Context**
+The daily's derived priority ranking treated a tooling migration (moving a tracking artifact into Notion) and setting up an internal sync cadence with the new PM as low-priority process/housekeeping. Both had in fact been directly requested by direct-authority figures (Jindřich Tůma as PM, Honza Sovka as line manager) during today's meetings, and the PM flagged that such requests should outrank the algorithmic ranking.
+
+**Cross-reference**
+project-daily-2026-09-02, 2026-09-02-roadmap-tracking-and-listing-onboarding-sync
 
 ---
 
