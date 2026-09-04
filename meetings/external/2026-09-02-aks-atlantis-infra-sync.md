@@ -72,5 +72,5 @@ Collaborative and low-friction — a routine technical status sync with no visib
 ## Routing Log
 
 - **project-stakeholders**: Added STK-033 (Tecl, low-confidence); enriched STK-016 (Vladislav Tvarůžek — name corrected from "Tvarušek"), STK-027 (Viliam Gago), STK-029 (Honza Zelený — role firmed up). Declined to create new entries for "Martin," "Matěj Šutý," "Martin Hrášek," "Lukáš Lančík" (too thin/unreliable) — captured as a project-knowledge historical footnote instead.
-- **project-knowledge**: Enriched Atlantis (vendor/telephony detail), AKS (access timeline), MaxBuddy (legacy manual-infra footnote), Max/Maxi/Lexi (Mertová spelling correction); added Planning Wizard, ElevenLabs entries.
+- **project-knowledge**: Enriched Atlantis (vendor/telephony detail), AKS (access timeline), MaxBuddy (legacy manual-infra footnote), Max/Maxie/Lexie (Mertová spelling correction); added Planning Wizard, ElevenLabs entries.
 - **project-daily**: Added 3 action items (all Vladislav Tvarůžek); closed the pre-existing carry-forward item on pushing AKS access with Vláďa Tvarušek, now resolved by this meeting.

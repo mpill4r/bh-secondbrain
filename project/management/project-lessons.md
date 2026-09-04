@@ -1,10 +1,186 @@
 ---
-last_updated: 2026-09-02
-last_updated_by: auto — project-lessons (triggered by project-daily close, 2026-09-02)
+last_updated: 2026-09-04
+last_updated_by: auto — project-lessons (triggered by project-meeting routing, 2026-09-04-ai-platform-standup-xmanager-lexi-demo)
 owner: Marek Pillár
 ---
 
 # Lessons Learned
+
+---
+
+### LL-019
+
+| Field | Value |
+|-------|-------|
+| ID | LL-019 |
+| Created | 2026-09-04 |
+| Category | discovery-methodology |
+| Source | 2026-09-04-ai-platform-standup-xmanager-lexi-demo |
+
+**Lesson**
+When onboarding onto a client-facing AI product, explicitly ask whether the underlying platform/infrastructure is dedicated to this client or shared across others. Don't assume a component is client-exclusive just because that's the only context you've seen it deployed in — shared internal platforms are common, and the assumption gets baked into scope, ownership, and design decisions before anyone corrects it.
+
+**Context**
+Several days into the Dr. Max account, a routine internal stand-up revealed the AI/chatbot platform (Max, Maxie, Lexie) is actually shared BigHub infrastructure also deployed for other clients (Brněnská komunikace, Kooperativa, Unica) — not built exclusively for Dr. Max. This reframed an open question about who owns the platform's product roadmap (a single client-scoped PM, or someone owning it across all clients) and how design/theming decisions should be made (centralized template vs. per-client customization) — questions that hadn't been asked earlier because the Dr. Max-exclusive framing had gone unchallenged.
+
+**Cross-reference**
+2026-09-04-ai-platform-standup-xmanager-lexi-demo, ASM-025, ASM-026
+
+---
+
+### LL-018
+
+| Field | Value |
+|-------|-------|
+| ID | LL-018 |
+| Created | 2026-09-04 |
+| Category | client-management |
+| Source | 2026-09-04-ai-platform-standup-xmanager-lexi-demo |
+
+**Lesson**
+When a client is eager for visual polish but technical validation isn't done yet, offer a zero-engineering-cost placeholder — a single AI-generated image of what the redesign could look like — rather than either building real mockups or ignoring the request. It manages expectations and gives the client something concrete to react to, without pulling engineering time away from the actual priority.
+
+**Context**
+Dr. Max's CC team casually mentioned wanting Lexie to look as polished as the newly-demoed Max chatbot. Rather than scoping a real design pass (which would compete with fixing 3 blocking bugs) or dismissing the comment, the BigHub team's plan was to generate a single representative image via an AI tool — no mockup, no frame, no code — just something to show "this is the direction," while keeping actual engineering focused on technical fixes.
+
+**Cross-reference**
+2026-09-04-ai-platform-standup-xmanager-lexi-demo, ASM-024
+
+---
+
+### LL-017
+
+| Field | Value |
+|-------|-------|
+| ID | LL-017 |
+| Created | 2026-09-03 |
+| Category | harness |
+| Source | project-daily-2026-09-03 |
+
+**Lesson**
+When generating Office file formatting programmatically (fill colors especially), a structurally valid, error-free file can still render as blank/invisible if a color is written with a transparent alpha channel. Don't stop verification at "did it save without error" or "does the XML parse" — check the actual color/format values themselves (e.g. that an RGB fill starts with `FF` alpha, not `00`) before declaring a formatting change done.
+
+**Context**
+Applying conditional-formatting row colors to a client roadmap spreadsheet, a fill color built from a bare 6-character hex string (e.g. `"C8E6C9"`) saved successfully, passed zip/XML integrity checks, and correctly referenced the right cells and formulas — but rendered with 0% opacity because the alpha channel defaulted to `00` instead of `FF`. The PM reported "not working" with a screenshot; the fix was supplying an explicit 8-character ARGB string (`"FFC8E6C9"`). Root cause was only found by reading the raw dxf XML values, not by re-running the generation script and re-checking structural validity.
+
+**Cross-reference**
+project-daily-2026-09-03
+
+| Field | Value |
+|-------|-------|
+| ID | LL-016 |
+| Created | 2026-09-03 |
+| Category | domain-specific |
+| Source | 2026-09-03-maxbuddy-chatbot-ocr-project-handoff |
+
+**Lesson**
+On a regulated-industry AI feature (healthcare, finance, etc.), get a compliance/regulatory review early — as soon as the feature's data flow is defined — rather than after significant development investment. A feature that looks clearly compliant in early prototyping can turn out to require formal certification once its actual data-handling pattern is examined.
+
+**Context**
+MaxBuddy's original core feature — flagging outdated drug dosages against updated SPC guidance — was developed for roughly six months before Dr. Max discovered it made the product a regulated medical device requiring certification: any pipeline where patient data goes in and an LLM-derived recommendation comes out is prohibited without it. The feature is now frozen rather than shipped, and development pivoted to an expert-panel-reviewed upsell/cross-sell recommendation feature instead, which doesn't trigger the same certification requirement.
+
+**Cross-reference**
+2026-09-03-maxbuddy-chatbot-ocr-project-handoff, [[project-knowledge]] (MaxBuddy entry)
+
+---
+
+### LL-015
+
+| Field | Value |
+|-------|-------|
+| ID | LL-015 |
+| Created | 2026-09-03 |
+| Category | design |
+| Source | 2026-09-03-max-chatbot-demo-lexi-maxi-status-sync |
+
+**Lesson**
+When designing an in-product feedback mechanism, default to a lightweight rating widget (stars, emoji, a color-ordered scale) over a free-text form — and if the client already has UX data from prior deployments about what actually gets used, defer to it rather than re-litigating the design from scratch.
+
+**Context**
+Dr. Max's CC team pushed back on a free-text feedback form for the Max chatbot, citing their own prior chatbot data: free-text fields see low completion, and a green→red color-ordered rating scale outperformed the reverse order in their testing. The team adopted stars/emoji-only, no free text. Logged as ASM-017 (Decided).
+
+**Cross-reference**
+ASM-017, 2026-09-03-max-chatbot-demo-lexi-maxi-status-sync
+
+---
+
+### LL-014
+
+| Field | Value |
+|-------|-------|
+| ID | LL-014 |
+| Created | 2026-09-03 |
+| Category | project-management |
+| Source | 2026-09-03-max-chatbot-demo-lexi-maxi-status-sync |
+
+**Lesson**
+Route all client feature/change requests for a given product through a single named point of contact rather than accepting them individually from every user who touches it. Aggregate requests from many individual testers tend to drown out what the actual business owner needs, creating noise and duplicate or conflicting asks.
+
+**Context**
+Jindřich Tůma requested this explicitly for Max/Lexie/Maxie X-Manager tickets, routing everything through Simona Mertová, based on prior experience where requests from ten-plus individual users didn't reflect what the business owner actually wanted in the end. Logged as ASM-018 (Decided).
+
+**Cross-reference**
+ASM-018, 2026-09-03-max-chatbot-demo-lexi-maxi-status-sync
+
+---
+
+### LL-013
+
+| Field | Value |
+|-------|-------|
+| ID | LL-013 |
+| Created | 2026-09-03 |
+| Category | stakeholder-management |
+| Source | 2026-09-03-order-prediction-dashboard-live-demo |
+
+**Lesson**
+When first-demoing a predictive or analytics dashboard to its real business owner, proactively point out a moment where the live data correctly reflects a known real-world event (an outage, a campaign, an anomaly the stakeholder already knows happened). This is a far more persuasive trust-building signal than any amount of explaining the model's methodology, because the stakeholder can verify it themselves against something they already know is true.
+
+**Context**
+An 8-minute site outage on 2026-08-24 showed up as a visible dip in the order-prediction dashboard's live chart during the demo. Marek Šimoník (Dr. Max, Head of E-commerce) immediately recognized and confirmed it, unprompted, calling it "an extremely good indicator" — this single moment did more to establish confidence in the tool than the rest of the walkthrough combined.
+
+**Cross-reference**
+2026-09-03-order-prediction-dashboard-live-demo
+
+---
+
+### LL-012
+
+| Field | Value |
+|-------|-------|
+| ID | LL-012 |
+| Created | 2026-09-03 |
+| Category | delivery-process |
+| Source | 2026-09-03-order-prediction-dashboard-live-demo |
+
+**Lesson**
+When rolling a predictive/forecasting tool out to a business stakeholder for testing, set an explicit review order upfront: verify the underlying data/numbers are correct first, then gather display/UX feedback, and only then evaluate and tune the model's forecasting accuracy. Skipping this order lets an engaged, technical stakeholder pull the conversation into premature model-accuracy debates before the more basic, more easily verified layers are settled.
+
+**Context**
+Jan Sovka set this three-layer order (data accuracy → UX → model accuracy) proactively during the order-prediction dashboard's first live demo, reasoning that today's model accuracy was "good enough" and that arguing over forecasting precision too early would distract from the data/UX issues that are actually blocking the client from trusting the tool. Logged as ASM-014 (Decided).
+
+**Cross-reference**
+ASM-014, 2026-09-03-order-prediction-dashboard-live-demo
+
+---
+
+### LL-011
+
+| Field | Value |
+|-------|-------|
+| ID | LL-011 |
+| Created | 2026-09-03 |
+| Category | delivery-process |
+| Source | 2026-09-03-viapharma-logistics-status-reklamace-demo |
+
+**Lesson**
+When rolling out a new feature or app to client testers, don't let a proper production auth system (SSO, OAuth, Entra ID, etc.) block the start of testing — ship the simplest workable stand-in (e.g. hardcoded per-user logins) and build the real auth in parallel. Confirm what the requester actually needs first: sometimes a request that sounds like a security requirement ("I need to see who's logged in") is really about traceability/audit logging, which a much simpler mechanism satisfies.
+
+**Context**
+For the Dr. Max reklamace mobile app, Entra ID/OAuth was flagged as a likely integration friction point. Rather than wait for it, the team issued hardcoded per-tester logins so ViaPharma's testers (Tereza Foltová, then Jana) could start immediately, while Entra ID work continued in parallel. The client's stated interest in per-user login was clarified as wanting traceability in Axapta's logs (who performed which action), not concern about credential misuse — confirming a simple mechanism was sufficient. Logged as ASM-012 (Decided).
+
+**Cross-reference**
+ASM-012, 2026-09-03-viapharma-logistics-status-reklamace-demo
 
 ---
 
@@ -122,6 +298,8 @@ When two independent team members separately name different individuals as ownin
 
 **Context**
 Filip Černý (2026-09-01) named "Kuba Turner" as the main builder of the reklamace stream; Juraj Kmec (2026-09-02), speaking independently, instead attributed both reklamace and freight invoicing to "Jura Brázdil." Neither source expressed full confidence. This is the third such conflict surfaced on the account in two days (see also ASM-005, ASM-006), suggesting the underlying documentation/reporting gap Jindřich was hired to fix is still actively producing inconsistent records.
+
+**Update (2026-09-03)**: The "resolved" version of this conflict (ASM-007, Decided 2026-09-02 — Turner=MaxBuddy only, Brázdil=reklamace) turned out to be incomplete rather than either side being wrong: a follow-up meeting showed Turner is *also* active on the reklamace backend. Lesson refined — when reconciling two conflicting ownership claims, don't assume the resolution must be exclusive (one right, one wrong); check whether both can be true at once (shared/overlapping ownership) before closing the conflict as Decided.
 
 **Cross-reference**
 ASM-007, ASM-005, ASM-006, 2026-09-02-order-prediction-dashboard-walkthrough

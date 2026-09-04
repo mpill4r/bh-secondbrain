@@ -26,7 +26,7 @@ Get full visibility and active ownership across all 9+ Dr. Max project streams w
 - [ ] **Honza Sovka**: Complete the Magento vs. Farmis functionality gap analysis for the listing project — from 2026-09-01-dr-max-x-bighub-project-status-sync
 - [ ] **Jan Kabát**: Send Marek's account details (name, surname, phone, email) to Lukáš Szücs for Dr. Max/Teams provisioning — from 2026-09-01-dr-max-x-bighub-project-status-sync
 - [ ] `task` **Team**: Prepare for Thursday demos — order-prediction demo with Marek Šimoník, Max chatbot demo — due 2026-09-04 — from 2026-09-01-dr-max-x-bighub-project-status-sync
-- [ ] **Lukáš Szücs**: Coordinate with Legal and Brno accounting to onboard them onto Lexi — from 2026-09-01-dr-max-x-bighub-project-status-sync
+- [ ] **Lukáš Szücs**: Coordinate with Legal and Brno accounting to onboard them onto Lexie — from 2026-09-01-dr-max-x-bighub-project-status-sync
 - [ ] `task` **Marek Pillár**: Verify the Who's Who reference card details against Dr. Max's actual org (ASM-005, Open) — from 2026-09-01-dr-max-x-bighub-project-status-sync
 - [ ] `staleness` Review project-stakeholders — 96 `-tbd-` fields (exceeds threshold of 5)
 - [ ] `staleness` Review product-brief — 8 `-tbd-` fields (exceeds threshold of 5)
@@ -60,7 +60,7 @@ Closed out the day: reviewed project-assumptions (no changes needed — 4 Decide
 [AUTO] project-assumptions — added ASM-001, ASM-002, ASM-003 from 2026-08-25-marek-onboarding-with-jan-sovka (2026-09-01)
 [AUTO] project-lessons — added LL-001, LL-002, LL-003 from 2026-08-25-marek-onboarding-with-jan-sovka (2026-09-01)
 [AUTO] project-stakeholders — added STK-012..STK-022 (Lukáš Szücs, Tereza Foltová, Petr Spilka, Jan Žižka, Vláďa Tvarušek, Martová, Petr Machán, Marek Šimoník, Marie Hulešová, Jan Maroušek, Sony Vu Hong); enriched STK-001, STK-002, STK-003, STK-004, STK-005, STK-009 from 2026-09-01-dr-max-x-bighub-project-status-sync (2026-09-01)
-[AUTO] project-knowledge — added Max/Maxi/Lexi, BDC, Atlantis, AKS, Farmis/Magento; updated Dr. Max/ČLH project-stream list from 2026-09-01-dr-max-x-bighub-project-status-sync (2026-09-01)
+[AUTO] project-knowledge — added Max/Maxie/Lexie, BDC, Atlantis, AKS, Farmis/Magento; updated Dr. Max/ČLH project-stream list from 2026-09-01-dr-max-x-bighub-project-status-sync (2026-09-01)
 [AUTO] project-assumptions — added ASM-004, ASM-005 from 2026-09-01-dr-max-x-bighub-project-status-sync (2026-09-01)
 [AUTO] project-lessons — added LL-004 from 2026-09-01-dr-max-x-bighub-project-status-sync (2026-09-01)
 [MANUAL] migration — repo re-platformed from `bh-secondBrain` (SaaS-adapted template) onto `bh-secondbrain-new` (current agency-shaped Product Harness template) per PM request; all content ported 1:1 with template-conformant renames (Section 3 "Your Team"/"External Contacts" → "Internal Team"/"External Stakeholders"; "Product Language" section merged into "Client Jargon"); no new routing performed during migration (2026-09-02)

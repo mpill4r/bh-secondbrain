@@ -34,7 +34,7 @@ Jindřich has been at the client (referred to as "Max" throughout, i.e. Dr. Max)
 
 ### Current project landscape (Marek's initial read)
 
-Backlog currently lives in a Word document. Known projects/threads so far: **MaxBuddy** (AI assistant, blocked on some regulatory/`nariadenia` issue), **Lexia/Maxi** (a vendor swap situation), **reklamace** (complaints — seems largely resolved), and **Listing**, which Marek understood — from Alana and the developers — to be the current top priority: an enrichment layer on top of existing product data, governed by rules, essentially an "upkeep" flow.
+Backlog currently lives in a Word document. Known projects/threads so far: **MaxBuddy** (AI assistant, blocked on some regulatory/`nariadenia` issue), **Lexia/Maxie** (a vendor swap situation), **reklamace** (complaints — seems largely resolved), and **Listing**, which Marek understood — from Alana and the developers — to be the current top priority: an enrichment layer on top of existing product data, governed by rules, essentially an "upkeep" flow.
 
 ### Spec structure agreed (Spec 1 / Spec 2)
 

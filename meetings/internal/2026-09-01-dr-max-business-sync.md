@@ -64,7 +64,7 @@ Jindřich separately explained Microsoft's two funding tracks: **Partner-led** (
 
 Jindřich wants every project spec to follow the same shape from now on: a **business-language intro** (readable by both business and technical people), followed by a **BAU justification** section — why this project, framed in time/cost terms (e.g. "saves 3 minutes per request × request volume"), and a matching **success-measurement** section at the end (e.g. validating that 95 of 100 cases actually used the chatbot). The product owner should own and push these numbers to the business.
 
-He's already agreed this structure with **paní Martová/Mertová**, who owns three projects (Max, Maxi, Lexi). Honza Sovka's original specs are solid on content but were built under time pressure without a consistent shape — Jindřich wants Marek to own making sure every spec has a coherent "head and tail."
+He's already agreed this structure with **paní Martová/Mertová**, who owns three projects (Max, Maxie, Lexie). Honza Sovka's original specs are solid on content but were built under time pressure without a consistent shape — Jindřich wants Marek to own making sure every spec has a coherent "head and tail."
 
 ### Adoption / newsletter
 
@@ -85,7 +85,7 @@ Marek is connecting Jindřich with **Soňa** to own a newsletter highlighting wi
 - [ ] **Marek**: Close out the "8K" item with the Operations contact — due this week — from dr-max-business-sync
 - [ ] **Jindřich**: Chase Atlantis for the outstanding infra access list blocking the voicebot — due -tbd- — from dr-max-business-sync
 - [ ] **Jindřich**: Review TVXLu and send the file to Marek — due -tbd- — from dr-max-business-sync
-- [ ] **Jindřich**: Roll out the consistent spec structure (business intro + BAU + success measurement), starting with Martová/Mertová's Max/Maxi/Lexi projects — due -tbd- — from dr-max-business-sync
+- [ ] **Jindřich**: Roll out the consistent spec structure (business intro + BAU + success measurement), starting with Martová/Mertová's Max/Maxie/Lexie projects — due -tbd- — from dr-max-business-sync
 - [ ] **Marek**: Draft the first adoption newsletter post, then evaluate automating a monthly cadence — due -tbd- — from dr-max-business-sync
 - [ ] **Jindřich**: Meet Kateřina Leš to compare adoption/newsletter approaches across countries — due -tbd- — from dr-max-business-sync
 

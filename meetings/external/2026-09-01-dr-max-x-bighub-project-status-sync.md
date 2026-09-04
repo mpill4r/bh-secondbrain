@@ -16,7 +16,7 @@ tldv_link:
 
 ## TL;DR
 
-Recurring cross-team status call (previously run by Alana, now run by Jindřich) walking through all active Dr. Max project streams: logistics/claims knowledge-base consolidation (on Tereza/ViaPharma's side, in progress), freight invoicing (scope agreed with Jan Žižka, needs Petr Spilka's review by mid-September), e-commerce order prediction (built, demo Thursday, blocked-ish on AKS access), listing (blocked pending a Magento-vs-Farmis functionality analysis assigned to Honza Sovka), MaxBuddy (acceptance protocol sent for the delivered project; a live production incident this stays open; a new analytics-safety process agreed with Dr. Max's analytics team), Max/Maxi/Lexi chatbots (demo Thursday; Lexi being rolled out to Legal and Brno accounting; a design/logo blocker resolved by reusing the current look until Brno's tender concludes), and the voicebot (infra access list finally submitted to Atlantis/Vláďa Tvarušek, pending provisioning). Jindřich formally introduced Marek Pillár to the Dr. Max/ViaPharma side as the new BigHub AI Analyst who will be working the account alongside him; Dr. Max needs to provision him a client account/Teams access.
+Recurring cross-team status call (previously run by Alana, now run by Jindřich) walking through all active Dr. Max project streams: logistics/claims knowledge-base consolidation (on Tereza/ViaPharma's side, in progress), freight invoicing (scope agreed with Jan Žižka, needs Petr Spilka's review by mid-September), e-commerce order prediction (built, demo Thursday, blocked-ish on AKS access), listing (blocked pending a Magento-vs-Farmis functionality analysis assigned to Honza Sovka), MaxBuddy (acceptance protocol sent for the delivered project; a live production incident this stays open; a new analytics-safety process agreed with Dr. Max's analytics team), Max/Maxie/Lexie chatbots (demo Thursday; Lexie being rolled out to Legal and Brno accounting; a design/logo blocker resolved by reusing the current look until Brno's tender concludes), and the voicebot (infra access list finally submitted to Atlantis/Vláďa Tvarušek, pending provisioning). Jindřich formally introduced Marek Pillár to the Dr. Max/ViaPharma side as the new BigHub AI Analyst who will be working the account alongside him; Dr. Max needs to provision him a client account/Teams access.
 
 ## Key Discussion Points
 
@@ -46,13 +46,13 @@ A meeting with **pan Machát** (Dr. Max analytics) about an hour before this cal
 
 Lukáš separately flagged two Buddy outages in the last two weeks — root cause wasn't the BigHub application itself, but a Farmis release that broke a library/service dependency; he doesn't have full details but confirmed it happened. No concrete mitigation yet — Jindřich flagged it as an open question to revisit (how it was detected, whether it's preventable) and suggested reviewing further the next day in person.
 
-### Max Chatbot / Maxi / Lexi
+### Max Chatbot / Maxie / Lexie
 
 **Max chatbot**: demo scheduled Thursday; team is currently working through a ticket backlog, prioritized so that Call Center's user-facing requests (which Jindřich wants shown at the demo, so Call Center can validate them) go first, with infrastructure-only tickets held for a second batch after the demo.
 
-**Lexi**: same status/approach as Max. Additionally, Lukáš (with the infra team) has prepared Lexi so that **Legal** and **Brno accounting (účtárna)** can start populating its knowledge base and testing it — coordination on rollout with those two departments is starting now, and they'll also canvass other departments for interest. Jindřich separately confirmed **IT (Petr Machán)** is already using it and speaks highly of it; any IT-specific feature requests will be incorporated over time, but current focus stays on Call Center. That makes IT, Legal, Brno accounting, and (once live) Call Center four departments in play for Lexi.
+**Lexie**: same status/approach as Max. Additionally, Lukáš (with the infra team) has prepared Lexie so that **Legal** and **Brno accounting (účtárna)** can start populating its knowledge base and testing it — coordination on rollout with those two departments is starting now, and they'll also canvass other departments for interest. Jindřich separately confirmed **IT (Petr Machán)** is already using it and speaks highly of it; any IT-specific feature requests will be incorporated over time, but current focus stays on Call Center. That makes IT, Legal, Brno accounting, and (once live) Call Center four departments in play for Lexie.
 
-Recap of a separate meeting with **paní Martová** (Dr. Max) last week: (1) they agreed to add a justification column to the Max/Maxi/Lexi tracking tables — time saved, cost saved, etc. — so value can eventually be measured; (2) the chatbot's design/logo had been blocked because Dr. Max's Brno headquarters ran a separate tender for design/logo work company-wide. Resolved: BigHub will ship now using the current design/logo (following the Slovak precedent) so as not to block deployment, and apply the new branding in a later wave once Brno's tender concludes and a direction is chosen. Jindřich and Lukáš explained this trade-off to Martová directly and she agreed not to block the current release on it.
+Recap of a separate meeting with **paní Martová** (Dr. Max) last week: (1) they agreed to add a justification column to the Max/Maxie/Lexie tracking tables — time saved, cost saved, etc. — so value can eventually be measured; (2) the chatbot's design/logo had been blocked because Dr. Max's Brno headquarters ran a separate tender for design/logo work company-wide. Resolved: BigHub will ship now using the current design/logo (following the Slovak precedent) so as not to block deployment, and apply the new branding in a later wave once Brno's tender concludes and a direction is chosen. Jindřich and Lukáš explained this trade-off to Martová directly and she agreed not to block the current release on it.
 
 ### Max VoiceBot
 
@@ -67,7 +67,7 @@ Jindřich formally introduced Marek Pillár to the Dr. Max/ViaPharma side as Big
 - Freight-invoicing and claims-consolidation projects proceed as scoped; freight-invoicing scope review by Petr Spilka targeted for mid-September.
 - MaxBuddy: all future incremental change packages will be formally accepted the same way as the original delivered project (via acceptance protocol), rather than left informally open-ended.
 - MaxBuddy/analytics: any change touching the shared data model must be reviewed by Dr. Max's analytics team (contact: pan Machát) at the point a release batch is prioritized, to avoid breaking company-wide analytics.
-- Chatbot (Max/Maxi/Lexi) design/logo: ship now with the current design (Slovak precedent), apply Brno's new branding in a later wave once their tender concludes — do not block current deployment on it.
+- Chatbot (Max/Maxie/Lexie) design/logo: ship now with the current design (Slovak precedent), apply Brno's new branding in a later wave once their tender concludes — do not block current deployment on it.
 - Listing project is paused pending the Magento-vs-Farmis functionality gap analysis (assigned to Honza Sovka) before further build work.
 
 ## Action Items
@@ -78,7 +78,7 @@ Jindřich formally introduced Marek Pillár to the Dr. Max/ViaPharma side as Big
 - [ ] **Honza Sovka**: Complete the Magento vs. Farmis functionality gap analysis for the listing project — from 2026-09-01-dr-max-x-bighub-project-status-sync
 - [ ] **Jan Kabát**: Send Marek Pillár's account details (name, surname, phone, email) to Lukáš Szücs for Dr. Max/Teams provisioning — from 2026-09-01-dr-max-x-bighub-project-status-sync
 - [ ] **Team**: Prepare for Thursday demos — order-prediction demo with Marek Šimoník, and Max chatbot demo (Call Center-facing tickets first) — due 2026-09-04 (Thursday)
-- [ ] **Lukáš Szücs**: Coordinate with Legal and Brno accounting to onboard them onto Lexi (knowledge-base population + testing) — from 2026-09-01-dr-max-x-bighub-project-status-sync
+- [ ] **Lukáš Szücs**: Coordinate with Legal and Brno accounting to onboard them onto Lexie (knowledge-base population + testing) — from 2026-09-01-dr-max-x-bighub-project-status-sync
 
 ## Open Questions
 
@@ -93,7 +93,7 @@ Businesslike, well-run status meeting with a clear walking-the-board format — 
 ## Routing Log
 
 - **project-stakeholders**: Added STK-012 (Lukáš Szücs), STK-013 (Tereza Foltová), STK-014 (Petr Spilka), STK-015 (Jan Žižka), STK-016 (Vláďa Tvarušek), STK-017 (Martová), STK-018 (Petr Machán), STK-019 (Marek Šimoník), STK-020 (Marie Hulešová), STK-021 (Jan Maroušek) to External Stakeholders; STK-022 (Sony Vu Hong) to Internal Team. Enriched STK-001, STK-002, STK-003, STK-004, STK-005, STK-009 (Juraj Kmec surname resolved) with role/title detail from the Who's Who reference card.
-- **project-knowledge**: Added Max/Maxi/Lexi, BDC, Atlantis, AKS (Needs confirmation), Farmis/Magento (Needs confirmation); updated Dr. Max/ČLH entry with current active project-stream list including Kontrola beden (not yet started).
+- **project-knowledge**: Added Max/Maxie/Lexie, BDC, Atlantis, AKS (Needs confirmation), Farmis/Magento (Needs confirmation); updated Dr. Max/ČLH entry with current active project-stream list including Kontrola beden (not yet started).
 - **project-assumptions**: Added ASM-004 (analytics review required for MaxBuddy data-model changes, Decided) and ASM-005 (Open — Who's Who card reconciliation pending Marek's verification).
 - **project-daily** (2026-09-01): Logged 7 open action items; checked off the carried "confirm Marek's Tuesday-status inclusion" item from the 2026-08-25 onboarding meeting as resolved by this call.
 
