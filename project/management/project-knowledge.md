@@ -1,6 +1,6 @@
 ---
-last_updated: 2026-09-04
-last_updated_by: auto — project-meeting routing (2026-09-04-ai-platform-standup-xmanager-lexi-demo)
+last_updated: 2026-09-08
+last_updated_by: manual — conversational (MD estimate convention)
 owner: Marek Pillár
 ---
 
@@ -26,9 +26,9 @@ owner: Marek Pillár
 | Field | Value |
 |-------|-------|
 | Definition | BigHub-built product for Dr. Max pharmacies. Originally a pharmacist dosage-verification assistant (pulled after legal flagged it as requiring medical device certification); the surviving, shipped feature is AI-driven point-of-sale cross-sell ("psí prodeje" — upsell suggestions) generated from basket contents, rolling out to all ~600 Dr. Max pharmacies. |
-| Source | 2026-08-25-marek-onboarding-with-jan-sovka, 2026-09-03-maxbuddy-chatbot-ocr-project-handoff |
+| Source | 2026-08-25-marek-onboarding-with-jan-sovka, 2026-09-03-maxbuddy-chatbot-ocr-project-handoff, 2026-09-07-ai-portfolio-roadmap-scope-review |
 | Added | 2026-09-01 |
-| Last updated | 2026-09-03 |
+| Last updated | 2026-09-07 |
 | Status | Active |
 
 The dosage-verification logic still exists dormant in the codebase and could be revived if Dr. Max later pursues certification.
@@ -43,14 +43,16 @@ A related, already-running system: SPC-change monitoring, collecting periodic di
 
 Original infrastructure/model provisioning for MaxBuddy was done manually (ad hoc clicking), not via Terraform or other IaC tooling — surfaced 2026-09-02 when checking whether a redeployment was possible. No structured infra-as-code state exists for it; the people most involved in the original setup are no longer easily reachable, and exact names are uncertain due to transcription quality (see 2026-09-02-aks-atlantis-infra-sync). Consensus was to leave it alone since it currently works.
 
+**2026-09-07 portfolio review**: the recommendation engine's real ceiling isn't technical — Dr. Max has never granted access to actual sales/margin data, so it can only use 4 data points (fixed supplier-defined cross-sell pairs, supplier argument text, live stock, active ingredient). Early analytics (still being sanity-checked before going to Luboš Vosmek, STK-011) show a striking adoption gap: the most-recommended product was shown ~18,000 times but purchased only 6 times, and komplexní péče "tiles" get almost no clicks since being tucked behind a UI element in the last release — likely needs pharmacist training/adoption work, not just model tuning. Full 600-pharmacy rollout blocked on new AKS access, ~1 month pessimistic estimate post-grant — see [[ASM-027]]. Dosage-calc features stay blocked pending Dr. Max's certification decision — see [[ASM-028]].
+
 ### Max / Maxie / Lexie
 
 | Field | Value |
 |-------|-------|
 | Definition | Three BigHub-built chatbot/assistant products for Dr. Max, owned business-side by paní Mertová (STK-017), co-owned with Tomáš Dudaško (STK-010, IT/budget side). **Max** is the customer-facing chatbot embedded on the drmax.cz website (order status, pharmacy locator, e-recepty, medication/stock lookup — see full flow below); a **voice channel of the same capability is Maxie**, launching scoped to order-status only via IVR. **Lexie (Lucie)** is the internal knowledge-base assistant being rolled out to IT, Legal, and Brno accounting, now in Call Center testing — currently blocked on 3 bugs, see below. Distinct from MaxBuddy (the pharmacy point-of-sale cross-sell product) — corrected 2026-09-03; an earlier entry incorrectly described Max as "Call Center-facing." |
-| Source | 2026-09-01-dr-max-x-bighub-project-status-sync, 2026-09-03-max-chatbot-demo-lexi-maxi-status-sync, 2026-09-04-ai-platform-standup-xmanager-lexi-demo |
+| Source | 2026-09-01-dr-max-x-bighub-project-status-sync, 2026-09-03-max-chatbot-demo-lexi-maxi-status-sync, 2026-09-04-ai-platform-standup-xmanager-lexi-demo, 2026-09-07-ai-portfolio-roadmap-scope-review |
 | Added | 2026-09-01 |
-| Last updated | 2026-09-04 |
+| Last updated | 2026-09-07 |
 | Status | Active |
 
 **Important scope correction (2026-09-04)**: the underlying AI platform (chatbot + RAG infrastructure) is **shared BigHub infrastructure reused across multiple clients**, not Dr. Max-exclusive — also deployed for Brněnská komunikace (Brno communications), with variants in progress for Kooperativa (accounting) and Unica (legal). Dr. Max is one deployment of a centralized "core" platform/repo, not a bespoke build. Frontend direction: one standardized template by default, custom per client only on explicit request — see [[ASM-025]]. Whether Honza Sovka retains product ownership of the platform across all clients (vs. Marek owning Dr. Max only) is unresolved — see [[ASM-026]].
@@ -65,16 +67,32 @@ Original infrastructure/model provisioning for MaxBuddy was done manually (ad ho
 
 **Process notes**: all three products' X-Manager feature requests should route through Simona Mertová as single point of contact — see [[ASM-018]]. Production-readiness bar is functional correctness against agreed scope, not full polish — see [[ASM-019]]. In-chat feedback mechanism (Max) is a star/emoji rating, no free text — see [[ASM-017]].
 
-### OCR (pharmacy service-protocol extraction)
+**2026-09-07 portfolio review**: confirmed Max and Maxie run on one shared LLM core/prompt engine, differing only by channel (web chat UI vs. voice/IVR) — intentional shared architecture, not incidental overlap. Max's production integration currently runs on Dr. Max's public website API, scraped rather than officially provided — flagged as a risk before a full public launch, see [[ASM-029]]. Maxie today mirrors 3 of the chatbot's core scenarios (hours, order status, e-recept); reklamace/return flows aren't built yet, shared build with the chatbot once done. Dr. Max runs its own fixed decision-tree IVR today and plans to replace branches with the dynamic LLM version one at a time — which branch goes first is Dr. Max's call, not yet decided.
+
+### TEO / OCR (pharmacy service-protocol extraction)
 
 | Field | Value |
 |-------|-------|
-| Definition | New, early-stage BigHub project (owner: Jura Brázdil) automating extraction from mandatory pharmacy equipment service-inspection protocols (automatic doors, air conditioning, etc.) — currently manually retyped into Excel by staff. "OCR" is a working name, not literally OCR-only — the pipeline is LLM-based extraction over scanned/photographed, often handwritten, documents. |
-| Source | 2026-09-03-maxbuddy-chatbot-ocr-project-handoff |
+| Definition | **TEO is Dr. Max's technical department** (not a project acronym — clarified 2026-09-07, Jura had been calling this the "OCR project" informally). The project itself is a BigHub effort (owner: Jura Brázdil) automating extraction from TEO's mandatory pharmacy equipment service-inspection/revision-repair protocols (automatic doors, air conditioning, etc.) — currently manually retyped into Excel by staff. "OCR" is a working name, not literally OCR-only — the pipeline is LLM-based extraction over scanned/photographed, often handwritten, documents. |
+| Source | 2026-09-03-maxbuddy-chatbot-ocr-project-handoff, 2026-09-07-ai-portfolio-roadmap-scope-review |
 | Added | 2026-09-03 |
+| Last updated | 2026-09-07 |
 | Status | Active |
 
-Scope narrowed to one category first: automatic doors, two vendors — extracting door type, faults, branch address, and follow-up requests via a ~16-prompt pipeline. Currently in a second feasibility-measurement round (first round handled cleanly-extractable data; second tackles free-text notes). Target: production-ready for Dr. Max's November inspection cycle. Will move onto the shared AI platform (alongside MaxBuddy, Max, Lexie) once the new AKS sandbox is available. Not yet present in the BigHub roadmap Excel/portfolio tracker as of 2026-09-03 — a gap, not yet reconciled.
+Scope narrowed to one category first: automatic doors, two vendors — extracting door type, faults, branch address, and follow-up requests via a ~16-prompt pipeline. Currently in a second feasibility-measurement round (first round handled cleanly-extractable data; second tackles free-text notes). Target: production-ready for Dr. Max's November inspection cycle. Will move onto the shared AI platform (alongside MaxBuddy, Max, Lexie) once the new AKS sandbox is available.
+
+**2026-09-07 portfolio review**: the "not yet present in the roadmap tracker" gap flagged 2026-09-03 is now resolved — added as the TEO_OCR sheet + a Portfolio entry. Status as of this review: still a local feasibility prototype on Jura's machine, not deployed anywhere; deliberately piloted on 2 suppliers/document formats for uniform inputs before expanding — see [[ASM-034]] (possibly the same underlying scope as the automatic-doors/two-vendor framing above, generalized in description — not confirmed either way). 5 fixed columns extract reliably; 3 more fields are open-ended, often handwritten "findings" text — harder, success rate still unknown. No shared storage/service exists yet to deliver extracted data to — currently framed as Dr. Max's responsibility to build. ServiceNow export/import and query-back features not started, tentatively Full Version, blocked on Dr. Max sharing asset/location data. New contacts: Radim Švarc (STK-041, building his own app that will call BigHub's OCR API directly — integration boundary still undefined) and Michaela Albrechtová (STK-042). Cross-project synergy identified with Fakturace doprav's similar mixed-format document problem — see [[ASM-035]].
+
+### Reklamace "OCR" (SP/MS štítky)
+
+| Field | Value |
+|-------|-------|
+| Definition | What's built today for Reklamace's SP/MS label flows is **barcode scanning, not OCR** — reading a printed barcode down to an identifying number. Real OCR (reading handwritten batch/expiry text) is a separate, unbuilt need for the warehouse (skladové) reklamace flow, where labels carry handwritten batch/expiry information rather than a scannable code. |
+| Source | 2026-09-07-ai-portfolio-roadmap-scope-review |
+| Added | 2026-09-07 |
+| Status | Active |
+
+Naming confusion source: Honza's original spec notes used "OCR" loosely for both, which is why the roadmap tracker initially conflated them. Tracked separately now — see the '"Opravdový" OCR' (real OCR) backlog row on the Reklamace roadmap sheet.
 
 ## Data Model Concepts
 
@@ -95,6 +113,36 @@ Scope narrowed to one category first: automatic doors, two vendors — extractin
 | Status | Active |
 
 Other BigHub clients referenced (2026-09-04) as also running the shared AI/chatbot platform used for Dr. Max's Max/Maxie/Lexie: **Brněnská komunikace** (Brno communications), **Kooperativa** (accounting department variant), **Unica** (legal department variant, still in progress). No named individual contacts captured for these accounts yet.
+
+### AI platforma (new initiative)
+
+| Field | Value |
+|-------|-------|
+| Definition | **Confirmed 2026-09-08**: this is the same shared BigHub AI/chatbot platform already powering Max Chatbot/Maxie/Lexie for Dr. Max (see "Shared AI/chatbot platform" below) — not a separate, new system. Tomáš Dudaško (STK-010) wants visible investment in it: unified test/production environments, improved UX/visual polish, and consolidation of all Dr. Max BigHub projects onto it. Test environment link: https://aiplatform-prod.cz.dr-max.global/login — Marek's own access not yet confirmed. |
+| Source | PM input 2026-09-08; 2026-09-08-ai-platform-strategy-history-with-jan-sovka; 2026-09-08-ai-platform-technical-deepdive-jura-brazdil |
+| Added | 2026-09-08 |
+| Last updated | 2026-09-08 |
+| Status | Active |
+
+Deliberately kept out of the 9-product roadmap set (`product-roadmap-portfolio-full.xlsx`) for now, per PM instruction, until scoped. Agreed 3-phase delivery plan: (1) UX rework into one consolidated landing page, (2) migrate existing projects onto the platform on both test and production, (3) build Dudaško's backlog (from his requirements Excel) into an admin/reporting layer. See also "BigHub's shared-platform strategy (retired)" and "AI platform — current technical state" below.
+
+### BigHub's shared-platform strategy (retired)
+
+| Field | Value |
+|-------|-------|
+| Definition | ~1.5 years ago, BigHub's internal strategy was to build one unified AI platform as a "passive revenue" B2B product — a single core, white-labeled and wrapped per client — sold to clients (including Dr. Max) on a shared roadmap, common feature releases, and unified admin/cost reporting. It never got internal traction or investment (no team was ever properly resourced to build it as a real product) and was formally killed in an internal management evaluation **~4 months ago (~2026-05)**. Current strategy: fully custom builds per client, optionally inspired by each other's code, increasingly via AI-assisted ("vibe coding") development — no shared product roadmap. The underlying codebase is deployed across Dr. Max, Brněnská komunikace, Kooperativa, and Unica (heavily modified). **Sensitivity**: the Kooperativa deployment is built heavily around Kooperativa-specific needs (integrates with something referred to as "XLET" — unconfirmed) — avoid Kooperativa traces being visible if the platform is demoed to Dr. Max. |
+| Source | 2026-09-08-ai-platform-strategy-history-with-jan-sovka |
+| Added | 2026-09-08 |
+| Status | Active — historical context |
+
+### AI platform — current technical state
+
+| Field | Value |
+|-------|-------|
+| Definition | Per Jura Brázdil (2026-09-08), the platform's actual current build is much earlier-stage than its "2 years of development" history suggests: in practice it equals **one implemented product — a RAG/document-retrieval system**. MaxBuddy is **not** yet in the platform's own namespace (blocked on the new AKS environment since early August 2026). Known infra issues: a **shared database/DB server with zero isolation between use cases** (e.g. MaxBuddy's process could technically reach into Listing's data), and a **single shared admin account** across all use cases. The role-based permission system (Entra ID-based) that exists today was built specifically for the RAG chatbot (Lexie) — it is **not** a general, platform-wide capability yet, despite earlier framing (2026-09-08, Jan Sovka) suggesting broader maturity. |
+| Source | 2026-09-08-ai-platform-technical-deepdive-jura-brazdil |
+| Added | 2026-09-08 |
+| Status | Active |
 
 ### Alfred
 
@@ -126,13 +174,16 @@ Per a BigHub roadmap sheet (2026-09-02), owners cross-checked against the above:
 | Field | Value |
 |-------|-------|
 | Definition | The e-commerce order/demand-prediction dashboard owned by Juraj Kmec. Static, read-only React frontend ("like Power BI") deliberately built with no interactivity so it can't break Dr. Max infra. Tracks two predicted metrics: (1) **Revenue** — plan/target vs. actual vs. model prediction with confidence intervals and a probability-of-hitting-target readout; (2) **Logistics** — predicted new order counts by warehouse and shipping method, with a "time travel" feature comparing a historical model run against actual outcomes. Both have a same-day zoomed view with ~30 min live-data delay. Deployed on Dr. Max infra, VPN-gated, no external repo access without a Dr. Max account. |
-| Source | 2026-09-02-order-prediction-dashboard-walkthrough |
+| Source | 2026-09-02-order-prediction-dashboard-walkthrough, 2026-09-07-ai-portfolio-roadmap-scope-review |
 | Added | 2026-09-02 |
+| Last updated | 2026-09-07 |
 | Status | Active |
 
 v1 considered done as of 2026-09-02; first live business demo 2026-09-03 (demoed by Juraj Kmec directly). Before this, the business had no live visibility — data was pulled manually from Excel exports ~2 days stale. No phase 2/3/4 roadmap defined yet; will be shaped after demo feedback and a 1-2 week trial by Marek Šimoník (STK-019, e-commerce lead).
 
 **Live demo outcome (2026-09-03)**: Very positive reception from Šimoník. A real 8-minute site outage (2026-08-24, 09:20–09:28) correctly showed as a dip in the live chart — a strong, organic trust-building validation moment. Model is calibrated for a 14-day horizon (reliable) with unguaranteed extrapolation beyond that (deliberately shown without confidence intervals). Trained purely on recognized/invoiced revenue, not blended with order-backlog signals — see [[ASM-016]]. Known gap: doesn't yet account for marketing campaigns (the one promo/campaign CSV on file is ~2 months stale) — likely explanation for recent Brno under-prediction (a campaign started 2026-08-29). Small feature backlog: order-count toggle on the breakdown table, D-7 and day-of-week-aligned D-365 historical overlay lines, split warehouse/shipping-method filters, clearer tooltip text distinguishing "probability of hitting today's target" from "% of month-end target expected." Review process for the testing phase: verify data accuracy → request UX changes → tune model accuracy last, see [[ASM-014]]. Phase-1 primary users are Šimoník and Petr Ondráček (STK-035); a separate logistics need (month-ahead view) deferred to a later phase, see [[ASM-015]].
+
+**2026-09-07 portfolio review**: Order Service data now flows through DataHub rather than a direct connection (architecture clarification, not a scope change). Production deployment is technically live already, but the *test* environment is undersized on the old AKS node pool and throwing out-of-memory errors — production itself runs fine, waiting on the new AKS to fix test capacity. Christmas prediction quality flagged as a known open risk since training data has no prior Christmas season to learn from — see the new "Spresňovanie modelovania" backlog item. Campaign recommendation model and automated campaign generation discussed as possibly Full Version but no firm call made — both genuinely hard analytics problems needing dedicated scoping, see [[ASM-030]].
 
 ### Axapta
 
@@ -218,6 +269,15 @@ Listing's core blocker (reconfirmed 2026-09-02) is not code but Dr. Max's undefi
 ## Seasonal & Cyclical Patterns
 
 ## Project Conventions
+
+### Effort estimate convention (MD)
+
+| Field | Value |
+|-------|-------|
+| Definition | Effort estimates are always abbreviated as "MD" (man-days), never spelled out, in any language. Hour-based estimates convert to MD as: 1-3h → 0.5 MD, 4h+ → 1 MD. In the roadmap Excel, the "Estimate - Optimistic" column takes the lower bound of any range and "Estimate - Pessimistic" takes the upper bound; flat single-point estimates go in both columns unchanged. Waiting/external-dependency periods (e.g. a certification process, an infra-access grant) are not effort estimates and are excluded from MD sums — only actual work effort counts. |
+| Source | PM input, 2026-09-08 |
+| Added | 2026-09-08 |
+| Status | Active |
 
 ### VBS (work-breakdown-structure) framework
 

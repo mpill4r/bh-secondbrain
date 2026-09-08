@@ -1,6 +1,6 @@
 ---
-last_updated: 2026-09-04
-last_updated_by: auto — project-meeting routing (2026-09-04-ai-platform-standup-xmanager-lexi-demo)
+last_updated: 2026-09-08
+last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
 
@@ -34,7 +34,7 @@ owner: Marek Pillár
 | Status | Active |
 | Joined | -tbd- |
 | Left | — |
-| Notes | Onboarded Marek onto the Dr. Max account. Currently ~10% allocated to the account, aiming to increase involvement now that Marek is on board. Weekly 1:1s with Marek. Proposed a 5-supplier pilot approach for the reklamace supplier-data rollout (~4 hours, unblocks quickly before scaling to ~280 suppliers). Covering the 2026-09-03 logistics test session for Jindřich Tůma (out for a medical appointment) and recording it for later review. On 2026-09-03, ran the recurring BigHub↔ViaPharma logistics status call in Jindřich's/Alana's absence; owes Petr Sláma (STK-034) a concrete two-sided freight-invoicing timeline, and still hasn't closed his carried-forward task to talk to Jan Žižka about DHL overlap. Also attended the order-prediction dashboard live demo (2026-09-03) — proposed a three-layer review order (data accuracy → display/UX → model accuracy) and set phase-1 scope (Šimoník/Ondráček as primary users, a separate logistics contact deferred to a later phase). Present (mostly quiet) at the Max chatbot demo (2026-09-03). Source: 2026-08-25-marek-onboarding-with-jan-sovka, 2026-09-02-logistics-listing-team-sync, 2026-09-03-viapharma-logistics-status-reklamace-demo, 2026-09-03-order-prediction-dashboard-live-demo, 2026-09-03-max-chatbot-demo-lexi-maxi-status-sync |
+| Notes | Onboarded Marek onto the Dr. Max account. Currently ~10% allocated to the account, aiming to increase involvement now that Marek is on board. Weekly 1:1s with Marek. Proposed a 5-supplier pilot approach for the reklamace supplier-data rollout (~4 hours, unblocks quickly before scaling to ~280 suppliers). Covering the 2026-09-03 logistics test session for Jindřich Tůma (out for a medical appointment) and recording it for later review. On 2026-09-03, ran the recurring BigHub↔ViaPharma logistics status call in Jindřich's/Alana's absence; owes Petr Sláma (STK-034) a concrete two-sided freight-invoicing timeline, and still hasn't closed his carried-forward task to talk to Jan Žižka about DHL overlap. Also attended the order-prediction dashboard live demo (2026-09-03) — proposed a three-layer review order (data accuracy → display/UX → model accuracy) and set phase-1 scope (Šimoník/Ondráček as primary users, a separate logistics contact deferred to a later phase). Present (mostly quiet) at the Max chatbot demo (2026-09-03). Named 2026-09-07 as the intended sign-off reviewer for the consolidated AI portfolio/roadmap once it's finished (Alana Sihelská also flagged as having context from the original specs). On 2026-09-08, gave Marek and Jindřich the full history of BigHub's "AI platform": an ~1.5-year-old vision to sell it as a shared, white-labeled B2B product across clients, which never got internal traction and was formally killed ~4 months ago (~2026-05) in favor of fully custom per-client builds. Personally candid that this has been a "painful point" for him, but treats it as a closed chapter and is glad to see fresh investment. Flagged a sensitivity: the platform's Kooperativa deployment is built heavily around Kooperativa-specific needs, so care is needed that Kooperativa traces aren't visible if the platform is demoed to Dr. Max. Recommended Jindřich/Marek sync with Ján Kabát (STK-005) before further platform conversations with Tomáš Dudaško (STK-010), since Kabát shaped how Dudaško currently frames the ask. Source: 2026-08-25-marek-onboarding-with-jan-sovka, 2026-09-02-logistics-listing-team-sync, 2026-09-03-viapharma-logistics-status-reklamace-demo, 2026-09-03-order-prediction-dashboard-live-demo, 2026-09-03-max-chatbot-demo-lexi-maxi-status-sync, 2026-09-07-ai-portfolio-roadmap-scope-review, 2026-09-08-ai-platform-strategy-history-with-jan-sovka |
 
 ### STK-003
 
@@ -76,7 +76,7 @@ owner: Marek Pillár
 | Status | Active |
 | Joined | -tbd- |
 | Left | — |
-| Notes | Primary day-to-day sales contact with Tomáš Dudaško on the client side. Formally introduced Marek to Dr. Max client contacts on 2026-09-01. Source: 2026-08-25-marek-onboarding-with-jan-sovka, 2026-09-01-dr-max-business-sync, 2026-09-01-dr-max-x-bighub-project-status-sync |
+| Notes | Primary day-to-day sales contact with Tomáš Dudaško on the client side. Formally introduced Marek to Dr. Max client contacts on 2026-09-01. Originally delivered the "no shared roadmap" message to Dudaško once BigHub's internal shared-platform vision was dropped (~2026-05), which shaped how Dudaško now frames his AI-platform investment ask. Jan Sovka flagged (2026-09-08) that Jindřich/Marek should sync with him before further platform conversations with Dudaško, to avoid conflicting messaging. Source: 2026-08-25-marek-onboarding-with-jan-sovka, 2026-09-01-dr-max-business-sync, 2026-09-01-dr-max-x-bighub-project-status-sync, 2026-09-08-ai-platform-strategy-history-with-jan-sovka |
 
 ### STK-006
 
@@ -85,12 +85,12 @@ owner: Marek Pillár
 | ID | STK-006 |
 | Name | Filip Černý |
 | Aliases | — |
-| Role | Developer — logistics + listing streams (Dr. Max) |
+| Role | Developer — designated dev owner for Reklamace (per PM decision, 2026-09-08); also logistics + listing streams (Dr. Max) |
 | Location | -tbd- |
 | Status | Active |
 | Joined | -tbd- |
 | Left | — |
-| Notes | Flagged as needing more product-level input, especially on the listing stream, where he's already bringing informal product judgment. On 2026-09-02, led the reklamace end-to-end API test (positive result, one temporary certificate/nodepool workaround in place) and took a firm position that further Listing development is pointless until Dr. Max delivers the category/parameter system ("we'll just burn money for nothing"). On 2026-09-03, delivered a live demo of the reklamace mobile app to ViaPharma — well received; owns adding the "odběratel" (recipient) field to the reklamace API. Source: 2026-08-25-marek-onboarding-with-jan-sovka, 2026-09-01-dr-max-listing-introduction, 2026-09-02-logistics-listing-team-sync, 2026-09-03-viapharma-logistics-status-reklamace-demo |
+| Notes | Flagged as needing more product-level input, especially on the listing stream, where he's already bringing informal product judgment. On 2026-09-02, led the reklamace end-to-end API test (positive result, one temporary certificate/nodepool workaround in place) and took a firm position that further Listing development is pointless until Dr. Max delivers the category/parameter system ("we'll just burn money for nothing"). On 2026-09-03, delivered a live demo of the reklamace mobile app to ViaPharma — well received; owns adding the "odběratel" (recipient) field to the reklamace API. In the 2026-09-07 portfolio review, described Reklamace dev work as currently split between himself, Jakub Turner (STK-007), and Lukáš Starenko (STK-028); named 2026-09-08 by Marek as the designated single dev owner going forward — see [[ASM-007]]. Source: 2026-08-25-marek-onboarding-with-jan-sovka, 2026-09-01-dr-max-listing-introduction, 2026-09-02-logistics-listing-team-sync, 2026-09-03-viapharma-logistics-status-reklamace-demo, 2026-09-07-ai-portfolio-roadmap-scope-review |
 
 ### STK-007
 
@@ -160,7 +160,7 @@ owner: Marek Pillár
 | Status | Active |
 | Joined | -tbd- |
 | Left | — |
-| Notes | Confirmed by Marek (2026-09-02) as owning both reklamace and freight invoicing. Resolves a conflict with the 2026-09-01 listing-intro note, which had named "Kuba Turner" as building reklamace — Turner is instead associated with MaxBuddy. See ASM-007 (Decided). On 2026-09-03, demoed the Max chatbot live to strong client praise (order status, pharmacy locator, e-recepty, medication lookup, all LLM-backed with a medical-advice guardrail); also owns MaxBuddy (oldest project — pharmacist upsell tool, originally a dosage-checking product until a medical-device certification requirement froze that feature) and a new early-stage OCR project (pharmacy equipment service-protocol extraction, targeting Dr. Max's November inspection cycle). Taking over the shared AI platform infrastructure from Viliam Gago (STK-027) once the new AKS sandbox is ready, migrating MaxBuddy and Lexie onto it. On 2026-09-04, flagged an urgent AKS node-pool cost issue (idle pools costing money, needs BDC cleanup or a cross-project node-selector redeploy); proposed the AI platform's frontend stay a standardized template by default, customized per client only on explicit request. Source: 2026-09-02-order-prediction-dashboard-walkthrough, 2026-09-03-max-chatbot-demo-lexi-maxi-status-sync, 2026-09-03-maxbuddy-chatbot-ocr-project-handoff, 2026-09-04-ai-platform-standup-xmanager-lexi-demo |
+| Notes | Confirmed by Marek (2026-09-02) as owning both reklamace and freight invoicing. Resolves a conflict with the 2026-09-01 listing-intro note, which had named "Kuba Turner" as building reklamace — Turner is instead associated with MaxBuddy. See ASM-007 (Decided). On 2026-09-03, demoed the Max chatbot live to strong client praise (order status, pharmacy locator, e-recepty, medication lookup, all LLM-backed with a medical-advice guardrail); also owns MaxBuddy (oldest project — pharmacist upsell tool, originally a dosage-checking product until a medical-device certification requirement froze that feature) and a new early-stage OCR project (pharmacy equipment service-protocol extraction, targeting Dr. Max's November inspection cycle). Taking over the shared AI platform infrastructure from Viliam Gago (STK-027) once the new AKS sandbox is ready, migrating MaxBuddy and Lexie onto it. On 2026-09-04, flagged an urgent AKS node-pool cost issue (idle pools costing money, needs BDC cleanup or a cross-project node-selector redeploy); proposed the AI platform's frontend stay a standardized template by default, customized per client only on explicit request. On 2026-09-08, gave the technical reality check on the platform's current state: in practice it's just one RAG/document-retrieval product, MaxBuddy still isn't in it (blocked on the new AKS since early August), and today's shared setup has a shared DB with no isolation between use cases plus a single shared admin account. Confirmed the existing role-based permission system is Lexie-specific, not platform-wide. Plans to self-migrate MaxBuddy and Max Chatbot into the platform once the new AKS lands and unify its UX around a single "crossroads" landing page; also wants a standard changelog convention for platform pull requests. Confirmed he has some spare capacity for this work and expects it to help rather than purely cost him, since he's migrating his own projects into it anyway. Source: 2026-09-02-order-prediction-dashboard-walkthrough, 2026-09-03-max-chatbot-demo-lexi-maxi-status-sync, 2026-09-03-maxbuddy-chatbot-ocr-project-handoff, 2026-09-04-ai-platform-standup-xmanager-lexi-demo, 2026-09-08-ai-platform-technical-deepdive-jura-brazdil |
 
 ### STK-027
 
@@ -213,7 +213,7 @@ owner: Marek Pillár
 | Expectations | Business cases and ROI justification for proposed work; visible delivery |
 | Last interaction | 2026-08-25 |
 | Status | Active |
-| Notes | Named Owner/Customer for MaxBuddy and Lexie on the BigHub roadmap sheet (2026-09-02). Confirmed 2026-09-02 as the IT/budget-side owner of Lexie, co-owning alongside Mertová (STK-017), who holds the operational/product side — not a conflict, see ASM-006 (partially resolved). Source: 2026-08-25-marek-onboarding-with-jan-sovka, roadmap sheet 2026-09-02; resolved 2026-09-02 |
+| Notes | Named Owner/Customer for MaxBuddy and Lexie on the BigHub roadmap sheet (2026-09-02). Confirmed 2026-09-02 as the IT/budget-side owner of Lexie, co-owning alongside Mertová (STK-017), who holds the operational/product side — not a conflict, see ASM-006 (partially resolved). On 2026-09-08, asked (via Jindřich) for visible investment in the AI platform — unified test/prod environments, improved UX/visual polish, and consolidation of all Dr. Max BigHub projects onto it. Sat down with an AI assistant to draft a large requirements Excel, which both Jan Sovka and Marek independently assessed as ~70% governance/compliance-framed and not addressing actual use cases. Near-term interest is dependency visibility, cost visibility, and usage metrics rather than governance minutiae. Source: 2026-08-25-marek-onboarding-with-jan-sovka, roadmap sheet 2026-09-02; resolved 2026-09-02, 2026-09-08-ai-platform-strategy-history-with-jan-sovka |
 
 ### STK-011
 
@@ -308,7 +308,7 @@ owner: Marek Pillár
 | Expectations | -tbd- |
 | Last interaction | -tbd- |
 | Status | Active |
-| Notes | Agreed the freight-invoicing scope with Lukáš Szücs. Source: 2026-09-01-dr-max-x-bighub-project-status-sync |
+| Notes | Agreed the freight-invoicing scope with Lukáš Szücs. Also named 2026-09-07 as the contact for Fakturace od dodavatelů (supplier invoicing) — Filip Černý has never spoken with him directly and is unsure of his seniority/hierarchy; that area is still very early ("in diapers"). Possible overlap/confusion between the two "fakturace" streams (freight vs. supplier invoicing) not yet fully disentangled. Source: 2026-09-01-dr-max-x-bighub-project-status-sync, 2026-09-07-ai-portfolio-roadmap-scope-review |
 
 ### STK-016
 
@@ -612,7 +612,7 @@ owner: Marek Pillár
 | Expectations | Wants a realistic, mutually-aligned dev timeline for freight invoicing so his team isn't left waiting or rushing to catch up. |
 | Last interaction | 2026-09-03 |
 | Status | Active |
-| Notes | New contact, first appearance 2026-09-03. Source: 2026-09-03-viapharma-logistics-status-reklamace-demo |
+| Notes | New contact, first appearance 2026-09-03. Confirmed 2026-09-07 as the primary "manažer"-type Reklamace contact alongside Jan Kopecký (STK-032). Source: 2026-09-03-viapharma-logistics-status-reklamace-demo, 2026-09-07-ai-portfolio-roadmap-scope-review |
 
 ### STK-035
 
@@ -708,6 +708,82 @@ owner: Marek Pillár
 | Last interaction | -tbd- |
 | Status | Active |
 | Notes | Low-confidence entry — single mention, surname uncertain from transcript. Kept per PM instruction to route everything; needs verification. Source: 2026-09-03-maxbuddy-chatbot-ocr-project-handoff |
+
+### STK-041
+
+| Field | Value |
+|-------|-------|
+| ID | STK-041 |
+| Name | Radim Švarc |
+| Aliases | — |
+| Organization | Dr. Max — TEO (technical department) |
+| Role | TEO/OCR project contact — service-protocol OCR extraction |
+| Location | -tbd- |
+| Influence | -tbd- |
+| Sentiment | -tbd- |
+| Sentiment context | -tbd- |
+| Communication preference | -tbd- |
+| Expectations | -tbd- |
+| Last interaction | 2026-09-07 |
+| Status | Active |
+| Notes | Building his own application/API that will call BigHub's OCR pipeline directly — the two systems' integration boundary (who owns which side) still needs defining. Source: 2026-09-07-ai-portfolio-roadmap-scope-review |
+
+### STK-042
+
+| Field | Value |
+|-------|-------|
+| ID | STK-042 |
+| Name | Michaela Albrechtová |
+| Aliases | — |
+| Organization | Dr. Max — TEO (technical department) |
+| Role | TEO/OCR project contact |
+| Location | -tbd- |
+| Influence | -tbd- |
+| Sentiment | -tbd- |
+| Sentiment context | -tbd- |
+| Communication preference | -tbd- |
+| Expectations | -tbd- |
+| Last interaction | 2026-09-07 |
+| Status | Active |
+| Notes | Named alongside Radim Švarc (STK-041) as a TEO contact; no further detail yet. Source: 2026-09-07-ai-portfolio-roadmap-scope-review |
+
+### STK-043
+
+| Field | Value |
+|-------|-------|
+| ID | STK-043 |
+| Name | "Kopčík" / Zábojník (name uncertain) |
+| Aliases | — |
+| Organization | BDC (possibly not directly Dr. Max) |
+| Role | BDC-side technical contact on Reklamace |
+| Location | -tbd- |
+| Influence | -tbd- |
+| Sentiment | -tbd- |
+| Sentiment context | -tbd- |
+| Communication preference | -tbd- |
+| Expectations | -tbd- |
+| Last interaction | 2026-09-07 |
+| Status | Active |
+| Notes | Low-confidence entry — name and even employer (BDC vs. Dr. Max directly) uncertain from transcript; Filip Černý himself wasn't sure. Kept per PM instruction to route everything; needs verification. Source: 2026-09-07-ai-portfolio-roadmap-scope-review |
+
+### STK-044
+
+| Field | Value |
+|-------|-------|
+| ID | STK-044 |
+| Name | "Egermajerová" (name uncertain) |
+| Aliases | — |
+| Organization | Dr. Max |
+| Role | Reklamace business/end user, alongside Tereza Foltová (STK-013) |
+| Location | -tbd- |
+| Influence | -tbd- |
+| Sentiment | -tbd- |
+| Sentiment context | -tbd- |
+| Communication preference | -tbd- |
+| Expectations | -tbd- |
+| Last interaction | 2026-09-07 |
+| Status | Active |
+| Notes | Low-confidence entry — name transcribed uncertainly. Kept per PM instruction to route everything; needs verification. Source: 2026-09-07-ai-portfolio-roadmap-scope-review |
 
 ### Inactive
 

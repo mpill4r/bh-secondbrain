@@ -1,10 +1,88 @@
 ---
-last_updated: 2026-09-04
-last_updated_by: auto — project-lessons (triggered by project-meeting routing, 2026-09-04-ai-platform-standup-xmanager-lexi-demo)
+last_updated: 2026-09-08
+last_updated_by: auto — project-lessons (triggered by project-daily close, 2026-09-08)
 owner: Marek Pillár
 ---
 
 # Lessons Learned
+
+---
+
+### LL-023
+
+| Field | Value |
+|-------|-------|
+| ID | LL-023 |
+| Created | 2026-09-08 |
+| Category | tooling-collaboration |
+| Source | project-daily-2026-09-08 |
+
+**Lesson**
+A programmatic write to a live cloud-synced file (OneDrive, Google Drive, etc.) can appear to succeed — and even verify correctly if re-read immediately — but still get silently reverted moments later by a sync conflict, most likely if the file is open elsewhere. Immediate post-write verification is not sufficient proof of persistence for actively-synced files; re-check after a short delay (several seconds) before reporting success, and if a write is found reverted, flag to the user that the file may be open elsewhere and ask them to close it before retrying.
+
+**Context**
+A batch of Excel comment/estimate writes to the live `product-roadmap-portfolio-full.xlsx` (OneDrive) verified correctly right after saving, but had reverted to the pre-write state by the next turn. Re-running the same write and checking again after a 10-second delay confirmed it held that time. The file had also spontaneously renamed itself mid-session earlier (dropping a version-number suffix), independently confirming OneDrive was actively manipulating the file outside of direct control.
+
+**Cross-reference**
+project-daily-2026-09-08
+
+### LL-022
+
+| Field | Value |
+|-------|-------|
+| ID | LL-022 |
+| Created | 2026-09-08 |
+| Category | discovery-methodology |
+| Source | 2026-09-08-ai-platform-strategy-history-with-jan-sovka, 2026-09-08-ai-platform-technical-deepdive-jura-brazdil |
+
+**Lesson**
+When scoping new work on top of an existing internal system, a manager's or account owner's strategic/historical account and the actual builder's technical account can diverge significantly even when both are told in good faith — the strategic account explains *why* and *what was intended*, but only the person who currently maintains the code can say *what's actually built*. Get both, in that order, before committing to a delivery plan.
+
+**Context**
+Jan Sovka's account of BigHub's AI platform (deployed for ~2 years, role-based permissions live across the client base) was accurate as far as intent and history go, but Jura Brázdil's technical deep-dive the same day revealed a materially different present-day reality: the platform in practice is just one RAG product, MaxBuddy still isn't migrated into it, the permission system Jan described is Lexie-specific rather than platform-wide, and there's a shared database with zero isolation between use cases. Scoping the near-term delivery plan only became reliable once Jura's account was folded in — holding both meetings back-to-back the same day, rather than relying on the manager's account alone, is what surfaced the gap before commitments were made to the client.
+
+**Cross-reference**
+2026-09-08-ai-platform-strategy-history-with-jan-sovka, 2026-09-08-ai-platform-technical-deepdive-jura-brazdil, ASM-038, ASM-039
+
+---
+
+### LL-021
+
+| Field | Value |
+|-------|-------|
+| ID | LL-021 |
+| Created | 2026-09-07 |
+| Category | tooling-collaboration |
+| Source | project-daily-2026-09-07 |
+
+**Lesson**
+When a stakeholder is actively hand-editing a shared deliverable in parallel with AI-assisted generation, treat their live edits as the source of truth and layer additions on top rather than regenerating from scratch — a fresh regeneration silently overwrites judgment calls (manual status assignments, row splits, renumbering, owner attributions) that took real thought to make.
+
+**Context**
+While building `product-roadmap-portfolio-full.xlsx`, Marek began hand-editing the workbook directly (Status values, Owner names, deliberate row splits distinguishing MVP-done vs. Full-Version-continuation work) between generation passes. Continuing to regenerate the file from the original script would have destroyed that work. Switching to load-and-append edits on his live copy instead preserved everything and let new additions (new rows, Portfolio entries, comments) sit alongside his own changes without conflict.
+
+**Cross-reference**
+project-daily-2026-09-07
+
+---
+
+### LL-020
+
+| Field | Value |
+|-------|-------|
+| ID | LL-020 |
+| Created | 2026-09-07 |
+| Category | discovery-methodology |
+| Source | 2026-09-07-ai-portfolio-roadmap-scope-review |
+
+**Lesson**
+Cross-referencing a shared tracker against every independent source that fed it (exports, specs, meeting transcripts, live stakeholder edits) before treating it as final surfaces real conflicts that no single source alone would reveal — disputed ownership, duplicate/stale entries, and quietly-changed decisions all hide in the gaps between sources.
+
+**Context**
+Reconciling the AI portfolio/roadmap workbook against v8.xlsx, the BigHub Notion export, the MVP Scope & Acceptance doc, and the 2026-09-07 review meeting surfaced several real discrepancies that a single-source build would have missed: disputed Reklamace dev ownership (two independent people each named as owner), the Maxie/Voicebot naming collision (same initiative tracked under two names), and a claim in the meeting note (Campaign Recommendation Model "confirmed Full Version") that turned out to overstate what was actually decided once checked against the PM's own live-edited Excel.
+
+**Cross-reference**
+2026-09-07-ai-portfolio-roadmap-scope-review, project-daily-2026-09-07
 
 ---
 

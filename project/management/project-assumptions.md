@@ -1,6 +1,6 @@
 ---
-last_updated: 2026-09-04
-last_updated_by: auto — project-meeting routing (2026-09-04-ai-platform-standup-xmanager-lexi-demo)
+last_updated: 2026-09-08
+last_updated_by: manual — conversational (client-facing roadmap decision)
 owner: Marek Pillár
 ---
 
@@ -10,6 +10,24 @@ owner: Marek Pillár
 
 | ID | Status | Created | Description (short) |
 |----|--------|---------|---------------------|
+| ASM-044 | Decided (2026-09-08) | 2026-09-08 | Roadmap board and Excel are client-facing deliverables — internal meeting dates and named attributions must be scrubbed from all notes/comments |
+| ASM-043 | Open (2026-09-08) | 2026-09-08 | AI-platform project should be framed internally as feeding validated learnings back into BigHub's own platform, not a purely bespoke Dr. Max build |
+| ASM-042 | Decided (2026-09-08) | 2026-09-08 | Jura Brázdil has spare capacity for AI-platform work and expects it to help rather than purely cost him, since he's migrating his own projects into it |
+| ASM-041 | Decided (2026-09-08) | 2026-09-08 | AI platform treated as a formal project with Tomáš Dudaško as owner/sponsor, run via a standard prioritization/Discovery session |
+| ASM-040 | Decided (2026-09-08) | 2026-09-08 | Dudaško's AI-platform requirements Excel gets distilled into a small realistic ticket set, not answered line-by-line |
+| ASM-039 | Decided (2026-09-08) | 2026-09-08 | AI-platform near-term delivery scoped as 3 phases: UX rework, migrate existing projects to test+prod, build backlog into admin/reporting |
+| ASM-038 | Decided (2026-09-08) | 2026-09-08 | BigHub's platform strategy is fully custom-per-client going forward; the shared-roadmap B2B-product vision is retired |
+| ASM-037 | Open (2026-09-08) | 2026-09-08 | Reklamace has no DNS ingress yet — testing via port forwarding only; no clickable test URL for either logistics app currently |
+| ASM-036 | Open (2026-09-08) | 2026-09-08 | Fakturace doprav not yet deployed to any environment; targeting end of this week / start of next |
+| ASM-035 | Open (2026-09-07) | 2026-09-07 | TEO and Fakturace doprav share the same mixed-format document-extraction problem — worth comparing approaches |
+| ASM-034 | Decided (2026-09-07) | 2026-09-07 | TEO OCR pilot deliberately scoped to 2 suppliers first, before considering expansion |
+| ASM-033 | Open (risk, 2026-09-07) | 2026-09-07 | Listing's external-source scraping (e.g. Notino) paused pending legal review — may need an official API instead |
+| ASM-032 | Decided (tentative, 2026-09-07) | 2026-09-07 | Listing category rollout starts with a small non-pharma set, not a large/complex one |
+| ASM-031 | Decided (2026-09-07) | 2026-09-07 | Listing category/structure recommendation confirmed out of agreed scope — future feature request, not a tracked gap |
+| ASM-030 | Open (2026-09-07) | 2026-09-07 | Řízení poptávky campaign recommendation/generation — no firm phase decision, stays Nice to Have/Backlog pending real scoping |
+| ASM-029 | Open (risk, 2026-09-07) | 2026-09-07 | Max Chatbot/Maxie run on an unofficial scraped Dr. Max API in production — risk before full public launch |
+| ASM-028 | Open (2026-09-07) | 2026-09-07 | MaxBuddy dosage-calc features stay blocked pending Dr. Max's medical-device certification decision |
+| ASM-027 | Open (2026-09-07) | 2026-09-07 | MaxBuddy full 600-pharmacy rollout blocked on new AKS access; ~1 month pessimistic estimate post-grant |
 | ASM-026 | Decided (2026-09-04) | 2026-09-04 | Marek's scope is Dr. Max exclusively, at least for the first month — not the broader cross-client AI platform |
 | ASM-025 | Open (tentative, 2026-09-04) | 2026-09-04 | AI platform frontend defaults to one standardized template across clients, customized only on explicit request |
 | ASM-024 | Decided (2026-09-04) | 2026-09-04 | Lexie redesign work stays deprioritized behind technical fixes; a rough visual is an acceptable low-cost placeholder |
@@ -29,7 +47,7 @@ owner: Marek Pillár
 | ASM-010 | Decided (2026-09-02) | 2026-09-02 | Reklamace email drafts are never sent automatically — always created for human review first |
 | ASM-009 | Decided (2026-09-02) | 2026-09-02 | Specs must include a business-signed hypothesis + acceptance-criteria section before build starts |
 | ASM-008 | Decided (2026-09-02) | 2026-09-02 | Business-facing roadmap sheet trimmed to Ideas/Active only; dev detail moves to a VBS breakdown in a separate system |
-| ASM-007 | Decided (2026-09-02) | 2026-09-02 | Reklamace/freight-invoicing dev ownership conflict — resolved: Brázdil owns reklamace + freight invoicing, Turner owns MaxBuddy |
+| ASM-007 | Decided (2026-09-08) | 2026-09-02 | Reklamace dev ownership — Filip Černý designated single dev owner (2026-09-08), after Brázdil/Turner/Černý/Starenko multi-attribution history |
 | ASM-006 | Open (2/4 resolved, 2026-09-02) | 2026-09-02 | BigHub roadmap sheet vs. transcripts — 4 ownership/spelling conflicts recorded; surname spelling and Lexie co-ownership resolved, invoicing/reklamace ownership still open |
 | ASM-005 | Decided (2026-09-02) | 2026-09-01 | Who's Who reference card cross-referenced against transcripts for 2026-09-01 status sync — verified by Marek |
 | ASM-004 | Decided (2026-09-01) | 2026-09-01 | MaxBuddy changes touching the shared data model require Dr. Max analytics team review before shipping |
@@ -38,6 +56,390 @@ owner: Marek Pillár
 | ASM-001 | Decided (2026-08-25) | 2026-09-01 | Dr. Max client-side coordination unified into one role (Jindřich Tůma) |
 
 ## Entries
+
+---
+
+### ASM-044
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-044 |
+| Created | 2026-09-08 |
+| Source | PM input, 2026-09-08 |
+| By | Marek Pillár |
+| Status | Decided (2026-09-08) |
+
+**Description**
+The 9-product roadmap board and its underlying Excel file are treated as client-facing deliverables, not internal working documents. All internal meeting-date references (e.g. "2026-09-07 portfolio review") and named individual attributions must be scrubbed from every note/comment before the roadmap is shown to Dr. Max.
+
+**Rationale**
+The roadmap is now finished and heading toward a client presentation; internal process references and specific team-member names aren't appropriate for that audience and don't add value to a client reading the board.
+
+**Impact**
+- **Content standard going forward**: Any new comment or block-reason added to the roadmap or Excel must follow this convention from creation — no more retroactive cleanup passes needed if this is respected upfront.
+
+---
+
+### ASM-043
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-043 |
+| Created | 2026-09-08 |
+| Source | 2026-09-08-ai-platform-technical-deepdive-jura-brazdil |
+| By | Marek Pillár |
+| Status | Open (2026-09-08) |
+
+**Description**
+The AI-platform work being done in front of Tomáš Dudaško should be explicitly framed internally as: "we're doing this now for business reasons with Dr. Max, but anything we validate or learn here also feeds back into BigHub's own platform" — not treated as a fully bespoke, isolated build for one client.
+
+**Rationale**
+Marek raised this to avoid the work looking like pure custom labor for Dr. Max with no benefit to BigHub's own platform investment, especially given the shared-platform vision (ASM-038) was only recently retired. Not yet resolved with the wider team.
+
+**Impact**
+- **Internal positioning**: Affects how this work gets described in BigHub-internal contexts (capacity planning, cost justification) — worth resolving before the work is too far along.
+
+---
+
+### ASM-042
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-042 |
+| Created | 2026-09-08 |
+| Source | 2026-09-08-ai-platform-technical-deepdive-jura-brazdil |
+| By | Jura Brázdil (STK-026) |
+| Status | Decided (2026-09-08) |
+
+**Description**
+Jura Brázdil confirmed he has some spare capacity for AI-platform work, and expects the effort to help rather than purely cost him — since he'll be self-migrating MaxBuddy and Max Chatbot into the platform anyway once the new AKS lands.
+
+**Rationale**
+Resolves the capacity/cost-impact risk flagged earlier the same day (2026-09-08-ai-platform-strategy-history-with-jan-sovka), where Jindřich worried platform work might require moving Jura from ~0.25 FTE to full FTE with a billed-hours impact to explain to Dudaško. Jura's own answer meaningfully de-risks this, though the exact allocation/FTE question wasn't formally re-quantified.
+
+**Impact**
+- **Delivery timeline**: Platform work can proceed without an immediate resourcing blocker, though "spare capacity" is not a hard commitment — worth revisiting if the 3-phase plan (ASM-039) slips.
+
+---
+
+### ASM-041
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-041 |
+| Created | 2026-09-08 |
+| Source | 2026-09-08-ai-platform-strategy-history-with-jan-sovka |
+| By | Marek Pillár |
+| Status | Decided (2026-09-08) |
+
+**Description**
+The AI platform is treated as a formal project with Tomáš Dudaško (STK-010) as owner/sponsor, run via a standard prioritization/Discovery session — rather than BigHub reactively answering his requirements Excel.
+
+**Rationale**
+Marek's proposal, agreed by Jindřich in both 2026-09-08 sessions — puts the engagement on the same footing as other Dr. Max product streams rather than an ad-hoc IT request.
+
+**Impact**
+- **Process**: A Discovery session with Dudaško should be scheduled once the mockup (ASM-039) is ready to show him.
+
+---
+
+### ASM-040
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-040 |
+| Created | 2026-09-08 |
+| Source | 2026-09-08-ai-platform-strategy-history-with-jan-sovka |
+| By | Jindřich Tůma (STK-003) / Marek Pillár |
+| Status | Decided (2026-09-08) |
+
+**Description**
+Rather than answering Tomáš Dudaško's large requirements Excel line-by-line, Jindřich and Marek will distill it into a small, realistic ticket set (Jindřich estimated ~3-5 tickets as a starting slice), validate feasibility/timing with Jura Brázdil, then bring a shaped proposal back to Dudaško.
+
+**Rationale**
+Both Jan Sovka and Marek independently assessed the Excel as ~70% governance/compliance-framed (written from an IT-leadership perspective) and not addressing which actual use cases should run on the platform — considered the critical missing piece for scoping a real platform.
+
+**Impact**
+- **Scope control**: Prevents BigHub from committing to a large, compliance-driven build without validated use-case need.
+
+---
+
+### ASM-039
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-039 |
+| Created | 2026-09-08 |
+| Source | 2026-09-08-ai-platform-strategy-history-with-jan-sovka, 2026-09-08-ai-platform-technical-deepdive-jura-brazdil |
+| By | Jindřich Tůma (STK-003) |
+| Status | Decided (2026-09-08) |
+
+**Description**
+Near-term AI-platform delivery is scoped as three phases: (1) UX rework into one consolidated landing page, (2) migrate existing Dr. Max BigHub projects onto the platform on both test and production, (3) build Tomáš Dudaško's backlog (from his requirements Excel) into an admin/reporting layer.
+
+**Rationale**
+Agreed as the pragmatic, achievable near-term path — favoring a simple first pass that can visibly impress Dudaško at a presentation, over an elaborate upfront build. Marek is building the phase-1 mockup in Claude Design, targeting ready-by-lunch 2026-09-09.
+
+**Impact**
+- **Delivery timeline**: Phase 1 (mockup) due 2026-09-09; phases 2-3 timing not yet estimated, pending Jura Brázdil's feasibility validation and the new AKS environment landing.
+
+---
+
+### ASM-038
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-038 |
+| Created | 2026-09-08 |
+| Source | 2026-09-08-ai-platform-strategy-history-with-jan-sovka, 2026-09-08-ai-platform-technical-deepdive-jura-brazdil |
+| By | Jan Sovka (STK-002) / Jindřich Tůma (STK-003) |
+| Status | Decided (2026-09-08) |
+
+**Description**
+BigHub's platform strategy going forward is fully custom-per-client. The earlier vision of one shared, white-labeled AI platform sold as a common B2B product across clients is retired — killed internally ~4 months ago (~2026-05).
+
+**Rationale**
+The shared-product vision never got internal traction or resourcing; an internal management evaluation ~2026-05 concluded to build custom per client instead, optionally inspired by shared code but with no shared roadmap.
+
+**Impact**
+- **AI-platform scoping**: Confirms the "AI platforma" initiative (see `project-knowledge`) is a Dr. Max-specific custom build, not a multi-client product — directly informs ASM-039's phased plan and ASM-041's ownership framing.
+
+---
+
+### ASM-037
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-037 |
+| Created | 2026-09-08 |
+| Source | PM input, 2026-09-08 |
+| By | Filip Černý (STK-006) |
+| Status | Open (2026-09-08) |
+
+**Description**
+Reklamace has no DNS ingress enabled yet — currently testing via port forwarding only. Goal is to get this finished as soon as possible. As a result, neither Reklamace nor Fakturace doprav has a clickable test/demo URL right now.
+
+**Rationale**
+Straightforward infra gap on Reklamace specifically; Filip will notify Marek once ingress is live and a URL exists.
+
+**Impact**
+- **Roadmap communication**: Both logistics app entries on `product-roadmap-portfolio-full.xlsx`/the roadmap HTML stay marked "no URL yet" until Filip confirms readiness — do not fabricate a placeholder link.
+
+---
+
+### ASM-036
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-036 |
+| Created | 2026-09-08 |
+| Source | PM input, 2026-09-08 |
+| By | Filip Černý (STK-006) |
+| Status | Open (2026-09-08) |
+
+**Description**
+Fakturace doprav is not yet deployed to any environment. Targeting end of this week or start of next week (2026-09-08 week / 2026-09-15 week).
+
+**Rationale**
+Matches the broader picture from the 2026-09-07 portfolio review — Fakturace doprav was already flagged as early-stage ("chybí toho jako milion").
+
+**Impact**
+- **Timeline**: No demo or test URL possible until deployment lands — informs the "Coordinate with Filip on a live demo" action item already on today's daily.
+
+---
+
+### ASM-035
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-035 |
+| Created | 2026-09-07 |
+| Source | 2026-09-07-ai-portfolio-roadmap-scope-review |
+| By | Filip Černý (STK-006) |
+| Status | Open (2026-09-07) |
+
+**Description**
+TEO's OCR-of-technical-department-protocols problem (mixed printed/handwritten/checkbox documents) closely resembles Fakturace doprav's document-extraction problem. Filip Černý and Jura Brázdil agreed to hold a short knowledge-sharing session comparing what's worked and what hasn't.
+
+**Rationale**
+Surfaced live in the meeting when Filip heard Jura describe TEO's extraction challenges and recognized the same pattern from his own Fakturace doprav work.
+
+**Impact**
+- **Delivery efficiency**: Comparing notes could shortcut both projects' handwritten-text extraction approaches rather than solving the same problem twice independently.
+
+---
+
+### ASM-034
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-034 |
+| Created | 2026-09-07 |
+| Source | 2026-09-07-ai-portfolio-roadmap-scope-review |
+| By | Jura Brázdil (STK-026) |
+| Status | Decided (2026-09-07) |
+
+**Description**
+The TEO OCR project is deliberately piloted on just 2 suppliers/document formats first, for more uniform inputs, before considering expansion to more.
+
+**Rationale**
+Still a local feasibility prototype on Jura's machine — narrowing the input variety first makes it tractable to get a working extraction pipeline before tackling the full diversity of documents Dr. Max's technical department handles.
+
+**Impact**
+- **Scope**: Full-supplier coverage is explicitly out of the current pilot; expansion timing is undetermined and depends on pilot results.
+
+---
+
+### ASM-033
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-033 |
+| Created | 2026-09-07 |
+| Source | 2026-09-07-ai-portfolio-roadmap-scope-review |
+| By | Filip Černý (STK-006) |
+| Status | Open (risk, 2026-09-07) |
+
+**Description**
+Listing's external-source data enrichment (scraping sites like Notino to fill in missing product data) is built and mostly working, but paused before broader test rollout over legal uncertainty around scraping third-party sites.
+
+**Rationale**
+Filip flagged real doubt about whether scraping sites like Notino for enrichment is legally sound; the team doesn't want to roll this out broadly until that's resolved, possibly requiring an official API or a middleman service instead.
+
+**Impact**
+- **Legal/compliance**: Needs a legal read before wider rollout — could require re-architecting the enrichment source entirely.
+- **Delivery timeline**: This portion of Listing stays gated regardless of technical readiness.
+
+---
+
+### ASM-032
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-032 |
+| Created | 2026-09-07 |
+| Source | 2026-09-07-ai-portfolio-roadmap-scope-review |
+| By | Petr Neuman (STK-023, relayed via Filip Černý) |
+| Status | Decided (tentative, 2026-09-07) |
+
+**Description**
+Listing's multi-category rollout will start with a deliberately small, non-pharma category set (foods, supplements, sporting goods) rather than jumping straight to a large or complex category set.
+
+**Rationale**
+Petr Neuman's suggestion: early categories involving medication carry far more parameter complexity, which could skew or destabilize early AI output. Starting with simpler product types builds confidence in the approach first.
+
+**Impact**
+- **Scope/sequencing**: Sets the de facto order for category rollout once multi-category support is built — non-pharma first.
+- **Risk**: Reduces risk of early AI-quality problems being blamed on the approach rather than category complexity.
+
+---
+
+### ASM-031
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-031 |
+| Created | 2026-09-07 |
+| Source | 2026-09-07-ai-portfolio-roadmap-scope-review |
+| By | Filip Černý (STK-006) |
+| Status | Decided (2026-09-07) |
+
+**Description**
+Listing's category/structure recommendation feature is confirmed out of agreed scope — it depends on Dr. Max's own messy, unspecific category system, which isn't BigHub's to fix. Any future ask here is treated as a feature/change request, not a tracked gap.
+
+**Rationale**
+Filip assessed this was likely never actually agreed as in-scope in the first place; building around Dr. Max's undefined category system isn't a reasonable ask of BigHub.
+
+**Impact**
+- **Scope clarity**: Removes an item that was ambiguously tracked as "missing" from the roadmap — it isn't missing, it was never in scope.
+
+---
+
+### ASM-030
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-030 |
+| Created | 2026-09-07 |
+| Source | 2026-09-07-ai-portfolio-roadmap-scope-review |
+| By | Juraj Kmec (STK-009) |
+| Status | Open (2026-09-07) |
+
+**Description**
+Řízení poptávky's campaign recommendation model and automated campaign generation were discussed as possibly Full Version, but no firm phase call was made. Both stay Nice to Have/Backlog until a dedicated scoping conversation happens.
+
+**Rationale**
+Juraj was explicit these are genuinely hard analytics problems in their own right — "automated campaign generation" as the client described it (fully autonomous campaign creation) isn't realistic as scoped; more likely an optimizer/recommender than true automation.
+
+**Impact**
+- **Estimation**: Can't be estimated meaningfully until scoped properly — premature to promise a phase or timeline.
+- **Expectations**: Client's mental model ("AI just builds the whole campaign") likely needs recalibrating once scoping happens.
+
+---
+
+### ASM-029
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-029 |
+| Created | 2026-09-07 |
+| Source | 2026-09-07-ai-portfolio-roadmap-scope-review |
+| By | Jura Brázdil (STK-026) |
+| Status | Open (risk, 2026-09-07) |
+
+**Description**
+Max Chatbot and Maxie's production integration currently runs on Dr. Max's public website API, scraped rather than officially provided. Jura recommends switching to an official integration before a full public launch.
+
+**Rationale**
+Jura: "já jsem prostě tak trochu na černo napíchnutý na API, kde vlastně nikdo neví o tom, že to používáme" [translated from Czech: "I'm basically unofficially tapped into an API that nobody even knows we're using"] — no guarantee it won't silently drift or break, and nobody at Dr. Max is aware it's relied upon.
+
+**Impact**
+- **Risk**: Production dependency on an integration Dr. Max doesn't know exists and could change without notice.
+- **Delivery**: Should be resolved before scaling beyond the current pilot/test footprint — tracked as a new backlog item ("Integrace priamo na 'valid' dáta") on the Max Chatbot roadmap sheet.
+
+---
+
+### ASM-028
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-028 |
+| Created | 2026-09-07 |
+| Source | 2026-09-07-ai-portfolio-roadmap-scope-review |
+| By | Jura Brázdil (STK-026) |
+| Status | Open (2026-09-07) |
+
+**Description**
+MaxBuddy's dosage-calculation features (verification, traffic-light display, textual justification, etc.) stay formally blocked on the roadmap pending Dr. Max's own decision on whether to pursue medical-device certification.
+
+**Rationale**
+Confirms and extends the existing regulatory finding in `project-knowledge.md` (MaxBuddy entry) — Jura additionally flagged that if/when Dr. Max does pursue certification, BigHub will likely also need to prepare the codebase for an audit (logging, auditability), not just re-enable the features.
+
+**Impact**
+- **Scope**: These rows stay Full Version/Blocked on the roadmap indefinitely until Dr. Max moves.
+- **Future work**: Certification, if pursued, would trigger a codebase-audit-readiness workstream, not just a feature re-enable.
+
+---
+
+### ASM-027
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-027 |
+| Created | 2026-09-07 |
+| Source | 2026-09-07-ai-portfolio-roadmap-scope-review |
+| By | Jura Brázdil (STK-026) |
+| Status | Open (2026-09-07) |
+
+**Description**
+MaxBuddy's full rollout to all ~600 Dr. Max pharmacies is blocked on the new AKS environment. Jura's pessimistic estimate is ~1 month of work after Vláďa Tvarůžek (STK-016) grants access, likely faster.
+
+**Rationale**
+Canary rollout plan (20 pilot pharmacies first, already live and matching confirmed MVP scope) is ready to scale as soon as infra access unblocks; the remaining work is environment setup, not feature development.
+
+**Impact**
+- **Timeline**: Full-rollout timeline is entirely gated on AKS access, outside BigHub's control.
+- **Planning**: Safe to plan the ~1-month rollout work starting whenever AKS access lands, not before.
 
 ---
 
@@ -449,7 +851,7 @@ Business only needs to know what phase a project is in, not internal delivery/ti
 | Created | 2026-09-02 |
 | Source | 2026-09-02-order-prediction-dashboard-walkthrough, 2026-09-03-viapharma-logistics-status-reklamace-demo |
 | By | Juraj Kmec (STK-009); amended by Marek Pillár (STK-001) |
-| Status | Decided (2026-09-02); amended 2026-09-03 |
+| Status | Decided (2026-09-08); amended 2026-09-03, 2026-09-08 |
 
 **Description**
 Two different sources named two different people as owning reklamace (complaints): Juraj Kmec (2026-09-02) believed **Jura Brázdil** (STK-026) owns both reklamace and freight invoicing under one shared "logistics" umbrella. Filip Černý (2026-09-01, listing intro) had named **"Kuba Turner"** (plus "Flurimo") as the one who mostly built reklamace.
@@ -459,8 +861,11 @@ Resolved by Marek (2026-09-02): **Turner works on MaxBuddy**, not reklamace — 
 
 **Amendment (2026-09-03)**: The 2026-09-03 ViaPharma logistics status call showed Jakub Turner (STK-007) deeply engaged in reklamace-app backend work — OAuth/Entra ID auth design, hardcoded test-login issuance, Axapta write integration. PM confirmed both attributions are simultaneously true: Turner is not limited to MaxBuddy after all — he's also active on the reklamace backend, alongside Brázdil's ownership. The original "MaxBuddy-only" resolution was incomplete rather than wrong.
 
+**Amendment (2026-09-08)**: In the 2026-09-07 portfolio review, Filip Černý (STK-006) described Reklamace dev work as currently split three ways — himself, Jakub Turner (STK-007), and Lukáš Starenko (STK-028) — and ran point answering for the whole stream in that meeting. On 2026-09-08, Marek designated **Filip Černý as the single dev owner** for Reklamace going forward, resolving the multi-attribution ambiguity this assumption has tracked since 2026-09-02.
+
 **Impact**
-- **Data quality**: STK-026 (Jura Brázdil) updated to confirmed. STK-007 confirmed as the same person as "Kuba Turner" — surname updated to Turner, role updated to include MaxBuddy and (as of 2026-09-03) reklamace-app backend/auth work. See also LL-005 (single-source ownership attributions on this account are recurringly incomplete, not just wrong).
+- **Data quality**: STK-026 (Jura Brázdil) updated to confirmed (2026-09-02). STK-007 confirmed as the same person as "Kuba Turner" — surname updated to Turner, role updated to include MaxBuddy and (as of 2026-09-03) reklamace-app backend/auth work. STK-006 (Filip Černý) now marked as the designated Reklamace dev owner (2026-09-08). See also LL-005 (single-source ownership attributions on this account are recurringly incomplete, not just wrong).
+- **Accountability**: Status updates and blockers on Reklamace should now route through Filip Černý as the single point of contact, even though Turner and Starenko remain actively contributing pieces of the build.
 
 ---
 
