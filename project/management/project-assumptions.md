@@ -10,6 +10,7 @@ owner: Marek Pillár
 
 | ID | Status | Created | Description (short) |
 |----|--------|---------|---------------------|
+| ASM-045 | Decided (2026-09-08) | 2026-09-08 | AI platform UX scoped lean for the first prototype — 4 screens only (catalog, usage reports, kill switch, simulation), access via flexible admin-defined user groups, kill switch on two axes (per-product + per-model) |
 | ASM-044 | Decided (2026-09-08) | 2026-09-08 | Roadmap board and Excel are client-facing deliverables — internal meeting dates and named attributions must be scrubbed from all notes/comments |
 | ASM-043 | Open (2026-09-08) | 2026-09-08 | AI-platform project should be framed internally as feeding validated learnings back into BigHub's own platform, not a purely bespoke Dr. Max build |
 | ASM-042 | Decided (2026-09-08) | 2026-09-08 | Jura Brázdil has spare capacity for AI-platform work and expects it to help rather than purely cost him, since he's migrating his own projects into it |
@@ -56,6 +57,28 @@ owner: Marek Pillár
 | ASM-001 | Decided (2026-08-25) | 2026-09-01 | Dr. Max client-side coordination unified into one role (Jindřich Tůma) |
 
 ## Entries
+
+---
+
+### ASM-045
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-045 |
+| Created | 2026-09-08 |
+| Source | PM input, 2026-09-08 (scoping Q&A ahead of the Claude Design brief) |
+| By | Marek Pillár |
+| Status | Decided (2026-09-08) |
+
+**Description**
+The first Dr. Max AI Platform prototype is scoped to exactly 4 screens: Home/app catalog, Usage Reports (cost + usage + adoption), Kill Switch, and Simulation mode. The other 44 items in Dudaško's 48-item governance/compliance capability register (identity management, audit trails, policy-as-code, HITL approval queues, agent registry, etc.) stay backend/architecture — not designed as UI this pass. Access is governed by flexible, admin-defined user groups (not a fixed department list) with individual-level overrides on top, which drove adding a new "Skupiny uživatelů" admin screen. The Kill Switch has two independent control axes: per product/agent, and per underlying LLM model — the latter's exact mechanics are provisional pending a technical conversation with Jura Brázdil.
+
+**Rationale**
+Matches the near-term pragmatism Jindřich Tůma set at the 2026-09-08 planning meeting ("keep it simple, don't overbuild") and the stated goal of impressing Dudaško with something concrete rather than exhaustively covering his governance checklist. Full brief: `product/solution-space/ai-platform-claude-design-brief.md`.
+
+**Impact**
+- **Delivery timeline**: Keeps the prototype buildable by Marek in Claude Design on a next-day timeline rather than requiring a much larger design effort.
+- **Follow-up needed**: Per-model kill switch mechanics need validation with Jura Brázdil before being presented as final; real user-group definitions need a conversation with Dr. Max, since none exist yet.
 
 ---
 

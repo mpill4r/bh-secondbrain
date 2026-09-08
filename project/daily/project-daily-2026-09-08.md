@@ -13,7 +13,9 @@ project_status: Green
 
 ## Current Priority
 
-The 9-product roadmap (board + Excel) is now finished and fully estimated — next is presenting it to the client and routing it to Honza Sovka for sign-off. In parallel, the AI platform initiative has a concrete near-term deliverable: Marek's UX mockup in Claude Design, due lunch 2026-09-09, ahead of shaping a ticket proposal for Tomáš Dudaško. Still outstanding: the overdue `project-weekly` summary, and — with Marek's availability uncertain from tomorrow — anything time-sensitive should be flagged to Jindřich early.
+**Tomorrow's first priority**: build the Dr. Max AI Platform prototype in Claude Design, using the finished brief (`product/solution-space/ai-platform-claude-design-brief.md`) — due lunch 2026-09-09. **Second priority**: get outstanding roadmap estimates from developers — 6 of 9 products still have zero effort estimates (MaxBuddy/Jura Brázdil, Maxie/Honza Zelený, Lexie/Viliam Gago, Reklamace+Fakturace doprav+Listing/Filip Černý).
+
+Behind those: presenting the finished roadmap to the client and routing it to Honza Sovka for sign-off; the overdue `project-weekly` summary. With Marek's availability uncertain from tomorrow, anything time-sensitive should be flagged to Jindřich early.
 
 ## Action Items
 
@@ -98,7 +100,7 @@ The 9-product roadmap (board + Excel) is now finished and fully estimated — ne
 - [ ] `follow-up` **Jindřich Tůma**: Bring the shaped AI-platform ticket proposal back to Tomáš Dudaško, once Marek's mockup is ready — from 2026-09-08-ai-platform-strategy-history-with-jan-sovka
 - [ ] `follow-up` **Jindřich Tůma**: Explain the cost/billed-hours impact of Jura's AI-platform work to Tomáš Dudaško — capacity question itself resolved (ASM-042), communication to client still pending — from 2026-09-08-ai-platform-strategy-history-with-jan-sovka
 - [ ] `follow-up` **Jindřich Tůma / Marek Pillár**: Sync with Ján Kabát before further AI-platform conversations with Tomáš Dudaško, to avoid conflicting messaging — from 2026-09-08-ai-platform-strategy-history-with-jan-sovka
-- [ ] `task` **Marek Pillár**: Build the AI-platform UX mockup in Claude Design, incorporating Jura's page-layout concept — due lunch 2026-09-09 — from 2026-09-08-ai-platform-technical-deepdive-jura-brazdil
+- [ ] `task` **Marek Pillár**: Build the AI-platform UX mockup in Claude Design — brief is done (`product/solution-space/ai-platform-claude-design-brief.md`), covering Home/catalog, Usage Reports, Kill Switch (per-product + per-model), and Simulation/user-groups mode; actual Claude Design build is tomorrow's first priority — due lunch 2026-09-09 — from 2026-09-08-ai-platform-technical-deepdive-jura-brazdil
 - [ ] `task` **Jura Brázdil**: Once the new AKS is available, migrate MaxBuddy and Max Chatbot into the AI platform and unify its UX — from 2026-09-08-ai-platform-technical-deepdive-jura-brazdil
 - [ ] `task` **Jura Brázdil**: Establish a changelog convention for AI-platform pull requests, centralized in one place — from 2026-09-08-ai-platform-technical-deepdive-jura-brazdil
 - [ ] `follow-up` **Marek Pillár**: Loop in Jan Sovka and Jura Brázdil on how much spend/cost data to expose to Dudaško before including it in the mockup — from 2026-09-08-ai-platform-technical-deepdive-jura-brazdil
@@ -116,6 +118,10 @@ Two back-to-back internal meetings resolved what "AI platforma" actually is: it'
 
 Closed out the roadmap: collected effort estimates from Juraj Kmec for Řízení poptávky (via a pink-highlighted preview draft reviewed and confirmed before merging — caught and fixed a silent key-mismatch bug in the process, where two Nice-to-Have items' comments were never rendering because their dict keys used the pre-translation English label instead of the Czech one actually shown), added per-pillar MD-effort totals to the roadmap headers, reframed "Vánoce" as an illustrative example of a broader anomaly/event category rather than the definitive case, and stripped all remaining internal meeting-date and name references from both the roadmap and the Excel file now that it's being treated as client-facing. Fully routed all estimates and notes into the Excel file's comments and its Estimate - Optimistic/Pessimistic columns — hit one live-file scare where a write appeared to succeed but was silently reverted (likely a OneDrive sync conflict, possibly the file being open elsewhere); re-ran it and verified persistence after a delay this time, all clean.
 
+Wrote the full Claude Design brief for the Dr. Max AI Platform prototype (`product/solution-space/ai-platform-claude-design-brief.md`) — ran a scoping Q&A first rather than guessing: capability depth deliberately kept lean (4 things only — catalog, usage reports, kill switch, simulation — out of the 48-item governance register Dudaško's capabilities Excel contains, everything else stays backend for now); access model is flexible admin-defined user groups (not fixed departments) with individual overrides, which drove adding a new Skupiny uživatelů admin screen so Simulation mode has something concrete to preview; kill switch is two independent axes (per-product and per-underlying-model), with the per-model mechanics explicitly flagged as provisional pending a conversation with Jura Brázdil; usage reports cover cost + usage + adoption per product. Brand reference is the provided screenshot (drmax.cz itself blocked automated fetching — flagged for a manual sanity-check before this goes in front of Dudaško). This is tomorrow's first priority: build the actual prototype in Claude Design from this brief.
+
+Day fully wrapped for 2026-09-08 — no further work planned today.
+
 ## Audit Log
 
 [MANUAL] project-assumptions — amended ASM-007 (Reklamace dev ownership decided: Filip Černý) (2026-09-08)
@@ -126,5 +132,7 @@ Closed out the roadmap: collected effort estimates from Juraj Kmec for Řízení
 [AUTO] project-daily — 10 new action items + 1 item marked done same-day, from 2026-09-08-ai-platform-strategy-history-with-jan-sovka, 2026-09-08-ai-platform-technical-deepdive-jura-brazdil (2026-09-08)
 [MANUAL] product-roadmap-portfolio-full.xlsx — routed all Juraj Kmec/Jura Brázdil estimates and notes into cell comments and the Estimate - Optimistic/Pessimistic columns (26 comments, 21 rows with numeric estimates); cleaned remaining internal meeting-date/name references workbook-wide for client-facing use (2026-09-08)
 [MANUAL] roadmap board (v3, artifact) — added per-pillar MD-effort totals, fixed a silent comment-rendering bug (English-vs-Czech dict key mismatch), reframed "Vánoce" as an anomaly-category example, stripped internal meeting references (2026-09-08)
+[MANUAL] product/solution-space/ai-platform-claude-design-brief.md — created: full Claude Design brief for the Dr. Max AI Platform prototype (2026-09-08)
+[MANUAL] project-assumptions — added ASM-045 (AI platform UX scoping decisions: lean 4-screen scope, flexible user groups, dual-axis kill switch) (2026-09-08)
 [MANUAL] project-assumptions — added ASM-044 (roadmap/Excel are client-facing deliverables — internal notes must be scrubbed) (2026-09-08)
 [MANUAL] project-knowledge — added "Effort estimate convention (MD)" to Project Conventions (2026-09-08)
