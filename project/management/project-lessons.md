@@ -1,12 +1,30 @@
 ---
-last_updated: 2026-09-08
-last_updated_by: auto — project-lessons (triggered by project-daily close, 2026-09-08)
+last_updated: 2026-09-09
+last_updated_by: auto — project-lessons (Excel Upload Blocked incident, 2026-09-09)
 owner: Marek Pillár
 ---
 
 # Lessons Learned
 
 ---
+
+### LL-024
+
+| Field | Value |
+|-------|-------|
+| ID | LL-024 |
+| Created | 2026-09-09 |
+| Category | tooling-collaboration |
+| Source | project-daily-2026-09-09 |
+
+**Lesson**
+Never script-write to a file the user has open live in Excel/Office with AutoSave on. It's not just a race condition (see LL-023) — Excel's cloud co-authoring session actively breaks: it detects the file changed outside its own sync protocol and cannot reconcile that with its in-memory change history, so it locks all further saves ("Upload Blocked... can't save any new changes"). The fix isn't a longer delay before re-checking — it's confirming the file is closed before writing at all.
+
+**Context**
+While routing Filip Černý's estimates into the live roadmap Excel, Marek had the file open with AutoSave and was actively editing (mid-keystroke in a cell) when the script overwrote the file on disk. Excel Online surfaced a hard "Upload Blocked" error and would not save further changes; Marek had to close the file and discard his in-progress edit before a clean re-run of the same script succeeded. This explains an earlier silent-revert incident (LL-023) too — likely the same root cause, just resolved by Excel's autosave overwriting the script's change instead of blocking outright.
+
+**Cross-reference**
+LL-023, project-daily-2026-09-09
 
 ### LL-023
 
