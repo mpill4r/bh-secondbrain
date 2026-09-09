@@ -1,6 +1,6 @@
 ---
-last_updated: 2026-09-08
-last_updated_by: manual — conversational (Claude Design brief for Dr. Max AI Platform)
+last_updated: 2026-09-09
+last_updated_by: manual — conversational (added §12: questions for Claude Design to check with PM during build)
 owner: Marek Pillár
 ---
 
@@ -22,6 +22,8 @@ Dr. Max (client) already runs 9 live/in-development AI products built by BigHub,
 **The product is named: Dr. Max AI Platform.**
 
 A visual reference (screenshot, provided separately) already exists showing the intended home-screen layout, styled in Dr. Max's brand. Treat that screenshot as the primary visual anchor — match its layout, spacing, component style, and color usage closely. Where this brief adds detail beyond the screenshot, follow the brief; where the screenshot is authoritative on visual style, follow the screenshot.
+
+**Before you start, and periodically during the build: see §12 for a list of specific open questions to check with Marek rather than silently guessing at.** This brief was written with context (internal meetings, the client's capability register, roadmap history) that doesn't automatically travel with it — where it's silent or only gives an illustrative example, that's usually §12's territory, not an invitation to invent an answer.
 
 ---
 
@@ -197,3 +199,35 @@ Flag these visibly in the prototype where relevant (e.g. a small note on the Kil
 ## 11. Success criteria for this prototype
 
 Per the PM's stated goal for this deliverable: this needs to make Dudaško **want** what he sees — walk into the eventual presentation and say "yes, this is what I want" — not just technically satisfy his governance checklist. Prioritize a genuinely good, credible Home screen experience over broad governance coverage. Simple and polished beats broad and rough.
+
+---
+
+## 12. Questions to check with Marek during the build
+
+This brief was written with full context from BigHub's internal meetings, the client's capability register, and the existing product roadmap — context that doesn't automatically carry over into a fresh Claude Design session. **Where the brief itself is silent or only gives an illustrative example, don't silently invent an answer and don't wait until the end to surface it — check in with Marek at the relevant point in the build.** Each item below includes what to do if he's not immediately available, so a check-in never has to fully block progress.
+
+**Brand & visual**
+1. Do you have exact Dr. Max brand assets (hex codes, font names, logo files, a style guide) beyond the reference screenshot? *Default if not: proceed from the screenshot alone, and flag every color/font choice not directly visible in it as inferred.*
+2. The screenshot's product icon colors don't map cleanly to a single system — some are per-category (both Logistika cards use different colors, both E-commerce cards share the same red/pink), others read as just per-product for visual distinctness. Which convention should the remaining products follow — a strict category-color system, or continue picking distinct colors per product like the screenshot does? *Default: match the screenshot's existing choices exactly where a product is already shown there, and pick visually distinct (not category-locked) colors for the rest.*
+
+**Product data & content**
+3. Should "Favorites" be a real per-user feature (manual pin/unpin) or just a hardcoded illustrative row for the prototype? *Default: hardcoded for now, matching the screenshot's 3 examples (Predikce objednávek, Max Buddy, Max chatbot) — no working pin/unpin interaction needed.*
+4. Is the product list in §5 final for this prototype, or are there other products/agents Marek wants shown that aren't in the current 9-product roadmap (e.g. anything from the AI platform's own build, once it exists)? *Default: exactly the 9 listed, nothing added.*
+
+**Access model**
+5. How many example user groups should the Skupiny uživatelů screen show, and what should they be named/scoped? The screenshot's filter chips (Obecné, Logistika, E-commerce, CC, HR, IT, OnlineMKT, Další) are a plausible illustrative set, but not confirmed as real. *Default: use those chip names as the example groups, each granting the matching category of apps.*
+6. Is the 3-tier permission example in §8 (use apps / see usage / full admin) the right shape, or does Marek want something simpler (e.g. just "user" vs "admin") for this pass? *Default: keep it simple — 2 tiers (user, admin) rather than 3, since nothing in the confirmed scope actually requires a middle tier yet.*
+7. Does Simulation mode need to support previewing as an individual named user, or is previewing by group sufficient for this prototype? *Default: groups only — no individual-user simulation this pass.*
+
+**Kill switch**
+8. What's the real, current list of LLM models in use (for the "per-model" kill switch view)? This is explicitly flagged in §7/§10 as needing Jura Brázdil's input — don't ship a plausible-looking but wrong model list without checking. *Default: use clearly-labeled placeholder names (e.g. "Model A", "Model B") rather than guessing at real model names, until confirmed.*
+9. Is the confirmation-modal copy in §7 (example: "Opravdu chcete pozastavit Max Chatbot?...") good to use as-is, or does Marek want to write/approve the actual wording before it's baked into a client-facing prototype? *Default: use the example copy, mark it clearly as draft copy pending review.*
+
+**Usage reports**
+10. Are the specific placeholder numbers used in the Usage Reports screen okay to leave as invented-but-illustrative, or does Marek want to review them before the prototype is shown to anyone at Dr. Max (given they could be mistaken for real figures)? *Default: keep numbers clearly rounded/approximate-looking (e.g. "~2 400" not "2 417") so they read as illustrative rather than real data.*
+
+**Interaction scope**
+11. Should "Otevřít" on a product card be a dead/inert click, or should it visibly do *something* (even just a toast or a modal saying "V reálném prostředí by toto otevřelo [produkt]") so the interaction doesn't feel broken in a click-through demo? *Default: a lightweight placeholder interaction (toast/modal) rather than a fully dead link.*
+12. Does this prototype need to work on tablet/mobile breakpoints, or is desktop-only acceptable for a first internal-facing demo to Dudaško? *Default: desktop-only.*
+
+If any of these come up mid-build and Marek isn't around to answer immediately, proceed with the stated default, mark the choice clearly (e.g. a code comment or a visible "draft" indicator in context), and surface the full list of what was defaulted at the end of the session rather than letting it silently disappear.
