@@ -274,9 +274,10 @@ Listing's core blocker (reconfirmed 2026-09-02) is not code but Dr. Max's undefi
 
 | Field | Value |
 |-------|-------|
-| Definition | Effort estimates are always abbreviated as "MD" (man-days), never spelled out, in any language. Hour-based estimates convert to MD as: 1-3h → 0.5 MD, 4h+ → 1 MD. In the roadmap Excel, the "Estimate - Optimistic" column takes the lower bound of any range and "Estimate - Pessimistic" takes the upper bound; flat single-point estimates go in both columns unchanged. Waiting/external-dependency periods (e.g. a certification process, an infra-access grant) are not effort estimates and are excluded from MD sums — only actual work effort counts. |
-| Source | PM input, 2026-09-08 |
+| Definition | Effort estimates are always abbreviated as "MD" (man-days), never spelled out, in any language. Hour-based estimates convert to MD as: 1-3h → 0.5 MD, 4h+ → 1 MD. In the roadmap Excel, the "Estimate - Optimistic" column takes the lower bound of any range and "Estimate - Pessimistic" takes the upper bound; flat single-point estimates go in both columns unchanged. Waiting/external-dependency periods (e.g. a certification process, an infra-access grant) are not effort estimates and are excluded from MD sums — only actual work effort counts. **When a developer gives a single MD figure with no explicit range** (as Filip Černý did for Reklamace/Fakturace doprav/Listing, 2026-09-09), treat that figure as the pessimistic value and compute optimistic as 50% of it — this is a per-instance PM instruction, not a universal default, so confirm it applies before reusing it for a different developer's estimates. |
+| Source | PM input, 2026-09-08; extended 2026-09-09 |
 | Added | 2026-09-08 |
+| Last updated | 2026-09-09 |
 | Status | Active |
 
 ### VBS (work-breakdown-structure) framework
