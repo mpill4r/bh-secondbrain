@@ -1,6 +1,6 @@
 ---
 last_updated: 2026-09-11
-last_updated_by: auto — project-meeting routing
+last_updated_by: manual — conversational
 owner: Marek Pillár
 ---
 
@@ -258,7 +258,7 @@ owner: Marek Pillár
 | Field | Value |
 |-------|-------|
 | ID | STK-013 |
-| Name | Tereza Foltová |
+| Name | Tereza Foltýnová |
 | Aliases | — |
 | Organization | ViaPharma CZE (vendor) |
 | Role | Handles logistics/claims data consolidation |
@@ -270,7 +270,7 @@ owner: Marek Pillár
 | Expectations | -tbd- |
 | Last interaction | 2026-09-03 |
 | Status | Active |
-| Notes | Supplier Excel for the reklamace rollout still expected Monday, per her earlier commitment (reconfirmed 2026-09-02). On 2026-09-03: consolidating ~120 suppliers into a single structure, working three-deep on it (including Jana, despite being on vacation); original 2026-09-07 deadline at risk given the manual-verification load — committed to a status update Monday 2026-09-08 (~80% clean estimate). Also coordinating with Dr. Max accounting to add an Axapta reference number and customer-vs-vendor distinction to the same data; staying in Excel for now rather than moving to a database. Confirmed 2026-09-09 as the primary requester behind the 2026-09-10 Logistika roadmap walkthrough — reklamace scope is expected to largely match what she asked for. On 2026-09-10, still consolidating the supplier Excel with Jana Egrmaierová (STK-044, ViaPharma) — data across 3-4 source tables doesn't fully reconcile yet; targeting a demo to Filip Černý (STK-006) next Tuesday, wants a short session with him specifically rather than a broader walkthrough. Source: 2026-09-01-dr-max-x-bighub-project-status-sync, 2026-09-02-logistics-listing-team-sync, 2026-09-03-viapharma-logistics-status-reklamace-demo, 2026-09-09-logistics-cc-roadmap-presentation-prep, 2026-09-10-viapharma-reklamace-uat-fakturace-doprav-demo |
+| Notes | Name corrected 2026-09-11 from "Tereza Foltová" to "Tereza Foltýnová" per PM (surfaced via a Jindřich Tůma message referencing an upcoming Monday meeting with her on AI initiatives). Supplier Excel for the reklamace rollout still expected Monday, per her earlier commitment (reconfirmed 2026-09-02). On 2026-09-03: consolidating ~120 suppliers into a single structure, working three-deep on it (including Jana, despite being on vacation); original 2026-09-07 deadline at risk given the manual-verification load — committed to a status update Monday 2026-09-08 (~80% clean estimate). Also coordinating with Dr. Max accounting to add an Axapta reference number and customer-vs-vendor distinction to the same data; staying in Excel for now rather than moving to a database. Confirmed 2026-09-09 as the primary requester behind the 2026-09-10 Logistika roadmap walkthrough — reklamace scope is expected to largely match what she asked for. On 2026-09-10, still consolidating the supplier Excel with Jana Egrmaierová (STK-044, ViaPharma) — data across 3-4 source tables doesn't fully reconcile yet; targeting a demo to Filip Černý (STK-006) next Tuesday, wants a short session with him specifically rather than a broader walkthrough. Source: 2026-09-01-dr-max-x-bighub-project-status-sync, 2026-09-02-logistics-listing-team-sync, 2026-09-03-viapharma-logistics-status-reklamace-demo, 2026-09-09-logistics-cc-roadmap-presentation-prep, 2026-09-10-viapharma-reklamace-uat-fakturace-doprav-demo |
 
 ### STK-014
 
@@ -448,7 +448,7 @@ owner: Marek Pillár
 | Field | Value |
 |-------|-------|
 | ID | STK-024 |
-| Name | Rudolf Zurek |
+| Name | Rudolf Žůrek |
 | Aliases | — |
 | Organization | Dr. Max |
 | Role | Owner/Customer — "Receiving compliants in stock" and "Invoicing solution" (per BigHub roadmap sheet) |
@@ -460,7 +460,7 @@ owner: Marek Pillár
 | Expectations | -tbd- |
 | Last interaction | -tbd- |
 | Status | Active |
-| Notes | New name, first seen on the 2026-09-02 roadmap sheet. Unresolved overlap with existing records: "Invoicing solution" may be the same initiative as Fakturace doprav (freight invoicing), currently attributed to Jan Žižka (STK-015, scope owner) and Petr Spilka (STK-014, reviewer); "Receiving compliants in stock" may be the same initiative as Reklamace (claims), currently attributed to Marie Hulešová (STK-020). Recorded both per PM instruction — not yet reconciled. See ASM-006. Source: roadmap sheet 2026-09-02 |
+| Notes | Name corrected 2026-09-11 from "Rudolf Zurek" to "Rudolf Žůrek" per PM (surfaced via a Jindřich Tůma message: Tereza Foltýnová's Monday AI-initiatives meeting is specifically interested in every project where the Business Owner is Žůrek or logistics — per that same message, only ~2 of those are currently "in progress," with ~5 more still at "idea" stage). New name, first seen on the 2026-09-02 roadmap sheet. Unresolved overlap with existing records: "Invoicing solution" may be the same initiative as Fakturace doprav (freight invoicing), currently attributed to Jan Žižka (STK-015, scope owner) and Petr Spilka (STK-014, reviewer); "Receiving compliants in stock" may be the same initiative as Reklamace (claims), currently attributed to Marie Hulešová (STK-020). Recorded both per PM instruction — not yet reconciled. See ASM-006. Source: roadmap sheet 2026-09-02 |
 
 ### STK-025
 
@@ -774,7 +774,7 @@ owner: Marek Pillár
 | Name | Jana Egrmaierová |
 | Aliases | "Egermajerová" (earlier low-confidence transcription, now corrected) |
 | Organization | ViaPharma CZE |
-| Role | Reklamace business/end user, working with Tereza Foltová (STK-013) on supplier data consolidation |
+| Role | Reklamace business/end user, working with Tereza Foltýnová (STK-013) on supplier data consolidation |
 | Location | -tbd- |
 | Influence | -tbd- |
 | Sentiment | -tbd- |
@@ -783,7 +783,7 @@ owner: Marek Pillár
 | Expectations | -tbd- |
 | Last interaction | 2026-09-10 |
 | Status | Active |
-| Notes | Name spelling confirmed 2026-09-10 (was low-confidence "Egermajerová" from 2026-09-07) — attended directly, correctly transcribed as "EGRMAIEROVÁ Jana". Actively working with Tereza Foltová on consolidating the reklamace supplier Excel (3-4 source tables, not yet fully reconciled); has dedicated time allocated to this work. Source: 2026-09-07-ai-portfolio-roadmap-scope-review, 2026-09-10-viapharma-reklamace-uat-fakturace-doprav-demo |
+| Notes | Name spelling confirmed 2026-09-10 (was low-confidence "Egermajerová" from 2026-09-07) — attended directly, correctly transcribed as "EGRMAIEROVÁ Jana". Actively working with Tereza Foltýnová on consolidating the reklamace supplier Excel (3-4 source tables, not yet fully reconciled); has dedicated time allocated to this work. Source: 2026-09-07-ai-portfolio-roadmap-scope-review, 2026-09-10-viapharma-reklamace-uat-fakturace-doprav-demo |
 
 ### STK-045
 
