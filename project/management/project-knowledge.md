@@ -1,6 +1,6 @@
 ---
 last_updated: 2026-09-11
-last_updated_by: auto — project-meeting routing
+last_updated_by: auto — project-document routing
 owner: Marek Pillár
 ---
 
@@ -111,9 +111,31 @@ Naming confusion source: Honza's original spec notes used "OCR" loosely for both
 
 Documents are classified primarily by barcode where present; barcodes aren't guaranteed on every document (per Petr Sláma), but a computer-printed AR number always is — handwritten-only AR numbers are treated as unacceptable input. ViaPharma is independently building a new standardized, pre-filled ZOPV form (with Petr Sláma's team) that should eliminate most illegible-handwriting cases at the source, leaving only kilometers driven as a manual field (drivers are paid by distance, which can vary from the fixed route distance).
 
+### AI Listing Tool (Dr. Max)
+
+| Field | Value |
+|-------|-------|
+| Definition | Internal e-commerce PIM (Product Information Management) and AI catalog-enrichment platform for Dr. Max pharmacy/health e-commerce content managers. Three core functions: (1) **audit & validate catalog health** — scores each product listing against regulatory/categorization criteria; (2) **automate content generation** — GenAI produces structured product descriptions, meta text, and taxonomy attributes; (3) **configure category standards ("Listovací minima")** — per-category rules covering AI prompt instructions, character limits, allowed attribute values, and a blacklist of non-compliant medical claims. |
+| Source | 2026-09-11-ai-listing-tool-demo-walkthrough |
+| Added | 2026-09-11 |
+| Status | Active |
+
+Demoed screen flow: category selection → product catalog table (per-product SKÓRE health/completeness score, STAV workflow status, PROBLÉMY validation badges) → product detail dual-pane AI generation editor (diff view, one-click "Generovat", version history with rollback) → category rules configuration ("Listovací minima": 6 description fields with per-field AI prompts, 2 meta-description fields with fixed character ranges, a 28-attribute product parameter taxonomy with per-attribute auto/manual toggle, and the compliance blacklist — see the Regulatory & Compliance entry below). Confirms the tool's current live scale: 72 products in the single pilot category ("Proteiny / Doplňky stravy"), consistent with the "hardcoded to 1 category" scope noted elsewhere ([[ASM-032]]). Only two product-level workflow statuses were observed (*Import*, *Rozpracováno*) — full status lifecycle unconfirmed.
+
 ## Data Model Concepts
 
 ## Regulatory & Compliance
+
+### Listing — non-compliant medical claim blacklist
+
+| Field | Value |
+|-------|-------|
+| Definition | The AI Listing Tool enforces a per-category blacklist of non-compliant curative/medical claim phrases (e.g. "léčí", "hojí", "terapeutický", "léčivý", "uzdravuje", "zmírňuje příznaky") as part of its "Listovací minima" category-standards configuration, blocking AI-generated content from using this language. |
+| Source | 2026-09-11-ai-listing-tool-demo-walkthrough |
+| Added | 2026-09-11 |
+| Status | Needs confirmation |
+
+Unclear whether this blacklist is signed off by Dr. Max or a BigHub-authored draft pending client review — relevant given this account's broader pattern of BigHub building ahead of confirmed client sign-off (e.g. the still-undefined category/parameter system, see the Farmis/Magento entry above).
 
 ## Naming Conventions
 

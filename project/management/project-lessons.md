@@ -1,10 +1,30 @@
 ---
 last_updated: 2026-09-11
-last_updated_by: auto — project-meeting routing
+last_updated_by: auto — project-document routing
 owner: Marek Pillár
 ---
 
 # Lessons Learned
+
+---
+
+### LL-029
+
+| Field | Value |
+|-------|-------|
+| ID | LL-029 |
+| Created | 2026-09-11 |
+| Category | discovery method |
+| Source | 2026-09-11-ai-listing-tool-demo-walkthrough |
+
+**Lesson**
+A live product demo/walkthrough can surface built capabilities that status meetings and roadmap trackers never mention — status updates report *progress against a plan*, while a demo reveals *what actually exists*, including features nobody thought to report because they weren't asked about.
+
+**Context**
+A structured walkthrough of the AI Listing Tool (presented by Filip Černý) surfaced several capabilities — a per-product catalog health score, version history/rollback, a granular per-field AI prompt configuration system, and a regulatory compliance blacklist for medical claims — none of which appeared anywhere in prior Listing meeting notes or the roadmap Excel, despite the underlying features being marked "Done."
+
+**Cross-reference**
+2026-09-11-ai-listing-tool-demo-walkthrough, `project-knowledge` (AI Listing Tool entry)
 
 ---
 

@@ -134,3 +134,6 @@ Also closed out 2026-09-10's daily retroactively (it had been left open) and rol
 [AUTO] meeting-index — added entry for 2026-09-10-lexie-max-maxie-weekly-sync (2026-09-11)
 [MANUAL] project-daily-2026-09-10 — retroactively closed; marked 5 carry-forward items done/superseded based on 2026-09-10-lexie-max-maxie-weekly-sync content (2026-09-11)
 [AUTO] project-lessons — LL-028 captured from 2026-09-10-lexie-max-maxie-weekly-sync (2026-09-11)
+[AUTO] documents-index — added entry for 2026-09-11-ai-listing-tool-demo-walkthrough (2026-09-11)
+[AUTO] project-knowledge — added "AI Listing Tool (Dr. Max)" and "Listing — non-compliant medical claim blacklist" from 2026-09-11-ai-listing-tool-demo-walkthrough (2026-09-11)
+[AUTO] project-lessons — LL-029 captured from 2026-09-11-ai-listing-tool-demo-walkthrough (2026-09-11)
