@@ -26,14 +26,72 @@ Only **Reklamace** and **Fakturace od dodavatelů** are prefilled below, with wh
 
 ## Interview guide — how to lead these conversations
 
-Sequenced for a 1:1 or small-group session with a business owner — run in this order, each question only makes sense once the previous one is answered ([Caroli.org](https://caroli.org/en/objectives-and-key-results-workshop-session/), [Asana](https://asana.com/resources/okr-meaning)):
+Each field uses a different technique, because "what's the objective" and "what's the number" are different kinds of question and fail differently when asked the wrong way.
 
-1. **Context** — "What's the current state of {initiative}, in your own words?"
-2. **Objective** — "Where do we want this to go? What does success look like for the business, not the software?" Push past "it should work well" — ask what that would let them do that they can't today.
-3. **Business hodnota / OKR** — "What value would this bring — Kč, time, FTE? If you had to put a number on it, even rough, what would it be?"
-4. **Klíčové KPI / měření** — "How, and when, will we actually check this? A Key Result nobody measures isn't one."
-5. **Domain expert** — "Who's the right person to keep this accurate going forward?"
-6. **Poznámky / otevřené otázky** — anything unresolved goes into the parking lot with a named owner and a next step.
+### Opening (say this before field 1, once, per initiative)
+
+> "Pro {initiative} chci s tebou projít 6 věcí — kdo to vlastní, kdo je odborný kontakt, proč to děláme, jaká je hodnota, jak to změříme, a co zůstává otevřené. Není problém říct 'nevím' — pak to prostě odhadneme společně a označíme jako odhad, ne jako fakt."
+
+This sets the "nevím je v pořádku" norm up front — it's the single biggest thing that keeps people from just guessing to look competent, which produces fake-precise numbers you can't trust later.
+
+### Time budget for the 11 cards
+
+- **Reklamace** (5 min) — confirm, don't discover. This one's already documented; spend the time on the 2 blank fields only (Klíčové KPI/měření, Domain expert).
+- **Fakturace od dodavatelů** (10 min) — the ASM-006 overlap question (is this the same as Fakturace doprav?) needs answering *before* anything else on this card, or you'll quantify the wrong thing.
+- **Kontrola beden** (10 min) — starts from zero.
+- **The 8 ideas** (10 min total, not 10 min each) — triage first, don't interview all 8 in depth. Ask one question across all 8: *"Which of these, if any, would you actually put a person on in the next 6 months?"* Only the survivors get the full 6-field treatment; the rest stay as titles.
+
+### Field 1 — Vlastník (Owner)
+
+**Ask**: "Je Rudolf Žůrek pořád ten, kdo za tohle formálně odpovídá?"
+**If no**: "Kdo tedy?" — update immediately, don't leave the old name standing.
+
+### Field 2 — Domain expert
+
+**Ask**: "Kdo je člověk, který nám dnes dokáže dát nejlepší odpověď na zbytek téhle karty?"
+**Technique — single-threaded owner**: insist on one name, not a team or department. "Sklad/logistika" is not an answer here; a person is. If they name two people, ask which one is accountable if the number turns out wrong.
+
+### Field 3 — Objective
+
+**Technique — Jobs-to-be-Done interviewing**: ask *what* and *how*, never *why* — "why" questions make people rationalize after the fact and hand you a plausible-sounding story instead of the real reason ([LinkedIn — JTBD question framework](https://www.linkedin.com/pulse/framework-questions-jobs-done-interviews-michael-boysen), [Dscout — JTBD interviewing style](https://dscout.com/people-nerds/the-jobs-to-be-done-interviewing-style-understanding-who-users-are-trying-to-become)).
+
+**Ask, in order**:
+1. "Co se dnes děje, co byste chtěli, aby fungovalo jinak?" (not "why do you want this")
+2. "Co je na tom dnes nejvíc zdržující nebo frustrující?"
+3. "Byl moment, kdy jste si řekl/a — takhle to dál nejde?"
+
+**If the answer stays vague** ("chceme to zlepšit"): "Kdyby to fungovalo dokonale, co byste zítra ráno dělal/a jinak, co dnes dělat nejde?" — forces a concrete before/after instead of a mission statement.
+
+### Field 4 — Business hodnota / OKR
+
+**Technique — Fermi estimation**: when there's no baseline (true for 10 of these 11 cards), don't ask for a remembered fact — build the number live, out loud, from smaller pieces. Structure it as: scope → assumptions → central estimate → range, and sanity-check with a second calculation path ([Anderson — Fermi estimation for business problems](https://gwern.net/doc/statistics/prediction/2010-anderson.pdf)).
+
+**Ask, in order**:
+1. "Kolik lidí / hodin / případů týdně se toho dnes týká?" (get a volume first, not a value)
+2. "Kdybyste musel/a hádat, i nepřesně — kolik by to bylo v Kč, čase, nebo FTE?"
+3. "Jaký je rozsah — od kolika do kolika, ne jedno přesné číslo?"
+4. Cross-check: "Sedí to i spočítáno jinak — třeba počet případů × čas na jeden × sazba?" If the two paths disagree by more than ~2×, the number isn't ready to write down yet — mark it 🟡 and flag which assumption is shaky, in Poznámky.
+
+### Field 5 — Klíčové KPI / měření
+
+**Technique — SMART specificity check**: a Key Result only counts if it's specific and measurable, not just directionally true ([JTBD/Fermi search synthesis](https://valchanova.me/customer-development-jobs-to-be-done/)).
+
+**Ask, in order**:
+1. "Jak konkrétně to změříme — jaký systém, report, nebo čí je práce to zapsat?"
+2. "Jak často se na to bude koukat — týdně, měsíčně?"
+3. "Kdo to uvidí, když to nevyjde?" (if nobody's named, nobody will look)
+
+### Field 6 — Poznámky / otevřené otázky
+
+Not a question — a capture step. Every open item gets a name and a next step, not just a note: *"kdo to zjistí, do kdy."* An open question with no owner just reappears at the next meeting unchanged.
+
+### Rescue script — when someone says "nevím"
+
+This will happen on most of the 9 blank cards. Don't let it end the conversation:
+
+> "To je v pořádku — pojďme to nahrubo odhadnout společně teď, přesnost doladíme příště. Radši hrubý odhad označený jako odhad, než prázdné pole."
+
+Then go straight into the Fermi sequence above (Field 4) even for the Objective/KPI fields — a rough, owned guess beats a blank field every time, as long as it's honestly labeled 🟡 estimate rather than passed off as 🟢 confirmed.
 
 ---
 
