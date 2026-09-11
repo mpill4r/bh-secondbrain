@@ -1,6 +1,6 @@
 ---
-last_updated: 2026-09-08
-last_updated_by: manual — conversational (client-facing roadmap decision)
+last_updated: 2026-09-11
+last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
 
@@ -10,6 +10,24 @@ owner: Marek Pillár
 
 | ID | Status | Created | Description (short) |
 |----|--------|---------|---------------------|
+| ASM-063 | Open (2026-09-10) | 2026-09-10 | Lexie test-account approach: shared account + in-app role switcher preferred over 4 separate accounts, pending feasibility confirmation |
+| ASM-062 | Decided (2026-09-10) | 2026-09-10 | X-Manager not extended to other Dr. Max streams yet — waiting on Tomáš Dudaško's promised DevOps environment project |
+| ASM-061 | Decided (2026-09-10) | 2026-09-10 | Cross-project harmonogram (Lexie + Max + Maxie) will be built at weekly/workday granularity including testing windows — orientational, not fixed |
+| ASM-060 | Decided (2026-09-10) | 2026-09-10 | Lexie design/UX polish stays at a compromise-ticket level; full redesign deferred until AI-platform-wide design consolidation lands |
+| ASM-059 | Open (2026-09-10) | 2026-09-10 | X-Manager Kanban grouped by scope confirmed as the roadmap-visibility solution — no separate Excel deliverable planned, pending Mertová's business-side sign-off |
+| ASM-058 | Decided (2026-09-10) | 2026-09-10 | Lexie's thumbs-up/down feedback blocker is resolved; testing has formally resumed |
+| ASM-057 | Open (2026-09-10) | 2026-09-10 | Reklamace-Axapta API sequencing needs a dedicated walkthrough with Petr Sláma before further backend dev — current docs insufficiently detailed |
+| ASM-056 | Decided (2026-09-10) | 2026-09-10 | Reklamace full-functionality UAT: starts Oct 15-16, target completion Oct 2 — landed after tense negotiation with Petr Sláma over testing scope/capacity |
+| ASM-055 | Decided (2026-09-10) | 2026-09-10 | Fakturace doprav kiosk hardware (scanner + PC) stays ViaPharma's procurement responsibility |
+| ASM-054 | Decided (2026-09-10) | 2026-09-10 | Fakturace doprav confirmation-screen scope confirmed with client: keep table with specific missing page numbers, drop driver-notes field, touchscreen-only UI |
+| ASM-053 | Decided (2026-09-10) | 2026-09-10 | Axapta is the sole source of truth for Fakturace doprav route/document state — the BigHub app holds no state, just forwards scans as they arrive |
+| ASM-052 | Open (risk, 2026-09-10) | 2026-09-10 | Fakturace doprav kiosk has no authentication — open access confirmed acceptable to client, but LLM-injection/security-surface risk remains technically unaddressed |
+| ASM-051 | Decided (2026-09-10) | 2026-09-10 | Fakturace doprav OCR confidence-flagging + AR-number/barcode fallback design confirmed working via demo, accepted by client without objection |
+| ASM-050 | Decided (2026-09-09) | 2026-09-09 | A calendar/timeline view (item + filled time-axis cells) is needed alongside the MD-estimate roadmap board — raw man-days aren't meaningful to non-technical stakeholders |
+| ASM-049 | Decided (2026-09-09) | 2026-09-09 | Roadmap presentations to Logistika and CC split by audience — Logistika morning, CC mostly for testing-feedback review with only ~15 min on roadmap |
+| ASM-048 | Decided (2026-09-09) | 2026-09-09 | Domain-expert engagement model — Jindřich joins only the first MaxBuddy 1:1; Marek runs the rest solo, keeping Jindřich informed of scheduling |
+| ASM-047 | Decided (2026-09-09) | 2026-09-09 | Business value per initiative must be quantified in concrete numbers, not vague qualitative claims — starting with CC |
+| ASM-046 | Decided (2026-09-09) | 2026-09-09 | MVP-phase exit criteria: client testing, feedback via an established channel, change-request/new-feature triage — before a Discovery session opens the next phase |
 | ASM-045 | Decided (2026-09-08) | 2026-09-08 | AI platform UX scoped lean for the first prototype — 4 screens only (catalog, usage reports, kill switch, simulation), access via flexible admin-defined user groups, kill switch on two axes (per-product + per-model) |
 | ASM-044 | Decided (2026-09-08) | 2026-09-08 | Roadmap board and Excel are client-facing deliverables — internal meeting dates and named attributions must be scrubbed from all notes/comments |
 | ASM-043 | Open (2026-09-08) | 2026-09-08 | AI-platform project should be framed internally as feeding validated learnings back into BigHub's own platform, not a purely bespoke Dr. Max build |
@@ -57,6 +75,392 @@ owner: Marek Pillár
 | ASM-001 | Decided (2026-08-25) | 2026-09-01 | Dr. Max client-side coordination unified into one role (Jindřich Tůma) |
 
 ## Entries
+
+---
+
+### ASM-063
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-063 |
+| Created | 2026-09-10 |
+| Source | 2026-09-10-lexie-max-maxie-weekly-sync |
+| By | Jura Brázdil, Simona Mertová |
+| Status | Open (2026-09-10) |
+
+**Description**
+For Lexie role-based testing across 4 CC sub-departments (call centre agent, back office agent, testing, and a fourth), two technical options were identified: (A) four fully separate accounts requiring logout/login to switch, or (B) one account placed in all relevant Entra groups with an in-app role switcher BigHub would build. Dr. Max prefers option B.
+
+**Rationale**
+Testers need to run two roles side-by-side on one screen for testing to be practical, and full re-authentication per role switch is disruptive. However, Jura flagged that a single account in all groups simultaneously doesn't actually test the role-restriction behavior a real operator experiences, and Mertová separately raised whether four concurrent testers sharing one account would conflict — neither concern is resolved yet.
+
+**Impact**
+- **Scope**: Option B requires new BigHub-side work (an in-app role switcher) not otherwise planned.
+- **Timeline**: Blocks meaningful Lexie role-based testing until Jura confirms feasibility.
+
+---
+
+### ASM-062
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-062 |
+| Created | 2026-09-10 |
+| Source | 2026-09-10-lexie-max-maxie-weekly-sync |
+| By | Jindřich Tůma |
+| Status | Decided (2026-09-10) |
+
+**Description**
+X-Manager will not be extended to other Dr. Max departments/streams for now, even though Marek raised the idea and Jindřich's original instinct was favorable. Jindřich is waiting on Tomáš Dudaško's separately-mentioned future DevOps environment project to be created before deciding whether to extend X-Manager or move CC onto that new environment instead.
+
+**Rationale**
+Committing to extend X-Manager now risks being redone once the DevOps environment exists; CC's current X-Manager usage is working well, so there's no urgency to decide ahead of that dependency.
+
+**Impact**
+- **Scope**: Keeps X-Manager's footprint limited to Lexie/Max/Maxie for now; any cross-stream tooling decision is deferred.
+
+---
+
+### ASM-061
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-061 |
+| Created | 2026-09-10 |
+| Source | 2026-09-10-lexie-max-maxie-weekly-sync |
+| By | Jindřich Tůma |
+| Status | Decided (2026-09-10) |
+
+**Description**
+Jindřich will build a cross-project harmonogram (timeline) covering Lexie, Max, and Maxie together, broken down by week and then by individual workday, including testing windows — so Dr. Max can plan CC capacity around expected testing days.
+
+**Rationale**
+Kadlecová and Mertová both asked for roadmap visibility beyond ticket-level tracking, specifically to plan their own team's capacity since CC works multiple initiatives in parallel, not just this one.
+
+**Impact**
+- **Timeline**: Explicitly framed as orientational, not a fixed commitment, given dependencies on Dr. Max's own side (echoes the same framing used for the existing product-scope roadmap board).
+
+---
+
+### ASM-060
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-060 |
+| Created | 2026-09-10 |
+| Source | 2026-09-10-lexie-max-maxie-weekly-sync |
+| By | Jindřich Tůma, Jura Brázdil |
+| Status | Decided (2026-09-10) |
+
+**Description**
+Lexie's visual/UX polish (colors, field sizing) stays at a "find a compromise" level — Jindřich and Jura will open a dedicated ticket for incremental improvement, but a full redesign is deliberately deferred until the AI-platform-wide design consolidation (owned by Tomáš Dudaško) is decided, since per-app design can't diverge from the eventual unified platform design without risking rework.
+
+**Rationale**
+Mertová raised that Lexie looks noticeably less polished than the newer Max chatbot. BigHub is actively working on consolidating all Dr. Max apps under one central platform entry point first; per-app design should cascade down from that decision once made, not precede it. This extends the earlier deprioritization decision in [[ASM-024]].
+
+**Impact**
+- **Scope**: Limits near-term Lexie design work to a bounded compromise ticket rather than an open-ended redesign.
+- **Client relationship**: Mertová accepted the framing, asking only that user-facing polish land before end users (not just CC) get access.
+
+---
+
+### ASM-059
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-059 |
+| Created | 2026-09-10 |
+| Source | 2026-09-10-lexie-max-maxie-weekly-sync |
+| By | Jindřich Tůma, Kateřina Kadlecová |
+| Status | Open (2026-09-10) |
+
+**Description**
+The X-Manager Kanban view, grouped by scope (MVP / Full Version / Nice to Have, with a hide-empty-columns option), is confirmed to satisfy Kadlecová's standing roadmap-visibility ask. No separate Excel roadmap deliverable is planned — the live system is intended as the source of truth going forward, pending Mertová's business-side confirmation that it also works for non-technical stakeholders.
+
+**Rationale**
+Jindřich's stated preference is that the system itself should always reflect current state on demand, rather than producing periodic static exports; the scope-grouping reproduces the structure of Kadlecová's own Excel tracker.
+
+**Impact**
+- **Client relationship**: Resolves a standing, repeatedly-raised client ask (previously logged at the 2026-09-03 sync) — pending final sign-off from Mertová.
+
+---
+
+### ASM-058
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-058 |
+| Created | 2026-09-10 |
+| Source | 2026-09-10-lexie-max-maxie-weekly-sync |
+| By | Kateřina Kadlecová |
+| Status | Decided (2026-09-10) |
+
+**Description**
+Lexie's thumbs-up/down feedback bug (one of the 3 original blockers from 2026-09-03) is resolved — Kadlecová confirmed she can now retroactively evaluate conversations she'd previously been unable to rate, and Lexie testing has formally resumed.
+
+**Rationale**
+Direct client confirmation after retesting.
+
+**Impact**
+- **Timeline**: Unblocks the CC team's Lexie testing, which had been fully paused since 2026-09-03 (see [[ASM-021]]).
+
+---
+
+### ASM-057
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-057 |
+| Created | 2026-09-10 |
+| Source | 2026-09-10-viapharma-reklamace-uat-fakturace-doprav-demo |
+| By | Petr Sláma |
+| Status | Open (2026-09-10) |
+
+**Description**
+Petr Sláma flagged that current documentation doesn't cover API sequencing/behavior between the reklamace app and Axapta in enough operational detail (what gets sent when, what response to expect) to safely start backend development against it. A dedicated walkthrough session with Jindřich/Jakub is needed before backend work proceeds further.
+
+**Rationale**
+Sláma needs to validate the full flow before committing dev time on his side; a prior round of written feedback was acknowledged but not actually incorporated into the doc, causing confusion about whether it had been addressed.
+
+**Impact**
+- **Timeline**: Blocks further reklamace backend development on ViaPharma's side until the walkthrough happens (targeted for next week).
+
+---
+
+### ASM-056
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-056 |
+| Created | 2026-09-10 |
+| Source | 2026-09-10-viapharma-reklamace-uat-fakturace-doprav-demo |
+| By | Petr Sláma / Jindřich Tůma |
+| Status | Decided (2026-09-10) |
+
+**Description**
+Full-functionality reklamace UAT (through email generation) starts October 15-16, targeting completion by October 2 — sequential-vs-parallel testing (relative to the narrower scan-only UAT already scheduled) was explicitly left to Petr Sláma's judgment.
+
+**Rationale**
+Landed after a tense negotiation: Sláma initially rejected a 2-day testing-window draft as unrealistic, citing ~18 process variants, a need to validate downstream Axapta financial/logistics effects (not just app UX), a Finance-team dependency, and his own September capacity constraints from two unrelated GoLive projects. Jindřich de-escalated by clarifying the timeline was an adjustable draft and handing the parallel-vs-sequential decision back to the client.
+
+**Impact**
+- **Delivery timeline**: This is now the committal date for full reklamace functionality being client-validated — plan around it.
+- **Process**: Sláma committed to reporting blockers continuously during UAT rather than batching them.
+
+---
+
+### ASM-055
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-055 |
+| Created | 2026-09-10 |
+| Source | 2026-09-10-fakturace-doprav-kiosk-portal-demo, 2026-09-10-viapharma-reklamace-uat-fakturace-doprav-demo |
+| By | Jan Sovka / Jan Žižka |
+| Status | Decided (2026-09-10) |
+
+**Description**
+Fakturace doprav kiosk hardware (scanner + PC) stays ViaPharma's procurement responsibility, not BigHub's — a position BigHub pushed for internally and which the client (Jan Žižka) confirmed, while flagging his own team currently lacks a clear internal owner for it.
+
+**Rationale**
+Consistent with keeping BigHub's scope to the software/AI layer; Žižka will loop in ViaPharma's own IT and Petr Sláma to resolve the ownership gap on their side. Filip is sending a same-day minimum-spec recommendation to help them act.
+
+**Impact**
+- **Timeline risk**: Testing with real hardware can't start until ViaPharma sources it — interim testing will use manual file upload instead of live scanning.
+
+---
+
+### ASM-054
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-054 |
+| Created | 2026-09-10 |
+| Source | 2026-09-10-viapharma-reklamace-uat-fakturace-doprav-demo |
+| By | Jan Žižka |
+| Status | Decided (2026-09-10) |
+
+**Description**
+Fakturace doprav confirmation-screen scope confirmed directly with the client: keep the end-of-session confirmation table, but show specific missing page numbers (not just fractional counts like "2 of 7"); drop the optional driver-notes field entirely; kiosk UI is touchscreen-only, no keyboard.
+
+**Rationale**
+Žižka wants a dispatcher facing a driver dispute to see exactly which pages are missing, not just a fraction. He rejected the notes field outright — drivers would use it inconsistently, creating manual-review noise with no clear payoff; a driver with a real problem should call directly instead.
+
+**Impact**
+- **UI scope**: Removes ambiguity from the internal-demo open question about whether the richer confirmation screen exceeded the original Žižka spec — it's now explicitly client-confirmed as wanted, with two concrete refinements.
+
+---
+
+### ASM-053
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-053 |
+| Created | 2026-09-10 |
+| Source | 2026-09-10-viapharma-reklamace-uat-fakturace-doprav-demo |
+| By | Jan Žižka |
+| Status | Decided (2026-09-10) |
+
+**Description**
+Axapta — not the BigHub Fakturace doprav app — is the sole source of truth for route/document state. The app holds no state of its own; it simply forwards scanned documents as they arrive, whenever they arrive. Axapta needs a row to appear the moment the *first* document for a route lands (so ViaPharma has reaction time to chase a slow carrier before month-end close), and Axapta itself reconciles documents arriving across multiple separate scan sessions for the same route.
+
+**Rationale**
+Resolves a real architecture misunderstanding: Filip had built against an assumption that the app needed to track its own completion state and push a manual-review/ready-for-invoicing status to Axapta. Jan Žižka clarified live during the demo that this is backwards. This also **retires the page-count-vs-document-count concern** raised earlier the same day in the internal kiosk demo review (see `2026-09-10-fakturace-doprav-kiosk-portal-demo`) — that confusion was a symptom of this same bigger misunderstanding, not a separate problem needing its own fix.
+
+**Impact**
+- **App simplification**: Per Filip, this genuinely simplifies the app's design — no internal state to hold or synchronize.
+- **Spec/Swagger update needed**: The Fakturace doprav spec and Swagger need to be corrected to reflect this division of responsibility.
+- **New dependency**: A driver-facing "what's been scanned so far" view (requested by Žižka, see ASM below) now requires querying Axapta on demand, since the app holds nothing itself — needs validation against what Axapta's API can actually return.
+
+---
+
+### ASM-052
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-052 |
+| Created | 2026-09-10 |
+| Source | 2026-09-10-fakturace-doprav-kiosk-portal-demo, 2026-09-10-viapharma-reklamace-uat-fakturace-doprav-demo |
+| By | Jakub Turner / Jan Žižka |
+| Status | Open (risk, 2026-09-10) |
+
+**Description**
+The Fakturace doprav kiosk has no authentication — anyone can walk up and upload documents directly to the app, which feeds them straight to the LLM with no injection/security review. The client (Jan Žižka) confirmed this open-access model is intentional and acceptable to them, but the underlying security-surface risk Jakub Turner raised (adversarial content embedded in an uploaded document, aimed at the LLM) remains technically unaddressed — document-type validation only catches "not a real document," not injection attempts.
+
+**Rationale**
+Mirrors the physical process today (anyone can hand over paper documents); the client is comfortable with this model and takes responsibility for what gets uploaded at the kiosk. A minimal driver identifier (e.g. license plate) per scan session was suggested as a lightweight post-incident traceability measure, not yet committed to.
+
+**Impact**
+- **Security**: A real security review of the LLM-facing upload surface is still needed; BigHub has flagged responsibility for what's uploaded sits with the client given the open-access design.
+- **Follow-up**: Žižka is taking the driver-identifier suggestion internally, not yet decided.
+
+---
+
+### ASM-051
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-051 |
+| Created | 2026-09-10 |
+| Source | 2026-09-10-fakturace-doprav-kiosk-portal-demo, 2026-09-10-viapharma-reklamace-uat-fakturace-doprav-demo |
+| By | Filip Černý / Jan Žižka |
+| Status | Decided (2026-09-10) |
+
+**Description**
+Fakturace doprav's OCR confidence-flagging philosophy (read a field correctly, or explicitly flag it as uncertain for human review — never silently guess) and AR-number fallback design (barcode when present, otherwise a computer-printed AR number; handwritten-only AR numbers unacceptable) are confirmed working via live demo and were shown to and accepted by the client without objection.
+
+**Rationale**
+This design was first validated internally, then demonstrated live to Jan Žižka the same day with no pushback — a rare same-day internal-to-client validation loop.
+
+**Impact**
+- **Confidence**: No further validation needed on this specific design point before proceeding.
+
+---
+
+### ASM-050
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-050 |
+| Created | 2026-09-09 |
+| Source | 2026-09-09-logistics-cc-roadmap-presentation-prep |
+| By | Jindřich Tůma |
+| Status | Decided (2026-09-09) |
+
+**Description**
+Alongside the existing MD-estimate roadmap board, a calendar/timeline-style view is needed: item names on the left, a monthly time axis on the right, with filled-in cells marking when testing happens, when bugs get fixed, and when rollout lands.
+
+**Rationale**
+Jindřich flagged that a phase estimate like "MVP in one man-day" is meaningless to a non-technical business stakeholder (e.g. Tereza Foltová) without a real calendar attached — a "mandate" could mean a week or much longer in wall-clock time. Doesn't need to be elaborate, just visually clear enough to show concrete testing/fix/rollout windows.
+
+**Impact**
+- **Deliverable scope**: Marek needs to build this before 2026-09-10's Logistika/CC presentations, using dev input gathered at the 2026-09-09 3pm internal meeting.
+- **Reusability**: Once built for Logistika/CC, the same format likely applies to future roadmap presentations across other streams.
+
+---
+
+### ASM-049
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-049 |
+| Created | 2026-09-09 |
+| Source | 2026-09-09-logistics-cc-roadmap-presentation-prep |
+| By | Marek Pillár |
+| Status | Decided (2026-09-09) |
+
+**Description**
+Tomorrow's roadmap presentations are split by audience from the same underlying roadmap board rather than built as separate decks: Logistika in the morning (reklamace, fakturace doprav), CC later (~1 hour, focused mainly on reviewing chatbot/Lexie testing feedback with Kateřina Karlecová, with only the last ~15 minutes on the roadmap itself).
+
+**Rationale**
+Tereza Foltová was the primary requester for the Logistika content, which is largely ready. The CC session's real purpose is moving chatbot/Lexie toward a production decision based on testing feedback — Jindřich didn't want the roadmap walkthrough to crowd out that discussion.
+
+**Impact**
+- **Meeting prep**: Marek prepares one filtered view per audience rather than two separate presentations.
+
+---
+
+### ASM-048
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-048 |
+| Created | 2026-09-09 |
+| Source | 2026-09-09-logistics-cc-roadmap-presentation-prep |
+| By | Jindřich Tůma |
+| Status | Decided (2026-09-09) |
+
+**Description**
+Jindřich will join Marek only for the first MaxBuddy-related domain-expert 1:1, to introduce a separate topic he needs to kick off personally. All other domain-expert meetings across the portfolio run solo by Marek, who keeps Jindřich informed whenever one gets scheduled so he can feed in relevant input beforehand.
+
+**Rationale**
+Jindřich has a specific topic he wants raised at the first MaxBuddy meeting; beyond that, Marek's 1:1s with domain experts are part of his own onboarding and don't need Jindřich present.
+
+**Impact**
+- **Scheduling**: Marek must notify Jindřich ahead of every domain-expert meeting he books, not just the MaxBuddy one.
+
+---
+
+### ASM-047
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-047 |
+| Created | 2026-09-09 |
+| Source | 2026-09-09-logistics-cc-roadmap-presentation-prep |
+| By | Jindřich Tůma |
+| Status | Decided (2026-09-09) |
+
+**Description**
+Business value for each initiative must be captured in concrete, measurable numbers — not vague qualitative statements — so results can be measured against it once delivered. Marek will start with CC initiatives since those deliver within two weeks, and will track this in a new Value/KPI ("Strategy") tab on the roadmap Excel.
+
+**Rationale**
+Jindřich wants any business case to be understandable and verifiable by a non-technical, "economically competent" reader (e.g. "3 minutes saved per case" translated into an actual cost figure via average wage rate), and measurable after the fact — not just directional framing like "customers will complain less."
+
+**Impact**
+- **1:1 prep**: Every domain-expert meeting from next week onward needs to produce at least a rough numeric value estimate, not just qualitative rationale.
+- **Roadmap Excel**: Requires Marek to build out the "Strategy" tab (Value + KPI columns) across all 9 initiatives.
+
+---
+
+### ASM-046
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-046 |
+| Created | 2026-09-09 |
+| Source | 2026-09-09-logistics-cc-roadmap-presentation-prep |
+| By | Marek Pillár |
+| Status | Decided (2026-09-09) |
+
+**Description**
+Closing the current MVP phase and opening the next one requires, in order: testing with the client, collecting feedback via an established feedback channel, and triaging what's a change request (in/out of original scope) versus a genuinely new feature. Only after that does a Discovery session with a client-side domain expert start the next phase.
+
+**Rationale**
+Marek wants a consistent, repeatable process for phase transitions across all 9 initiatives rather than an ad hoc close-out each time — starting with reklamace and fakturace doprav, where this is discussed as immediately applicable.
+
+**Impact**
+- **Process**: Applies first to reklamace/fakturace doprav (Discovery targeted for next week, pending a named domain expert from Logistika) and is the intended template for other streams as they reach MVP completion.
 
 ---
 

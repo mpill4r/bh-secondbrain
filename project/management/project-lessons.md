@@ -1,10 +1,90 @@
 ---
-last_updated: 2026-09-09
-last_updated_by: auto — project-lessons (Excel Upload Blocked incident, 2026-09-09)
+last_updated: 2026-09-11
+last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
 
 # Lessons Learned
+
+---
+
+### LL-028
+
+| Field | Value |
+|-------|-------|
+| ID | LL-028 |
+| Created | 2026-09-10 |
+| Category | requirements-gathering / access & permissions |
+| Source | 2026-09-10-lexie-max-maxie-weekly-sync |
+
+**Lesson**
+A client request that sounds like a single simple ask (e.g. "we need a test account") can conceal several orthogonal technical requirements that only surface once you ask concretely how it will actually be used — who, how many people at once, and what exactly must and must not be visible to each. Treating the original request's brevity as evidence of simplicity, rather than as a sign the real requirement was never spelled out, wastes a cycle chasing the wrong ticket.
+
+**Context**
+A months-old ticket simply said "create a test account for AI," with no group/role detail — which nobody downstream had been able to act on. Only when the client (Mertová) was asked directly how testing would actually happen did it surface that 4 distinct role-scoped identities were needed simultaneously, that a single shared account in every permission group wouldn't actually test real role-restriction behavior, and that concurrent multi-tester use of one account might itself cause conflicts — three separate technical problems hiding inside what had been logged as one generic access request.
+
+**Cross-reference**
+2026-09-10-lexie-max-maxie-weekly-sync, ASM-063
+
+---
+
+### LL-027
+
+| Field | Value |
+|-------|-------|
+| ID | LL-027 |
+| Created | 2026-09-10 |
+| Category | architecture / client communication |
+| Source | 2026-09-10-fakturace-doprav-kiosk-portal-demo, 2026-09-10-viapharma-reklamace-uat-fakturace-doprav-demo |
+
+**Lesson**
+A confusing implementation detail (e.g. "why doesn't this count match?") can be a visible symptom of a much bigger unstated assumption (e.g. "who actually owns this system's state?") rather than a bug worth patching in isolation. When a data-contract question keeps not quite making sense despite incremental fixes, it's worth asking the client a blunt, higher-level ownership question directly — the answer can retire several smaller confusions at once.
+
+**Context**
+Filip Černý built the Fakturace doprav kiosk assuming the app needed to track its own route-completion state (deciding when a route was ready for manual review or invoicing) and had separately convinced himself Axapta returned per-document page counts to validate completeness — a claim that turned out, live in an internal demo, to be a hardcoded/faked value. Both confusions dissolved at once when the client (Jan Žižka) clarified directly, in the very next meeting, that Axapta is the sole owner of route/document state and the app should hold none at all. The page-count question had never been the real problem — it was a downstream symptom of an unstated architecture assumption nobody had asked the client to confirm.
+
+**Cross-reference**
+2026-09-10-fakturace-doprav-kiosk-portal-demo, 2026-09-10-viapharma-reklamace-uat-fakturace-doprav-demo, ASM-053
+
+---
+
+### LL-026
+
+| Field | Value |
+|-------|-------|
+| ID | LL-026 |
+| Created | 2026-09-09 |
+| Category | stakeholder communication |
+| Source | 2026-09-09-logistics-cc-roadmap-presentation-prep |
+
+**Lesson**
+Effort estimates alone (e.g. man-days) don't communicate delivery timing to non-technical business stakeholders — a unit like "one man-day" has no fixed meaning in wall-clock time without a calendar attached, and can be misread as "one day away." Pairing any effort-based roadmap with a simple calendar/timeline view (what happens when: testing, fixes, rollout) closes that gap.
+
+**Context**
+Reviewing the roadmap board ahead of presenting it to Logistika and CC, Jindřich Tůma pointed out that a phase estimate like "MVP in one man-day" would mean nothing to Tereza Foltová — she needs to see concretely when testing starts, how long it runs, and when rollout lands, not an abstract effort unit. The fix didn't require new data, just a second, simpler view (item + filled time-axis cells) built from the same information already collected.
+
+**Cross-reference**
+2026-09-09-logistics-cc-roadmap-presentation-prep, ASM-050
+
+---
+
+### LL-025
+
+| Field | Value |
+|-------|-------|
+| ID | LL-025 |
+| Created | 2026-09-09 |
+| Category | harness |
+| Source | project-daily-2026-09-09 |
+
+**Lesson**
+When a client-facing board/deck is built by distilling a source-of-truth data file, check that per-item annotations (comments, caveats, rationale notes) carried over along with the headline numbers — a derived view can transfer the numeric totals correctly while silently dropping or misplacing the supporting detail attached to individual rows, and that gap isn't visible unless someone spot-checks the rendered artifact against its source.
+
+**Context**
+The PM noticed Honza Zelený's effort estimates appeared in the v3 roadmap board without any supporting comments, and initially thought they'd been misattributed to Lexie. Checking the live Excel confirmed the numbers were correctly Maxie's, and Maxie's sheet actually has 6 rich supporting comments (including a reuse note from Jura Brázdil) — none of which had made it into the board. The board's numeric totals were right; the per-box narrative context wasn't carried over during the board build.
+
+**Cross-reference**
+project-daily-2026-09-09
 
 ---
 

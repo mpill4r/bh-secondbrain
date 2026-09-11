@@ -1,6 +1,6 @@
 ---
-last_updated: 2026-09-08
-last_updated_by: manual — conversational (MD estimate convention)
+last_updated: 2026-09-11
+last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
 
@@ -50,9 +50,9 @@ Original infrastructure/model provisioning for MaxBuddy was done manually (ad ho
 | Field | Value |
 |-------|-------|
 | Definition | Three BigHub-built chatbot/assistant products for Dr. Max, owned business-side by paní Mertová (STK-017), co-owned with Tomáš Dudaško (STK-010, IT/budget side). **Max** is the customer-facing chatbot embedded on the drmax.cz website (order status, pharmacy locator, e-recepty, medication/stock lookup — see full flow below); a **voice channel of the same capability is Maxie**, launching scoped to order-status only via IVR. **Lexie (Lucie)** is the internal knowledge-base assistant being rolled out to IT, Legal, and Brno accounting, now in Call Center testing — currently blocked on 3 bugs, see below. Distinct from MaxBuddy (the pharmacy point-of-sale cross-sell product) — corrected 2026-09-03; an earlier entry incorrectly described Max as "Call Center-facing." |
-| Source | 2026-09-01-dr-max-x-bighub-project-status-sync, 2026-09-03-max-chatbot-demo-lexi-maxi-status-sync, 2026-09-04-ai-platform-standup-xmanager-lexi-demo, 2026-09-07-ai-portfolio-roadmap-scope-review |
+| Source | 2026-09-01-dr-max-x-bighub-project-status-sync, 2026-09-03-max-chatbot-demo-lexi-maxi-status-sync, 2026-09-04-ai-platform-standup-xmanager-lexi-demo, 2026-09-07-ai-portfolio-roadmap-scope-review, 2026-09-10-lexie-max-maxie-weekly-sync |
 | Added | 2026-09-01 |
-| Last updated | 2026-09-07 |
+| Last updated | 2026-09-10 |
 | Status | Active |
 
 **Important scope correction (2026-09-04)**: the underlying AI platform (chatbot + RAG infrastructure) is **shared BigHub infrastructure reused across multiple clients**, not Dr. Max-exclusive — also deployed for Brněnská komunikace (Brno communications), with variants in progress for Kooperativa (accounting) and Unica (legal). Dr. Max is one deployment of a centralized "core" platform/repo, not a bespoke build. Frontend direction: one standardized template by default, custom per client only on explicit request — see [[ASM-025]]. Whether Honza Sovka retains product ownership of the platform across all clients (vs. Marek owning Dr. Max only) is unresolved — see [[ASM-026]].
@@ -61,7 +61,13 @@ Original infrastructure/model provisioning for MaxBuddy was done manually (ad ho
 
 **Lexie (Lucie) — blocked on 3 bugs (2026-09-03)**: (1) feedback button broken specifically on long/large responses, confirmed reproducible; (2) autocomplete/suggestion popup ("našeptávač") to be removed entirely — pops up unpredictably, including mid-response, obscuring the answer an operator is relaying; (3) configurable fixed/canned status messages needed outside the prompt, for outage-style announcements. GPT model upgraded 5.1→5.4 on 2026-09-02 by Viliam Gago. All Lexie work paused until fixed — see [[ASM-021]].
 
-**Lexie ticket triage (2026-09-04)**: root cause found for the feedback-button bug — thumbs aren't real buttons, they sit on an action area overlapped by the "regenerate response" control on long messages, so double-clicking selects text instead. Viliam Gago fixing same-day, alongside the status-announcement banner (admin-editable, not auto-detected) and a response-links fix already in test. Two other tickets: document-rename-not-reflecting-in-Lexie (indexer lag vs. a possible diacritics issue, unresolved) and test-user creation (auth architecture unresolved — 2FA on real Dr. Max accounts makes ad hoc role-testing painful; punted to Lukáš Szücs). A "Product Scope" ticket (Kateřina Karlecová's MVP/roadmap ask) is now owned by Marek. RAG mechanics confirmed: Lexie indexes Dr. Max's SharePoint periodically via an embedding pipeline into a vector DB, with clickable source citations.
+**Lexie ticket triage (2026-09-04)**: root cause found for the feedback-button bug — thumbs aren't real buttons, they sit on an action area overlapped by the "regenerate response" control on long messages, so double-clicking selects text instead. Viliam Gago fixing same-day, alongside the status-announcement banner (admin-editable, not auto-detected) and a response-links fix already in test. Two other tickets: document-rename-not-reflecting-in-Lexie (indexer lag vs. a possible diacritics issue, unresolved) and test-user creation (auth architecture unresolved — 2FA on real Dr. Max accounts makes ad hoc role-testing painful; punted to Lukáš Szücs). A "Product Scope" ticket (Kateřina Kadlecová's MVP/roadmap ask) is now owned by Marek. RAG mechanics confirmed: Lexie indexes Dr. Max's SharePoint periodically via an embedding pipeline into a vector DB, with clickable source citations.
+
+**Lexie ticket triage (2026-09-10)**: of the original 3 blockers, the feedback-button bug is confirmed fixed and testing has resumed — see [[ASM-058]]. Configurable fixed/canned status messages are in progress as ticket 150 ("ready for dev"), which surfaced a new permission-scope error ("cesty mimo působnost vašeho oddělení nelze nastavit") already logged with a screenshot. Našeptávač removal is now tracked as its own dedicated, higher-priority ticket, still outstanding. Document-rename-not-reflecting-in-Lexie is still untested by the client as of this date. The X-Manager Kanban view (grouped by scope: MVP/Full Version/Nice to Have, with a hide-empty-columns toggle) was confirmed as satisfying the client's standing roadmap-visibility ask — see [[ASM-059]].
+
+**Lexie design gap (2026-09-10)**: Mertová flagged Lexie looks noticeably less polished than the newer Max chatbot. Design authority sits one level up at the AI-platform level (owned by Tomáš Dudaško) — an individual app can't diverge from the platform's eventual unified design without risking rework. BigHub is centralizing all Dr. Max apps under one platform entry point first; per-app design cascades down from that once agreed. Near-term: a bounded design-compromise ticket for Lexie, not a full redesign — see [[ASM-060]].
+
+**Lexie test-account mechanics (2026-09-10)**: permissions are controlled entirely by Dr. Max's own Entra ID groups (max.bt.cz), not configurable by BigHub. For role-based testing across Lexie's 4 CC sub-departments (call centre agent, back office agent, testing, and a fourth — each needing a distinct document-access scope), two technical options were identified: (A) 4 separate accounts requiring logout/login to switch, or (B) 1 account in all relevant Entra groups with an in-app role switcher BigHub would build. Dr. Max prefers option B, but a single account in every group simultaneously doesn't actually exercise real role-restriction behavior, and whether multiple concurrent testers sharing one account would conflict is unresolved — see [[ASM-063]].
 
 **Maxie (voicebot, 2026-09-03)**: built by Honza Zelený (STK-029), sharing infrastructure with the Max chatbot. Technical blocker (missing SIP trunk) resolved via an Atlantis meeting the prior Thursday; a request list is with Dr. Max's BDC infra team (contact: Vladislav Tvarůžek, STK-016), prioritized after the new AKS work — targeting ~14 days to technical readiness. Scope starts at order-status only via a fixed IVR branch, expanding as Dr. Max's IVR is updated — see [[ASM-022]].
 
@@ -93,6 +99,17 @@ Scope narrowed to one category first: automatic doors, two vendors — extractin
 | Status | Active |
 
 Naming confusion source: Honza's original spec notes used "OCR" loosely for both, which is why the roadmap tracker initially conflated them. Tracked separately now — see the '"Opravdový" OCR' (real OCR) backlog row on the Reklamace roadmap sheet.
+
+### Fakturace doprav (freight invoicing) document types
+
+| Field | Value |
+|-------|-------|
+| Definition | Document types the Fakturace doprav kiosk portal classifies and extracts per delivery route ("trasa," identified by an AR number): **ZOPV** ("záznam o provozu vozidla," vehicle-operation record — driver name, plate, delivery date, kilometers driven, typically the richest data source); **rozvozový list** (delivery/route list, usually multi-page); **noční závoz** (night-delivery confirmation, can have multiple per route); **OPIATY** (narcotic-substance handover document); **POPLSOL** (a warehouse-transfer document — only needs matching to the correct route, no further data extraction). |
+| Source | 2026-09-10-fakturace-doprav-kiosk-portal-demo, 2026-09-10-viapharma-reklamace-uat-fakturace-doprav-demo |
+| Added | 2026-09-10 |
+| Status | Active |
+
+Documents are classified primarily by barcode where present; barcodes aren't guaranteed on every document (per Petr Sláma), but a computer-printed AR number always is — handwritten-only AR numbers are treated as unacceptable input. ViaPharma is independently building a new standardized, pre-filled ZOPV form (with Petr Sláma's team) that should eliminate most illegible-handwriting cases at the source, leaving only kilometers driven as a manual field (drivers are paid by distance, which can vary from the fixed route distance).
 
 ## Data Model Concepts
 
@@ -190,9 +207,9 @@ v1 considered done as of 2026-09-02; first live business demo 2026-09-03 (demoed
 | Field | Value |
 |-------|-------|
 | Definition | Dr. Max's legacy warehouse management system — a repurposed, warehouse-specific fork of Microsoft Dynamics. Relevant to the warehouse/claims automation stream, which requires custom-built APIs to integrate with it. |
-| Source | 2026-08-25-marek-onboarding-with-jan-sovka, 2026-09-02-logistics-listing-team-sync, 2026-09-03-viapharma-logistics-status-reklamace-demo |
+| Source | 2026-08-25-marek-onboarding-with-jan-sovka, 2026-09-02-logistics-listing-team-sync, 2026-09-03-viapharma-logistics-status-reklamace-demo, 2026-09-10-viapharma-reklamace-uat-fakturace-doprav-demo |
 | Added | 2026-09-01 |
-| Last updated | 2026-09-03 |
+| Last updated | 2026-09-10 |
 | Status | Active |
 
 Reklamace document flow (as of 2026-09-02): contract config in Axapta is complete; the system generates a PDF and stores it to Azure. Two distinct PDFs exist — **"rozvozový list"** (generated by BigHub) and **"návratka"** (generated by Accepta, client-side). Email-sending is the next unbuilt step — the plan is to pull the file from Azure and attach/send as a pre-filled draft (never auto-sent, see [[ASM-010]]); whether this calls the Microsoft Graph API's draft-creation endpoint directly is not yet specified.
@@ -200,6 +217,8 @@ Reklamace document flow (as of 2026-09-02): contract config in Axapta is complet
 **Reklamace mobile app** (demoed 2026-09-03 by Filip Černý): operator scans a shipping label → app looks up the product via Accepta's endpoint → operator confirms/adjusts quantity → photographs any damage, optional note → submits → app returns a reklamace number written to Axapta. A second flow, "receipt with reservation," follows the same pattern and also writes to Axapta. Auth for the testing phase is hardcoded per-user logins (not yet Entra ID/OAuth — see [[ASM-012]]); the API is being extended to include an "odběratel" (recipient/customer) field so Dr. Max's side has full visibility into who a claim is for.
 
 **Jump Server** (BigHub → Dr. Max direct log access, including the Mongo archive): proposed roughly a month before 2026-09-03, has "definitely not moved" since — no clear owner assigned on either side as of 2026-09-03. Distinct from the AKS/VPN access blockers tracked elsewhere; this specifically concerns read access into Dr. Max's own logs/Mongo rather than infrastructure provisioning.
+
+**State ownership for Fakturace doprav** (clarified 2026-09-10 by Jan Žižka): Axapta — not the BigHub app — is the sole source of truth for route/document status. The app holds no state of its own and simply forwards scanned documents to Axapta as they arrive, whenever they arrive; Axapta reconciles documents submitted across multiple separate scan sessions for the same route, and a route row must appear in Axapta the moment its first document lands (so ViaPharma has reaction time to chase a slow carrier before month-end close). This corrected an earlier misunderstanding where the app was being built to track its own completion state and push a manual-review/ready-for-invoicing status to Axapta — see [[ASM-053]].
 
 ### BDC
 
