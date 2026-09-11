@@ -1,7 +1,7 @@
 ---
-status: open
+status: closed
 last_updated: 2026-09-11
-last_updated_by: auto — session startup
+last_updated_by: manual — /project-daily close
 project_status: Green
 ---
 
@@ -13,7 +13,7 @@ project_status: Green
 
 ## Current Priority
 
-Carried from 2026-09-10: the bundled AI-platform batch (UX mockup in Claude Design, Dudaško Excel distillation, Ján Kabát sync, spend-data loop-in) was flagged yesterday as due today but uncertain whether still a priority — revisit. Also carried: deciding who owns building/presenting the finished roadmap to the client (Jindřich or Marek), before further roadmap-presentation work is scheduled.
+**Shifted during the day**: PM directed the session toward drafting and iterating the Listing project specification (`product/solution-space/listing-specifikace.md` + companion roadmap board artifact) instead of the carried items below — paused for the week, resumes next week. Both previously carried priorities remain unresolved and still stand for whenever work picks back up: the bundled AI-platform batch (UX mockup in Claude Design, Dudaško Excel distillation, Ján Kabát sync, spend-data loop-in), still flagged as uncertain whether still a priority — revisit; and deciding who owns building/presenting the finished roadmap to the client (Jindřich or Marek), before further roadmap-presentation work is scheduled.
 
 ## Action Items
 
@@ -125,6 +125,8 @@ Processed a backlogged transcript for the 2026-09-10 Lexie/Max/Maxie weekly sync
 
 Also closed out 2026-09-10's daily retroactively (it had been left open) and rolled several of its carry-forward items forward with resolution updates from today's meeting: the Max chatbot test-environment stand-up, the recurring Thursday sync, the MVP/harmonogram terminology alignment, the priority-3 fix report-back, and the Lexie-retest notification were all marked done; the old "figure out test-user/auth approach" item was marked superseded by today's more detailed test-account discussion.
 
+Drafted a first-ever end-to-end specification for the Listing project (`product/solution-space/listing-specifikace.md`) at PM's direct request, loosely modeled on an existing Reklamace dev spec but scoped to business content (value, KPIs, phasing, FAQ, open questions). Iterated heavily over the session per PM feedback: removed all dates; enriched with two client-deck slides (current-state weaknesses/consequences, next-step goals) and a detailed AI Listing Tool demo walkthrough presented by Filip Černý — the demo was separately routed into the harness via `/project-document` (`2026-09-11-ai-listing-tool-demo-walkthrough.md`), adding two `project-knowledge` entries and capturing LL-029 on live demos surfacing capabilities status meetings miss. The spec was then restructured to leverage the `/product-feature` skill's structure (User Stories, Acceptance Criteria, Edge Cases, Out of Scope, Dependencies, Open Questions) for a plain dev-handoff document with no PM meta-commentary, split into standalone phase chapters (MVP / Plná verze / Nice to Have Backlog, nothing mixed across phases), translated fully to Czech, and stripped of MD estimates, a Design section, and emojis. Also built and published a companion visual Kanban-style roadmap board artifact matching the existing MaxBuddy board's design language (phase columns, status-colored cards, purple discovery-needed banners, pinned context notes) at https://claude.ai/code/artifact/b71a9a33-e949-4673-9a12-2c949c3be038. PM confirmed this is done for now and will resume next week. Also committed and pushed two batches of prior pending harness work from the 09-09 through 09-11 period (meeting routing, and the Listing spec + demo routing); the final `git push` was blocked by the session's sandbox classifier both times and needs to be run manually by the PM — check `git status` before starting new work.
+
 ## Audit Log
 
 [AUTO] project-assumptions — added ASM-058 through ASM-063 (Lexie feedback-bug resolution, X-Manager Kanban confirmed as roadmap solution, Lexie design-compromise plan, cross-project harmonogram commitment, X-Manager cross-stream deferral, test-account technical options) from 2026-09-10-lexie-max-maxie-weekly-sync (2026-09-11)
@@ -137,3 +139,6 @@ Also closed out 2026-09-10's daily retroactively (it had been left open) and rol
 [AUTO] documents-index — added entry for 2026-09-11-ai-listing-tool-demo-walkthrough (2026-09-11)
 [AUTO] project-knowledge — added "AI Listing Tool (Dr. Max)" and "Listing — non-compliant medical claim blacklist" from 2026-09-11-ai-listing-tool-demo-walkthrough (2026-09-11)
 [AUTO] project-lessons — LL-029 captured from 2026-09-11-ai-listing-tool-demo-walkthrough (2026-09-11)
+[MANUAL] product-scope-listing (product/solution-space/listing-specifikace.md) — drafted, then iterated to a dev-handoff-ready spec (User Stories/ACs per phase, no PM meta-commentary, Czech only, no estimates) (2026-09-11)
+[MANUAL] Listing roadmap board — published visual Kanban artifact matching the MaxBuddy board design; iterated to remove Design section and emojis (2026-09-11)
+[AUTO] project-lessons — LL-030 captured from project-daily-2026-09-11 (2026-09-11)

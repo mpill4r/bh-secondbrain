@@ -1,10 +1,30 @@
 ---
 last_updated: 2026-09-11
-last_updated_by: auto — project-document routing
+last_updated_by: auto — project-daily close
 owner: Marek Pillár
 ---
 
 # Lessons Learned
+
+---
+
+### LL-030
+
+| Field | Value |
+|-------|-------|
+| ID | LL-030 |
+| Created | 2026-09-11 |
+| Category | working method |
+| Source | project-daily-2026-09-11 |
+
+**Lesson**
+An existing skill's internal structure can be borrowed for a deliverable that doesn't fit that skill's formal mechanics — apply its rigor (e.g. User Story / Acceptance Criteria discipline) without invoking its file-registration or ID-tracking machinery, when the underlying tracking system (FEAT-NNN, product-scope) doesn't actually apply to the content being produced.
+
+**Context**
+Drafting a first-ever Listing project spec, the PM asked to "leverage" the `/product-feature` skill's structure. This harness's `product-scope`/`FEAT-NNN` system is scoped to the Second Brain meta-tool, not Dr. Max's products, so the spec was written using `product-feature`'s section shape and AC rigor directly in `product/solution-space/listing-specifikace.md`, without registering a `feat_id` or linking to a `product-scope` file — kept the quality bar, skipped the mismatched mechanics.
+
+**Cross-reference**
+product/solution-space/listing-specifikace.md
 
 ---
 
