@@ -8,6 +8,26 @@ owner: Marek Pillár
 
 ---
 
+### LL-031
+
+| Field | Value |
+|-------|-------|
+| ID | LL-031 |
+| Created | 2026-09-11 |
+| Category | working method |
+| Source | project-daily-2026-09-11 |
+
+**Lesson**
+A workshop-prep artifact's field set and scope (how strict, how many entities, prefilled vs. blank) is a design decision the requester usually only discovers by seeing a first draft — expect at least one full restructure after showing initial work, and treat that as normal iteration rather than a sign the first attempt was wrong.
+
+**Context**
+The Žůrek/logistics Business Quantification prep went through three real restructures in one session: scope narrowed from 17 portfolio initiatives to 11, then the field set tightened from a loose OKR/confidence structure to a strict 6-field card with prefill rules, then an interview script was layered on top per field. Each pass was fast because the underlying research (OKR framework, JTBD, Fermi estimation) stayed valid across all three — only the presentation and scope changed.
+
+**Cross-reference**
+product/solution-space/ai-initiatives-okr-framework.md
+
+---
+
 ### LL-030
 
 | Field | Value |
