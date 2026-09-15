@@ -1,10 +1,70 @@
 ---
-last_updated: 2026-09-11
-last_updated_by: auto — project-daily close
+last_updated: 2026-09-15
+last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
 
 # Lessons Learned
+
+---
+
+### LL-034
+
+| Field | Value |
+|-------|-------|
+| ID | LL-034 |
+| Created | 2026-09-15 |
+| Category | interviewing technique |
+| Source | 2026-09-15-business-quantification-teo-ocr |
+
+**Lesson**
+In a business-quantification or scoping interview, don't take the interviewee's first "yes, that's me" on the Owner field at face value — explicitly reflect the Owner/Domain-Expert distinction back to them ("so X is the owner and you're my daily contact?") before writing it down. People default to saying yes to the person asking, then self-correct once the actual decision-making implication is spelled out.
+
+**Context**
+In the TEO/OCR quantification call, Radim Švarc initially confirmed he was the business owner ("Můžete si to tam napsat"), but immediately qualified it once Marek probed further — major decisions actually need Tomáš Burda's sign-off. Marek caught this by explicitly reflecting the corrected roles back ("takže business owner tohoto byl pan Burda a vy budete ten můj daily contact?"), which Radim then confirmed. Without that reflect-back step, Radim would likely have stayed recorded as owner.
+
+**Cross-reference**
+project-stakeholders STK-025, STK-041; product/solution-space/ai-initiatives-okr-framework.md (Pole 1 — Vlastník)
+
+---
+
+### LL-033
+
+| Field | Value |
+|-------|-------|
+| ID | LL-033 |
+| Created | 2026-09-15 |
+| Category | workshop planning |
+| Source | 2026-09-15-business-quantification-reklamace-fakturace-doprav |
+
+**Lesson**
+A per-item interview script's stated time budget (e.g. "~10-15 min per initiative") is a floor for a focused, uninterrupted exchange — real calls with a client stakeholder run longer per item once genuine back-and-forth, self-correction, and tangents happen, so a session prepped to cover many items in one sitting should expect to cover far fewer and plan an explicit follow-up rather than treating partial coverage as a shortfall.
+
+**Context**
+The Business Quantification workshop was prepped for 11 initiatives using a 6-field, ~10-15-min-per-item script. The first live execution covered only 2 (Reklamace, Fakturace doprav) in the available time before the client stakeholder had to leave for another call — each item ran meaningfully longer than the script's estimate once real discussion, self-correction on numbers, and tangential clarifications (naming, phasing) were included.
+
+**Cross-reference**
+product/solution-space/ai-initiatives-okr-framework.md; meetings/prep/2026-09-14-ai-initiatives-business-quantification-prep.md
+
+---
+
+### LL-032
+
+| Field | Value |
+|-------|-------|
+| ID | LL-032 |
+| Created | 2026-09-15 |
+| Category | stakeholder tracking |
+| Source | 2026-09-15-order-prediction-dashboard-follow-up |
+
+**Lesson**
+When processing a recurring meeting, actively cross-check any newly-named person against existing *low-confidence* stakeholder entries (not just full duplicates) — a name and role profile that loosely matched an old "unclear identity" record is a stronger signal than it looks, and flagging the possible match (without merging) keeps the record honest while surfacing it for PM confirmation.
+
+**Context**
+The 2026-09-15 order-prediction dashboard follow-up repeatedly referenced "Honza/Jan Maroušek," a warehouse-staffing planner needing a per-warehouse reservation breakdown. This closely matched two existing low-confidence entries created from earlier, thinner mentions: STK-036 ("Honza," flagged 2026-09-03 as wanting a month-ahead logistics view) and STK-021 (Jan Maroušek, the Kontrola beden contact). Rather than creating a third entry or silently merging, both existing records were annotated with the possible match and left for PM verification.
+
+**Cross-reference**
+project-stakeholders STK-021, STK-036; 2026-09-03-order-prediction-dashboard-live-demo
 
 ---
 

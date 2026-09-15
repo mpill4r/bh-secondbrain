@@ -1,6 +1,6 @@
 ---
-last_updated: 2026-09-11
-last_updated_by: auto — project-document routing
+last_updated: 2026-09-15
+last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
 
@@ -80,14 +80,39 @@ Original infrastructure/model provisioning for MaxBuddy was done manually (ad ho
 | Field | Value |
 |-------|-------|
 | Definition | **TEO is Dr. Max's technical department** (not a project acronym — clarified 2026-09-07, Jura had been calling this the "OCR project" informally). The project itself is a BigHub effort (owner: Jura Brázdil) automating extraction from TEO's mandatory pharmacy equipment service-inspection/revision-repair protocols (automatic doors, air conditioning, etc.) — currently manually retyped into Excel by staff. "OCR" is a working name, not literally OCR-only — the pipeline is LLM-based extraction over scanned/photographed, often handwritten, documents. |
-| Source | 2026-09-03-maxbuddy-chatbot-ocr-project-handoff, 2026-09-07-ai-portfolio-roadmap-scope-review |
+| Source | 2026-09-03-maxbuddy-chatbot-ocr-project-handoff, 2026-09-07-ai-portfolio-roadmap-scope-review, 2026-09-15-business-quantification-teo-ocr |
 | Added | 2026-09-03 |
-| Last updated | 2026-09-07 |
+| Last updated | 2026-09-15 |
 | Status | Active |
 
 Scope narrowed to one category first: automatic doors, two vendors — extracting door type, faults, branch address, and follow-up requests via a ~16-prompt pipeline. Currently in a second feasibility-measurement round (first round handled cleanly-extractable data; second tackles free-text notes). Target: production-ready for Dr. Max's November inspection cycle. Will move onto the shared AI platform (alongside MaxBuddy, Max, Lexie) once the new AKS sandbox is available.
 
 **2026-09-07 portfolio review**: the "not yet present in the roadmap tracker" gap flagged 2026-09-03 is now resolved — added as the TEO_OCR sheet + a Portfolio entry. Status as of this review: still a local feasibility prototype on Jura's machine, not deployed anywhere; deliberately piloted on 2 suppliers/document formats for uniform inputs before expanding — see [[ASM-034]] (possibly the same underlying scope as the automatic-doors/two-vendor framing above, generalized in description — not confirmed either way). 5 fixed columns extract reliably; 3 more fields are open-ended, often handwritten "findings" text — harder, success rate still unknown. No shared storage/service exists yet to deliver extracted data to — currently framed as Dr. Max's responsibility to build. ServiceNow export/import and query-back features not started, tentatively Full Version, blocked on Dr. Max sharing asset/location data. New contacts: Radim Švarc (STK-041, building his own app that will call BigHub's OCR API directly — integration boundary still undefined) and Michaela Albrechtová (STK-042). Cross-project synergy identified with Fakturace doprav's similar mixed-format document problem — see [[ASM-035]].
+
+**Ownership (2026-09-15)**: Business owner is Tomáš Burda (STK-025), head of the technical department — his "TD revisions" roadmap entry plausibly refers to this same initiative, pending his own confirmation. Radim Švarc (STK-041) is the domain expert/daily working contact, not the owner.
+
+**Business value & volume (2026-09-15, Business Quantification interview + Dr. Max's own technical presentation)**: External service vendors perform inspections at pharmacies and email scanned PDF service documents (no OCR layer) to Dr. Max's technical department — a single document can contain up to ~100 individual inspections. A technician manually reads and transcribes: cost-center/branch number, address, date, equipment type/count, order number, service company, and technician-written defect notes — then manually re-enters all of it into ServiceNow. Volume: ~250 documents/week (seasonal — higher in autumn during door/climate-control service season, lower in summer, averaging out annually). Time cost: ~40 hours (~5 MD) per month, sourced from a prior estimate Radim had given to Lukáš Síč, cross-checked against a historical sample of protocols on a network drive. Per-MD/hourly cost rate not yet available — Tomáš Burda to provide; an ~3 000 Kč/day figure from the logistics quantification was referenced only as an illustrative placeholder, not a TEO-specific rate.
+
+**Proposed automated architecture (Dr. Max's own presentation, 2026-09-15)**: vendors redirect documents to a dedicated intake email (example: `revize@drmax.cz`) or a shared network drive; an automated service (proposed: Microsoft PowerAutomate) captures emails and saves attachments; files are sent to an AI extraction tool via API (proposed stack: Python orchestration + BigHub's internal model, or Claude directly); extracted data populates a shared Excel with uncertain/mismatched fields flagged for review; the technician checks the Excel before ServiceNow import, either manually (mechanism being prepared by a BDC contact, "Wágner" — STK-047, low-confidence) or via simulated-click automation (undecided). Notably, Dr. Max's own team already tested **Claude directly against a 100-page sample document**, successfully producing a full row-level extraction with uncertain rows flagged — informal client-side validation ahead of any formal BigHub pipeline. The presentation closes with a direct, unanswered question to BigHub: is this pipeline feasible, and what's a realistic delivery timeline? See `documents/client/2026-09-15-teo-ocr-technical-process-presentation.md`.
+
+**KPI framing (2026-09-15, open)**: Marek proposed an example time/FTE-saved KPI (~80 hours saved within 3 months ≈ half an FTE); Radim pushed back, preferring a document-count/correction-rate metric (share of imported documents read correctly with no manual correction needed) as a better proxy for real impact — not yet finalized.
+
+### Reklamace (claims) — business objective & phasing
+
+| Field | Value |
+|-------|-------|
+| Definition | Business origin and quantification for the Reklamace initiative, captured via the Business Quantification interview format. Today's process is paper-heavy and fragmented: separate systems that don't automatically communicate, staff photographing claim evidence to WhatsApp and manually forwarding it, and per-warehouse/per-person knowledge scattered across personal Excel sheets and notebooks with no shared source of truth — flagged originally by an external audit (Ableneo). The goal is not primarily error reduction (staff know the repetitive process well) but reducing the friction/cognitive load of a fragmented manual flow. |
+| Source | 2026-09-15-business-quantification-reklamace-fakturace-doprav |
+| Added | 2026-09-15 |
+| Status | Active |
+
+**Owner**: Petr Spilka (STK-014), tentatively also domain expert — Jana Egrmaierová (STK-044) floated as a possible alternative, unconfirmed.
+
+**Business value (Fermi estimate, unconfirmed)**: ~4 people × ~2 hours/day saved ≈ 1 FTE. A wage-cost figure (~3000, unit/currency unclear from the source transcript) was mentioned but needs verification with Petr Spilka.
+
+**KPIs**: Primary — end-to-end process time (baseline needed pre-launch, no existing measurement tool today; target threshold not cleanly settled between "50% faster" and "~25% faster"). Secondary — post-launch (≥3 months) satisfaction survey, ~66% target (majority of a 6-7 person sample). Document/claim error rate was explicitly discussed and rejected as a KPI — see [[ASM-072]].
+
+**Phasing**: Ships in 5 phases (0 through 4/5); the full ~1 FTE saving only materializes once all phases are live — see [[ASM-072]]. Documentation should label phases explicitly (e.g. Phase 0 = Příprava/preparation, Phase 1 = příjmové reklamace/receiving claims) since staff currently confuse "příjmové" (receiving) vs. "dodavatelské" (supplier) claim types.
 
 ### Reklamace "OCR" (SP/MS štítky)
 
@@ -110,6 +135,23 @@ Naming confusion source: Honza's original spec notes used "OCR" loosely for both
 | Status | Active |
 
 Documents are classified primarily by barcode where present; barcodes aren't guaranteed on every document (per Petr Sláma), but a computer-printed AR number always is — handwritten-only AR numbers are treated as unacceptable input. ViaPharma is independently building a new standardized, pre-filled ZOPV form (with Petr Sláma's team) that should eliminate most illegible-handwriting cases at the source, leaving only kilometers driven as a manual field (drivers are paid by distance, which can vary from the fixed route distance).
+
+### Fakturace doprav — business objective & KPIs
+
+| Field | Value |
+|-------|-------|
+| Definition | Business origin and quantification for Fakturace doprav, captured via the Business Quantification interview format on 2026-09-15 — where it appeared on the roadmap tracker under the generic label "fakturace od dodavatelů" (see [[ASM-006]] for the naming disambiguation). Today's process places a heavy manual burden on transport/logistics office staff, who manually collect, verify, and compile driver-submitted delivery documents by hand, currently causing overtime. Goal: scan/automate as much as possible via the drivers themselves, framed not as headcount reduction but as freeing existing staff from repetitive manual work. |
+| Source | 2026-09-15-business-quantification-reklamace-fakturace-doprav |
+| Added | 2026-09-15 |
+| Status | Active |
+
+**Owner / domain expert**: Jan Žižka (STK-015) — hadn't seen the tracker yet as of this call.
+
+**Business value (Fermi estimate, flagged as possibly too large by the client herself)**: ~16 hours/day (2 people × 8 hours) → a potential annual saving in the range of ~1.5 million (currency not stated). Source figure: an earlier Ableneo estimate of ~90 hours/month of relevant manual work, 40–60% considered automatable. Needs verification with Jan Žižka before being treated as reliable.
+
+**Scope**: Savings are entirely office/administrative-side — driver time and cost are explicitly out of scope, since drivers aren't ViaPharma/Dr. Max employees. A driver satisfaction check was floated as a soft secondary signal only, not a hard KPI — see [[ASM-072]].
+
+**KPIs**: Primary — total administrative time-fund reduced by ~40%, measured in aggregate (not per-headcount, since staff time isn't cleanly separable by task). Document error rate was explicitly discussed and rejected as a KPI, same reasoning as Reklamace — see [[ASM-072]].
 
 ### AI Listing Tool (Dr. Max)
 
@@ -213,16 +255,24 @@ Per a BigHub roadmap sheet (2026-09-02), owners cross-checked against the above:
 | Field | Value |
 |-------|-------|
 | Definition | The e-commerce order/demand-prediction dashboard owned by Juraj Kmec. Static, read-only React frontend ("like Power BI") deliberately built with no interactivity so it can't break Dr. Max infra. Tracks two predicted metrics: (1) **Revenue** — plan/target vs. actual vs. model prediction with confidence intervals and a probability-of-hitting-target readout; (2) **Logistics** — predicted new order counts by warehouse and shipping method, with a "time travel" feature comparing a historical model run against actual outcomes. Both have a same-day zoomed view with ~30 min live-data delay. Deployed on Dr. Max infra, VPN-gated, no external repo access without a Dr. Max account. |
-| Source | 2026-09-02-order-prediction-dashboard-walkthrough, 2026-09-07-ai-portfolio-roadmap-scope-review |
+| Source | 2026-09-02-order-prediction-dashboard-walkthrough, 2026-09-07-ai-portfolio-roadmap-scope-review, 2026-09-15-order-prediction-dashboard-follow-up |
 | Added | 2026-09-02 |
-| Last updated | 2026-09-07 |
+| Last updated | 2026-09-15 |
 | Status | Active |
 
-v1 considered done as of 2026-09-02; first live business demo 2026-09-03 (demoed by Juraj Kmec directly). Before this, the business had no live visibility — data was pulled manually from Excel exports ~2 days stale. No phase 2/3/4 roadmap defined yet; will be shaped after demo feedback and a 1-2 week trial by Marek Šimoník (STK-019, e-commerce lead).
+v1 considered done as of 2026-09-02; first live business demo 2026-09-03 (demoed by Juraj Kmec directly). Before this, the business had no live visibility — data was pulled manually from Excel exports ~2 days stale. Formally accepted by the client as "version 1" on 2026-09-15 — see [[ASM-069]].
 
 **Live demo outcome (2026-09-03)**: Very positive reception from Šimoník. A real 8-minute site outage (2026-08-24, 09:20–09:28) correctly showed as a dip in the live chart — a strong, organic trust-building validation moment. Model is calibrated for a 14-day horizon (reliable) with unguaranteed extrapolation beyond that (deliberately shown without confidence intervals). Trained purely on recognized/invoiced revenue, not blended with order-backlog signals — see [[ASM-016]]. Known gap: doesn't yet account for marketing campaigns (the one promo/campaign CSV on file is ~2 months stale) — likely explanation for recent Brno under-prediction (a campaign started 2026-08-29). Small feature backlog: order-count toggle on the breakdown table, D-7 and day-of-week-aligned D-365 historical overlay lines, split warehouse/shipping-method filters, clearer tooltip text distinguishing "probability of hitting today's target" from "% of month-end target expected." Review process for the testing phase: verify data accuracy → request UX changes → tune model accuracy last, see [[ASM-014]]. Phase-1 primary users are Šimoník and Petr Ondráček (STK-035); a separate logistics need (month-ahead view) deferred to a later phase, see [[ASM-015]].
 
 **2026-09-07 portfolio review**: Order Service data now flows through DataHub rather than a direct connection (architecture clarification, not a scope change). Production deployment is technically live already, but the *test* environment is undersized on the old AKS node pool and throwing out-of-memory errors — production itself runs fine, waiting on the new AKS to fix test capacity. Christmas prediction quality flagged as a known open risk since training data has no prior Christmas season to learn from — see the new "Spresňovanie modelovania" backlog item. Campaign recommendation model and automated campaign generation discussed as possibly Full Version but no firm call made — both genuinely hard analytics problems needing dedicated scoping, see [[ASM-030]].
+
+**Terminology (2026-09-15)**: Three distinct figures now appear together on dashboard views and must be kept separate — **budget** (Dr. Max's annual plan, set every August for the following year), **forecast** (Dr. Max's own internal re-budgeting exercise, redone after months 3, 5, and 7 against year-end expectations — running ~3-6% below the original 2026 budget as of this date), and **predikce** (the model's own output — the only one of the three BigHub computes). Budget/forecast are supplied externally by Dr. Max (a "2026 forecast" column added to the existing data feed); see [[ASM-070]].
+
+**Order-count comparison methodology (2026-09-15)**: A same-weekday historical comparison feature uses **T-7** (7 days back) and **T-364** (not a literal D-365) specifically to preserve day-of-week alignment across a full year, including leap years — the model counts by week (52), not by raw day offset, so it doesn't drift even in a leap year.
+
+**Pharmacy reservations as strategic differentiator (2026-09-15)**: "Rezervace v lékárnách" (pharmacy reservations — click & collect at one of ~600 physical Dr. Max pharmacies) are dramatically cheaper fulfillment than warehouse-based click & collect: a pharmacist simply holds a product on a shelf, versus Dr. Max carrying full warehouse pick/pack/return cost. Dr. Max is actively pushing this channel (a new in-app "reserve at pharmacy" button, alongside add-to-cart) and considers it a key e-commerce USP. On the dashboard, reservations need to be broken out from the general order aggregate as their own top-line category, further split per warehouse (Nučice, Brno) for logistics staffing — see [[ASM-071]]. This surfaced a design gap in the existing "Metrix" (warehouse × delivery-method matrix) view: reservations don't map cleanly onto either axis (a reservation is conceptually both a "warehouse" and a "delivery method" in the current model), needing a redesign.
+
+**Delivery cadence (2026-09-15)**: The dashboard's initial build is formally accepted as "version 1"; further requests batch into "version 2," and once that ships, subsequent requests batch into "version 3," on a roughly quarterly cadence rather than continuous ad hoc releases — see [[ASM-069]].
 
 ### Axapta
 

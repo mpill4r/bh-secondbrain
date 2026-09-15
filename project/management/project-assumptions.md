@@ -1,5 +1,5 @@
 ---
-last_updated: 2026-09-11
+last_updated: 2026-09-15
 last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
@@ -10,6 +10,15 @@ owner: Marek Pillár
 
 | ID | Status | Created | Description (short) |
 |----|--------|---------|---------------------|
+| ASM-072 | Decided (2026-09-15) | 2026-09-15 | Business-quantification KPI decisions for Reklamace/Fakturace doprav: error rate excluded as a KPI for both, driver time/cost excluded from Fakturace doprav's FTE calc, Reklamace's ~1 FTE saving contingent on all 5 phases shipping |
+| ASM-071 | Decided (2026-09-15) | 2026-09-15 | Pharmacy reservations confirmed as a strategic e-commerce differentiator for Dr. Max — to be broken out as their own top-line dashboard category, split per warehouse for logistics staffing |
+| ASM-070 | Decided (2026-09-15) | 2026-09-15 | Order-prediction dashboard's model output stays named "predikce," kept terminologically distinct from Dr. Max's own "budget"/"forecast" planning figures |
+| ASM-069 | Decided (2026-09-15) | 2026-09-15 | Order-prediction dashboard's current build formally accepted as "version 1"; future requests batch into v2/v3 on a roughly quarterly cadence instead of continuous ad hoc releases |
+| ASM-068 | Decided (2026-09-15) | 2026-09-15 | Listing category hierarchy/inheritance ("vrstvené/složené listovací standardy") split out of Nice to Have into Plná verze scope, separate from raw category-count scaling |
+| ASM-067 | Decided (2026-09-15) | 2026-09-15 | Listing "produkční nasazení" finish-line criterion defined: listingový tým can self-import, edit, and return a product to Magento without manual ctrl-c/ctrl-v |
+| ASM-066 | Decided (2026-09-15) | 2026-09-15 | Listing's "Tvorba popisů pro nové produkty" reclassified from Backlog to Hotovo — new products always enter the tool as existing products since Magento entry happens first |
+| ASM-065 | Decided (2026-09-14) | 2026-09-14 | Listing must be connected to Magento before production — current phase is import-only by design, full Magento connection is a confirmed must-have for launch |
+| ASM-064 | Open (2026-09-14) | 2026-09-14 | Listing blacklist enforcement stays advisory (warning) for now — whether it should become a blocking pre-publish check is an open business/compliance decision |
 | ASM-063 | Open (2026-09-10) | 2026-09-10 | Lexie test-account approach: shared account + in-app role switcher preferred over 4 separate accounts, pending feasibility confirmation |
 | ASM-062 | Decided (2026-09-10) | 2026-09-10 | X-Manager not extended to other Dr. Max streams yet — waiting on Tomáš Dudaško's promised DevOps environment project |
 | ASM-061 | Decided (2026-09-10) | 2026-09-10 | Cross-project harmonogram (Lexie + Max + Maxie) will be built at weekly/workday granularity including testing windows — orientational, not fixed |
@@ -67,7 +76,7 @@ owner: Marek Pillár
 | ASM-009 | Decided (2026-09-02) | 2026-09-02 | Specs must include a business-signed hypothesis + acceptance-criteria section before build starts |
 | ASM-008 | Decided (2026-09-02) | 2026-09-02 | Business-facing roadmap sheet trimmed to Ideas/Active only; dev detail moves to a VBS breakdown in a separate system |
 | ASM-007 | Decided (2026-09-08) | 2026-09-02 | Reklamace dev ownership — Filip Černý designated single dev owner (2026-09-08), after Brázdil/Turner/Černý/Starenko multi-attribution history |
-| ASM-006 | Open (2/4 resolved, 2026-09-02) | 2026-09-02 | BigHub roadmap sheet vs. transcripts — 4 ownership/spelling conflicts recorded; surname spelling and Lexie co-ownership resolved, invoicing/reklamace ownership still open |
+| ASM-006 | Open (2.5/4 resolved, 2026-09-15) | 2026-09-02 | BigHub roadmap sheet vs. transcripts — 4 ownership/spelling conflicts recorded; surname spelling and Lexie co-ownership resolved, invoicing/fakturace doprav conflict now leaning resolved (same initiative), reklamace ownership still open |
 | ASM-005 | Decided (2026-09-02) | 2026-09-01 | Who's Who reference card cross-referenced against transcripts for 2026-09-01 status sync — verified by Marek |
 | ASM-004 | Decided (2026-09-01) | 2026-09-01 | MaxBuddy changes touching the shared data model require Dr. Max analytics team review before shipping |
 | ASM-003 | Decided (2026-08-25) | 2026-09-01 | Alfred stays a BigHub-internal asset, never delivered to clients |
@@ -75,6 +84,204 @@ owner: Marek Pillár
 | ASM-001 | Decided (2026-08-25) | 2026-09-01 | Dr. Max client-side coordination unified into one role (Jindřich Tůma) |
 
 ## Entries
+
+---
+
+### ASM-072
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-072 |
+| Created | 2026-09-15 |
+| Source | 2026-09-15-business-quantification-reklamace-fakturace-doprav |
+| By | Marek Pillár, Tereza Foltýnová (STK-013) |
+| Status | Decided (2026-09-15) |
+
+**Description**
+Three related KPI-design decisions surfaced while quantifying Reklamace and Fakturace doprav in the Business Quantification interview: (1) document/claim error rate is excluded as a KPI for both initiatives — attribution to the tool vs. driver/staff behavior is too unclear to be a clean metric; (2) driver time and cost are excluded from Fakturace doprav's business-value calculation entirely, since drivers are not ViaPharma/Dr. Max employees — only office/administrative time counts; (3) Reklamace's full projected ~1 FTE saving is contingent on all 5 delivery phases shipping, not any single phase, and the documentation should make phase-by-phase scope explicit rather than implying the saving lands immediately.
+
+**Rationale**
+Marek raised error rate as a candidate KPI for both initiatives but both agreed it would require driver/staff education to fix rather than measuring the tool's own effect, and blame attribution would stay murky — dropped rather than force a weak metric into the OKR card. The driver-scope exclusion follows directly from headcount: no driver time is on ViaPharma/Dr. Max's own payroll, so it can't factor into an FTE-savings figure. The phasing note came from Tereza flagging that people already confuse which Reklamace phase/claim-type is being discussed.
+
+**Impact**
+- **KPI design**: Both initiatives' OKR cards in the Business Quantification tracker reflect these exclusions/dependencies rather than carrying speculative metrics.
+- **Expectation management**: Prevents the ~1 FTE Reklamace saving being read as available before all 5 phases ship.
+
+---
+
+### ASM-071
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-071 |
+| Created | 2026-09-15 |
+| Source | 2026-09-15-order-prediction-dashboard-follow-up |
+| By | Marek Šimoník (STK-019) |
+| Status | Decided (2026-09-15) |
+
+**Description**
+Pharmacy reservations ("rezervace v lékárnách") are confirmed as a deliberate strategic differentiator for Dr. Max's e-commerce, not just another order channel — leveraging ~600 physical pharmacies as pickup points is dramatically cheaper fulfillment than warehouse-based click & collect (a pharmacist holds a product on a shelf vs. Dr. Max carrying full fulfillment/return cost). A new in-app "reserve at pharmacy" button (alongside add-to-cart) is being actively pushed. On the dashboard, reservations will be broken out as their own top-line category (separate from e-com/marketplace) and further split per warehouse (Nučice, Brno) specifically to support logistics staffing planning.
+
+**Rationale**
+Petr Ondráček flagged that reservations were folded into the general new-orders aggregate today, hiding both the reporting distinction Dr. Max cares about and the warehouse-level detail logistics needs to plan staffing. Šimoník's business context made clear this isn't a minor reporting nicety — it's core to how Dr. Max wants to grow the channel.
+
+**Impact**
+- **Dashboard scope**: Drives several concrete build items — a top-line rezervace/e-com/marketplace split, and a warehouse × reservation-type breakdown feeding into the existing "Metrix" view (which needs redesign since reservations don't map cleanly onto its warehouse/delivery-method axes today).
+- **Business relevance**: Confirms this dashboard workstream has direct visibility into a stated Dr. Max growth strategy, not just operational reporting.
+
+---
+
+### ASM-070
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-070 |
+| Created | 2026-09-15 |
+| Source | 2026-09-15-order-prediction-dashboard-follow-up |
+| By | Marek Šimoník (STK-019) |
+| Status | Decided (2026-09-15) |
+
+**Description**
+As budget, forecast, and the model's own predicted-revenue figure all start appearing together on the same dashboard views, the model's output will consistently be called "predikce" — kept terminologically distinct from Dr. Max's own "budget" (set annually each August) and "forecast" (Dr. Max's internal re-budgeting exercise, redone after months 3, 5, and 7 against year-end expectations).
+
+**Rationale**
+Šimoník was explicit that mixing up "forecast" (a Dr. Max planning term) with the model's prediction would confuse other managers who see this dashboard — he wants the naming kept clean specifically because more people will use it beyond himself and Petr Ondráček going forward.
+
+**Impact**
+- **Dashboard UI**: All future views combining these three figures (e.g. the "new orders" and Business Overview pages) must use this naming consistently.
+- **Data pipeline**: Confirms budget/forecast are externally supplied by Dr. Max (a "2026 forecast" Excel column, already sent by Alana) rather than computed by the model — the model only ever produces "predikce."
+
+---
+
+### ASM-069
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-069 |
+| Created | 2026-09-15 |
+| Source | 2026-09-15-order-prediction-dashboard-follow-up |
+| By | Jindřich Tůma (STK-003), agreed by Marek Šimoník (STK-019) |
+| Status | Decided (2026-09-15) |
+
+**Description**
+The order-prediction dashboard's currently delivered build is formally accepted by the client as "version 1." Today's feedback (and any further requests) becomes the batched scope for "version 2"; once v2 ships, subsequent requests batch into "version 3" on a roughly quarterly cadence, rather than continuous ad hoc releases.
+
+**Rationale**
+Jindřich proposed this partly to meet BigHub-internal reporting pressure to show formally delivered value on a defined cadence, and partly to give the workstream a sustainable release rhythm instead of endless small pushes. Šimoník agreed immediately and warmly, confirming the delivered build already reflects the intended non-final UX direction.
+
+**Impact**
+- **Delivery cadence**: Establishes a precedent — v1 accepted now, v2 to bundle today's ~10 feature requests, v3 to bundle whatever surfaces after that, roughly quarterly.
+- **Client relationship**: Signals enough trust to move from continuous iteration to a more formal cadence without it reading as BigHub reducing engagement.
+
+---
+
+### ASM-068
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-068 |
+| Created | 2026-09-15 |
+| Source | product/solution-space/listing-specifikace.md review (Jan S. comment thread on FigJam board, relayed by Marek Pillár) |
+| By | Jan S. |
+| Status | Decided (2026-09-15) |
+
+**Description**
+"Multi-kategoriální podpora" (Nice to Have) actually bundled two separate questions: (1) how many/which categories to eventually cover (pure scope, orientačně 500–2 000+), and (2) how listovací minima should inherit across a category hierarchy (e.g. Pro sportovce → Sportovní výživa a diety → Proteiny → Hovězí proteiny — a superkategorie sets general minima, subkategorie add specifics). Jan S. proposed carving out (2) into Plná verze since it needs to be specified regardless of when/how far the raw category count scales; Marek confirmed. (1) stays in Nice to Have as a pure scope question.
+
+**Rationale**
+Today's model is flat — 1 listovací minimum per category, no matter how deep in the hierarchy — so there's no defined logic for inheritance/nesting. That's an architecture question independent of category count, and blocks designing the category-standards editor properly even before the count is decided.
+
+**Impact**
+- **Scope**: `product/solution-space/listing-specifikace.md` section 2.4 now carries this as a Plná verze item (ID 15); section 3.1 (Nice to Have) is narrowed to just the category-count question.
+- **Open question carried forward**: exact inheritance/override rules between superkategorie and subkategorie still need to be specified with Petr Neuman.
+
+---
+
+### ASM-067
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-067 |
+| Created | 2026-09-15 |
+| Source | product/solution-space/listing-specifikace.md review (Jan S. comment thread on FigJam board, relayed by Marek Pillár) |
+| By | Jan S. |
+| Status | Decided (2026-09-15) |
+
+**Description**
+"Produkční nasazení" (production deployment) previously had no defined completion criterion. Jan S. proposed, and Marek confirmed, the bar: the listingový tým can, by themselves, import a product, edit it in the tool, and get the result back into Magento — even if the first version is "na tupáka" (e.g. copying through an Excel sheet) — as long as nobody has to manually ctrl-c/ctrl-v content between systems. Jan S. framed this explicitly as the *starting line* for reasonable usability in the current version, not the target fully-automated integration.
+
+**Rationale**
+Without a defined finish line, "produkční nasazení" was an ambiguous status label. This gives a concrete, testable minimum bar that doesn't require the full Magento integration (see [[ASM-065]]) to be complete first.
+
+**Impact**
+- **Scope**: `product/solution-space/listing-specifikace.md` section 1.4 now documents this criterion directly.
+- **Sequencing**: Clarifies that "produkční nasazení" can be reached via a manual/semi-manual transfer method before the fully automated Magento integration ([[ASM-065]]) is built.
+
+---
+
+### ASM-066
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-066 |
+| Created | 2026-09-15 |
+| Source | product/solution-space/listing-specifikace.md review (Jan S. comment thread on FigJam board, relayed by Marek Pillár) |
+| By | Jan S. |
+| Status | Decided (2026-09-15) |
+
+**Description**
+"Tvorba popisů pro nové produkty" was tracked as a separate Backlog item in Plná verze. Jan S. clarified the actual process: new products must always be created in Magento first (by Dr. Max or dodavatelé) before they can enter this tool — so by the time a product reaches Listing, it always looks like an "existing product," never a genuinely new one from the tool's point of view. The existing generation flow (section 1.2) therefore already covers new products without any additional feature work. Reclassified from Backlog to Hotovo.
+
+**Rationale**
+Marek initially proposed moving the item to backlog/a later phase pending clarification; once Jan S. explained the Magento-first process constraint, both agreed the item was already satisfied by existing MVP functionality. The manual effort that does happen before a product reaches Magento is real but sits with Dr. Max/dodavatelé, outside this e-commerce tool's scope — to be addressed (if at all) in the broader E2E listing process, not here.
+
+**Impact**
+- **Scope**: `product/solution-space/listing-specifikace.md` section 2.2 rewritten; item status flips from Backlog to Hotovo in both the Management summary and the Plná verze "Co je součástí" table.
+- **Scope boundary**: Confirms pre-Magento manual product-creation effort is out of this tool's scope, consistent with [[ASM-031]] (category/structure recommendation also out of scope for the same reason — depends on Dr. Max's own upstream process).
+
+---
+
+### ASM-065
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-065 |
+| Created | 2026-09-14 |
+| Source | product/solution-space/listing-specifikace.md enrichment session (codebase read of `cz-ai-listing`) |
+| By | Marek Pillár (PM decision) |
+| Status | Decided (2026-09-14) |
+
+**Description**
+A direct read of the `cz-ai-listing` codebase confirmed there is no Magento integration of any kind today (no API client, no export, no file-based sync) — the tool is a closed loop against its own Postgres database, with product/category identity seeded once from a legacy export as a stand-in. PM confirmed this is expected: the current phase is deliberately import-only. Full Magento connection (the tool working live against Magento, not a stand-in projection) is a confirmed must-have before the tool can go to production — not an open question, a committed requirement for launch.
+
+**Rationale**
+Building against a stand-in projection is fine for iterating on generation/validation/standards in the current phase, but production usage requires the tool's data to actually reflect and write back to Magento — otherwise listings approved in the tool never reach the live storefront.
+
+**Impact**
+- **Scope**: Magento integration (exact mechanism — file upload vs. direct write vs. API — still `-tbd-`) is a hard dependency for the Produkční nasazení item in the MVP phase, not a nice-to-have.
+- **Timeline**: Production go-live cannot be scheduled until this integration is scoped and built.
+
+---
+
+### ASM-064
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-064 |
+| Created | 2026-09-14 |
+| Source | product/solution-space/listing-specifikace.md enrichment session (codebase read of `cz-ai-listing`) |
+| By | Marek Pillár (PM decision) |
+| Status | Open (2026-09-14) |
+
+**Description**
+Code confirmed the blacklist of non-compliant medical-claim phrases only produces a warning-severity validation issue — it does not block saving or publishing a listing that contains a banned phrase. This corrected an earlier (incorrect) assumption in the Listing spec that the blacklist was a hard block. PM's call for now: keep it as a warning, not a blocker. Whether it should be tightened into a blocking pre-publish check remains an open business/compliance decision.
+
+**Rationale**
+The validation code itself notes forbidden-phrase matching is a simple substring check with real false-positive risk ("context matters") — making it fully blocking today could wrongly prevent legitimate content from being saved. Leaving it as a warning keeps a human in the loop without over-blocking on an imperfect check.
+
+**Impact**
+- **Scope**: No code change needed now. If this is later decided to become blocking, it's a validation-logic change plus a client-facing conversation about false-positive tolerance.
+- **Risk**: Regulatory/compliance exposure is reduced, not eliminated, while enforcement stays advisory-only.
 
 ---
 
@@ -1302,22 +1509,22 @@ Resolved by Marek (2026-09-02): **Turner works on MaxBuddy**, not reklamace — 
 |-------|-------|
 | ID | ASM-006 |
 | Created | 2026-09-02 |
-| Source | roadmap sheet (PM-provided image, 2026-09-02) |
+| Source | roadmap sheet (PM-provided image, 2026-09-02); updated 2026-09-15-business-quantification-reklamace-fakturace-doprav |
 | By | Marek Pillár (STK-001) |
-| Status | Open (2/4 resolved, 2026-09-02) |
+| Status | Open (2.5/4 resolved, 2026-09-15) |
 
 **Description**
 A BigHub "Initiative → Owner/Customer" roadmap sheet was cross-checked against existing meeting-derived stakeholder records. Two entries matched cleanly (MaxBuddy → Tomáš Dudaško; E-Shop order forecast → Marek Šimoník). Two entries were net-new (Product listing → Petr Neuman; TD revisions → Tomáš Burda). Four points conflicted with existing records and were recorded on both sides rather than resolved:
-1. **Invoicing solution → Rudolf Zurek** (STK-024) vs. Fakturace doprav → Jan Žižka (STK-015) / Petr Spilka (STK-014) reviewing — possibly the same initiative under different names, possibly distinct. **Still open** — Marek not yet sure, needs to check directly with Zurek or Žižka.
-2. **Receiving compliants in stock → Rudolf Zurek** (STK-024) vs. Reklamace → Marie Hulešová (STK-020) — possibly the same initiative, possibly distinct. **Still open** — same as above.
+1. **Invoicing solution / "fakturace od dodavatelů" → Rudolf Zurek** (STK-024) vs. Fakturace doprav → Jan Žižka (STK-015) / Petr Spilka (STK-014) reviewing — possibly the same initiative under different names, possibly distinct. **Leaning resolved (2026-09-15)**: in the Business Quantification call, Tereza Foltýnová (ViaPharma) discussed the roadmap's "fakturace od dodavatelů" line as the freight/transport initiative ("je to ta doprava"), with Jan Žižka named as its owner — matching Fakturace doprav, not a separate supplier-invoicing stream. Not yet a formal, explicit confirmation (Rudolf Žůrek's own framing wasn't directly addressed), so kept as "leaning resolved" rather than closed.
+2. **Receiving compliants in stock → Rudolf Zurek** (STK-024) vs. Reklamace → Marie Hulešová (STK-020) — possibly the same initiative, possibly distinct. **Still open** — the 2026-09-15 call reinforced Petr Spilka (not Hulešová) as Reklamace's owner from the ViaPharma side, but didn't address Žůrek's framing directly — needs its own follow-up.
 3. ~~Maxie/Max → Simona Mertova (STK-017) — surname spelling conflict.~~ **Resolved 2026-09-02**: "Mertová" confirmed correct; "Martová" was a transcription error.
 4. ~~Lexie → Tomáš Dudaško (STK-010) vs. Martová/Mertová owning Max/Maxie/Lexie together.~~ **Resolved 2026-09-02**: not a real conflict — Dudaško holds IT/budget-side ownership, Mertová holds operational/product ownership; both own it.
 
 **Rationale**
-PM explicitly asked to record both sides of each conflict rather than pick one now — "record both and let me decide later." Consistent with the same approach taken for ASM-005. On 2026-09-02, Marek resolved the two naming/ownership-framing conflicts (surname, Lexie co-ownership) but is not yet sure on the two possible-duplicate-initiative conflicts (invoicing solution, reklamace/complaints) — those remain open pending direct follow-up with Zurek, Žižka, or Hulešová.
+PM explicitly asked to record both sides of each conflict rather than pick one now — "record both and let me decide later." Consistent with the same approach taken for ASM-005. On 2026-09-02, Marek resolved the two naming/ownership-framing conflicts (surname, Lexie co-ownership) but was not yet sure on the two possible-duplicate-initiative conflicts (invoicing solution, reklamace/complaints). On 2026-09-15, the invoicing-solution/Fakturace-doprav conflict moved from fully open to leaning resolved based on Tereza Foltýnová's own framing during live business-quantification — a client-side data point, not just an internal guess.
 
 **Impact**
-- **Data quality**: STK-017 and STK-010 updated to reflect resolved co-ownership and correct spelling. STK-014, STK-015, STK-020, STK-024 still carry a note pointing to this assumption — none should be treated as resolved until Marek confirms with the people involved whether "Invoicing solution"/"Receiving complaints in stock" are the same initiatives as Fakturace doprav/Reklamace or genuinely distinct.
+- **Data quality**: STK-017 and STK-010 updated to reflect resolved co-ownership and correct spelling. STK-014, STK-015, STK-020, STK-024 still carry a note pointing to this assumption. Point 1 (invoicing solution/Fakturace doprav) can likely be treated as resolved with one more explicit confirmation from Žižka or Žůrek; point 2 (Reklamace/complaints) remains genuinely open.
 
 ---
 
