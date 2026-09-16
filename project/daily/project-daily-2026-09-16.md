@@ -1,5 +1,5 @@
 ---
-status: open
+status: closed
 last_updated: 2026-09-16
 last_updated_by: manual — conversational (Fakturace doprav spec rebuild)
 project_status: Green
@@ -149,10 +149,10 @@ project_status: Green
 
 - [ ] `highest-prio` **Marek Pillár**: Report the likely runtime bug in claims_api's `generate_delivery_note` (undefined `key` field, `claim_cases.py:88`) to the dev team — from cz-ai-logistics codebase read, 2026-09-16
 - [ ] **Marek Pillár**: Review the new Reklamace brief (`3. Reklamace.docx`) — confirm/correct business-value figures (currently sourced from the 2026-09-15 Tereza Foltýnová interview, flagged as potentially overstated), assign domain-expert/business-owner sign-off, and resolve open questions (label-OCR engine choice, e-mail-draft feature scope, whether a local case-status dashboard is wanted) — from cz-ai-logistics codebase read, 2026-09-16
-- [ ] **Marek Pillár**: Review Fakturace doprav spec corrections (`2a. spec-template.docx`) — confirm the Axapta-integration status change (Backlog → Hotovo) and the newly surfaced temperature-chain verdict open question (document-level field vs. route-verdict input) — from cz-ai-logistics codebase read, 2026-09-16
+- [x] **Marek Pillár**: Review Fakturace doprav spec corrections (`2a. spec-template.docx`) — **superseded**: that file was scrapped and the spec fully rebuilt as `2. Fakturace doprav.docx`, which already carries this status correction — see the review item below — from cz-ai-logistics codebase read, 2026-09-16
 
 - [ ] `highest-prio` **Marek Pillár**: Attend/prep for the 2026-09-17 debate on Fakturace doprav kiosk authentication (Honza Sovka currently leans "no auth" — see ASM-087) — due tomorrow
-- [ ] **Marek Pillár**: Review the temperature-validation scope correction on Fakturace doprav's "Kontrola údajů" item (marked Done but only the km part actually is — see ASM-086) — from Figma roadmap board comments, 2026-09-16
+- [x] **Marek Pillár**: Review the temperature-validation scope correction on Fakturace doprav's "Kontrola údajů" item (marked Done but only the km part actually is — see ASM-086) — **superseded**: already correctly reflected in the rebuilt `2. Fakturace doprav.docx` MVP table ("Hotovo (jen km) — teplota viz #10") — see the review item below — from Figma roadmap board comments, 2026-09-16
 
 - [ ] **Jura Brázdil**: Investigate the duplicated defects/findings text-field bug — from 2026-09-16-teo-ocr-technical-sync-pilot-results
 - [ ] **Jura Brázdil**: Root-cause the single missing-address extraction failure from the blind 2025-dataset run — from 2026-09-16-teo-ocr-technical-sync-pilot-results
@@ -233,6 +233,8 @@ Processed an internal Azure DevOps/Kanban rollout & cross-project status sync (J
 [AUTO] project-knowledge — updated "VBS (work-breakdown-structure) framework" with the Azure DevOps implementation, "AI Listing Tool" with SKU ownership/data-flow facts, and Fakturace doprav document-types entry with document-versioning-out-of-scope confirmation, from 2026-09-16-devops-kanban-rollout-status-sync (2026-09-16)
 [AUTO] project-stakeholders — enriched STK-001 (Marek Pillár — Listing update), STK-003 (Jindřich Tůma — Kanban rollout, warehouse-network to-do), STK-006 (Filip Černý — Fakturace doprav/Reklamace work, corrected from mislabeled transcript), STK-007 (Jakub Turner — OAuth, CERT question), STK-009 (Juraj Kmec — order-prediction status, corrected from mislabeled transcript) from 2026-09-16-devops-kanban-rollout-status-sync (2026-09-16)
 [AUTO] project-daily — added 11 action items from 2026-09-16-devops-kanban-rollout-status-sync (2026-09-16)
+[AUTO] project-lessons — LL-025 recurrence context appended (derived-view fidelity failure recurred at roadmap-table level in the Fakturace doprav spec rebuild) (2026-09-16)
+[AUTO] project-lessons — LL-040 captured (spot-check sampling insufficient for fidelity-to-source deliverables; full enumerated pass needed) from project-daily-2026-09-16 close (2026-09-16)
 
 Rebuilt `2. Fakturace doprav.docx` from scratch after the PM judged the prior version "completely wrong" and deleted it, following the PM's own explicit 9-step plan: cloned the clean generic spec template, rebuilt the full spec from the true original `Logistika - 2026-06 Fakturace_doprav_specifikace_3 (1).docx`, synced the roadmap Claude Artifact to match the more-current Excel (3 cards updated), then ran a full comment-by-comment audit of all 20 original Word comments against the new doc — found and fixed one genuine gap (comment [17]/Sovka's Q1/Axapta ZOPV-format dependency note, missing from Závislosti). A fresh (not cached) direct read of `cz-ai-logistics` surfaced one more concrete fact worth adding — Microsoft Entra ID SSO already exists and is wired into the driver PDF-confirmation endpoint, relevant context for the still-open kiosk-authentication debate — and confirmed everything else already matched the code. The PM then caught, by visually comparing the roadmap Artifact against the doc's MVP table, that the doc's phase tables had drifted into an abstracted "capability summary" rather than a literal mirror of the roadmap: Plná verze was missing 3 roadmap items and Nice to Have was missing 5 of 6. Rebuilt all 6 phase tables (3 overview + 3 section-level) to mirror the roadmap Excel exactly, added a Zdroj (source) column, and flagged one feature found in code with no roadmap ticket at all (driver-facing PDF confirmation, distinct from the carrier-facing one) as a new row citing its source. Roadmap Excel/Artifact themselves were not modified — see ASM-090.
 

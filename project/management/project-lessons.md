@@ -1,10 +1,30 @@
 ---
 last_updated: 2026-09-16
-last_updated_by: auto — project-meeting routing
+last_updated_by: auto — project-daily close
 owner: Marek Pillár
 ---
 
 # Lessons Learned
+
+---
+
+### LL-040
+
+| Field | Value |
+|-------|-------|
+| ID | LL-040 |
+| Created | 2026-09-16 |
+| Category | harness |
+| Source | project-daily-2026-09-16 (Fakturace doprav spec rebuild) |
+
+**Lesson**
+When a deliverable's whole point is faithful coverage of a source (every comment on a document, every item on a roadmap), verifying "all of X incorporated" by spot-checking a representative sample is not sufficient — real gaps hide in exactly the items not sampled. Default to a systematic, enumerated pass (check item 1, item 2, ... item N against the output) rather than a plausible-looking subset, whenever fidelity-to-source is the deliverable's core requirement.
+
+**Context**
+While rebuilding `2. Fakturace doprav.docx`, an initial claim of "all screenshots/comments reviewed and incorporated" held up under a PM spot-check of one specific comment, but a full systematic re-check of all 20 original Word comments (only prompted by that spot-check) found one genuine gap (comment #17, a Q1/Axapta dependency note) that sampling-based review had missed. The same pattern repeated one step later at the roadmap-table level: a claim the doc "matched the roadmap" wasn't wrong on the sampled items the PM had checked before, but a full comparison found 8 of 13 Plná verze/Nice to Have items missing entirely.
+
+**Cross-reference**
+project-daily-2026-09-16; ASM-090; [[LL-025]]
 
 ---
 
@@ -303,8 +323,10 @@ When a client-facing board/deck is built by distilling a source-of-truth data fi
 **Context**
 The PM noticed Honza Zelený's effort estimates appeared in the v3 roadmap board without any supporting comments, and initially thought they'd been misattributed to Lexie. Checking the live Excel confirmed the numbers were correctly Maxie's, and Maxie's sheet actually has 6 rich supporting comments (including a reuse note from Jura Brázdil) — none of which had made it into the board. The board's numeric totals were right; the per-box narrative context wasn't carried over during the board build.
 
+**Recurrence (2026-09-16, Fakturace doprav spec)**: A more severe instance of the same failure mode. Rebuilding `2. Fakturace doprav.docx`'s MVP/Plná verze/Nice to Have tables as an abstracted "capability summary" (paraphrased and merged from the spec's own narrative) rather than a literal copy of the roadmap Excel silently dropped entire items — 3 of 7 Plná verze items and 5 of 6 Nice to Have items were missing, not just annotations. Only surfaced when the PM visually compared a screenshot of the roadmap Artifact against the doc's table side by side. Fix: rebuilt the tables as a direct 1:1 mirror (same IDs, names, statuses) with an added source-citation column, rather than a paraphrase — the more useful general rule this points to is that *paraphrasing/summarizing a source list is inherently lossy in a way that isn't self-evident from reading the output alone*; when two artifacts need to stay comparable item-by-item, mirror the source verbatim with a source column instead of re-authoring a "cleaner" version of it.
+
 **Cross-reference**
-project-daily-2026-09-09
+project-daily-2026-09-09; project-daily-2026-09-16; ASM-090
 
 ---
 
