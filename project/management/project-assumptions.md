@@ -1,5 +1,5 @@
 ---
-last_updated: 2026-09-15
+last_updated: 2026-09-16
 last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
@@ -10,6 +10,24 @@ owner: Marek Pillár
 
 | ID | Status | Created | Description (short) |
 |----|--------|---------|---------------------|
+| ASM-090 | Open (2026-09-16) | 2026-09-16 | Whether to add the code-confirmed driver PDF confirmation feature to the Fakturace doprav roadmap Excel/Artifact (currently only in the rebuilt spec doc) |
+| ASM-089 | Open (2026-09-16) | 2026-09-16 | Whether to expand TEO/OCR's autumn 2026 pilot scope to a 3rd, larger vendor ("PEDOS," name uncertain) not yet decided |
+| ASM-088 | Decided (2026-09-16) | 2026-09-16 | TEO/OCR TEST-environment Blob storage will be self-provisioned by BigHub on the existing platform — no BDC/infra-team dependency to create it |
+| ASM-087 | Open (2026-09-17) | 2026-09-14 | Fakturace doprav kiosk authentication — undecided, pending a debate on 2026-09-17; leaning "no authentication" for now |
+| ASM-086 | Decided (2026-09-14) | 2026-09-14 | Fakturace doprav "Kontrola údajů" (marked Done) actually only covers km — temperature-datalogger validation is not built, split into 3 Plná verze sub-parts |
+| ASM-085 | Decided (2026-09-16) | 2026-09-16 | 2. Fakturace doprav.docx and spec-template.docx had leaked, unrelated Listing review comments in their comments.xml (from template cloning) — stripped out |
+| ASM-084 | Decided (2026-09-14) | 2026-09-14 | Fakturace doprav "Měsíční uzávěrka" (monthly-closing cron job) cancelled — routes now sent to Axapta continuously, Axapta decides closure timing itself |
+| ASM-083 | Decided (2026-09-14) | 2026-09-14 | Fakturace doprav "Potvrzení řidiči" renamed "Potvrzení přepravci" and merged with "Generování potvrzení o skenování" — confirmation goes to the carrier, not the driver |
+| ASM-082 | Decided (2026-09-14) | 2026-09-14 | Fakturace doprav km comparison and deviation-flagging is entirely Axapta's responsibility; platform only supplies data (ZOPV/OCR now, optional GPS Dozor later), split into two tickets |
+| ASM-081 | Open (2026-09-16) | 2026-09-16 | Vendorský portál (supplier self-service listing submission) flagged by PM as medium priority, possible future AI initiative — tracked here only, Listing spec document left unmodified per PM instruction |
+| ASM-080 | Open (2026-09-16) | 2026-09-16 | Likely runtime bug in claims_api's generate_delivery_note (undefined `key` field) — flagged for dev team, not yet fixed |
+| ASM-079 | Decided (2026-09-16) | 2026-09-16 | Fakturace doprav's Axapta integration confirmed built and live in code — corrects prior spec/roadmap claim that it was not yet built |
+| ASM-078 | Open (2026-09-16) | 2026-09-16 | BigHub-internal recommendation: roll out TEO/OCR starting with the 3-4 highest-volume document categories |
+| ASM-077 | Open (2026-09-16) | 2026-09-16 | Which of 4 proposed TEO/OCR solution variants (API/Hybrid/Aplikace + add-ons) to formally pursue with Dr. Max not yet decided |
+| ASM-076 | Decided (2026-09-16) | 2026-09-16 | TEO/OCR internal architecture agreed: blob storage → batch AI processing (dual GPT-5/GPT-5-mini) → API |
+| ASM-075 | Open (2026-09-16) | 2026-09-16 | Listing KPI target not yet committed — only a directional "~20% faster, compounding quarter over quarter" placeholder floated by Petr Neuman |
+| ASM-074 | Decided (2026-09-16) | 2026-09-16 | Michaela Vdovicynová confirmed as Listing's practical domain-expert/testing contact, distinct from Petr Neuman's business-owner role |
+| ASM-073 | Decided (2026-09-16) | 2026-09-16 | Listing's primary near-term driver reframed: eliminating day-to-day Magento use for the listing team (batch import ~biweekly) now outranks the original supplier-data-quality problem |
 | ASM-072 | Decided (2026-09-15) | 2026-09-15 | Business-quantification KPI decisions for Reklamace/Fakturace doprav: error rate excluded as a KPI for both, driver time/cost excluded from Fakturace doprav's FTE calc, Reklamace's ~1 FTE saving contingent on all 5 phases shipping |
 | ASM-071 | Decided (2026-09-15) | 2026-09-15 | Pharmacy reservations confirmed as a strategic e-commerce differentiator for Dr. Max — to be broken out as their own top-line dashboard category, split per warehouse for logistics staffing |
 | ASM-070 | Decided (2026-09-15) | 2026-09-15 | Order-prediction dashboard's model output stays named "predikce," kept terminologically distinct from Dr. Max's own "budget"/"forecast" planning figures |
@@ -84,6 +102,406 @@ owner: Marek Pillár
 | ASM-001 | Decided (2026-08-25) | 2026-09-01 | Dr. Max client-side coordination unified into one role (Jindřich Tůma) |
 
 ## Entries
+
+---
+
+### ASM-090
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-090 |
+| Created | 2026-09-16 |
+| Source | Direct file inspection (cz-ai-logistics codebase) + roadmap comparison, this session |
+| By | Marek Pillár (STK-001), via Claude |
+| Status | Open (2026-09-16) |
+
+**Description**
+While rebuilding `2. Fakturace doprav.docx` from scratch and cross-checking its MVP/Plná verze/Nice to Have tables 1:1 against the roadmap Excel (`product-roadmap-portfolio-full.xlsx`, "Fakturace doprav" sheet), found that the roadmap tables were missing 3 Plná verze items (Deployment na TEST, Dokončení UI, Napojení na Axaptu a e2e testování) and 5 of 6 Nice to Have items from the rebuilt doc — now fixed in the doc. Separately, confirmed in code (`confirmation_pdf.py`, `routers/scans.py`) that a driver-facing PDF confirmation (issued at the kiosk after scanning, distinct from the carrier-facing electronic confirmation) is fully built and live — but has no corresponding line item anywhere on the roadmap Excel or Artifact. Added it to the doc's MVP table as a flagged "NOVÉ" row with its code source cited.
+
+**Rationale**
+The doc's phase tables had drifted into an abstracted "capability summary" (built from the spec's own narrative sections) rather than a literal mirror of the roadmap's ticket-level list, which is what produced the visible mismatch the PM caught by comparing the two side by side.
+
+**Impact**
+- **Data**: `2. Fakturace doprav.docx` now mirrors the roadmap Excel exactly (same IDs, names, statuses) across all 6 phase tables, plus a Zdroj (source) column.
+- **Open**: the roadmap Excel/Artifact were not modified — only the doc was. The driver-PDF-confirmation item exists only in the doc for now.
+
+---
+
+### ASM-089
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-089 |
+| Created | 2026-09-16 |
+| Source | 2026-09-16-teo-ocr-technical-sync-pilot-results |
+| By | Tomáš Burda (STK-025) |
+| Status | Open (2026-09-16) |
+
+**Description**
+Whether to expand TEO/OCR's committed autumn 2026 pilot scope beyond the current 2 vendors to include a 3rd, larger vendor (referenced only as "PEDOS" — name uncertain, possibly a mis-transcription) is undecided.
+
+**Rationale**
+Burda floated this because inspections continue into October and smaller vendors represent modest volume (10-20 documents) compared to the current two (50-70 each). Jura Brázdil is open to it — his extraction pipeline is now reusable, making a new vendor roughly a day's work — but nothing was committed, and Dr. Max hasn't yet sent sample documents for it.
+
+**Impact**
+- **Delivery**: Low marginal engineering cost if pursued, given the reusable pipeline — but adds scope to a season that's already in motion.
+- **Data**: Depends on Dr. Max confirming the vendor's real name/spelling and sending representative sample documents.
+
+---
+
+### ASM-088
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-088 |
+| Created | 2026-09-16 |
+| Source | 2026-09-16-teo-ocr-technical-sync-pilot-results |
+| By | Jura Brázdil (STK-026) |
+| Status | Decided (2026-09-16) |
+
+**Description**
+TEO/OCR's TEST-environment Blob storage will be self-provisioned by BigHub directly on the existing shared AI platform — free, self-service — with no dependency on Vladislav Tvarůžek (STK-016) or the BDC infra team to create it.
+
+**Rationale**
+The platform already supports on-demand Blob provisioning as part of the node-pool migration Jura is running. The only possible infra-team touchpoint is a single, simple external network-access grant if Radim Švarc needs programmatic access from outside — not required to create the storage itself.
+
+**Impact**
+- **Delivery**: Removes a cross-team dependency that has historically taken days-to-weeks elsewhere in this project (see the accuracy-validation document's provisioning timeline estimates) — TEST-environment readiness is now gated only on BigHub's own node-pool migration.
+- **Risk**: If Radim does end up needing external access, that step still depends on Vladislav/BDC turnaround time.
+
+---
+
+### ASM-087
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-087 |
+| Created | 2026-09-14 |
+| Source | Figma roadmap board comments (Honza Sovka / Marek Pillár), relayed to this session via screenshots on 2026-09-16 |
+| By | Jan "Honza" Sovka (STK-002), Marek Pillár (STK-001) |
+| Status | Open (2026-09-17) |
+
+**Description**
+Whether and how to authenticate/identify the person scanning documents at the Fakturace doprav kiosk is undecided. Honza Sovka currently leans toward "no authentication" but floated an idea worth keeping in mind: knowing who scanned matters, since it could be the driver, a foreman covering multiple drivers, a ViaPharma staffer, or someone else entirely. A debate is scheduled for **2026-09-17** to resolve this.
+
+**Rationale**
+Comment thread on the roadmap's "Autentizace uživatele" card. Marek Pillár's own reply scoped this as a possible future extension rather than a planned phase, regardless of the 17.9 outcome — consistent with the existing spec design (kiosk is anonymous by default per ASM/edge-case D2).
+
+**Impact**
+- **Scope**: Added to `2. Fakturace doprav.docx` (§1.4 edge cases, Nice to Have section, Otevřené otázky) and `product-roadmap-portfolio-full.xlsx` (Fakturace doprav sheet, "Autentizace uživatele" row) as an explicit open item pending the 9/17 debate.
+- **Timeline**: This debate is scheduled for tomorrow relative to when this was routed (2026-09-16) — flagged as an action item in today's daily so it doesn't get lost.
+
+---
+
+### ASM-086
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-086 |
+| Created | 2026-09-14 |
+| Source | Figma roadmap board comments (Honza Sovka), relayed to this session via screenshots on 2026-09-16 |
+| By | Jan "Honza" Sovka (STK-002) |
+| Status | Decided (2026-09-14) |
+
+**Description**
+Fakturace doprav's "Kontrola údajů" roadmap card is marked "Done," but this is only true for the kilometer part. Temperature-datalogger validation is not built at all. It splits into three separate pieces, all planned for Plná verze: (a) check whether a paper datalogger slip was attached to the ZOPV document, (b) read/validate electronic dataloggers via GPS Dozor, (c) read/validate temperature compliance from paper datalogger printouts directly — needed because ViaPharma cannot guarantee a fast transition to fully electronic dataloggers, so both paths must be supported.
+
+**Rationale**
+Honza Sovka's comment on the "Kontrola údajů" card: "teplotní údaje z dataloggerů zatím neumíme, je to plán do plné verze," with the three-part breakdown given directly, and the reasoning tied to Žižka's earlier point that ViaPharma can't guarantee fast electronic transition.
+
+**Impact**
+- **Scope**: `product-roadmap-portfolio-full.xlsx` (Fakturace doprav sheet) — "Kontrola údajů" (#4) rescoped to km-only, status changed to "Hotovo (jen km) — teplota viz #10"; "Správnost teplotních údajů z dataloggeru" (#10) expanded with the full a/b/c breakdown. Same changes applied to `2. Fakturace doprav.docx` (§1.1, §1.4, §2.1, Plná verze table).
+- **Delivery**: Corrects an inflated completion percentage — one MVP item previously counted as fully "Done" is actually only half-done.
+
+---
+
+### ASM-085
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-085 |
+| Created | 2026-09-16 |
+| Source | Direct file inspection, this session |
+| By | Marek Pillár (STK-001), via Claude |
+| Status | Decided (2026-09-16) |
+
+**Description**
+`2. Fakturace doprav.docx` and `spec-template.docx` (both in "1. Feature Specs") were found to carry a leaked `word/comments.xml` part containing 39 unrelated, active Listing review comments (Filip Černý ↔ Marek Pillár, dated 2026-09-15/16, discussing Listing's §1.2 scraping content) — not the real Fakturace doprav comments. Both files have been stripped of all comment infrastructure (comments.xml, commentsExtended.xml, commentsIds.xml, commentsExtensible.xml, and in-document comment anchors).
+
+**Rationale**
+Root cause: the reusable generic spec template was originally cloned from `1. Listing.docx` by clearing its paragraphs/tables, but its `word/comments.xml` part was never stripped — so Listing's live comment thread rode along silently into every file built from that template lineage. `1. Listing.docx` itself was verified untouched (51 real comments intact). The PM separately renamed the enriched Fakturace doprav spec to replace the original `2. Fakturace doprav.docx` (intentional — the original's 20 comments had already been read and incorporated into the enriched version earlier this session), which is why the leaked comments ended up under that filename.
+
+**Impact**
+- **Process**: Any future template-cloning approach must explicitly strip `comments.xml` and related parts, not just body content.
+- **Data**: No content was lost — the original `2. Fakturace doprav.docx`'s 20 comments were already fully read and incorporated into the spec earlier this session; only the (irrelevant, leaked) Listing comments were removed from these two files.
+
+---
+
+### ASM-084
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-084 |
+| Created | 2026-09-14 |
+| Source | Figma roadmap board comments (Honza Sovka), relayed to this session via screenshots on 2026-09-16 |
+| By | Jan "Honza" Sovka (STK-002) |
+| Status | Decided (2026-09-14) |
+
+**Description**
+Fakturace doprav's "Měsíční uzávěrka" (monthly-closing cron job — sends all unfinished routes to Axapta at month-end) is cancelled from scope. Routes will instead be sent to Axapta continuously/incrementally, and Axapta itself decides when to close a billing period out.
+
+**Rationale**
+Honza Sovka's comment on the roadmap card: "Novinka: nebude součástí — trasy budeme posílat do Axapta průběžně a ta si sama vyhodnotí, kdy to uzavře." A direct codebase read on 2026-09-16 independently supports this: `page_filing.py`'s `period_closed` flag is hardcoded `False` with no real trigger wired up — there was never a working period-close mechanism to begin with, so nothing is lost by dropping the ticket.
+
+**Impact**
+- **Scope**: Removed as a standalone MVP/Plná verze item everywhere it was tracked — `product-roadmap-portfolio-full.xlsx` (Fakturace doprav sheet, its slot repurposed for the new GPS-Dozor split ticket, see ASM-082), the live "AI Initiative Roadmaps v6" artifact, and `2a. spec-template.docx`.
+- **Delivery**: One fewer MD-estimated backlog item; no dev work needed on a batch-closing job.
+
+---
+
+### ASM-083
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-083 |
+| Created | 2026-09-14 |
+| Source | Figma roadmap board comments (Honza Sovka), relayed to this session via screenshots on 2026-09-16 |
+| By | Jan "Honza" Sovka (STK-002) |
+| Status | Decided (2026-09-14) |
+
+**Description**
+Fakturace doprav's roadmap card "Potvrzení řidiči" is renamed "Potvrzení přepravci" — the electronic post-processing confirmation of received documents/confirmed km goes to the carrier (přepravce), not the driver; one carrier covers many drivers. It is merged with the separate "Generování potvrzení o skenování" card, since both describe the same underlying feature (auto-generate + email a confirmation from scan results) under different names.
+
+**Rationale**
+Honza Sovka's comments: "potvrzení přepravci, nikoliv řidiči (přepravce = X řidičů)" on the "Potvrzení řidiči" card, and "sloučil bych s 'potvrzení řidiči'" on the "Generování potvrzení o skenování" card. A 2026-09-16 codebase read confirmed there is a genuinely separate, already-built feature this should not be confused with: an in-kiosk driver-facing receipt PDF (auth-gated, shown/printed right after scanning) — that one stays a distinct fact to capture in the spec, not part of this merge.
+
+**Impact**
+- **Scope**: Card renamed and merged in `product-roadmap-portfolio-full.xlsx` (Fakturace doprav sheet), the live "AI Initiative Roadmaps v6" artifact, and `2a. spec-template.docx` §1.1.
+- **Delivery**: One fewer separately-tracked Plná verze item; its estimate folded into "Potvrzení přepravci."
+
+---
+
+### ASM-082
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-082 |
+| Created | 2026-09-14 |
+| Source | Figma roadmap board comments (Honza Sovka), relayed to this session via screenshots on 2026-09-16 |
+| By | Jan "Honza" Sovka (STK-002) |
+| Status | Decided (2026-09-14) |
+
+**Description**
+For Fakturace doprav, the actual km-tolerance comparison and deviation flagging ("Identifikace odchylek") are entirely Axapta's responsibility, performed in Axapta's own UI — not a platform feature. The platform's job is limited to supplying input data: declared km from ZOPV via OCR (already done, MVP) and, optionally, km from GPS Dozor (Plná verze). Split into two separate tickets rather than one combined "km control" feature.
+
+**Rationale**
+Honza Sovka's comments: on "Kontrola kilometrů" — "samotné porovnání bude dělat Axapta, my jen zajišťujeme data - buď z ZOPV pomocí OCR - a volitelně ve fázi 1.1 i z GPS dozoru. Tzn. asi bych rozdělil na dva tickety"; on "Identifikace odchylek" — "to si bude dělat sama axapta ve svém UI." A direct codebase read on 2026-09-16 confirms this exactly: the `ZopvData` and `TransportRouteSubmissionCreate` docstrings in `libs/axapta_client` state the platform passes `distance_km` and Axapta's own km-tolerance check is authoritative; local verdict logic (`status_verdict.py`) never touches km at all. The data contract already has a `gps_distance_km` field (currently always null) — only the GPS Dozor client itself needs building, not new contract work.
+
+**Impact**
+- **Scope**: `product-roadmap-portfolio-full.xlsx` (Fakturace doprav sheet) — "Kontrola kilometrů" split into a ZOPV/OCR ticket (Done) and a new GPS-Dozor ticket (Backlog, replacing the cancelled "Měsíční uzávěrka" slot, see ASM-084); "Identifikace odchylek" status changed to "Mimo scope (Axapta)." Same changes applied to the live "AI Initiative Roadmaps v6" artifact and `2a. spec-template.docx` (§1.4, §2.1, Otevřené otázky).
+- **Delivery**: Removes a previously-miscounted "Done" item (Identifikace odchylek was never actually a BigHub deliverable) from the completion percentage.
+
+---
+
+### ASM-081
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-081 |
+| Created | 2026-09-16 |
+| Source | PM instruction (conversational) |
+| By | Marek Pillár (STK-001) |
+| Status | Open (2026-09-16) |
+
+**Description**
+Vendorský portál — a separate, client-side initiative (not owned by BigHub) that would let suppliers submit listings directly in a unified format, previously noted in `listing-specifikace.md`'s "Další fáze" section with vazba na tento projekt `-tbd-`. PM flagged it as medium priority and a possible future AI initiative worth tracking.
+
+**Rationale**
+PM's own judgment call while reviewing the Listing spec. Explicit instruction: do not write this marking into `listing-specifikace.md` itself — track it only as a todo/assumption, keeping the spec file unmodified.
+
+**Impact**
+- **Roadmap**: Worth resurfacing if/when BigHub and Dr. Max scope future AI initiatives together — not currently actionable, no owner or client-side commitment exists yet (see the existing open question in `listing-specifikace.md` on who owns/relates this to the Listing project).
+- **Scope**: No change to Listing's current delivery scope; `listing-specifikace.md` deliberately left untouched.
+
+---
+
+### ASM-080
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-080 |
+| Created | 2026-09-16 |
+| Source | cz-ai-logistics codebase read (claims_api) |
+| By | Marek Pillár (STK-001), via direct code read |
+| Status | Open (2026-09-16) |
+
+**Description**
+`apps/claims_api/.../claim_cases.py:88` — `generate_delivery_note` returns `GeneratedDeliveryNote(key=key)`, but `key` is never defined anywhere in that function, and `GeneratedDeliveryNote` only has a `document_link` field. This looks like it would raise a `NameError` at runtime whenever the endpoint that generates the reklamace delivery-note PDF is actually called.
+
+**Rationale**
+Found during a direct, from-scratch technical read of the Reklamace codebase (no existing business spec was on file to cross-check against). Flagged as a likely real defect rather than a documentation gap — worth a direct heads-up to the dev team rather than describing the feature as working in the new Reklamace brief.
+
+**Impact**
+- **Delivery**: `POST /claim-cases/{ref}/generate-doc` (and the Axapta-triggered `POST /claim-cases/{ref}/process` webhook, which calls the same code path on case closure) should be treated as unverified/likely broken until a developer confirms and fixes this.
+- **Scope**: `product/solution-space/` — captured in the new `3. Reklamace.docx` brief (§1.3, Otevřené otázky) as a known issue, not a working feature.
+
+---
+
+### ASM-079
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-079 |
+| Created | 2026-09-16 |
+| Source | cz-ai-logistics codebase read (transport_invoicing_api) |
+| By | Marek Pillár (STK-001), via direct code read |
+| Status | Decided (2026-09-16) |
+
+**Description**
+Fakturace doprav's Axapta integration is confirmed built and live in code: full read (`GET /transport-routes/{ar}`) and write (`POST /transport-routes/{ar}/documents`) endpoints exist, with idempotency-key support, retry/backoff on 5xx, and typed error mapping (400/401/404/409/5xx). This corrects the spec/roadmap's prior claim that this integration was not yet built and pending business-spec approval.
+
+**Rationale**
+Found during a direct codebase read of `apps/transport_invoicing_api` and the shared `libs/axapta_client` OpenAPI contract (which carries its own versioned changelog through v0.9.9), triggered by Jan Sovka's roadmap-comment corrections needing verification against real code. The contract also already defines a `gps_distance_km` field (currently always null) — only the GPS Dozor client itself remains to be built, not new contract work — and a `Carrier` model sourced from Axapta, though Axapta's own data doesn't populate it yet (per Petr Sláma).
+
+**Impact**
+- **Scope**: `2a. spec-template.docx` (Fakturace doprav) updated — MVP table item "Integrace na Axaptu" moved from Backlog to Hotovo, Technická příloha now carries the real endpoint table, Závislosti section rewritten to drop this as an open dependency.
+- **Roadmap**: `product-roadmap-portfolio-full.xlsx` (Fakturace doprav sheet) and the live "AI Initiative Roadmaps v6" artifact were not further changed by this specific finding (they already tracked the Axapta ticket separately) — noted here for traceability.
+- **Related**: Confirms Honza Sovka's km-comparison correction (ASM-073-adjacent, same session) at the code level — `ZopvData` docstring states verbatim that the platform supplies `distance_km` and Axapta runs the km-tolerance check.
+
+---
+
+### ASM-078
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-078 |
+| Created | 2026-09-16 |
+| Source | 2026-09-16-teo-ocr-solution-proposal-variants |
+| By | Team (BigHub-internal recommendation) |
+| Status | Open (2026-09-16) |
+
+**Description**
+BigHub's internal (not yet client-shared) recommendation is to roll out TEO/OCR starting with the 3-4 highest-volume document categories, then expand to lower-frequency categories once accuracy is validated in production.
+
+**Rationale**
+The highest-volume categories represent the largest share of manual-effort savings, so starting there front-loads ROI. It also lets BigHub validate real-world accuracy and tune the pipeline before extending scope, since high template/format diversity across categories increases extraction complexity and can hurt model accuracy.
+
+**Impact**
+- **Delivery**: Sequencing choice affects which document categories get prioritized first if a build variant is approved — see [[ASM-077]].
+- **Risk**: Not yet confirmed with Dr. Max (Tomáš Burda / Radim Švarc) — a purely internal BigHub proposal at this stage.
+
+---
+
+### ASM-077
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-077 |
+| Created | 2026-09-16 |
+| Source | 2026-09-16-teo-ocr-solution-proposal-variants |
+| By | Team |
+| Status | Open (2026-09-16) |
+
+**Description**
+Which of BigHub's 4 proposed TEO/OCR solution variants to formally propose to and pursue with Dr. Max is undecided: Variant API (12 MD, +6 MD prompt-editing add-on), Variant HYBRID (18 MD), or Variant APLIKACE — a full validation web app (25-35 MD, +2 further TBD-effort ServiceNow add-ons).
+
+**Rationale**
+No variant has been formally proposed to the client yet — this is still an internal BigHub draft (July 2026). The choice depends on Dr. Max's appetite for build cost/timeline vs. how much manual validation/control the technical department wants, and on Tomáš Burda's sign-off and the per-MD/hour rate he still owes (open action item).
+
+**Impact**
+- **Delivery**: MD estimates range 12-35+ MD depending on variant chosen — materially different timeline/cost commitments.
+- **Relationship**: Formal proposal to Dr. Max should likely wait for Tomáš Burda's ownership confirmation and rate, and for the KPI definition to land, so the pitch can be framed against a concrete business case.
+
+---
+
+### ASM-076
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-076 |
+| Created | 2026-09-16 |
+| Source | 2026-09-16-teo-ocr-production-spec-v1-1, 2026-09-16-teo-ocr-accuracy-validation-cost-analysis |
+| By | Team |
+| Status | Decided (2026-09-16) |
+
+**Description**
+TEO/OCR's internal (BigHub-side) production architecture is agreed as blob storage intake → batch AI processing → API read-out (v1.1, dated 2026-08-07), using dual independent AI readings (GPT-5 + GPT-5-mini via Microsoft Azure AI Foundry) merged per page, with Azure AI Document Intelligence added for deterministic checkbox detection on checklist-style forms. This reuses BigHub's existing shared AI platform — no new paid Azure resources required.
+
+**Rationale**
+Validated against 292-370 real pages / 281 protocols across all 7 tuned document categories: 91% accuracy on handwritten content, 94% on structural content, 0 fabricated values found across 500+ pages tested. This is an internal engineering decision, not yet formally proposed to or agreed with Dr. Max — see [[ASM-077]] for the still-open question of which client-facing variant/scope this architecture gets packaged into.
+
+**Impact**
+- **Cost**: Negligible run cost (~8,500-17,000 Kč/year at an assumed 30,000 pages/year) since it reuses already-deployed shared-platform models and infrastructure.
+- **Delivery**: Mailbox intake and ServiceNow write-back are explicitly deferred to a later phase, addable without re-architecting — current scope is API-readable structured protocol records only.
+- **Risk**: This architecture is independent of, and not confirmed to be the same artifact as, the separate "API service specification" Radim Švarc reported receiving and beginning to test around 2026-09-14 — worth clarifying with Radim before assuming client-side awareness of this specific pipeline.
+
+---
+
+### ASM-075
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-075 |
+| Created | 2026-09-16 |
+| Source | 2026-09-16-business-quantification-listing-petr-neuman |
+| By | Petr Neuman (STK-023) |
+| Status | Open (2026-09-16) |
+
+**Description**
+Listing's KPI has no committed target. Petr Neuman explicitly declined to state a precise figure, floating only a directional placeholder: roughly "~20% faster / ~20% more throughput" in the tool's first live quarter, expected to compound quarter over quarter as the process matures.
+
+**Rationale**
+Neuman said fixing a number this early "feels like making it up" — he wants to see the tool's real performance before committing to a benchmark. Today's per-item time varies enormously by task (a full new listing ~30 min vs. a small compliance text fix ~2 min), which makes a single baseline number unreliable without live data.
+
+**Impact**
+- **Reporting**: The corporate KPI Excel (`businessQuantificationWorskop.xlsx`, E-commerce BQ sheet) currently carries this placeholder — flagged in its Notes field as orientational, not committed.
+- **Delivery**: A real benchmark should be captured as soon as the tool is live and processing real listing volume, then used to replace this placeholder.
+- **Relationship**: Resisting an invented number is consistent with the pattern seen across this week's other Business Quantification interviews (Tereza Foltýnová, Radim Švarc) — treated as a positive trust signal, not stalling.
+
+---
+
+### ASM-074
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-074 |
+| Created | 2026-09-16 |
+| Source | 2026-09-16-business-quantification-listing-petr-neuman |
+| By | Petr Neuman (STK-023) |
+| Status | Decided (2026-09-16) |
+
+**Description**
+Michaela Vdovicynová (STK-048) is confirmed as Listing's practical domain-expert/testing contact — the day-to-day working-level liaison for BigHub — distinct from Petr Neuman's business-owner role.
+
+**Rationale**
+No formal "head of listing" role exists yet on Dr. Max's side; Neuman is filling that gap at the direction-setting level but doesn't have time for practical/operational work (team testing, feedback collection). He nominated Vdovicynová, a listing-team member who does the work herself, as the person BigHub should work with day-to-day.
+
+**Impact**
+- **Delivery**: Marek's planned Discovery kickoff should route through Vdovicynová for testing sessions and feedback, not Neuman directly.
+- **Relationship**: Leaves open whether Vdovicynová is the same "second listing business owner" previously referenced (2026-09-02, name unknown) — not confirmed either way; see Open Questions in the source meeting note.
+
+---
+
+### ASM-073
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-073 |
+| Created | 2026-09-16 |
+| Source | 2026-09-16-business-quantification-listing-petr-neuman |
+| By | Petr Neuman (STK-023) |
+| Status | Decided (2026-09-16) |
+
+**Description**
+Listing's primary near-term driver is reframed: eliminating the listing team's day-to-day use of Magento (completing products entirely inside BigHub's tool, batch-exporting to Magento roughly once every two weeks) now outranks the project's original framing — poor supplier data quality — as the most urgent problem to solve.
+
+**Rationale**
+Petr Neuman was explicit that Magento's growing instability at Dr. Max's ~80,000-100,000 SKU scale (frequent multi-second save failures that discard completed work) is now his primary motivation, more than the original missing-parameter data-quality problem that started the project. An upcoming Magento change (removal of parametric grouping, surfacing all ~100 parameters per category instead of the relevant ~10-15) will make this worse.
+
+**Impact**
+- **Scope**: `product/solution-space/listing-specifikace.md`'s "Byznys hodnota" framing and MVP status ("Propis do Magento" currently Backlog) should be reviewed against this reframed priority.
+- **Delivery**: The export/import format Magento expects for batch import still needs to be defined with Dr. Max's own import/export technical contact (not yet named) — a follow-up session is expected.
+- **Timeline**: Reinforces urgency on the Magento-integration work relative to further data-quality/enrichment features.
 
 ---
 
@@ -1389,6 +1807,7 @@ Jan Kopecký flagged that wiring up Entra ID may hit permission/infra friction o
 
 **Impact**
 - **Delivery**: Unblocks ViaPharma testing (target: Jana testing immediately on her return from vacation) without waiting on the harder Entra ID integration.
+- **Update (2026-09-16, direct codebase read of `cz-ai-logistics/apps/claims_api`)**: This interim state is superseded. Production auth is now full Entra ID (Azure AD via MSAL), required on every business endpoint; the only non-Entra path is a single shared dev-bypass account gated by an env var for local development, not per-user hardcoded logins. No per-user hardcoded-login mechanism remains in the code.
 
 ---
 
@@ -1432,6 +1851,7 @@ Lukáš Starenko raised the question directly during the reklamace document-gene
 
 **Impact**
 - **Delivery process**: Sets a review gate into the reklamace automation build — no path to a fully unattended send exists in the current design.
+- **Update (2026-09-16, direct codebase read of `cz-ai-logistics/apps/claims_api`)**: The email-drafting feature this rule governs does not exist in the code yet at all — no email generation of any kind was found. The human-review-before-send principle remains the right design constraint for whenever this gets built, but it should not be described as an active safeguard today since there is nothing yet to safeguard.
 
 ---
 

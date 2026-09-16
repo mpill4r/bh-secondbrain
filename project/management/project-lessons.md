@@ -1,10 +1,110 @@
 ---
-last_updated: 2026-09-15
+last_updated: 2026-09-16
 last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
 
 # Lessons Learned
+
+---
+
+### LL-039
+
+| Field | Value |
+|-------|-------|
+| ID | LL-039 |
+| Created | 2026-09-16 |
+| Category | transcript reliability |
+| Source | 2026-09-16-devops-kanban-rollout-status-sync |
+
+**Lesson**
+Automated speaker diarization can silently collapse multiple real speakers into one label — often the first/loudest voice detected — especially when several attendees share one room or microphone channel. A transcript that looks cleanly attributed can still be substantively wrong; when a speaker's attributed content doesn't match their known role (e.g. deep technical commitments attributed to a PM in handover), that mismatch is a signal worth checking against context before writing anything into the record, not dismissing as an oddity.
+
+**Context**
+In this meeting's transcript, nearly all substantive content across three different topics (Fakturace doprav/Reklamace technical work, an order-prediction status update, a Listing update) was labeled "Alana Sihelská" — despite her tracked role being an outgoing PM in handover, not a developer. Content-matching against each topic's established owner (Filip Černý, Juraj Kmec, Marek Pillár respectively) and direct PM confirmation reassigned all three. Alana's actual presence/role in the meeting was left unconfirmed rather than guessed further.
+
+**Cross-reference**
+See `meetings/internal/2026-09-16-devops-kanban-rollout-status-sync.md` and the earlier same-day TEO/OCR technical sync, which had a separate (lower-stakes) speaker-identity ambiguity.
+
+---
+
+### LL-038
+
+| Field | Value |
+|-------|-------|
+| ID | LL-038 |
+| Created | 2026-09-16 |
+| Category | validation methodology |
+| Source | 2026-09-16-teo-ocr-technical-sync-pilot-results |
+
+**Lesson**
+Running a blind test against real, unmodified historical data — rather than only a curated benchmark/test set — surfaces bugs and edge cases that controlled test sets miss, precisely because nobody has had a chance to tune around them yet.
+
+**Context**
+BigHub ran TEO/OCR's extraction pipeline, untouched, against a real 2025 dataset spanning the 2 pilot vendors. This surfaced 2 concrete bugs the curated test set hadn't caught — a duplicated defects-text field, and a protocol with a genuine error that should have been, but wasn't, flagged for review — alongside confirmation that overall accuracy held up (in fact ran a few points higher, though possibly partly luck).
+
+**Cross-reference**
+See the "TEO / OCR" entry in `project-knowledge.md` and [[ASM-088]].
+
+---
+
+### LL-037
+
+| Field | Value |
+|-------|-------|
+| ID | LL-037 |
+| Created | 2026-09-16 |
+| Category | knowledge-base staleness |
+| Source | 2026-09-16-teo-ocr-solution-proposal-variants, 2026-09-16-teo-ocr-accuracy-validation-cost-analysis, 2026-09-16-teo-ocr-production-spec-v1-1 (routing session) |
+
+**Lesson**
+Internal engineering/delivery progress can significantly outpace a PM's own knowledge-base entry when the work happens on a parallel technical track without an explicit sync-back step. A status recorded as current at the time of writing can go stale within days if nobody flags "this changed" back to the PM — don't assume a status untouched for ~1-2 weeks is still accurate on a fast-moving workstream; proactively ask engineering-adjacent contacts for a progress check before treating a knowledge-base status as ground truth.
+
+**Context**
+`project-knowledge.md`'s TEO/OCR entry described the pipeline as "still a local feasibility prototype ... not deployed anywhere" per the 2026-09-07 portfolio review. Four internal BigHub documents dated July-August 2026 (surfaced 2026-09-16) showed the pipeline had already reached validated, production-grade accuracy (91%/94% across all 7 document categories, 0 fabricated values across 500+ pages) with an agreed v1.1 architecture dated 2026-08-07 — predating the "still a prototype" status by about a month. The gap likely existed because this engineering work wasn't discussed in any processed meeting between 2026-09-07 and 2026-09-16.
+
+**Cross-reference**
+See [[ASM-076]], [[ASM-077]], [[ASM-078]] and the "TEO / OCR" entry in `project-knowledge.md`.
+
+---
+
+### LL-036
+
+| Field | Value |
+|-------|-------|
+| ID | LL-036 |
+| Created | 2026-09-16 |
+| Category | tooling / harness reliability |
+| Source | 2026-09-16-business-quantification-listing-petr-neuman (routing session) |
+
+**Lesson**
+Writing directly to a cloud-synced Office file (OneDrive/SharePoint) with a scripting library while that same file is open live in the desktop app is unreliable — the app's own AutoSave can silently re-sync its in-memory state over the on-disk change shortly after, discarding the edit with no error. Always verify the write by re-reading the file back immediately after saving, and if it didn't stick, ask the user to avoid touching/saving the file for a short window (or close it) before retrying — don't assume a successful `save()` call means the change persisted.
+
+**Context**
+A first attempt to fill the Listing row in `businessQuantificationWorskop.xlsx` (OneDrive-synced, open live in Excel with AutoSave on) appeared to succeed via openpyxl, but a screenshot moments later showed the old content still there. Re-reading the file confirmed the write had been silently reverted. The fix was a second write followed by an explicit ask to the PM not to interact with the file for ~30-60 seconds, which was then confirmed to persist.
+
+**Cross-reference**
+2026-09-16-business-quantification-listing-petr-neuman
+
+---
+
+### LL-035
+
+| Field | Value |
+|-------|-------|
+| ID | LL-035 |
+| Created | 2026-09-16 |
+| Category | interviewing technique |
+| Source | 2026-09-16-business-quantification-listing-petr-neuman |
+
+**Lesson**
+The problem that originally motivated a stakeholder to request an initiative is not always the problem they most urgently want solved by the time you interview them for business quantification. Always ask explicitly whether the original framing still holds ("is that still the main driver, or has something changed since?") rather than assuming the initiative's origin story is still its current priority.
+
+**Context**
+Listing was originally framed (2026-09-01, via Filip Černý's handoff) as a supplier-data-quality problem — enriching thin product data from suppliers. In the first direct interview with the actual business owner (Petr Neuman, 2026-09-16), that framing turned out to be secondary: his real, currently-most-urgent driver is Magento's growing instability at scale, which surfaced only in the last month or two — after the project had already started. Without directly probing for this shift, the quantification would have anchored on the wrong problem.
+
+**Cross-reference**
+project-assumptions ASM-073; project-stakeholders STK-023; 2026-09-01-dr-max-listing-introduction
 
 ---
 

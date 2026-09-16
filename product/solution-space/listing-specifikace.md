@@ -1,6 +1,6 @@
 ---
-last_updated: 2026-09-15
-last_updated_by: manual — conversational
+last_updated: 2026-09-16
+last_updated_by: auto — project-meeting routing
 ---
 
 # Listing — Specifikace pro vývoj
@@ -57,7 +57,7 @@ Nástroj dnes reálně běží nad testovacími daty v jedné pilotní kategorii
 
 **Kvalitativní přínos**: eliminace ruční tvorby a údržby produktového obsahu a parametrů nad velkým a nekonzistentním datasetem; standardizace procesu napříč listingovým týmem; příprava na škálování na stovky až tisíce kategorií; snížení regulatorního rizika díky deterministickému systému právních varovných šablon (Warning Templates) — AI zde pouze vybírá variantu z předem schváleného textu, nikdy nevymýšlí vlastní právní formulaci — a blacklistu neregulérních léčebných tvrzení.
 
-**Kvantifikovaný přínos**: interní pracovní odhad 300 000 Kč — zatím neověřený s klientem, bez podkladové baseline.
+**Kvantifikovaný přínos**: klientská baseline (P. Neuman, 2026-09-16): Q1 2026 (před iniciativou) ~3 600 zpracovaných položek/kvartál při ~230 Kč/položka; Q2 2026 (po zahájení procesních změn, ještě bez nástroje) ~6 000 položek/kvartál při ~130 Kč/položka. Cíl: pokračovat v růstu objemu (~8 000–10 000 položek/kvartál) a dalším snižování nákladu na položku (~100 Kč) po nasazení nástroje. Přesný finální KPI cíl zatím není potvrzen — klient explicitně odmítl uvést nepodložené číslo (viz ASM-075).
 
 **Úspora času**: `-tbd-`
 
