@@ -1,10 +1,110 @@
 ---
-last_updated: 2026-09-16
-last_updated_by: auto — project-daily close
+last_updated: 2026-09-17
+last_updated_by: auto — project-meeting routing (2026-09-17-lexie-max-maxie-weekly-sync)
 owner: Marek Pillár
 ---
 
 # Lessons Learned
+
+---
+
+### LL-045
+
+| Field | Value |
+|-------|-------|
+| ID | LL-045 |
+| Created | 2026-09-17 |
+| Category | Client negotiation |
+| Source | 2026-09-17-lexie-max-maxie-weekly-sync |
+
+**Lesson**
+When a client holds firm on a launch/delivery date for risk-management reasons, resist countering with your own preferred date. Instead, split the commitment into an internal milestone you control (which you can push to be as early as reasonably possible) and the client-facing date they asked for (which you accept as-is) — then earn the option to pull the public date in through demonstrated quality, rather than negotiating for it upfront.
+
+**Context**
+Jura pushed for an end-of-September public launch; Mertová held firm on end of October, citing thin test coverage (only 4 sample e-recepty tested) and an explicit "we'd rather launch late than lose trust" framing. Jindřich didn't contest this — he reframed BigHub's commitment as hitting its own 3 internal deployment phases by end of September, with the public date staying October unless Mertová herself chose to move earlier. This resolved a real point of friction cleanly, with no forced agreement, and preserved the client's ownership of risk tolerance on a decision (public website launch) where a bad outcome would be highly visible.
+
+**Cross-reference**
+[[ASM-100]]
+
+---
+
+### LL-044
+
+| Field | Value |
+|-------|-------|
+| ID | LL-044 |
+| Created | 2026-09-17 |
+| Category | Client coaching / feedback elicitation |
+| Source | 2026-09-17-lexie-max-maxie-weekly-sync |
+
+**Lesson**
+When asking a non-technical/non-design client for input on a UX or design change, explicitly ask for the *problem* (what's broken, missing, or frustrating — ideally with a screenshot or recording) rather than the *solution*. Framing it this way prevents the client from prescribing an implementation that may conflict with existing design standards, and gives the delivery team room to solve it properly.
+
+**Context**
+Jindřich reopened the long-deferred Lexie design-refresh ask by requesting Dr. Max articulate concrete pain points rather than proposed changes. Marek reinforced this explicitly on the call: *"my nepotrebujeme vedieť riešenie od vás, my potrebujeme zistiť, čo je váš problém... iba definujte ten problém, maximálne s nejakým screenshotom, možno screen recordingom."* Accepted without pushback, and gave the team (Kadlecová) a concrete, bounded next step (a "vibe check" exercise) instead of an open-ended design conversation.
+
+**Cross-reference**
+Meeting: 2026-09-17-lexie-max-maxie-weekly-sync (Lexie design/UX refresh)
+
+---
+
+### LL-043
+
+| Field | Value |
+|-------|-------|
+| ID | LL-043 |
+| Created | 2026-09-17 |
+| Category | business-quantification interviewing |
+| Source | 2026-09-17-business-quantification-cc-max-maxie-lexie |
+
+**Lesson**
+When a business owner proposes an ambitious KPI target for an untested first version, surfacing the downside of overpromising (what happens if real performance lands well short of it) prompts more calibrated self-correction than directly arguing the number is unrealistic.
+
+**Context**
+Mertová first proposed a 90%-contained / 10%-escalated target for Maxie's voicebot. Rather than pushing back on the number itself, Marek pointed out that publicly committing to only 10% escalation risks looking bad if actual performance lands closer to 30%. Mertová immediately and voluntarily revised down to a 50/50 placeholder, explicitly flagging it as provisional — no further debate was needed.
+
+**Cross-reference**
+2026-09-17-business-quantification-cc-max-maxie-lexie; ASM-094
+
+---
+
+### LL-042
+
+| Field | Value |
+|-------|-------|
+| ID | LL-042 |
+| Created | 2026-09-17 |
+| Category | stakeholder sentiment |
+| Source | 2026-09-17-business-quantification-cc-max-maxie-lexie, 2026-09-17-business-quantification-maxbuddy-vosmek |
+
+**Lesson**
+When a stakeholder proactively vetoes a value-framing before it's even proposed to them (e.g., rejecting "time saved therefore fewer people needed," or an employee-satisfaction claim), treat it as a protective/ownership signal worth capturing directly — not noise to filter out of the deliverable. It usually means the stakeholder anticipates internal resistance and is shielding their team.
+
+**Context**
+In two back-to-back interviews the same day, both business owners independently and unprompted rejected a framing the interviewer hadn't yet suggested: Mertová refused to let Lexie's ~30 min/day time-savings estimate be read as grounds for headcount cuts, and Vosmek explicitly excluded employee satisfaction as a MaxBuddy value driver, anticipating real staff pushback. Both were noted in Sentiment & Tone rather than smoothed over in the business-value fields.
+
+**Cross-reference**
+2026-09-17-business-quantification-cc-max-maxie-lexie; 2026-09-17-business-quantification-maxbuddy-vosmek; ASM-095
+
+---
+
+### LL-041
+
+| Field | Value |
+|-------|-------|
+| ID | LL-041 |
+| Created | 2026-09-17 |
+| Category | business-quantification framing |
+| Source | 2026-09-17-business-quantification-cc-max-maxie-lexie |
+
+**Lesson**
+For a channel serving fixed-size, largely inelastic demand (e.g., a call center covering a fixed customer base), adding a new self-service channel does not reduce total volume — the value is capacity/coverage increase and reduced staff cognitive load, not FTE/cost savings. Forcing an FTE-savings framing onto a fixed-volume system produces a business case the owner will rightly reject.
+
+**Context**
+Mertová was explicit, for both Max chatbot and Maxie, that Dr. Max's call center handles a roughly constant volume of calls regardless of which self-service channels exist — when one topic is deflected, another fills the gap, since the center serves the whole pharmacy network. She and Marek agreed the honest framing is "serves more customers at the same headcount, with lower cognitive load on staff," not "needs fewer agents."
+
+**Cross-reference**
+2026-09-17-business-quantification-cc-max-maxie-lexie; ASM-092
 
 ---
 
@@ -25,6 +125,11 @@ While rebuilding `2. Fakturace doprav.docx`, an initial claim of "all screenshot
 
 **Cross-reference**
 project-daily-2026-09-16; ASM-090; [[LL-025]]
+
+**Recurrence (2026-09-17, Listing client-doc rebuild)**: A third instance, different mechanism. A regex-based removal of Word comment-reference XML (stripping `commentRangeStart`/`commentReference` runs before building a client-facing copy) silently over-matched near dense comment clusters and deleted real paragraph/table content — including an entire section (heading, intro text, two API-endpoint tables, 16 rows) — with no error, no visible symptom, and a document that still opened and "looked right." Went undetected through several further rounds of edits until the PM asked for a full diff-check against the original, which used a systematic sequence-alignment comparison (Python's `difflib`) rather than a spot-check and immediately surfaced four separate missing spans. Reinforces the lesson at the mechanism level too: any regex or pattern-based bulk edit on structured/XML content should be verified with a full structural diff against the pre-edit original immediately after running it, not deferred until a symptom appears or a spot-check happens to hit the damaged area.
+
+**Cross-reference**
+project-daily-2026-09-17; [[LL-025]]
 
 ---
 
@@ -347,6 +452,11 @@ While routing Filip Černý's estimates into the live roadmap Excel, Marek had t
 
 **Cross-reference**
 LL-023, project-daily-2026-09-09
+
+**Recurrence (2026-09-17, Listing client-doc annotation work)**: Same root cause, different tool and file format — python-docx writes to a `.docx` open live in Word were silently reverted mid-session (a section-move/renumber edit reverted all the way back to its pre-move state). Confirmed via `lsof` that Word held the file open; asking the PM to close it, then re-verifying via `lsof` before every subsequent write, resolved it. Generalizes this lesson beyond Excel/openpyxl to any Office format (Word/docx included) and any scripting library (python-docx included) — the fix (`lsof`-style open-file check before writing, not just a delay-and-recheck) is now the default habit before any script-write to a user-facing Office file.
+
+**Cross-reference**
+project-daily-2026-09-17
 
 ### LL-023
 

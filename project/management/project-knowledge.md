@@ -1,6 +1,6 @@
 ---
-last_updated: 2026-09-16
-last_updated_by: auto — project-meeting routing
+last_updated: 2026-09-17
+last_updated_by: auto — project-meeting routing (2026-09-17-lexie-max-maxie-weekly-sync)
 owner: Marek Pillár
 ---
 
@@ -50,9 +50,9 @@ Original infrastructure/model provisioning for MaxBuddy was done manually (ad ho
 | Field | Value |
 |-------|-------|
 | Definition | Three BigHub-built chatbot/assistant products for Dr. Max, owned business-side by paní Mertová (STK-017), co-owned with Tomáš Dudaško (STK-010, IT/budget side). **Max** is the customer-facing chatbot embedded on the drmax.cz website (order status, pharmacy locator, e-recepty, medication/stock lookup — see full flow below); a **voice channel of the same capability is Maxie**, launching scoped to order-status only via IVR. **Lexie (Lucie)** is the internal knowledge-base assistant being rolled out to IT, Legal, and Brno accounting, now in Call Center testing — currently blocked on 3 bugs, see below. Distinct from MaxBuddy (the pharmacy point-of-sale cross-sell product) — corrected 2026-09-03; an earlier entry incorrectly described Max as "Call Center-facing." |
-| Source | 2026-09-01-dr-max-x-bighub-project-status-sync, 2026-09-03-max-chatbot-demo-lexi-maxi-status-sync, 2026-09-04-ai-platform-standup-xmanager-lexi-demo, 2026-09-07-ai-portfolio-roadmap-scope-review, 2026-09-10-lexie-max-maxie-weekly-sync |
+| Source | 2026-09-01-dr-max-x-bighub-project-status-sync, 2026-09-03-max-chatbot-demo-lexi-maxi-status-sync, 2026-09-04-ai-platform-standup-xmanager-lexi-demo, 2026-09-07-ai-portfolio-roadmap-scope-review, 2026-09-10-lexie-max-maxie-weekly-sync, 2026-09-17-lexie-max-maxie-weekly-sync |
 | Added | 2026-09-01 |
-| Last updated | 2026-09-10 |
+| Last updated | 2026-09-17 |
 | Status | Active |
 
 **Important scope correction (2026-09-04)**: the underlying AI platform (chatbot + RAG infrastructure) is **shared BigHub infrastructure reused across multiple clients**, not Dr. Max-exclusive — also deployed for Brněnská komunikace (Brno communications), with variants in progress for Kooperativa (accounting) and Unica (legal). Dr. Max is one deployment of a centralized "core" platform/repo, not a bespoke build. Frontend direction: one standardized template by default, custom per client only on explicit request — see [[ASM-025]]. Whether Honza Sovka retains product ownership of the platform across all clients (vs. Marek owning Dr. Max only) is unresolved — see [[ASM-026]].
@@ -74,6 +74,10 @@ Original infrastructure/model provisioning for MaxBuddy was done manually (ad ho
 **Process notes**: all three products' X-Manager feature requests should route through Simona Mertová as single point of contact — see [[ASM-018]]. Production-readiness bar is functional correctness against agreed scope, not full polish — see [[ASM-019]]. In-chat feedback mechanism (Max) is a star/emoji rating, no free text — see [[ASM-017]].
 
 **2026-09-07 portfolio review**: confirmed Max and Maxie run on one shared LLM core/prompt engine, differing only by channel (web chat UI vs. voice/IVR) — intentional shared architecture, not incidental overlap. Max's production integration currently runs on Dr. Max's public website API, scraped rather than officially provided — flagged as a risk before a full public launch, see [[ASM-029]]. Maxie today mirrors 3 of the chatbot's core scenarios (hours, order status, e-recept); reklamace/return flows aren't built yet, shared build with the chatbot once done. Dr. Max runs its own fixed decision-tree IVR today and plans to replace branches with the dynamic LLM version one at a time — which branch goes first is Dr. Max's call, not yet decided.
+
+**Max chatbot — 3-phase go-live plan (2026-09-17)**: (1) connect to production backend (live orders, e-recepty, etc.) — a matter of hours once infra unblocks; (2) BDC security clearance to exist on doktormax.cz invisible to the public — Dr. Max can then manually enable the widget for internal testing exactly as end users would experience it, targeted for end of September; (3) a single toggle for public visibility, on Dr. Max's timeline. Public launch target is end of October (see [[ASM-100]]), as a deliberately quiet/soft launch with no active promotion (see [[ASM-101]]). Current data architecture: nothing is stored server-side today — conversations live only in the user's browser and never leave the device; future analytics will store only aggregate statistics, never individual conversation content. E-recepty content is the one genuinely new sensitive-data touchpoint not covered by existing consent elsewhere — GDPR consent/anonymization copy is open pending DPO input, see [[ASM-102]]. Underlying model upgraded GPT-5.1→GPT-5.4 (2026-09-17), paired with a switch from literal to fuzzy/syllable-based location matching, to improve Czech-declension handling (e.g. "Brno" vs. "v Brně") and district-to-city recognition (e.g. Brno-Líšeň as part of Brno) — a possible residual bug where the bot's own earlier conversational context can override a later correct lookup is still being investigated. Tone/terminology consistency (vykání vs. tykání, "lékárna" vs. "pobočka") is being addressed via a client-authored first-person "tone brief" fed directly into the system prompt, rather than a rule list — found to work better with the underlying model.
+
+**Lexie test-account mechanics — resolved (2026-09-17)**: BigHub stepped back from the in-app role-switcher (option B, open since 2026-09-10 — see [[ASM-063]]) due to BDC permission-system risk/complexity, in favor of 4 separate department accounts without 2FA (option A). Dr. Max accepted this as workable — see [[ASM-103]]. The role-switcher isn't ruled out as a future improvement but is no longer the committed near-term path.
 
 ### TEO / OCR (pharmacy service-protocol extraction)
 

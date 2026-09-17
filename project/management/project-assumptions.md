@@ -1,6 +1,6 @@
 ---
-last_updated: 2026-09-16
-last_updated_by: auto — project-meeting routing
+last_updated: 2026-09-17
+last_updated_by: auto — project-meeting routing (2026-09-17-lexie-max-maxie-weekly-sync)
 owner: Marek Pillár
 ---
 
@@ -10,6 +10,21 @@ owner: Marek Pillár
 
 | ID | Status | Created | Description (short) |
 |----|--------|---------|---------------------|
+| ASM-105 | Decided (2026-09-17) | 2026-09-17 | False call-transfer claims and unauthorized medical advice explicitly disallowed in Max chatbot's prompt |
+| ASM-104 | Open (2026-09-17) | 2026-09-17 | Some shared timeline items are mis-scoped as MVP when they belong to the full product — not yet itemized |
+| ASM-103 | Decided (2026-09-17) | 2026-09-17 | Lexie test-account approach: 4 separate accounts without 2FA, not the in-app role-switcher |
+| ASM-102 | Open (2026-09-17) | 2026-09-17 | Max chatbot GDPR consent/anonymization copy blocked pending DPO (Lenka Henichová) input |
+| ASM-101 | Decided (2026-09-17) | 2026-09-17 | Max chatbot public launch will be a quiet/soft launch — no active promotion until fully mature |
+| ASM-100 | Decided (2026-09-17) | 2026-09-17 | Max chatbot go-live: public launch end of October; BigHub's 3 internal deployment phases targeted for end of September |
+| ASM-099 | Open (2026-09-17) | 2026-09-17 | All three MaxBuddy KPI targets (single-item dispensing, molecule/group volume, conversion-by-benefit) pending quantification from Luboš Vosmek |
+| ASM-098 | Open (2026-09-17) | 2026-09-17 | MaxBuddy revenue-uplift (~1-1.2%) and dispensing-coverage (~40%) figures provisional pending exact numbers from Luboš Vosmek |
+| ASM-097 | Open (2026-09-17) | 2026-09-17 | MaxBuddy's live upsell feature is data/rule-based, not LLM/AI-driven — open question for AI-portfolio classification |
+| ASM-096 | Open (2026-09-17) | 2026-09-17 | Simona Mertová owes a blended agent (FTE) cost rate needed to convert Max chatbot/Maxie/Lexie time estimates into Kč |
+| ASM-095 | Open (2026-09-17) | 2026-09-17 | Lexie business-value quantification and KPI unresolved — two candidate directions proposed, neither finalized |
+| ASM-094 | Open (2026-09-17) | 2026-09-17 | Maxie containment-rate KPI walked back from 90% to a 50/50 placeholder, explicitly non-final |
+| ASM-093 | Open (2026-09-17) | 2026-09-17 | Max chatbot conversation-resolution KPI set directionally at ~50% initial / ~80% aspirational, not committed |
+| ASM-092 | Decided (2026-09-17) | 2026-09-17 | Max chatbot and Maxie business value framed as capacity/coverage increase and reduced agent cognitive load, not FTE savings |
+| ASM-091 | Open (2026-09-17) | 2026-09-17 | Kateřina Kadlecová's domain-expert role for Max chatbot/Maxie/Lexie vacant pending reassignment (maternity leave) |
 | ASM-090 | Open (2026-09-16) | 2026-09-16 | Whether to add the code-confirmed driver PDF confirmation feature to the Fakturace doprav roadmap Excel/Artifact (currently only in the rebuilt spec doc) |
 | ASM-089 | Open (2026-09-16) | 2026-09-16 | Whether to expand TEO/OCR's autumn 2026 pilot scope to a 3rd, larger vendor ("PEDOS," name uncertain) not yet decided |
 | ASM-088 | Decided (2026-09-16) | 2026-09-16 | TEO/OCR TEST-environment Blob storage will be self-provisioned by BigHub on the existing platform — no BDC/infra-team dependency to create it |
@@ -102,6 +117,328 @@ owner: Marek Pillár
 | ASM-001 | Decided (2026-08-25) | 2026-09-01 | Dr. Max client-side coordination unified into one role (Jindřich Tůma) |
 
 ## Entries
+
+---
+
+### ASM-105
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-105 |
+| Created | 2026-09-17 |
+| Source | 2026-09-17-lexie-max-maxie-weekly-sync |
+| By | Team |
+| Status | Decided (2026-09-17) |
+
+**Description**
+False call-transfer claims (Max claiming it can transfer a user to a pharmacist by phone) and unauthorized medical advice are both explicitly disallowed in the Max chatbot's system prompt.
+
+**Rationale**
+Both behaviors were observed in live testing — Max cannot actually transfer calls, and the medical-advice guardrail needed confirmation it holds under direct questioning. The call-transfer claim was explicitly prompted against; the medical-advice guardrail was already working correctly when tested by Kadlecová.
+
+**Impact**
+- **Trust**: Prevents the chatbot from making false promises to users, which would damage trust faster than a slower/more limited feature set.
+- **Compliance**: Keeps the chatbot within its intended scope (informational, not clinical) ahead of the DPO/GDPR review already underway (see [[ASM-102]]).
+
+---
+
+### ASM-104
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-104 |
+| Created | 2026-09-17 |
+| Source | 2026-09-17-lexie-max-maxie-weekly-sync |
+| By | Team |
+| Status | Open (2026-09-17) |
+
+**Description**
+Some timeline items Jindřich shared as MVP scope actually belong to the full product, per Kateřina Kadlecová's read of the roadmap — specific items were not identified or resolved during the meeting.
+
+**Rationale**
+Kadlecová flagged the mismatch live; Jindřich acknowledged Marek might have visibility into it but the discussion moved on without itemizing which entries are affected.
+
+**Impact**
+- **Scope clarity**: Risk of Dr. Max testing or expecting features that aren't actually in the current MVP commitment, or BigHub under-scoping what's actually needed for MVP sign-off.
+- **Timeline**: Needs resolving before the go-live testing window closes, since it affects what "MVP done" actually means.
+
+---
+
+### ASM-103
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-103 |
+| Created | 2026-09-17 |
+| Source | 2026-09-17-lexie-max-maxie-weekly-sync |
+| By | Team |
+| Status | Decided (2026-09-17) |
+
+**Description**
+Lexie's multi-role test-account approach is 4 separate accounts (one per CC sub-department), without 2FA — not the in-app role-switcher explored since 2026-09-10.
+
+**Rationale**
+Jura assessed the in-app role-switcher as too risky/complex given how strict BDC is about user-permission configuration, and wasn't confident it could be delivered without significant delay. Mertová accepted the simpler 4-account approach as workable for now; the role-switcher isn't ruled out long-term but is no longer the committed near-term path.
+
+**Impact**
+- **Delivery speed**: Unblocks Lexie role-based testing immediately via a BDC ticket, rather than waiting on new in-app development.
+- **Test fidelity**: 4 separate accounts more accurately mirror how a real operator experiences exactly one role/permission scope at a time — Jura's own caveat from 2026-09-10 about the role-switcher not testing real restriction behavior no longer applies.
+
+---
+
+### ASM-102
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-102 |
+| Created | 2026-09-17 |
+| Source | 2026-09-17-lexie-max-maxie-weekly-sync |
+| By | Šárka Andělová (STK-050) |
+| Status | Open (2026-09-17) |
+
+**Description**
+GDPR consent/anonymization for the Max chatbot (phone/email collection) is unresolved — needs input from Lenka Henichová (DPO) before any consent copy is drafted.
+
+**Rationale**
+Andělová flagged that no consent checkbox or anonymization step currently exists; Jura confirmed BigHub hadn't planned for it. Jindřich judged this needs DPO sign-off rather than an ad hoc BigHub/Dr. Max text, given Dr. Max's existing "ochrana osobních údajů" page already covers adjacent products (Maxí voicebot). Jura clarified the current architecture reduces but doesn't eliminate the exposure: nothing is stored server-side today (conversations live only in the user's browser); future analytics will store only aggregate statistics. The one genuinely new sensitive-data type is e-recepty (e-prescription) content, not previously consented for this use.
+
+**Impact**
+- **Compliance**: Blocks any public go-live copy/UX around data collection until DPO input arrives — should be prioritized given the end-of-September internal deployment target (see [[ASM-100]]).
+- **Timeline**: Sits on the critical path to phase 2/3 of the go-live plan (public visibility on doktormax.cz).
+
+---
+
+### ASM-101
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-101 |
+| Created | 2026-09-17 |
+| Source | 2026-09-17-lexie-max-maxie-weekly-sync |
+| By | Simona Mertová (STK-017) |
+| Status | Decided (2026-09-17) |
+
+**Description**
+The Max chatbot's public launch will be a quiet/soft launch — no active promotion (intranet, newsletter, etc.) until the tool is fully mature, deferring the adoption-campaign work Jindřich has otherwise been preparing.
+
+**Rationale**
+Mertová: customers are expected to discover the chatbot organically; only promote once satisfaction is validated and ideally once the current chat-bubble UI is refined or removed. She wants to avoid over-promising given the chatbot currently covers only 4 capabilities.
+
+**Impact**
+- **Marketing/comms**: Jindřich's adoption-campaign channel planning is paused pending Mertová's go-ahead — not cancelled, just gated.
+- **Risk**: Reduces exposure if early bugs surface post-launch, at the cost of slower adoption measurement.
+
+---
+
+### ASM-100
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-100 |
+| Created | 2026-09-17 |
+| Source | 2026-09-17-lexie-max-maxie-weekly-sync |
+| By | Simona Mertová (STK-017), Jura Brázdil (STK-026) |
+| Status | Decided (2026-09-17) |
+
+**Description**
+Max chatbot go-live: public launch target is end of October (Mertová's ask); BigHub targets completing its 3 internal deployment phases (prod backend connection → BDC-cleared but hidden on doktormax.cz → public visibility toggle) by end of September.
+
+**Rationale**
+Jura pushed for an end-of-September public date; Mertová held firm on needing more testing time against real production data (only 4 sample e-recepty tested so far) and judged end-of-September too tight given infra dependencies, explicitly prioritizing trust ("jakmile to nebude dobře udělané, tak jsme si vykopali vlastní hrob") over speed. Jindřich accepted this rather than pushing back, framing BigHub's job as earning an earlier date through demonstrated quality, not forcing one.
+
+**Impact**
+- **Timeline**: Gives BigHub a concrete internal deadline (end of September) distinct from the public commitment (end of October), with a month of buffer for hands-on Dr. Max testing against real data in between.
+- **Relationship**: Demonstrates BigHub deferring to the client's risk tolerance on a launch date rather than pushing its own schedule — reinforces trust on a project where a bad launch would be highly visible (public website).
+
+---
+
+### ASM-099
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-099 |
+| Created | 2026-09-17 |
+| Source | 2026-09-17-business-quantification-maxbuddy-vosmek |
+| By | Luboš Vosmek (STK-011) |
+| Status | Open (2026-09-17) |
+
+**Description**
+All three of MaxBuddy's KPI targets — single-item dispensing rate, molecule/group volume growth, and conversion-by-benefit rate — require target values from Luboš Vosmek; none are finalized as of 2026-09-17.
+
+**Rationale**
+The primary KPI (single-item dispensing, tracked by Dr. Max's corporate Holding) has an approximate ~50% baseline but no confirmed target on paper; the two secondary KPIs were deliberately left open for Vosmek to set his own expectation during Excel review rather than have Marek propose numbers.
+
+**Impact**
+- **Timeline**: Same 2026-09-18 deadline as [[ASM-098]] — all three should be confirmed together in Vosmek's Excel review pass ahead of the Tomáš Dudaško deliverable.
+
+---
+
+### ASM-098
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-098 |
+| Created | 2026-09-17 |
+| Source | 2026-09-17-business-quantification-maxbuddy-vosmek |
+| By | Luboš Vosmek (STK-011) |
+| Status | Open (2026-09-17) |
+
+**Description**
+MaxBuddy's revenue-uplift (~1–1.2%) and dispensing-coverage (~40%) figures are provisional estimates pending exact numbers from Luboš Vosmek, due 2026-09-18.
+
+**Rationale**
+Vosmek was upfront he doesn't have the exact case-count denominator behind the revenue figure on hand and committed to recalculating and sending it, along with the current molecule-coverage count (last confirmed at 26 molecules, expanded again the prior week).
+
+**Impact**
+- **Timeline**: The Tomáš Dudaško deliverable will carry provisional figures until Vosmek's follow-up lands tomorrow morning.
+
+---
+
+### ASM-097
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-097 |
+| Created | 2026-09-17 |
+| Source | 2026-09-17-business-quantification-maxbuddy-vosmek |
+| By | Luboš Vosmek (STK-011) |
+| Status | Open (2026-09-17) |
+
+**Description**
+MaxBuddy's current live upsell/cross-sell feature is data/rule-based, not actually LLM/AI-driven, per Luboš Vosmek's own characterization.
+
+**Rationale**
+Vosmek was explicit ("it's all tied together with data... it isn't AI") when explaining that legislative blockage of the original dosage-checking feature forced a pivot straight to the current upsell logic, which runs on rules rather than a language model.
+
+**Impact**
+- **Portfolio classification**: Worth confirming with Jura Brázdil/the technical team how this affects MaxBuddy's classification and reporting within an "AI initiatives" portfolio tracker — it may not belong in the same bucket as LLM-based initiatives like Max chatbot or Lexie.
+
+---
+
+### ASM-096
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-096 |
+| Created | 2026-09-17 |
+| Source | 2026-09-17-business-quantification-cc-max-maxie-lexie |
+| By | Simona Mertová (STK-017) |
+| Status | Open (2026-09-17) |
+
+**Description**
+Simona Mertová owes a blended/average agent (FTE) cost rate at the corporate level, needed to convert the chatbot's "20 extra agents for 24/7" hypothetical and Lexie's ~30 min/day estimate into Kč figures.
+
+**Rationale**
+Neither Mertová nor Marek had this rate on hand during the call; without it, the KPI Excel's revenue/cost figures for these initiatives remain qualitative only.
+
+**Impact**
+- **Timeline**: Blocks finalizing Kč-based business value for Max chatbot and Lexie in the Tomáš Dudaško deliverable until received.
+
+---
+
+### ASM-095
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-095 |
+| Created | 2026-09-17 |
+| Source | 2026-09-17-business-quantification-cc-max-maxie-lexie |
+| By | Simona Mertová (STK-017) |
+| Status | Open (2026-09-17) |
+
+**Description**
+Lexie's business-value quantification and KPI remain unresolved — an estimated ~30 min/day time savings could not be translated into Kč, and two candidate KPI directions (call-handle-time reduction vs. new-agent ramp-time reduction) were proposed but neither finalized.
+
+**Rationale**
+Mertová explicitly resisted framing Lexie's value as headcount-reducible ("these are soft skills that can't be converted into money"), worried it could be misread as grounds for cutting staff; the new-agent ramp-time angle (~1–1.5 months → ~14 days faster) is the most concrete lever raised so far.
+
+**Impact**
+- **Business case framing**: Of the three CC initiatives, Lexie's is the weakest quantified business case — flag as the one most likely to need a follow-up session once Kadlecová's successor (see [[ASM-091]]) is named.
+
+---
+
+### ASM-094
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-094 |
+| Created | 2026-09-17 |
+| Source | 2026-09-17-business-quantification-cc-max-maxie-lexie |
+| By | Simona Mertová (STK-017) |
+| Status | Open (2026-09-17) |
+
+**Description**
+Maxie's forward-looking containment-rate target (% resolved without transfer to a live agent) was walked back live on the call from an initial 90% to a 50/50 placeholder.
+
+**Rationale**
+Marek flagged that promising only 10% escalation for an untested first version risks looking bad if real performance lands closer to 30%; Mertová revised down and explicitly called it a soft, non-final placeholder ("let it land where it lands").
+
+**Impact**
+- **KPI reporting**: Present 50/50 as a conservative placeholder in the Dudaško deliverable, not a committed target — measurement methodology (transfer due to Maxie failure vs. a mid-call topic change) is also still unresolved.
+
+---
+
+### ASM-093
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-093 |
+| Created | 2026-09-17 |
+| Source | 2026-09-17-business-quantification-cc-max-maxie-lexie |
+| By | Simona Mertová (STK-017) |
+| Status | Open (2026-09-17) |
+
+**Description**
+Max chatbot's conversation-resolution-rate KPI target is set directionally at ~50% initially, ~80% aspirational — not a committed number.
+
+**Rationale**
+No chatbot is yet in production, so there's no baseline; Mertová deliberately set expectations low for a first version, aiming toward 80% once the chatbot moves beyond its current fixed-menu structure to a fuller LLM model.
+
+**Impact**
+- **KPI reporting**: Treat 50%/80% as directional targets in the Dudaško deliverable, not hard commitments — revisit once real production data exists.
+
+---
+
+### ASM-092
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-092 |
+| Created | 2026-09-17 |
+| Source | 2026-09-17-business-quantification-cc-max-maxie-lexie |
+| By | Simona Mertová (STK-017) |
+| Status | Decided (2026-09-17) |
+
+**Description**
+Business value for Max chatbot and Maxie is framed as capacity/coverage increase and reduced agent cognitive load, not FTE/headcount cost savings.
+
+**Rationale**
+Both Mertová and Marek agreed the call center's total call/email volume is fixed regardless of chatbot/voicebot adoption (pharmacy-network volume drives it, not channel availability), so savings can't credibly be expressed as fewer agents needed.
+
+**Impact**
+- **Business case framing**: The KPI Excel for Tomáš Dudaško presents these two initiatives as service-quality/brand-value levers, not cost-reduction levers, to avoid an inflated or misleading ROI narrative.
+
+---
+
+### ASM-091
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-091 |
+| Created | 2026-09-17 |
+| Source | 2026-09-17-business-quantification-cc-max-maxie-lexie |
+| By | Simona Mertová (STK-017) |
+| Status | Open (2026-09-17) |
+
+**Description**
+Kateřina Kadlecová (STK-037), the domain expert across Max chatbot, Maxie, and Lexie, is departing on maternity leave with no successor yet named.
+
+**Rationale**
+Mertová disclosed this mid-call while confirming domain-expert contacts for the Business Quantification interview; her team needs to internally reassign the responsibility before a replacement can be named.
+
+**Impact**
+- **Continuity**: All three CC-owned AI initiatives lose their most engaged domain-expert contact simultaneously — testing, ticket triage, and roadmap input may stall until a successor is named.
+- **Timeline**: Could delay finalizing KPI targets and business-value figures still owed for the Tomáš Dudaško deliverable if a successor isn't named quickly.
 
 ---
 
