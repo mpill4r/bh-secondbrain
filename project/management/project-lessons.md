@@ -1,10 +1,30 @@
 ---
-last_updated: 2026-09-17
-last_updated_by: auto — project-meeting routing (2026-09-17-lexie-max-maxie-weekly-sync)
+last_updated: 2026-09-18
+last_updated_by: auto — project-daily close (2026-09-18)
 owner: Marek Pillár
 ---
 
 # Lessons Learned
+
+---
+
+### LL-046
+
+| Field | Value |
+|-------|-------|
+| ID | LL-046 |
+| Created | 2026-09-18 |
+| Category | Data quality / stakeholder review |
+| Source | PM (BQ_Final.xlsx OCR/TEO row) |
+
+**Lesson**
+When two figures meant to describe the same quantity in a source document don't reconcile (e.g. a stated total-effort baseline vs. a volume × per-unit-time calculation that implies a very different total), don't silently pick one and present a clean number — surface both readings, the size of the gap, and the plausible reasons for the mismatch, and let the PM decide which basis to use (or whether to hold for confirmation from the source stakeholders).
+
+**Context**
+The OCR/TEO business-quantification row gave both "~40 hours/month total manual effort" and "~250 docs/week at ~10 min/doc" as inputs to the same savings calculation — the second implies ~180h/month, roughly 4.5× the first. Rather than picking one, the discrepancy was flagged with reasoning options (current vs. future-scope volume, non-uniform per-document time, stale estimate) and put to the PM, who resolved it as a current-state-vs-future-target distinction rather than a data error — preserving the ~273,000 Kč/year figure with an explanatory note instead of a silently wrong number or an unexplained flag.
+
+**Cross-reference**
+`BQ_Final.xlsx` (All Products (Updated), row 8)
 
 ---
 

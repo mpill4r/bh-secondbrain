@@ -1,7 +1,7 @@
 ---
-status: open
+status: closed
 last_updated: 2026-09-18
-last_updated_by: auto — session startup
+last_updated_by: auto — project-daily close
 project_status: Amber
 ---
 
@@ -13,13 +13,13 @@ project_status: Amber
 
 ## Current Priority
 
-**Close the CC domain-expert continuity gap and keep the Max chatbot go-live plan on track.** Simona Mertová needs to reassign and name a successor to Kadlecová before testing/feedback momentum stalls on Lexie, Maxie, and Max chatbot. In parallel, BigHub's 3-phase Max chatbot deployment plan targets end-of-September internal completion (prod backend, BDC clearance, public-toggle readiness) ahead of Mertová's end-of-October public launch target, with a GDPR-consent ticket open pending DPO input. Formally kicking off Listing Discovery with Petr Neuman remains the other standing priority, now also including sending him the newly annotated client-facing spec.
+**Monday's blockers: chase the two missing inputs (Jan Žižka's Fakturace doprav rate/hours confirmation; Petr Neuman's KPI Excel review), then finish the Listing client-facing doc per Neuman's own KPI comments and send it to him for a final check.** These are explicitly the PM's highest-priority items for 2026-09-21, called out at today's close. During the week of 2026-09-21, plan and hold the formal Listing Discovery meeting with Petr Neuman and domain expert Michaela Vdovicynová. Standing in parallel: closing the CC domain-expert continuity gap (Simona Mertová still needs to name a Kadlecová successor) and keeping the Max chatbot go-live plan on track (3 internal deployment phases by end of September, public launch end of October, GDPR-consent ticket open pending DPO input).
 
 ## Action Items
 
 - [ ] `carry-forward` `staleness` `low-prio` Review project-stakeholders — 96+ `-tbd-` fields (exceeds threshold of 5)
 - [ ] `carry-forward` `staleness` `low-prio` Review client-overview — 14 `-tbd-` fields (exceeds threshold of 5)
-- [ ] `carry-forward` `focus` **Marek Pillár**: Formally kick off Listing project Discovery with Petr Neuman (ASM-011) — **first 1:1 held 2026-09-16** (Business Quantification interview, real baseline data gathered, Michaela Vdovicynová identified as domain expert); the formal Discovery kickoff itself (demo walkthrough + spec review with Neuman) is still the next step — from 2026-09-02-logistics-listing-team-sync, 2026-09-16-business-quantification-listing-petr-neuman
+- [ ] `carry-forward` `focus` **Marek Pillár**: Formally kick off Listing project Discovery with Petr Neuman (ASM-011) — **first 1:1 held 2026-09-16** (Business Quantification interview, real baseline data gathered, Michaela Vdovicynová identified as domain expert); the formal Discovery kickoff itself (demo walkthrough + spec review with Neuman) is still the next step — **plan for next week (w/o 2026-09-21)**: schedule the Discovery meeting with both Petr Neuman and Michaela Vdovicynová — PM's own note, 2026-09-18 — from 2026-09-02-logistics-listing-team-sync, 2026-09-16-business-quantification-listing-petr-neuman
 - [ ] `carry-forward` `focus` `low-prio` **Marek Pillár / Jindřich Tůma**: Present the finished roadmap to the client (MVP/full-version/nice-to-have scope table) — one thread covering: reviewing the business-framed MVP bullet points (freight invoicing, from Honza Žižka) as the acceptance basis (in progress), and the client presentation itself (still outstanding). Roadmap board build is done (2026-09-07/08) — from 2026-09-02-logistics-listing-team-sync, 2026-09-03-max-chatbot-demo-lexi-maxi-status-sync
 - [ ] `carry-forward` `task` `mid-prio` **PM**: Generate & review project-weekly (overdue from Friday 2026-09-04) — /project-weekly
 - [ ] `carry-forward` `follow-up` `mid-prio` **Marek Pillár**: Contact Filip Černý to walk through his growing pile of business-decision questions from Max/ViaPharma people; plan whether a direct meeting with them is needed — medium priority — from Filip Černý's Fakturace doprav backlog note, 2026-09-08
@@ -38,7 +38,7 @@ project_status: Amber
 - [ ] `carry-forward` **Marek Pillár**: Decide how/when to formally share BigHub's validated TEO/OCR proposal (4-variant solution proposal + measured accuracy/cost data, all currently internal-only) with Dr. Max — this material directly answers their still-outstanding feasibility/timeline ask from the 2026-09-15 technical presentation — from 2026-09-16-teo-ocr-solution-proposal-variants, 2026-09-16-teo-ocr-accuracy-validation-cost-analysis, 2026-09-16-teo-ocr-production-spec-v1-1
 - [ ] `carry-forward` **Marek Pillár**: Review the new Reklamace brief (`3. Reklamace.docx`) — confirm/correct business-value figures (currently sourced from the 2026-09-15 Tereza Foltýnová interview, flagged as potentially overstated), assign domain-expert/business-owner sign-off, and resolve open questions (label-OCR engine choice, e-mail-draft feature scope, whether a local case-status dashboard is wanted) — from cz-ai-logistics codebase read, 2026-09-16
 - [ ] `carry-forward` **Marek Pillár / Alana Sihelská**: Confirm the correct spelling of the two pilot vendor names ("Racun"/"Thermetal" per this transcript) against the supplier list already sent — from 2026-09-16-teo-ocr-technical-sync-pilot-results
-- [ ] `carry-forward` **Marek Pillár**: Incorporate Jan Sovka's spec comments and send the Listing spec to Petr Neuman (may be unavailable until Friday) — **comments incorporated 2026-09-17** into a new client-facing copy (`1. Listing - klientská verze.docx`, 23 review threads worked through); sending to Neuman is still outstanding — from 2026-09-16-devops-kanban-rollout-status-sync
+- [ ] `carry-forward` `highest-prio` **Marek Pillár**: Incorporate Jan Sovka's spec comments and send the Listing spec to Petr Neuman (may be unavailable until Friday) — **comments incorporated 2026-09-17** into a new client-facing copy (`1. Listing - klientská verze.docx`, 23 review threads worked through); still needs finishing per Petr Neuman's own KPI-related comments before sending for his check — **highest-prio for Monday 2026-09-21**, per PM's end-of-day note — from 2026-09-16-devops-kanban-rollout-status-sync
 - [ ] `carry-forward` **Marek Pillár**: Hold a short KPI-alignment check-in (deferred at the end of this call) — from 2026-09-16-devops-kanban-rollout-status-sync
 - [ ] `carry-forward` **Marek Pillár**: Review the rebuilt `2. Fakturace doprav.docx` (step 9 of the PM's rebuild plan) — from 2026-09-16 Fakturace doprav spec rebuild
 - [ ] `carry-forward` **Marek Pillár**: Decide whether to add the driver PDF-confirmation feature to the roadmap Excel/Artifact, or leave it doc-only — see ASM-090 — from 2026-09-16 Fakturace doprav spec rebuild
@@ -48,13 +48,37 @@ project_status: Amber
 - [ ] `carry-forward` **Marek Pillár**: Set up a follow-up working session on Lexie design once Dr. Max's pain-point list arrives — from 2026-09-17-lexie-max-maxie-weekly-sync
 - [ ] `carry-forward` **Marek Pillár**: Coordinate directly with "Míša"/Michal Machata (Prague) on X-Manager reuse for other Dr. Max streams — from 2026-09-17-lexie-max-maxie-weekly-sync
 - [ ] `staleness` `low-prio` Review product-brief — 15 days since last update (exceeds 14-day threshold), though 0 `-tbd-` fields
+- [ ] `task` `highest-prio` **Marek Pillár**: Follow up with Jan Žižka to confirm the Fakturace doprav MD-cost rate (~50k Kč/měsíc) and per-warehouse hours breakdown flagged in `BQ_Final.xlsx` — due Monday 2026-09-21 — PM's own end-of-day note, 2026-09-18
+- [ ] `task` `highest-prio` **Marek Pillár**: Follow up with Petr Neuman for his still-outstanding review/input on the Listing Business Quantification/KPI Excel — due Monday 2026-09-21 — PM's own end-of-day note, 2026-09-18
+- [ ] **Marek Šimoník**: Review, edit, and confirm the completed order-prediction (Řízení poptávky) BQ Excel — full edit rights granted — from 2026-09-18-business-quantification-order-prediction-simonik
+- [ ] `low-prio` **Marek Pillár**: Reconnect with Marek Šimoník around Q4/year-end to discuss the order-prediction dashboard's next-phase roadmap, once the current scope has been stress-tested through the seasonal peak — from 2026-09-18-business-quantification-order-prediction-simonik
 
 ## Key Events
 
 Repo cleanup, per PM request: 147 open action items owned by other stakeholders (colleagues, client contacts) were moved out of the live Action Items tracker into a new passive archive (`project/management/action-items-archive.md`), leaving only the 31 items Marek Pillár owns solely or jointly. Going forward, `/todo` and `/list-todo` are scoped to show only the PM's own open items — other people's commitments are still captured in dailies/meeting routing as before (for delivery-risk tracking), just no longer surfaced in the personal to-do views.
+
+Processed the Business Quantification interview with Marek Šimoník on the order-prediction dashboard (Řízení poptávky) — confirmed his sole business ownership (Petr Ondráček stays domain expert, corrected in project-stakeholders from a prior "logistics-side" mislabel), landed two committed KPIs (analyst control-time 5h/week→2h/week; ≥1 serious issue/month), a conservative ~100–200k Kč/month reaction-value estimate, and surfaced a separate, largely BigHub-built logistics shift-planning dashboard extension as its own new, mostly-unowned initiative (routed as a new row rather than folded into the order-prediction data).
+
+Built out `BQ_Final.xlsx`'s consolidated "All Products (Updated)" sheet (duplicated from the original to preserve it untouched): full Slovak→Czech language proofing across the Reklamace/Fakturace doprav/OCR rows, and a new "Year Expenses/Savings" column computed per initiative, with orange flags on anything missing or needing attention. Iterated on the column twice more per PM input: applied the correct employer-loaded wage rate (260 Kč/h × 1.34 = 348.40 Kč/h) and the CC team's real 28-operator headcount to the Mertová-owned rows (Max chatbot, Maxie, Lexie), and resolved an internal data discrepancy on the OCR/TEO row (40h/month baseline vs. a much higher volume-implied figure) via an explicit PM judgment call rather than silently picking one — captured as LL-046.
+
+Day closed with the PM's own explicit priorities: Monday's highest-prio items are chasing missing inputs from Jan Žižka (Fakturace doprav rate) and Petr Neuman (KPI Excel review), plus finishing the Listing client-facing doc per Neuman's KPI comments and sending it to him for a check; next week's task is scheduling the formal Listing Discovery meeting with Neuman and domain expert Michaela Vdovicynová.
+
+**Close-time status/priority re-derivation**: Project status unchanged (Amber) — no new evidence today affecting the Kadlecová continuity risk. Priority re-derived to lead with Monday's Žižka/Neuman follow-ups and the Listing doc send, per the PM's explicit end-of-day instruction, with the Listing Discovery meeting planning and the standing CC-continuity/Max-chatbot-go-live items carried alongside.
+
+Added a real, sourced figure to `BQ_Final.xlsx`'s MaxBuddy row (previously flagged as not fitting the hours-based savings formula): L. Vosmek's own breakdown (60M expediční případy/rok × 75% MaxBuddy coverage × conversion → 675,000 krabiček × 150 Kč) yields ~101,250,000 Kč/year revenue growth — explicitly labeled as revenue growth, not cost savings, and flagged a minor internal arithmetic mismatch (the stated 1.2% conversion rate implies 540,000 units, not the 675,000 given) for Vosmek to confirm. Fill changed from orange to green since it's now a concrete, sourced number.
+
+**Unrouted item, flagged not processed**: PM shared a Teams-style message from a ViaPharma/Logistics contact about a consolidated supplier table (from Jana Egrmaierová) and a rejected Axapta per-supplier-note-field proposal (Petr Sláma objected). Searched the harness — no prior record of this specific debate exists. PM did not confirm routing this into project-assumptions/project-stakeholders before session close; it remains uncaptured and should be routed in a future session if still relevant.
 
 ## Audit Log
 
 [AUTO] project-daily — created today's daily, carrying forward only Marek Pillár-owned (solely or jointly) unchecked items from 2026-09-17's close; project_status and priority carried forward unchanged (2026-09-18)
 [MANUAL] project/management/action-items-archive.md — created; archived 147 action items owned by other stakeholders out of 2026-09-17's carry-forward set, per PM request to scope personal to-do views to Marek Pillár only (2026-09-18)
 [MANUAL] .claude/skills/todo/SKILL.md, .claude/skills/list-todo/SKILL.md — added an owner filter (Marek Pillár, solely or jointly, or unowned system items) so both skills only ever surface the PM's own open items (2026-09-18)
+[AUTO] project-stakeholders — enriched STK-019 (Marek Šimoník), corrected STK-035 (Petr Ondráček role from "logistics-side contact" to e-commerce analyst/domain expert) from 2026-09-18-business-quantification-order-prediction-simonik (2026-09-18)
+[AUTO] project-assumptions — added ASM-106 through ASM-111 from 2026-09-18-business-quantification-order-prediction-simonik (2026-09-18)
+[AUTO] meetings/index — added 2026-09-18-business-quantification-order-prediction-simonik entry (2026-09-18)
+[AUTO] project-daily — added 3 action items from 2026-09-18-business-quantification-order-prediction-simonik (2026-09-18)
+[AUTO] project-lessons — added LL-046 (data-discrepancy reconciliation via explicit PM judgment call, from BQ_Final.xlsx OCR/TEO row work) (2026-09-18)
+[MANUAL] project-daily — added 2 highest-prio action items (Jan Žižka, Petr Neuman follow-ups) and updated 2 existing Listing action items (highest-prio tag + Discovery-meeting-with-Vdovicynová plan note) per PM's end-of-day priorities (2026-09-18)
+[AUTO] project-daily — status re-derived: no change (Amber); priority re-derived to lead with Monday's Žižka/Neuman follow-ups and the Listing doc send; day closed (2026-09-18)
+[MANUAL] `BQ_Final.xlsx` (external, OneDrive, "All Products (Updated)" sheet) — MaxBuddy row's Year Expenses/Savings recomputed from L. Vosmek's own breakdown (~101,250,000 Kč/year revenue growth), replacing the earlier "doesn't fit this formula" flag; fill changed orange → green (2026-09-18)

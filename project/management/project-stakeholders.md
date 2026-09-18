@@ -1,6 +1,6 @@
 ---
-last_updated: 2026-09-17
-last_updated_by: auto — project-meeting routing (2026-09-17-lexie-max-maxie-weekly-sync)
+last_updated: 2026-09-18
+last_updated_by: auto — project-meeting routing (2026-09-18-business-quantification-order-prediction-simonik)
 owner: Marek Pillár
 ---
 
@@ -382,9 +382,9 @@ owner: Marek Pillár
 | Sentiment context | Enthusiastic, unprompted praise for the order-prediction dashboard demo ("this is exactly what I wanted to see"); engages with substance (raised a real modeling question about revenue-vs-order-backlog dynamics) rather than surface-level feedback. Treats a correctly-flagged real outage in the live data as a strong trust signal. |
 | Communication preference | -tbd- |
 | Expectations | Wants dashboard numbers independently verifiable against Dr. Max's own source data before UX/model requests; comfortable with a 14-day-reliable forecast horizon as long as it's clearly scoped. |
-| Last interaction | 2026-09-15 |
+| Last interaction | 2026-09-18 |
 | Status | Active |
-| Notes | Confirmed as Owner/Customer of "E-Shop order forecast" (= Řízení poptávky) on the BigHub roadmap sheet (2026-09-02) — clean match, no conflict. Saw the order-prediction dashboard live for the first time 2026-09-03 (moved up from the originally-expected 2026-09-04) — reception very positive; flagged a 2026-08-29 Brno marketing campaign the model doesn't yet account for, and will explore/test the dashboard over 1-2 weeks ahead of an in-person follow-up next week. On 2026-09-15, brought detailed written feedback to a structured follow-up session — data grouping, terminology (predikce vs. budget/forecast, see [[ASM-070]]), mobile access — and formally accepted the current build as "version 1" (see [[ASM-069]]). Explained that pharmacy reservations are a deliberate strategic e-commerce differentiator for Dr. Max, not just another channel (see [[ASM-071]]); flagged a request for a separate session with Marek Pillár to recap business value/KPIs, to be scheduled (likely Friday). Out the week of 2026-09-21 (full week off). Source: 2026-09-01-dr-max-x-bighub-project-status-sync, roadmap sheet 2026-09-02, 2026-09-02-order-prediction-dashboard-walkthrough, 2026-09-03-order-prediction-dashboard-live-demo, 2026-09-15-order-prediction-dashboard-follow-up |
+| Notes | Confirmed as Owner/Customer of "E-Shop order forecast" (= Řízení poptávky) on the BigHub roadmap sheet (2026-09-02) — clean match, no conflict. Saw the order-prediction dashboard live for the first time 2026-09-03 (moved up from the originally-expected 2026-09-04) — reception very positive; flagged a 2026-08-29 Brno marketing campaign the model doesn't yet account for, and will explore/test the dashboard over 1-2 weeks ahead of an in-person follow-up next week. On 2026-09-15, brought detailed written feedback to a structured follow-up session — data grouping, terminology (predikce vs. budget/forecast, see [[ASM-070]]), mobile access — and formally accepted the current build as "version 1" (see [[ASM-069]]). Explained that pharmacy reservations are a deliberate strategic e-commerce differentiator for Dr. Max, not just another channel (see [[ASM-071]]); flagged a request for a separate session with Marek Pillár to recap business value/KPIs, to be scheduled (likely Friday). Out the week of 2026-09-21 (full week off). On 2026-09-18, gave his Business Quantification interview for the order-prediction dashboard — confirmed sole business ownership (declined to shift it to Petr Ondráček, who he says lacks the strategic view needed for the role, see [[ASM-106]]), committed two concrete KPIs (control-time 5h/week→2h/week long-term, see [[ASM-107]]; ≥1 serious issue/month detection, see [[ASM-108]]), gave a conservative ~100,000–200,000 Kč/month reaction-value estimate (see [[ASM-109]]), flagged a ~90%-ready logistics shift-planning dashboard extension outside his own ownership (see [[ASM-111]]), and confirmed no further backlog until Q4/year-end (see [[ASM-110]]). Also asked that BigHub keep dev-capacity priority on the Listing project over further order-prediction work — already the existing plan. Source: 2026-09-01-dr-max-x-bighub-project-status-sync, roadmap sheet 2026-09-02, 2026-09-02-order-prediction-dashboard-walkthrough, 2026-09-03-order-prediction-dashboard-live-demo, 2026-09-15-order-prediction-dashboard-follow-up, 2026-09-18-business-quantification-order-prediction-simonik |
 
 ### STK-020
 
@@ -622,16 +622,16 @@ owner: Marek Pillár
 | Name | Petr Ondráček |
 | Aliases | — |
 | Organization | Dr. Max |
-| Role | Logistics-side contact for the order-prediction dashboard — co-primary user alongside Marek Šimoník (STK-019) |
+| Role | E-commerce analyst for Marek Šimoník (STK-019); domain expert for the order-prediction dashboard — builds today's manual reports, has a data/reporting view rather than a strategic one. Corrected 2026-09-18 from a prior "logistics-side contact" description — Šimoník's own team, not logistics. |
 | Location | -tbd- |
 | Influence | -tbd- |
 | Sentiment | -tbd- |
 | Sentiment context | -tbd- |
 | Communication preference | -tbd- |
 | Expectations | -tbd- |
-| Last interaction | 2026-09-15 |
+| Last interaction | 2026-09-18 |
 | Status | Active |
-| Notes | Joined the 2026-09-03 dashboard demo ~15 min in. Previously supplied a manual promo/campaign CSV (now ~2 months stale) and manually-pulled "created orders" figures before the dashboard existed. Owes a refreshed campaign/promo data file so the model can account for the 2026-08-29 Brno campaign. On 2026-09-15, drove the logistics half of a detailed dashboard feedback session — pushed for pharmacy reservations to be split out from the general order aggregate and broken down per warehouse for staffing planning (see [[ASM-071]]), requested a Metrix-to-Excel export, and flagged a 30-minute vs. hourly granularity need for BDC outage reporting. Source: 2026-09-03-order-prediction-dashboard-live-demo, 2026-09-15-order-prediction-dashboard-follow-up |
+| Notes | Joined the 2026-09-03 dashboard demo ~15 min in. Previously supplied a manual promo/campaign CSV (now ~2 months stale) and manually-pulled "created orders" figures before the dashboard existed. Owes a refreshed campaign/promo data file so the model can account for the 2026-08-29 Brno campaign. On 2026-09-15, drove the logistics half of a detailed dashboard feedback session — pushed for pharmacy reservations to be split out from the general order aggregate and broken down per warehouse for staffing planning (see [[ASM-071]]), requested a Metrix-to-Excel export, and flagged a 30-minute vs. hourly granularity need for BDC outage reporting. On 2026-09-18, confirmed by Šimoník as domain expert (not co-owner) for the order-prediction dashboard (see [[ASM-106]]) — he's Šimoník's own analyst, currently builds the manual reports being automated. Source: 2026-09-03-order-prediction-dashboard-live-demo, 2026-09-15-order-prediction-dashboard-follow-up, 2026-09-18-business-quantification-order-prediction-simonik |
 
 ### STK-036
 

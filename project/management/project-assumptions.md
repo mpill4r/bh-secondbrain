@@ -1,6 +1,6 @@
 ---
-last_updated: 2026-09-17
-last_updated_by: auto — project-meeting routing (2026-09-17-lexie-max-maxie-weekly-sync)
+last_updated: 2026-09-18
+last_updated_by: auto — project-meeting routing (2026-09-18-business-quantification-order-prediction-simonik)
 owner: Marek Pillár
 ---
 
@@ -10,6 +10,12 @@ owner: Marek Pillár
 
 | ID | Status | Created | Description (short) |
 |----|--------|---------|---------------------|
+| ASM-111 | Open (2026-09-18) | 2026-09-18 | Logistics shift-planning dashboard extension (~90% ready per M. Šimoník) — open, outside his ownership |
+| ASM-110 | Decided (2026-09-18) | 2026-09-18 | Order-prediction dashboard: no new feature backlog — next roadmap conversation deferred to Q4/year-end |
+| ASM-109 | Decided (2026-09-18) | 2026-09-18 | Order-prediction dashboard reaction/outage-prevention value quantified at ~100–200k Kč/month (conservative) |
+| ASM-108 | Decided (2026-09-18) | 2026-09-18 | Order-prediction dashboard KPI: catch ≥1 serious issue (web or logistics) per month |
+| ASM-107 | Decided (2026-09-18) | 2026-09-18 | Order-prediction dashboard KPI: analyst control-time reduced from ~5h/week to 2h/week (long-term target) |
+| ASM-106 | Decided (2026-09-18) | 2026-09-18 | Order-prediction dashboard business ownership confirmed — Marek Šimoník sole owner, Petr Ondráček domain expert |
 | ASM-105 | Decided (2026-09-17) | 2026-09-17 | False call-transfer claims and unauthorized medical advice explicitly disallowed in Max chatbot's prompt |
 | ASM-104 | Open (2026-09-17) | 2026-09-17 | Some shared timeline items are mis-scoped as MVP when they belong to the full product — not yet itemized |
 | ASM-103 | Decided (2026-09-17) | 2026-09-17 | Lexie test-account approach: 4 separate accounts without 2FA, not the in-app role-switcher |
@@ -117,6 +123,134 @@ owner: Marek Pillár
 | ASM-001 | Decided (2026-08-25) | 2026-09-01 | Dr. Max client-side coordination unified into one role (Jindřich Tůma) |
 
 ## Entries
+
+---
+
+### ASM-111
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-111 |
+| Created | 2026-09-18 |
+| Source | 2026-09-18-business-quantification-order-prediction-simonik |
+| By | Marek Šimoník (STK-019) |
+| Status | Open (2026-09-18) |
+
+**Description**
+A related dashboard extension for the logistics team — using the same order-forecast data to plan warehouse shifts (staff up or send people home based on forecasted volume) — is already ~90% built, per Šimoník's own estimate.
+
+**Rationale**
+Šimoník mentioned it as a side topic during his Business Quantification interview for the order-prediction dashboard, but was explicit that he doesn't manage or speak for the logistics team — it sits under the Director of Logistics, a separate department. No name or confirmed status is available from his side.
+
+**Impact**
+- **Delivery**: If real, this is a near-complete parallel deliverable BigHub may not have full visibility into — worth a direct check with Logistics leadership.
+- **Value**: Materially multiplies the order-prediction dashboard's business case if confirmed, since it reuses the same underlying data for a second use case.
+
+---
+
+### ASM-110
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-110 |
+| Created | 2026-09-18 |
+| Source | 2026-09-18-business-quantification-order-prediction-simonik |
+| By | Marek Šimoník (STK-019) |
+| Status | Decided (2026-09-18) |
+
+**Description**
+Šimoník has no additional feature backlog for the order-prediction dashboard beyond what was already fed back in the 2026-09-15 follow-up session.
+
+**Rationale**
+He wants the currently-agreed scope delivered in the next 2–3 weeks and stress-tested through the Q4 seasonal peak before discussing any further development; the explicit next check-in point is Q4/year-end.
+
+**Impact**
+- **Delivery**: No new scope pressure on this stream in the near term — frees capacity.
+- **Planning**: Marek should proactively schedule the Q4/year-end follow-up rather than wait to be asked.
+
+---
+
+### ASM-109
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-109 |
+| Created | 2026-09-18 |
+| Source | 2026-09-18-business-quantification-order-prediction-simonik |
+| By | Marek Šimoník (STK-019) |
+| Status | Decided (2026-09-18) |
+
+**Description**
+The order-prediction dashboard's reaction/outage-prevention business value is quantified at ~100,000–200,000 Kč/month, explicitly framed as a conservative estimate by Šimoník.
+
+**Rationale**
+Based on an estimated ~100–200 orders/month "saved" from issues that would otherwise go undetected, at ~1,000 Kč average order value. Šimoník explicitly resisted inflating this figure ("nechci kreslit vzdušné zámky"). He separately floated a looser, unverified upside of "millions of Kč/year" on a broader annual/company-wide basis, kept explicitly distinct from the conservative monthly figure.
+
+**Impact**
+- **Business case**: Gives Tomáš Dudaško's OKR Excel a real, defensible number for this initiative rather than a qualitative claim.
+
+---
+
+### ASM-108
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-108 |
+| Created | 2026-09-18 |
+| Source | 2026-09-18-business-quantification-order-prediction-simonik |
+| By | Marek Šimoník (STK-019) |
+| Status | Decided (2026-09-18) |
+
+**Description**
+KPI committed — the order-prediction dashboard should help catch at least 1 "serious issue" (web-side or logistics-related, not necessarily a critical bug) per month.
+
+**Rationale**
+Marek initially proposed a conservative 1-per-6-months stretch goal; Šimoník pushed for a more ambitious monthly cadence.
+
+**Impact**
+- **Product**: Sets a measurable bar for the dashboard's "reaction value" business case (see [[ASM-109]]) once live.
+
+---
+
+### ASM-107
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-107 |
+| Created | 2026-09-18 |
+| Source | 2026-09-18-business-quantification-order-prediction-simonik |
+| By | Marek Šimoník (STK-019) |
+| Status | Decided (2026-09-18) |
+
+**Description**
+KPI committed — reduce the analyst's control/verification time on the order-prediction dashboard from ~5 hours/week to 2 hours/week.
+
+**Rationale**
+Explicitly a long-term target, not a near-term milestone — Šimoník wants the analyst (Petr Ondráček) to keep doing this work in parallel for now as a trust-building double-check on the new dashboard.
+
+**Impact**
+- **Business case**: One of two concrete, numeric KPIs from this BQ interview (see [[ASM-108]]) — feeds directly into `BQ_Final.xlsx`'s Year Expenses/Savings calculation (~112,500–150,000 Kč/year, using Šimoník's own 6–8k Kč/day MD rate).
+
+---
+
+### ASM-106
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-106 |
+| Created | 2026-09-18 |
+| Source | 2026-09-18-business-quantification-order-prediction-simonik |
+| By | Marek Šimoník (STK-019) |
+| Status | Decided (2026-09-18) |
+
+**Description**
+Business ownership of the order-prediction dashboard (Řízení poptávky) confirmed as Marek Šimoník alone; Petr Ondráček confirmed as domain expert, not co-owner.
+
+**Rationale**
+Marek offered to let Ondráček — who builds the manual reports today and knows the underlying data sources best — take business ownership instead, since Šimoník's calendar could be a bottleneck. Šimoník declined, explicitly noting Ondráček lacks the strategic view the role needs.
+
+**Impact**
+- **Stakeholder map**: Confirms STK-019's ownership and corrects STK-035's role description (previously logged as "logistics-side contact," actually Šimoník's own e-commerce-team analyst).
 
 ---
 
