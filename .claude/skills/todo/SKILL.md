@@ -18,6 +18,16 @@ Parse every unchecked item (`- [ ]`). Keep each item's full text (label tags, ow
 
 If no daily exists, tell the PM there's nothing to review and stop.
 
+## Step 1.5: Filter to the PM's Own Items
+
+This is the PM's personal to-do list, not a team tracker — filter down to items that are actually the PM's before ranking:
+
+- **Keep** an item if its owner field (the bolded name(s) before the colon) contains the PM's name from `CLAUDE.md` (e.g. "Marek Pillár"), alone or jointly with others (e.g. "Marek Pillár / Jindřich Tůma"), or the literal owner `PM`.
+- **Keep** an item with no bolded owner at all (e.g. system-generated `staleness` checks) — these are implicitly the PM's.
+- **Drop** everything else — items owned solely by colleagues, clients, or "Unassigned" — from this skill's view entirely. They still exist in the daily (other skills/PM tracking still rely on them) and, if archived per the PM's action-items-archive cleanup, in `project/management/action-items-archive.md` — this skill just doesn't surface them.
+
+Do this filtering before ranking and before counting "how many more remain" in Step 7.
+
 ## Step 2: Rank by Priority
 
 Derive a priority tier from each item's label tags:
@@ -80,6 +90,7 @@ Report back concisely: how many were marked done, marked no-longer-valid, had th
 ## Rules
 
 - **Never touch items outside the top 10** during the Q&A — the full list in Step 3 is read-only context, not something to bulk-edit.
+- **Owner filter is a display filter, not a data change** — items excluded in Step 1.5 are never edited, checked off, or removed from the daily by this skill.
 - **Preserve item text exactly** apart from the specific tag/checkbox being changed — don't rewrite or summarize an item's task description.
 - **Don't invent priority tiers** — only use `highest-prio` / `mid-prio` / `low-prio` / untagged("normal"), matching the labels already in use across dailies.
 - **This is a manual action** — audit entries use `[MANUAL] ... /todo` per the harness convention for PM-triggered skill sessions, not `[AUTO]`.

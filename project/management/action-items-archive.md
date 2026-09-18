@@ -1,0 +1,163 @@
+---
+last_updated: 2026-09-18
+last_updated_by: manual — conversational (action-items archive cleanup)
+owner: Marek Pillár
+---
+
+# Action Items Archive
+
+This file holds open action items that belong to other stakeholders (colleagues, client-side contacts, other BigHub team members) rather than the PM. As of 2026-09-18, `/todo` and `/list-todo` show only items owned by Marek Pillár (solely or jointly) — everything else lives here instead, so nothing tracked in earlier dailies is lost.
+
+**This is a passive reference, not an active tracker.** It is not scanned by `/todo`, `/list-todo`, or project-daily carry-forward. If the PM needs to check on someone else's commitment, this is where to look — but nothing here updates itself; it's a snapshot of what was open as of the archive date below, per item, plus whatever gets appended manually later.
+
+**Archived**: 2026-09-18, moved from `project-daily-2026-09-17.md`'s Action Items section — 147 items, all still open at time of archiving, none marked done or invalidated in the process.
+
+## Archived Items
+
+- `carry-forward` **Honza Sovka**: Complete the Magento vs. Farmis functionality gap analysis for the listing project — from 2026-09-01-dr-max-x-bighub-project-status-sync
+- `carry-forward` `blocker` **Jindřich Tůma**: Follow up with Honza Kabát on scheduling Marek's introduction to Tomáš Dudaško — from 2026-09-02-roadmap-tracking-and-listing-onboarding-sync
+- `carry-forward` `follow-up` **Jindřich Tůma**: Once introductions are scheduled, personally introduce Marek to the two listing business owners/developers on-site — from 2026-09-02-roadmap-tracking-and-listing-onboarding-sync
+- `carry-forward` `task` **Filip Černý**: Send Marek updated/fresher freight-invoicing (fakturace dopravy) export documents — from 2026-09-02-logistics-listing-team-sync
+- `carry-forward` `blocker` **Lukáš Starenko**: Resolve test/production environment access with Vláďa Tvarůžek — from 2026-09-02-logistics-listing-team-sync
+- `carry-forward` `task` **Lukáš Starenko**: Get added to the Teams/Swagger sharing group via "Lukáš Síč" — from 2026-09-02-logistics-listing-team-sync
+- `carry-forward` `task` **Filip Černý**: Propose a testing approach to Dr. Max side (Kopecký et al.) for the 5-supplier reklamace pilot and run at least one round — from 2026-09-02-logistics-listing-team-sync
+- `carry-forward` `task` **Jan Sovka**: Represent BigHub at the 2026-09-03 logistics test session and record it — due date passed, status unconfirmed — from 2026-09-02-logistics-listing-team-sync
+- `carry-forward` `task` **Vladislav Tvarůžek**: Finish AKS VPN/access configuration — target was 2026-09-02/03, overdue; Marek's own access separately promised "by lunch" 2026-09-08, still not delivered — from 2026-09-02-aks-atlantis-infra-sync, 2026-09-08-ai-platform-technical-deepdive-jura-brazdil
+- `carry-forward` `task` **Vladislav Tvarůžek**: Identify and reach Atlantis contact "Tecl" re: voicebot public IP/domain config — from 2026-09-02-aks-atlantis-infra-sync
+- `carry-forward` `task` **Vladislav Tvarůžek**: Read the AKSO/Atlantis info Jindřich sent — from 2026-09-02-aks-atlantis-infra-sync
+- `carry-forward` **Jan Sovka**: Get a concrete two-sided freight-invoicing timeline (BigHub completion vs. Dr. Max dev start) from Jindřich/Alana and relay to Petr Sláma — from 2026-09-03-viapharma-logistics-status-reklamace-demo
+- `carry-forward` **Jakub Turner**: Post the current freight-invoicing Swagger spec to the shared group — due end of this week — from 2026-09-03-viapharma-logistics-status-reklamace-demo
+- `carry-forward` **Jakub Turner**: Issue hardcoded test logins for the reklamace app, starting with Tereza Foltová, then Jana before she returns from vacation — due before next week — from 2026-09-03-viapharma-logistics-status-reklamace-demo
+- `carry-forward` **Filip Černý / Jakub Turner**: Add the "odběratel" (recipient) field to the reklamace API — was due 2026-09-03, status unconfirmed — from 2026-09-03-viapharma-logistics-status-reklamace-demo
+- `carry-forward` **Jan Sovka**: Follow up with Jan (Honza) Žižka on the DHL parallel-project overlap — from 2026-09-03-viapharma-logistics-status-reklamace-demo
+- `carry-forward` **Lukáš Szücs**: Confirm status of the older freight-invoicing Swagger update with "Boomy"/the developer — from 2026-09-03-viapharma-logistics-status-reklamace-demo
+- `carry-forward` `blocker` **Unassigned**: Push forward the stalled (~1 month) Jump Server access request for BigHub (also unlocks Mongo archive access) — from 2026-09-03-viapharma-logistics-status-reklamace-demo
+- `carry-forward` **Jindřich Tůma**: Send dashboard access email (URL + login instructions, forwardable) — from 2026-09-03-order-prediction-dashboard-live-demo
+- `carry-forward` **Marek Šimoník / Petr Ondráček**: Send additional user email addresses for dashboard whitelisting — from 2026-09-03-order-prediction-dashboard-live-demo
+- `carry-forward` **Juraj Kmec**: Investigate and fix the confusing double-number display under "expected new orders today" — status unconfirmed, not revisited in the 2026-09-15 follow-up — from 2026-09-03-order-prediction-dashboard-live-demo
+- `carry-forward` **Juraj Kmec**: Verify how the model's nightly recalibration responds to a live order-vs-invoice backlog spike (current Brno/warehouse situation) — status unconfirmed, not revisited in the 2026-09-15 follow-up — from 2026-09-03-order-prediction-dashboard-live-demo
+- `carry-forward` **Petr Ondráček**: Send refreshed campaign/promo data (previous file ~2 months stale) so the model can account for the 2026-08-29 Brno campaign and future promos — status unconfirmed, not revisited in the 2026-09-15 follow-up — from 2026-09-03-order-prediction-dashboard-live-demo
+- `carry-forward` **Juraj Kmec**: Backlog — add order-count toggle to the breakdown table, split warehouse/shipping-method filters, tighten tooltip text distinguishing the two target-probability metrics — the D-7/day-of-week-aligned historical overlay part of this item is now **done**, delivered as T-7/T-364 and demoed 2026-09-15 — from 2026-09-03-order-prediction-dashboard-live-demo, 2026-09-15-order-prediction-dashboard-follow-up
+- `carry-forward` **Jindřich Tůma**: Determine whether a shared platform (vs. email) can be used to capture Dr. Max's dashboard feedback/backlog — from 2026-09-03-order-prediction-dashboard-live-demo
+- `carry-forward` **Jindřich Tůma / Juraj Kmec**: Prepare a written notes/handout of BigHub's own dashboard observations ahead of next week's in-person sync — from 2026-09-03-order-prediction-dashboard-live-demo
+- `carry-forward` **Marek Šimoník / Petr Ondráček**: Explore/test the live dashboard over the next 1-2 weeks and compile feedback ahead of the in-person sync — largely superseded by the detailed 2026-09-15 feedback session — from 2026-09-03-order-prediction-dashboard-live-demo
+- `carry-forward` **Jindřich Tůma**: Send a summary email with the Max chatbot test-environment URL and access instructions — from 2026-09-03-max-chatbot-demo-lexi-maxi-status-sync
+- `carry-forward` **Dr. Max CC team**: Test Max chatbot over the coming week; log requests/bugs into X-Manager, routed through Mertová — from 2026-09-03-max-chatbot-demo-lexi-maxi-status-sync
+- `carry-forward` **Jindřich Tůma / Viliam Gago**: Fix the 3 blocking Lexie bugs — update 2026-09-10: feedback-button bug confirmed fixed (testing resumed); configurable status messages in progress (ticket 150, "ready for dev," blocked briefly by a permission-scope error already logged); našeptávač removal now tracked as its own dedicated higher-priority ticket, still outstanding — from 2026-09-03-max-chatbot-demo-lexi-maxi-status-sync, 2026-09-04-ai-platform-standup-xmanager-lexi-demo, 2026-09-10-lexie-max-maxie-weekly-sync
+- `carry-forward` **Simona Mertová**: Provide lightweight business-case/time-savings metrics per Max/Lexie/Maxie initiative — due early next week; still outstanding as of the 2026-09-10 weekly sync — from 2026-09-03-max-chatbot-demo-lexi-maxi-status-sync
+- `carry-forward` **Jura Brázdil**: Explore a role-gated API-health status indicator on the CC platform, once Dr. Max specifies what they want visible — from 2026-09-03-max-chatbot-demo-lexi-maxi-status-sync
+- `carry-forward` **Jura Brázdil**: Explore having the chatbot log a note whenever it can't answer a user's question, to surface unmet needs — from 2026-09-03-max-chatbot-demo-lexi-maxi-status-sync
+- `carry-forward` **Jura Brázdil**: Send Marek the MaxBuddy and Max chatbot specs (business-facing + technical/programmer docs) — from 2026-09-03-maxbuddy-chatbot-ocr-project-handoff
+- `carry-forward` **Jura Brázdil**: Send Marek a zip of session logs (since April) for MaxBuddy/chatbot — from 2026-09-03-maxbuddy-chatbot-ocr-project-handoff
+- `carry-forward` **Someone at BigHub**: Provision Jura Brázdil proper Teams (and possibly Outlook) app access — from 2026-09-03-maxbuddy-chatbot-ocr-project-handoff
+- `carry-forward` **Jindřich Tůma**: Resolve the AKS node-pool cost/cleanup issue with BDC — either get idle node pools deleted, or coordinate a node-selector redeploy across all projects — from 2026-09-04-ai-platform-standup-xmanager-lexi-demo
+- `carry-forward` **Viliam Gago**: Continue investigating the document-rename-not-reflecting-in-Lexie issue (diacritics theory) — Mertová still hasn't retested this as of 2026-09-10 — from 2026-09-04-ai-platform-standup-xmanager-lexi-demo
+- `carry-forward` **Jindřich Tůma**: Check with Honza Sovka whether he remains product owner of the AI platform across all clients (vs. Marek owning Dr. Max only) — from 2026-09-04-ai-platform-standup-xmanager-lexi-demo
+- `carry-forward` **Viliam Gago**: Clean up and export existing AI platform product/technical documentation for Marek/Jura — from 2026-09-04-ai-platform-standup-xmanager-lexi-demo
+- `carry-forward` **Jura Brázdil**: Send the cleaned-up MaxBuddy analytics deck to Luboš Vosmek — from 2026-09-07-ai-portfolio-roadmap-scope-review
+- `carry-forward` **Filip Černý**: Self-audit Reklamace error-state handling against the original spec and consolidate gaps — from 2026-09-07-ai-portfolio-roadmap-scope-review
+- `carry-forward` **Jindřich Tůma**: Email Petr Ondráček directly for a fresh campaign/promo data export (current one ~2 months stale) — from 2026-09-07-ai-portfolio-roadmap-scope-review
+- `carry-forward` **Filip Černý / Jura Brázdil**: Hold a short knowledge-sharing session comparing TEO's and Fakturace doprav's document-extraction approaches — from 2026-09-07-ai-portfolio-roadmap-scope-review
+- `carry-forward` **Jakub Turner**: Define a cross-project logging/monitoring/alerting convention (currently AKS-container-only) — from 2026-09-07-ai-portfolio-roadmap-scope-review
+- `carry-forward` `task` **Jan Sovka**: Send Marek and Jindřich the AI-platform history/background materials referenced on the call — from 2026-09-08-ai-platform-strategy-history-with-jan-sovka
+- `carry-forward` `follow-up` **Jindřich Tůma**: Bring the shaped AI-platform ticket proposal back to Tomáš Dudaško, once Marek's mockup is ready — from 2026-09-08-ai-platform-strategy-history-with-jan-sovka
+- `carry-forward` `follow-up` **Jindřich Tůma**: Explain the cost/billed-hours impact of Jura's AI-platform work to Tomáš Dudaško — capacity question itself resolved (ASM-042), communication to client still pending — from 2026-09-08-ai-platform-strategy-history-with-jan-sovka
+- `carry-forward` `task` **Jura Brázdil**: Once the new AKS is available, migrate MaxBuddy and Max Chatbot into the AI platform and unify its UX — from 2026-09-08-ai-platform-technical-deepdive-jura-brazdil
+- `carry-forward` `task` **Jura Brázdil**: Establish a changelog convention for AI-platform pull requests, centralized in one place — from 2026-09-08-ai-platform-technical-deepdive-jura-brazdil
+- `carry-forward` **Jindřich Tůma**: Create two separate recurring calendar invites for himself — one for Logistika, one for CC — from 2026-09-09-logistics-cc-roadmap-presentation-prep
+- `carry-forward` **Jindřich Tůma**: Join Marek for the first MaxBuddy domain-expert meeting to introduce a topic he needs to kick off personally — **update 2026-09-17**: the first MaxBuddy 1:1 (Business Quantification interview with Vosmek) was held without Jindřich; whether he still needs a separate session is open — from 2026-09-09-logistics-cc-roadmap-presentation-prep
+- `carry-forward` **Jindřich Tůma**: Set and hold to a 2-4 week delivery timeline for the Fakturace doprav project — from 2026-09-10-fakturace-doprav-kiosk-portal-demo
+- `carry-forward` **Jan Sovka**: Push forward the disclaimer/access-control approach for the fully open kiosk (no login) with the client — from 2026-09-10-fakturace-doprav-kiosk-portal-demo
+- `carry-forward` **Jan Sovka**: Firm up and close the data-contract question with Axapta on document counts vs. page counts — from 2026-09-10-fakturace-doprav-kiosk-portal-demo
+- `carry-forward` **Filip Černý**: Test uploading unrelated/inappropriate documents to see how the app behaves — from 2026-09-10-fakturace-doprav-kiosk-portal-demo
+- `carry-forward` **Filip Černý**: Continue hardening document versioning and error-state handling (in backlog) — from 2026-09-10-fakturace-doprav-kiosk-portal-demo
+- `carry-forward` **Jakub Turner / Jindřich Tůma**: Assess the LLM prompt-injection risk on uploaded documents, separate from document-type validation already in place — from 2026-09-10-fakturace-doprav-kiosk-portal-demo
+- `carry-forward` **Alana Sihelská**: Follow up on the touchscreen-vs-keyboard kiosk question with "pan Kim" per Tereza Foltová's earlier comment — from 2026-09-10-fakturace-doprav-kiosk-portal-demo
+- `carry-forward` **Filip Černý**: Hold a short working session with Tereza Foltová on the reklamace Excel consolidation — from 2026-09-10-viapharma-reklamace-uat-fakturace-doprav-demo
+- `carry-forward` **Vladislav Tvarůžek**: Deliver the EGRES certificate so reklamace test access can be shared — was due 2026-09-11, overdue — from 2026-09-10-viapharma-reklamace-uat-fakturace-doprav-demo
+- `carry-forward` **Jindřich Tůma**: Hold a short live walkthrough call with Tereza Foltová/Jana Egrmaierová once test access is shared — from 2026-09-10-viapharma-reklamace-uat-fakturace-doprav-demo
+- `carry-forward` **Jindřich Tůma / Jakub Turner**: Schedule and run a dedicated Reklamace-Axapta API walkthrough session with Petr Sláma — from 2026-09-10-viapharma-reklamace-uat-fakturace-doprav-demo
+- `carry-forward` **Petr Sláma**: Report testing blockers to BigHub continuously during UAT rather than batching them — from 2026-09-10-viapharma-reklamace-uat-fakturace-doprav-demo
+- `carry-forward` **Filip Černý**: Update the Fakturace doprav spec/Swagger to reflect that Axapta (not the app) owns all route/document state — from 2026-09-10-viapharma-reklamace-uat-fakturace-doprav-demo
+- `carry-forward` **Filip Černý**: Validate with Axapta's API what history/status data it can return, to support the driver-facing "what's been scanned so far" view — from 2026-09-10-viapharma-reklamace-uat-fakturace-doprav-demo
+- `carry-forward` **Filip Černý**: Send a same-day kiosk hardware proposal/minimum-spec recommendation to Jan Žižka — from 2026-09-10-viapharma-reklamace-uat-fakturace-doprav-demo
+- `carry-forward` **Jan Žižka**: Identify an internal kiosk-hardware owner (with Petr Sláma) and act on Filip's spec recommendation — from 2026-09-10-viapharma-reklamace-uat-fakturace-doprav-demo
+- `carry-forward` **Jan Žižka**: Send sample temperature-log slips for testing — from 2026-09-10-viapharma-reklamace-uat-fakturace-doprav-demo
+- `carry-forward` **Filip Černý**: Standardize extracted field formats (dates, plates) across document types — from 2026-09-10-viapharma-reklamace-uat-fakturace-doprav-demo
+- `carry-forward` **Filip Černý**: Update the confirmation table to show specific missing page numbers instead of fractional counts — from 2026-09-10-viapharma-reklamace-uat-fakturace-doprav-demo
+- `carry-forward` **Jindřich Tůma**: Resend the recurring meeting invite from a Dr. Max-domain BigHub account so Dr. Max attendees can forward it internally without the invite-approval block — from 2026-09-10-lexie-max-maxie-weekly-sync
+- `carry-forward` **Jura Brázdil**: Finish updating and send the AI platform/Lexie technical documentation (internal doc with screenshots + descriptions) to the full group, via Jindřich — from 2026-09-10-lexie-max-maxie-weekly-sync
+- `carry-forward` **Jindřich Tůma / Jura Brázdil**: Find a design compromise for Lexie's visual polish and open a dedicated ticket, without a full redesign ahead of the platform-wide design consolidation — from 2026-09-10-lexie-max-maxie-weekly-sync
+- `carry-forward` **Jindřich Tůma**: Follow up with Lukáš to retrieve and clarify the content of ticket RITM0797678 ("testovací účet pro AI") — from 2026-09-10-lexie-max-maxie-weekly-sync
+- `carry-forward` **Jura Brázdil**: Research whether the shared-account/in-app-role-switcher testing approach is technically sound, including whether concurrent multi-tester use of one account would conflict — from 2026-09-10-lexie-max-maxie-weekly-sync
+- `carry-forward` **Jindřich Tůma**: Build the cross-project harmonogram (Lexie + Max + Maxie, weekly/workday granularity, testing windows included) — from 2026-09-10-lexie-max-maxie-weekly-sync
+- `carry-forward` **Simona Mertová**: Test the document-rename-in-storage / Lexie-index-update flow before next session — from 2026-09-10-lexie-max-maxie-weekly-sync
+- `carry-forward` **Dr. Max CC team**: Continue testing the Max chatbot test environment (VPN-gated) using the provided sample e-recepty/order test scenarios; log bugs/gaps via ticket or the in-app feedback form — from 2026-09-10-lexie-max-maxie-weekly-sync
+- `carry-forward` **Jindřich Tůma**: Confirm with William Gago whether ticket #154 can still be picked up for testing this week — from 2026-09-10-lexie-max-maxie-weekly-sync
+- `carry-forward` `meeting` **Juraj Kmec / Jindřich Tůma**: Scope mobile / non-VPN dashboard access with Dr. Max infra and security — from 2026-09-15-order-prediction-dashboard-follow-up
+- `carry-forward` `task` **Juraj Kmec**: Add budget, forecast, and predikce (plus revenue recognized so far) together on the same daily-granularity view, replacing manual calculation — from 2026-09-15-order-prediction-dashboard-follow-up
+- `carry-forward` `task` **Marek Šimoník / Dr. Max**: Confirm the ongoing data-delivery arrangement for the "2026 forecast" column beyond year-end (weekly cadence through December confirmed; January onward still needs a storage/delivery decision) — from 2026-09-15-order-prediction-dashboard-follow-up
+- `carry-forward` `task` **Juraj Kmec**: Rename the newly-built T-7/T-364 historical comparison feature to a user-friendly label (currently an internal placeholder name) — from 2026-09-15-order-prediction-dashboard-follow-up
+- `carry-forward` `task` **Juraj Kmec**: Add a "data as of [timestamp]" label directly on the dashboard graph — from 2026-09-15-order-prediction-dashboard-follow-up
+- `carry-forward` `task` **Juraj Kmec**: Build a 30-minute vs. hourly granularity selector for the "today" view (needed for BDC outage reporting) — from 2026-09-15-order-prediction-dashboard-follow-up
+- `carry-forward` `task` **Juraj Kmec**: Extend T-7/T-8 and historical-year comparison views to reservations specifically, not just aggregate order counts — from 2026-09-15-order-prediction-dashboard-follow-up
+- `carry-forward` `task` **Juraj Kmec**: Add an aggregated top-level "e-com" total (summing Nučice/Ostrava/Brno warehouses) alongside reservations and marketplace as three top-line categories, keeping per-warehouse drill-down available — from 2026-09-15-order-prediction-dashboard-follow-up
+- `carry-forward` `task` **Juraj Kmec**: Redesign the warehouse × delivery-method "Metrix" view so pharmacy reservations aren't modeled as if they were simultaneously a warehouse and a delivery method; split reservation/pickup data per warehouse (Nučice, Brno) for logistics staffing use — from 2026-09-15-order-prediction-dashboard-follow-up
+- `carry-forward` `task` **Juraj Kmec**: Scope effort for a Metrix-to-Excel export feature — from 2026-09-15-order-prediction-dashboard-follow-up
+- `carry-forward` `task` **Petr Ondráček**: Confirm with Jan ("Honza") Maroušek the exact export cadence/format he needs from the Metrix view (one-time vs. recurring) — from 2026-09-15-order-prediction-dashboard-follow-up
+- `carry-forward` `task` **Juraj Kmec**: Extend the Business Overview page with the same e-com/marketplace/rezervace channel breakdown, and show pre-summed totals directly rather than requiring manual addition — from 2026-09-15-order-prediction-dashboard-follow-up
+- `carry-forward` `meeting` `follow-up` **Marek Šimoník**: Send available dates (likely Friday) for a separate session to recap the dashboard's business value/KPIs with Marek Pillár — from 2026-09-15-order-prediction-dashboard-follow-up
+- `carry-forward` `follow-up` **Jindřich Tůma**: Follow up on BigHub's capacity/prioritization plan for the e-commerce/order-prediction stream vs. other pipeline projects — from 2026-09-15-order-prediction-dashboard-follow-up
+- `carry-forward` `task` **Jindřich Tůma**: Schedule the next order-prediction dashboard sync after Marek Šimoník returns from a full week off — from 2026-09-15-order-prediction-dashboard-follow-up
+- `carry-forward` `task` **Tereza Foltýnová**: Confirm the Reklamace domain expert (Petr Spilka vs. Jana Egrmaierová) directly with Petr Spilka — from 2026-09-15-business-quantification-reklamace-fakturace-doprav
+- `carry-forward` `task` **Tereza Foltýnová**: Verify the Reklamace business-value estimate (~1 FTE, ~3000 wage-cost figure) with Petr Spilka — from 2026-09-15-business-quantification-reklamace-fakturace-doprav
+- `carry-forward` `task` **Tereza Foltýnová**: Verify the Fakturace doprav business-value estimate (~16 hours/day, ~2 FTE, ~1.5M annual) with Jan Žižka — flagged as feeling too large — from 2026-09-15-business-quantification-reklamace-fakturace-doprav
+- `carry-forward` `task` **Tereza Foltýnová**: Loop in Petr Spilka and Jan Žižka to review/confirm names and content on the tracker — target end of this week, may slip — from 2026-09-15-business-quantification-reklamace-fakturace-doprav
+- `carry-forward` `task` **Radim Švarc**: Loop in Tomáš Burda today/tomorrow to confirm business ownership and expectations for TEO/OCR — from 2026-09-15-business-quantification-teo-ocr
+- `carry-forward` `task` **Radim Švarc**: Send Marek the updated presentation with the ~40h/month (~5 MD) time estimate — from 2026-09-15-business-quantification-teo-ocr
+- `carry-forward` `task` **Tomáš Burda** (via Radim Švarc): Provide a per-MD/per-hour cost rate for the technical department — from 2026-09-15-business-quantification-teo-ocr
+- `carry-forward` **Petr Neuman**: Review and complete the KPI Excel — traveling for the next two days, expects to get to it around Friday — from 2026-09-16-business-quantification-listing-petr-neuman
+- `carry-forward` **Jura Brázdil**: Investigate the duplicated defects/findings text-field bug — from 2026-09-16-teo-ocr-technical-sync-pilot-results
+- `carry-forward` **Jura Brázdil**: Root-cause the single missing-address extraction failure from the blind 2025-dataset run — from 2026-09-16-teo-ocr-technical-sync-pilot-results
+- `carry-forward` **Jura Brázdil**: Investigate protocol #136's missed review flag (unflagged date error) — from 2026-09-16-teo-ocr-technical-sync-pilot-results
+- `carry-forward` **Jura Brázdil**: Fix bounding-box crop alignment issues (e.g. the EPS-reference example) — from 2026-09-16-teo-ocr-technical-sync-pilot-results
+- `carry-forward` **Jura Brázdil**: Migrate the platform project to new AKS node pools and provision Blob storage for the TEST environment — from 2026-09-16-teo-ocr-technical-sync-pilot-results
+- `carry-forward` **Jura Brázdil**: Confirm whether Vladislav Tvarůžek's involvement is needed for Radim Švarc's external programmatic storage access, and request if so — from 2026-09-16-teo-ocr-technical-sync-pilot-results
+- `carry-forward` **Tomáš Burda**: Begin Dr. Max-side build work against BigHub's API contract, starting 2026-09-17 — from 2026-09-16-teo-ocr-technical-sync-pilot-results
+- `carry-forward` **Tomáš Burda**: Have something concrete on the Dr. Max-side build to show by next Tuesday (~2026-09-23) — from 2026-09-16-teo-ocr-technical-sync-pilot-results
+- `carry-forward` **Michaela Albrechtová / Tomáš Burda**: Send sample documents for a possible 3rd/larger vendor ("PEDOS," name uncertain) if pursuing the expanded autumn scope — from 2026-09-16-teo-ocr-technical-sync-pilot-results
+- `carry-forward` **Michaela Albrechtová**: Deploy the ServiceNow-import form to production (this week or early next week at the latest) — from 2026-09-16-teo-ocr-technical-sync-pilot-results
+- `carry-forward` **Jindřich Tůma**: Investigate whether Reklamace's warehouse-WiFi mobile access will grant equivalent network reach to today's VPN-based testing — from 2026-09-16-devops-kanban-rollout-status-sync
+- `carry-forward` **Jindřich Tůma**: Send a formal request to Dr. Max clarifying the network access/provisioning needed for the Reklamace app to reach the warehouse's internal network — from 2026-09-16-devops-kanban-rollout-status-sync
+- `carry-forward` **Filip Černý / Jakub Turner**: Run an informal quick test — ask a warehouse-based Dr. Max contact (possibly Jana Egrmaierová) to open the live Reklamace app link while on warehouse WiFi — from 2026-09-16-devops-kanban-rollout-status-sync
+- `carry-forward` **Jindřich Tůma**: Determine who at BigHub will coordinate/assign work to the Boomy-side team going forward (check with "Kupčík") — from 2026-09-16-devops-kanban-rollout-status-sync
+- `carry-forward` **Jakub Turner**: Follow up with infra on CERT/email-registration status needed for the Reklamace mailbox app — from 2026-09-16-devops-kanban-rollout-status-sync
+- `carry-forward` **Jakub Turner**: Implement and test Reklamace OAuth against the Boomy-provided OAuth server, timing dependent on infra/email prerequisites — from 2026-09-16-devops-kanban-rollout-status-sync
+- `carry-forward` **Filip Černý**: Finish and send the updated Fakturace doprav Swagger spec — from 2026-09-16-devops-kanban-rollout-status-sync
+- `carry-forward` **Jindřich Tůma**: Add the ticket Petr Ondráček sent to the order-prediction board — from 2026-09-16-devops-kanban-rollout-status-sync
+- `carry-forward` **Jindřich Tůma**: Schedule an internal review sync with Jan Sovka around 2026-09-28, ahead of the 2026-09-29 Marek Šimoník sync — from 2026-09-16-devops-kanban-rollout-status-sync
+- **Simona Mertová**: Review, edit, and green-light the completed Max chatbot/Maxie/Lexie BQ Excel — due 2026-09-18 — from 2026-09-17-business-quantification-cc-max-maxie-lexie
+- **Simona Mertová**: Reassign and name a new domain expert for Max chatbot/Maxie/Lexie to replace Kateřina Kadlecová, who is departing on maternity leave — from 2026-09-17-business-quantification-cc-max-maxie-lexie
+- **Simona Mertová**: Send Marek a blended/average agent (FTE) cost rate at the corporate level — from 2026-09-17-business-quantification-cc-max-maxie-lexie
+- **Luboš Vosmek**: Send the exact revenue-uplift % attributable to MaxBuddy and the case-count basis it's calculated on — due 2026-09-18 morning — from 2026-09-17-business-quantification-maxbuddy-vosmek
+- **Luboš Vosmek**: Send the current baseline % of single-item dispensing and the formal 1.5pp/year reduction target in writing — due 2026-09-18 morning — from 2026-09-17-business-quantification-maxbuddy-vosmek
+- **Luboš Vosmek**: Review, edit, and confirm the completed MaxBuddy BQ sheet — due 2026-09-18 — from 2026-09-17-business-quantification-maxbuddy-vosmek
+- **Luboš Vosmek**: Send his broader MaxBuddy scope-expansion wishlist separately — from 2026-09-17-business-quantification-maxbuddy-vosmek
+- **Jura Brázdil**: Build per-expedient click-through tracking on MaxBuddy's decision-tree ("stromy") branches — previously requested, still not delivered — from 2026-09-17-business-quantification-maxbuddy-vosmek
+- **BigHub (owner TBD)**: Scope and build a molecule/group coverage-visibility dashboard for Vosmek (red/blue/yellow status per group) — motivated by an undetected ~14-day data-feed outage — from 2026-09-17-business-quantification-maxbuddy-vosmek
+- **Simona Mertová**: Retest the Paralen/Bašty 2 stock-lookup scenario now that the location-search fix is in — from 2026-09-17-lexie-max-maxie-weekly-sync
+- **Lucie Fendrichová**: Connect BigHub's test environment to Dr. Max's staging/test orders so phone-number-based order lookup can be tested — from 2026-09-17-lexie-max-maxie-weekly-sync
+- **Lucie Fendrichová**: Retest the Brno/Brno-Líšeň district-recognition scenario and report back — from 2026-09-17-lexie-max-maxie-weekly-sync
+- **Jindřich Tůma**: Set up a meeting with Lenka Henichová (DPO) on GDPR consent/anonymization copy for the Max chatbot — from 2026-09-17-lexie-max-maxie-weekly-sync
+- **Simona Mertová / Dr. Max CC team**: Bring back DPO guidance on required consent language once available — from 2026-09-17-lexie-max-maxie-weekly-sync
+- **Dr. Max CC team**: Write a short first-person "tone brief" (terminology, formality, voice) for the Max chatbot's prompt — from 2026-09-17-lexie-max-maxie-weekly-sync
+- **Jindřich Tůma**: Open a ticket for a conversation rating/star system (carried over from 2026-09-10, never ticketed) — from 2026-09-17-lexie-max-maxie-weekly-sync
+- **Jura Brázdil**: Resend the link to the Max chatbot's existing analytics/reporting dashboard — from 2026-09-17-lexie-max-maxie-weekly-sync
+- **Jindřich Tůma**: File a ticket with BDC for 4 separate Lexie test accounts (one per CC sub-department) without 2FA — from 2026-09-17-lexie-max-maxie-weekly-sync
+- **Jura Brázdil**: Continue investigating (not committing to) whether an in-app role-switcher for Lexie test accounts is technically feasible — from 2026-09-17-lexie-max-maxie-weekly-sync
+- **Jindřich Tůma / Jura Brázdil**: Deliver Lexie user documentation/manual by next Thursday's meeting — from 2026-09-17-lexie-max-maxie-weekly-sync
+- **Kateřina Kadlecová / Dr. Max CC team**: Run a "vibe check" exercise on Lexie's UX and send concrete pain points (not proposed solutions) to Marek Pillár — from 2026-09-17-lexie-max-maxie-weekly-sync
+- **Kateřina Kadlecová**: Send the proposed X-Manager Kanban column/status restructure spreadsheet to Jindřich — from 2026-09-17-lexie-max-maxie-weekly-sync
+- **Jindřich Tůma**: Review and give thumbs up/down on Dr. Max's proposed X-Manager Kanban restructure — from 2026-09-17-lexie-max-maxie-weekly-sync
+- **Viliam Gago / Dr. Max CC team**: File a ticket investigating why Lexie's "second" no-source fallback message never appears to trigger — from 2026-09-17-lexie-max-maxie-weekly-sync
+- **Lucie Fendrichová / Jura Brázdil**: File a ticket investigating why some Lexie conversation titles save in English instead of Czech — from 2026-09-17-lexie-max-maxie-weekly-sync
