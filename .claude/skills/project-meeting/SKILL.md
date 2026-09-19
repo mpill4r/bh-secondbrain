@@ -31,15 +31,15 @@ If FigJam URL is provided, use Figma MCP to read the board. Treat sticky notes, 
 
 All meeting notes and routed harness artifacts are always written in English regardless of the transcript language. Process the transcript in its original language and produce all outputs in English. Direct quotes from non-English transcripts are translated and marked `[translated from {language}]`.
 
-### A3. tldv Processing
+### A3. Transcript Format Handling
 
-The primary transcript source is tldv. When processing tldv output:
-1. Format is `Speaker Name [MM:SS]: utterance` — use full names for all attribution, never shorthand.
-2. Timestamps are precise — use as-is for sequencing.
-3. Exports may contain double-spaced words — normalize whitespace before processing.
+The transcript can come from any recording/transcription tool (tldv, Fireflies, Otter, Teams/Zoom auto-transcripts, or whatever the PM uses next) — never assume a specific source. Handle common format traits generically:
+1. Speaker-attributed lines (commonly `Speaker Name [MM:SS]: utterance` or similar) — use full names for all attribution, never shorthand, regardless of the exact format the tool exports.
+2. Timestamps, when present, are precise — use as-is for sequencing.
+3. Exports may contain double-spaced words or other whitespace artifacts — normalize before processing.
 4. Repeated filler words (e.g. "yeah, yeah, yeah...") are a transcription artifact of verbal agreement — treat as acknowledgment, not quotable content.
 
-If a tldv recording link is provided, store in frontmatter as `tldv_link` and display in the Meeting Header. The transcript must always be provided as text or file — the link is a reference only.
+If a recording link is provided (from any tool), store in frontmatter as `recording_link` and display in the Meeting Header. The transcript must always be provided as text or file — the link is a reference only.
 
 ### A4. Read Bootstrap Context
 
@@ -174,7 +174,7 @@ If the meeting date has already passed, detect and warn: "This meeting date has 
 - **Routing targets from index**: Read `.claude/harness-artifacts-index.md` to determine routing targets — never hardcode artifact lists.
 - **Audit entries are automatic**: After PM confirms routing, audit entries are silently logged to `project-daily`. No additional confirmation needed.
 - **Meeting type ambiguous**: Ask once — never assume the type.
-- **tldv link is reference only**: If PM provides only a tldv link without transcript, ask them to provide the transcript as text or file.
+- **Recording link is reference only**: If PM provides only a recording link (any tool) without a transcript, ask them to provide the transcript as text or file.
 - **First recurring session**: No previous instance found — no progress assessment, no open items carry-forward. Treated as a new thread.
 - **`harness-artifacts-index.md` missing**: This is a configuration error. Notify PM that the index is missing and routing cannot proceed. The meeting note is still written, but routing is blocked until the index is restored.
 - **English output**: All outputs (meeting note, routing candidates, routed content) are always in English regardless of transcript language.

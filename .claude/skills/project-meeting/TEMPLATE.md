@@ -5,7 +5,7 @@
 last_updated: {YYYY-MM-DD}
 type: {internal | client | external | milestone}
 attendees: [{name1}, {name2}]
-tldv_link: {url or empty}
+recording_link: {url or empty}
 ---
 
 # {Meeting Title}
@@ -13,7 +13,7 @@ tldv_link: {url or empty}
 **Date**: {YYYY-MM-DD}
 **Attendees**: {Name (Role), Name (Role)}
 **Type**: {internal | client | external | milestone}
-**Recording**: {tldv link or N/A}
+**Recording**: {recording link or N/A}
 **Previous session**: {link to previous meeting note or N/A}
 **Meeting prep**: {link to prep file or N/A}
 
