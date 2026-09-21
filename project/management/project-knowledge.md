@@ -1,6 +1,6 @@
 ---
-last_updated: 2026-09-17
-last_updated_by: auto — project-meeting routing (2026-09-17-lexie-max-maxie-weekly-sync)
+last_updated: 2026-09-21
+last_updated_by: auto — project-meeting routing (2026-09-21-ai-platform-vision-discovery-dudasko)
 owner: Marek Pillár
 ---
 
@@ -188,6 +188,39 @@ Demoed screen flow: category selection → product catalog table (per-product SK
 
 **SKU ownership & data flow (2026-09-16)**: Dr. Max provides/owns SKU identifiers — BigHub does not generate them. Dr. Max sometimes uses "SKU" loosely as a synonym for "product," but it's literally just the product's identifier. Confirmed flow: listing build/edit happens in the new app first, then gets imported into Magento — the tool exists because Magento itself can't keep up with fast/bulk writes at Dr. Max's current catalog scale (see [[ASM-073]]). Per Jindřich Tůma, the spec should be framed simply: BigHub takes over exactly what already exists in Magento today, since new products are treated the same as existing ones once a baseline listing exists — rather than trying to model every adjacent system Dr. Max references (Farmis, "Quant," "paní Lucy," and others). Source: 2026-09-16-devops-kanban-rollout-status-sync.
 
+### Expertní skupiny (expert groups)
+
+| Field | Value |
+|-------|-------|
+| Definition | Dr. Max's standing internal structure for rolling out anything new across the pharmacy network consistently — one expert group per domain (e.g. a new dermocosmetics line gets a dermocosmetics expert group), each led by an "osmec" (see below). Their job is ensuring the whole network communicates and operates the same way once something new is introduced, not just this project's tools. |
+| Source | 2026-09-21-ai-platform-vision-discovery-dudasko |
+| Added | 2026-09-21 |
+| Status | Active |
+
+Surfaced when Jindřich asked Tomáš Dudaško who BigHub should talk to about whether pharmacists are actually adopting a live tool (MaxBuddy). Dudaško's answer: not the training center (which only handles the training delivery itself) — the expert group lead is the person with escalation authority and network-wide visibility. See "osmec" and "tréninkové centrum" below; ties into the adoption-campaign scope split, [[ASM-117]].
+
+### Osmec
+
+| Field | Value |
+|-------|-------|
+| Definition | Client jargon: the lead of an "expertní skupina" (expert group) — the operational owner responsible for a given tool/initiative actually landing correctly across the pharmacy network. Has escalation authority ("Hele, změň to") and direct access to the training center, but is not the training center itself. |
+| Source | 2026-09-21-ai-platform-vision-discovery-dudasko |
+| Added | 2026-09-21 |
+| Status | Needs confirmation |
+
+Dudaško named "Luca" as the specific osmec for MaxBuddy — not yet a confirmed/tracked stakeholder identity; possibly related to the "Lukáš Sýč"/"Lukáš Síč"/"Lukáš Syček" name ambiguity already flagged on STK-031, not yet resolved.
+
+### Tréninkové centrum (training center)
+
+| Field | Value |
+|-------|-------|
+| Definition | Dr. Max's own internal training organization. Owns all pharmacist-facing rollout training for any new tool or process — handled identically regardless of whether the new thing is an AI tool (MaxBuddy) or an unrelated Armis feature. Uses its own channels, methods, and e-learning; "provoz" (operations) decides rollout timing. Explicitly not BigHub's responsibility. |
+| Source | 2026-09-21-ai-platform-vision-discovery-dudasko |
+| Added | 2026-09-21 |
+| Status | Active |
+
+Dudaško was unambiguous on this boundary when Jindřich raised a concrete pilot-pharmacist confusion incident: BigHub's adoption-campaign role stops at awareness/comms; training and hypercare delivery stay entirely with Dr. Max. See [[ASM-117]].
+
 ## Data Model Concepts
 
 ## Regulatory & Compliance
@@ -230,6 +263,8 @@ Other BigHub clients referenced (2026-09-04) as also running the shared AI/chatb
 | Status | Active |
 
 Deliberately kept out of the 9-product roadmap set (`product-roadmap-portfolio-full.xlsx`) for now, per PM instruction, until scoped. Agreed 3-phase delivery plan: (1) UX rework into one consolidated landing page, (2) migrate existing projects onto the platform on both test and production, (3) build Dudaško's backlog (from his requirements Excel) into an admin/reporting layer. See also "BigHub's shared-platform strategy (retired)" and "AI platform — current technical state" below.
+
+**Vision confirmed directly (2026-09-21)**: Dudaško walked through this in his own words for the first time — platform-as-a-service (FinOps token routing), a unified role-based tool directory, and one Lexie instead of per-department ones — see [[ASM-112]], [[ASM-113]], [[ASM-114]], [[ASM-115]]. Source: 2026-09-21-ai-platform-vision-discovery-dudasko.
 
 ### BigHub's shared-platform strategy (retired)
 

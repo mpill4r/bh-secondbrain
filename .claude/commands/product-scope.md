@@ -1,5 +1,5 @@
 ---
-description: Create a new phase scope, review or update an existing one, query scope status, or manage feature delivery tracking
+description: Create or update phase scope and feature delivery tracking
 ---
 
 Read and follow the instructions in `.claude/skills/product-scope/SKILL.md`.

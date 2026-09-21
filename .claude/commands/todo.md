@@ -1,5 +1,5 @@
 ---
-description: Show open action items ranked by priority, then interactively triage the top 10 (still valid? right priority?)
+description: Show top-priority action items and triage them interactively
 ---
 
 Read and follow the instructions in `.claude/skills/todo/SKILL.md`.

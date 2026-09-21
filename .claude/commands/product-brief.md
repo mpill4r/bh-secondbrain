@@ -1,5 +1,5 @@
 ---
-description: Review the current brief, enrich sections through structured coaching discussion, or update based on new information
+description: Review, coach, or update the product brief
 ---
 
 Read and follow the instructions in `.claude/skills/product-brief/SKILL.md`.

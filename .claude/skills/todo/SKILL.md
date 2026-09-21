@@ -1,6 +1,6 @@
 # todo — Skill Logic
 
-> A fast, priority-ranked view of open action items, followed by an interactive triage pass that keeps the top of the list honest — still valid? still the right priority?
+> A fast, priority-ranked view of open action items, followed by an interactive triage pass that keeps the top of the list honest — still valid? still needs doing?
 
 ---
 
@@ -47,29 +47,20 @@ Present the complete priority-sorted list to the PM — topmost priority first, 
 
 Immediately after showing the list, walk through the **top 10 items** (by the same priority order) in an interactive Q&A using `AskUserQuestion`.
 
-The PM's target option set per item is exactly 5 outcomes, always offered in this order: **Done, High Prio, Mid Prio, Low Prio, No longer valid**. `AskUserQuestion` hard-caps at 4 options per question, so this can't be a single question — split each item into two questions, asked in sequence:
-
-**Gate question** (3 options, batch up to 4 items' gate questions per `AskUserQuestion` call):
-1. **"Done — mark completed"** — the task was actually carried out.
-2. **"Still valid — set priority"** — leads to the follow-up tier question below.
+Each item gets exactly one question with exactly 3 options, always offered in this order:
+1. **"Skip"** — leave the item exactly as-is, no change. Default choice when nothing about the item needs correcting.
+2. **"Done"** — the task was actually carried out.
 3. **"No longer valid — remove"** — stale, superseded, or irrelevant; distinct from "Done" (this was never actually completed, it just doesn't need doing).
 
-**Tier follow-up** (only for items answered "Still valid — set priority"; 3 options, batch up to 4 per call):
-1. **"High Prio"**
-2. **"Mid Prio"**
-3. **"Low Prio"**
-
-**Priority is absolute, not relative**: whichever tier the PM picks in the follow-up becomes the item's new tier, regardless of what it was before. Picking the same tier it already had is a no-op (item stays as-is); picking a different tier always overrides — there is no "keep current" special case to preserve.
-
-Use the item's owner + task text (truncated if needed) as the question header/context so the PM can tell items apart at a glance. Most items will need both questions; only items answered "Done" or "No longer valid" at the gate skip the tier follow-up.
+Use the item's owner + task text (truncated if needed) as the question header/context so the PM can tell items apart at a glance. Batch up to 4 items' questions per `AskUserQuestion` call.
 
 ## Step 5: Apply Answers
 
-Process all 10 items' final answers together once every gate + follow-up question has been asked (don't write mid-batch):
+Process all 10 items' answers together once every question has been asked (don't write mid-batch):
 
+- **"Skip"** → no change. The item is left exactly as it was.
 - **"Done"** → mark the item `- [x]` in the daily immediately, appending `— marked done via /todo review ({date})` to its text. It does not carry forward.
 - **"No longer valid"** → mark the item `- [x]` in the daily immediately, appending `— marked no-longer-valid via /todo review ({date})` to its text. It does not carry forward.
-- **Tier follow-up answered** → set the item's priority label tag to exactly what was picked (`highest-prio` / `mid-prio` / `low-prio`; "Low Prio" written as `low-prio`), replacing whatever tag it had before (or adding one if it was untagged/"normal"). This is an absolute set, not a relative shift.
 
 Write all changes to the daily file (the most recent one loaded in Step 1) directly — this is a PM-invoked, manual review action, not autonomous routing, so no separate confirmation step is needed before writing. If that daily's `status` is already `closed`, still write directly to it (editing a closed daily for an explicit PM correction is normal — see the project-daily skill's own Review Mode precedent for direct PM-driven edits).
 
@@ -78,12 +69,12 @@ Write all changes to the daily file (the most recent one loaded in Step 1) direc
 Append one line to the daily's Audit Log:
 
 ```
-[MANUAL] project-daily — /todo review: {D} marked done, {K} marked no-longer-valid, {C} tier changed, {S} tier unchanged ({date})
+[MANUAL] project-daily — /todo review: {D} marked done, {K} marked no-longer-valid, {S} skipped ({date})
 ```
 
 ## Step 7: Summary
 
-Report back concisely: how many were marked done, marked no-longer-valid, had their tier changed, or kept the same tier, and remind the PM how many more items remain below the top 10 if they want to keep going (they can just re-run `/todo`).
+Report back concisely: how many were marked done, marked no-longer-valid, or skipped, and remind the PM how many more items remain below the top 10 if they want to keep going (they can just re-run `/todo`).
 
 ---
 

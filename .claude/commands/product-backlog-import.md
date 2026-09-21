@@ -1,5 +1,5 @@
 ---
-description: Import planned work from an external backlog tool (Linear, Jira, Notion, etc.) into the harness. Two modes — default produces a per-import plan; `route` confirms and writes directly to harness artifacts.
+description: Import external backlog work; route mode writes to harness
 ---
 
 Read and follow the instructions in `.claude/skills/product-backlog-import/SKILL.md`.

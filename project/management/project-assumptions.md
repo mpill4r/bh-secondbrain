@@ -1,6 +1,6 @@
 ---
-last_updated: 2026-09-18
-last_updated_by: auto — project-meeting routing (2026-09-18-business-quantification-order-prediction-simonik)
+last_updated: 2026-09-21
+last_updated_by: auto — project-meeting routing (2026-09-21-ocr-progress-ai-platform-prototype-sync)
 owner: Marek Pillár
 ---
 
@@ -10,6 +10,16 @@ owner: Marek Pillár
 
 | ID | Status | Created | Description (short) |
 |----|--------|---------|---------------------|
+| ASM-118 | Open (2026-09-21) | 2026-09-21 | No regular, reliable MaxBuddy reporting exists despite months of Dudaško raising it |
+| ASM-117 | Decided (2026-09-21) | 2026-09-21 | AI adoption campaign scope split: BigHub owns awareness/comms, Dr. Max's training center + expert groups own rollout/training |
+| ASM-116 | Open (2026-09-21) | 2026-09-21 | Agentic workflow/orchestrator builder — deferred to a future (~November) conversation |
+| ASM-115 | Decided (2026-09-21) | 2026-09-21 | AI Platform 3-phase delivery sequencing agreed with Dudaško (UX/access → FinOps → capability matrix) |
+| ASM-114 | Decided (2026-09-21) | 2026-09-21 | Per-department Lexie instances collapse into one unified, role-gated Lexie + public-doc tier |
+| ASM-121 | Decided (2026-09-21) | 2026-09-21 | BigHub will not build the ServiceNow export for TEO/OCR — hands Radim's team clean data via API, his team owns export |
+| ASM-120 | Decided (2026-09-21) | 2026-09-21 | TEO/OCR reviewer corrections must flow back to BigHub via API to measure/improve accuracy over time |
+| ASM-119 | Decided (2026-09-21) | 2026-09-21 | TEO/OCR disambiguation shifts to classify-against-known-branch-list + ranked candidate alternatives, not forced verbatim transcription |
+| ASM-113 | Decided (2026-09-21, updated 2026-09-21) | 2026-09-21 | AI Platform home screen becomes a unified, role-based directory to every AI tool — external tools open inline, not via deep link |
+| ASM-112 | Decided (2026-09-21) | 2026-09-21 | AI Platform must behave as platform-as-a-service — all AI-consuming tools route through it for FinOps visibility |
 | ASM-111 | Open (2026-09-18) | 2026-09-18 | Logistics shift-planning dashboard extension (~90% ready per M. Šimoník) — open, outside his ownership |
 | ASM-110 | Decided (2026-09-18) | 2026-09-18 | Order-prediction dashboard: no new feature backlog — next roadmap conversation deferred to Q4/year-end |
 | ASM-109 | Decided (2026-09-18) | 2026-09-18 | Order-prediction dashboard reaction/outage-prevention value quantified at ~100–200k Kč/month (conservative) |
@@ -123,6 +133,227 @@ owner: Marek Pillár
 | ASM-001 | Decided (2026-08-25) | 2026-09-01 | Dr. Max client-side coordination unified into one role (Jindřich Tůma) |
 
 ## Entries
+
+---
+
+### ASM-118
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-118 |
+| Created | 2026-09-21 |
+| Source | 2026-09-21-ai-platform-vision-discovery-dudasko |
+| By | Tomáš Dudaško (STK-010) |
+| Status | Open (2026-09-21) |
+
+**Description**
+No regular, reliable reporting exists for MaxBuddy to evaluate it against — Dudaško says he's raised this for months. One report was generated via Claude at some unknown past point, with no known owner or cadence since.
+
+**Rationale**
+Dudaško: "to já to už opakuju několik měsíců... já nevím, kde to jako hnije." Jindřich says he saw current reporting last week and will send it over, and separately wants every AI initiative to end with defined KPIs/reporting — ties into the Business Quantification/OKR effort already running (`ai-initiatives-okr-framework.md`).
+
+**Impact**
+- **Relationship**: A standing, repeated complaint from the budget-holder — direct contributor to his "frosty" sentiment (STK-010); resolving it has outsized relationship value beyond its own scope.
+- **Delivery**: No owner or cadence currently assigned — needs one before this can close.
+
+---
+
+### ASM-117
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-117 |
+| Created | 2026-09-21 |
+| Source | 2026-09-21-ai-platform-vision-discovery-dudasko |
+| By | Jindřich Tůma (STK-003), Tomáš Dudaško (STK-010) |
+| Status | Decided (2026-09-21) |
+
+**Description**
+The AI adoption campaign splits into two parts: Part A (BigHub-owned) is internal communications/awareness — intranet content, PR, and guides/FAQ/knowledge-base content hosted directly on the AI Platform so people have a standing reason to visit it. Part B (Dr. Max-owned) is end-to-end operational rollout — pharmacist training and hypercare — which stays entirely with Dr. Max's own training center and "expertní skupiny" (expert groups); BigHub's only touchpoint for post-rollout evaluation is the relevant expert-group lead ("osmec"), not the training center directly.
+
+**Rationale**
+Jindřich raised a concrete worry (a MaxBuddy pilot pharmacist who didn't know whether/how to use the tool) to test whether BigHub needed broader ownership. Dudaško's answer was unambiguous: training is handled identically to any other Armis feature rollout, entirely by "provoz" (operations) — not BigHub's job. This is distinct in scope from ASM-101 (Max chatbot's public *customer*-facing launch staying quiet) — this entry covers *internal employee-facing* platform awareness, a different audience.
+
+**Impact**
+- **Scope**: Caps BigHub's adoption-campaign ownership at awareness/comms — prevents scope creep into training delivery BigHub isn't resourced for.
+- **Relationship**: Gives Jindřich a concrete next contact (expert-group lead) instead of an ambiguous "check in on adoption" ask.
+- **Process**: Reinforces the org concept captured in `project-knowledge` (expertní skupiny, osmec, tréninkové centrum).
+
+---
+
+### ASM-116
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-116 |
+| Created | 2026-09-21 |
+| Source | 2026-09-21-ai-platform-vision-discovery-dudasko |
+| By | Tomáš Dudaško (STK-010) |
+| Status | Open (2026-09-21) |
+
+**Description**
+Dudaško wants a longer-term agentic-workflow/orchestrator builder — drag-and-drop agent flows with configurable models/prompts per step — referencing an unnamed external tool (MCP servers, agent builder, agent registry) purely as inspiration. Both Marek and Jindřich deferred this to a future (tentatively November) conversation, not near-term scope.
+
+**Rationale**
+Partly motivated by frustration that this capability was part of BigHub's original pitch before the shared-platform product vision was retired (see the 2026-05 platform-strategy history). Marek's own untested view is that a custom build is likely the wrong call given commercial alternatives (e.g. Make, Gumloop) already do this cheaply — not yet shared with Dudaško.
+
+**Impact**
+- **Scope**: Kept explicitly out of the current 3-phase plan (ASM-115) to protect near-term delivery focus.
+- **Cost**: If Dudaško insists on a custom build despite cheaper commercial alternatives, this would be a large, expensive project — flagged early rather than silently built later.
+
+---
+
+### ASM-115
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-115 |
+| Created | 2026-09-21 |
+| Source | 2026-09-21-ai-platform-vision-discovery-dudasko |
+| By | Marek Pillár (STK-001), Tomáš Dudaško (STK-010) |
+| Status | Decided (2026-09-21) |
+
+**Description**
+Delivery sequencing agreed with Dudaško: Phase 1 — unify the UX into one entry point with role-based access and basic cost/usage metrics (the design-brief work already in flight). Phase 2 — deeper backend/token FinOps integration. Phase 3 — work through Dudaško's capability-matrix Excel together, jointly prioritized, likely a separate dedicated session (~November).
+
+**Rationale**
+Dudaško was explicit that platform-behavior work (Phase 1/2) is the precondition for the rest, not a parallel track: "Prvně se to musí chovat jako platforma... a v tom okamžiku si můžeme říkat, jak to ještě vylepšíme u dalších capability."
+
+**Impact**
+- **Delivery**: Gives the existing UX-mockup work (already scoped per ASM-041/ASM-045) explicit client sign-off on sequencing, reducing risk of scope pressure from the capability-matrix Excel derailing Phase 1.
+- **Timeline**: Sets a soft expectation (Dudaško) of visible progress within weeks, not months, given his "frosty" sentiment.
+
+---
+
+### ASM-114
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-114 |
+| Created | 2026-09-21 |
+| Source | 2026-09-21-ai-platform-vision-discovery-dudasko |
+| By | Tomáš Dudaško (STK-010) |
+| Status | Decided (2026-09-21) |
+
+**Description**
+Per-department Lexie instances (IT, "kasťák"/POS, an upcoming Legal instance) collapse into one unified, role-gated Lexie chat, plus a public-document tier visible to everyone regardless of role. Access is modeled on Dr. Max's existing SharePoint permissions rather than a new parallel access model.
+
+**Rationale**
+Dudaško: "já bych chtěl mít jednu Lexi, jeden chat, do kterýho podle role a toho, co můžu vidět, dostanu odpovědi." Reusing SharePoint permissions avoids building and maintaining a second access-control system.
+
+**Impact**
+- **Tech**: Requires the platform's RAG/indexing layer to respect per-document SharePoint ACLs at query time, not just at index time — a meaningfully bigger lift than today's per-instance Lexie setup.
+- **UX**: Removes the current fragmentation (multiple Lexies) that was a named source of Dudaško's UX complaint.
+
+---
+
+### ASM-113
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-113 |
+| Created | 2026-09-21 |
+| Source | 2026-09-21-ai-platform-vision-discovery-dudasko, 2026-09-21-ocr-progress-ai-platform-prototype-sync |
+| By | Tomáš Dudaško (STK-010) |
+| Status | Decided (2026-09-21, updated 2026-09-21) |
+
+**Description**
+The AI Platform's home screen becomes a unified, role-based directory ("rozcestník") linking to every AI tool Dr. Max has — including tools with their own separate frontend (e.g. the e-commerce forecast dashboard, the listing/copywriting tool). **Updated same day**: these open **inline**, within the platform's own single-URL interface, not via a deep link out to a separate site.
+
+**Rationale**
+Dudaško: today, not knowing a tool's exact URL means he can't reach it at all — there's no anchor point anywhere for tools outside the chat pattern. The original entry (written right after the Dudaško call) captured "deep link out, no embedding" — a same-day follow-up working session with Jura Brázdil surfaced that Marek's actual read of Dudaško's ask is inline, matching Jura's own already-built prototype, which assumes single-URL in-page navigation for any browser-accessible tool. PM confirmed inline is correct during that session's routing review.
+
+**Impact**
+- **UX**: Directly addresses the "roztrieštené"/fragmented experience diagnosed as the platform's core UX complaint — inline navigation reinforces the "one product" feel more strongly than deep-linking out.
+- **Scope**: Confirms Phase 1 UX work must account for external-frontend tools rendering inline, not just chat-pattern tools — relevant for the Jura Brázdil design brief, which has been updated to match. One exception: MaxBuddy has no standalone web service (Farmis-integrated only), so it stays a demo view regardless.
+
+---
+
+### ASM-121
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-121 |
+| Created | 2026-09-21 |
+| Source | 2026-09-21-ocr-progress-ai-platform-prototype-sync |
+| By | Jura Brázdil (STK-026) |
+| Status | Decided (2026-09-21) |
+
+**Description**
+BigHub will not commit to building the ServiceNow export for TEO/OCR. It hands Radim Švarc's team complete structured data per document via API (values, confidence flags, alternate candidates, bounding boxes); Radim's team owns the review UI and the final export into ServiceNow.
+
+**Rationale**
+Jura: promising an export now risks BigHub being on the hook for a ServiceNow-side build whose actual shape isn't known yet (e.g. whether ServiceNow can even host image crops). Radim's team already intends to build their own review interface — better to let them own the full review→export step and hand them everything BigHub knows via API.
+
+**Impact**
+- **Scope**: Keeps BigHub's TEO/OCR delivery bounded to data extraction + API, not client-side tooling.
+- **Delivery**: If Radim's team later asks BigHub to build the export once their clean-data format is confirmed, that's a new, separate ask — not committed now.
+
+---
+
+### ASM-120
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-120 |
+| Created | 2026-09-21 |
+| Source | 2026-09-21-ocr-progress-ai-platform-prototype-sync |
+| By | Alana Sihelská (STK-004) |
+| Status | Decided (2026-09-21) |
+
+**Description**
+Whatever corrections Radim Švarc's team makes in their own TEO/OCR review interface must be captured and sent back to BigHub via API, so accuracy can be measured over time and fed back into improving the pipeline.
+
+**Rationale**
+Alana: without this feedback loop, BigHub has no way to know which of its own flagged/ambiguous fields were actually right or wrong in practice. Jura confirmed this isn't a technical blocker — the existing per-field data model (flags, bounding box, alternates) already supports adding a correction field — but it needs to be explicitly requested of Radim's team, since it won't happen by default.
+
+**Impact**
+- **Data**: Enables an ongoing accuracy-measurement loop rather than a one-time pilot validation.
+- **Delivery**: Requires an explicit ask to Radim's team as they build their review interface — tracked as an action item.
+
+---
+
+### ASM-119
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-119 |
+| Created | 2026-09-21 |
+| Source | 2026-09-21-ocr-progress-ai-platform-prototype-sync |
+| By | Jura Brázdil (STK-026) |
+| Status | Decided (2026-09-21) |
+
+**Description**
+TEO/OCR disambiguation shifts from forcing all reader models to transcribe an address or date character-for-character to classifying against a known branch/candidate list, surfacing 2-3 ranked candidate values to the human reviewer (e.g. via a dropdown) when the model ensemble disagrees, instead of a blind re-transcription flag.
+
+**Rationale**
+Jura: some source documents give only a city with no street/stamp/center number, or contain handwriting (e.g. crossed digit 7) that international OCR models systematically misread — neither is fixable by better prompting alone. Presenting real candidates (validated against the known branch directory) is more reliable than asking a model or human to re-guess from scratch.
+
+**Impact**
+- **Quality**: Back-tested improvement — spring batch clean/no-review rows rose from 74→114 of 188 (~54%), autumn batch from 47→61 of 140.
+- **UX**: Requires the review interface (built by Radim's team) to support a candidate-selection control, not just accept/reject/retype — worth flagging to them.
+
+---
+
+### ASM-112
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-112 |
+| Created | 2026-09-21 |
+| Source | 2026-09-21-ai-platform-vision-discovery-dudasko |
+| By | Tomáš Dudaško (STK-010) |
+| Status | Decided (2026-09-21) |
+
+**Description**
+The AI Platform must behave as a platform-as-a-service: every AI-consuming tool — chat or programmatic — routes through it so usage/cost (FinOps) is visible and controllable, not just host chat products. Eventually includes an "AI gateway" layer with GDPR controls.
+
+**Rationale**
+Dudaško's standing example: MaxBuddy's token cost is invisible to him today because it doesn't route through the platform at all — "nevím to proto, protože prostě nepálí tokeny přes tu platformu." He was explicit the platform's current value is limited if it's just another chat product rather than a backend serving other AI agents/tools.
+
+**Impact**
+- **FinOps**: This is the architectural precondition for any usage/cost dashboard work (Phase 2, ASM-115) — without routing enforcement, cost visibility can't be built.
+- **Tech**: Implies MaxBuddy (and any future tool) needs to be migrated onto the shared platform's LLM access path, not call models directly — a real integration lift, not just a UI change.
 
 ---
 

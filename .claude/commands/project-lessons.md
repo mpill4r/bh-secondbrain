@@ -1,5 +1,5 @@
 ---
-description: Review captured lessons, add one manually, query by category, or edit existing entries
+description: Review, add, or edit captured lessons
 ---
 
 Read and follow the instructions in `.claude/skills/project-lessons/SKILL.md`.

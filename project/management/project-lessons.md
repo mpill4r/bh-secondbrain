@@ -1,10 +1,90 @@
 ---
-last_updated: 2026-09-18
-last_updated_by: auto — project-daily close (2026-09-18)
+last_updated: 2026-09-21
+last_updated_by: auto — project-meeting routing (2026-09-21-ocr-progress-ai-platform-prototype-sync)
 owner: Marek Pillár
 ---
 
 # Lessons Learned
+
+---
+
+### LL-050
+
+| Field | Value |
+|-------|-------|
+| ID | LL-050 |
+| Created | 2026-09-21 |
+| Category | AI/ML review-interface design |
+| Source | 2026-09-21-ocr-progress-ai-platform-prototype-sync |
+
+**Lesson**
+When an AI extraction system can't resolve a field with full confidence, surfacing 2-3 ranked, validated candidate answers for a human to pick from beats either forcing a blind verbatim re-transcription or just flagging "needs review" with no guidance — it's faster for the reviewer and more accurate than an open-ended re-guess.
+
+**Context**
+TEO/OCR's date and branch-address fields were often ambiguous from source documents (crossed digit 7s misread across models, cities with multiple branches and no other identifying detail). Switching from "transcribe exactly, flag on disagreement" to "classify against a known candidate list, offer alternatives" measurably improved clean/no-review rates (~54% on the spring batch) without requiring better source documents or a better base model.
+
+**Cross-reference**
+[[ASM-119]]
+
+---
+
+### LL-049
+
+| Field | Value |
+|-------|-------|
+| ID | LL-049 |
+| Created | 2026-09-21 |
+| Category | Cross-team collaboration |
+| Source | 2026-09-21-ocr-progress-ai-platform-prototype-sync |
+
+**Lesson**
+A correction/feedback loop between two teams' systems doesn't happen automatically just because the technical capability (e.g. an API) exists — it requires an explicit, named ask to the other team, made before they build their own side of the interface, or the loop quietly never gets built.
+
+**Context**
+BigHub's TEO/OCR system can accept reviewer corrections back via API and use them to measure/improve accuracy over time, but Radim Švarc's team building their own review interface wouldn't send that data back unless BigHub explicitly asks for it as a requirement — raised proactively by Alana Sihelská before Radim's build was finalized, not after.
+
+**Cross-reference**
+[[ASM-120]]
+
+---
+
+### LL-048
+
+| Field | Value |
+|-------|-------|
+| ID | LL-048 |
+| Created | 2026-09-21 |
+| Category | relationship-management |
+| Source | 2026-09-21-ai-platform-vision-discovery-dudasko |
+
+**Lesson**
+A stakeholder who has been burned by past unmet promises values fast, partial, visible progress over a delayed polished deliverable — bias toward shipping something concrete, open questions and all, on a short explicit cadence rather than waiting until it's "ready."
+
+**Context**
+Jindřich's read of Tomáš Dudaško immediately after this call: right vision, but visibly worn down by predecessors over-promising and under-delivering. His explicit ask was UX mockup variants by Wednesday — even incomplete — rather than a complete result later in the week.
+
+**Cross-reference**
+STK-010 (Tomáš Dudaško), ASM-115
+
+---
+
+### LL-047
+
+| Field | Value |
+|-------|-------|
+| ID | LL-047 |
+| Created | 2026-09-21 |
+| Category | scoping |
+| Source | 2026-09-21-ai-platform-vision-discovery-dudasko |
+
+**Lesson**
+When a stakeholder's concern sounds like it requires expanding your team's ownership, test it against one concrete incident before agreeing to take on more — it often surfaces an existing internal channel already responsible for that piece, narrowing the actual commitment rather than expanding it.
+
+**Context**
+Jindřich raised a general worry (are pharmacists actually adopting MaxBuddy?) that could have implied BigHub needed end-to-end rollout ownership. Citing one specific incident (a confused pilot pharmacist) got a precise answer from Dudaško: that's the job of Dr. Max's own training center and expert-group leads ("osmec"), not BigHub — capping the adoption campaign's real scope to awareness/comms.
+
+**Cross-reference**
+ASM-117, project-knowledge (Expertní skupiny, Osmec, Tréninkové centrum)
 
 ---
 
