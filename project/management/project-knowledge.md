@@ -1,6 +1,6 @@
 ---
-last_updated: 2026-09-21
-last_updated_by: auto — project-meeting routing (2026-09-21-ai-platform-vision-discovery-dudasko)
+last_updated: 2026-09-22
+last_updated_by: auto — project-meeting routing (2026-09-22-ai-portfolio-business-value-review-reklamace-reframe)
 owner: Marek Pillár
 ---
 
@@ -206,9 +206,9 @@ Surfaced when Jindřich asked Tomáš Dudaško who BigHub should talk to about w
 | Definition | Client jargon: the lead of an "expertní skupina" (expert group) — the operational owner responsible for a given tool/initiative actually landing correctly across the pharmacy network. Has escalation authority ("Hele, změň to") and direct access to the training center, but is not the training center itself. |
 | Source | 2026-09-21-ai-platform-vision-discovery-dudasko |
 | Added | 2026-09-21 |
-| Status | Needs confirmation |
+| Status | Active |
 
-Dudaško named "Luca" as the specific osmec for MaxBuddy — not yet a confirmed/tracked stakeholder identity; possibly related to the "Lukáš Sýč"/"Lukáš Síč"/"Lukáš Syček" name ambiguity already flagged on STK-031, not yet resolved.
+Dudaško named "Luca" as the specific osmec for MaxBuddy — **resolved 2026-09-22 (PM confirmation)**: this is Luboš Vosmek (STK-011), MaxBuddy's business owner. Not related to the "Lukáš Sýč"/"Lukáš Síč"/"Lukáš Syček"/Szücs name ambiguity on STK-031 — that was a different person entirely.
 
 ### Tréninkové centrum (training center)
 
@@ -453,6 +453,17 @@ In a separate 2026-09-02 sync, Jindřich reiterated the plan for a shared coordi
 | Status | Active |
 
 Relevant Teams channels: **BigHubInfrastructureChat** (in Dr. Max's Teams — general BigHub-dev infra coordination; members include Viliam Gago, Jura Brázdil, "Duri"); **MaxBuddy.DVH x BigHub** (coordination with the Data Warehouse/DVH team specifically); **Dr. Max LLM Platforma** (general LLM-platform coordination and informal X-Manager screenshot sharing — also where Marek was added 2026-09-02). Channel history is not retroactively visible to members added after the fact.
+
+### Business Quantification tracker
+
+| Field | Value |
+|-------|-------|
+| Definition | The consolidated cross-initiative business-value tracker Marek maintains, merging Jindřich's separate "Ideas" and "Active" roadmap sheets into one expanded sheet. Columns include state (Deployed → In Phase → Idea/Prioritized/Development, per Jan Žižka's requested phase split), JTBD-style goals, a primary and optional secondary business-value metric with a documented calculation trail (costs given per-mandate/hour/month, normalized to an annual Kč figure on a 250-working-day/year basis for CZ), and separate columns for annual savings/revenue with a detailed rationale. A quick priority lens applied on top: filter to initiatives above 1M Kč/year modeled annual value. |
+| Source | 2026-09-22-ai-portfolio-business-value-review-reklamace-reframe |
+| Added | 2026-09-22 |
+| Status | Active |
+
+Reviewed live on 2026-09-22: Reklamace ~400-700k, Fakturace doprava ~780k, TEO/OCR ~273k, Lexie ~1.2M, Max chatbot+Maxie ~13-14M, Listing ~34M, MaxBuddy ~81M (all Kč/year). The >1M filter surfaced a portfolio priority-ranking tension between a pure dollar-value read and stakeholder-side priority — see [[ASM-125]].
 
 ### "Old wise man" discovery approach
 

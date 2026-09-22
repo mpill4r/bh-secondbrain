@@ -1,10 +1,50 @@
 ---
-last_updated: 2026-09-21
-last_updated_by: auto — project-meeting routing (2026-09-21-ocr-progress-ai-platform-prototype-sync)
+last_updated: 2026-09-22
+last_updated_by: auto — project-meeting routing (2026-09-22-ai-portfolio-business-value-review-reklamace-reframe)
 owner: Marek Pillár
 ---
 
 # Lessons Learned
+
+---
+
+### LL-052
+
+| Field | Value |
+|-------|-------|
+| ID | LL-052 |
+| Created | 2026-09-22 |
+| Category | discovery-methodology |
+| Source | 2026-09-22-ai-portfolio-business-value-review-reklamace-reframe |
+
+**Lesson**
+When a stakeholder gives an illustrative business-value estimate but explicitly refuses to have it treated as a formal, accepted business case (often to protect their own team's headcount or interests), don't push them to accept the number as official — instead add a separate, harder KPI that doesn't depend on their cooperation with the original framing.
+
+**Context**
+Simona Mertová (Dr. Max CC) gave FTE-avoidance figures for Max chatbot/Maxie/Lexie but explicitly refused to let them be used as an accepted business case, worried it could justify cutting her operators' headcount. Rather than negotiate her past that objection, Jindřich added a second, measured KPI (actual request-handling volume × a reduction target) that stands independently of her FTE framing.
+
+**Cross-reference**
+[[ASM-124]]
+
+---
+
+### LL-051
+
+| Field | Value |
+|-------|-------|
+| ID | LL-051 |
+| Created | 2026-09-22 |
+| Category | project-management |
+| Source | 2026-09-22-ai-portfolio-business-value-review-reklamace-reframe |
+
+**Lesson**
+A bottom-up dollar-value model can understate the priority of an initiative whose real leverage comes from scale/compounding effects (e.g. a small per-unit gain applied across a very large item count) — cross-check any dollar-ranked priority order against direct stakeholder consensus before treating the model's ranking as final.
+
+**Context**
+A quarter's modeled dollar figure ranked Listing (~34M Kč/year) below MaxBuddy and Max/Maxie in this session's portfolio priority review, but the PM and multiple client-side stakeholders (Honza Sovka, Alana Sihelská, Petr Neuman) consistently maintain Listing should be the top priority, arguing the model doesn't capture the compounding value of even small per-item gains at Dr. Max's ~10,000-SKU scale.
+
+**Cross-reference**
+[[ASM-125]]
 
 ---
 

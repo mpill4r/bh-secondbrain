@@ -1,6 +1,6 @@
 ---
-last_updated: 2026-09-21
-last_updated_by: auto — project-meeting routing (2026-09-21-ocr-progress-ai-platform-prototype-sync)
+last_updated: 2026-09-22
+last_updated_by: auto — project-meeting routing (2026-09-22-ai-portfolio-business-value-review-reklamace-reframe)
 owner: Marek Pillár
 ---
 
@@ -10,6 +10,11 @@ owner: Marek Pillár
 
 | ID | Status | Created | Description (short) |
 |----|--------|---------|---------------------|
+| ASM-126 | Open (2026-09-22) | 2026-09-22 | Honza Kabát's Microsoft/Azure backlog-costing request deprioritized until Dudaško's Friday priority sign-off |
+| ASM-125 | Open (2026-09-22) | 2026-09-22 | Portfolio priority-ranking tension: dollar-value ranking (MaxBuddy>Listing>Max/Maxie) vs. PM/stakeholder view that Listing should be top priority |
+| ASM-124 | Decided (2026-09-22) | 2026-09-22 | Max chatbot/Maxie/Lexie business value: Mertová's FTE-avoidance figures stay illustrative-only; measured request-volume KPI added |
+| ASM-123 | Decided (2026-09-22) | 2026-09-22 | Petr Neuman's Listing KPI figures now committed and concrete (~34M Kč/year) — supersedes ASM-075 placeholder |
+| ASM-122 | Open (2026-09-22) | 2026-09-22 | Reklamace reframed as digitization/data-consolidation, not AI — continue-or-close decision pending Dudaško + logistics-head alignment |
 | ASM-118 | Open (2026-09-21) | 2026-09-21 | No regular, reliable MaxBuddy reporting exists despite months of Dudaško raising it |
 | ASM-117 | Decided (2026-09-21) | 2026-09-21 | AI adoption campaign scope split: BigHub owns awareness/comms, Dr. Max's training center + expert groups own rollout/training |
 | ASM-116 | Open (2026-09-21) | 2026-09-21 | Agentic workflow/orchestrator builder — deferred to a future (~November) conversation |
@@ -56,7 +61,7 @@ owner: Marek Pillár
 | ASM-078 | Open (2026-09-16) | 2026-09-16 | BigHub-internal recommendation: roll out TEO/OCR starting with the 3-4 highest-volume document categories |
 | ASM-077 | Open (2026-09-16) | 2026-09-16 | Which of 4 proposed TEO/OCR solution variants (API/Hybrid/Aplikace + add-ons) to formally pursue with Dr. Max not yet decided |
 | ASM-076 | Decided (2026-09-16) | 2026-09-16 | TEO/OCR internal architecture agreed: blob storage → batch AI processing (dual GPT-5/GPT-5-mini) → API |
-| ASM-075 | Open (2026-09-16) | 2026-09-16 | Listing KPI target not yet committed — only a directional "~20% faster, compounding quarter over quarter" placeholder floated by Petr Neuman |
+| ASM-075 | Superseded by ASM-123 (2026-09-22) | 2026-09-16 | Listing KPI target not yet committed — only a directional "~20% faster, compounding quarter over quarter" placeholder floated by Petr Neuman |
 | ASM-074 | Decided (2026-09-16) | 2026-09-16 | Michaela Vdovicynová confirmed as Listing's practical domain-expert/testing contact, distinct from Petr Neuman's business-owner role |
 | ASM-073 | Decided (2026-09-16) | 2026-09-16 | Listing's primary near-term driver reframed: eliminating day-to-day Magento use for the listing team (batch import ~biweekly) now outranks the original supplier-data-quality problem |
 | ASM-072 | Decided (2026-09-15) | 2026-09-15 | Business-quantification KPI decisions for Reklamace/Fakturace doprav: error rate excluded as a KPI for both, driver time/cost excluded from Fakturace doprav's FTE calc, Reklamace's ~1 FTE saving contingent on all 5 phases shipping |
@@ -133,6 +138,116 @@ owner: Marek Pillár
 | ASM-001 | Decided (2026-08-25) | 2026-09-01 | Dr. Max client-side coordination unified into one role (Jindřich Tůma) |
 
 ## Entries
+
+---
+
+### ASM-126
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-126 |
+| Created | 2026-09-22 |
+| Source | 2026-09-22-ai-portfolio-business-value-review-reklamace-reframe |
+| By | Jindřich Tůma (STK-003) |
+| Status | Open (2026-09-22) |
+
+**Description**
+Ján "Honza" Kabát (STK-005) asked Marek directly for a full list of everything in the backlog/pipeline — including effort and expected Azure spend — for Microsoft partnership costing purposes. Jindřich considers this premature and is deprioritizing it until the current confirmed initiatives are locked in with Dudaško's priority sign-off (targeted for this Friday).
+
+**Rationale**
+Jindřich's read: BigHub isn't pushing the wider backlog to Dr. Max yet, so costing it out for Microsoft now is "trošku overkill" — that work is "part B," to happen once the confirmed initiatives (and their priority order) are settled with Dudaško. Marek had already shown Kabát the rough backlog but flagged it isn't cost-planned.
+
+**Impact**
+- **Sequencing**: No backlog-costing work happens before Friday's Dudaško priority alignment. Jindřich will coordinate directly with Kabát on next steps afterward.
+- **Stakeholder management**: STK-005 (Kabát) updated with this ask; STK-003 (Jindřich) updated with the coordination commitment.
+
+---
+
+### ASM-125
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-125 |
+| Created | 2026-09-22 |
+| Source | 2026-09-22-ai-portfolio-business-value-review-reklamace-reframe |
+| By | Jindřich Tůma (STK-003), Marek Pillár (STK-001) |
+| Status | Open (2026-09-22) |
+
+**Description**
+A portfolio-wide priority-ranking tension surfaced while reviewing the consolidated Business Quantification tracker. Filtering to initiatives above 1M Kč/year in modeled annual value, Jindřich ranked MaxBuddy's full 600-pharmacy rollout as the clear must-have top priority (~81M Kč/year, by far the largest figure), followed by Max chatbot/Maxie (~13-14M), then Listing (~34M) third. Marek pushed back that Listing should stay top priority regardless, consistent with the repeated view from Honza (Sovka), Alana (Sihelská), and Petr Neuman himself.
+
+**Rationale**
+Marek's argument: at Dr. Max's ~10,000-SKU, multi-billion-Kč revenue scale, even a 1% optimization on any single item compounds into very large money that this quarter's modeled dollar figure doesn't fully capture — the ranking-by-modeled-value approach may understate Listing's real strategic weight. The disagreement was raised but explicitly not argued out in this meeting.
+
+**Impact**
+- **Prioritization**: This tension is likely to resurface at Friday's combined Dudaško session, where the full priority ranking will be presented. Whoever's read wins shapes near-term resourcing across MaxBuddy, Max/Maxie, and Listing.
+- **Stakeholder alignment**: Worth explicitly surfacing to Dudaško rather than presenting one ranking as settled fact, given the live internal disagreement.
+
+---
+
+### ASM-124
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-124 |
+| Created | 2026-09-22 |
+| Source | 2026-09-22-ai-portfolio-business-value-review-reklamace-reframe |
+| By | Jindřich Tůma (STK-003) |
+| Status | Decided (2026-09-22) |
+
+**Description**
+For Max chatbot, Maxie (voicebot), and Lexie, the business-value methodology now has two distinct parts: (1) Simona Mertová's (STK-017) illustrative FTE-avoidance figures (~13-14M Kč/year for Max/Maxie combined from 20 avoided 24/7 agents; ~1.2M for Lexie from 30 min/day saved) stay explicitly illustrative-only, never to be presented as an accepted business case; (2) a second, harder KPI is added — actual measured request-handling volume per month × 12, targeting a 50% reduction/offload figure.
+
+**Rationale**
+Mertová has repeatedly and explicitly refused to let her FTE-avoidance numbers be treated as a real business case, worried it could be used to justify cutting her operator headcount — Jindřich accepts that constraint rather than pushing past it. But he wants a second, measurable KPI that doesn't depend on her cooperation with the FTE framing: how many requests the chatbot/voicebot/Lexie actually handle, with a concrete -50% reduction target against that measured baseline.
+
+**Impact**
+- **KPI design**: The Max/Maxie/Lexie OKR cards in the Business Quantification tracker should carry both figures side by side, clearly labeled — Mertová's illustrative estimate, and the new measured-volume target.
+- **Data dependency**: The measured-volume KPI depends on Mertová supplying the average monthly request-volume figure she has so far declined to give beyond the "more than half an hour a day" framing — see the open action item and [[ASM-096]].
+
+---
+
+### ASM-123
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-123 |
+| Created | 2026-09-22 |
+| Source | 2026-09-22-ai-portfolio-business-value-review-reklamace-reframe |
+| By | Petr Neuman (STK-023) |
+| Status | Decided (2026-09-22) |
+
+**Description**
+Petr Neuman has now committed to concrete Listing KPI figures, superseding [[ASM-075]] (where he explicitly declined to commit to a number): +1 percentage point conversion per optimized listing (better SEO/discoverability/filtering), quarterly throughput rising from 6,000 to 8,000–10,000 processed items, and cost-per-item dropping from 200 Kč to 100 Kč as automation lets one worker process roughly 2 items/hour instead of ~1.3. Combined, these total approximately 34M Kč/year in modeled business value.
+
+**Rationale**
+ASM-075 recorded Neuman's earlier reluctance to fix a number before seeing the tool's real performance. This session shows he now has a live report backing these figures directly, rather than a directional placeholder — a meaningful upgrade in data quality for the Listing business case.
+
+**Impact**
+- **Reporting**: The corporate KPI Excel (`businessQuantificationWorskop.xlsx`, E-commerce BQ sheet) should be updated to replace ASM-075's placeholder with these committed figures.
+- **Prioritization**: This ~34M Kč/year figure directly feeds the portfolio priority-ranking discussion — see [[ASM-125]].
+
+---
+
+### ASM-122
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-122 |
+| Created | 2026-09-22 |
+| Source | 2026-09-22-ai-portfolio-business-value-review-reklamace-reframe |
+| By | Jindřich Tůma (STK-003), Tomáš Dudaško (STK-010) |
+| Status | Open (2026-09-22) |
+
+**Description**
+Reklamace's real efficiency driver has been reframed — internally and directly to Dudaško — as digitization and data consolidation rather than AI. The underlying knowledge base isn't robust enough to support meaningful AI features beyond minor add-ons (e.g. historical email-status summarization); this holds for the current phase and all four planned future phases, since they'd reuse the same digitization flow across different complaint types. Whether the project continues as digitization-only or is closed outright is not yet decided — pending a Dudaško + head-of-logistics alignment meeting (with Jan Sovka brought in for historical context).
+
+**Rationale**
+This surfaced last Thursday's status call and was reinforced when Jindřich told Dudaško directly. Dudaško is pushing back somewhat on the framing and wants to align with the head of logistics before deciding next steps, since the future AI-labeled phases don't actually contain much AI either.
+
+**Impact**
+- **Scope**: Phase 1.1 is the only Reklamace phase currently confirmed in motion; the 4 further phases behind it now have an uncertain future pending this alignment meeting.
+- **Stakeholder management**: STK-010 (Dudaško) updated with this sentiment; Marek to be looped into all future reklamace-thread meetings as a fresh context-builder.
 
 ---
 
@@ -1145,9 +1260,9 @@ Validated against 292-370 real pages / 281 protocols across all 7 tuned document
 |-------|-------|
 | ID | ASM-075 |
 | Created | 2026-09-16 |
-| Source | 2026-09-16-business-quantification-listing-petr-neuman |
+| Source | 2026-09-16-business-quantification-listing-petr-neuman; superseded by 2026-09-22-ai-portfolio-business-value-review-reklamace-reframe |
 | By | Petr Neuman (STK-023) |
-| Status | Open (2026-09-16) |
+| Status | Superseded by [[ASM-123]] (2026-09-22) |
 
 **Description**
 Listing's KPI has no committed target. Petr Neuman explicitly declined to state a precise figure, floating only a directional placeholder: roughly "~20% faster / ~20% more throughput" in the tool's first live quarter, expected to compound quarter over quarter as the process matures.
@@ -1155,8 +1270,10 @@ Listing's KPI has no committed target. Petr Neuman explicitly declined to state 
 **Rationale**
 Neuman said fixing a number this early "feels like making it up" — he wants to see the tool's real performance before committing to a benchmark. Today's per-item time varies enormously by task (a full new listing ~30 min vs. a small compliance text fix ~2 min), which makes a single baseline number unreliable without live data.
 
+**Superseded (2026-09-22)**: Neuman now has a live report backing concrete figures — see [[ASM-123]] for the committed ~34M Kč/year value. This entry is kept for the historical record of his initial reluctance.
+
 **Impact**
-- **Reporting**: The corporate KPI Excel (`businessQuantificationWorskop.xlsx`, E-commerce BQ sheet) currently carries this placeholder — flagged in its Notes field as orientational, not committed.
+- **Reporting**: The corporate KPI Excel (`businessQuantificationWorskop.xlsx`, E-commerce BQ sheet) currently carries this placeholder — flagged in its Notes field as orientational, not committed. Replace with ASM-123's figures.
 - **Delivery**: A real benchmark should be captured as soon as the tool is live and processing real listing volume, then used to replace this placeholder.
 - **Relationship**: Resisting an invented number is consistent with the pattern seen across this week's other Business Quantification interviews (Tereza Foltýnová, Radim Švarc) — treated as a positive trust signal, not stalling.
 
@@ -2637,7 +2754,7 @@ Resolved by Marek (2026-09-02): **Turner works on MaxBuddy**, not reklamace — 
 
 **Description**
 A BigHub "Initiative → Owner/Customer" roadmap sheet was cross-checked against existing meeting-derived stakeholder records. Two entries matched cleanly (MaxBuddy → Tomáš Dudaško; E-Shop order forecast → Marek Šimoník). Two entries were net-new (Product listing → Petr Neuman; TD revisions → Tomáš Burda). Four points conflicted with existing records and were recorded on both sides rather than resolved:
-1. **Invoicing solution / "fakturace od dodavatelů" → Rudolf Zurek** (STK-024) vs. Fakturace doprav → Jan Žižka (STK-015) / Petr Spilka (STK-014) reviewing — possibly the same initiative under different names, possibly distinct. **Leaning resolved (2026-09-15)**: in the Business Quantification call, Tereza Foltýnová (ViaPharma) discussed the roadmap's "fakturace od dodavatelů" line as the freight/transport initiative ("je to ta doprava"), with Jan Žižka named as its owner — matching Fakturace doprav, not a separate supplier-invoicing stream. Not yet a formal, explicit confirmation (Rudolf Žůrek's own framing wasn't directly addressed), so kept as "leaning resolved" rather than closed.
+1. **Invoicing solution / "fakturace od dodavatelů" → Rudolf Zurek** (STK-024) vs. Fakturace doprav → Jan Žižka (STK-015) / Petr Spilka (STK-014) reviewing — possibly the same initiative under different names, possibly distinct. **Leaning resolved (2026-09-15)**: in the Business Quantification call, Tereza Foltýnová (ViaPharma) discussed the roadmap's "fakturace od dodavatelů" line as the freight/transport initiative ("je to ta doprava"), with Jan Žižka named as its owner — matching Fakturace doprav, not a separate supplier-invoicing stream. Not yet a formal, explicit confirmation (Rudolf Žůrek's own framing wasn't directly addressed), so kept as "leaning resolved" rather than closed. **Further corroboration (2026-09-22)**: Marek reiterated to Jindřich that this is the same initiative Tereza Foltýnová had insisted on unifying under one name ("fakturace doprava"), owned by Jan Žižka — consistent with the 2026-09-15 read, but still Marek's own restatement rather than a fresh independent client confirmation, so kept "leaning resolved" rather than closed.
 2. **Receiving compliants in stock → Rudolf Zurek** (STK-024) vs. Reklamace → Marie Hulešová (STK-020) — possibly the same initiative, possibly distinct. **Still open** — the 2026-09-15 call reinforced Petr Spilka (not Hulešová) as Reklamace's owner from the ViaPharma side, but didn't address Žůrek's framing directly — needs its own follow-up.
 3. ~~Maxie/Max → Simona Mertova (STK-017) — surname spelling conflict.~~ **Resolved 2026-09-02**: "Mertová" confirmed correct; "Martová" was a transcription error.
 4. ~~Lexie → Tomáš Dudaško (STK-010) vs. Martová/Mertová owning Max/Maxie/Lexie together.~~ **Resolved 2026-09-02**: not a real conflict — Dudaško holds IT/budget-side ownership, Mertová holds operational/product ownership; both own it.

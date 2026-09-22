@@ -95,12 +95,12 @@ Marek's stated plan for the rest of the week: draft the platform brief today, ge
 - [ ] **Marek Pillár / Jindřich Tůma**: By end of this week, prepare a work-in-progress AI Platform spec/roadmap with open questions to show Dudaško — sequencing: design phase (~1 week), admin/role-views phase (~2-3 weeks), agentic-workflow follow-up conversation tentatively November — from 2026-09-21-ai-platform-vision-discovery-dudasko
 - [ ] **Jindřich Tůma**: Send Tomáš Dudaško the current MaxBuddy reporting Jindřich saw last week — from 2026-09-21-ai-platform-vision-discovery-dudasko
 - [ ] **Jindřich Tůma**: Schedule a follow-up session to properly work through the AI adoption campaign draft/strategy — from 2026-09-21-ai-platform-vision-discovery-dudasko
-- [ ] **Jindřich Tůma**: Align with the relevant expert-group lead ("osmec," per Dudaško possibly "Luca" for MaxBuddy) as BigHub's actual contact point for post-rollout adoption feedback, rather than the training center — from 2026-09-21-ai-platform-vision-discovery-dudasko
+- [ ] **Jindřich Tůma**: Align with the relevant expert-group lead ("osmec") as BigHub's actual contact point for post-rollout adoption feedback, rather than the training center — for MaxBuddy this is confirmed as Luboš Vosmek (STK-011), resolved 2026-09-22 — from 2026-09-21-ai-platform-vision-discovery-dudasko
 
 ## Open Questions
 
 - ~~Is "Lukáš Syček" (this call), "Lukáš Sýč" (Vosmek's MaxBuddy IT liaison, STK-031), and "Lukáš Síč" (Jindřich's order-prediction BigHub-side contact) one person or several~~ — **resolved 2026-09-21**: PM confirms correct spelling is "Lukáš Szücs" (see STK-031).
-- Who exactly is "Luca," the MaxBuddy "osmec" (expert-group lead) Dudaško named — not yet a tracked stakeholder; unclear if this is the same person as Lukáš Szücs/STK-031 or a distinct role-holder.
+- ~~Who exactly is "Luca," the MaxBuddy "osmec" (expert-group lead) Dudaško named — not yet a tracked stakeholder; unclear if this is the same person as Lukáš Szücs/STK-031 or a distinct role-holder.~~ — **resolved 2026-09-22**: PM confirms "Luca" is Luboš Vosmek (STK-011), MaxBuddy's business owner — not related to the Lukáš Szücs identity question.
 - Whether Dudaško's "agentic workflow builder" want should ever be formally scoped as a custom build, or steered toward an existing commercial tool (Marek's untested personal view) — deferred to a future (~November) conversation.
 - Exact ETA for the first UX mockup variants — contingent on Jura Brázdil's capacity, not yet confirmed by him directly.
 
@@ -119,3 +119,9 @@ Routed on PM confirmation ("route everything"), 2026-09-21:
 - **project-knowledge**: new entries "Expertní skupiny," "Osmec," "Tréninkové centrum"; updated "AI platforma (new initiative)" entry
 - **project-daily (2026-09-21)**: created (did not yet exist); 6 new action items added, carried forward from 2026-09-19's close
 - **meetings/index.md**: entry added
+
+Routed on PM confirmation, 2026-09-22 (identity resolution follow-up):
+
+- **project-stakeholders**: STK-011 (Luboš Vosmek) — added "Luca" alias + confirmed as the MaxBuddy "osmec"; STK-031 (Lukáš Szücs) — removed now-resolved "Luca" ambiguity, confirmed unrelated
+- **project-knowledge**: "Osmec" entry — status Needs confirmation → Active, identity resolved
+- This file — Open Questions entry resolved
