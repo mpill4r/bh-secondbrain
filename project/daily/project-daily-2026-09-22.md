@@ -1,7 +1,7 @@
 ---
-status: open
-last_updated: 2026-09-22
-last_updated_by: auto — project-meeting routing (2026-09-22-ai-portfolio-business-value-review-reklamace-reframe)
+status: closed
+last_updated: 2026-09-23
+last_updated_by: auto — project-daily close (next session start)
 project_status: Amber
 ---
 
@@ -67,3 +67,4 @@ Processed a Marek/Jindřich internal working session covering two major threads.
 [AUTO] project-knowledge — added "Business Quantification tracker" entry (Project Conventions) from 2026-09-22-ai-portfolio-business-value-review-reklamace-reframe (2026-09-22)
 [AUTO] meeting-index — added 2026-09-22-ai-portfolio-business-value-review-reklamace-reframe (2026-09-22)
 [AUTO] project-lessons — LL-051, LL-052 captured from 2026-09-22-ai-portfolio-business-value-review-reklamace-reframe (2026-09-22)
+[AUTO] project-daily — closed at next session start (2026-09-23); no further action-item resolutions or status/priority shifts detected since the last entry above; today's daily (2026-09-23) created next (2026-09-23)

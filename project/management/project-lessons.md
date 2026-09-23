@@ -1,10 +1,90 @@
 ---
-last_updated: 2026-09-22
-last_updated_by: auto — project-meeting routing (2026-09-22-ai-portfolio-business-value-review-reklamace-reframe)
+last_updated: 2026-09-24
+last_updated_by: auto — project-meeting routing (2026-09-23-cross-project-status-sync-reklamace-fallout-listing-blockers, 2026-09-23-ai-platform-prototype-walkthrough-navigation-modular-reporting)
 owner: Marek Pillár
 ---
 
 # Lessons Learned
+
+---
+
+### LL-056
+
+| Field | Value |
+|-------|-------|
+| ID | LL-056 |
+| Created | 2026-09-24 |
+| Category | relationship-management |
+| Source | 2026-09-23-cross-project-status-sync-reklamace-fallout-listing-blockers |
+
+**Lesson**
+When a client-side contact starts attributing a scope or delivery change to "the vendor doesn't want to do X," calibrate the narrative directly and explicitly with them as soon as it's noticed, rather than letting it propagate informally through the team's various contacts — and ask the team to flag it centrally rather than each person quietly correcting it their own way.
+
+**Context**
+Tereza Foltýnová had been telling multiple Reklamace stakeholders that BigHub didn't want to deliver certain functionality, when the real cause was a scope reframe (AI to digitization). Jindřich ran a direct calibration meeting with her and Petr Spilka to correct it, and asked the whole team to route any future instances through him rather than resolve them individually.
+
+**Cross-reference**
+[[ASM-122]], STK-013 (Tereza Foltýnová)
+
+---
+
+### LL-055
+
+| Field | Value |
+|-------|-------|
+| ID | LL-055 |
+| Created | 2026-09-24 |
+| Category | client-management |
+| Source | 2026-09-23-ai-platform-prototype-walkthrough-navigation-modular-reporting |
+
+**Lesson**
+When demoing a system with more capability than what's being shown, show less now and let more come later rather than surfacing everything up front — revealing too much too early (e.g. a fully autonomous agent) can invite the client to demand it immediately, derailing a deliberately staged rollout.
+
+**Context**
+Jura independently proposed building a cross-platform RAG "ask anything" agent into the AI Platform prototype. Both he and Marek agreed to keep it in reserve rather than demo it to Dudaško now, given only ~3 projects are currently active — offering it only if Dudaško asks for more than the navigation-based approach already shown.
+
+**Cross-reference**
+[[ASM-146]]
+
+---
+
+### LL-054
+
+| Field | Value |
+|-------|-------|
+| ID | LL-054 |
+| Created | 2026-09-23 |
+| Category | delivery-process |
+| Source | Fakturace doprav redline review, this session |
+
+**Lesson**
+Before finalizing or presenting a client-facing spec for an initiative with an existing codebase, run a direct code audit against every "promised," "planned," or "confirmed decision" claim in the spec — not just against the roadmap tracker. Stakeholder-reported status (even from the developer) can lag or contradict what's actually deployed in both directions: things marked "still missing" can already be built, and things marked "decided" (like an architectural ownership split) can be quietly not what the code does. The gap is invisible from meeting notes and the spec text alone.
+
+**Context**
+A single code audit on Fakturace doprav's `transport_invoicing_api`/`_web` found 5 real contradictions: the kiosk requires login despite being told to the client as open-access; document versioning is fully local despite a recent "Axapta owns it" conclusion; the AR pairing key already works for document types marked as still missing it; a document type marked "confirmed in code" is actually unreachable from OCR; and multi-vehicle routes silently overwrite data instead of being rejected or flagged. Several of these directly affect what's already been communicated to the client.
+
+**Cross-reference**
+[[ASM-131]], [[ASM-132]], [[ASM-133]], [[ASM-134]], [[ASM-135]]
+
+---
+
+### LL-053
+
+| Field | Value |
+|-------|-------|
+| ID | LL-053 |
+| Created | 2026-09-23 |
+| Category | harness |
+| Source | 2026-09-22-teo-ocr-technical-sync-spedos-disambiguation-reversal |
+
+**Lesson**
+When new meeting notes appear to contradict a very recent, well-documented decision, record the contradiction as an open item needing direct reconciliation with the original decision-maker — don't silently overwrite the old decision, and don't ignore the new note either. A single secondhand data point (especially from condensed notes rather than a full transcript) isn't strong enough evidence to flip a decision on its own.
+
+**Context**
+Two apparent reversals surfaced in the same TEO/OCR sync: a rejection of multi-candidate disambiguation output seemed to contradict ASM-119 (decided one day earlier), and a Blob storage/BDC dependency note seemed to contradict ASM-088 (decided a week earlier). Both were logged as new, open assumptions flagging the conflict rather than treated as automatic supersessions.
+
+**Cross-reference**
+[[ASM-128]], [[ASM-129]]
 
 ---
 

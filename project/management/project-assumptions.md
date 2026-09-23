@@ -1,6 +1,6 @@
 ---
-last_updated: 2026-09-22
-last_updated_by: auto — project-meeting routing (2026-09-22-ai-portfolio-business-value-review-reklamace-reframe)
+last_updated: 2026-09-23
+last_updated_by: auto — project-meeting routing (2026-09-23-cross-project-status-sync-reklamace-fallout-listing-blockers, 2026-09-23-ai-platform-prototype-walkthrough-navigation-modular-reporting)
 owner: Marek Pillár
 ---
 
@@ -10,6 +10,28 @@ owner: Marek Pillár
 
 | ID | Status | Created | Description (short) |
 |----|--------|---------|---------------------|
+| ASM-148 | Open (2026-09-23) | 2026-09-23 | AI Platform test/prod cost-reporting mechanism undecided (endpoint-pull vs. periodic dump vs. global env switcher) |
+| ASM-147 | Decided (2026-09-23) | 2026-09-23 | AI Platform prototype design work deliberately deferred until navigation/interaction validated with Dudaško |
+| ASM-146 | Open (2026-09-23) | 2026-09-23 | Cross-platform RAG "ask anything" agent concept kept in reserve, not built — offer only if Dudaško asks for more |
+| ASM-145 | Open (2026-09-23) | 2026-09-23 | Security gap: MCP server registration leaks secret/header values to any agent reading server descriptions |
+| ASM-144 | Decided (2026-09-23) | 2026-09-23 | "Platform" and "Lexie" now treated as explicitly separate concepts — conflation was a source of Dudaško's frustration |
+| ASM-143 | Open (2026-09-23) | 2026-09-23 | Fakturace doprav: rozvozový list needs warehouse-worker free-text input with no defined data source |
+| ASM-142 | Open (2026-09-23) | 2026-09-23 | Fakturace doprav API-contract renegotiation with Petr Sláma stuck — no counter-proposal, slow replies |
+| ASM-141 | Decided (2026-09-23) | 2026-09-23 | Logistics delivery timelines now explicitly factor in client-side response delays, not just BigHub-side ones |
+| ASM-140 | Open (2026-09-23) | 2026-09-23 | MaxBuddy annual value discrepancy: ~130M Kč (09-23) vs. ~81M Kč (09-22) — needs reconciliation before BQ tracker finalized |
+| ASM-139 | Open (2026-09-23) | 2026-09-23 | Dudaško plans to retire Axapta within ~6 months; willing to pay more now for a Reklamace solution portable to its replacement |
+| ASM-138 | Open (2026-09-23) | 2026-09-23 | Second post-closing carrier confirmation from June 2026 Fakturace doprav draft not carried into current scope — status unclear |
+| ASM-137 | Decided (2026-09-23) | 2026-09-23 | Fakturace doprav carrier confirmation: one consolidated email per scan session decided; sending code not yet built |
+| ASM-136 | Open (2026-09-23) | 2026-09-23 | Fakturace doprav business value re-quantified via Aug 2026 workshop — 787,500 Kč/yr + 4 KPI targets, supersedes 09-15 Fermi estimate |
+| ASM-135 | Open (2026-09-23) | 2026-09-23 | Fakturace doprav: multi-vehicle routes silently overwritten in code — second ZOPV treated as correction, not separate document |
+| ASM-134 | Open (2026-09-23) | 2026-09-23 | Fakturace doprav: temperature-log document type modeled downstream but not reachable via OCR classification — scans rejected |
+| ASM-133 | Open (2026-09-23) | 2026-09-23 | Fakturace doprav: AR pairing key for ZOPV/OPIATY already implemented in code, contradicting "still missing" claim from P. Sláma |
+| ASM-132 | Open (2026-09-23) | 2026-09-23 | Fakturace doprav: document versioning is local/full in code, contradicting 2026-09-16 "Axapta owns all versioning" understanding |
+| ASM-131 | Open (2026-09-23) | 2026-09-23 | Fakturace doprav: kiosk scan flow requires Entra ID auth in code, contradicting "open access" communicated to client |
+| ASM-130 | Open (2026-09-23) | 2026-09-23 | PM flags the fully-manual, Excel-based TEO/OCR review workflow (no AI assistance downstream of extraction) as worth revisiting |
+| ASM-129 | Open (2026-09-22) | 2026-09-22 | Conflict: Blob storage/deployment described as still depending on Dr. Max infra/BDC, contradicting ASM-088 |
+| ASM-128 | Open (2026-09-22) | 2026-09-22 | Conflict: TEO rejected sending multiple disambiguation candidates to reviewers, apparently reversing ASM-119 |
+| ASM-127 | Decided (2026-09-22) | 2026-09-22 | SPEDOS confirmed as a real vendor, actively onboarded as TEO/OCR's 3rd autumn-2026 pilot vendor — resolves ASM-089 |
 | ASM-126 | Open (2026-09-22) | 2026-09-22 | Honza Kabát's Microsoft/Azure backlog-costing request deprioritized until Dudaško's Friday priority sign-off |
 | ASM-125 | Open (2026-09-22) | 2026-09-22 | Portfolio priority-ranking tension: dollar-value ranking (MaxBuddy>Listing>Max/Maxie) vs. PM/stakeholder view that Listing should be top priority |
 | ASM-124 | Decided (2026-09-22) | 2026-09-22 | Max chatbot/Maxie/Lexie business value: Mertová's FTE-avoidance figures stay illustrative-only; measured request-volume KPI added |
@@ -47,7 +69,7 @@ owner: Marek Pillár
 | ASM-092 | Decided (2026-09-17) | 2026-09-17 | Max chatbot and Maxie business value framed as capacity/coverage increase and reduced agent cognitive load, not FTE savings |
 | ASM-091 | Open (2026-09-17) | 2026-09-17 | Kateřina Kadlecová's domain-expert role for Max chatbot/Maxie/Lexie vacant pending reassignment (maternity leave) |
 | ASM-090 | Open (2026-09-16) | 2026-09-16 | Whether to add the code-confirmed driver PDF confirmation feature to the Fakturace doprav roadmap Excel/Artifact (currently only in the rebuilt spec doc) |
-| ASM-089 | Open (2026-09-16) | 2026-09-16 | Whether to expand TEO/OCR's autumn 2026 pilot scope to a 3rd, larger vendor ("PEDOS," name uncertain) not yet decided |
+| ASM-089 | Resolved by ASM-127 (2026-09-22) | 2026-09-16 | Whether to expand TEO/OCR's autumn 2026 pilot scope to a 3rd, larger vendor ("PEDOS," name uncertain) not yet decided |
 | ASM-088 | Decided (2026-09-16) | 2026-09-16 | TEO/OCR TEST-environment Blob storage will be self-provisioned by BigHub on the existing platform — no BDC/infra-team dependency to create it |
 | ASM-087 | Open (2026-09-17) | 2026-09-14 | Fakturace doprav kiosk authentication — undecided, pending a debate on 2026-09-17; leaning "no authentication" for now |
 | ASM-086 | Decided (2026-09-14) | 2026-09-14 | Fakturace doprav "Kontrola údajů" (marked Done) actually only covers km — temperature-datalogger validation is not built, split into 3 Plná verze sub-parts |
@@ -138,6 +160,486 @@ owner: Marek Pillár
 | ASM-001 | Decided (2026-08-25) | 2026-09-01 | Dr. Max client-side coordination unified into one role (Jindřich Tůma) |
 
 ## Entries
+
+---
+
+### ASM-148
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-148 |
+| Created | 2026-09-23 |
+| Source | 2026-09-23-ai-platform-prototype-walkthrough-navigation-modular-reporting |
+| By | Jura Brázdil (STK-026), Marek Pillár (STK-001) |
+| Status | Open (2026-09-23) |
+
+**Description**
+How the AI Platform will report combined AOAI/token costs across test and prod environments is undecided. Options discussed: prod pulling directly from a narrow test-side reporting endpoint, test periodically pushing stats to an intermediary store prod reads, or a global test/prod environment switcher in the UI (Marek's suggestion, which Jura pushed back on).
+
+**Rationale**
+Dudaško has previously indicated he wants combined cost visibility across both environments, at one point suggesting test projects could appear grayed-out within the prod view. A full network bridge between test and prod clusters raises security concerns Jura wants to avoid; a global environment switcher risks implying "everything I see now is test-only," which conflicts with the combined-view want. Not blocking the Friday demo — flagged as a discrete follow-up.
+
+**Impact**
+- **Delivery**: Needs resolving before real cost-reporting is built, but doesn't block navigation/UX validation with Dudaško.
+- **Security**: Whatever mechanism is chosen must avoid a genuine network bridge between test and prod.
+
+---
+
+### ASM-147
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-147 |
+| Created | 2026-09-23 |
+| Source | 2026-09-23-ai-platform-prototype-walkthrough-navigation-modular-reporting |
+| By | Jura Brázdil (STK-026), Marek Pillár (STK-001) |
+| Status | Decided (2026-09-23) |
+
+**Description**
+The current AI Platform prototype deliberately excludes any visual/color/design-language work. The goal at this stage is only to validate with Dudaško whether the navigation and interaction structure feels right — design iteration comes after that's confirmed.
+
+**Rationale**
+Aligned between Jura and Marek the day before this session. Reinforces the existing lean-MVP framing (see [[ASM-045]]) — sequencing infrastructure fundamentals (cost/FinOps reporting, per-project status) ahead of visual polish avoids wasted design work if the navigation structure itself needs to change after Dudaško's feedback.
+
+**Impact**
+- **Delivery**: The Friday demo to Dudaško will present navigation/structure only; any design feedback gets deferred to a later pass.
+- **Relationship**: Jura has a prepared framing ("we hit 9/10 of your requirements fast, categorization/colors come next") if Dudaško raises design prematurely.
+
+---
+
+### ASM-146
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-146 |
+| Created | 2026-09-23 |
+| Source | 2026-09-23-ai-platform-prototype-walkthrough-navigation-modular-reporting |
+| By | Jura Brázdil (STK-026) |
+| Status | Open (2026-09-23) |
+
+**Description**
+A cross-platform RAG "ask anything" agent — with access to everything a given user can already click into (reporting, docs, roadmap) so they could just ask a question instead of navigating — is a concept both Jura and Marek see as valuable long-term, but deliberately not being built now given how few projects are currently active on the platform.
+
+**Rationale**
+Echoes an idea from Marek's earlier Databricks-styled benchmark artifact, independently proposed by Jura without having seen that artifact. Building it now would be premature relative to platform maturity (only ~3 active projects) — kept in reserve to offer only if Dudaško specifically asks for more than the navigation-based approach, consistent with a "show less now, layer on later" client-management principle.
+
+**Impact**
+- **Delivery**: No work planned on this now; revisit once project count grows or Dudaško asks for it directly.
+- **Relationship**: Held back deliberately rather than offered proactively, to avoid inviting premature scope demands.
+
+---
+
+### ASM-145
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-145 |
+| Created | 2026-09-23 |
+| Source | 2026-09-23-ai-platform-prototype-walkthrough-navigation-modular-reporting |
+| By | Jura Brázdil (STK-026) |
+| Status | Open (2026-09-23) |
+
+**Description**
+A real security gap was found during platform build-out: MCP server registration currently leaks secret/header values to any agent that reads MCP server descriptions.
+
+**Rationale**
+Discovered by Jura while working on the platform's internal architecture — flagged as something that needs sealing before further build-out, ahead of migrating MaxBuddy and Chatbot Max directly under the platform.
+
+**Impact**
+- **Security**: Real exposure risk if left unaddressed before more projects/agents are wired into the platform.
+- **Delivery**: Part of Jura's pre-database-access prep work, alongside other platform hardening.
+
+---
+
+### ASM-144
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-144 |
+| Created | 2026-09-23 |
+| Source | 2026-09-23-ai-platform-prototype-walkthrough-navigation-modular-reporting |
+| By | Jura Brázdil (STK-026) |
+| Status | Decided (2026-09-23) |
+
+**Description**
+"Platform" and "Lexie" will now be treated as explicitly separate concepts. The team had previously been calling Lexie itself "the platform" — Jura believes this conflation explains part of Dudaško's frustration, since he wants an actual platform and what existed under that name was really just Lexie wearing the label.
+
+**Rationale**
+Surfaced while discussing multi-department Lexie knowledge-base navigation — platform-level features (navigation, cross-project reporting, adoption metrics) are a different layer of concern than Lexie-level features (its own internal KB/UX behavior, e.g. a possible future single cross-department knowledge base).
+
+**Impact**
+- **Communication**: Going forward, conversations with Dudaško should distinguish platform asks from Lexie-specific asks explicitly, rather than let them blend together as they have been.
+- **Scope**: Lexie-level feature requests (like a unified cross-department KB) route as Lexie decisions, not platform decisions.
+
+---
+
+### ASM-143
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-143 |
+| Created | 2026-09-23 |
+| Source | 2026-09-23-cross-project-status-sync-reklamace-fallout-listing-blockers |
+| By | Filip Černý (STK-006) |
+| Status | Open (2026-09-23) |
+
+**Description**
+A previously-unaddressed gap in Reklamace: the "rozvozový list" (delivery/dispatch list) needs free-text input from warehouse workers themselves (e.g. a complaint/reklamace number), but now that BigHub generates this document, there's no defined source for that operator-entered text — in the old Excel-based process workers could type anything directly.
+
+**Rationale**
+Nobody had accounted for this gap before; it surfaced only once the address-field flow (via PUME) was already working and tested. To be raised at the next logistics status meeting.
+
+**Impact**
+- **Delivery**: Needs a defined data-source/input mechanism before the rozvozový list can be considered complete, even though the address portion already works.
+- **Scope**: A new, previously invisible requirement — worth tracking separately from the address-sourcing work already done.
+
+---
+
+### ASM-142
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-142 |
+| Created | 2026-09-23 |
+| Source | 2026-09-23-cross-project-status-sync-reklamace-fallout-listing-blockers |
+| By | Filip Černý (STK-006) |
+| Status | Open (2026-09-23) |
+
+**Description**
+Fakturace doprav's API-contract renegotiation with Petr Sláma (STK-034) is stuck. Filip's original proposal (backed by Jan Sovka) was rejected outright with no counter-proposal; a further simplified version sent the next day got only a "no time, will look next week" reply.
+
+**Rationale**
+The original API contract doesn't provide enough information to validate certain checks, making the current spec undeliverable as-is. Filip is frustrated by the lack of technical reasoning behind Sláma's refusals — without a counter-argument, there's nothing to iterate against. Jindřich plans to push directly with Sláma, with Filip briefing him on the technical specifics first.
+
+**Impact**
+- **Delivery**: Fakturace doprav's backlog is ~95% done but genuinely blocked on this contract approval — no further work possible until resolved.
+- **Timeline**: See [[ASM-141]] — this delay now explicitly counts against the schedule.
+
+---
+
+### ASM-141
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-141 |
+| Created | 2026-09-23 |
+| Source | 2026-09-23-cross-project-status-sync-reklamace-fallout-listing-blockers |
+| By | Jindřich Tůma (STK-003) |
+| Status | Decided (2026-09-23) |
+
+**Description**
+Logistics delivery timelines will now explicitly factor in client-side response delays (e.g. waiting a week-plus on a decision from Dr. Max's side), not just delays attributable to BigHub.
+
+**Rationale**
+Prompted directly by the stuck Fakturace doprav API-contract renegotiation ([[ASM-142]]) — Jindřich's reasoning: if Dr. Max's side can point to things they're waiting on from BigHub, BigHub should equally be able to point to things it's waiting on from them, and have that reflected in the schedule rather than absorbed silently.
+
+**Impact**
+- **Expectation management**: Timeline communications going forward should name specific client-side waits as schedule inputs, not just internal BigHub effort.
+- **Relationship**: To be communicated "elegantly," not as a confrontational stance.
+
+---
+
+### ASM-140
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-140 |
+| Created | 2026-09-23 |
+| Source | 2026-09-23-cross-project-status-sync-reklamace-fallout-listing-blockers |
+| By | Jindřich Tůma (STK-003) |
+| Status | Open (2026-09-23) |
+
+**Description**
+Jindřich cited MaxBuddy's annual business value as ~130M Kč in this session, previewing the near-final Business Quantification tracker. This differs from the ~81M Kč figure discussed directly with Marek on 2026-09-22 (see [[ASM-098]], [[ASM-099]]).
+
+**Rationale**
+Not assumed to be an update superseding the earlier figure — flagged as an open discrepancy needing reconciliation before the tracker is presented at a future status, since the tracker is meant to have each business owner's sign-off on validated numbers.
+
+**Impact**
+- **Data quality**: The Business Quantification tracker should not be treated as finalized until this is resolved.
+- **Prioritization**: Whichever figure is correct feeds directly into the portfolio priority-ranking discussion (see [[ASM-125]]).
+
+---
+
+### ASM-139
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-139 |
+| Created | 2026-09-23 |
+| Source | 2026-09-23-cross-project-status-sync-reklamace-fallout-listing-blockers |
+| By | Tomáš Dudaško (STK-010), relayed by Jindřich Tůma (STK-003) |
+| Status | Open (2026-09-23) |
+
+**Description**
+Dudaško plans to retire Axapta within roughly the next 6 months, calling it too expensive to keep developing against. He's willing to accept higher near-term development cost on Reklamace now for a solution that can be cleanly reapplied on whatever system replaces it.
+
+**Rationale**
+Directly shapes the pending Reklamace continue-or-close decision ([[ASM-122]]) — a decision meeting (Jindřich, Dudaško, Rudolf Žůrek, Petr Spilka, Jan Žižka) is needed to align on what "portable to the replacement system" actually requires from BigHub's side.
+
+**Impact**
+- **Scope**: Reklamace's technical design may need to prioritize system-agnostic patterns over Axapta-specific optimizations, even at higher near-term cost.
+- **Timeline**: The ~6-month Axapta retirement window is a soft constraint worth tracking, though Jindřich has no further detail on it yet.
+
+---
+
+### ASM-138
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-138 |
+| Created | 2026-09-23 |
+| Source | Redline review of Fakturace doprav spec (comparison against `Logistika - 2026-06 Fakturace_doprav_specifikace_3.docx`), this session |
+| By | Marek Pillár (STK-001), via Claude |
+| Status | Open (2026-09-23) |
+
+**Description**
+The May/June 2026 spec draft described two carrier confirmations: an immediate post-scan receipt confirmation, and a second, separate post-billing-period notice on whether documents/km were approved and payment would follow. The current (September) spec and every reviewed 2026-09 meeting note only describe the first (single post-scan) confirmation — the second never appears anywhere in the newer material.
+
+**Rationale**
+Found comparing the June 2026 draft line-by-line against the current spec and all available Fakturace doprav meeting notes. No meeting explicitly discusses removing the second notice — it's unclear whether this was a deliberate scope cut or simply dropped during the spec rebuild.
+
+**Impact**
+- **Delivery**: if ViaPharma actually expects a post-billing approval/payment notice, this is a silent scope gap, not a confirmed decision.
+- **Relationship**: needs a direct yes/no from Jan Žižka rather than being assumed dropped.
+
+---
+
+### ASM-137
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-137 |
+| Created | 2026-09-23 |
+| Source | 2026-09-10-viapharma-reklamace-uat-fakturace-doprav-demo + code audit (cz-ai-logistics), this session |
+| By | Jan Žižka, Jakub Turner |
+| Status | Decided (2026-09-23) |
+
+**Description**
+On the 2026-09-10 client demo, Jan Žižka raised mailbox-overload risk (20+ emails/day with attachments) if every scan session emails the carrier individually. Jakub Turner confirmed images are already compressed client-side (kilobyte-range) and proposed one consolidated email per scan session rather than a storage-link approach, which Žižka rejected outright (carriers shouldn't get storage access). This resolves the mechanism. A full code audit (2026-09-23) found no email-sending code anywhere in `transport_invoicing_api` or `transport_invoicing_web` — the feature is entirely unbuilt, not merely unlocated.
+
+**Rationale**
+Meeting note capture plus direct code search (smtp/sendgrid/mailgun/mail/notify/graph.microsoft) across both apps and Helm values, this session.
+
+**Impact**
+- **Delivery**: this decision isn't yet reflected against roadmap item #6 ("Potvrzení přepravci") — needs to be added, along with a note that the email-sending feature itself still needs to be built from scratch, not just triggered.
+
+---
+
+### ASM-136
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-136 |
+| Created | 2026-09-23 |
+| Source | Business Quantification workshop screenshots (owner Jan Žižka, record dated 2026-08-01), provided by PM this session |
+| By | Jan Žižka |
+| Status | Open (2026-09-23) |
+
+**Description**
+A more detailed Business Quantification workshop breakdown (status "K doplnění" — not yet formally approved) quantifies Fakturace doprav's saving as 10.5 h/day across 3 warehouses — Expedice Ostrava 1.5 h/den (1 pracovník), Xdock Brno 1 h/den (1 pracovník), Doprava Pavlov 4+2+2 h/den (3 pracovníci) — at a 50,000 Kč/month rate, ≈ 787,500 Kč/year, covering Fáze 1 and 2 combined (Fáze 2 doesn't add a separately-counted saving). Four concrete KPI targets were captured for the first time: Fáze 1 ≥40% of cases processed fully without manual intervention; Fáze 2 ≥40% of shipments with auto-verified km; overall administrative time-fund reduced ~40%; ≥60% of temperature records auto-checked without manual reading.
+
+**Rationale**
+Both this figure and the earlier ~16 h/day / ~1.5M Kč/year Fermi estimate (captured 2026-09-15 from Tereza Foltýnová, who herself flagged it as possibly too large and pending verification with Jan Žižka) trace back to the same underlying Ableneo ~90h/month source figure — but this workshop number is a direct per-warehouse breakdown from the initiative owner himself, and is likely the more reliable of the two.
+
+**Impact**
+- **Data**: recommend project-knowledge and any client-facing materials adopt 787,500 Kč/year, superseding the 2026-09-15 estimate — pending formal confirmation, since status is still "K doplnění."
+- **Delivery**: the four KPI targets should replace the generic candidate metrics currently in the spec's KPI section, once formally approved.
+
+---
+
+### ASM-135
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-135 |
+| Created | 2026-09-23 |
+| Source | Code audit (cz-ai-logistics, `scan_session_projection.py`), this session |
+| By | Marek Pillár (STK-001), via Claude |
+| Status | Open (2026-09-23) |
+
+**Description**
+ZOPV is modeled as single-instance per AR in code (`_SINGLE_INSTANCE_TYPES`, `_group_key`). A second vehicle's ZOPV scanned for the same route is treated as a new "generation" (correction) of the first document and supersedes it, rather than being filed as a separate document. This is undocumented, unintended behavior — not a deliberate design choice — for the "trasy rozdělené na více vozidel" case the spec currently treats as a pure open design question.
+
+**Rationale**
+Found during code audit; the spec text discusses this scenario as something still to be designed with J. Žižka, without knowing the code already has concrete (risky) behavior in this case today.
+
+**Impact**
+- **Delivery**: real risk of silent data loss if a multi-vehicle route is scanned before a deliberate solution is designed. Should be prioritized ahead of being treated as a purely future design conversation.
+
+---
+
+### ASM-134
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-134 |
+| Created | 2026-09-23 |
+| Source | Code audit (cz-ai-logistics, `page_prompt.py`, `page_extraction.py`), this session |
+| By | Marek Pillár (STK-001), via Claude |
+| Status | Open (2026-09-23) |
+
+**Description**
+TEMPERATURE_LOG exists as a document type in the Axapta data contract, the PDF confirmation renderer, and test fixtures — but the OCR classification prompt and extraction schema have no variant for it. A driver scanning a temperature log today gets classified UNRECOGNIZED and the document is rejected.
+
+**Rationale**
+Found during code audit; directly contradicts the current spec's claim "potvrzeno v kódu (6 typů, ne 5)" for document-type coverage.
+
+**Impact**
+- **Delivery**: MVP claims 6 recognized document types; only 5 are actually reachable from a scan today. Needs a decision — build classification now, or defer to Fáze 2 alongside the rest of temperature handling.
+
+---
+
+### ASM-133
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-133 |
+| Created | 2026-09-23 |
+| Source | Code audit (cz-ai-logistics, `page_extraction.py`), this session |
+| By | Marek Pillár (STK-001), via Claude |
+| Status | Open (2026-09-23) |
+
+**Description**
+Code shows the AR pairing field already exists and is functional on both the ZOPV and OPIATY (narcotics-confirmation) document types, with barcode-priority-over-printed-AR resolution logic already implemented. The current spec text (sourced from P. Sláma) says this pairing key is still missing on both types and "bude doplněno."
+
+**Rationale**
+Found during code audit — a direct contradiction between what's communicated as an outstanding dependency and what the deployed code actually does.
+
+**Impact**
+- **Delivery**: the corresponding open dependency ("rozšíření párovacího klíče AR na ZOPV a OPL") may already be resolved — needs verification with P. Sláma before continuing to track it as outstanding work.
+
+---
+
+### ASM-132
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-132 |
+| Created | 2026-09-23 |
+| Source | Code audit (cz-ai-logistics, `scan_session_projection.py`), this session |
+| By | Marek Pillár (STK-001), via Claude |
+| Status | Open (2026-09-23) |
+
+**Description**
+Code shows the app retains a full local version history per document — no row is ever deleted, each re-scan gets its own versioned blob path, and a version number is computed locally and also sent to Axapta. This contradicts the 2026-09-16 project-knowledge entry stating multi-scan/historical version storage is explicitly out of scope for BigHub and that Axapta owns all document versioning.
+
+**Rationale**
+Found during code audit. Notably, the May/June 2026 spec draft actually matches what the code does today (local versioning) — suggesting the "Axapta owns it" framing from 2026-09-16 may describe an intended future simplification rather than the current reality.
+
+**Impact**
+- **Data**: which version is the target architecture matters for the spec's accuracy and for any storage/retention conversation with the client.
+- **Delivery**: needs reconciling before the spec is finalized — currently the spec, the 09-16 project-knowledge note, and the code all disagree.
+
+---
+
+### ASM-131
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-131 |
+| Created | 2026-09-23 |
+| Source | Code audit (cz-ai-logistics, `main.py`, `test_scans.py`), this session |
+| By | Marek Pillár (STK-001), via Claude |
+| Status | Open (2026-09-23) |
+
+**Description**
+The entire `/scans` router (session creation, page upload/OCR, route submission to Axapta, confirmation) is gated behind `Depends(auth.require_user)` — Entra ID login is required for the whole scan flow. This directly contradicts the current spec's claim that the kiosk is "plně anonymní," the framing of [[ASM-087]] (kiosk authentication debate scheduled 2026-09-17, which assumes no authentication exists today), and what was communicated to Jan Žižka in the 2026-09-10 client demo (open access confirmed as acceptable to the client).
+
+**Rationale**
+Found during code audit — a genuine code-vs-communicated-state mismatch, not a PM interpretation. Test `test_requires_auth` directly proves a tokenless scan request returns 401.
+
+**Impact**
+- **Delivery**: the [[ASM-087]] debate should be reframed — the question isn't "add auth or not," it's "is the existing auth intentional, and does it match what's been told to the client?"
+- **Relationship**: Jan Žižka was told the kiosk is open-access; if auth is actually required, this needs correcting with the client before it causes confusion at rollout.
+
+---
+
+### ASM-130
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-130 |
+| Created | 2026-09-23 |
+| Source | 2026-09-22-teo-ocr-technical-sync-spedos-disambiguation-reversal |
+| By | Marek Pillár (STK-001) |
+| Status | Open (2026-09-23) |
+
+**Description**
+The TEO/OCR review/correction step is entirely manual, Excel-based work — Radim Švarc's own process design has Michaela Albrechtová manually checking and correcting rows in a spreadsheet, with no AI assistance in that part of the loop, even though BigHub's own extraction upstream is AI-driven. Marek flags this as a real gap worth revisiting, not just a format preference.
+
+**Rationale**
+BigHub's pipeline already does the hard extraction work with AI; letting the entire human-review layer downstream stay a raw, unassisted spreadsheet exercise leaves an obvious opportunity on the table (e.g. inline confidence flags, a lighter review UI, or AI-assisted correction suggestions) that the current Excel-centric design doesn't capture. Not yet raised with Jura Brázdil or Radim Švarc — Marek's own observation after reviewing Radim's process notes.
+
+**Impact**
+- **Delivery**: If pursued, this could mean augmenting or replacing the raw-Excel handoff step in Radim's process (see the TEO/OCR project-knowledge entry) with something more AI-assisted — scope and effort not yet assessed.
+- **Relationship**: Should be raised carefully, since Radim has already built real working automation around the current Excel-based design (mailbox, Power Automate flows, folder structure) — any change here has migration cost on his side too.
+
+---
+
+### ASM-129
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-129 |
+| Created | 2026-09-22 |
+| Source | 2026-09-22-teo-ocr-technical-sync-spedos-disambiguation-reversal |
+| By | Alana Sihelská (STK-004) |
+| Status | Open (2026-09-22) |
+
+**Description**
+Alana's notes from this session state Blob storage and deployment "still stand on Dr. Max infra, resp. BDC" — i.e. still blocked pending Dr. Max-side infrastructure/BDC action. This directly contradicts [[ASM-088]] (decided 2026-09-16: Blob storage for the TEST environment would be self-provisioned by BigHub, with no BDC/infra-team dependency to create it).
+
+**Rationale**
+Rather than silently overwrite ASM-088 on a single secondhand note, this is recorded as an open conflict pending direct confirmation with Jura Brázdil — the blocker may have genuinely shifted to a different piece of infrastructure than what ASM-088 covered, or this may be a note-taking imprecision from a condensed bullet-point summary rather than a full transcript.
+
+**Impact**
+- **Delivery**: If the blocker is real, the TEST-environment deployment timeline depends on Dr. Max infra/BDC action that isn't yet scheduled — worth surfacing to Jura immediately given the autumn service season is already underway.
+- **Data quality**: ASM-088 should not be marked resolved/closed until this is reconciled one way or the other.
+
+---
+
+### ASM-128
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-128 |
+| Created | 2026-09-22 |
+| Source | 2026-09-22-teo-ocr-technical-sync-spedos-disambiguation-reversal |
+| By | Alana Sihelská (STK-004) |
+| Status | Open (2026-09-22) |
+
+**Description**
+Alana's notes record that "sending multiple possible candidate variants (cities and dates) to reviewers" was rejected in this session — a simple flag for manual review in cases of uncertainty is considered sufficient instead. This appears to directly reverse [[ASM-119]] (decided just one day earlier, 2026-09-21: "TEO/OCR disambiguation shifts to classify-against-known-branch-list + ranked candidate alternatives, not forced verbatim transcription").
+
+**Rationale**
+It isn't clear from the condensed notes available whether this rejection covers the same mechanism ASM-119 describes, or a narrower point — e.g. how candidates are *presented* to reviewers (a UI/UX choice) vs. the underlying classify-and-rank *logic* itself (which could still run internally even if reviewers only ever see a flag, not the ranked list). Recorded as an open conflict rather than assumed to fully reverse ASM-119.
+
+**Impact**
+- **Delivery**: Jura needs to confirm which reading is correct before this changes any actual pipeline behavior — ASM-119 was decided and potentially already being implemented as of 2026-09-21.
+- **Data quality**: ASM-119 should not be marked reversed/closed until this is reconciled directly with Jura.
+
+---
+
+### ASM-127
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-127 |
+| Created | 2026-09-22 |
+| Source | 2026-09-22-teo-ocr-technical-sync-spedos-disambiguation-reversal |
+| By | Alana Sihelská (STK-004), Jura Brázdil (STK-026) |
+| Status | Decided (2026-09-22) |
+
+**Description**
+SPEDOS is confirmed as a real vendor, now being actively onboarded as TEO/OCR's 3rd autumn-2026 pilot vendor. This resolves [[ASM-089]] (open since 2026-09-16: whether to expand pilot scope to a 3rd, larger vendor referenced only as "PEDOS," name uncertain) — "PEDOS" was evidently a mishearing/mis-transcription of "SPEDOS." BigHub committed to giving SPEDOS additional pipeline attention and sending an export by end of this week (2026-09-25).
+
+**Rationale**
+ASM-089 flagged genuine uncertainty about whether "PEDOS" was even a real vendor name. This session confirms it is, under the correct spelling, and BigHub is already acting on it rather than still deliberating — moving this from an open question to a decided, in-progress item.
+
+**Impact**
+- **Delivery**: SPEDOS onboarding proceeds this week alongside the existing 2-vendor autumn scope (Racun, Thermetal).
+- **Data quality**: ASM-089 marked resolved/superseded by this entry.
 
 ---
 
@@ -425,6 +927,8 @@ Alana: without this feedback loop, BigHub has no way to know which of its own fl
 **Impact**
 - **Data**: Enables an ongoing accuracy-measurement loop rather than a one-time pilot validation.
 - **Delivery**: Requires an explicit ask to Radim's team as they build their review interface — tracked as an action item.
+
+**Update (2026-09-22)**: Radim confirmed his team will send the "correct" excel/json back to BigHub, with the exact format to be agreed directly with Jura — not yet a formal API contract, but the concrete mechanism this assumption called for is now in motion. Radim's own process design (see the TEO/OCR project-knowledge entry) has this happening after Míša's manual review step, before the file moves to SNOW-import prep.
 
 ---
 
@@ -950,15 +1454,17 @@ The doc's phase tables had drifted into an abstracted "capability summary" (buil
 |-------|-------|
 | ID | ASM-089 |
 | Created | 2026-09-16 |
-| Source | 2026-09-16-teo-ocr-technical-sync-pilot-results |
+| Source | 2026-09-16-teo-ocr-technical-sync-pilot-results; resolved via 2026-09-22-teo-ocr-technical-sync-spedos-disambiguation-reversal |
 | By | Tomáš Burda (STK-025) |
-| Status | Open (2026-09-16) |
+| Status | Resolved by [[ASM-127]] (2026-09-22) |
 
 **Description**
 Whether to expand TEO/OCR's committed autumn 2026 pilot scope beyond the current 2 vendors to include a 3rd, larger vendor (referenced only as "PEDOS" — name uncertain, possibly a mis-transcription) is undecided.
 
 **Rationale**
 Burda floated this because inspections continue into October and smaller vendors represent modest volume (10-20 documents) compared to the current two (50-70 each). Jura Brázdil is open to it — his extraction pipeline is now reusable, making a new vendor roughly a day's work — but nothing was committed, and Dr. Max hasn't yet sent sample documents for it.
+
+**Resolved (2026-09-22)**: "PEDOS" was a mishearing of **SPEDOS**, a real vendor now being actively onboarded — see [[ASM-127]].
 
 **Impact**
 - **Delivery**: Low marginal engineering cost if pursued, given the reusable pipeline — but adds scope to a season that's already in motion.
