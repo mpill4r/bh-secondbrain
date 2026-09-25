@@ -1,6 +1,6 @@
 ---
-last_updated: 2026-09-23
-last_updated_by: auto — project-meeting routing (2026-09-23-cross-project-status-sync-reklamace-fallout-listing-blockers, 2026-09-23-ai-platform-prototype-walkthrough-navigation-modular-reporting)
+last_updated: 2026-09-25
+last_updated_by: auto — project-meeting routing (2026-09-25-reklamace-supplier-data-source-options)
 owner: Marek Pillár
 ---
 
@@ -10,6 +10,34 @@ owner: Marek Pillár
 
 | ID | Status | Created | Description (short) |
 |----|--------|---------|---------------------|
+| ASM-176 | Open (2026-09-25) | 2026-09-25 | Reklamace Kontakty, Poznámky, Typ odvozu have no agreed home; Axapta manual address entry unowned |
+| ASM-175 | Open (2026-09-25) | 2026-09-25 | Reklamace claims worker loses the one-sheet-per-supplier view; display option to be chosen by client |
+| ASM-174 | Open (2026-09-25) | 2026-09-25 | Rozvozový list Axapta fields (reklamace no., RD no., issue date) missing from API contract |
+| ASM-173 | Decided (2026-09-25) | 2026-09-25 | Filip builds ~1 MD Reklamace email-agent demo for the 2026-10-01 logistics meeting |
+| ASM-172 | Decided (2026-09-25) | 2026-09-25 | Reklamace per-case communication timeline dashboard killed — out of scope, weeks of work |
+| ASM-171 | Decided (2026-09-25) | 2026-09-25 | Reklamace main-contact concept kept; <5 category-conditional supplier exceptions handled in spec |
+| ASM-170 | Decided (2026-09-25) | 2026-09-25 | Non-Axapta Reklamace supplier store extends Axapta via supplier-account key; no duplicated fields |
+| ASM-169 | Decided (2026-09-25) | 2026-09-25 | Reklamace supplier data: Excel on SharePoint not recommended; client chooses between Excel, SharePoint Lists, Confluence with risks listed |
+| ASM-168 | Open (2026-09-25) | 2026-09-25 | TEO/OCR never had process discovery; wider process and follow-on use cases unknown, per-cycle effort unknown |
+| ASM-167 | Open (2026-09-25) | 2026-09-25 | BigHub Dr. Max capacity is a flexible ~3 FTE (~60 MD/month) annual pool with accumulated unused budget since May |
+| ASM-166 | Decided (2026-09-25) | 2026-09-25 | TEO/OCR direction goes through Radim Švarc first (informal vibe check) as the entry point to Tomáš Burda |
+| ASM-165 | Decided (2026-09-25) | 2026-09-25 | TEO/OCR stays on Excel for the autumn 2026 cycle; non-Excel review solution targeted before spring 2027 |
+| ASM-164 | Open (2026-09-24) | 2026-09-24 | First AI Platform release ~3–4 weeks after DB access on the new cluster works, and that access is disputed |
+| ASM-163 | Decided (2026-09-24) | 2026-09-24 | Roadmap/blockers view belongs in Azure DevOps, not the AI Platform (at most an admin view) |
+| ASM-162 | Decided (2026-09-24) | 2026-09-24 | AI Platform is the central telemetry/alerting point, integrated with Dr. Max's Zabbix, with an auditable incident history |
+| ASM-161 | Decided (2026-09-24) | 2026-09-24 | Department AI-initiative backlogs targeted for end of November (ideal, not hard); running projects keep priority |
+| ASM-160 | Decided (2026-09-24) | 2026-09-24 | Live or near-live initiatives get a "PR" value story (assumption → interim → current → trend), starting 2026-09-29 |
+| ASM-159 | Decided (2026-09-24) | 2026-09-24 | Every KPI in the BQ tracker must carry a measurement method and baseline (new measurement column) |
+| ASM-158 | Decided (2026-09-24) | 2026-09-24 | BQ tracker format is the mandatory intake standard for all new AI initiatives; Dudaško decides go/no-go by annual value |
+| ASM-157 | Decided (2026-09-24) | 2026-09-24 | Max quick-reply bubbles kept, chat-style layout; profile-based personalization deferred to on-site integration |
+| ASM-156 | Decided (2026-09-24) | 2026-09-24 | Lexie visual polish folded into platform-wide redesign; minor padding/border requests are low priority |
+| ASM-155 | Open (2026-09-24) | 2026-09-24 | Who pays for ElevenLabs licences and custom/extended voices (BigHub project vs. Dr. Max) is unclear |
+| ASM-154 | Decided (2026-09-24) | 2026-09-24 | Maxie must replicate Dr. Max's existing Atlantis IVR "Maxí" solution exactly, split per IVR topic branch |
+| ASM-153 | Decided (2026-09-24) | 2026-09-24 | Dr. Max public methodologies served to Max via AI-platform RAG, with self-service document management |
+| ASM-152 | Decided (2026-09-24) | 2026-09-24 | Free-text feedback on Max's end-conversation screen is test-only; removed for public launch |
+| ASM-151 | Decided (2026-09-24) | 2026-09-24 | Max opening message stays hardcoded; Dr. Max supplies exact wording incl. AI Act disclosure |
+| ASM-150 | Decided (2026-09-24) | 2026-09-24 | Client tone-prompt input for Max limited to short keywords, replacing the 09-17 first-person tone-brief approach |
+| ASM-149 | Open (2026-09-24) | 2026-09-24 | Max chatbot runs on GPT-5 mini and has hit its instruction ceiling (~10–12 instructions); model upgrade pending cost projection |
 | ASM-148 | Open (2026-09-23) | 2026-09-23 | AI Platform test/prod cost-reporting mechanism undecided (endpoint-pull vs. periodic dump vs. global env switcher) |
 | ASM-147 | Decided (2026-09-23) | 2026-09-23 | AI Platform prototype design work deliberately deferred until navigation/interaction validated with Dudaško |
 | ASM-146 | Open (2026-09-23) | 2026-09-23 | Cross-platform RAG "ask anything" agent concept kept in reserve, not built — offer only if Dudaško asks for more |
@@ -18,7 +46,7 @@ owner: Marek Pillár
 | ASM-143 | Open (2026-09-23) | 2026-09-23 | Fakturace doprav: rozvozový list needs warehouse-worker free-text input with no defined data source |
 | ASM-142 | Open (2026-09-23) | 2026-09-23 | Fakturace doprav API-contract renegotiation with Petr Sláma stuck — no counter-proposal, slow replies |
 | ASM-141 | Decided (2026-09-23) | 2026-09-23 | Logistics delivery timelines now explicitly factor in client-side response delays, not just BigHub-side ones |
-| ASM-140 | Open (2026-09-23) | 2026-09-23 | MaxBuddy annual value discrepancy: ~130M Kč (09-23) vs. ~81M Kč (09-22) — needs reconciliation before BQ tracker finalized |
+| ASM-140 | Decided (2026-09-25) | 2026-09-23 | MaxBuddy annual value: 81M Kč/yr per BQ tracker (source of truth); ~130M figure superseded |
 | ASM-139 | Open (2026-09-23) | 2026-09-23 | Dudaško plans to retire Axapta within ~6 months; willing to pay more now for a Reklamace solution portable to its replacement |
 | ASM-138 | Open (2026-09-23) | 2026-09-23 | Second post-closing carrier confirmation from June 2026 Fakturace doprav draft not carried into current scope — status unclear |
 | ASM-137 | Decided (2026-09-23) | 2026-09-23 | Fakturace doprav carrier confirmation: one consolidated email per scan session decided; sending code not yet built |
@@ -163,6 +191,623 @@ owner: Marek Pillár
 
 ---
 
+### ASM-169
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-169 |
+| Created | 2026-09-25 |
+| Source | 2026-09-25-reklamace-supplier-data-source-options |
+| By | Jindřich Tůma (STK-003), Filip Černý (STK-006) |
+| Status | Decided (2026-09-25) |
+
+**Description**
+Reklamace supplier data that doesn't live in Axapta is presented to logistics as an options table with risks and a BigHub-preferred option marked: Excel on SharePoint (possible, not recommended — no synchronization, no change audit trail, weak authorization, plus unknowns incl. whether BigHub can read it automatically via SharePoint API), SharePoint Lists, or Confluence. The original Axapta preference is withdrawn as unrealistic. The client picks and owns the risk; if they accept Excel's risks, BigHub delivers it as asked.
+
+**Rationale**
+Logistics keeps treating "Excel was agreed" as settled, though it was never presented that way — their real driver is having no other tool and refusing Axapta because it is being retired ([[ASM-139]]), not UX. BigHub's job is to surface risks, not to make the call for them.
+
+**Impact**
+- **Delivery**: Filip researches SharePoint Lists, Jindřich researches Confluence; the options table goes to the 2026-10-01 logistics meeting.
+- **Relationship**: Moves the decision (and accountability) to the client, de-escalating the "BigHub doesn't want to deliver" narrative ([[ASM-122]]).
+- **Tech**: Whatever store is chosen must be a secured table with easy automated reads, authorization and ideally an audit trail — ~2 editors per warehouse, viewers = all claims workers (count -tbd-).
+
+---
+
+### ASM-170
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-170 |
+| Created | 2026-09-25 |
+| Source | 2026-09-25-reklamace-supplier-data-source-options |
+| By | Filip Černý (STK-006), Jindřich Tůma (STK-003) |
+| Status | Decided (2026-09-25) |
+
+**Description**
+Any non-Axapta store for Reklamace supplier data is an extension of Axapta, keyed by supplier account (účet dodavatele). No field is held in both systems.
+
+**Rationale**
+A separate BigHub database or table creates Axapta-sync problems and stale snapshots as supplier accounts change or suppliers leave. Filip: "we definitely don't want the same information in two places."
+
+**Impact**
+- **Data**: Supplier account, address and main contact stay in Axapta (committed); only fields Axapta won't hold go to the external store.
+- **Tech**: The external store needs the supplier account as the join key.
+
+---
+
+### ASM-171
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-171 |
+| Created | 2026-09-25 |
+| Source | 2026-09-25-reklamace-supplier-data-source-options |
+| By | Filip Černý (STK-006), Jindřich Tůma (STK-003) |
+| Status | Decided (2026-09-25) |
+
+**Description**
+The Reklamace "main contact" (hlavní kontakt, one email per supplier driving the email draft) concept is kept. It covers ~95–97% of suppliers; the <5 suppliers whose contact depends on goods category (e.g. food vs. drugs) are handled as exceptions in the spec.
+
+**Rationale**
+Agreed with Jana Egrmaierová and Tereza Foltýnová ~2–3 weeks earlier; the category-conditional exceptions surfaced later but are too few to abandon the simple model.
+
+**Impact**
+- **Scope**: The spec needs a defined exception mechanism (conditional contacts), not a redesign.
+
+---
+
+### ASM-172
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-172 |
+| Created | 2026-09-25 |
+| Source | 2026-09-25-reklamace-supplier-data-source-options |
+| By | Jindřich Tůma (STK-003) |
+| Status | Decided (2026-09-25) |
+
+**Description**
+The per-case communication timeline/dashboard idea for Reklamace (web interface showing drafts sent, replies received, whose turn it is) is killed.
+
+**Rationale**
+Filip attributed the idea to Jan Sovka — one sentence in the spec, with no client response — and estimated it at weeks of work ("a new project"). Also answers the open "local case-status dashboard" question on the Reklamace brief.
+
+**Impact**
+- **Scope**: Removed from Reklamace scope; email threading in Outlook is the substitute for case history.
+
+---
+
+### ASM-173
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-173 |
+| Created | 2026-09-25 |
+| Source | 2026-09-25-reklamace-supplier-data-source-options |
+| By | Filip Černý (STK-006), Jindřich Tůma (STK-003) |
+| Status | Decided (2026-09-25) |
+
+**Description**
+Filip builds a ~1 MD demo of the Reklamace email agent (text files, not wired to Outlook): a supplier reply triggers an LLM that extracts structured info (e.g. which of a multi-warehouse supplier's warehouses to ship to), prints it on the rozvozový list and drafts the next reply. Shown at the 2026-10-01 logistics meeting.
+
+**Rationale**
+Framed as a goodwill gesture ("the bone we throw them") after the Reklamace fallout — partly-built capability BigHub can offer. Full integration is considerably larger than the demo.
+
+**Impact**
+- **Timeline**: Demo due before 2026-10-01; production integration still blocked on the Microsoft Graph API from infra.
+- **Relationship**: Aims to calm logistics before the Reklamace management meeting (pushed to the following week, Dudaško unavailable).
+
+---
+
+### ASM-174
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-174 |
+| Created | 2026-09-25 |
+| Source | 2026-09-25-reklamace-supplier-data-source-options |
+| By | Filip Černý (STK-006) |
+| Status | Open (2026-09-25) |
+
+**Description**
+Rozvozový list fields sourced from Axapta — reklamace number, document number (RD) and issue date — are not in the Axapta API contract. Warehouse address/contact at the bottom could instead come from a location lookup (Brno / Praha / Pavlov, e.g. via machine IP).
+
+**Rationale**
+Missed when Lukáš worked on the contract while still new; Filip flagged it ~1 week earlier, Petr Sláma didn't respond (only Jana Egrmaierová did). Jindřich wants one complete Axapta requirements package so nothing more surfaces later; Filip will present it openly as BigHub's own debt. Related to the operator free-text gap in [[ASM-143]].
+
+**Impact**
+- **Delivery**: The rozvozový list can't be complete without these fields.
+- **Relationship**: Another ask to Sláma, who is resisting Axapta development ([[ASM-139]]).
+
+---
+
+### ASM-175
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-175 |
+| Created | 2026-09-25 |
+| Source | 2026-09-25-reklamace-supplier-data-source-options |
+| By | Filip Černý (STK-006) |
+| Status | Open (2026-09-25) |
+
+**Description**
+The Reklamace claims worker (zaměstnanec reklamací — a different person from the receiving foreman who uses BigHub's app) loses the old one-sheet-per-supplier Excel view that showed the rozvozový list with the supplier notes around it. Options: the flat table directly, a small web app (~1–2 MD: process info, rozvozový list preview, inputs like crate count), or the email agent alone.
+
+**Rationale**
+Filip surfaced the gap; Jindřich decided BigHub raises it to the client as an open question rather than solving it unilaterally. Filip prefers the worker still sees the notes the agent works from, but dislikes creating a new system to maintain.
+
+**Impact**
+- **Scope**: A web app would be outside the current spec.
+- **UX**: Searching a ~300-row table per claim is a real usability regression vs. the old workflow.
+
+---
+
+### ASM-176
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-176 |
+| Created | 2026-09-25 |
+| Source | 2026-09-25-reklamace-supplier-data-source-options |
+| By | Filip Černý (STK-006) |
+| Status | Open (2026-09-25) |
+
+**Description**
+Kontakty (unstructured free-text contacts, typically 0–2 per supplier), Poznámky (notes) and Typ odvozu (own-pickup flag, ~70–75 suppliers) have no agreed storage location — Axapta has not committed to them. Separately, Axapta needs ~2 hours of manual data entry to replace supplier HQ addresses with real warehouse return addresses; agreed in principle, not done, no owner.
+
+**Rationale**
+Petr Sláma's team won't develop further on Axapta given its planned retirement ([[ASM-139]]); only supplier account, address and main contact are committed.
+
+**Impact**
+- **Data**: These fields are the main content of the external store under [[ASM-169]].
+- **Delivery**: Typ odvozu is printed on the rozvozový list (warehouses sort own-pickup vs. standard shipments), so it must be sourced somewhere.
+
+---
+
+### ASM-168
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-168 |
+| Created | 2026-09-25 |
+| Source | 2026-09-25-alana-1on1-teo-phasing-capacity-pool-team-dynamics |
+| By | Alana Sihelská (STK-004), Marek Pillár (STK-001) |
+| Status | Open (2026-09-25) |
+
+**Description**
+TEO/OCR started from a cold call: Radim Švarc phoned Alana, described a twice-yearly service with a large volume of manually processed documents, and suggested automation. Unlike the other streams, where Jan Sovka interviewed people and shaped the use cases himself, nobody at BigHub has done discovery on the full TEO process or what else happens in it. Possible follow-on work includes tracking when the next service is due. The per-cycle manual effort is also unknown (Alana doesn't know if it's, say, a month of work), which reopens Jan Sovka's recurring question of whether a task done once or twice a year justifies investment.
+
+**Rationale**
+Alana expects the stream to be a success and Dr. Max to want more, "but we don't know in which direction" [translated from Slovak]. A fast, visible win brings positive feedback for free, unlike the voicebot and other streams that drag on for a year.
+
+**Impact**
+- **Scope**: Follow-on TEO work, on this stream or a new one with the same team, is undefined until discovery happens.
+- **Business value**: Per-cycle effort is needed to judge ROI. See the volume conflict in the TEO/OCR project-knowledge entry (steady ~250 docs/week vs. two batches a year).
+- **Relationship**: Discovery doubles as relationship building with Radim, the route to Burda ([[ASM-166]]).
+
+---
+
+### ASM-167
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-167 |
+| Created | 2026-09-25 |
+| Source | 2026-09-25-alana-1on1-teo-phasing-capacity-pool-team-dynamics |
+| By | Alana Sihelská (STK-004) |
+| Status | Open (2026-09-25) |
+
+**Description**
+BigHub's Dr. Max engagement is budgeted as roughly 3 FTE for a full year starting about May 2026, which is ~3 × 20 = ~60 MD/month. Capacity is a shared pool: the team can direct it at any stream, and going somewhat over in a given month is acceptable. Little work happened in the first months, so unused budget has accumulated. The only constraint Alana named: if "Tomáš" says no work on TEO, the capacity goes elsewhere. **Unconfirmed**: (1) which Tomáš is meant, assumed to be Tomáš Dudaško (STK-010, budget holder), not Tomáš Burda; (2) how much budget has accumulated (Jindřich to find out); (3) whether Jindřich Tůma is inside the 3 FTE or on top of it (a 4-FTE pool). Alana was counted in the 3 FTE while on the account and suspects Jindřich is extra; he keeps a September capacity table.
+
+**Rationale**
+Marek asked because Filip Černý and others propose extra work, and he didn't know whether saying yes would overspend or take capacity from another stream.
+
+**Impact**
+- **Delivery**: Marek can approve reasonable dev initiatives inside the pool without per-item sign-off.
+- **Budget**: The actual headroom stays unknown until Jindřich confirms the accumulated amount and his own inclusion.
+
+---
+
+### ASM-166
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-166 |
+| Created | 2026-09-25 |
+| Source | 2026-09-25-alana-1on1-teo-phasing-capacity-pool-team-dynamics |
+| By | Marek Pillár (STK-001), Alana Sihelská (STK-004) |
+| Status | Decided (2026-09-25) |
+
+**Description**
+Before proposing any TEO/OCR direction beyond Excel, Marek consolidates Jura Brázdil's comments and holds an informal, non-committal call with Radim Švarc to gauge his openness to further build or innovation. Radim is treated as the entry point; Tomáš Burda holds the decision on where TEO goes next.
+
+**Rationale**
+Alana: Radim is young and capable but has no decision-making say; Burda is older and "pricklier". Marek: Radim is the foot in the door, since he'd never get to Burda directly.
+
+**Impact**
+- **Relationship**: Protects the proposal from landing cold with Burda.
+- **Timeline**: The Phase 2 proposal ([[ASM-165]]) waits on the Radim call.
+
+---
+
+### ASM-165
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-165 |
+| Created | 2026-09-25 |
+| Source | 2026-09-25-alana-1on1-teo-phasing-capacity-pool-team-dynamics |
+| By | Marek Pillár (STK-001), Alana Sihelská (STK-004) |
+| Status | Decided (2026-09-25) |
+
+**Description**
+TEO/OCR service protocols arrive only twice a year, in spring and autumn. The autumn 2026 cycle is already running, so the review step stays on Excel for this cycle. A non-Excel review solution becomes the Phase 2 target, ready before the spring 2027 cycle, with a longer-term vision after that. This updates the 2026-09-24 one-pager for Alana (`documents/internal/2026-09-24-teo-ocr-excel-vystup-ai-framing-odporucania-radim.md`), which recommended building a standalone review app now.
+
+**Rationale**
+Changing the process mid-cycle has no payoff. The spring 2027 cycle gives enough runway, and for BigHub a frontend is no longer an expensive or long piece of work for Jura. Alana questions why Dr. Max would want Excel at all.
+
+**Impact**
+- **Scope**: Resolution path for [[ASM-130]] (Excel-only, unassisted review step).
+- **Timeline**: Phase 2 due before spring 2027. The earlier "November inspection cycle" target for the pilot is in question.
+- **Relationship**: Depends on Radim's appetite ([[ASM-166]]).
+
+---
+
+### ASM-164
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-164 |
+| Created | 2026-09-24 |
+| Source | 2026-09-24-ai-initiatives-bq-review-platform-prototype-demo-dudasko |
+| By | Jura Brázdil (STK-026), Jindřich Tůma (STK-003) |
+| Status | Open (2026-09-24) |
+
+**Description**
+Release sequence once the DB on the new cluster is reachable: deploy the platform to the new cluster, migrate MaxBuddy (currently outside the platform), deploy the Max chatbot (for public access), fix some security concerns (~14 days total), then wire in the already-built web frontend. Jura estimates ~3 weeks; Jindřich plans 4 given BDC turnaround. MaxBuddy stays top priority. The trigger is disputed: Dudaško says Vladislav Tvarůžek reported DB access done on 2026-09-24, while BigHub's last check (2026-09-23 15:30) said it still failed. Jura had handed Vláďa a repro script (old cluster works, new doesn't) and will retest right after the meeting.
+
+**Rationale**
+The whole platform, MaxBuddy rollout and chatbot go-live chain depends on this one access item.
+
+**Impact**
+- **Timeline**: Directly gates [[ASM-100]] and the MaxBuddy rollout.
+- **Relationship**: Both sides are wary of infra "it's done" claims.
+
+---
+
+### ASM-163
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-163 |
+| Created | 2026-09-24 |
+| Source | 2026-09-24-ai-initiatives-bq-review-platform-prototype-demo-dudasko |
+| By | Tomáš Dudaško (STK-010) |
+| Status | Decided (2026-09-24) |
+
+**Description**
+Jura's idea of a per-project roadmap/blockers view in the platform (what waits on BigHub vs. Dr. Max) should live in the Azure DevOps setup Jindřich is preparing. The platform may at most carry an admin view, plus release information.
+
+**Rationale**
+Avoids duplicating the work-tracking tool.
+
+**Impact**
+- **Scope**: Removes a feature from the platform Phase 1 scope.
+
+---
+
+### ASM-162
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-162 |
+| Created | 2026-09-24 |
+| Source | 2026-09-24-ai-initiatives-bq-review-platform-prototype-demo-dudasko |
+| By | Tomáš Dudaško (STK-010), Jura Brázdil (STK-026) |
+| Status | Decided (2026-09-24) |
+
+**Description**
+The platform aggregates technical-status telemetry across projects (e.g. for MaxBuddy: Azure logs, services, DB, pods), correlates signals (several small problems → one big alert), and pushes alerts to Dr. Max's Zabbix. It also keeps a full incident history for auditability (certifications/legal) and a BigHub developer panel for manual incident notes.
+
+**Rationale**
+Dudaško: "this is the central point". Jura briefly questioned routing Zabbix via BigHub vs. directly, but didn't pursue it.
+
+**Impact**
+- **Scope**: Adds Zabbix integration and incident audit to the platform roadmap (see [[ASM-115]]).
+- **Compliance**: Supports audit requirements.
+
+---
+
+### ASM-161
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-161 |
+| Created | 2026-09-24 |
+| Source | 2026-09-24-ai-initiatives-bq-review-platform-prototype-demo-dudasko |
+| By | Tomáš Dudaško (STK-010), Jindřich Tůma (STK-003), Marek Pillár (STK-001) |
+| Status | Decided (2026-09-24) |
+
+**Description**
+Each Dr. Max department (logistics, marketing via Marek Dvořák, others) should have its AI initiatives captured in the tracker format and prioritized as a ready backlog by end of November 2026, so management can set 2027 goals. Logistics is split: Part A finishes the specs of the two running projects (Reklamace, Fakturace doprav); Part B captures new topics. Logistics sets its own priorities, and Dudaško decides go/no-go. November is Jindřich's ideal plan, not set in stone; Dudaško accepts it but would prefer earlier.
+
+**Rationale**
+Logistics proactively wants to map more AI initiatives with Marek. Jindřich explicitly guarded Marek from being pulled into specifying many topics at once.
+
+**Impact**
+- **Workload**: A significant new stream for Marek on top of running projects.
+- **Timeline**: The end-of-November target is at risk if running projects need more attention.
+
+---
+
+### ASM-160
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-160 |
+| Created | 2026-09-24 |
+| Source | 2026-09-24-ai-initiatives-bq-review-platform-prototype-demo-dudasko |
+| By | Tomáš Dudaško (STK-010), Jindřich Tůma (STK-003) |
+| Status | Decided (2026-09-24) |
+
+**Description**
+For each tracker row that is live or close to live, BigHub prepares a narrative showing the original assumption (e.g. 230 → 130 Kč per item), interim state, current post-deployment state, and trend or learning curve, making the realized saving visible (e.g. × ~3,600 items/quarter). Jindřich presents the first set at the 2026-09-29 project meeting and previews it with Dudaško beforehand.
+
+**Rationale**
+Dudaško wants realized value demonstrable to management, not just modeled.
+
+**Impact**
+- **Relationship**: A high-visibility deliverable to management next week.
+- **Data**: Requires actual post-deployment metrics per initiative.
+
+---
+
+### ASM-159
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-159 |
+| Created | 2026-09-24 |
+| Source | 2026-09-24-ai-initiatives-bq-review-platform-prototype-demo-dudasko |
+| By | Tomáš Dudaško (STK-010), Jindřich Tůma (STK-003), Marek Pillár (STK-001) |
+| Status | Decided (2026-09-24) |
+
+**Description**
+Beyond business value and KPIs, each initiative must define how each KPI will be measured, including the current-state baseline measured before implementation (e.g. "25× faster" needs today's speed measured first). Marek will add a measurement column and collect methods from each business owner, starting with logistics (Tereza Foltýnová). Phase-level success milestones are case by case.
+
+**Rationale**
+Dudaško's "B/C": without a measurement plan you can't prove the value is delivered. Petr Neuman's quarterly cost-per-item tracking (Listing) is the model case.
+
+**Impact**
+- **Delivery**: Adds baseline-measurement work before or alongside implementation.
+- **Reporting**: Feeds the AI Platform's KPI reporting (see [[ASM-162]]).
+
+---
+
+### ASM-158
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-158 |
+| Created | 2026-09-24 |
+| Source | 2026-09-24-ai-initiatives-bq-review-platform-prototype-demo-dudasko |
+| By | Tomáš Dudaško (STK-010), Jindřich Tůma (STK-003), Marek Pillár (STK-001) |
+| Status | Decided (2026-09-24) |
+
+**Description**
+Every new AI initiative proposed by any Dr. Max department must bring a goal description, an owner-guaranteed business value, 1–3 KPIs, and email confirmation from the business owner, captured in the Business Quantification tracker format. Initiatives are prioritized by modeled annual value ("going after the biggest ones"), and Dudaško (or management) decides go/no-go.
+
+**Rationale**
+Dudaško had always asked the business for this and been refused ("we've never done it, we won't do it"). BigHub, as the "new broom", got it done. Making owners the guarantors of their figures, with email confirmation as an audit trail, fixes the earlier pattern of loose "let's see how it goes" engagement.
+
+**Impact**
+- **Prioritization**: Gives a single comparable basis for the portfolio (see [[ASM-125]]).
+- **Workload**: Marek owns enforcing this discipline with business users.
+- **Relationship**: A major trust win with Dudaško.
+
+---
+
+### ASM-157
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-157 |
+| Created | 2026-09-24 |
+| Source | 2026-09-24-lexie-max-maxie-weekly-sync |
+| By | Kateřina Kadlecová (STK-037), Šárka Andělová (STK-050), Jura Brázdil (STK-026) |
+| Status | Decided (2026-09-24) |
+
+**Description**
+The quick-reply bubbles stay. The intro text moves down to sit directly above them, so the chat behaves like a normal chat (newest at the bottom, history scrolling up). Separately, using logged-in doktormax.cz profile data (e.g. gender for salutation) is deferred until the widget is integrated on the site: it needs technical plumbing to the one-line embed and probably consent.
+
+**Rationale**
+Dr. Max's experience is that customers don't read help text, but they want a clear menu. Jura's URL-contextual bubbles (built the previous week) complement this. Profile data would help with the gender-neutral address problem but can't be done before integration.
+
+**Impact**
+- **UX**: A small layout change, ticketed by Kadlecová.
+- **Compliance**: Profile use will need consent handling (see [[ASM-102]]).
+
+---
+
+### ASM-156
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-156 |
+| Created | 2026-09-24 |
+| Source | 2026-09-24-lexie-max-maxie-weekly-sync |
+| By | Marek Pillár (STK-001) |
+| Status | Decided (2026-09-24) |
+
+**Description**
+Lexie's redesign will be part of the eventual AI-platform-wide redesign rather than a separate effort. Minor visual tweaks (padding, borders) are low priority and can be logged in X-Manager so they aren't lost. Focus now is on the technical side.
+
+**Rationale**
+Design authority sits at the platform level ([[ASM-060]]) and platform design is deliberately deferred until navigation is validated with Dudaško ([[ASM-147]]).
+
+**Impact**
+- **Delivery**: Avoids rework on Lexie-specific design.
+- **Relationship**: Sets expectations with the CC team on cosmetic requests.
+
+---
+
+### ASM-155
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-155 |
+| Created | 2026-09-24 |
+| Source | 2026-09-24-lexie-max-maxie-weekly-sync |
+| By | Simona Mertová (STK-017) |
+| Status | Open (2026-09-24) |
+
+**Description**
+Dr. Max wasn't satisfied with the sample voices, which were ElevenLabs marketing samples. The full product offers many more voices, character tuning, voice cloning and a voice designer, likely behind payment (Jura's rough guess: thousands of Kč). Mertová asked whether licences are covered within the project or she must find budget herself. Jindřich doesn't know and will find out, possibly via an ElevenLabs Q&A meeting.
+
+**Rationale**
+Nobody on the call could answer. Jindřich joined the project mid-stream.
+
+**Impact**
+- **Commercial**: Unassigned cost line.
+- **Delivery**: Voice selection for Maxie is stalled until this is resolved.
+
+---
+
+### ASM-154
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-154 |
+| Created | 2026-09-24 |
+| Source | 2026-09-24-lexie-max-maxie-weekly-sync |
+| By | Simona Mertová (STK-017), Kateřina Kadlecová (STK-037), Jindřich Tůma (STK-003) |
+| Status | Decided (2026-09-24) |
+
+**Description**
+Dr. Max already runs a "Maxí" in its Atlantis-hosted IVR, built ~2–3 years ago with another vendor; Tecl (Atlantis, STK-033) knows the setup, and the PBX is rented from Atlantis. The BigHub voicebot must copy that integration and flow exactly, not a new design. Maxie is split by IVR topic branch (order tracking, prescriptions, etc.), not one assistant answering everything. The SIP trunk still has to be configured; Atlantis is 2nd of 5 infra requests queued at BDC.
+
+**Rationale**
+Mertová was not invited to BigHub's Atlantis meeting ~3 weeks ago, and colleagues were unaware of the existing solution, although she had told Lukáš this when he owned it. Dr. Max has already done IVR prep work (recording structure, voice tree) assuming the same design. Jindřich confirmed reuse is the direction and will convene a joint meeting (Mertová, Honza Zelený, Tecl).
+
+**Impact**
+- **Relationship**: A trust dent from lost continuity during the ownership handover; quick follow-through matters.
+- **Delivery**: Reusing a proven design lowers technical risk; the SIP trunk and BDC access remain blockers (see [[ASM-022]]).
+
+---
+
+### ASM-153
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-153 |
+| Created | 2026-09-24 |
+| Source | 2026-09-24-lexie-max-maxie-weekly-sync |
+| By | Jura Brázdil (STK-026), Kateřina Kadlecová (STK-037), Simona Mertová (STK-017) |
+| Status | Decided (2026-09-24) |
+
+**Description**
+Dr. Max's customer-safe "public methodologies" (derived from internal CC playbooks, ~2–20 pages each, PDF) will be used for follow-up questions (e.g. reservation holding periods). Too large for the prompt, so Max will connect to the AI platform's existing RAG/search. The platform rewrite will give Dr. Max one place with usage reporting, an instant kill switch to pull the chatbot off the site, and self-service document settings (choosing which sources Max draws from). The order-tracking/reservation methodology is essentially done and goes first.
+
+**Rationale**
+Jura: "pošlete PDFko, formát je mi šuma fuk" [translated from Czech: "send the PDF, format doesn't matter"]. RAG already exists on the neighboring platform project, so reusing it avoids a separate build. Timing is open: it's a bigger piece of work.
+
+**Impact**
+- **Delivery**: New dependency between Max and the AI platform workstream.
+- **Scope**: Adds a document-management capability to the platform roadmap (see [[ASM-115]]).
+
+---
+
+### ASM-152
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-152 |
+| Created | 2026-09-24 |
+| Source | 2026-09-24-lexie-max-maxie-weekly-sync |
+| By | Simona Mertová (STK-017) |
+| Status | Decided (2026-09-24) |
+
+**Description**
+The new end-conversation flow (header button, or detected "děkuju"/goodbye) currently shows a free-text feedback box. Mertová confirmed free text is fine during testing but must not reach the public; Jura agreed to remove it.
+
+**Rationale**
+Consistent with the earlier decision that public in-chat feedback is a star/emoji rating with no free text ([[ASM-017]]).
+
+**Impact**
+- **Delivery**: Small change before phase 3 (public toggle).
+
+---
+
+### ASM-151
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-151 |
+| Created | 2026-09-24 |
+| Source | 2026-09-24-lexie-max-maxie-weekly-sync |
+| By | Jura Brázdil (STK-026), Kateřina Kadlecová (STK-037) |
+| Status | Decided (2026-09-24) |
+
+**Description**
+Max's first message is predefined and not affected by the prompt. Dr. Max will send the exact sentence, which must include an AI Act disclosure ("Dobrý den, jsem Max, AI virtuální asistent"), a requirement from Dr. Max Legal. Dr. Max also wants to stop the opener listing every capability, since that won't scale to 10+ topics.
+
+**Rationale**
+A fixed opener gives Legal control over the disclosure wording and keeps it consistent. Wider GDPR requirements are still being defined by Dr. Max Legal (see [[ASM-102]]).
+
+**Impact**
+- **Compliance**: Closes the one confirmed legal requirement so far.
+- **Delivery**: Blocked on Dr. Max sending the wording.
+
+---
+
+### ASM-150
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-150 |
+| Created | 2026-09-24 |
+| Source | 2026-09-24-lexie-max-maxie-weekly-sync |
+| By | Jura Brázdil (STK-026) |
+| Status | Decided (2026-09-24) |
+
+**Description**
+Dr. Max's tone input to the Max system prompt should be a short, comma-separated list of keywords (e.g. "buď zdvořilý, vykej"), not the ~2-paragraph first-person brief agreed on 2026-09-17. Core rules (vykání, no medical advice, tool usage) are already covered by BigHub's own prompt.
+
+**Rationale**
+The brief Dr. Max sent was about as long as the main prompt and risked overloading GPT-5 mini (see [[ASM-149]]). Kadlecová noted the first-person format itself inflated the text. Shorter input has a bigger effect on a small model.
+
+**Impact**
+- **Quality**: Reduces the risk of instruction conflicts and dropped rules.
+- **Process**: Supersedes the 2026-09-17 tone-brief guidance recorded in project-knowledge.
+
+---
+
+### ASM-149
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-149 |
+| Created | 2026-09-24 |
+| Source | 2026-09-24-lexie-max-maxie-weekly-sync |
+| By | Jura Brázdil (STK-026) |
+| Status | Open (2026-09-24) |
+
+**Description**
+The Max chatbot runs on GPT-5 mini, which Jura estimates can reliably hold roughly 10–12 instructions before some start dropping at random. With BigHub's own ~1,200-character system prompt plus a growing list of edge-case rules, Max is at that ceiling: early hallucination creep is showing, and tone issues Dr. Max raised ("přátelská připomínka", repeated apologies to abusive users, gender-neutral Czech address) can't be fixed reliably with prompting alone. Upgrading (e.g. to full GPT-5.4) is the fix on the table; Jura will bring a cost projection across models and a model switcher on the test page. Monthly spend can be capped, with the widget auto-hiding once the cap is reached.
+
+**Rationale**
+Starting on the cheapest model was deliberate for development. Quality now depends on a cost decision, which Dr. Max needs to own with numbers in hand. Corrects project-knowledge, which recorded a GPT-5.1→5.4 upgrade for Max on 2026-09-17.
+
+**Impact**
+- **Quality**: Several open tone/behavior complaints are blocked on this decision, not on BigHub effort.
+- **Cost**: Recurring run cost rises with a bigger model; mitigated by a monthly cap.
+- **Relationship**: Reframes quality complaints as a joint cost/quality trade-off rather than a delivery gap.
+
+---
+
 ### ASM-148
 
 | Field | Value |
@@ -182,6 +827,8 @@ Dudaško has previously indicated he wants combined cost visibility across both 
 **Impact**
 - **Delivery**: Needs resolving before real cost-reporting is built, but doesn't block navigation/UX validation with Dudaško.
 - **Security**: Whatever mechanism is chosen must avoid a genuine network bridge between test and prod.
+
+**Update (2026-09-24)**: Partly answered. Asked directly, Dudaško wants everything, with a breakdown ("mě zajímá všechno, ale když to bude mít rozpad, tak je to lepší" [translated from Czech: "I'm interested in everything, but a breakdown is better"]). Jura will show test, prod and total, and also prototyping token spend. The technical mechanism is still open. Source: 2026-09-24-ai-initiatives-bq-review-platform-prototype-demo-dudasko
 
 ---
 
@@ -204,6 +851,8 @@ Aligned between Jura and Marek the day before this session. Reinforces the exist
 **Impact**
 - **Delivery**: The Friday demo to Dudaško will present navigation/structure only; any design feedback gets deferred to a later pass.
 - **Relationship**: Jura has a prepared framing ("we hit 9/10 of your requirements fast, categorization/colors come next") if Dudaško raises design prematurely.
+
+**Update (2026-09-24)**: Navigation/interaction was validated with Dudaško, so the condition for starting design work is met. Source: 2026-09-24-ai-initiatives-bq-review-platform-prototype-demo-dudasko
 
 ---
 
@@ -293,6 +942,8 @@ Nobody had accounted for this gap before; it surfaced only once the address-fiel
 - **Delivery**: Needs a defined data-source/input mechanism before the rozvozový list can be considered complete, even though the address portion already works.
 - **Scope**: A new, previously invisible requirement — worth tracking separately from the address-sourcing work already done.
 
+**Update (2026-09-25)**: A related gap surfaced — Axapta-sourced rozvozový list fields (reklamace number, RD number, issue date) are also missing from the API contract; see [[ASM-174]]. Source: 2026-09-25-reklamace-supplier-data-source-options.
+
 ---
 
 ### ASM-142
@@ -347,7 +998,7 @@ Prompted directly by the stuck Fakturace doprav API-contract renegotiation ([[AS
 | Created | 2026-09-23 |
 | Source | 2026-09-23-cross-project-status-sync-reklamace-fallout-listing-blockers |
 | By | Jindřich Tůma (STK-003) |
-| Status | Open (2026-09-23) |
+| Status | Decided (2026-09-25) |
 
 **Description**
 Jindřich cited MaxBuddy's annual business value as ~130M Kč in this session, previewing the near-final Business Quantification tracker. This differs from the ~81M Kč figure discussed directly with Marek on 2026-09-22 (see [[ASM-098]], [[ASM-099]]).
@@ -359,6 +1010,8 @@ Not assumed to be an update superseding the earlier figure — flagged as an ope
 - **Data quality**: The Business Quantification tracker should not be treated as finalized until this is resolved.
 - **Prioritization**: Whichever figure is correct feeds directly into the portfolio priority-ranking discussion (see [[ASM-125]]).
 
+
+**Resolution (2026-09-25)**: The BQ tracker (sheet `new_Přehled`), confirmed by the PM as the source of truth for business quantification, sets MaxBuddy at **81,000,000 Kč/yr revenue uplift** (60M dispensing cases × 75% coverage × 1.2% conversion × 150 Kč). The ~130M figure is superseded.
 ---
 
 ### ASM-139
@@ -380,6 +1033,8 @@ Directly shapes the pending Reklamace continue-or-close decision ([[ASM-122]]) �
 **Impact**
 - **Scope**: Reklamace's technical design may need to prioritize system-agnostic patterns over Axapta-specific optimizations, even at higher near-term cost.
 - **Timeline**: The ~6-month Axapta retirement window is a soft constraint worth tracking, though Jindřich has no further detail on it yet.
+
+**Update (2026-09-25)**: Petr Sláma cites the planned retirement as his reason for doing no further Axapta-side development, which is why several Reklamace supplier fields have no home ([[ASM-176]]). Source: 2026-09-25-reklamace-supplier-data-source-options.
 
 ---
 
@@ -575,6 +1230,8 @@ BigHub's pipeline already does the hard extraction work with AI; letting the ent
 - **Delivery**: If pursued, this could mean augmenting or replacing the raw-Excel handoff step in Radim's process (see the TEO/OCR project-knowledge entry) with something more AI-assisted — scope and effort not yet assessed.
 - **Relationship**: Should be raised carefully, since Radim has already built real working automation around the current Excel-based design (mailbox, Power Automate flows, folder structure) — any change here has migration cost on his side too.
 
+
+**Update 2026-09-25**: Resolution path agreed with Alana Sihelská: phased, with Excel kept for the autumn 2026 cycle and a non-Excel review solution before spring 2027 ([[ASM-165]]), proposed via Radim first ([[ASM-166]]). Source: 2026-09-25-alana-1on1-teo-phasing-capacity-pool-team-dynamics
 ---
 
 ### ASM-129
@@ -685,6 +1342,8 @@ Marek's argument: at Dr. Max's ~10,000-SKU, multi-billion-Kč revenue scale, eve
 - **Prioritization**: This tension is likely to resurface at Friday's combined Dudaško session, where the full priority ranking will be presented. Whoever's read wins shapes near-term resourcing across MaxBuddy, Max/Maxie, and Listing.
 - **Stakeholder alignment**: Worth explicitly surfacing to Dudaško rather than presenting one ranking as settled fact, given the live internal disagreement.
 
+
+**Update (2026-09-25)**: Authoritative tracker values give the value-based ranking MaxBuddy 81M > Listing 34.1M > Max/Maxie 13.9M (illustrative, shared scenario) > order prediction 1.9M > Lexie 1.2M (illustrative) > Fakturace doprav 0.79M > Reklamace 0.43M (phase 1 only) > TEO/OCR 0.27M. The tracker's own Priority (1–5) column gives Listing 5, OCR 4, Lexie 2, the rest 3 (scale direction unconfirmed). The ranking tension itself remains open.
 ---
 
 ### ASM-124
@@ -729,6 +1388,8 @@ ASM-075 recorded Neuman's earlier reluctance to fix a number before seeing the t
 - **Reporting**: The corporate KPI Excel (`businessQuantificationWorskop.xlsx`, E-commerce BQ sheet) should be updated to replace ASM-075's placeholder with these committed figures.
 - **Prioritization**: This ~34M Kč/year figure directly feeds the portfolio priority-ranking discussion — see [[ASM-125]].
 
+
+**Correction (2026-09-25, BQ tracker = source of truth)**: The figures above are partly wrong. Per the tracker: conversion uplift is **+0.1 pp (5% → 5.1%)**, not +1 pp, worth ≈ 31M Kč/yr (orientational/extrapolated; Neuman approved the method as the primary KPI). Cost per item was **230 → 130 Kč** actual (Q1 → Q2 2026, ≈ 2.4M Kč/yr), with a further target of **130 → 100 Kč** (≈ 0.72M Kč/yr). Throughput ≥6,000 → 8–10k items/quarter. Total **34,120,000 Kč/yr**.
 ---
 
 ### ASM-122
@@ -750,6 +1411,8 @@ This surfaced last Thursday's status call and was reinforced when Jindřich told
 **Impact**
 - **Scope**: Phase 1.1 is the only Reklamace phase currently confirmed in motion; the 4 further phases behind it now have an uncertain future pending this alignment meeting.
 - **Stakeholder management**: STK-010 (Dudaško) updated with this sentiment; Marek to be looped into all future reklamace-thread meetings as a fresh context-builder.
+
+**Update (2026-09-25, Reklamace supplier data)**: Supplier data won't fully consolidate into Axapta. Only supplier account, address and main contact are committed; contacts, notes and pickup type need another store, offered to logistics as options with risks — see [[ASM-169]], [[ASM-176]]. Source: 2026-09-25-reklamace-supplier-data-source-options.
 
 ---
 
@@ -839,6 +1502,8 @@ Dudaško was explicit that platform-behavior work (Phase 1/2) is the preconditio
 **Impact**
 - **Delivery**: Gives the existing UX-mockup work (already scoped per ASM-041/ASM-045) explicit client sign-off on sequencing, reducing risk of scope pressure from the capability-matrix Excel derailing Phase 1.
 - **Timeline**: Sets a soft expectation (Dudaško) of visible progress within weeks, not months, given his "frosty" sentiment.
+
+**Update (2026-09-24)**: The Phase 1 UX/access prototype was demoed to Dudaško and accepted ("s tímhle začínám být spokojený" [translated from Czech: "I'm starting to be satisfied with this"]). Design and development planning can proceed. See [[ASM-164]] for the release estimate. Source: 2026-09-24-ai-initiatives-bq-review-platform-prototype-demo-dudasko
 
 ---
 
@@ -1233,6 +1898,8 @@ Jura pushed for an end-of-September public date; Mertová held firm on needing m
 **Impact**
 - **Timeline**: Gives BigHub a concrete internal deadline (end of September) distinct from the public commitment (end of October), with a month of buffer for hands-on Dr. Max testing against real data in between.
 - **Relationship**: Demonstrates BigHub deferring to the client's risk tolerance on a launch date rather than pushing its own schedule — reinforces trust on a project where a bad launch would be highly visible (public website).
+
+**Update (2026-09-24)**: The end-of-September internal-phase target is **at risk**. Production infra/database access has been blocked more than 6 weeks (escalated to Dudaško; MaxBuddy's AKS request is ahead in the BDC queue), and Jura says "nám na tom stojí úplně všechno" [translated from Czech: "everything hinges on it"]. The public end-of-October date is not yet affected. Source: 2026-09-24-lexie-max-maxie-weekly-sync
 
 ---
 

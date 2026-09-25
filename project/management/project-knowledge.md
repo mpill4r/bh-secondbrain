@@ -1,6 +1,6 @@
 ---
-last_updated: 2026-09-23
-last_updated_by: auto — project-meeting routing (2026-09-23-cross-project-status-sync-reklamace-fallout-listing-blockers, 2026-09-23-ai-platform-prototype-walkthrough-navigation-modular-reporting)
+last_updated: 2026-09-25
+last_updated_by: auto — project-meeting routing (2026-09-25-reklamace-supplier-data-source-options)
 owner: Marek Pillár
 ---
 
@@ -28,7 +28,7 @@ owner: Marek Pillár
 | Definition | BigHub-built product for Dr. Max pharmacies. Originally a pharmacist dosage-verification assistant (pulled after legal flagged it as requiring medical device certification); the surviving, shipped feature is AI-driven point-of-sale cross-sell ("psí prodeje" — upsell suggestions) generated from basket contents, rolling out to all ~600 Dr. Max pharmacies. |
 | Source | 2026-08-25-marek-onboarding-with-jan-sovka, 2026-09-03-maxbuddy-chatbot-ocr-project-handoff, 2026-09-07-ai-portfolio-roadmap-scope-review |
 | Added | 2026-09-01 |
-| Last updated | 2026-09-07 |
+| Last updated | 2026-09-24 |
 | Status | Active |
 
 The dosage-verification logic still exists dormant in the codebase and could be revived if Dr. Max later pursues certification.
@@ -45,14 +45,16 @@ Original infrastructure/model provisioning for MaxBuddy was done manually (ad ho
 
 **2026-09-07 portfolio review**: the recommendation engine's real ceiling isn't technical — Dr. Max has never granted access to actual sales/margin data, so it can only use 4 data points (fixed supplier-defined cross-sell pairs, supplier argument text, live stock, active ingredient). Early analytics (still being sanity-checked before going to Luboš Vosmek, STK-011) show a striking adoption gap: the most-recommended product was shown ~18,000 times but purchased only 6 times, and komplexní péče "tiles" get almost no clicks since being tucked behind a UI element in the last release — likely needs pharmacist training/adoption work, not just model tuning. Full 600-pharmacy rollout blocked on new AKS access, ~1 month pessimistic estimate post-grant — see [[ASM-027]]. Dosage-calc features stay blocked pending Dr. Max's certification decision — see [[ASM-028]].
 
+**Cross-sell argument workflow (2026-09-24)**: not fully automated, contrary to Dudaško's assumption. An expert enters a rough idea (e.g. with Amoxiclav, offer magnesium), an LLM generates ~15 phrasings, and the expert group approves or rejects them. It currently lives on an ad hoc URL; the AI Platform gives it a proper admin interface with an approval queue. Jura currently checks MaxBuddy health manually each morning from local telemetry (Azure logs, 3 services, DB, pods); the platform will centralize this. Source: 2026-09-24-ai-initiatives-bq-review-platform-prototype-demo-dudasko
+
 ### Max / Maxie / Lexie
 
 | Field | Value |
 |-------|-------|
 | Definition | Three BigHub-built chatbot/assistant products for Dr. Max, owned business-side by paní Mertová (STK-017), co-owned with Tomáš Dudaško (STK-010, IT/budget side). **Max** is the customer-facing chatbot embedded on the drmax.cz website (order status, pharmacy locator, e-recepty, medication/stock lookup — see full flow below); a **voice channel of the same capability is Maxie**, launching scoped to order-status only via IVR. **Lexie (Lucie)** is the internal knowledge-base assistant being rolled out to IT, Legal, and Brno accounting, now in Call Center testing — currently blocked on 3 bugs, see below. Distinct from MaxBuddy (the pharmacy point-of-sale cross-sell product) — corrected 2026-09-03; an earlier entry incorrectly described Max as "Call Center-facing." |
-| Source | 2026-09-01-dr-max-x-bighub-project-status-sync, 2026-09-03-max-chatbot-demo-lexi-maxi-status-sync, 2026-09-04-ai-platform-standup-xmanager-lexi-demo, 2026-09-07-ai-portfolio-roadmap-scope-review, 2026-09-10-lexie-max-maxie-weekly-sync, 2026-09-17-lexie-max-maxie-weekly-sync |
+| Source | 2026-09-01-dr-max-x-bighub-project-status-sync, 2026-09-03-max-chatbot-demo-lexi-maxi-status-sync, 2026-09-04-ai-platform-standup-xmanager-lexi-demo, 2026-09-07-ai-portfolio-roadmap-scope-review, 2026-09-10-lexie-max-maxie-weekly-sync, 2026-09-17-lexie-max-maxie-weekly-sync, 2026-09-24-lexie-max-maxie-weekly-sync |
 | Added | 2026-09-01 |
-| Last updated | 2026-09-17 |
+| Last updated | 2026-09-24 |
 | Status | Active |
 
 **Important scope correction (2026-09-04)**: the underlying AI platform (chatbot + RAG infrastructure) is **shared BigHub infrastructure reused across multiple clients**, not Dr. Max-exclusive — also deployed for Brněnská komunikace (Brno communications), with variants in progress for Kooperativa (accounting) and Unica (legal). Dr. Max is one deployment of a centralized "core" platform/repo, not a bespoke build. Frontend direction: one standardized template by default, custom per client only on explicit request — see [[ASM-025]]. Whether Honza Sovka retains product ownership of the platform across all clients (vs. Marek owning Dr. Max only) is unresolved — see [[ASM-026]].
@@ -69,24 +71,28 @@ Original infrastructure/model provisioning for MaxBuddy was done manually (ad ho
 
 **Lexie test-account mechanics (2026-09-10)**: permissions are controlled entirely by Dr. Max's own Entra ID groups (max.bt.cz), not configurable by BigHub. For role-based testing across Lexie's 4 CC sub-departments (call centre agent, back office agent, testing, and a fourth — each needing a distinct document-access scope), two technical options were identified: (A) 4 separate accounts requiring logout/login to switch, or (B) 1 account in all relevant Entra groups with an in-app role switcher BigHub would build. Dr. Max prefers option B, but a single account in every group simultaneously doesn't actually exercise real role-restriction behavior, and whether multiple concurrent testers sharing one account would conflict is unresolved — see [[ASM-063]].
 
-**Maxie (voicebot, 2026-09-03)**: built by Honza Zelený (STK-029), sharing infrastructure with the Max chatbot. Technical blocker (missing SIP trunk) resolved via an Atlantis meeting the prior Thursday; a request list is with Dr. Max's BDC infra team (contact: Vladislav Tvarůžek, STK-016), prioritized after the new AKS work — targeting ~14 days to technical readiness. Scope starts at order-status only via a fixed IVR branch, expanding as Dr. Max's IVR is updated — see [[ASM-022]].
+**Maxie (voicebot, 2026-09-03)**: built by Honza Zelený (STK-029), sharing infrastructure with the Max chatbot. Technical blocker (missing SIP trunk) was believed resolved via an Atlantis meeting the prior Thursday. **[Corrected 2026-09-24: the SIP trunk is still unconfigured; Atlantis is the 2nd of 5 infra requests queued at BDC.]** a request list is with Dr. Max's BDC infra team (contact: Vladislav Tvarůžek, STK-016), prioritized after the new AKS work — targeting ~14 days to technical readiness. Scope starts at order-status only via a fixed IVR branch, expanding as Dr. Max's IVR is updated — see [[ASM-022]].
 
 **Process notes**: all three products' X-Manager feature requests should route through Simona Mertová as single point of contact — see [[ASM-018]]. Production-readiness bar is functional correctness against agreed scope, not full polish — see [[ASM-019]]. In-chat feedback mechanism (Max) is a star/emoji rating, no free text — see [[ASM-017]].
 
 **2026-09-07 portfolio review**: confirmed Max and Maxie run on one shared LLM core/prompt engine, differing only by channel (web chat UI vs. voice/IVR) — intentional shared architecture, not incidental overlap. Max's production integration currently runs on Dr. Max's public website API, scraped rather than officially provided — flagged as a risk before a full public launch, see [[ASM-029]]. Maxie today mirrors 3 of the chatbot's core scenarios (hours, order status, e-recept); reklamace/return flows aren't built yet, shared build with the chatbot once done. Dr. Max runs its own fixed decision-tree IVR today and plans to replace branches with the dynamic LLM version one at a time — which branch goes first is Dr. Max's call, not yet decided.
 
-**Max chatbot — 3-phase go-live plan (2026-09-17)**: (1) connect to production backend (live orders, e-recepty, etc.) — a matter of hours once infra unblocks; (2) BDC security clearance to exist on doktormax.cz invisible to the public — Dr. Max can then manually enable the widget for internal testing exactly as end users would experience it, targeted for end of September; (3) a single toggle for public visibility, on Dr. Max's timeline. Public launch target is end of October (see [[ASM-100]]), as a deliberately quiet/soft launch with no active promotion (see [[ASM-101]]). Current data architecture: nothing is stored server-side today — conversations live only in the user's browser and never leave the device; future analytics will store only aggregate statistics, never individual conversation content. E-recepty content is the one genuinely new sensitive-data touchpoint not covered by existing consent elsewhere — GDPR consent/anonymization copy is open pending DPO input, see [[ASM-102]]. Underlying model upgraded GPT-5.1→GPT-5.4 (2026-09-17), paired with a switch from literal to fuzzy/syllable-based location matching, to improve Czech-declension handling (e.g. "Brno" vs. "v Brně") and district-to-city recognition (e.g. Brno-Líšeň as part of Brno) — a possible residual bug where the bot's own earlier conversational context can override a later correct lookup is still being investigated. Tone/terminology consistency (vykání vs. tykání, "lékárna" vs. "pobočka") is being addressed via a client-authored first-person "tone brief" fed directly into the system prompt, rather than a rule list — found to work better with the underlying model.
+**Max chatbot — 3-phase go-live plan (2026-09-17)**: (1) connect to production backend (live orders, e-recepty, etc.) — a matter of hours once infra unblocks; (2) BDC security clearance to exist on doktormax.cz invisible to the public — Dr. Max can then manually enable the widget for internal testing exactly as end users would experience it, targeted for end of September; (3) a single toggle for public visibility, on Dr. Max's timeline. Public launch target is end of October (see [[ASM-100]]), as a deliberately quiet/soft launch with no active promotion (see [[ASM-101]]). Current data architecture: nothing is stored server-side today — conversations live only in the user's browser and never leave the device; future analytics will store only aggregate statistics, never individual conversation content. E-recepty content is the one genuinely new sensitive-data touchpoint not covered by existing consent elsewhere — GDPR consent/anonymization copy is open pending DPO input, see [[ASM-102]]. **[Corrected 2026-09-24: Max actually runs on GPT-5 mini, see [[ASM-149]]; the 5.1→5.4 upgrade was Lexie's.]** Location handling improved (2026-09-17) with a switch from literal to fuzzy/syllable-based location matching, to improve Czech-declension handling (e.g. "Brno" vs. "v Brně") and district-to-city recognition (e.g. Brno-Líšeň as part of Brno) — a possible residual bug where the bot's own earlier conversational context can override a later correct lookup is still being investigated. Tone/terminology consistency (vykání vs. tykání, "lékárna" vs. "pobočka") was to be addressed via a client-authored first-person "tone brief". **Superseded 2026-09-24**: client tone input is now keywords only, see [[ASM-150]].
 
 **Lexie test-account mechanics — resolved (2026-09-17)**: BigHub stepped back from the in-app role-switcher (option B, open since 2026-09-10 — see [[ASM-063]]) due to BDC permission-system risk/complexity, in favor of 4 separate department accounts without 2FA (option A). Dr. Max accepted this as workable — see [[ASM-103]]. The role-switcher isn't ruled out as a future improvement but is no longer the committed near-term path.
+
+**Max chatbot — status 2026-09-24**: runs on **GPT-5 mini**, at its ~10–12-instruction ceiling (early hallucination creep); cost projection and model switcher coming, see [[ASM-149]]. New since 09-17: a **stable/candidate switch** (testers stay on stable; candidate is Jura's WIP); a **context header** showing the tracked location and product as removable chips (these persist across turns); an **end-conversation flow** (header button, plus detection of "děkuju"/goodbye), with free-text feedback kept test-only ([[ASM-152]]); **golden conversations**, ~50 recorded problem cases replayed live on every publish as a regression check; **URL-contextual proactive bubbles** (the teaser adapts to product/branch/order pages without site integration); clickable tap-to-call phone numbers; a "show X more" carousel that freezes and appends (untested on mobile). Opening-hours logic rebuilt: the model now issues search queries instead of sorting all pharmacies, so it can handle "earliest open" queries. A hard filter catches gendered Czech phrasing and sends replies back for a rewrite; this is imperfect, and profile-based salutation is deferred ([[ASM-157]]). Known gaps: Rx stock lookup without an e-recept isn't wired; multi-drug queries are unresolved; order data is mocked (Jura has prod order-DB access, test-DB access not yet requested). Order-status wording to come from Lucie Fendrichová. The opening message is hardcoded; Dr. Max supplies the wording incl. AI Act disclosure ([[ASM-151]]). Public methodologies to come via AI-platform RAG ([[ASM-153]]). Once phase 2 (hidden on doktormax.cz) is live, Dr. Max can test outside VPN and on personal phones.
+
+**Maxie — design direction (2026-09-24)**: exact replica of Dr. Max's existing Atlantis IVR "Maxí", split per IVR topic branch, see [[ASM-154]]. Barge-in: on ElevenLabs it will stop and listen; whether it handles the interruption's context is unconfirmed.
 
 ### TEO / OCR (pharmacy service-protocol extraction)
 
 | Field | Value |
 |-------|-------|
 | Definition | **TEO is Dr. Max's technical department** (not a project acronym — clarified 2026-09-07, Jura had been calling this the "OCR project" informally). The project itself is a BigHub effort (owner: Jura Brázdil) automating extraction from TEO's mandatory pharmacy equipment service-inspection/revision-repair protocols (automatic doors, air conditioning, etc.) — currently manually retyped into Excel by staff. "OCR" is a working name, not literally OCR-only — the pipeline is LLM-based extraction over scanned/photographed, often handwritten, documents. |
-| Source | 2026-09-03-maxbuddy-chatbot-ocr-project-handoff, 2026-09-07-ai-portfolio-roadmap-scope-review, 2026-09-15-business-quantification-teo-ocr, 2026-09-16-teo-ocr-solution-proposal-variants, 2026-09-16-teo-ocr-accuracy-validation-cost-analysis, 2026-09-16-teo-ocr-production-spec-v1-1, 2026-09-16-teo-ocr-technical-sync-pilot-results, 2026-09-22-teo-ocr-technical-sync-spedos-disambiguation-reversal |
+| Source | 2026-09-03-maxbuddy-chatbot-ocr-project-handoff, 2026-09-07-ai-portfolio-roadmap-scope-review, 2026-09-15-business-quantification-teo-ocr, 2026-09-16-teo-ocr-solution-proposal-variants, 2026-09-16-teo-ocr-accuracy-validation-cost-analysis, 2026-09-16-teo-ocr-production-spec-v1-1, 2026-09-16-teo-ocr-technical-sync-pilot-results, 2026-09-22-teo-ocr-technical-sync-spedos-disambiguation-reversal, 2026-09-25-alana-1on1-teo-phasing-capacity-pool-team-dynamics |
 | Added | 2026-09-03 |
-| Last updated | 2026-09-22 |
+| Last updated | 2026-09-25 |
 | Status | Active |
 
 Scope narrowed to one category first: automatic doors, two vendors — extracting door type, faults, branch address, and follow-up requests via a ~16-prompt pipeline. Currently in a second feasibility-measurement round (first round handled cleanly-extractable data; second tackles free-text notes). Target: production-ready for Dr. Max's November inspection cycle. Will move onto the shared AI platform (alongside MaxBuddy, Max, Lexie) once the new AKS sandbox is available.
@@ -121,6 +127,8 @@ Scope narrowed to one category first: automatic doors, two vendors — extractin
 
 **Two conflicts flagged, not yet resolved (2026-09-22)**: the disambiguation-candidate rejection above appears to reverse [[ASM-119]] (decided 2026-09-21 — ranked candidate alternatives for ambiguous dates/addresses), and this session separately describes Blob storage/deployment as still depending on Dr. Max infra/BDC, contradicting [[ASM-088]] (decided 2026-09-16 — self-provisioned by BigHub, no BDC dependency). See [[ASM-128]] and [[ASM-129]] — both need direct reconciliation with Jura before either older assumption is treated as superseded. Separately, Marek flagged the fully-manual, Excel-based review step (no AI assistance downstream of BigHub's own extraction) as a design gap worth revisiting — see [[ASM-130]]. Source: 2026-09-22-teo-ocr-technical-sync-spedos-disambiguation-reversal.
 
+**Cadence and phasing (2026-09-25, Alana Sihelská)**: Service protocols reach Dr. Max's technical department in **two batches a year, spring and autumn**. BigHub's samples came from spring 2025, autumn 2025 and spring 2026, and the **autumn 2026 cycle is already running**. So the review step stays on Excel for autumn 2026, and a non-Excel review solution is targeted before spring 2027 ([[ASM-165]]). **Open conflict**: this cadence doesn't match the volume model above (steady ~250 docs/week averaging out annually, ~40 h/month; BQ tracker 40 → 12 h/month). Both are kept until the Radim call clarifies ([[ASM-168]]). Also in question: the earlier "November inspection cycle" target, since the autumn cycle has already started. Source: 2026-09-25-alana-1on1-teo-phasing-capacity-pool-team-dynamics
+
 ### Reklamace (claims) — business objective & phasing
 
 | Field | Value |
@@ -138,7 +146,13 @@ Scope narrowed to one category first: automatic doors, two vendors — extractin
 
 **Phasing**: Ships in 5 phases (0 through 4/5); the full ~1 FTE saving only materializes once all phases are live — see [[ASM-072]]. Documentation should label phases explicitly (e.g. Phase 0 = Příprava/preparation, Phase 1 = příjmové reklamace/receiving claims) since staff currently confuse "příjmové" (receiving) vs. "dodavatelské" (supplier) claim types.
 
-**Digitization reframe and its fallout (2026-09-22/23)**: the project's real efficiency driver turned out to be data digitization/consolidation (single supplier source of truth in Axapta, replacing Excel; a "knowledge base" need that turned out to be two sentences of warehouse-worker procedure, solved with one Axapta parameter) rather than AI — see [[ASM-122]]. This shift generated a real relationship-management episode: Tereza Foltýnová (STK-013) began circulating that "BigHub doesn't want to deliver," requiring a direct calibration meeting with her and Petr Spilka (STK-014) to correct it. The continue-or-close decision now waits on a management meeting (Jindřich, Dudaško, Rudolf Žůrek, Spilka, Jan Žižka), complicated by Dudaško's plan to retire Axapta within ~6 months (see [[ASM-139]]) — he's willing to pay more now for a solution portable to Axapta's eventual replacement. A previously invisible requirement also surfaced: the "rozvozový list" needs free-text input from warehouse workers with no defined data source now that BigHub generates the document (see [[ASM-143]]). Source: 2026-09-23-cross-project-status-sync-reklamace-fallout-listing-blockers.
+**Digitization reframe and its fallout (2026-09-22/23)**: the project's real efficiency driver turned out to be data digitization/consolidation (originally framed as a single supplier source of truth in Axapta, replacing Excel — narrowed 2026-09-25, see below; a "knowledge base" need that turned out to be two sentences of warehouse-worker procedure, solved with one Axapta parameter) rather than AI — see [[ASM-122]]. This shift generated a real relationship-management episode: Tereza Foltýnová (STK-013) began circulating that "BigHub doesn't want to deliver," requiring a direct calibration meeting with her and Petr Spilka (STK-014) to correct it. The continue-or-close decision now waits on a management meeting (Jindřich, Dudaško, Rudolf Žůrek, Spilka, Jan Žižka), complicated by Dudaško's plan to retire Axapta within ~6 months (see [[ASM-139]]) — he's willing to pay more now for a solution portable to Axapta's eventual replacement. A previously invisible requirement also surfaced: the "rozvozový list" needs free-text input from warehouse workers with no defined data source now that BigHub generates the document (see [[ASM-143]]). Source: 2026-09-23-cross-project-status-sync-reklamace-fallout-listing-blockers.
+
+**Supplier data: where each attribute lives (2026-09-25)**: Axapta will not become the single supplier source. Petr Sláma's team won't develop further on a system slated for retirement, so only three fields are committed. **Účet dodavatele** (supplier account, the join key) already exists in Axapta and just needs exposing via the API contract. **Adresa**: Axapta holds supplier HQ addresses, while the real warehouse return addresses live in Excel; Axapta agreed to take them over, which needs ~2 hours of manual data entry (no owner yet). **Hlavní kontakt** (a single email that drives the email draft) is in the approved contract; <5 suppliers route by goods category instead ([[ASM-171]]). Not agreed: **Kontakty** (free text, typically 0–2 per supplier, some stale), **Poznámky**, and **Typ odvozu**. That last one is the own-pickup flag for ~70–75 suppliers who collect returns themselves; it's printed on the rozvozový list so warehouses can sort own-pickup parcels from standard shipments ([[ASM-176]]). These go to an external store that extends Axapta ([[ASM-170]]). Options offered to logistics with risks: Excel on SharePoint (not recommended), SharePoint Lists, or Confluence ([[ASM-169]]). Sizing: about 2 editors per warehouse; viewers = all claims workers. Supplier-data sections are basic info / main contact for the email draft / **Instrukce** / follow-up email process. History: the original Excel had ~300 sheets, one per supplier, each a pre-filled rozvozový list with free notes around it. Jana Egrmaierová consolidated it into a single ~300-row × ~10-column table.
+
+**Two people handle a claim**: the **příjem foreman** (receiving foreman) uses BigHub's mobile app, scanning the label and photographing damage, which creates the case in Axapta. The **zaměstnanec reklamací** (claims worker) is a different person who has never used the app; they work in Axapta and relied on the old per-supplier Excel. The flat table loses that view ([[ASM-175]]).
+
+**Email flow (as of 2026-09-25)**: the worker clicks in Axapta, which sends a request with supplier data. BigHub generates the rozvozový list and returns it to Axapta for printing, and the same request triggers an Outlook draft that the worker reviews and sends ([[ASM-010]]). A supplier reply in the inbox can trigger an LLM to extract structured info (e.g. which warehouse, for ~5 multi-warehouse suppliers) and draft the next reply in the thread. Jakub Turner has finished the main part; it is blocked on infra delivering Microsoft Graph API access. Whether a draft appears directly inside the reply thread is not implemented or verified yet. A ~1 MD demo is in progress ([[ASM-173]]). Rozvozový list fields that come from Axapta but are missing from the contract: reklamace number, RD document number, issue date ([[ASM-174]]). The per-case timeline dashboard idea was killed ([[ASM-172]]). Source: 2026-09-25-reklamace-supplier-data-source-options.
 
 ### Reklamace "OCR" (SP/MS štítky)
 
@@ -258,6 +272,15 @@ Unclear whether this blacklist is signed off by Dr. Max or a BigHub-authored dra
 
 ## Naming Conventions
 
+### Reklamace supplier-data naming
+
+| Field | Value |
+|-------|-------|
+| Definition | **"Instrukce"** (Instructions) replaces "knowledge base" for the per-supplier claim-handling procedure section. Jindřich Tůma wants the old term dropped entirely, since "postup" (procedure) isn't well defined yet. The supplier identifier field is **"účet dodavatele"** (supplier account, Axapta's own term), not "číslo dodavatele". **SharePoint Lists** is a native SharePoint table (called "SharePoint tables" in conversation): halfway between a database and Excel, it can't easily be downloaded and has better access control. |
+| Source | 2026-09-25-reklamace-supplier-data-source-options |
+| Added | 2026-09-25 |
+| Status | Active |
+
 ## Vendor & Partner Context
 
 ### BigHub
@@ -307,6 +330,8 @@ Deliberately kept out of the 9-product roadmap set (`product-roadmap-portfolio-f
 
 **Prototype architecture walkthrough (2026-09-23)**: Jura's prototype is manifest-driven and modular — each project (Lexie, MaxBuddy, Chatbot Max, Maxie, OCR, etc.) exposes its own reporting/docs/technical-status pages to the platform via a manifest, and the platform surfaces them consistently rather than dictating their content. Role-based visibility is inherited entirely from Dr. Max's existing AD/IdM groups — BigHub consumes the group structure rather than redefining permissions. Super-admin panels include per-project cost breakdown (currently mocked; a real Azure-cost breakdown is feasible with BDC read access), a permissions view, an audit log (logins, settings changes), and a roadmap/pilot-status view. **Important framing correction**: "platform" and "Lexie" had been conflated as one concept by the team — now explicitly separated, since Dudaško's frustration partly stemmed from wanting an actual platform while what existed under that name was really just Lexie (see [[ASM-144]]). A cross-platform RAG "ask anything" agent concept is deliberately kept in reserve, not built, given the small number of currently-active projects (see [[ASM-146]]). A real security gap was found: MCP server registration currently leaks secret/header values to any agent reading server descriptions — needs sealing before further build-out (see [[ASM-145]]). This MVP stage deliberately excludes all visual/design work, validating navigation/structure with Dudaško first (see [[ASM-147]]); demo targeted for Friday 2026-09-25. Jura remains fully blocked on further real deployment until database access comes through from BDC. Source: 2026-09-23-ai-platform-prototype-walkthrough-navigation-modular-reporting.
 
+**Phase 1 prototype demoed to Dudaško (2026-09-24)**: hosted on Jura's private infra (not Azure), public but PIN-protected, mocked data. Role-based entry: single-app users (e.g. a CC Lexie user, or MaxBuddy reporting-only) go straight into their app; super-admins land in the platform. Features: project overview tiles; per-project cost report (spent/forecast/budget, OpenAI + Azure, prod/test/total, plus prototyping spend); platform usage reporting (incl. internal projects like Listing and TEO/OCR; will reflect BQ KPIs and adoption-campaign reach); per-project technical status with external dependencies (Dr. Max services, AKS); per-tile tenant/role permissions; a live audit trail. Agreed additions: Zabbix alerting integration and auditable incident history ([[ASM-162]]); the roadmap/blockers view goes to Azure DevOps instead ([[ASM-163]]). Dudaško accepted the direction. First release is ~3–4 weeks after DB access on the new cluster works, and that access is disputed ([[ASM-164]]). Source: 2026-09-24-ai-initiatives-bq-review-platform-prototype-demo-dudasko
+
 ### Alfred
 
 | Field | Value |
@@ -326,7 +351,7 @@ Deliberately kept out of the 9-product roadmap set (`product-roadmap-portfolio-f
 | Last updated | 2026-09-01 |
 | Status | Active |
 
-Active project streams as of 2026-09-01 (per 2026-09-01-dr-max-x-bighub-project-status-sync): MaxBuddy (live, incremental changes), Max chatbot, Maxie, Lexie, claims/reklamace knowledge-base consolidation, freight invoicing (fakturace doprav), e-commerce order prediction (řízení poptávky), listing, voicebot. Plus **Kontrola beden** (crate/box control) — identified but not yet started; next-step contact Jan Maroušek (STK-021) has never been actioned.
+Active project streams as of 2026-09-01 (per 2026-09-01-dr-max-x-bighub-project-status-sync): MaxBuddy (live, incremental changes), Max chatbot, Maxie, Lexie, claims/reklamace knowledge-base consolidation, freight invoicing (fakturace doprav), e-commerce order prediction (řízení poptávky), listing, voicebot. Plus **Kontrola beden** (crate/box control) — identified but not yet started; next-step contact Jan Maroušek (STK-021) has never been actioned. **Update (2026-09-25, BQ tracker)**: owner is Rudolf Žůrek (STK-024), tracked as an Idea with dates 2026-04-15→2027-04-30; Maroušek remains a contact.
 
 Per a BigHub roadmap sheet (2026-09-02), owners cross-checked against the above: MaxBuddy → Tomáš Dudaško (STK-010), E-Shop order forecast → Marek Šimoník (STK-019, confirms), Product listing → Petr Neuman (STK-023, new), Maxie/Max → Simona Mertova/Martová (STK-017, spelling unresolved), Lexie → Tomáš Dudaško (STK-010, conflicts with the transcript's Martová/Mertová attribution). Also surfaced: **TD revisions**, a project stream not seen in any transcript, owned by Tomáš Burda (STK-025); and two initiatives — "Receiving compliants in stock" and "Invoicing solution" — both owned by Rudolf Zurek (STK-024), which may or may not be the same initiatives as Reklamace and Fakturace doprav respectively. Conflicts recorded but not reconciled — see ASM-006.
 
@@ -388,10 +413,12 @@ Reklamace document flow (as of 2026-09-02): contract config in Axapta is complet
 | Field | Value |
 |-------|-------|
 | Definition | Infrastructure/access vendor involved in provisioning access (`prostupy`) for Dr. Max systems — relevant to the voicebot project's infra blocker. Runs on Dr. Max's own datacenter hardware (their VMs) but is administered as a vendor service by Atlantis's own staff (contact: Tecl, STK-033), including public addresses/comms. Currently serves as the central PBX for the entire Dr. Max call center and all T-Mobile data lines — every inbound call routes through this existing SIP connection; adding further SIP lines is not expected to be technically difficult. Will connect directly to **ElevenLabs** (voice AI provider) for the voicebot; a new public IP/domain needs configuring for that integration, owned end-to-end by Atlantis. |
-| Source | 2026-09-01-dr-max-x-bighub-project-status-sync, 2026-09-02-aks-atlantis-infra-sync |
+| Source | 2026-09-01-dr-max-x-bighub-project-status-sync, 2026-09-02-aks-atlantis-infra-sync, 2026-09-24-lexie-max-maxie-weekly-sync |
 | Added | 2026-09-01 |
-| Last updated | 2026-09-02 |
+| Last updated | 2026-09-24 |
 | Status | Active |
+
+**Existing IVR "Maxí" (2026-09-24)**: Dr. Max already runs a "Maxí" in its Atlantis-hosted IVR, built ~2–3 years ago with another vendor. Tecl (STK-033) knows the setup, and Dr. Max rents the whole PBX from Atlantis. The BigHub voicebot must replicate it exactly ([[ASM-154]]).
 
 ### AKS
 
@@ -435,13 +462,34 @@ Listing's core blocker (reconfirmed 2026-09-02) is not code but Dr. Max's undefi
 | Field | Value |
 |-------|-------|
 | Definition | Third-party voice AI provider (text-to-speech/speech-to-text) that Atlantis will connect to directly for the Dr. Max voicebot project. |
-| Source | 2026-09-02-aks-atlantis-infra-sync |
+| Source | 2026-09-02-aks-atlantis-infra-sync, 2026-09-24-lexie-max-maxie-weekly-sync |
 | Added | 2026-09-02 |
+| Last updated | 2026-09-24 |
 | Status | Active |
+
+**Capabilities (2026-09-24)**: barge-in: the voice agent reliably stops and listens when interrupted; whether it also picks up the interruption's context is unconfirmed (Marek/Jura investigating). Voices: the samples sent to Dr. Max were marketing material. The product has a much larger catalog, character-tuning sliders, voice cloning from recordings and a voice designer; 3 voices are natively optimized for Czech/Slovak. Extended options are likely paid (Jura's rough guess: thousands of Kč). Licence budget ownership is open, see [[ASM-155]].
 
 ## Seasonal & Cyclical Patterns
 
+### TEO/OCR service-protocol cycles
+
+| Field | Value |
+|-------|-------|
+| Definition | Pharmacy equipment service protocols (the TEO/OCR input) arrive in two batches a year: spring and autumn. The autumn 2026 cycle was already running as of 2026-09-25, so the next cycle that process changes can target is spring 2027. Conflicts with the steady-weekly volume model in the TEO/OCR entry; see there. |
+| Source | 2026-09-25-alana-1on1-teo-phasing-capacity-pool-team-dynamics |
+| Added | 2026-09-25 |
+| Status | Active |
+
 ## Project Conventions
+
+### BigHub capacity pool (Dr. Max)
+
+| Field | Value |
+|-------|-------|
+| Definition | BigHub's Dr. Max work is budgeted as a shared annual pool of ~3 FTE (~60 MD/month) starting about May 2026, with no fixed per-stream allocation. The team can direct it at any stream, and occasional monthly overruns are fine because early months were under-used. Still unconfirmed: the accumulated amount (Jindřich Tůma to ask Tomáš, assumed Dudaško) and whether Jindřich is inside the pool or extra. See [[ASM-167]]. |
+| Source | 2026-09-25-alana-1on1-teo-phasing-capacity-pool-team-dynamics |
+| Added | 2026-09-25 |
+| Status | Active |
 
 ### Effort estimate convention (MD)
 
@@ -481,12 +529,33 @@ Relevant Teams channels: **BigHubInfrastructureChat** (in Dr. Max's Teams — ge
 
 | Field | Value |
 |-------|-------|
-| Definition | The consolidated cross-initiative business-value tracker Marek maintains, merging Jindřich's separate "Ideas" and "Active" roadmap sheets into one expanded sheet. Columns include state (Deployed → In Phase → Idea/Prioritized/Development, per Jan Žižka's requested phase split), JTBD-style goals, a primary and optional secondary business-value metric with a documented calculation trail (costs given per-mandate/hour/month, normalized to an annual Kč figure on a 250-working-day/year basis for CZ), and separate columns for annual savings/revenue with a detailed rationale. A quick priority lens applied on top: filter to initiatives above 1M Kč/year modeled annual value. |
-| Source | 2026-09-22-ai-portfolio-business-value-review-reklamace-reframe |
+| Definition | **Source of truth for business quantification (per PM, 2026-09-25)**: the AI Initiative tracker workbook, sheet `new_Přehled`. Where any harness artifact conflicts with it on values, KPIs, owners, domain experts, phase or progress, the tracker wins. The consolidated cross-initiative business-value tracker Marek maintains, merging Jindřich's separate "Ideas" and "Active" roadmap sheets into one expanded sheet. Columns include state (Deployed → In Phase → Idea/Prioritized/Development, per Jan Žižka's requested phase split), JTBD-style goals, a primary and optional secondary business-value metric with a documented calculation trail (costs given per-mandate/hour/month, normalized to an annual Kč figure on a 250-working-day/year basis for CZ), and separate columns for annual savings/revenue with a detailed rationale. A quick priority lens applied on top: filter to initiatives above 1M Kč/year modeled annual value. |
+| Source | 2026-09-22-ai-portfolio-business-value-review-reklamace-reframe, 2026-09-24-ai-initiatives-bq-review-platform-prototype-demo-dudasko, AI_Innitiative_tracker (2).xlsx — sheet new_Přehled |
 | Added | 2026-09-22 |
+| Last updated | 2026-09-25 |
 | Status | Active |
 
-Reviewed live on 2026-09-22: Reklamace ~400-700k, Fakturace doprava ~780k, TEO/OCR ~273k, Lexie ~1.2M, Max chatbot+Maxie ~13-14M, Listing ~34M, MaxBuddy ~81M (all Kč/year). The >1M filter surfaced a portfolio priority-ranking tension between a pure dollar-value read and stakeholder-side priority — see [[ASM-125]].
+**Authoritative snapshot (tracker `new_Přehled`, 2026-09-25)**, supersedes the 2026-09-22 rough figures:
+
+| Initiative | Dept | State / phase / progress | Priority (1–5)* | Annual value | Owner / domain expert |
+|---|---|---|---|---|---|
+| Reklamační proces (Core) | Logistika | In development / Pilot / 15% | 3 | 425,000 Kč, **phase 1 only** (8 h/day × 212.50 Kč/h × 250 days); full ~1 FTE saving only once all 5 phases are live | Petr Spilka / Petr Spilka |
+| Fakturace doprav (digitalization + checks) | Logistika | Phase 1 in development, phase 2 not started / Pilot / 20% | 3 | 787,500 Kč (10.5 h/day across Ostrava/Brno/Pavlov × 300 Kč/h × 250), covers both phases | Jan Žižka / Jan Žižka |
+| MaxBuddy | MaxBuddy | Deployed / Solution / 100% | 3 | 81,000,000 Kč **revenue uplift** (60M dispensing cases × 75% coverage × 1.2% conversion × 150 Kč), not comparable 1:1 with savings rows | Luboš Vosmek / Lukáš Szücs (IT liaison); Jiří Trajer supplies data only |
+| Predikce objednávek (order prediction) | E-commerce | In development / Pilot / 35% | 3 | 1,931,250 Kč: mixes analyst time saved (~131k, 5→2 h/week) with fast-reaction value (100–200 saved orders/month ≈ 1.2–2.4M) | Marek Šimoník (confirmed, not handed to Ondráček) / Petr Ondráček |
+| OCR (TEO) | TEO | Prioritized / POC / 5% | 4 | 273,000 Kč (40 → 12 h/month × 812.50 Kč/h) | Tomáš Burda / Radim Švarc |
+| Max chatbot | CCC | In development / Pilot / 40% | 3 | 13,936,000 Kč, **illustrative** (+20 agents avoided for 24/7) | Simona Mertová / Mertová interim (Kadlecová leaving) |
+| Maxie | CCC | In development / Pilot / 40% | 3 | 13,936,000 Kč, **same scenario as Max, don't add them together** | Simona Mertová / Mertová interim |
+| Lexie | CCC | In development / Pilot / 40% | 2 | 1,219,400 Kč, **illustrative** (Mertová refuses FTE conversion) | Simona Mertová / Mertová interim |
+| Listing | E-commerce | In development / Pilot / 35% (2026-04-15→06-30) | 5 | 34,120,000 Kč = conversion +0.1 pp (5%→5.1%) ≈ 31M (orientational, method approved by Neuman) + cost/item 230→130 Kč ≈ 2.4M + 130→100 Kč ≈ 0.72M | Petr Neuman / Michaela Vdovicynová |
+
+*The sheet doesn't say whether 5 is the highest priority; recorded as-is. Value ranking: MaxBuddy > Listing > Max/Maxie > order prediction > Lexie > Fakturace > Reklamace > TEO (see [[ASM-125]]).
+
+**KPI baselines (inputs for the measurement column, [[ASM-159]])**: Reklamace: ~25% faster end-to-end (baseline not measurable today), ≥66% satisfaction on 6–7 workers after 1–3 months. Fakturace: phase 1 ≥40% of cases without manual touch and ~40% less admin time; phase 2 ≥40% km auto-verified (ZOPV vs Axapta vs GPS), ≥60% temperature records auto-checked. MaxBuddy: single-item dispensing share 42.52% YTD2026, target −1.5 pp/yr (tracked by Holding); +1.5 pp/yr complex-care by molecule group; per-benefit conversion; satisfaction +31% when complex care is offered (~40k surveys/month); coverage ~40% today (26 molecules → 68 groups), target 75%. Order prediction: analyst check time 5→2 h/week, ≥1 serious issue caught per month. OCR: check time ≤30% (10→3 min/document), ~80%→90% of documents imported to ServiceNow without correction; ~250 documents/week. Max chatbot: resolution without escalation ~50% → ~80%. Maxie: 50/50 resolved vs transferred, ≤10% call back within 10 min (legacy voicebot: ~85% don't call back within 7 min); coverage today ~60% of network calls → ~100%. Lexie: onboarding 1–1.5 (up to 2) months, cut by ~14 days; ~30 min/day saved per operator (28 operators). Listing: ≥6,000 items/quarter → 8–10k, cost/item ~100 Kč, <30 min per item.
+
+**Ideas backlog**: 55 ideas captured. Only 3 have values: Predikce PW 300k, Generická substituce 150k, Automatické objednávání od distributorů 70k (all Jana Kneiflová). Named owners: Rudolf Žůrek (Kontrola beden, 2026-04-15→2027-04-30), Miroslav Tlustý (Aplikace pro cenotvorbu, Produktový katalog), Martin Panzner (PBI analýza, speech-to-text notes/emails, banner checks), Petr Neuman (Poradna na webu), Jan Štangel (Automatizace helpdesku). The rest are grouped by area: HR, Provoz/HR, Obchod/Marketing, Sklad/Logistika (8), Lékárna (28). Plánování směn dle predikce objednávek (priority 1, owner likely the head of logistics, not Šimoník) is not yet quantified. This is the base for the end-of-November department backlogs ([[ASM-161]]).
+
+**Intake standard & measurement (2026-09-24)**: Dudaško endorsed the tracker and made its format the mandatory intake standard for all new AI initiatives ([[ASM-158]]). Next layer: a KPI measurement-method and baseline column ([[ASM-159]]), and per-initiative "PR" value stories for live or near-live items, starting 2026-09-29 ([[ASM-160]]). Department backlogs are targeted for end of November ([[ASM-161]]). Business-owner confirmations are kept by email as an audit trail. Approval status: all owners approved their business values except Marek Šimoník (on vacation; the figures are his) and Simona Mertová (no time yet). The annualized columns M/N (annual savings/revenue) have **not** been shown to owners. Source: 2026-09-24-ai-initiatives-bq-review-platform-prototype-demo-dudasko
 
 ### "Old wise man" discovery approach
 

@@ -1,6 +1,6 @@
 ---
-last_updated: 2026-09-02
-last_updated_by: auto — project-initiation
+last_updated: 2026-09-25
+last_updated_by: auto — project-meeting routing (2026-09-25-reklamace-supplier-data-source-options)
 owner: Marek Pillár
 ---
 
@@ -51,7 +51,7 @@ N/A — no client stakeholders. See `project-stakeholders.md` for the full team/
 
 ## 9. Ways of Working
 
--tbd-
+- **Informal agreements harden into commitments (2026-09-25)**: Dr. Max logistics treats "it was agreed the supplier data stays in Excel" as settled, though BigHub never presented it that way. An earlier improved-Excel demo and the spec's original Excel wording were read as a commitment. Their real driver is having no other tool and refusing to use Axapta because it is being retired, not a UX preference. Takeaway: present options with explicit risks and get the client's own sign-off in writing ([[ASM-169]]). Source: 2026-09-25-reklamace-supplier-data-source-options.
 
 ## 10. Active Initiatives & Project History
 

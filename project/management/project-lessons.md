@@ -1,10 +1,170 @@
 ---
-last_updated: 2026-09-24
-last_updated_by: auto — project-meeting routing (2026-09-23-cross-project-status-sync-reklamace-fallout-listing-blockers, 2026-09-23-ai-platform-prototype-walkthrough-navigation-modular-reporting)
+last_updated: 2026-09-25
+last_updated_by: auto — project-meeting routing (2026-09-25-reklamace-supplier-data-source-options)
 owner: Marek Pillár
 ---
 
 # Lessons Learned
+
+---
+
+### LL-064
+
+| Field | Value |
+|-------|-------|
+| ID | LL-064 |
+| Created | 2026-09-25 |
+| Category | delivery |
+| Source | 2026-09-25-reklamace-supplier-data-source-options |
+
+**Lesson**
+Before agreeing an integration API contract, map every field of every output document the system produces back to its source system. Fields that the old manual process filled in by hand or copied across are the easiest to miss. They surface late, when the counterpart has the least appetite to reopen the contract.
+
+**Context**
+The Reklamace rozvozový list needs the reklamace number, RD document number and issue date from Axapta, but none are in the API contract. The gap was spotted only after the contract was approved, and Petr Sláma has not responded to the follow-up.
+
+**Cross-reference**
+[[ASM-174]], [[ASM-143]], STK-034 (Petr Sláma)
+
+---
+
+### LL-063
+
+| Field | Value |
+|-------|-------|
+| ID | LL-063 |
+| Created | 2026-09-25 |
+| Category | stakeholder-management |
+| Source | 2026-09-25-reklamace-supplier-data-source-options |
+
+**Lesson**
+When you demo an interim or alternative option to a client, say out loud that it is exploratory and not a commitment, and say who can decide. Otherwise a working demo, combined with early spec wording, hardens into "it was agreed" on the client side.
+
+**Context**
+Filip Černý demoed an improved Excel (data sheet + print sheet) to logistics while the target store was still undecided. Together with the spec's original Excel wording, logistics now treats Excel as agreed, which Jindřich had to walk back.
+
+**Cross-reference**
+[[ASM-169]], STK-006 (Filip Černý), STK-044 (Jana Egrmaierová)
+
+---
+
+### LL-062
+
+| Field | Value |
+|-------|-------|
+| ID | LL-062 |
+| Created | 2026-09-25 |
+| Category | discovery |
+| Source | 2026-09-25-reklamace-supplier-data-source-options |
+
+**Lesson**
+When a client insists on keeping a legacy tool (Excel, paper, a spreadsheet on a share), find out why before designing around it. "It's the only tool we have" and "we like how it works" call for very different solutions. The first one usually means any secured tool with a familiar shape will do.
+
+**Context**
+Filip Černý feared logistics wanted the supplier-data Excel for UX reasons. Jindřich Tůma explained the real reason: they have no other tool and won't use Axapta because it's being retired. That opened up SharePoint Lists or Confluence as acceptable alternatives.
+
+**Cross-reference**
+[[ASM-169]], [[ASM-139]]
+
+---
+
+### LL-061
+
+| Field | Value |
+|-------|-------|
+| ID | LL-061 |
+| Created | 2026-09-25 |
+| Category | discovery |
+| Source | 2026-09-25-alana-1on1-teo-phasing-capacity-pool-team-dynamics |
+
+**Lesson**
+A use case that arrives as an inbound request from the client often skips the discovery that team-originated use cases get. Before treating the stated request as the whole scope, go back and map the end-to-end process, its cadence and its adjacent pain points. Otherwise you can't size the value or see where the relationship could grow.
+
+**Context**
+TEO/OCR began when Radim Švarc cold-called Alana with a ready-made idea. Unlike the streams Jan Sovka shaped through interviews, nobody asked how the whole process works. As a result, the twice-yearly cadence surfaced late, the per-cycle effort is unknown, and follow-on directions are unclear.
+
+**Cross-reference**
+[[ASM-168]], [[ASM-165]], STK-041 (Radim Švarc)
+
+---
+
+### LL-060
+
+| Field | Value |
+|-------|-------|
+| ID | LL-060 |
+| Created | 2026-09-25 |
+| Category | delivery-planning |
+| Source | 2026-09-25-alana-1on1-teo-phasing-capacity-pool-team-dynamics |
+
+**Lesson**
+Before proposing a change to how a client runs a process, check how often the process actually runs and where it is in its current cycle. For periodic or seasonal work, the realistic target is usually the next cycle, not the one already under way. Framing the change as phases tied to cycles makes it far easier to accept.
+
+**Context**
+Marek and Alana were preparing to push TEO/OCR's review step off Excel. Alana pointed out that service protocols come only in spring and autumn and the autumn 2026 cycle was already running. They agreed Excel stays for autumn and the non-Excel solution targets spring 2027.
+
+**Cross-reference**
+[[ASM-165]], [[ASM-130]]
+
+---
+
+### LL-059
+
+| Field | Value |
+|-------|-------|
+| ID | LL-059 |
+| Created | 2026-09-24 |
+| Category | stakeholder-management |
+| Source | 2026-09-24-ai-initiatives-bq-review-platform-prototype-demo-dudasko |
+
+**Lesson**
+A new team can often get business owners to commit to quantified value figures that a long-standing vendor or internal team couldn't. The "new broom" position makes a firm, non-negotiable process easier to introduce. Lock it in immediately: make owners the explicit guarantors of their numbers, keep email confirmation as an audit trail, and turn the format into the standard intake for all future ideas before the window closes.
+
+**Context**
+Dudaško had asked the Dr. Max business for value quantification for years and was refused ("we've never done it"). Within weeks of taking over, Marek and Jindřich got owner-guaranteed, email-confirmed figures for every initiative. Dudaško immediately made the tracker the mandatory intake standard and raised the bar to measurement methods.
+
+**Cross-reference**
+[[ASM-158]], [[ASM-159]], STK-010 (Tomáš Dudaško)
+
+---
+
+### LL-058
+
+| Field | Value |
+|-------|-------|
+| ID | LL-058 |
+| Created | 2026-09-24 |
+| Category | stakeholder-continuity |
+| Source | 2026-09-24-lexie-max-maxie-weekly-sync |
+
+**Lesson**
+When a vendor takes over a workstream from a previous owner, look for and involve the client's existing solutions and the people who built them before holding technical meetings with third parties. Leaving the business owner out of those meetings risks reinventing something the client has already done, and costs trust.
+
+**Context**
+BigHub met Atlantis about Maxie's SIP trunk without Simona Mertová, and colleagues didn't know Dr. Max already ran an IVR "Maxí" on Atlantis (built ~2–3 years earlier, known to Tecl). Mertová had told the previous owner (Lukáš) exactly this. Jindřich recovered by committing to a joint meeting with all parties.
+
+**Cross-reference**
+[[ASM-154]], STK-017 (Simona Mertová), STK-033 (Tecl)
+
+---
+
+### LL-057
+
+| Field | Value |
+|-------|-------|
+| ID | LL-057 |
+| Created | 2026-09-24 |
+| Category | llm-product-delivery |
+| Source | 2026-09-24-lexie-max-maxie-weekly-sync |
+
+**Lesson**
+When an LLM product starts on the cheapest model, tell the client early and explicitly about that model's practical limits (e.g. how many instructions it can reliably hold), and give them a cost-vs-quality comparison they can try hands-on. Otherwise quality complaints pile up as "vendor bugs" when they are really a model-budget decision the client needs to own.
+
+**Context**
+Max chatbot ran on GPT-5 mini. Dr. Max's tone complaints (passive-aggressive phrasing, abuse handling, gender-neutral Czech) and their long tone prompt ran into the model's ~10–12-instruction ceiling. Jura reframed it on the call and offered a cost projection plus a model switcher on the test page.
+
+**Cross-reference**
+[[ASM-149]], [[ASM-150]], STK-026 (Jura Brázdil)
 
 ---
 
