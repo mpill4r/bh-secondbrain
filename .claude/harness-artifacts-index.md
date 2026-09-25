@@ -142,3 +142,31 @@ Central registry of all harness artifacts. Skills that route information or read
 - **Owner skill**: `project-document`
 - **Route to when**: Every ingested document gets an entry; updated versions link to previous
 - **Read for context when**: Document ingestion — duplicate/version detection, previous document context
+
+## Reference Artifacts (non-routing)
+
+Standalone deliverables and archives that live in the repo but are not routing targets. Read them for context only.
+
+### `listing-specifikace`
+- **Path**: `product/solution-space/listing-specifikace.md`
+- **Purpose**: Listing (AI product-content tool) specification, maintained as a standalone spec document
+- **Route to when**: Not a routing target, updated in dedicated spec sessions
+- **Read for context when**: Listing scope, Magento integration, Listing spec reviews
+
+### `ai-initiatives-okr-framework`
+- **Path**: `product/solution-space/ai-initiatives-okr-framework.md`
+- **Purpose**: Business Quantification / OKR-card interview framework used for the AI-initiatives tracker
+- **Route to when**: Not a routing target
+- **Read for context when**: BQ interviews, department backlog collection, KPI measurement methods
+
+### `ai-platform-claude-design-brief`
+- **Path**: `product/solution-space/ai-platform-claude-design-brief.md`
+- **Purpose**: AI Platform design brief for Claude Design
+- **Route to when**: Not a routing target
+- **Read for context when**: AI Platform UX/prototype work
+
+### `action-items-archive`
+- **Path**: `project/management/action-items-archive.md`
+- **Purpose**: Archive of action items removed from dailies during triage
+- **Route to when**: Action items archived during `/todo` or daily triage
+- **Read for context when**: Checking whether an old action item was dropped or archived

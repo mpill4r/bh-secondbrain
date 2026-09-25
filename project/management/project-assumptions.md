@@ -1,6 +1,6 @@
 ---
 last_updated: 2026-09-25
-last_updated_by: auto — project-meeting routing (2026-09-25-reklamace-supplier-data-source-options)
+last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
 
@@ -10,6 +10,13 @@ owner: Marek Pillár
 
 | ID | Status | Created | Description (short) |
 |----|--------|---------|---------------------|
+| ASM-183 | Open (2026-09-25) | 2026-09-25 | Reklamace shipments split across two addresses — handled only if Axapta supplies per-shipment address; otherwise unresolved |
+| ASM-182 | Decided (2026-09-25) | 2026-09-25 | Reklamace testing: shared internal phone (no personal devices); per-user login re-enabled for testing |
+| ASM-181 | Open (2026-09-25) | 2026-09-25 | Sláma: original Reklamace vision was automated branching email workflow (April kickoff, 2026-05-20 "Zentiva" comment) vs. approved Phase 1.1 "manual negotiation" |
+| ASM-180 | Open (2026-09-25) | 2026-09-25 | Whether further Fakturace doprav specification is BigHub's (Marek's) topic or stays with Honza Sovka's earlier framing |
+| ASM-179 | Open (2026-09-25) | 2026-09-25 | Whether the cross-department AI-initiative tracker can be shared with individual departments |
+| ASM-178 | Decided (2026-09-25) | 2026-09-25 | Tereza's SharePoint copy is the working logistics initiatives table; 2026-10-02 is an internal validation debate (Spilka → Žůrek) |
+| ASM-177 | Decided (2026-09-25) | 2026-09-25 | Logistics Part A/B split agreed: Marek owns Reklamace documentation (~2-week focus, ahead of Fakturace doprav); Tereza self-drafts Part B |
 | ASM-176 | Open (2026-09-25) | 2026-09-25 | Reklamace Kontakty, Poznámky, Typ odvozu have no agreed home; Axapta manual address entry unowned |
 | ASM-175 | Open (2026-09-25) | 2026-09-25 | Reklamace claims worker loses the one-sheet-per-supplier view; display option to be chosen by client |
 | ASM-174 | Open (2026-09-25) | 2026-09-25 | Rozvozový list Axapta fields (reklamace no., RD no., issue date) missing from API contract |
@@ -82,7 +89,7 @@ owner: Marek Pillár
 | ASM-107 | Decided (2026-09-18) | 2026-09-18 | Order-prediction dashboard KPI: analyst control-time reduced from ~5h/week to 2h/week (long-term target) |
 | ASM-106 | Decided (2026-09-18) | 2026-09-18 | Order-prediction dashboard business ownership confirmed — Marek Šimoník sole owner, Petr Ondráček domain expert |
 | ASM-105 | Decided (2026-09-17) | 2026-09-17 | False call-transfer claims and unauthorized medical advice explicitly disallowed in Max chatbot's prompt |
-| ASM-104 | Open (2026-09-17) | 2026-09-17 | Some shared timeline items are mis-scoped as MVP when they belong to the full product — not yet itemized |
+| ASM-104 | Closed — stale (2026-09-25) | 2026-09-17 | Some shared timeline items are mis-scoped as MVP when they belong to the full product — not yet itemized |
 | ASM-103 | Decided (2026-09-17) | 2026-09-17 | Lexie test-account approach: 4 separate accounts without 2FA, not the in-app role-switcher |
 | ASM-102 | Open (2026-09-17) | 2026-09-17 | Max chatbot GDPR consent/anonymization copy blocked pending DPO (Lenka Henichová) input |
 | ASM-101 | Decided (2026-09-17) | 2026-09-17 | Max chatbot public launch will be a quiet/soft launch — no active promotion until fully mature |
@@ -191,6 +198,158 @@ owner: Marek Pillár
 
 ---
 
+### ASM-177
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-177 |
+| Created | 2026-09-25 |
+| Source | 2026-09-25-tereza-foltynova-reklamace-focus-logistics-initiatives-table |
+| By | Marek Pillár (STK-001), Tereza Foltýnová (STK-013) |
+| Status | Decided (2026-09-25) |
+
+**Description**
+The logistics Part A/B split from [[ASM-161]] is agreed with logistics. **Part A**: Marek takes over the Reklamace documentation himself and makes it his main focus for the next ~2 weeks, ahead of Fakturace doprav, aiming for a near-final spec both sides can see. **Part B**: Tereza drafts new logistics AI initiatives herself in the tracker format, and Marek helps frame them on request. Marek is BigHub's single point of contact for all logistics AI initiatives.
+
+**Rationale**
+Reklamace scope is not closed: only part of the process is specified, and phases 3–5 haven't been touched. The 2026-09-24 standoff showed the missing shared document is the root problem. Tereza can't get Spilka's time next week anyway, so Part B naturally runs slower.
+
+**Impact**
+- **Workload**: Fakturace doprav spec work (incl. [[ASM-131]]–[[ASM-135]]) slips to after Reklamace.
+- **Relationship**: Visible ownership and one contact point address the 2026-09-23 "BigHub doesn't want to deliver" narrative.
+
+---
+
+### ASM-178
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-178 |
+| Created | 2026-09-25 |
+| Source | 2026-09-25-tereza-foltynova-reklamace-focus-logistics-initiatives-table |
+| By | Tereza Foltýnová (STK-013), Marek Pillár (STK-001) |
+| Status | Decided (2026-09-25) |
+
+**Description**
+Tereza copied the 2-row BQ check table (the one sent to Dudaško for approval) onto the shared ViaPharma–BigHub SharePoint ("SZE AI logistika" folder) as the template. That copy is the working logistics initiatives table until a cross-department master is shared; then the two get reconciled and only the master is used. The 2026-10-02 session stays, but as an internal validation debate, not a final version. Validation goes Petr Spilka first, then Rudolf Žůrek (not at the 10-02 session).
+
+**Rationale**
+Tereza can't validate with Spilka and Žůrek before 10-02 (Monday 09-28 is a public holiday; Spilka is unavailable next week).
+
+**Impact**
+- **Timeline**: Logistics backlog validation extends past 10-02; still within the end-of-November target of [[ASM-161]].
+- **Data**: Two copies of initiative data exist until reconciliation, so there is a drift risk.
+
+---
+
+### ASM-179
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-179 |
+| Created | 2026-09-25 |
+| Source | 2026-09-25-tereza-foltynova-reklamace-focus-logistics-initiatives-table |
+| By | Tereza Foltýnová (STK-013) |
+| Status | Open (2026-09-25) |
+
+**Description**
+Tereza asked whether a combined tracker showing other departments' initiatives exists and can be seen. Marek has it and will ask Tomáš Dudaško whether it can be shared across departments.
+
+**Rationale**
+The master tracker holds values and priorities for all departments; sharing it is Dudaško's call.
+
+**Impact**
+- **Process**: Decides whether departments work directly in the master or in separate copies ([[ASM-178]]).
+
+---
+
+### ASM-180
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-180 |
+| Created | 2026-09-25 |
+| Source | 2026-09-25-tereza-foltynova-reklamace-focus-logistics-initiatives-table |
+| By | Tereza Foltýnová (STK-013) |
+| Status | Open (2026-09-25) |
+
+**Description**
+Tereza described Fakturace doprav as "in diapers", at phase 1 and largely driven by Honza Sovka so far, and said she is unsure whether its further specification will be BigHub's topic. The harness treats the Fakturace doprav spec as active BigHub work (Marek's 2026-09-23 redline, [[ASM-131]]–[[ASM-135]]).
+
+**Rationale**
+Logged per PM confirmation during routing: not settled either way.
+
+**Impact**
+- **Scope**: If it isn't BigHub's, the redline work and open contradictions need a different owner.
+- **Workload**: Affects Marek's queue after Reklamace ([[ASM-177]]).
+
+---
+
+### ASM-181
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-181 |
+| Created | 2026-09-25 |
+| Source | 2026-09-24-viapharma-reklamace-knowledge-base-standoff |
+| By | Petr Sláma (STK-034) |
+| Status | Open (2026-09-25) |
+
+**Description**
+Sláma argues the original Reklamace vision (the April kickoff document, "business cases for the AI") was that a person never touches the process: the warehouse worker photographs the issue and AI dispatches a branching sequence of emails to different parties based on their responses. He says he flagged this in writing in his spec comments on 2026-05-20 ("Zentiva" example) and wants it on record. BigHub (Jindřich Tůma, Jakub Turner) points to the approved Phase 1.1 spec line "vyjednávání s dodavatelem probíhá ručně" (negotiation with the supplier is manual). Whether the comment contradicts Phase 1.1 or addressed a later phase has not been checked against the actual comment thread.
+
+**Rationale**
+Raised in the 2026-09-24 standoff; not resolved. It feeds the Dudaško/Žůrek continue-or-close decision, which Sláma will now attend.
+
+**Impact**
+- **Relationship**: Risk of a "we told you" narrative on the client side if the comment turns out to be unaddressed.
+- **Scope**: If upheld, email-workflow automation becomes the savings case (Sláma says the real savings are there, not in protocol creation), tied to [[ASM-122]] and [[ASM-173]].
+
+---
+
+### ASM-182
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-182 |
+| Created | 2026-09-25 |
+| Source | 2026-09-24-viapharma-reklamace-knowledge-base-standoff |
+| By | Petr Sláma (STK-034), Tereza Foltýnová (STK-013), Filip Černý (STK-006) |
+| Status | Decided (2026-09-25) |
+
+**Description**
+Reklamace mobile testing uses a shared internal phone passed between testers, because personal phones are not allowed on the warehouse network. Because the device is shared, per-user login is re-enabled for testing so actions are attributable via the API. Login is implemented but disabled; the auth work is in draft and not yet merged.
+
+**Rationale**
+Requested by Sláma for traceability on a shared device.
+
+**Impact**
+- **Delivery**: Filip/Jakub must finish and merge auth before testing continues on the shared phone.
+
+---
+
+### ASM-183
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-183 |
+| Created | 2026-09-25 |
+| Source | 2026-09-24-viapharma-reklamace-knowledge-base-standoff |
+| By | Filip Černý (STK-006), Tereza Foltýnová (STK-013) |
+| Status | Open (2026-09-25) |
+
+**Description**
+Some shipments are physically split across two different addresses, a case the Reklamace app doesn't handle. The app just prints whatever address Axapta sends on the rozvozový list, so no app change is needed if Axapta can supply the correct address per shipment. Otherwise it is unresolved. Honza Sovka is exploring whether the process can avoid the case, or whether it should be excluded from testing scope.
+
+**Rationale**
+The supplier Excel is considered 100% delivered, but this edge case isn't covered.
+
+**Impact**
+- **Testing scope**: May need an explicit exclusion.
+- **Data**: Depends on Axapta address data ([[ASM-176]] manual address entry).
+
+---
+
 ### ASM-169
 
 | Field | Value |
@@ -255,6 +414,8 @@ Agreed with Jana Egrmaierová and Tereza Foltýnová ~2–3 weeks earlier; the c
 **Impact**
 - **Scope**: The spec needs a defined exception mechanism (conditional contacts), not a redesign.
 
+
+**Update (2026-09-25)**: Context: on 2026-09-24 Sláma argued a single generic contact per supplier is insufficient (different steps need reklamace vs. transport addresses); Jakub Turner called a per-role contact structure a new, separately scoped change. The 2026-09-25 decision to keep the main-contact concept came after that. Source: 2026-09-24-viapharma-reklamace-knowledge-base-standoff.
 ---
 
 ### ASM-172
@@ -541,6 +702,8 @@ Logistics proactively wants to map more AI initiatives with Marek. Jindřich exp
 - **Workload**: A significant new stream for Marek on top of running projects.
 - **Timeline**: The end-of-November target is at risk if running projects need more attention.
 
+
+**Update (2026-09-25)**: Part A/B split agreed with Tereza Foltýnová — see [[ASM-177]], [[ASM-178]]. Source: 2026-09-25-tereza-foltynova-reklamace-focus-logistics-initiatives-table.
 ---
 
 ### ASM-160
@@ -1036,6 +1199,8 @@ Directly shapes the pending Reklamace continue-or-close decision ([[ASM-122]]) �
 
 **Update (2026-09-25)**: Petr Sláma cites the planned retirement as his reason for doing no further Axapta-side development, which is why several Reklamace supplier fields have no home ([[ASM-176]]). Source: 2026-09-25-reklamace-supplier-data-source-options.
 
+
+**Update (2026-09-25)**: Per Sláma (2026-09-24), Dudaško confirmed to him that Axapta should not hold significant logic for Reklamace or doprava; that logic belongs in the application, fed by a knowledge base. Source: 2026-09-24-viapharma-reklamace-knowledge-base-standoff.
 ---
 
 ### ASM-138
@@ -1414,6 +1579,8 @@ This surfaced last Thursday's status call and was reinforced when Jindřich told
 
 **Update (2026-09-25, Reklamace supplier data)**: Supplier data won't fully consolidate into Axapta. Only supplier account, address and main contact are committed; contacts, notes and pickup type need another store, offered to logistics as options with risks — see [[ASM-169]], [[ASM-176]]. Source: 2026-09-25-reklamace-supplier-data-source-options.
 
+
+**Update (2026-09-25)**: At the 2026-09-24 ViaPharma sync, Petr Sláma pushed back hard on the digitization reframe: he says the original vision was an AI-driven branching email workflow and that he flagged it in writing on 2026-05-20. BigHub held that the needed logic is simple and deterministic. See [[ASM-181]]. Source: 2026-09-24-viapharma-reklamace-knowledge-base-standoff.
 ---
 
 ### ASM-118
@@ -1799,7 +1966,7 @@ Both behaviors were observed in live testing — Max cannot actually transfer ca
 | Created | 2026-09-17 |
 | Source | 2026-09-17-lexie-max-maxie-weekly-sync |
 | By | Team |
-| Status | Open (2026-09-17) |
+| Status | Closed — stale (2026-09-25) |
 
 **Description**
 Some timeline items Jindřich shared as MVP scope actually belong to the full product, per Kateřina Kadlecová's read of the roadmap — specific items were not identified or resolved during the meeting.
@@ -1810,6 +1977,8 @@ Kadlecová flagged the mismatch live; Jindřich acknowledged Marek might have vi
 **Impact**
 - **Scope clarity**: Risk of Dr. Max testing or expecting features that aren't actually in the current MVP commitment, or BigHub under-scoping what's actually needed for MVP sign-off.
 - **Timeline**: Needs resolving before the go-live testing window closes, since it affects what "MVP done" actually means.
+
+**Update (2026-09-25)**: Closed as stale per PM. The items were never itemized, and nobody raised it again (not at the 2026-09-24 sync either). If it comes back, log a new assumption with the specific items.
 
 ---
 

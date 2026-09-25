@@ -94,4 +94,6 @@ The internal (BigHub-only) segment after Tereza left had a different, more unres
 
 ## Routing Log
 
-_Written after PM confirms routing review._
+Routed 2026-09-25 as **superseded**. Action items were completed or overtaken by the 2026-09-15 BQ call and the BQ tracker becoming the source of truth. Only the lasting roadmap-table conventions were routed.
+- **project-knowledge**: Naming Conventions: "AI-initiatives roadmap table conventions".
+- **meeting-index**: Entry added.

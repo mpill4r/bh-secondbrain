@@ -1,6 +1,6 @@
 ---
 last_updated: 2026-09-25
-last_updated_by: auto — project-meeting routing (2026-09-25-reklamace-supplier-data-source-options)
+last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
 
@@ -52,6 +52,8 @@ N/A — no client stakeholders. See `project-stakeholders.md` for the full team/
 ## 9. Ways of Working
 
 - **Informal agreements harden into commitments (2026-09-25)**: Dr. Max logistics treats "it was agreed the supplier data stays in Excel" as settled, though BigHub never presented it that way. An earlier improved-Excel demo and the spec's original Excel wording were read as a commitment. Their real driver is having no other tool and refusing to use Axapta because it is being retired, not a UX preference. Takeaway: present options with explicit risks and get the client's own sign-off in writing ([[ASM-169]]). Source: 2026-09-25-reklamace-supplier-data-source-options.
+- **Spec-first expectation vs. agile delivery (2026-09-25)**: ViaPharma logistics wanted a full spec up front; agile delivery was chosen instead, and the client side now feels it "has bitten us" on Reklamace. Both sides accept the spec as a living document, but changes are expected to be raised openly at the weekly Thursday sync. Source: 2026-09-25-tereza-foltynova-reklamace-focus-logistics-initiatives-table.
+- **Written client comments are treated as the record (2026-09-24)**: Petr Sláma resurfaced a 2026-05-20 written spec comment as proof he had flagged the gap, and wants alternatives and BigHub's reasoning documented. Takeaway: track client spec comments to an explicit resolution ([[ASM-181]]). Source: 2026-09-24-viapharma-reklamace-knowledge-base-standoff.
 
 ## 10. Active Initiatives & Project History
 

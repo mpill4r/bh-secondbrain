@@ -1,6 +1,6 @@
 ---
 last_updated: 2026-09-25
-last_updated_by: auto — project-meeting routing (2026-09-25-reklamace-supplier-data-source-options)
+last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
 
@@ -154,6 +154,10 @@ Scope narrowed to one category first: automatic doors, two vendors — extractin
 
 **Email flow (as of 2026-09-25)**: the worker clicks in Axapta, which sends a request with supplier data. BigHub generates the rozvozový list and returns it to Axapta for printing, and the same request triggers an Outlook draft that the worker reviews and sends ([[ASM-010]]). A supplier reply in the inbox can trigger an LLM to extract structured info (e.g. which warehouse, for ~5 multi-warehouse suppliers) and draft the next reply in the thread. Jakub Turner has finished the main part; it is blocked on infra delivering Microsoft Graph API access. Whether a draft appears directly inside the reply thread is not implemented or verified yet. A ~1 MD demo is in progress ([[ASM-173]]). Rozvozový list fields that come from Axapta but are missing from the contract: reklamace number, RD document number, issue date ([[ASM-174]]). The per-case timeline dashboard idea was killed ([[ASM-172]]). Source: 2026-09-25-reklamace-supplier-data-source-options.
 
+**Knowledge-base standoff (2026-09-24)**: the "knowledge base" the app consumes today is only address + email per supplier, delivered from Axapta via the agreed Swagger API. Procedural know-how per supplier (which suppliers need special handling, and what it is) was never captured anywhere structured; it lived in notebooks and Excel sheets. Jana Egrmaierová proposed flagging each supplier as "standard procedure" (use the main contact) or "specific procedure" (steps noted). She estimates ~280 suppliers, ~75 with their own transport arrangement and ~35 needing specific handling, all unvalidated with the suppliers. Petr Sláma considers email-workflow automation the real savings, not protocol creation. See [[ASM-181]]. Source: 2026-09-24-viapharma-reklamace-knowledge-base-standoff.
+
+**Spec coverage (2026-09-25)**: per Tereza Foltýnová, only part of the Reklamace process is specified ("not even half"): phase 2 is partly worked out, phases 3–5 untouched, and scope "keeps swelling". Of ~10 real emails Jana forwarded, only ~2 were straightforward. The client side says it didn't want agile delivery without a full spec, but agile was chosen, and it "has bitten us". From 2026-09-25 Marek owns the Reklamace documentation ([[ASM-177]]). Source: 2026-09-25-tereza-foltynova-reklamace-focus-logistics-initiatives-table.
+
 ### Reklamace "OCR" (SP/MS štítky)
 
 | Field | Value |
@@ -271,6 +275,15 @@ Dudaško was unambiguous on this boundary when Jindřich raised a concrete pilot
 Unclear whether this blacklist is signed off by Dr. Max or a BigHub-authored draft pending client review — relevant given this account's broader pattern of BigHub building ahead of confirmed client sign-off (e.g. the still-undefined category/parameter system, see the Farmis/Magento entry above).
 
 ## Naming Conventions
+
+### AI-initiatives roadmap table conventions
+
+| Field | Value |
+|-------|-------|
+| Definition | In the business-facing AI-initiatives table: initiative names carry both a Czech and an English label (two columns); Core vs. Ecom scope goes in the initiative title, not a separate column; progress is a simple fraction of scope (e.g. "1 of 5 parts done = 20%"), with detail pushed to the description or project level. Reklamace is shown as 5 sub-parts so the client doesn't assume full-scope delivery. |
+| Source | 2026-09-14-ai-initiatives-roadmap-table-alignment |
+| Added | 2026-09-25 |
+| Status | Active |
 
 ### Reklamace supplier-data naming
 
@@ -482,6 +495,24 @@ Listing's core blocker (reconfirmed 2026-09-02) is not code but Dr. Max's undefi
 
 ## Project Conventions
 
+### Logistics AI-initiatives table (ViaPharma SharePoint)
+
+| Field | Value |
+|-------|-------|
+| Definition | The working table for logistics AI initiatives is Tereza Foltýnová's copy of the 2-row BQ check table on the shared ViaPharma–BigHub SharePoint ("SZE AI logistika" folder, which also holds Jana Egrmaierová's Reklamace material). It is used until a cross-department master is shared; then the two get reconciled and only the master is used ([[ASM-178]], [[ASM-179]]). |
+| Source | 2026-09-25-tereza-foltynova-reklamace-focus-logistics-initiatives-table |
+| Added | 2026-09-25 |
+| Status | Active |
+
+### Email to Marek from Dr. Max / ViaPharma: external account
+
+| Field | Value |
+|-------|-------|
+| Definition | Dr. Max and ViaPharma contacts should email and invite Marek at his external (Dr. Max-issued) account. Invitations to his BigHub address have bounced. Marek has both mailboxes connected. The same applies to other BigHub staff on the account (Jindřich, Jan Sovka), who also use external accounts. |
+| Source | 2026-09-25-tereza-foltynova-reklamace-focus-logistics-initiatives-table |
+| Added | 2026-09-25 |
+| Status | Active |
+
 ### BigHub capacity pool (Dr. Max)
 
 | Field | Value |
@@ -541,7 +572,7 @@ Relevant Teams channels: **BigHubInfrastructureChat** (in Dr. Max's Teams — ge
 |---|---|---|---|---|---|
 | Reklamační proces (Core) | Logistika | In development / Pilot / 15% | 3 | 425,000 Kč, **phase 1 only** (8 h/day × 212.50 Kč/h × 250 days); full ~1 FTE saving only once all 5 phases are live | Petr Spilka / Petr Spilka |
 | Fakturace doprav (digitalization + checks) | Logistika | Phase 1 in development, phase 2 not started / Pilot / 20% | 3 | 787,500 Kč (10.5 h/day across Ostrava/Brno/Pavlov × 300 Kč/h × 250), covers both phases | Jan Žižka / Jan Žižka |
-| MaxBuddy | MaxBuddy | Deployed / Solution / 100% | 3 | 81,000,000 Kč **revenue uplift** (60M dispensing cases × 75% coverage × 1.2% conversion × 150 Kč), not comparable 1:1 with savings rows | Luboš Vosmek / Lukáš Szücs (IT liaison); Jiří Trajer supplies data only |
+| MaxBuddy | MaxBuddy | **Nasazování** (being deployed; per PM 2026-09-25; tracker still says Deployed / Solution / 100% and is out of date) | 3 | 81,000,000 Kč **revenue uplift** (60M dispensing cases × 75% coverage × 1.2% conversion × 150 Kč), not comparable 1:1 with savings rows | Luboš Vosmek / Lukáš Szücs (IT liaison); Jiří Trajer supplies data only |
 | Predikce objednávek (order prediction) | E-commerce | In development / Pilot / 35% | 3 | 1,931,250 Kč: mixes analyst time saved (~131k, 5→2 h/week) with fast-reaction value (100–200 saved orders/month ≈ 1.2–2.4M) | Marek Šimoník (confirmed, not handed to Ondráček) / Petr Ondráček |
 | OCR (TEO) | TEO | Prioritized / POC / 5% | 4 | 273,000 Kč (40 → 12 h/month × 812.50 Kč/h) | Tomáš Burda / Radim Švarc |
 | Max chatbot | CCC | In development / Pilot / 40% | 3 | 13,936,000 Kč, **illustrative** (+20 agents avoided for 24/7) | Simona Mertová / Mertová interim (Kadlecová leaving) |

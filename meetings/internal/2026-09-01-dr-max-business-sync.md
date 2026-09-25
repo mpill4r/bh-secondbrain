@@ -102,6 +102,6 @@ Warm, informal, high-trust working relationship between Marek and Jindřich — 
 
 ## Routing Log
 
-{Written after PM confirms routing review}
+Superseded — not routed (PM decision 2026-09-25). Onboarding context overtaken by later meetings.
 
 > Migration note: ported from the predecessor repo (`bh-secondBrain`) on 2026-09-02, where this note existed but was never routed to harness artifacts (Routing Log was still an empty placeholder there too). That unrouted state is preserved here — no routing was performed during migration. Header/type field updated to conform to the fixed `internal | client | external | milestone` type enum (original free-form type: "business sync"); reclassified as `internal` since all three attendees are BigHub staff, matching the note's own TL;DR ("Recurring BigHub-internal sync").

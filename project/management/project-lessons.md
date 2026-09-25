@@ -1,10 +1,70 @@
 ---
 last_updated: 2026-09-25
-last_updated_by: auto — project-meeting routing (2026-09-25-reklamace-supplier-data-source-options)
+last_updated_by: auto — project-meeting lessons
 owner: Marek Pillár
 ---
 
 # Lessons Learned
+
+---
+
+### LL-67
+
+| Field | Value |
+|-------|-------|
+| ID | LL-67 |
+| Created | 2026-09-25 |
+| Category | stakeholder |
+| Source | 2026-09-25-tereza-foltynova-reklamace-focus-logistics-initiatives-table |
+
+**Lesson**
+When a delivery narrative turns negative ("BigHub doesn't want to deliver"), a named owner and a single point of contact, backed by a promise of a shared transparent document, defuse it faster than arguing the history. Give the counterpart one person to bring every question to.
+
+**Context**
+Two days after the narrative circulated and one day after the tense 09-24 standoff, Marek told Tereza he owns the Reklamace documentation and all logistics initiatives. She dropped the grievance, invited every question and proposed an in-person meeting.
+
+**Cross-reference**
+[[ASM-177]], STK-013 (Tereza Foltýnová)
+
+---
+
+### LL-66
+
+| Field | Value |
+|-------|-------|
+| ID | LL-66 |
+| Created | 2026-09-25 |
+| Category | delivery |
+| Source | 2026-09-24-viapharma-reklamace-knowledge-base-standoff |
+
+**Lesson**
+Track every written client spec comment to an explicit resolution (accepted, deferred to phase N, or rejected, with a reason) and record it. Unresolved comments resurface months later as "we told you in writing", right when trust is lowest.
+
+**Context**
+Petr Sláma cited his 2026-05-20 "Zentiva" spec comment at the 2026-09-24 standoff as proof he'd flagged the email-workflow gap. Nobody on the call could say how it had been resolved.
+
+**Cross-reference**
+[[ASM-181]], [[ASM-122]], STK-034 (Petr Sláma)
+
+---
+
+### LL-65
+
+| Field | Value |
+|-------|-------|
+| ID | LL-65 |
+| Created | 2026-09-25 |
+| Category | process |
+| Source | 2026-09-25-tereza-foltynova-reklamace-focus-logistics-initiatives-table |
+
+**Lesson**
+If agile delivery starts without a full spec, keep a visible map of which phases or decisions are still undefined and who owns defining them. Otherwise the client later sees missing spec as the vendor's failure, even if agile was agreed.
+
+**Context**
+Reklamace went agile over ViaPharma's stated preference for a full spec. Months later phases 3–5 are undescribed, scope keeps growing, and Tereza says the approach "has bitten us".
+
+**Cross-reference**
+[[ASM-177]], [[ASM-122]]
 
 ---
 

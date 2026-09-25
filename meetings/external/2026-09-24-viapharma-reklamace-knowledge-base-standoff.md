@@ -99,4 +99,11 @@ Tenser than the team's typical status calls — Sláma was visibly frustrated, r
 
 ## Routing Log
 
-{Written after PM confirms routing review}
+Routed 2026-09-25 (late; committed 2026-09-24 without routing).
+- **project-assumptions**: Added ASM-181 (Sláma's original-vision claim, open), ASM-182 (shared test phone + per-user login), ASM-183 (two-address shipments, open). Update notes on ASM-122, ASM-139, ASM-171.
+- **project-knowledge**: Reklamace entry: knowledge-base standoff, Jana's procedure flags.
+- **project-stakeholders**: Updated STK-006, STK-007, STK-013, STK-014, STK-034 (sentiment Neutral leaning Champion → Neutral), STK-044.
+- **client-overview**: Ways of Working: written client comments treated as the record.
+- **project-daily**: 5 action items added. "Formalize BigHub's knowledge-base recommendation" not added: covered by the 2026-09-25 options table (ASM-169).
+- **project-lessons**: LL-066.
+- **meeting-index**: Entry added.
