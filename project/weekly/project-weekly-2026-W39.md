@@ -10,11 +10,9 @@ project_status: Amber
 
 ## Project Status
 
-**Amber**: two drivers, neither owned by the PM.
-1. **Infra/DB access on the new cluster (the main driver):** it has been blocked for more than 6 weeks and is escalated to Dudaško. Its status is disputed: Tvarůžek says it's done, BigHub's last check says not, and Jura's retest result never came in. It gates the Max chatbot's end-of-September internal go-live phases ([[ASM-100]]), the MaxBuddy migration and the first AI Platform release ([[ASM-164]]).
-2. **CC domain-expert gap:** Kateřina Kadlecová is going on maternity leave with no successor named ([[ASM-091]]).
+**Amber**, measured on PM-actionable streams only. The driver is **Reklamace**: the continue-or-close decision is open, only part of the process is specified (phases 3–5 not at all), and Sláma disputes the reframe ([[ASM-181]]). That puts the October 15–16 full-UAT start at risk. Marek has owned the documentation since Friday ([[ASM-177]]). Secondary: the 5 Fakturace doprav contradictions are unresolved and queued behind Reklamace.
 
-The status was Amber all week. It sharpened on Thursday, when the infra blocker became a concrete risk to the September milestone. It is offset by the most positive Dudaško signal on record.
+*Watch (owned by others, no PM action):* DB access on the new cluster gates the end-of-September Max go-live phases, the MaxBuddy migration and the first AI Platform release ([[ASM-100]], [[ASM-164]]). Kadlecová has no successor yet ([[ASM-091]]).
 
 ## Week Summary
 
@@ -52,22 +50,15 @@ The week opened with Dudaško setting out his AI Platform vision for the first t
 
 ## Action Items
 
-83 items are open at week end. The ones that matter most:
+Only PM-owned items are tracked. Items owned by others were moved to `action-items-archive.md`.
 
-**Overdue or blocking**
-- **Jura Brázdil**: DB-access retest on the new cluster (due 09-24; gates everything infra-related). Also overdue: X-Manager ticket updates, access to the test order DB (both due 09-24), and the SPEDOS export (due 09-25).
-- **Jindřich Tůma**: supplier-attribute table to Filip (due 09-25); "PR" value stories for the 09-29 management meeting.
-- **Filip Černý / Jakub Turner**: merge and enable Reklamace auth before testing continues on the shared phone.
-
-**Marek Pillár (own)**
 - Reklamace documentation to near-final depth; questions for Tereza, Jana and Spilka.
 - Review Tereza's draft logistics table (Wed/Thu); in-person meeting at Florentinum Wed 09-30 10:00.
 - Ask Dudaško whether the cross-department tracker can be shared.
 - KPI measurement-method column; BQ sign-offs (Šimoník, Mertová); department backlogs (end of November).
 - Next week, lower priority: reconcile the Fakturace doprav contradictions with Filip and the AR-pairing key with Sláma; AI Platform work-in-progress spec with Jindřich.
 - Capacity-pool talk with Jindřich ([[ASM-167]]); ElevenLabs barge-in check with Jura; the ASM-119 and ASM-088 conflicts with Jura.
-
-**Others (by owner)**: Jindřich ~20 (decision-meeting scheduling, Atlantis/ElevenLabs, Confluence research, 10-01 materials), Jura ~16 (Max features, platform fixes, OCR tuning), Filip ~9 (Reklamace bug, options write-ups, email-agent demo), Tereza 4, Dr. Max CC team/Kadlecová 7, Radim Švarc 3, others 4.
+- Older, low priority: Filip's business questions; Maxie roadmap drift; Figma roadmap comments (blocked on Honza Sovka); Reklamace brief review; the ~9 remaining BQ initiatives (deprioritized).
 
 ## Next Week
 

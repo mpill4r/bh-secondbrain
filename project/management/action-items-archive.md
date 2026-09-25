@@ -1,6 +1,6 @@
 ---
-last_updated: 2026-09-18
-last_updated_by: manual — conversational (action-items archive cleanup)
+last_updated: 2026-09-25
+last_updated_by: manual — conversational (PM-only tracking re-applied)
 owner: Marek Pillár
 ---
 
@@ -161,3 +161,70 @@ This file holds open action items that belong to other stakeholders (colleagues,
 - **Jindřich Tůma**: Review and give thumbs up/down on Dr. Max's proposed X-Manager Kanban restructure — from 2026-09-17-lexie-max-maxie-weekly-sync
 - **Viliam Gago / Dr. Max CC team**: File a ticket investigating why Lexie's "second" no-source fallback message never appears to trigger — from 2026-09-17-lexie-max-maxie-weekly-sync
 - **Lucie Fendrichová / Jura Brázdil**: File a ticket investigating why some Lexie conversation titles save in English instead of Czech — from 2026-09-17-lexie-max-maxie-weekly-sync
+
+**Archived**: 2026-09-25, moved from `project-daily-2026-09-25.md`: 64 items owned by others, still open. Rule re-applied per PM: only PM-owned items are tracked.
+
+- **Marek Šimoník**: Review, edit, and confirm the completed order-prediction (Řízení poptávky) BQ Excel — full edit rights granted — from 2026-09-18-business-quantification-order-prediction-simonik
+- **Jindřich Tůma**: Schedule a follow-up session to properly work through the AI adoption campaign draft/strategy — from 2026-09-21-ai-platform-vision-discovery-dudasko
+- **Jindřich Tůma**: Align with the relevant expert-group lead ("osmec") as BigHub's actual contact point for post-rollout adoption feedback, rather than the training center — for MaxBuddy this is confirmed as Luboš Vosmek (STK-011), resolved 2026-09-22 — from 2026-09-21-ai-platform-vision-discovery-dudasko
+- **Alana Sihelská**: Check with Vladislav Tvarůžek/BDC before tomorrow's meeting whether anyone has actually tested the AKS node-pool connectivity issue Jura reported last Friday — from 2026-09-21-ocr-progress-ai-platform-prototype-sync
+- **Jura Brázdil**: Check whether TEO/OCR's TEST-environment Blob storage can be self-provisioned on the platform ahead of a full deploy, without breaking anything — from 2026-09-21-ocr-progress-ai-platform-prototype-sync
+- **Jura Brázdil**: Continue tuning OCR bounding-box/crop accuracy and complete the candidate-list disambiguation approach for dates and addresses; re-run against full spring/autumn batches — from 2026-09-21-ocr-progress-ai-platform-prototype-sync
+- **Jindřich Tůma**: Schedule the Reklamace alignment meeting with Tomáš Dudaško and the head of logistics (plus Jan Sovka for historical context); include Marek on this and all future reklamace-thread meetings — from 2026-09-22-ai-portfolio-business-value-review-reklamace-reframe
+- **Jindřich Tůma**: Coordinate with Honza Kabát on the Microsoft/Azure backlog-costing request and next steps, looping in Friday's Dudaško outcome — from 2026-09-22-ai-portfolio-business-value-review-reklamace-reframe
+- **Jindřich Tůma**: Decide how to get his own Fireflies workspace access (join Marek's shared workspace vs. separate paid account) and confirm the approach with Marek — from 2026-09-22-ai-portfolio-business-value-review-reklamace-reframe
+- **Radim Švarc / Michaela Albrechtová**: Verify the "Bezručova" (Mělník) branch entry missing from the číselník — from 2026-09-22-teo-ocr-technical-sync-spedos-disambiguation-reversal
+- **Radim Švarc / Michaela Albrechtová**: Push vendors to fill in complete addresses on protocols; return incomplete ones for completion rather than have BigHub guess the branch — from 2026-09-22-teo-ocr-technical-sync-spedos-disambiguation-reversal
+- **Jura Brázdil**: Give SPEDOS additional pipeline attention and send an export by end of this week (2026-09-25) — from 2026-09-22-teo-ocr-technical-sync-spedos-disambiguation-reversal
+- **Jura Brázdil**: Run the first offline batch (incl. JSON output) against the real Thermetal autumn-2026 protocols Míša sent — from 2026-09-22-teo-ocr-technical-sync-spedos-disambiguation-reversal
+- **Jura Brázdil**: Answer Radim's open question on BigHub's batch-creation logic for documents arriving via his twice-weekly Blob storage push — from 2026-09-22-teo-ocr-technical-sync-spedos-disambiguation-reversal
+- **Radim Švarc**: Send back "correct" excel/json corrections to BigHub in a format agreed with Jura, so accuracy can be tracked over time — from 2026-09-22-teo-ocr-technical-sync-spedos-disambiguation-reversal
+- **Jindřich Tůma**: Schedule the Reklamace continue-or-close decision meeting with Tomáš Dudaško, Rudolf Žůrek, Petr Spilka, and Jan Žižka — from 2026-09-23-cross-project-status-sync-reklamace-fallout-listing-blockers
+- **Jindřich Tůma**: Escalate the AKS/BDC request-turnaround bottleneck (6-7 week queue behind Vláďa) at Tuesday's (2026-09-29) management meeting, up to CEO level if needed — from 2026-09-23-cross-project-status-sync-reklamace-fallout-listing-blockers
+- **Jindřich Tůma**: Raise the rozvozový list free-text data-source gap at the next logistics status meeting — from 2026-09-23-cross-project-status-sync-reklamace-fallout-listing-blockers
+- **Jindřich Tůma / Filip Černý**: Push Petr Sláma on the fakturace doprav API-contract revision — Filip to brief Jindřich on the technical specifics beforehand — from 2026-09-23-cross-project-status-sync-reklamace-fallout-listing-blockers
+- **Filip Černý**: Finish the fakturace doprav backlog entry in the board/Kanban — from 2026-09-23-cross-project-status-sync-reklamace-fallout-listing-blockers
+- **Jindřich Tůma**: Reach out to Petr Ondráček directly via Teams for the order-prediction per-channel budget Excel, since Marek Šimoník is on vacation — needed before the 2026-09-29 follow-up — from 2026-09-23-cross-project-status-sync-reklamace-fallout-listing-blockers
+- **Filip Černý**: Continue chasing Petr Sláma / Jana Egrmaierová for formal written testing feedback on Reklamace — from 2026-09-23-cross-project-status-sync-reklamace-fallout-listing-blockers
+- **Jura Brázdil**: Fix the visible-but-empty admin-section gaps for non-admin accounts (reflow layout or add an explicit disabled/tooltip state) — from 2026-09-23-ai-platform-prototype-walkthrough-navigation-modular-reporting
+- **Jura Brázdil**: Seal the MCP server registration security gap (secret/header leakage to any agent reading server descriptions) before further build-out — from 2026-09-23-ai-platform-prototype-walkthrough-navigation-modular-reporting
+- **Jura Brázdil**: Give Jindřich a realistic-constraints summary of the Dr. Max requirements/backlog Excel, ahead of a fuller scoping conversation — from 2026-09-23-ai-platform-prototype-walkthrough-navigation-modular-reporting
+- **Jura Brázdil**: Update X-Manager ticket statuses and add written replies to each ticket commented on — due 2026-09-24 — from 2026-09-24-lexie-max-maxie-weekly-sync
+- **Jura Brázdil**: Request access to Dr. Max's test order database (find the right infra contact) and connect Max to it — due 2026-09-24 — from 2026-09-24-lexie-max-maxie-weekly-sync
+- **Jura Brázdil**: Prepare a model cost projection for Max (needs expected traffic from Dr. Max) and add a model switcher to the test page — due next weekly sync (2026-10-01) — from 2026-09-24-lexie-max-maxie-weekly-sync
+- **Jura Brázdil**: Wire prescription (Rx) drug stock lookup without an e-recept — from 2026-09-24-lexie-max-maxie-weekly-sync
+- **Jura Brázdil**: Remove free-text feedback from the end-conversation screen for the public version; fix the text-copying bug in the feedback field — from 2026-09-24-lexie-max-maxie-weekly-sync
+- **Jura Brázdil**: Resend the Max analytics dashboard URL (outstanding since 2026-09-17) — from 2026-09-24-lexie-max-maxie-weekly-sync
+- **Jura Brázdil**: Create an X-Manager ticket for package-leaflet display with a highlighted section (e.g. dosage) — from 2026-09-24-lexie-max-maxie-weekly-sync
+- **Kateřina Kadlecová / Dr. Max CC team**: Send the exact wording of Max's opening message, including the AI Act disclosure — from 2026-09-24-lexie-max-maxie-weekly-sync
+- **Kateřina Kadlecová / Dr. Max CC team**: Shorten the tone prompt to comma-separated keywords — from 2026-09-24-lexie-max-maxie-weekly-sync
+- **Kateřina Kadlecová**: Write the bubble-placement change (intro text down above the bubbles, chat-style) into the X-Manager ticket — from 2026-09-24-lexie-max-maxie-weekly-sync
+- **Kateřina Kadlecová**: Get Dr. Max IT to enable mobile and geolocation testing on work devices — from 2026-09-24-lexie-max-maxie-weekly-sync
+- **Kateřina Kadlecová / Dr. Max CC team**: Send public methodologies as PDFs, starting with order tracking/reservations — from 2026-09-24-lexie-max-maxie-weekly-sync
+- **Lucie Fendrichová**: Provide order-status definitions and customer messaging, incl. combinations with specific carriers — from 2026-09-24-lexie-max-maxie-weekly-sync
+- **Dr. Max CC team**: Test the "show X more" carousel fix on mobile phones — from 2026-09-24-lexie-max-maxie-weekly-sync
+- **Jindřich Tůma**: Gather Maxie/Atlantis materials and schedule a joint meeting with Simona Mertová, Honza Zelený and Tecl (Atlantis) to align on replicating the existing IVR Maxí solution — from 2026-09-24-lexie-max-maxie-weekly-sync
+- **Jindřich Tůma**: Find out whether ElevenLabs licences and voices are paid within the project or by Dr. Max; set up an ElevenLabs Q&A if needed — from 2026-09-24-lexie-max-maxie-weekly-sync
+- **Simona Mertová**: Send Marek the requested email confirmation — due 2026-09-25 — from 2026-09-24-lexie-max-maxie-weekly-sync
+- **Jura Brázdil**: Test DB access from the new cluster right after the meeting and report whether Tvarůžek's "done" is accurate — due 2026-09-24 — from 2026-09-24-ai-initiatives-bq-review-platform-prototype-demo-dudasko
+- **Jura Brázdil / Jindřich Tůma**: Share the prototype link (with PIN) with Tomáš Dudaško — from 2026-09-24-ai-initiatives-bq-review-platform-prototype-demo-dudasko
+- **Jindřich Tůma**: Prepare "PR" value stories per live or near-live initiative for the 2026-09-29 project meeting; preview with Dudaško — due 2026-09-29 — from 2026-09-24-ai-initiatives-bq-review-platform-prototype-demo-dudasko
+- **Jindřich Tůma / Jura Brázdil**: Plan the first AI Platform release in detail (new-cluster deploy, MaxBuddy migration, chatbot deploy, security fixes, frontend wiring; ~4 weeks after DB access) — from 2026-09-24-ai-initiatives-bq-review-platform-prototype-demo-dudasko
+- **Jindřich Tůma**: Keep Dudaško regularly updated on which department's AI-initiative backlog is in progress — from 2026-09-24-ai-initiatives-bq-review-platform-prototype-demo-dudasko
+- **Jindřich Tůma**: Find out from Tomáš (assumed Dudaško) how much of the ~3 FTE annual budget has accumulated unused since May ([[ASM-167]]) — from 2026-09-25-alana-1on1-teo-phasing-capacity-pool-team-dynamics
+- **Jindřich Tůma**: Send Filip Černý the Reklamace supplier-attribute table — due 2026-09-25 — from 2026-09-25-reklamace-supplier-data-source-options
+- **Filip Černý**: Review the supplier-attribute table and add input per section; write up the 3 Excel-on-SharePoint risks in business language plus a 4th "open unknowns" point ([[ASM-169]]) — from 2026-09-25-reklamace-supplier-data-source-options
+- **Filip Černý**: Research SharePoint Lists (security, audit trail, automated reads) and send Jindřich a short write-up ([[ASM-169]]) — from 2026-09-25-reklamace-supplier-data-source-options
+- **Jindřich Tůma**: Research Confluence as a Reklamace supplier-data store (fit, licensing) ([[ASM-169]]) — from 2026-09-25-reklamace-supplier-data-source-options
+- **Jindřich Tůma**: Get editor/viewer counts for the supplier data via Jana Egrmaierová — from 2026-09-25-reklamace-supplier-data-source-options
+- **Filip Černý**: Build the ~1 MD Reklamace email-agent demo (text files, not Outlook) — due before 2026-10-01 ([[ASM-173]]) — from 2026-09-25-reklamace-supplier-data-source-options
+- **Filip Černý**: Send Jindřich the Teams discussion link on the rozvozový list fields missing from the Axapta contract ([[ASM-174]]) — from 2026-09-25-reklamace-supplier-data-source-options
+- **Jindřich Tůma**: Put the supplier-data options and the complete Axapta requirement list into the Reklamace spec; prepare materials for the 2026-10-01 logistics meeting — due 2026-10-01 — from 2026-09-25-reklamace-supplier-data-source-options
+- **Tereza Foltýnová**: Draft new logistics AI initiatives in the shared SharePoint table, flag existing topics to drop or move to backlog, and share the updated file with Marek — due before 2026-10-02 ([[ASM-178]]) — from 2026-09-25-tereza-foltynova-reklamace-focus-logistics-initiatives-table
+- **Tereza Foltýnová**: Validate the logistics initiatives with Petr Spilka, then Rudolf Žůrek — from 2026-09-25-tereza-foltynova-reklamace-focus-logistics-initiatives-table
+- **Tereza Foltýnová**: Send the invite for the in-person catch-up at Florentinum — Wednesday 2026-09-30 10:00 (30 min) — from 2026-09-25-tereza-foltynova-reklamace-focus-logistics-initiatives-table
+- **Filip Černý**: Investigate the "invalid request" error Jana Egrmaierová hit submitting a photo-attached "příjem s výhradou" request (possibly AKS-related) — from 2026-09-24-viapharma-reklamace-knowledge-base-standoff
+- **Tereza Foltýnová**: Coordinate handoff of the shared testing phone to Jana Egrmaierová ([[ASM-182]]) — from 2026-09-24-viapharma-reklamace-knowledge-base-standoff
+- **Filip Černý / Jakub Turner**: Finish and merge the Reklamace app's auth/login work, then enable it for testing ([[ASM-182]]) — from 2026-09-24-viapharma-reklamace-knowledge-base-standoff
+- **Filip Černý**: Resolve with Honza Sovka how the two-different-addresses rozvozový-list case is handled: app-side, process-side, or excluded from testing ([[ASM-183]]) — from 2026-09-24-viapharma-reklamace-knowledge-base-standoff
+- **Jindřich Tůma / Tereza Foltýnová**: Ensure Petr Sláma is invited to the Dudaško/Žůrek Reklamace decision meeting — from 2026-09-24-viapharma-reklamace-knowledge-base-standoff
