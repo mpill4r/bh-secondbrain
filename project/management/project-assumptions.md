@@ -1,5 +1,5 @@
 ---
-last_updated: 2026-09-25
+last_updated: 2026-09-29
 last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
@@ -10,6 +10,29 @@ owner: Marek Pillár
 
 | ID | Status | Created | Description (short) |
 |----|--------|---------|---------------------|
+| ASM-206 | Decided (2026-09-29) | 2026-09-29 | Reklamace 10-01 email-agent demo shown as a simple deck / one-pager (user journey + 2–3 real examples + next steps), not a live integration |
+| ASM-205 | Open (2026-09-29) | 2026-09-29 | Email-agent categories built on only 6 usable real threads; logistics needs to supply more (~30, incl. edge cases) to extend the flow and cut hand-offs |
+| ASM-204 | Decided (2026-09-29) | 2026-09-29 | Reklamace email-agent MVP: deterministic first email on the rozvozový-list trigger; prompt-based LLM reply classifier (no fine-tuning) into known outcomes; unknown → person; drafts only |
+| ASM-203 | Open (2026-09-29) | 2026-09-29 | Vosmek expects MaxBuddy rollout to the remaining pharmacies "within days" — conflicts with ASM-027 (AKS-gated, ~1 month post-grant); expectation gap to manage |
+| ASM-202 | Open (2026-09-29) | 2026-09-29 | MaxBuddy backlog items are not tracked anywhere (not in DevOps); Vosmek's wishlist needs a tracked home |
+| ASM-201 | Decided (2026-09-29) | 2026-09-29 | MaxBuddy coverage overview (which groups have a benefit, are approved, are live) goes into the existing data-filling interface; owner Jura |
+| ASM-200 | Decided (2026-09-29) | 2026-09-29 | MaxBuddy seasonal logos: first align the 5 current logos with Dr. Max branding, then AI-generated seasonal set (~every 14 days, Mikuláš first); self-service scheduling in AI Platform admin |
+| ASM-199 | Open (2026-09-29) | 2026-09-29 | Private-label product-info click-through may be limited by the Farmis webview; may need Farmis to open a window on a MaxBuddy event — feasibility test pending |
+| ASM-198 | Open (2026-09-29) | 2026-09-29 | Hypothesis: Farmis treats the barcode scanner as keyboard input, so tapping into MaxBuddy steals scans and switches off the dispensing case; Farmis fixing |
+| ASM-197 | Open (2026-09-29) | 2026-09-29 | MaxBuddy profitability-based offering: optimise on absolute CZK profit, not % margin; 3-tier 7/2/1 rotation vs. receipt-based learning; target start of 2027 |
+| ASM-196 | Decided (2026-09-29) | 2026-09-29 | MaxBuddy priority to year-end = UX "beauty" work (branding, zoom for benefit text, photo placeholder); Farmis focus bug the only blocker; current list ≈ H1 2027 workload |
+| ASM-195 | Open (2026-09-29) | 2026-09-29 | Order-prediction model-accuracy reporting: monthly view of daily-prediction deviation, possible success criterion (~±3%), kept lightweight |
+| ASM-194 | Decided (2026-09-29) | 2026-09-29 | Order-prediction model is not told about logistics' operational decisions (e.g. carrier volume moved Brno→Nučice); forecast triggers decisions, then catches up |
+| ASM-193 | Decided (2026-09-29) | 2026-09-29 | Mobile/non-VPN dashboard access is not an acceptance blocker; email/agent daily digest deferred to V2; AI Platform the likely long-term access path |
+| ASM-192 | Decided (2026-09-29) | 2026-09-29 | Recognized revenue split by channel: e-com / pharmacy reservations / marketplace (not delivery method); built with the budget Excel |
+| ASM-191 | Decided (2026-09-29) | 2026-09-29 | Order-prediction dashboard: final acceptance by end of October 2026; then seasonal use + idea collection; client's "V2" discussed Jan/Feb 2027 (backlog reviewed before year-end) |
+| ASM-190 | Open (2026-09-29) | 2026-09-29 | Later Reklamace/logistics phases lack a defined value driver ("system seller"); discovery per owner needed; Tereza wants a whole-project timeline |
+| ASM-189 | Decided (2026-09-29) | 2026-09-29 | Logistics initiative priorities set by the business, BigHub states tempo openly; Fakturace doprav follows once Reklamace blockers clear (capacity open) |
+| ASM-188 | Open (2026-09-29) | 2026-09-29 | Maxie voicebot BDC ticket stalled 4 weeks (BDC doesn't understand the request); BigHub has no ticket visibility |
+| ASM-187 | Open (2026-09-29) | 2026-09-29 | Deloitte runs parallel AI initiatives at Dr. Max incl. an LLM platform; request to share BigHub architecture pending Dudaško |
+| ASM-186 | Decided (2026-09-29) | 2026-09-29 | Spec-as-contract: agreed base spec not edited; later changes as change requests with MD cost + written approval |
+| ASM-185 | Decided (2026-09-29) | 2026-09-29 | Client decisions confirmed in writing: 10-01 Reklamace decisions recapped by email by 10-02; write-everything-down practice |
+| ASM-184 | Decided (2026-09-29) | 2026-09-29 | Reklamace spec approval sequence: options Excel (10-01) → agreed via meeting + recap → added to final spec → final sign-off by logistics / Sláma; knowledge base decided by 2026-10-09 |
 | ASM-183 | Open (2026-09-25) | 2026-09-25 | Reklamace shipments split across two addresses — handled only if Axapta supplies per-shipment address; otherwise unresolved |
 | ASM-182 | Decided (2026-09-25) | 2026-09-25 | Reklamace testing: shared internal phone (no personal devices); per-user login re-enabled for testing |
 | ASM-181 | Open (2026-09-25) | 2026-09-25 | Sláma: original Reklamace vision was automated branching email workflow (April kickoff, 2026-05-20 "Zentiva" comment) vs. approved Phase 1.1 "manual negotiation" |
@@ -198,6 +221,543 @@ owner: Marek Pillár
 
 ---
 
+### ASM-204
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-204 |
+| Created | 2026-09-29 |
+| Source | 2026-09-29-reklamace-email-agent-demo-review-filip |
+| By | Filip Černý (STK-006), Marek Pillár (STK-001) |
+| Status | Decided (2026-09-29) |
+
+**Description**
+The Reklamace email agent's MVP works like this:
+1. **First email**: always the same short email, triggered by the same AX request that generates the rozvozový list.
+2. **Reply classification**: a prompt-based LLM classifier, with a few examples in context and no fine-tuning, sorts the supplier's reply into one of these outcomes:
+   - send to warehouse, with the supplier's address checked against the stored one;
+   - own pickup;
+   - disposal (terminal);
+   - "waiting" (park, then re-classify the next email);
+   - wrong recipient / forward (keep waiting);
+   - hand-off to a person, for anything unknown.
+3. **No auto-send**: everything stays a draft.
+
+Out of the demo, but presented as simple next steps: a supplier-specific question in the first email (warehouse A/B, dispose?), needed by well under 10 % of suppliers and known from the supplier note; and reminders when a supplier doesn't reply.
+
+**Rationale**
+In the real threads the outcomes are stated explicitly ("please dispose", "send to warehouse 123", "our courier will collect"), so a prompt is enough. The approach covers most cases at low cost ("Pareto") and has a fallback for everything else. Consistent with [[ASM-010]] (drafts never auto-sent).
+
+**Impact**
+- **Scope**: Gives concrete content for Reklamace Phase 1.1 (see [[ASM-184]]).
+- **Delivery**: Outlook integration still blocked on Graph API access from client infra.
+
+---
+
+### ASM-205
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-205 |
+| Created | 2026-09-29 |
+| Source | 2026-09-29-reklamace-email-agent-demo-review-filip |
+| By | Marek Pillár (STK-001), Filip Černý (STK-006) |
+| Status | Open (2026-09-29) |
+
+**Description**
+The email-agent categories come from only 7 threads Jana Egrmaierová sent, 6 of them usable. To extend the flow and reduce hand-offs to a person, logistics needs to supply more real threads: around 30 labelled, including edge cases. Without them BigHub "doesn't know the paths" and can't handle new situations.
+
+**Rationale**
+The classifier handles only situations it has seen. Two of seven threads already needed a person: an expiry-replacement question and a long "no form" rejection.
+
+**Impact**
+- **Scope**: The hand-off share and the growth of the agent depend on client-supplied data.
+- **Relationship**: An ask for 2026-10-01, framed as "the more cases, the better the agent".
+
+---
+
+### ASM-206
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-206 |
+| Created | 2026-09-29 |
+| Source | 2026-09-29-reklamace-email-agent-demo-review-filip |
+| By | Marek Pillár (STK-001), Filip Černý (STK-006) |
+| Status | Decided (2026-09-29) |
+
+**Description**
+On 2026-10-01 Filip presents the email agent as a simple deck or one-pager, not a live integration or a draw.io flow:
+- a high-level user journey (email arrives → AI sorts it → result for each outcome);
+- 2–3 real examples from the client's own threads, with the classification output;
+- next steps ("which other frequent cases can we catch").
+
+The final form will be agreed on the morning of 2026-09-30.
+
+**Rationale**
+The demo runs only as a command-line tool, without Outlook. Showing real inputs and outputs is honest ("this easy case is done") and easier to follow than a diagram.
+
+**Impact**
+- **Delivery**: Supports the Thursday agenda from the 2026-09-29 debrief.
+
+---
+
+### ASM-203
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-203 |
+| Created | 2026-09-29 |
+| Source | 2026-09-29-maxbuddy-roadmap-backlog-vosmek |
+| By | Luboš Vosmek (STK-011) |
+| Status | Open (2026-09-29) |
+
+**Description**
+Luboš Vosmek expects MaxBuddy's rollout to the remaining Dr. Max pharmacies "within days" and is already preparing for a wave of pharmacy ideas after it. This conflicts with [[ASM-027]]: the full rollout is blocked on new AKS access, with ~1 month of work after access is granted, and on 2026-09-24 the access was still blocked. Logged as an open expectation gap; not resolved in the meeting.
+
+**Rationale**
+Vosmek is MaxBuddy's champion and the osmec who talks to the pharmacy network. If he promises a date BigHub can't hit, the slip lands on BigHub.
+
+**Impact**
+- **Relationship**: Confirm the real rollout date with Jura Brázdil and tell Vosmek before he commits it to the network.
+- **Timeline**: Still gated on AKS access ([[ASM-027]]).
+
+---
+
+### ASM-202
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-202 |
+| Created | 2026-09-29 |
+| Source | 2026-09-29-maxbuddy-roadmap-backlog-vosmek |
+| By | Marek Pillár (STK-001); Jura Brázdil (STK-026) |
+| Status | Open (2026-09-29) |
+
+**Description**
+Asked in the meeting, Jura Brázdil confirmed MaxBuddy work items are not tracked as DevOps tasks. Vosmek's wishlist and the items agreed on 2026-09-29 currently live only in email and the meeting note. Marek to agree with Jindřich Tůma where the MaxBuddy backlog lives.
+
+**Rationale**
+Vosmek expects a wave of pharmacy requests after rollout. Without a tracked backlog, items get lost (his wishlist email had already been missed once).
+
+**Impact**
+- **Process**: Natural home is the Azure DevOps setup per [[ASM-163]].
+- **Visibility**: Needed before Vosmek's intake scales after rollout.
+
+---
+
+### ASM-201
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-201 |
+| Created | 2026-09-29 |
+| Source | 2026-09-29-maxbuddy-roadmap-backlog-vosmek |
+| By | Jura Brázdil (STK-026); Luboš Vosmek (STK-011) |
+| Status | Decided (2026-09-29) |
+
+**Description**
+The coverage overview Vosmek asked for on 2026-09-17 will be built by Jura Brázdil inside the existing interface where "Jirka" fills in indications and benefits. It shows which main and complementary groups are in MaxBuddy, have a benefit (užitek), are approved and are live. Jura will first check with "Lukáš z IČ", whom Vosmek has been pushing on this for about a month, in case he has already designed something. This settles the owner question left open on 2026-09-17.
+
+**Rationale**
+Today the filling-approval-display loop runs over email ping-pong between Vosmek's team, Jirka and Jura. Jura called the overview "fairly simple".
+
+**Impact**
+- **Scope**: Small addition to an existing interface, not a standalone dashboard.
+- **Ops**: Would also make silent data-feed outages (like the ~14-day fiber outage from 09-17) visible sooner.
+
+---
+
+### ASM-200
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-200 |
+| Created | 2026-09-29 |
+| Source | 2026-09-29-maxbuddy-roadmap-backlog-vosmek |
+| By | Luboš Vosmek (STK-011); Jura Brázdil (STK-026); Marek Pillár (STK-001) |
+| Status | Decided (2026-09-29) |
+
+**Description**
+Sequence agreed: (1) restyle the 5 rotating logos and landing page to Dr. Max colours and logo until Vosmek likes the style; (2) Jura generates significant Czech dates with AI, each with an image in the same style, for Vosmek's approval, starting with Mikuláš and then Christmas; (3) Vosmek gets self-service campaign scheduling in the AI Platform admin interface: date range, saved and reusable the next year, ~6 AI variants to pick from. Someone on Vosmek's side will manage it.
+
+**Rationale**
+Vosmek sees themed visuals as an adoption lever against "stereotype screen" fatigue (about every 14 days), not as cosmetics. Self-service removes the need to email Jura for each event.
+
+**Impact**
+- **Timeline**: Mikuláš (2026-12-06) is the first real deadline.
+- **Platform**: Adds a campaign-scheduling feature to the AI Platform admin scope.
+
+---
+
+### ASM-199
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-199 |
+| Created | 2026-09-29 |
+| Source | 2026-09-29-maxbuddy-roadmap-backlog-vosmek |
+| By | Jura Brázdil (STK-026) |
+| Status | Open (2026-09-29) |
+
+**Description**
+Pilot pharmacists (especially new graduates) want to open more information about a recommended product on a separate page and study it later. MaxBuddy runs inside a Farmis webview, and Jura isn't sure it can open a pop-up. He can take over the MaxBuddy panel, but it has little space. He will run a feasibility experiment. Fallback: MaxBuddy sends an event and Farmis opens the window beside it.
+
+**Rationale**
+Technical limit of the host environment, not of MaxBuddy.
+
+**Impact**
+- **Dependency**: May need Farmis-side work.
+- **Value**: Supports pharmacist trust and professional responsibility, which matters for adoption.
+
+---
+
+### ASM-198
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-198 |
+| Created | 2026-09-29 |
+| Source | 2026-09-29-maxbuddy-roadmap-backlog-vosmek |
+| By | Jura Brázdil (STK-026); Luboš Vosmek (STK-011) |
+| Status | Open (2026-09-29) |
+
+**Description**
+When a pharmacist taps a MaxBuddy tree, the cursor stays in MaxBuddy and the dispensing case switches off, so client cards and eRecepty stop loading automatically. Jura's hypothesis: Farmis reads the scanner as keyboard input, and once MaxBuddy has focus it swallows the scans. Farmis was told (via Lukáš Szücs) and was fixing it on 2026-09-29. It may also explain the low tree click-through since August and the eRezervace conflict some pilot pharmacies report. A second hypothesis for eRezervace: a reserved last unit is out of stock when scanned. Vosmek will try to reproduce it live.
+
+**Rationale**
+Vosmek called it the single most important item; everything else is "beauty".
+
+**Impact**
+- **Adoption data**: Low click-through on trees (2026-09-07 analytics) may be partly a focus bug, not only pharmacist behaviour. Re-check the numbers after the fix.
+- **Dependency**: The fix is on Farmis's side.
+
+---
+
+### ASM-197
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-197 |
+| Created | 2026-09-29 |
+| Source | 2026-09-29-maxbuddy-roadmap-backlog-vosmek |
+| By | Luboš Vosmek (STK-011); Jura Brázdil (STK-026) |
+| Status | Open (2026-09-29) |
+
+**Description**
+Vosmek: optimise on absolute profit, not % margin, because the cheapest products have the highest % margin and Dr. Max wants to sell pricier, value-added products. His starting model is 3 tiers per product, shown in 7, 2 and 1 of 10 expeditions. Jura's preferred target is to connect to receipts and let the system learn online ("good old machine learning"), which handles seasonality and new products and can still favour private labels and promotions. This needs (1) for each expedition, the product codes on the receipt, and (2) per-product profitability (or a 0–1 score). Marek to take it to Jiří Trajer, then specify it with Vosmek, aiming for the start of 2027. **Open legal question**: Vosmek said profitability/age-based offering "can't be done with AI". Does receipt-based ML fall under that?
+
+**Rationale**
+BigHub has never had sales or margin data ([[ASM-027]] context, 2026-09-07 knowledge entry), which caps the recommendation engine.
+
+**Impact**
+- **Value**: Directly targets the 81M Kč BQ revenue-uplift case.
+- **Legal**: Needs a legal read before the spec.
+- **Data**: Depends on Dr. Max sharing receipt and profitability data.
+
+---
+
+### ASM-196
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-196 |
+| Created | 2026-09-29 |
+| Source | 2026-09-29-maxbuddy-roadmap-backlog-vosmek |
+| By | Luboš Vosmek (STK-011) |
+| Status | Decided (2026-09-29) |
+
+**Description**
+Vosmek set MaxBuddy's priority to year-end as UI/UX work: Dr. Max branding for the logos and landing page, a touch-friendly zoom for small or truncated benefit (užitek) text (kiosks are touchscreens, so no hover), and a "photo not available" placeholder. The Farmis focus bug ([[ASM-198]]) is the one blocking item. He considers the current list enough work for H1 2027. The bigger items (profitability/age offering, click-through, seasonal logos) follow.
+
+**Rationale**
+Pilot-pharmacy feedback; Vosmek wants to finish the simple, visible items first.
+
+**Impact**
+- **Scope**: Small UX items, mostly Jura.
+- **Stakeholder**: Modest, realistic appetite, which is easy to meet if tracked ([[ASM-202]]).
+
+---
+
+### ASM-195
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-195 |
+| Created | 2026-09-29 |
+| Source | 2026-09-29-order-prediction-dashboard-v2-review |
+| By | Marek Šimoník (STK-019); Juraj Kmec (STK-009) |
+| Status | Open (2026-09-29) |
+
+**Description**
+Šimoník wants a way to see how accurate the order-prediction model is. He wants a monthly view, not a daily one, of how far the *daily* predictions deviated from actuals (e.g. "the model typically differs by ±3%"). It could become a success criterion. Juraj Kmec already plans an internal accuracy evaluation: every model prediction is stored, so it can be compared with actuals once enough history exists. Marek Pillár asked Šimoník to put it on his own requirements list so it can be scoped with Juraj to fit a once-a-month need. Even a single Excel export would do.
+
+**Rationale**
+Šimoník wants a number to rely on before trusting the forecast further. Logistics (Honza Maroušek) could also use it to see how their own decisions, such as moving carrier volume, changed outcomes against the plan.
+
+**Impact**
+- **Scope**: V2 backlog item, not part of the end-of-October acceptance ([[ASM-191]]).
+- **Value**: Could supply the measurement method for the BQ tracker KPIs ([[ASM-107]], [[ASM-108]]).
+- **Effort**: Keep it small. Don't overbuild it for a monthly check.
+
+---
+
+### ASM-194
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-194 |
+| Created | 2026-09-29 |
+| Source | 2026-09-29-order-prediction-dashboard-v2-review |
+| By | Marek Šimoník (STK-019) |
+| Status | Decided (2026-09-29) |
+
+**Description**
+Last week logistics moved Zásilkovna volume from the Brno warehouse to Nučice. This shifts the per-warehouse split sharply, and the model has no input for it. Šimoník decided this is acceptable: the forecast is meant to *trigger* such decisions (e.g. "Brno can't handle next week, move volume to the more elastic Nučice"), so drift after a decision is expected. Juraj Kmec noted the model adapts to a channel shift in about 2 days.
+
+**Rationale**
+The model is a planning signal, not something that has to reflect every operational change. Feeding decisions back in would be chicken-and-egg.
+
+**Impact**
+- **Delivery**: No new data input or feature needed.
+- **Expectations**: Per-warehouse accuracy dips for a few days after logistics reroutes volume. Accuracy reporting ([[ASM-195]]) should keep that in mind.
+
+---
+
+### ASM-193
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-193 |
+| Created | 2026-09-29 |
+| Source | 2026-09-29-order-prediction-dashboard-v2-review |
+| By | Marek Šimoník (STK-019); Juraj Kmec (STK-009); Marek Pillár (STK-001) |
+| Status | Decided (2026-09-29) |
+
+**Description**
+Dr. Max infra/security was not keen on VPN-less mobile access (Vláďa, STK-016: security leans strict). Šimoník suggested a scheduled email or agent sending the day's outlook around 12–1 p.m. Juraj said it's feasible, but email support takes real work, so it is V2 scope to agree with Jindřich Tůma. Šimoník said explicitly that mobile access does not block acceptance and is partly Dr. Max's internal problem. Marek Pillár pointed to the AI Platform (with Tomáš Dudaško): role-based and likely reachable without VPN via an entry point such as SharePoint.
+
+**Rationale**
+The request is about convenience, not core function. The security stance is outside BigHub's control.
+
+**Impact**
+- **Scope**: Removed from the October acceptance ([[ASM-191]]). The email digest goes to the V2 backlog.
+- **Platform**: Adds a concrete user need (VPN-less access) to the AI Platform.
+
+---
+
+### ASM-192
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-192 |
+| Created | 2026-09-29 |
+| Source | 2026-09-29-order-prediction-dashboard-v2-review |
+| By | Marek Šimoník (STK-019); Juraj Kmec (STK-009) |
+| Status | Decided (2026-09-29) |
+
+**Description**
+Recognized revenue ("uznané tržby") on the order-prediction dashboard is still shown for the whole e-shop including OTC. It will be split into orders (e-com), pharmacy reservations and marketplace, filtered by the selected channel like the created-orders view. There is no delivery-method level, which doesn't exist on the revenue side. Juraj Kmec will build it together with the per-channel budget from Šimoník's Excel.
+
+**Rationale**
+Per-channel targets come in the same Excel, so doing both together avoids reworking the view.
+
+**Impact**
+- **Dependency**: Blocked on Šimoník's budget Excel (promised by 2026-09-30).
+- **Scope**: Part of the end-of-October acceptance ([[ASM-191]]).
+
+---
+
+### ASM-191
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-191 |
+| Created | 2026-09-29 |
+| Source | 2026-09-29-order-prediction-dashboard-v2-review |
+| By | Marek Šimoník (STK-019), agreed by Juraj Kmec (STK-009) and Marek Pillár (STK-001) |
+| Status | Decided (2026-09-29) |
+
+**Description**
+Once the budget Excel items ([[ASM-192]]) and the logistics per-day export are delivered, a last follow-up in about 2–3 weeks gives final acceptance of everything requested so far, targeting end of October. Šimoník will propose dates when he sends the Excel. After that, Dr. Max uses the dashboard through the season and collects ideas. A "version 2" extension is discussed in Jan/Feb 2027. Marek Pillár asked to review the collected backlog before year-end so BigHub has a plan ready for January. Christmas remains the hard modelling case, and Juraj plans to tune the model for it.
+
+**Rationale**
+Šimoník wants the current requirements closed and stress-tested in peak season before any new development. Marek wants to keep the stream moving even though Šimoník has steered BigHub's focus to Listing.
+
+**Impact**
+- **Naming**: The client's "V2" = [[ASM-069]]'s "v3". Today's batch is ASM-069's v2.
+- **Delivery**: Remaining scope is the per-day budget, the per-channel revenue split, the logistics per-day export and the copy button.
+- **Planning**: Supersedes the open-ended timing in [[ASM-110]].
+
+---
+
+### ASM-190
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-190 |
+| Created | 2026-09-29 |
+| Source | 2026-09-29-management-meeting-debrief-reklamace-thursday-plan |
+| By | Marek Pillár (STK-001), Jindřich Tůma (STK-003) |
+| Status | Open |
+
+**Description**
+The Reklamace spec still carries phases 1–4, but the later phases are not specified or agreed with logistics. None of them has a defined value driver ("system seller") explaining why the phase is worth doing; the same gap applies to other logistics initiatives. Marek will run discovery sessions with each initiative owner (starting with Petr Neuman on 2026-09-30) and give logistics outlook anchor points next week. Separately, Tereza Foltýnová wants a timeline for the whole project; Jindřich's rolling 4-week outlook was not enough, so he will produce a high-level whole-project version.
+
+**Rationale**
+Outlook points without a value driver aren't load-bearing, and promising phases without capacity cover risks over-commitment.
+
+**Impact**
+- **Scope**: Later-phase scope stays provisional until discovery.
+- **Workload**: Marek owns discovery; capacity commitments coordinated with Jindřich ([[ASM-167]]).
+- **Relationship**: A whole-project timeline answers Tereza's ask but will need frequent revision.
+
+---
+
+### ASM-189
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-189 |
+| Created | 2026-09-29 |
+| Source | 2026-09-29-management-meeting-debrief-reklamace-thursday-plan |
+| By | Jindřich Tůma (STK-003) |
+| Status | Decided (2026-09-29) |
+
+**Description**
+Across logistics AI initiatives, the business sets priorities; BigHub recommends and steers, and states openly from the start what tempo each priority level gets ("you're in the list, a bit lower, which means this tempo"). Fakturace doprav follows once the Reklamace blockers are cleared — proposed by Tereza Foltýnová herself on 2026-09-25: Marek defines it, hands it to development and walks logistics through it. Developer capacity/allocation for it is still open, since other initiatives in the table are more financially interesting for Max.
+
+**Rationale**
+Logistics is mandated to run AI initiatives and must cooperate with BigHub; open, explicit prioritisation avoids a "you don't care about us" reading. Alana Sihelská's worry that Reklamace friction would kill Fakturace was judged a communication problem, not a structural one.
+
+**Impact**
+- **Timeline**: Fakturace doprav starts after Reklamace blockers, not in parallel.
+- **Capacity**: Depends on the ~3 FTE pool ([[ASM-167]]) and the BQ value ranking ([[ASM-158]]).
+- **Strategy**: Jindřich's longer-term aim is more FTEs and projects at Max, after stabilising current delivery (at least half of items delivered, adoption running).
+
+---
+
+### ASM-188
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-188 |
+| Created | 2026-09-29 |
+| Source | 2026-09-29-management-meeting-debrief-reklamace-thursday-plan |
+| By | Jindřich Tůma (STK-003) |
+| Status | Open |
+
+**Description**
+The Maxie voicebot's BDC ticket has been open ~4 weeks. Instead of a configuration confirmation, BDC replied that it doesn't understand the request and asked for a meeting with Atlantis. Jindřich will schedule a joint meeting with Atlantis, ElevenLabs, BigHub and BDC. It is unknown whether the delay is BDC's fault, missing inputs or low priority. BigHub has no visibility into BDC tickets — Vladislav Tvarůžek is the only channel — so it can't track, escalate or prioritise its own requests.
+
+**Rationale**
+Separate from the MaxBuddy AKS requests (5 requests, ~6 weeks), which Jindřich raised at the 2026-09-29 management meeting; BDC has since reached out on those.
+
+**Impact**
+- **Timeline**: Maxie delivery remains blocked on infra.
+- **Relationship**: Risk that the blame lands on Vladislav Tvarůžek personally.
+- **Process**: BigHub needs a ticket it manages itself.
+
+---
+
+### ASM-187
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-187 |
+| Created | 2026-09-29 |
+| Source | 2026-09-29-management-meeting-debrief-reklamace-thursday-plan |
+| By | Jindřich Tůma (STK-003) |
+| Status | Open |
+
+**Description**
+Deloitte is running its own AI initiatives at Dr. Max, including something like an LLM platform (compared to what was built at Rohlík; name heard as "Duvo"/"Duvio", uncertain). Where it runs is unknown. There is a request to hand BigHub's architecture write-up to Deloitte; Jindřich will validate with Tomáš Dudaško first whether that is acceptable.
+
+**Rationale**
+Jindřich reads the request as a signal Deloitte is designing something overlapping. Not urgent and not a sign BigHub is ending, but "we have to be very good at the work so they have no reason to replace us".
+
+**Impact**
+- **Commercial**: Competitive/replacement risk for the BigHub AI Platform.
+- **Delivery**: Raises the bar on delivery quality and communication across all streams.
+- **Open**: Overlap with the AI Platform and whether architecture sharing is OK.
+
+---
+
+### ASM-186
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-186 |
+| Created | 2026-09-29 |
+| Source | 2026-09-29-management-meeting-debrief-reklamace-thursday-plan |
+| By | Marek Pillár (STK-001), agreed by Jindřich Tůma (STK-003) |
+| Status | Decided (2026-09-29) |
+
+**Description**
+The agreed base Reklamace spec is the contract between BigHub and the client and should be as complete as possible at the start. Method: take Jan Sovka's original file, work in the comments, turn unanswered ones into questions for Sláma/the business owner, fold in the roadmap comments. Undecided items (e.g. where supplier data lives) stay yellow-highlighted until answered. After agreement the base spec is not edited: changes go through syncs/email as change requests with an MD cost and written client approval (e.g. "+3 MD, Sláma confirms by email"), then tickets. A short product spec can be written at the end if needed.
+
+**Rationale**
+Avoids the recent pattern of logistics urging while Sláma doesn't react to comments ([[ASM-181]]); "what's written is given". A hard "no progress until confirmed" rule was considered and rejected as too radical.
+
+**Impact**
+- **Process**: Clear change control for Reklamace and later logistics specs.
+- **Timeline**: The spec goes to the client by 2026-10-02 with open questions, not fully approved ([[ASM-184]]).
+
+---
+
+### ASM-185
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-185 |
+| Created | 2026-09-29 |
+| Source | 2026-09-29-management-meeting-debrief-reklamace-thursday-plan |
+| By | Jindřich Tůma (STK-003), Alana Sihelská (STK-004), Marek Pillár (STK-001) |
+| Status | Decided (2026-09-29) |
+
+**Description**
+Client decisions are confirmed in writing. After the 2026-10-01 Reklamace session, the agreed decisions are emailed to logistics for confirmation by Friday 2026-10-02. Team-wide practice from now on: write everything down in emails or notes.
+
+**Rationale**
+Tereza Foltýnová has twice passed on statements BigHub never made (most recently that Jindřich said BigHub doesn't want to do Reklamace). Alana: written records have "saved us about four times".
+
+**Impact**
+- **Relationship**: Protects against misrepresentation; keeps Tereza close but on record.
+- **Process**: Feeds the spec-as-contract approach ([[ASM-186]]).
+
+---
+
+### ASM-184
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-184 |
+| Created | 2026-09-29 |
+| Source | PM's plan, 2026-09-29 |
+| By | Marek Pillár (STK-001) |
+| Status | Decided (2026-09-29) |
+
+**Description**
+The Reklamace spec goes through four steps:
+1. **Options Excel**: by the 2026-10-01 logistics meeting, a 100% ready Excel of every possible variant/option, each with reasoned pros and cons, ideally priced in MD.
+2. **Final spec in parallel**: a new final spec with all product comments/requirements worked in, leaving the Excel's decisions open for now.
+3. **Agreement**: the Excel is walked through with logistics at the meeting and sent as a meeting recap for approval. Once it's approved, only the AGREED decisions go into the spec.
+4. **Final sign-off**: the completed spec goes to logistics / Petr Sláma for final approval.
+
+**Update 2026-09-29** (2026-09-29-management-meeting-debrief-reklamace-thursday-plan): after the 10-01 session, the decision recap is emailed and a spec is sent by Friday 2026-10-02 — with agreed changes worked in and anything undecided left yellow-highlighted as open questions ([[ASM-186]]). A 100%-approved spec by then is not expected; the 2026-10-09 target for the knowledge-base decision stands.
+
+Target: by the end of the week of 2026-10-05 (2026-10-09), a plan/spec with the knowledge base decided.
+
+**Rationale**
+The 2026-09-24 standoff showed that open choices, like the supplier-data store ([[ASM-169]]), need to be closed explicitly and in writing before they go into the spec. A written recap becomes the record the client signs off on, and it separates option agreement from spec approval. That gives Sláma's competing vision ([[ASM-181]]) a concrete decision point.
+
+**Impact**
+- **Timeline**: Spec sign-off targeted for 2026-10-09, ahead of the 2026-10-15–16 UAT start.
+- **Workload**: Implements Marek's Reklamace focus under [[ASM-177]]. The 10-01 meeting carries both the options Excel and Filip's email-agent demo ([[ASM-173]]).
+- **Scope**: The open items [[ASM-174]], [[ASM-175]], [[ASM-176]] and [[ASM-183]] are candidates for rows in the options Excel.
+
+---
+
 ### ASM-177
 
 | Field | Value |
@@ -370,6 +930,7 @@ Logistics keeps treating "Excel was agreed" as settled, though it was never pres
 - **Delivery**: Filip researches SharePoint Lists, Jindřich researches Confluence; the options table goes to the 2026-10-01 logistics meeting.
 - **Relationship**: Moves the decision (and accountability) to the client, de-escalating the "BigHub doesn't want to deliver" narrative ([[ASM-122]]).
 - **Tech**: Whatever store is chosen must be a secured table with easy automated reads, authorization and ideally an audit trail — ~2 editors per warehouse, viewers = all claims workers (count -tbd-).
+- **Update 2026-09-29** (2026-09-29-management-meeting-debrief-reklamace-thursday-plan): Marek's options Excel carries BigHub's recommendation — Axapta holds all critical data (accounts, addresses, main contacts); the knowledge base, larger documents and references to Axapta keys go to Confluence or SharePoint; Excel as a database is not recommended. Filip Černý validates technical feasibility before 10-01.
 
 ---
 
@@ -458,6 +1019,8 @@ Framed as a goodwill gesture ("the bone we throw them") after the Reklamace fall
 **Impact**
 - **Timeline**: Demo due before 2026-10-01; production integration still blocked on the Microsoft Graph API from infra.
 - **Relationship**: Aims to calm logistics before the Reklamace management meeting (pushed to the following week, Dudaško unavailable).
+
+**Update (2026-09-29)**: The demo is largely built and runs as a command-line tool only, not wired to Outlook. It uses 7 real threads from Jana Egrmaierová, 6 of them usable. See [[ASM-204]]. Source: 2026-09-29-reklamace-email-agent-demo-review-filip.
 
 ---
 
@@ -1828,6 +2391,7 @@ A related dashboard extension for the logistics team — using the same order-fo
 - **Delivery**: If real, this is a near-complete parallel deliverable BigHub may not have full visibility into — worth a direct check with Logistics leadership.
 - **Value**: Materially multiplies the order-prediction dashboard's business case if confirmed, since it reuses the same underlying data for a second use case.
 
+- **Update 2026-09-29** (2026-09-29-order-prediction-dashboard-v2-review): Now concrete. Jan (Honza) Maroušek (STK-021) plans warehouse shifts Wednesday–Friday for the following week and calls in temporary workers. He needs the forecast **per day × per warehouse** (a 7-day sum isn't useful). Juraj Kmec is building a per-day export with a day picker as part of the October acceptance ([[ASM-191]]). It's still open whether this covers the whole extension Šimoník described.
 ---
 
 ### ASM-110
@@ -1850,6 +2414,7 @@ He wants the currently-agreed scope delivered in the next 2–3 weeks and stress
 - **Delivery**: No new scope pressure on this stream in the near term — frees capacity.
 - **Planning**: Marek should proactively schedule the Q4/year-end follow-up rather than wait to be asked.
 
+- **Update 2026-09-29** (2026-09-29-order-prediction-dashboard-v2-review): Confirmed and made concrete. Final acceptance is by end of October, the V2 backlog is collected through the season and reviewed with Marek Pillár before year-end, and the V2 talk is in Jan/Feb 2027. See [[ASM-191]].
 ---
 
 ### ASM-109
@@ -2752,6 +3317,7 @@ Jindřich proposed this partly to meet BigHub-internal reporting pressure to sho
 - **Delivery cadence**: Establishes a precedent — v1 accepted now, v2 to bundle today's ~10 feature requests, v3 to bundle whatever surfaces after that, roughly quarterly.
 - **Client relationship**: Signals enough trust to move from continuous iteration to a more formal cadence without it reading as BigHub reducing engagement.
 
+- **Update 2026-09-29** (2026-09-29-order-prediction-dashboard-v2-review): The client now uses different labels. "Final acceptance" (end of October) closes this entry's v2 batch, and the client's "version 2" (Jan/Feb 2027) means this entry's v3. BigHub keeps its internal numbering. See [[ASM-191]].
 ---
 
 ### ASM-068
@@ -3653,6 +4219,8 @@ Canary rollout plan (20 pilot pharmacies first, already live and matching confir
 **Impact**
 - **Timeline**: Full-rollout timeline is entirely gated on AKS access, outside BigHub's control.
 - **Planning**: Safe to plan the ~1-month rollout work starting whenever AKS access lands, not before.
+
+**Update (2026-09-29)**: Luboš Vosmek expects rollout to the other pharmacies "within days", which conflicts with this entry. Logged as an expectation gap in [[ASM-203]]. Source: 2026-09-29-maxbuddy-roadmap-backlog-vosmek
 
 ---
 

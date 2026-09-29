@@ -215,5 +215,6 @@ Individual artifacts may include additional frontmatter fields as defined by the
 | `/product-scope` | Create or update phase-level scope and delivery tracker |
 | `/product-feature` | Create or update a feature specification |
 | `/product-slidedeck` | Create, update, or review a slide deck specification |
+| `/product-client-spec` | Start, rebuild, review, or make a client version of an initiative's development spec (.docx) — intake Q&A on name/stream/source files, comment-resolution register, newest-source-wins |
 | `/product-codebase-audit` | Analyze an existing codebase and produce a product baseline. Two-mode: default builds the baseline; `route` writes findings into harness artifacts on PM confirmation. `refresh` compares against the prior baseline. |
 | `/product-backlog-import` | Import planned work from an external backlog tool. Two-mode: default builds the backlog import plan; `route` writes FEATs + insights into harness artifacts on PM confirmation. |

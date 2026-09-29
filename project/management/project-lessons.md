@@ -1,10 +1,110 @@
 ---
-last_updated: 2026-09-25
+last_updated: 2026-09-29
 last_updated_by: auto — project-meeting lessons
 owner: Marek Pillár
 ---
 
 # Lessons Learned
+
+---
+
+### LL-72
+
+| Field | Value |
+|-------|-------|
+| ID | LL-72 |
+| Created | 2026-09-29 |
+| Category | client-documentation |
+| Source | project-daily-2026-09-29 (Reklamace spec review rounds) |
+
+**Lesson**
+In a client-facing spec, state the newest agreed resolution as plain fact. Don't show the trail of who said what in which meeting, older conflicting versions, or comment-resolution registers; keep that provenance in internal notes, clearly marked for removal. Use as few annotation colours as possible: one for anything still open, one for the developer to confirm, one for internal notes.
+
+**Context**
+The first Reklamace spec draft carried meeting dates, attributions, a conflict table, a comment register and five colours. Over three review rounds the PM asked for sources to be marked internal, the appendices folded into the text as facts, and yellow and purple merged into a single "open / to decide" yellow.
+
+**Cross-reference**
+[[ASM-186]], [[ASM-184]]
+
+---
+
+### LL-71
+
+| Field | Value |
+|-------|-------|
+| ID | LL-71 |
+| Created | 2026-09-29 |
+| Category | ai-scoping |
+| Source | 2026-09-29-reklamace-email-agent-demo-review-filip |
+
+**Lesson**
+Scope an LLM agent's MVP from a small set of real examples: handle the frequent, explicit outcomes, send everything else to a person, and grow it by asking the client for more real cases rather than guessing edge cases. For non-technical stakeholders, show real inputs next to the agent's output, not an architecture diagram.
+
+**Context**
+Filip Černý built the Reklamace email agent from 6 usable supplier threads. A prompt-based classifier covers the clear outcomes (warehouse, pickup, disposal, waiting, wrong recipient) and hands the rest to a person. For the 2026-10-01 logistics meeting, the team chose a simple deck with real email screenshots and their classification over a live demo or a flow diagram.
+
+**Cross-reference**
+[[ASM-204]], [[ASM-205]], [[ASM-206]]
+
+---
+
+### LL-70
+
+| Field | Value |
+|-------|-------|
+| ID | LL-70 |
+| Created | 2026-09-29 |
+| Category | adoption-analytics |
+| Source | 2026-09-29-maxbuddy-roadmap-backlog-vosmek |
+
+**Lesson**
+When usage data shows people aren't using a feature embedded in a host system, first rule out a technical interaction with the host (input focus, events, pop-ups) before treating it as a behaviour or training problem. Embedded tools can quietly break the host's workflow, and users then avoid them.
+
+**Context**
+MaxBuddy's low tree click-through since August was read as an adoption gap. On 2026-09-29, Jura Brázdil tied it to a likely focus bug: Farmis reads the barcode scanner as keyboard input, so tapping MaxBuddy swallows scans and switches off the dispensing case, and pharmacists have good reason not to tap.
+
+**Cross-reference**
+[[ASM-198]], 2026-09-07 MaxBuddy analytics (project-knowledge)
+
+---
+
+### LL-69
+
+| Field | Value |
+|-------|-------|
+| ID | LL-69 |
+| Created | 2026-09-29 |
+| Category | Forecasting products / client expectations |
+| Source | 2026-09-29-order-prediction-dashboard-v2-review |
+
+**Lesson**
+When a forecast is meant to trigger operational decisions, the forecast and reality will drift apart *because* people acted on it. Agree this with the business owner early. Measure accuracy against the plan-versus-action record, not only raw error, so a "miss" caused by a good decision isn't read as a bad model.
+
+**Context**
+Logistics moved Zásilkovna volume from Brno to Nučice after seeing the forecast, and the per-warehouse prediction lagged about 2 days. Šimoník explicitly accepted this as a chicken-and-egg effect. The planned accuracy evaluation was reframed as a way for the logistics planner to see what he planned, what he changed, and what happened.
+
+**Cross-reference**
+[[ASM-194]], [[ASM-195]]
+
+---
+
+### LL-68
+
+| Field | Value |
+|-------|-------|
+| ID | LL-68 |
+| Created | 2026-09-29 |
+| Category | client-communication |
+| Source | 2026-09-29-management-meeting-debrief-reklamace-thursday-plan |
+
+**Lesson**
+When the same topic comes back meeting after meeting without progress, the blocker is usually an unmade decision or a term each side reads differently, not delivery. Stop re-explaining the same way: put the options, risks and a recommendation in one visible artefact, hand the decision to the client, and confirm it in writing.
+
+**Context**
+The Reklamace "knowledge base" was discussed across four meetings; everyone meant something slightly different by it, and the underlying supplier-data decision was never actually made with logistics. Marek called the delivery trivial and the decision the real stall; Jindřich asked the team to assume BigHub was explaining it badly rather than the client failing to understand.
+
+**Cross-reference**
+[[ASM-169]], [[ASM-184]], [[ASM-185]], [[ASM-186]]
 
 ---
 

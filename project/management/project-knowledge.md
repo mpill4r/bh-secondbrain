@@ -1,5 +1,5 @@
 ---
-last_updated: 2026-09-25
+last_updated: 2026-09-29
 last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
@@ -28,7 +28,7 @@ owner: Marek Pillár
 | Definition | BigHub-built product for Dr. Max pharmacies. Originally a pharmacist dosage-verification assistant (pulled after legal flagged it as requiring medical device certification); the surviving, shipped feature is AI-driven point-of-sale cross-sell ("psí prodeje" — upsell suggestions) generated from basket contents, rolling out to all ~600 Dr. Max pharmacies. |
 | Source | 2026-08-25-marek-onboarding-with-jan-sovka, 2026-09-03-maxbuddy-chatbot-ocr-project-handoff, 2026-09-07-ai-portfolio-roadmap-scope-review |
 | Added | 2026-09-01 |
-| Last updated | 2026-09-24 |
+| Last updated | 2026-09-29 |
 | Status | Active |
 
 The dosage-verification logic still exists dormant in the codebase and could be revived if Dr. Max later pursues certification.
@@ -46,6 +46,8 @@ Original infrastructure/model provisioning for MaxBuddy was done manually (ad ho
 **2026-09-07 portfolio review**: the recommendation engine's real ceiling isn't technical — Dr. Max has never granted access to actual sales/margin data, so it can only use 4 data points (fixed supplier-defined cross-sell pairs, supplier argument text, live stock, active ingredient). Early analytics (still being sanity-checked before going to Luboš Vosmek, STK-011) show a striking adoption gap: the most-recommended product was shown ~18,000 times but purchased only 6 times, and komplexní péče "tiles" get almost no clicks since being tucked behind a UI element in the last release — likely needs pharmacist training/adoption work, not just model tuning. Full 600-pharmacy rollout blocked on new AKS access, ~1 month pessimistic estimate post-grant — see [[ASM-027]]. Dosage-calc features stay blocked pending Dr. Max's certification decision — see [[ASM-028]].
 
 **Cross-sell argument workflow (2026-09-24)**: not fully automated, contrary to Dudaško's assumption. An expert enters a rough idea (e.g. with Amoxiclav, offer magnesium), an LLM generates ~15 phrasings, and the expert group approves or rejects them. It currently lives on an ad hoc URL; the AI Platform gives it a proper admin interface with an approval queue. Jura currently checks MaxBuddy health manually each morning from local telemetry (Azure logs, 3 services, DB, pods); the platform will centralize this. Source: 2026-09-24-ai-initiatives-bq-review-platform-prototype-demo-dudasko
+
+**Host environment and backlog (2026-09-29)**: MaxBuddy runs inside a **Farmis webview** on pharmacy **touchscreen** kiosks. There is no hover, so any "show more" interaction has to work by tap. It may not be able to open its own pop-up windows ([[ASM-199]]). Farmis appears to read the barcode scanner as keyboard input: once a pharmacist taps into MaxBuddy, it keeps focus and swallows scans, and the dispensing case switches off ([[ASM-198]]). This may explain part of the low tree click-through since August. The landing screen rotates **5 logos**; pilot pharmacists noticed they aren't in Dr. Max colours, and a restyle plus seasonal AI-generated logos are planned ([[ASM-200]]). Profitability-based offering concept: absolute CZK profit, not % margin, with 3 tiers per product shown 7/2/1 in 10 expeditions, or receipt-based learning ([[ASM-197]]). Source: 2026-09-29-maxbuddy-roadmap-backlog-vosmek
 
 ### Max / Maxie / Lexie
 
@@ -154,6 +156,13 @@ Scope narrowed to one category first: automatic doors, two vendors — extractin
 
 **Email flow (as of 2026-09-25)**: the worker clicks in Axapta, which sends a request with supplier data. BigHub generates the rozvozový list and returns it to Axapta for printing, and the same request triggers an Outlook draft that the worker reviews and sends ([[ASM-010]]). A supplier reply in the inbox can trigger an LLM to extract structured info (e.g. which warehouse, for ~5 multi-warehouse suppliers) and draft the next reply in the thread. Jakub Turner has finished the main part; it is blocked on infra delivering Microsoft Graph API access. Whether a draft appears directly inside the reply thread is not implemented or verified yet. A ~1 MD demo is in progress ([[ASM-173]]). Rozvozový list fields that come from Axapta but are missing from the contract: reklamace number, RD document number, issue date ([[ASM-174]]). The per-case timeline dashboard idea was killed ([[ASM-172]]). Source: 2026-09-25-reklamace-supplier-data-source-options.
 
+**Real supplier email threads (2026-09-29)**: Jana Egrmaierová sent Filip Černý 7 threads, 6 usable. What they show:
+- **First email**: always the same and very short ("notification of claim case no. X, documentation attached"). Staff don't write more because everyone has the context.
+- **Supplier-specific first-email question** (warehouse A/B, send back or dispose?): needed by well under 10 % of suppliers, all known from the supplier note.
+- **Reply outcomes seen**: disposal 2×, "please wait for our statement" ~2×, forwarded to the wrong person 1×, needed a person 2× (a supplier offering a replacement with a new expiry; a long "no form" rejection), supplier address in the reply 1× (matched the stored one). Outcomes are usually stated explicitly.
+- **Reminders**: in one thread staff chased a supplier who didn't reply ("did you forget about us?").
+See [[ASM-204]], [[ASM-205]]. Source: 2026-09-29-reklamace-email-agent-demo-review-filip.
+
 **Knowledge-base standoff (2026-09-24)**: the "knowledge base" the app consumes today is only address + email per supplier, delivered from Axapta via the agreed Swagger API. Procedural know-how per supplier (which suppliers need special handling, and what it is) was never captured anywhere structured; it lived in notebooks and Excel sheets. Jana Egrmaierová proposed flagging each supplier as "standard procedure" (use the main contact) or "specific procedure" (steps noted). She estimates ~280 suppliers, ~75 with their own transport arrangement and ~35 needing specific handling, all unvalidated with the suppliers. Petr Sláma considers email-workflow automation the real savings, not protocol creation. See [[ASM-181]]. Source: 2026-09-24-viapharma-reklamace-knowledge-base-standoff.
 
 **Spec coverage (2026-09-25)**: per Tereza Foltýnová, only part of the Reklamace process is specified ("not even half"): phase 2 is partly worked out, phases 3–5 untouched, and scope "keeps swelling". Of ~10 real emails Jana forwarded, only ~2 were straightforward. The client side says it didn't want agile delivery without a full spec, but agile was chosen, and it "has bitten us". From 2026-09-25 Marek owns the Reklamace documentation ([[ASM-177]]). Source: 2026-09-25-tereza-foltynova-reklamace-focus-logistics-initiatives-table.
@@ -236,6 +245,18 @@ Demoed screen flow: category selection → product catalog table (per-product SK
 | Status | Active |
 
 Surfaced when Jindřich asked Tomáš Dudaško who BigHub should talk to about whether pharmacists are actually adopting a live tool (MaxBuddy). Dudaško's answer: not the training center (which only handles the training delivery itself) — the expert group lead is the person with escalation authority and network-wide visibility. See "osmec" and "tréninkové centrum" below; ties into the adoption-campaign scope split, [[ASM-117]].
+
+### eRezervace
+
+| Field | Value |
+|-------|-------|
+| Definition | Dr. Max's online reservation flow: a customer reserves a product (often on a prescription) on the e-shop, and Farmis pops up a window in the chosen pharmacy asking staff to confirm the item is in stock. A reservation takes the item out of available stock. |
+| Source | 2026-09-29-maxbuddy-roadmap-backlog-vosmek |
+| Added | 2026-09-29 |
+| Last updated | 2026-09-29 |
+| Status | Active |
+
+Some pilot pharmacies report that an active eRezervace and MaxBuddy "block each other". Not reproduced yet: Vosmek will try it live, since BigHub's test Farmis can't create an active eRezervace. Hypotheses: the MaxBuddy focus bug ([[ASM-198]]), or scanning a reserved last unit that is out of stock.
 
 ### Osmec
 
@@ -375,9 +396,9 @@ Per a BigHub roadmap sheet (2026-09-02), owners cross-checked against the above:
 | Field | Value |
 |-------|-------|
 | Definition | The e-commerce order/demand-prediction dashboard owned by Juraj Kmec. Static, read-only React frontend ("like Power BI") deliberately built with no interactivity so it can't break Dr. Max infra. Tracks two predicted metrics: (1) **Revenue** — plan/target vs. actual vs. model prediction with confidence intervals and a probability-of-hitting-target readout; (2) **Logistics** — predicted new order counts by warehouse and shipping method, with a "time travel" feature comparing a historical model run against actual outcomes. Both have a same-day zoomed view with ~30 min live-data delay. Deployed on Dr. Max infra, VPN-gated, no external repo access without a Dr. Max account. |
-| Source | 2026-09-02-order-prediction-dashboard-walkthrough, 2026-09-07-ai-portfolio-roadmap-scope-review, 2026-09-15-order-prediction-dashboard-follow-up |
+| Source | 2026-09-02-order-prediction-dashboard-walkthrough, 2026-09-07-ai-portfolio-roadmap-scope-review, 2026-09-15-order-prediction-dashboard-follow-up, 2026-09-29-order-prediction-dashboard-v2-review |
 | Added | 2026-09-02 |
-| Last updated | 2026-09-15 |
+| Last updated | 2026-09-29 |
 | Status | Active |
 
 v1 considered done as of 2026-09-02; first live business demo 2026-09-03 (demoed by Juraj Kmec directly). Before this, the business had no live visibility — data was pulled manually from Excel exports ~2 days stale. Formally accepted by the client as "version 1" on 2026-09-15 — see [[ASM-069]].
@@ -393,6 +414,16 @@ v1 considered done as of 2026-09-02; first live business demo 2026-09-03 (demoed
 **Pharmacy reservations as strategic differentiator (2026-09-15)**: "Rezervace v lékárnách" (pharmacy reservations — click & collect at one of ~600 physical Dr. Max pharmacies) are dramatically cheaper fulfillment than warehouse-based click & collect: a pharmacist simply holds a product on a shelf, versus Dr. Max carrying full warehouse pick/pack/return cost. Dr. Max is actively pushing this channel (a new in-app "reserve at pharmacy" button, alongside add-to-cart) and considers it a key e-commerce USP. On the dashboard, reservations need to be broken out from the general order aggregate as their own top-line category, further split per warehouse (Nučice, Brno) for logistics staffing — see [[ASM-071]]. This surfaced a design gap in the existing "Metrix" (warehouse × delivery-method matrix) view: reservations don't map cleanly onto either axis (a reservation is conceptually both a "warehouse" and a "delivery method" in the current model), needing a redesign.
 
 **Delivery cadence (2026-09-15)**: The dashboard's initial build is formally accepted as "version 1"; further requests batch into "version 2," and once that ships, subsequent requests batch into "version 3," on a roughly quarterly cadence rather than continuous ad hoc releases — see [[ASM-069]].
+
+**v2 build and operating patterns (2026-09-29)**: The v2 build adds a hierarchical channel selector (e-com / pharmacy reservations / marketplace → warehouses → delivery methods), and the sub-charts follow the selected level. It also adds a run-rate projection ("při současném tempu", the day's total at the current pace), which Šimoník finds very accurate from about 10–11 a.m., and a 30-min/1-h toggle. The logistics chart follows the selected series, and removing "pharmacy pickup" recalculates it. "Target" is now called "budget". Patterns learned:
+- **Holidays**: on a public holiday the "pick up within 15 minutes" reservation promise isn't shown (many pharmacies are closed), so reservations drop and then jump the next day. Recognized revenue on the 2026-09-28 holiday was about 1.2M Kč versus ~15M on a normal Monday (−93% YoY). The model treats a holiday roughly like a weekend.
+- **Warehouse roles**: Nučice mainly handles pharmacy pickup (shipments to pharmacies). Brno handles part of the Moravian pharmacies but mainly the carriers (PPL, DODO, Česká pošta), with about 6 delivery methods.
+- **Model adaptation**: after a channel or warehouse shift the model lags about 2 days, then catches up. Operational rerouting (e.g. Zásilkovna Brno→Nučice) is deliberately not fed in ([[ASM-194]]). Day +1 is the easiest horizon; two weeks out is harder, and the forecast updates daily.
+- **Noise at fine granularity**: with ~50–300 orders/day, 30-minute resolution can swing ±100%.
+- **Accuracy data**: every model prediction is stored, so the "time travel" comparison against actuals supports a later accuracy evaluation ([[ASM-195]]). Christmas is still the known modelling risk; tuning is planned.
+- **Logistics use**: shifts are planned Wed–Fri for the following week from per-day × per-warehouse figures ([[ASM-111]]).
+Recognized revenue will be split by channel once the budget Excel arrives ([[ASM-192]]). Final acceptance is targeted for end of October ([[ASM-191]]).
+
 
 ### Axapta
 
@@ -416,9 +447,19 @@ Reklamace document flow (as of 2026-09-02): contract config in Axapta is complet
 
 | Field | Value |
 |-------|-------|
-| Definition | Global group overseeing Dr. Max's local entities across countries. Local entities (like the Czech one) retain significant autonomy; some infrastructure is global (managed via BDC), some local — creates approval bottlenecks, e.g. infra access requests (AKS, voicebot) that span multiple BDC teams. |
-| Source | 2026-08-25-marek-onboarding-with-jan-sovka, 2026-09-01-dr-max-x-bighub-project-status-sync |
+| Definition | Global group overseeing Dr. Max's local entities across countries. Local entities (like the Czech one) retain significant autonomy; some infrastructure is global (managed via BDC), some local — creates approval bottlenecks, e.g. infra access requests (AKS, voicebot) that span multiple BDC teams. **Update 2026-09-29**: Jindřich raised BDC communication at the Dr. Max management meeting (5 MaxBuddy AKS requests waiting ~6 weeks); BDC reached out afterwards. The Maxie voicebot ticket (~4 weeks) came back with BDC not understanding the request and asking for an Atlantis meeting. BigHub has no visibility into BDC tickets — Vladislav Tvarůžek is the only channel ([[ASM-188]]). |
+| Source | 2026-08-25-marek-onboarding-with-jan-sovka, 2026-09-01-dr-max-x-bighub-project-status-sync, 2026-09-29-management-meeting-debrief-reklamace-thursday-plan |
 | Added | 2026-09-01 |
+| Last updated | 2026-09-29 |
+| Status | Active |
+
+### Deloitte
+
+| Field | Value |
+|-------|-------|
+| Definition | Consultancy running its own AI initiatives at Dr. Max in parallel with BigHub, including something like an LLM platform (compared to what was built at Rohlík; name heard as "Duvo"/"Duvio", uncertain). Where it runs is unknown. Has asked for BigHub's architecture write-up (pending Dudaško's validation). Treated as a competitive/replacement risk, not an urgent threat ([[ASM-187]]). |
+| Source | 2026-09-29-management-meeting-debrief-reklamace-thursday-plan |
+| Added | 2026-09-29 |
 | Status | Active |
 
 ### Atlantis
@@ -454,12 +495,14 @@ Per a separate 2026-09-02 infra sync, access is actively closing out: node pools
 | Field | Value |
 |-------|-------|
 | Definition | Client-side systems relevant to the listing project. Magento appears to be (part of) the e-commerce platform; Farmis is a separate system with a functionality gap under analysis (assigned to Jan Sovka) before listing work proceeds — also the source of a Farmis release that broke a MaxBuddy dependency, causing two recent outages. |
-| Source | 2026-09-01-dr-max-x-bighub-project-status-sync, 2026-09-02-logistics-listing-team-sync |
+| Source | 2026-09-01-dr-max-x-bighub-project-status-sync, 2026-09-02-logistics-listing-team-sync, 2026-09-29-maxbuddy-roadmap-backlog-vosmek |
 | Added | 2026-09-01 |
-| Last updated | 2026-09-02 |
+| Last updated | 2026-09-29 |
 | Status | Needs confirmation |
 
 Listing's core blocker (reconfirmed 2026-09-02) is not code but Dr. Max's undefined category/parameter system (e.g. how to categorize something like bottled water) — a POC/demo exists for one narrow category, but extending to all categories is stuck pending client-side decisions. Per Filip Černý, further development isn't worth pursuing until this is delivered. See [[ASM-011]] for the agreed Discovery-first path forward.
+
+**Farmis as MaxBuddy's host (2026-09-29)**: Farmis is the pharmacy dispensing/POS system. MaxBuddy is embedded in it as a webview. Farmis handles the dispensing case ("expediční případ"), client cards, eRecepty and eRezervace pop-ups, and appears to take barcode-scanner input as keyboard input. Farmis-side changes go through Lukáš Szücs ("Sýč"). BigHub's test Farmis is limited: it can't create an active eRezervace, for example. Source: 2026-09-29-maxbuddy-roadmap-backlog-vosmek
 
 ### Planning Wizard
 
@@ -530,6 +573,15 @@ Listing's core blocker (reconfirmed 2026-09-02) is not code but Dr. Max's undefi
 | Source | PM input, 2026-09-08; extended 2026-09-09 |
 | Added | 2026-09-08 |
 | Last updated | 2026-09-09 |
+| Status | Active |
+
+### Spec-as-contract & change requests
+
+| Field | Value |
+|-------|-------|
+| Definition | A client development spec is the contract between BigHub and the client. Build it from the original file, work in all comments, turn unanswered comments into questions for the business owner, and keep undecided items yellow-highlighted until answered. Once agreed, the base spec is not edited: later changes go through syncs/email as change requests with an MD cost and written client approval, then tickets. Decisions from client meetings are recapped by email for written confirmation ("what's written is given"). See [[ASM-185]], [[ASM-186]]. |
+| Source | 2026-09-29-management-meeting-debrief-reklamace-thursday-plan |
+| Added | 2026-09-29 |
 | Status | Active |
 
 ### VBS (work-breakdown-structure) framework
