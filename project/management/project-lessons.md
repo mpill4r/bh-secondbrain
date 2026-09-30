@@ -8,6 +8,66 @@ owner: Marek Pillár
 
 ---
 
+### LL-75
+
+| Field | Value |
+|-------|-------|
+| ID | LL-75 |
+| Created | 2026-10-01 |
+| Category | data-quality |
+| Source | 2026-10-01-teo-ocr-sync-autumn-batches-costs-next-vendors |
+
+**Lesson**
+When an extraction pipeline flags a value as "not found in the reference list", don't assume the list is the problem. Check whether the source document itself is wrong. Match-failure flags often surface real upstream errors that manual processing missed, and that is a value point worth showing the client.
+
+**Context**
+In TEO/OCR, an address flagged as "outside the číselník" was first treated as a gap in the pharmacy list. On 2026-10-01 Míša found that the supplier had written a non-pharmacy address on the protocol: the tool caught an error she hadn't noticed, and the list turned out to be current.
+
+**Cross-reference**
+[[ASM-218]]
+
+---
+
+### LL-74
+
+| Field | Value |
+|-------|-------|
+| ID | LL-74 |
+| Created | 2026-09-30 |
+| Category | client-communication |
+| Source | 2026-09-30-reklamace-thursday-prep-data-map-demo-review |
+
+**Lesson**
+In an options matrix for a client decision, make each column state one thing, usually *technical feasibility*, and mark political or agreement blockers separately ("possible, not agreed"). Mixing "can't" with "won't" or "not agreed" makes options look impossible when they are only unagreed. That weakens the client's ownership of the choice and invites "you said it can't be done" later.
+
+**Context**
+In the Reklamace data map, the Axapta column mixed "no", "?" and "not agreed". Jindřich read them as technical limits; Filip clarified that every field could live in AX and the blockers were political. The column was relabelled before the matrix went to logistics.
+
+**Cross-reference**
+[[ASM-213]], [[ASM-214]]
+
+---
+
+### LL-73
+
+| Field | Value |
+|-------|-------|
+| ID | LL-73 |
+| Created | 2026-09-30 |
+| Category | integration-discovery |
+| Source | 2026-09-30-listing-reset-neuman-enrichment-first-doplnky-stravy |
+
+**Lesson**
+Before committing a product's MVP to writing data back into a legacy system, verify the target's import mechanics early: whether it supports partial updates, "leave unchanged" values and multi-field batches, and whether anyone owns that integration. A write-back that looks trivial can turn out to be one import per field. When it is blocked, reframe the MVP around what the team can use now (enrichment plus an export shaped for the person who runs the imports) rather than stalling.
+
+**Context**
+The Listing MVP assumed Magento write-back. About two weeks before the 2026-09-30 reset, the client found that a Magento import changes one attribute per import with no null value (~20 columns = ~20 imports), and no global team would support an integration ahead of a PIM migration. The meeting moved Magento out of the MVP and made a food-supplements enrichment batch with a tailored export the next step.
+
+**Cross-reference**
+[[ASM-207]], [[ASM-210]], [[ASM-065]]
+
+---
+
 ### LL-72
 
 | Field | Value |

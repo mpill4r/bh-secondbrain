@@ -1,5 +1,5 @@
 ---
-last_updated: 2026-09-29
+last_updated: 2026-10-01
 last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
@@ -10,6 +10,22 @@ owner: Marek Pillár
 
 | ID | Status | Created | Description (short) |
 |----|--------|---------|---------------------|
+| ASM-222 | Open (2026-10-01) | 2026-10-01 | Many TEO protocols carry no address; from spring 2027 TEO will push technicians/vendors to put an ID number or address on every protocol |
+| ASM-221 | Open (2026-10-01) | 2026-10-01 | TEO/OCR extra fields (pass/fail, device/inspection names, device count, EPS) beyond date + address — pending Míša's naming guide |
+| ASM-220 | Decided (2026-10-01) | 2026-10-01 | TEO/OCR cost ~0.50–0.60 Kč/page (Termetal/Rakun), ~2 Kč (Spedos), ~1 Kč avg — accepted; platform adds per-use-case cost tracking + spending caps |
+| ASM-219 | Decided (2026-10-01) | 2026-10-01 | TEO/OCR autumn 2026 continues offline: TEO sends batches in any format, BigHub returns Excel + JSON best-effort |
+| ASM-218 | Decided (2026-10-01) | 2026-10-01 | TEO/OCR číselník gaps solved by connecting to the pharmacy API, not manual list updates; číselník stays as is |
+| ASM-217 | Decided (2026-09-30) | 2026-09-30 | One shared Entra registration for logistics + platform apps (Lexie, Max bot, later e-commerce); Reklamace UAT per-user login week of 2026-10-05 (Filip + Jura) |
+| ASM-216 | Decided (2026-09-30) | 2026-09-30 | Infra requests go through ServiceNow tickets; Tvarůžek gets ServiceNow access |
+| ASM-215 | Open (2026-09-30) | 2026-09-30 | Business owner of the supplier-data SharePoint List undefined; risk BigHub becomes de facto owner; Graph API read access = new infra request |
+| ASM-214 | Decided (2026-09-30) | 2026-09-30 | BigHub recommendation for 10-01: AX supplies supplier account + what it already holds + case fields only it has; rest in one SharePoint List (preferred) linked by supplier account |
+| ASM-213 | Decided (2026-09-30) | 2026-09-30 | Data-map store columns mean feasibility, not preference; everything possible everywhere incl. AX; AX blockers are agreement/political, not technical |
+| ASM-212 | Open (2026-09-30) | 2026-09-30 | Listing parameter-catalogue auto-sync deferred until after the global PIM standardises parameters; risk of catalogue drift |
+| ASM-211 | Open (2026-09-30) | 2026-09-30 | CZ migration to the global PIM (replacing Magento) ~9 months away and slipping; Neuman checking timeline, Slovakia visit early November |
+| ASM-210 | Open (2026-09-30) | 2026-09-30 | Magento import changes one attribute per import with no "don't change" value; ~20 columns = ~20 imports; blocks write-back until global PIM |
+| ASM-209 | Decided (2026-09-30) | 2026-09-30 | Listing: every SKU human-validated; auto-filled values carry an "unreviewed" status; medicines excluded (AI Act, credibility) |
+| ASM-208 | Decided (2026-09-30) | 2026-09-30 | Listing next scope: food-supplements legislative group, ~2,000 SKUs (top 20 % = 80 % revenue); inputs = parameter catalogue + SKU batch + finished examples |
+| ASM-207 | Decided (2026-09-30) | 2026-09-30 | Listing: Magento integration out of the MVP; MVP later; focus on data enrichment + an export shaped for the parameter specialist |
 | ASM-206 | Decided (2026-09-29) | 2026-09-29 | Reklamace 10-01 email-agent demo shown as a simple deck / one-pager (user journey + 2–3 real examples + next steps), not a live integration |
 | ASM-205 | Open (2026-09-29) | 2026-09-29 | Email-agent categories built on only 6 usable real threads; logistics needs to supply more (~30, incl. edge cases) to extend the flow and cut hand-offs |
 | ASM-204 | Decided (2026-09-29) | 2026-09-29 | Reklamace email-agent MVP: deterministic first email on the rozvozový-list trigger; prompt-based LLM reply classifier (no fine-tuning) into known outcomes; unknown → person; drafts only |
@@ -149,9 +165,9 @@ owner: Marek Pillár
 | ASM-070 | Decided (2026-09-15) | 2026-09-15 | Order-prediction dashboard's model output stays named "predikce," kept terminologically distinct from Dr. Max's own "budget"/"forecast" planning figures |
 | ASM-069 | Decided (2026-09-15) | 2026-09-15 | Order-prediction dashboard's current build formally accepted as "version 1"; future requests batch into v2/v3 on a roughly quarterly cadence instead of continuous ad hoc releases |
 | ASM-068 | Decided (2026-09-15) | 2026-09-15 | Listing category hierarchy/inheritance ("vrstvené/složené listovací standardy") split out of Nice to Have into Plná verze scope, separate from raw category-count scaling |
-| ASM-067 | Decided (2026-09-15) | 2026-09-15 | Listing "produkční nasazení" finish-line criterion defined: listingový tým can self-import, edit, and return a product to Magento without manual ctrl-c/ctrl-v |
+| ASM-067 | Superseded by ASM-207 (2026-09-30) | 2026-09-15 | Listing "produkční nasazení" finish-line criterion defined: listingový tým can self-import, edit, and return a product to Magento without manual ctrl-c/ctrl-v |
 | ASM-066 | Decided (2026-09-15) | 2026-09-15 | Listing's "Tvorba popisů pro nové produkty" reclassified from Backlog to Hotovo — new products always enter the tool as existing products since Magento entry happens first |
-| ASM-065 | Decided (2026-09-14) | 2026-09-14 | Listing must be connected to Magento before production — current phase is import-only by design, full Magento connection is a confirmed must-have for launch |
+| ASM-065 | Superseded by ASM-207 (2026-09-30) | 2026-09-14 | Listing must be connected to Magento before production — current phase is import-only by design, full Magento connection is a confirmed must-have for launch |
 | ASM-064 | Open (2026-09-14) | 2026-09-14 | Listing blacklist enforcement stays advisory (warning) for now — whether it should become a blocking pre-publish check is an open business/compliance decision |
 | ASM-063 | Open (2026-09-10) | 2026-09-10 | Lexie test-account approach: shared account + in-app role switcher preferred over 4 separate accounts, pending feasibility confirmation |
 | ASM-062 | Decided (2026-09-10) | 2026-09-10 | X-Manager not extended to other Dr. Max streams yet — waiting on Tomáš Dudaško's promised DevOps environment project |
@@ -184,7 +200,7 @@ owner: Marek Pillár
 | ASM-035 | Open (2026-09-07) | 2026-09-07 | TEO and Fakturace doprav share the same mixed-format document-extraction problem — worth comparing approaches |
 | ASM-034 | Decided (2026-09-07) | 2026-09-07 | TEO OCR pilot deliberately scoped to 2 suppliers first, before considering expansion |
 | ASM-033 | Open (risk, 2026-09-07) | 2026-09-07 | Listing's external-source scraping (e.g. Notino) paused pending legal review — may need an official API instead |
-| ASM-032 | Decided (tentative, 2026-09-07) | 2026-09-07 | Listing category rollout starts with a small non-pharma set, not a large/complex one |
+| ASM-032 | Superseded by ASM-208 (2026-09-30) | 2026-09-07 | Listing category rollout starts with a small non-pharma set, not a large/complex one |
 | ASM-031 | Decided (2026-09-07) | 2026-09-07 | Listing category/structure recommendation confirmed out of agreed scope — future feature request, not a tracked gap |
 | ASM-030 | Open (2026-09-07) | 2026-09-07 | Řízení poptávky campaign recommendation/generation — no firm phase decision, stays Nice to Have/Backlog pending real scoping |
 | ASM-029 | Open (risk, 2026-09-07) | 2026-09-07 | Max Chatbot/Maxie run on an unofficial scraped Dr. Max API in production — risk before full public launch |
@@ -218,6 +234,360 @@ owner: Marek Pillár
 | ASM-001 | Decided (2026-08-25) | 2026-09-01 | Dr. Max client-side coordination unified into one role (Jindřich Tůma) |
 
 ## Entries
+
+---
+
+### ASM-218
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-218 |
+| Created | 2026-10-01 |
+| Source | 2026-10-01-teo-ocr-sync-autumn-batches-costs-next-vendors |
+| By | Alana Sihelská (STK-004), Radim Švarc (STK-041), Michaela Albrechtová (STK-042) |
+| Status | Decided (2026-10-01) |
+
+**Description**
+Branches missing from the TEO/OCR číselník (pharmacy/branch list) will be handled by connecting to Dr. Max's pharmacy API, not by manually updating the list. The "Bezručova" (Mělník) case turned out to be a street-name change. The "address outside the číselník" from the previous batch was a wrong, non-pharmacy address written by the supplier: the tool caught a real error Míša had missed. The číselník is current and stays as is.
+
+**Rationale**
+Keeps the branch list current without manual upkeep, and validation already surfaces supplier errors.
+
+**Impact**
+- **Resolves**: The open číselník-vs-API question from 2026-09-22.
+
+---
+
+### ASM-219
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-219 |
+| Created | 2026-10-01 |
+| Source | 2026-10-01-teo-ocr-sync-autumn-batches-costs-next-vendors |
+| By | Jura Brázdil (STK-026), Michaela Albrechtová (STK-042) |
+| Status | Decided (2026-10-01) |
+
+**Description**
+For the rest of the autumn 2026 cycle, TEO sends protocol batches in any format (zip, PDF), and Jura returns Excel + JSON on a best-effort basis. Given his infra load, there is no promise of the same quality on new vendors. Coming next: Spedos autumn, a smaller vendor, then the big air-conditioning batch (October–November; one PDF with ~100 documents by end of next week). Smaller vendors Míša can handle manually.
+
+**Rationale**
+Infra won't be ready in time. Offline processing already saves TEO real work ("a huge help") and prepares BigHub for the spring cycle.
+
+**Impact**
+- **Relationship**: Very positive; TEO sees value before automation.
+- **Related**: Extends [[ASM-165]].
+
+---
+
+### ASM-220
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-220 |
+| Created | 2026-10-01 |
+| Source | 2026-10-01-teo-ocr-sync-autumn-batches-costs-next-vendors |
+| By | Jura Brázdil (STK-026), Radim Švarc (STK-041), Marek Pillár (STK-001) |
+| Status | Decided (2026-10-01) |
+
+**Description**
+TEO/OCR processing costs ~0.50 Kč per page (Termetal) and ~0.60 Kč (Rakun), and ~2 Kč for the harder spring Spedos batch: about 1 Kč per page on average. Both sides accept it. At ~2 Kč per document × 10,000–12,000 documents a year it is small against low-hundreds-of-thousands in value. Tomáš Burda wants platform costs tracked so TEO can't be hit by runaway costs. The platform will provide per-use-case cost tracking plus configurable spending caps. Reducing the BQ volume from 13,000 to 10,000 items barely changed the quantified value.
+
+**Rationale**
+This answers Burda's concern and completes the BQ cost input.
+
+**Impact**
+- **Platform**: Cost management and caps become a platform requirement.
+- **BQ**: The tracker needn't itemise all costs.
+
+---
+
+### ASM-221
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-221 |
+| Created | 2026-10-01 |
+| Source | 2026-10-01-teo-ocr-sync-autumn-batches-costs-next-vendors |
+| By | Jura Brázdil (STK-026), Michaela Albrechtová (STK-042) |
+| Status | Open (2026-10-01) |
+
+**Description**
+Extraction currently focuses on **date + address**. Candidate additions: a pass/fail flag ("vyhovuje ano/ne"; TEO's own templates have a dedicated handwritten defects field), device and inspection names, device count, EPS systems. Air-conditioning protocols come as 4 per pharmacy with different names. Míša will send a guide to the device and inspection names required for import.
+
+**Rationale**
+Adds value beyond matching, but only where it helps TEO's import.
+
+**Impact**
+- **Scope**: Jura tries pass/fail on current batches before 2026-10-14.
+
+---
+
+### ASM-222
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-222 |
+| Created | 2026-10-01 |
+| Source | 2026-10-01-teo-ocr-sync-autumn-batches-costs-next-vendors |
+| By | Michaela Albrechtová (STK-042) |
+| Status | Open (2026-10-01) |
+
+**Description**
+Many vendors' protocols have no address at all, which blocks matching to a pharmacy. It's too late to change for autumn 2026. For spring 2027, TEO will push service technicians and vendors to put an ID number or an address on every protocol.
+
+**Rationale**
+Matching depends on at least one identifier on the paper.
+
+**Impact**
+- **Data quality**: A precondition for automating the spring cycle.
+
+---
+
+### ASM-213
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-213 |
+| Created | 2026-09-30 |
+| Source | 2026-09-30-reklamace-thursday-prep-data-map-demo-review |
+| By | Filip Černý (STK-006), Jindřich Tůma (STK-003), Marek Pillár (STK-001) |
+| Status | Decided (2026-09-30) |
+
+**Description**
+In the Reklamace data map, the store columns (Excel / Axapta / Confluence or SharePoint / SharePoint Lists) state whether a field *can* live there, not whether BigHub wants it. Every field is technically possible in every store, including Axapta. AX blockers are labelled "possible, not agreed", because they are about agreement and politics, not technology.
+
+**Rationale**
+Filip: "we mustn't confuse content and form… with Axapta the problem is political: they don't want to put it there, not that it can't be done."
+
+**Impact**
+- **Documentation**: The AX column in the data map needs correcting.
+- **Client framing**: Keeps the 10-01 discussion on choice and ownership, not on capability.
+
+---
+
+### ASM-214
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-214 |
+| Created | 2026-09-30 |
+| Source | 2026-09-30-reklamace-thursday-prep-data-map-demo-review |
+| By | Filip Černý (STK-006), Marek Pillár (STK-001), Jindřich Tůma (STK-003) |
+| Status | Decided (2026-09-30) |
+
+**Description**
+For 2026-10-01, BigHub recommends meeting AX halfway:
+- **From AX**: only the supplier account, the data AX already holds, and the case fields only AX has (reklamace number, RD, issue date).
+- **Everything else supplier-specific** (contacts, pickup type, notes/Instrukce, flags, and possibly address and main contact): one **SharePoint List** linked by supplier account, set up by Dr. Max's side to a column definition from BigHub.
+
+Confluence stays as an option, openly stated as not analysed. SharePoint Lists is preferred.
+
+**Rationale**
+AX has likely not implemented the agreed fields anyway ([[ASM-170]]), and Sláma resists AX development ([[ASM-139]]). BigHub needs the information linked, not stored in AX, and must not own Dr. Max's business knowledge.
+
+**Impact**
+- **Relationship**: Presented as going halfway toward logistics, with no decision requested before the meeting.
+- **Related**: Consistent with the data-map result paragraph and [[ASM-169]].
+
+---
+
+### ASM-215
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-215 |
+| Created | 2026-09-30 |
+| Source | 2026-09-30-reklamace-thursday-prep-data-map-demo-review |
+| By | Marek Pillár (STK-001), Filip Černý (STK-006) |
+| Status | Open (2026-09-30) |
+
+**Description**
+Nobody is defined as the business owner of the supplier-data SharePoint List (or Confluence). The risk is that BigHub becomes the de facto owner, with Dr. Max coming "to Filip Černý whenever something changes". Filip could create the list with his external Dr. Max account and hand it over, but BigHub reading it via Graph API is another infra request whose setup time is unknown.
+
+**Rationale**
+Filip's principle: BigHub needs the data but must not own it, or staff can't change it or manage permissions.
+
+**Impact**
+- **Delivery**: Graph API access via infra (ServiceNow, [[ASM-216]]).
+- **Scope**: The ownership handover needs defining in the spec.
+
+---
+
+### ASM-216
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-216 |
+| Created | 2026-09-30 |
+| Source | 2026-09-30-reklamace-thursday-prep-data-map-demo-review |
+| By | Jindřich Tůma (STK-003) |
+| Status | Decided (2026-09-30) |
+
+**Description**
+From 2026-09-30, all BigHub infra requests to Dr. Max go through ServiceNow tickets. Vladislav Tvarůžek (and "Láďa") get ServiceNow access, so requests are tracked in one place.
+
+**Rationale**
+BigHub had no visibility into its own requests ([[ASM-188]]).
+
+**Impact**
+- **Delivery**: Graph API access for SharePoint Lists and email drafts goes through tickets.
+
+---
+
+### ASM-217
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-217 |
+| Created | 2026-09-30 |
+| Source | 2026-09-30-reklamace-thursday-prep-data-map-demo-review |
+| By | Filip Černý (STK-006), Jura Brázdil (STK-026) |
+| Status | Decided (2026-09-30) |
+
+**Description**
+Instead of asking Tvarůžek for four separate registrations, BigHub will use one shared Entra app registration for the logistics apps and the platform apps (Lexie, Max bot). Juraj's e-commerce registration migrates later. This enables the per-user login Sláma requested for Reklamace UAT; Jura delivers it the week of 2026-10-05.
+
+**Rationale**
+Technically cleaner and fewer infra requests.
+
+**Impact**
+- **UAT**: Filip tells logistics on 2026-10-01 that it is in progress ([[ASM-182]]).
+
+---
+
+### ASM-207
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-207 |
+| Created | 2026-09-30 |
+| Source | 2026-09-30-listing-reset-neuman-enrichment-first-doplnky-stravy |
+| By | Petr Neuman (STK-023), Marek Pillár (STK-001) |
+| Status | Decided (2026-09-30) |
+
+**Description**
+Magento integration (live or automated write-back) is taken out of the Listing MVP, and the MVP comes later. The near-term focus is data enrichment in BigHub's tool plus an export in exactly the format the parameter specialist needs to import into Magento.
+
+**Rationale**
+A Magento import can change only one attribute per import ([[ASM-210]]). Nobody on the global side will engage with a Magento integration, because CZ is due to move to a global PIM ([[ASM-211]]). Neuman: "for now I'd be happy if we found a way to get data in and out".
+
+**Impact**
+- **Scope**: Supersedes [[ASM-065]] and [[ASM-067]]. The Listing spec and roadmap need rewriting.
+- **Value**: Neuman sees the enrichment + export path as possibly more helpful than the new-listing flow ("hundreds of hours of manual work").
+
+---
+
+### ASM-208
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-208 |
+| Created | 2026-09-30 |
+| Source | 2026-09-30-listing-reset-neuman-enrichment-first-doplnky-stravy |
+| By | Petr Neuman (STK-023), Michaela Vdovicynová (STK-048), Filip Černý (STK-006) |
+| Status | Decided (2026-09-30) |
+
+**Description**
+The next Listing batch is the **food-supplements (doplňky stravy) legislative group, ~2,000 SKUs**: the 20 % of supplements that make 80 % of revenue, the batch the team is working on now. The tool gets three inputs:
+1. the parameter catalogue (existing ~14 + ~6 new parameters);
+2. the SKU batch;
+3. already-finished SKUs as examples.
+
+It outputs an export for the parameter specialist, which Filip estimates at ~2 h to build.
+
+**Rationale**
+This mirrors the protein POC at a bigger scale and uses real work the team is doing anyway. It is already Pareto-prioritised, so no per-SKU prioritisation is needed. Cosmetics follows.
+
+**Impact**
+- **Dependencies**: Míša and the parameter specialist deliver the catalogue, batch, examples and export format.
+- **Supersedes**: [[ASM-032]].
+
+---
+
+### ASM-209
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-209 |
+| Created | 2026-09-30 |
+| Source | 2026-09-30-listing-reset-neuman-enrichment-first-doplnky-stravy |
+| By | Petr Neuman (STK-023) |
+| Status | Decided (2026-09-30) |
+
+**Description**
+Every Listing SKU is validated by a person before use. Values the tool fills in from any source carry a status marking them as not yet reviewed by a human (an LLM confidence indicator was suggested). Medicines are out of scope; the target is the broad non-drug portfolio. Relaxing this is conceivable only after ~2 years of proven use.
+
+**Rationale**
+The AI Act would otherwise require labelling content as AI-generated, and Neuman wants to build credibility. Liability also matters: a supplier-sourced fact can be defended at an SZPI/SÚKL inspection, a fact pulled from elsewhere can't.
+
+**Impact**
+- **UX**: Review statuses per field are required.
+- **Scope**: Medicines excluded.
+
+---
+
+### ASM-210
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-210 |
+| Created | 2026-09-30 |
+| Source | 2026-09-30-listing-reset-neuman-enrichment-first-doplnky-stravy |
+| By | Petr Neuman (STK-023) |
+| Status | Open (2026-09-30) |
+
+**Description**
+A Magento import can change one attribute across the included SKUs, and there is no "null / don't change" value. Rows with different changed fields can't be combined, because the unchanged fields would be blanked. With ~5 text fields and ~15 parameters that is ~20 columns, so ~20 separate imports. Discovered ~2 weeks before this meeting.
+
+**Rationale**
+This is the technical reason automated write-back can't be built on today's Magento.
+
+**Impact**
+- **Delivery**: Blocks Magento write-back until the global PIM ([[ASM-211]]). The export should be shaped to ease the specialist's per-column imports.
+
+---
+
+### ASM-211
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-211 |
+| Created | 2026-09-30 |
+| Source | 2026-09-30-listing-reset-neuman-enrichment-first-doplnky-stravy |
+| By | Petr Neuman (STK-023) |
+| Status | Open (2026-09-30) |
+
+**Description**
+Dr. Max CZ should move from Magento to a new global PIM. It was originally due about now and is now "a question of three quarters of a year" and slipping. Neuman will find out the timeline; in early November he visits Slovakia, which already uses the new tool.
+
+**Rationale**
+This decides when any live integration makes sense and how parameters will be standardised across markets.
+
+**Impact**
+- **Roadmap**: Live integration is parked until then ([[ASM-207]]).
+- **Future**: A vendor portal (formerly "promotu") will likely integrate with the tool before any Magento/PIM integration.
+
+---
+
+### ASM-212
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-212 |
+| Created | 2026-09-30 |
+| Source | 2026-09-30-listing-reset-neuman-enrichment-first-doplnky-stravy |
+| By | Filip Černý (STK-006), Petr Neuman (STK-023) |
+| Status | Open (2026-09-30) |
+
+**Description**
+Ideally the Listing tool pulls the parameter catalogue automatically so it doesn't drift from Dr. Max's source. This is deferred until after the global PIM standardises parameters across markets. Filip: nothing needs preparing now.
+
+**Rationale**
+The catalogue lives in another tool and will change during the PIM migration.
+
+**Impact**
+- **Risk**: Catalogue drift while it is maintained manually.
 
 ---
 
@@ -274,6 +644,8 @@ The classifier handles only situations it has seen. Two of seven threads already
 - **Scope**: The hand-off share and the growth of the agent depend on client-supplied data.
 - **Relationship**: An ask for 2026-10-01, framed as "the more cases, the better the agent".
 
+
+**Update (2026-09-30)**: Ask logistics for ~100 threads. The 7-thread sample may be biased either way. With ~100, BigHub could estimate the share of one-question-one-answer cases, currently "around half or more". Source: 2026-09-30-reklamace-thursday-prep-data-map-demo-review.
 ---
 
 ### ASM-206
@@ -300,6 +672,8 @@ The demo runs only as a command-line tool, without Outlook. Showing real inputs 
 **Impact**
 - **Delivery**: Supports the Thursday agenda from the 2026-09-29 debrief.
 
+
+**Update (2026-09-30)**: Deck finalised: the deciding keywords get highlighted in each example email so the logic is visible at a glance. The next-steps slide is trimmed to ~3 points, with the full list sent by email after the meeting. Source: 2026-09-30-reklamace-thursday-prep-data-map-demo-review.
 ---
 
 ### ASM-203
@@ -658,6 +1032,8 @@ Separate from the MaxBuddy AKS requests (5 requests, ~6 weeks), which Jindřich 
 - **Relationship**: Risk that the blame lands on Vladislav Tvarůžek personally.
 - **Process**: BigHub needs a ticket it manages itself.
 
+
+**Update (2026-09-30)**: BigHub gets visibility into infra requests: from 2026-09-30 they go through ServiceNow tickets, and Tvarůžek gets access ([[ASM-216]]). Source: 2026-09-30-reklamace-thursday-prep-data-map-demo-review.
 ---
 
 ### ASM-187
@@ -886,6 +1262,8 @@ Requested by Sláma for traceability on a shared device.
 **Impact**
 - **Delivery**: Filip/Jakub must finish and merge auth before testing continues on the shared phone.
 
+
+**Update (2026-09-30)**: Per-user login for UAT will come through one shared Entra registration for logistics and platform apps, delivered the week of 2026-10-05 ([[ASM-217]]). Source: 2026-09-30-reklamace-thursday-prep-data-map-demo-review.
 ---
 
 ### ASM-183
@@ -954,6 +1332,8 @@ A separate BigHub database or table creates Axapta-sync problems and stale snaps
 - **Data**: Supplier account, address and main contact stay in Axapta (committed); only fields Axapta won't hold go to the external store.
 - **Tech**: The external store needs the supplier account as the join key.
 
+
+**Update (2026-09-30)**: Filip Černý strongly doubts AX has actually implemented even the agreed fields: "Kuba pushed hard; they probably nodded but certainly didn't implement it." To be verified. Source: 2026-09-30-reklamace-thursday-prep-data-map-demo-review.
 ---
 
 ### ASM-171
@@ -1044,6 +1424,8 @@ Missed when Lukáš worked on the contract while still new; Filip flagged it ~1 
 - **Delivery**: The rozvozový list can't be complete without these fields.
 - **Relationship**: Another ask to Sláma, who is resisting Axapta development ([[ASM-139]]).
 
+
+**Update (2026-09-30)**: These case fields exist only in AX, which is the source of truth, so some AX development is unavoidable whatever store is chosen. Filip called it both BigHub's and Dr. Max's oversight. Source: 2026-09-30-reklamace-thursday-prep-data-map-demo-review.
 ---
 
 ### ASM-175
@@ -1178,6 +1560,8 @@ Changing the process mid-cycle has no payoff. The spring 2027 cycle gives enough
 - **Timeline**: Phase 2 due before spring 2027. The earlier "November inspection cycle" target for the pilot is in question.
 - **Relationship**: Depends on Radim's appetite ([[ASM-166]]).
 
+
+**Update (2026-10-01)**: The autumn offline route is proving itself. Termetal and Rakun were processed with Excel + JSON output. Míša converts the output via her own import form ("a huge help"), and Radim builds his Excel from the JSON. Source: 2026-10-01-teo-ocr-sync-autumn-batches-costs-next-vendors.
 ---
 
 ### ASM-164
@@ -1960,6 +2344,8 @@ BigHub's pipeline already does the hard extraction work with AI; letting the ent
 
 
 **Update 2026-09-25**: Resolution path agreed with Alana Sihelská: phased, with Excel kept for the autumn 2026 cycle and a non-Excel review solution before spring 2027 ([[ASM-165]]), proposed via Radim first ([[ASM-166]]). Source: 2026-09-25-alana-1on1-teo-phasing-capacity-pool-team-dynamics
+
+**Update (2026-10-01)**: Colour highlighting of flagged fields makes the manual review fast. Míša reviewed the Rakun batch (18 flagged fields, ~4 fixes) by eye. Source: 2026-10-01-teo-ocr-sync-autumn-batches-costs-next-vendors.
 ---
 
 ### ASM-129
@@ -1982,6 +2368,8 @@ Rather than silently overwrite ASM-088 on a single secondhand note, this is reco
 - **Delivery**: If the blocker is real, the TEST-environment deployment timeline depends on Dr. Max infra/BDC action that isn't yet scheduled — worth surfacing to Jura immediately given the autumn service season is already underway.
 - **Data quality**: ASM-088 should not be marked resolved/closed until this is reconciled one way or the other.
 
+
+**Update (2026-10-01)**: BigHub is deploying services on the test environment itself, with an automated run under VPN in a "sober" ~2 weeks. Production still requires extensive negotiation with BDC; Jura is calling Tvarůžek after the meeting. Source: 2026-10-01-teo-ocr-sync-autumn-batches-costs-next-vendors.
 ---
 
 ### ASM-128
@@ -2026,6 +2414,8 @@ ASM-089 flagged genuine uncertainty about whether "PEDOS" was even a real vendor
 - **Delivery**: SPEDOS onboarding proceeds this week alongside the existing 2-vendor autumn scope (Racun, Thermetal).
 - **Data quality**: ASM-089 marked resolved/superseded by this entry.
 
+
+**Update (2026-10-01)**: The Spedos autumn batch is coming from Míša. The spring Spedos batch cost ~2 Kč per page; Jura expects to push that down. Source: 2026-10-01-teo-ocr-sync-autumn-batches-costs-next-vendors.
 ---
 
 ### ASM-126
@@ -2144,6 +2534,8 @@ This surfaced last Thursday's status call and was reinforced when Jindřich told
 
 
 **Update (2026-09-25)**: At the 2026-09-24 ViaPharma sync, Petr Sláma pushed back hard on the digitization reframe: he says the original vision was an AI-driven branching email workflow and that he flagged it in writing on 2026-05-20. BigHub held that the needed logic is simple and deterministic. See [[ASM-181]]. Source: 2026-09-24-viapharma-reklamace-knowledge-base-standoff.
+
+**Update (2026-09-30)**: Filip Černý's view (internal): the email agent's real saving is digitization, not AI. It removes retyping AX numbers, downloading WhatsApp photos, and printing and scanning the rozvozový list: "connecting systems and automating processes". Source: 2026-09-30-reklamace-thursday-prep-data-map-demo-review.
 ---
 
 ### ASM-118
@@ -2325,6 +2717,8 @@ Alana: without this feedback loop, BigHub has no way to know which of its own fl
 
 **Update (2026-09-22)**: Radim confirmed his team will send the "correct" excel/json back to BigHub, with the exact format to be agreed directly with Jura — not yet a formal API contract, but the concrete mechanism this assumption called for is now in motion. Radim's own process design (see the TEO/OCR project-knowledge entry) has this happening after Míša's manual review step, before the file moves to SNOW-import prep.
 
+
+**Update (2026-10-01)**: Radim builds his review Excel from BigHub's JSON (filtering and sorting images work), which is the practical feedback path for now. Source: 2026-10-01-teo-ocr-sync-autumn-batches-costs-next-vendors.
 ---
 
 ### ASM-119
@@ -3229,6 +3623,8 @@ Petr Neuman was explicit that Magento's growing instability at Dr. Max's ~80,000
 - **Delivery**: The export/import format Magento expects for batch import still needs to be defined with Dr. Max's own import/export technical contact (not yet named) — a follow-up session is expected.
 - **Timeline**: Reinforces urgency on the Magento-integration work relative to further data-quality/enrichment features.
 
+
+**Update (2026-09-30)**: The "get out of Magento" driver is blocked by the Magento import limitation ([[ASM-210]]). The primary value driver is now **parameters (~10 per product)** for findability, filtering and conversion. Suppliers send only name, EAN, SKU and texts, and products have 2–3 parameters today. Source: 2026-09-30-listing-reset-neuman-enrichment-first-doplnky-stravy.
 ---
 
 ### ASM-072
@@ -3340,6 +3736,8 @@ Today's model is flat — 1 listovací minimum per category, no matter how deep 
 - **Scope**: `product/solution-space/listing-specifikace.md` section 2.4 now carries this as a Plná verze item (ID 15); section 3.1 (Nice to Have) is narrowed to just the category-count question.
 - **Open question carried forward**: exact inheritance/override rules between superkategorie and subkategorie still need to be specified with Petr Neuman.
 
+
+**Update (2026-09-30)**: The anchor is the **legislative group** (~6–7 groups, each SKU in exactly one, which gives each SKU a fixed primary category). Sub-splitting (vitamins, minerals, children, herbal, other) with layered rules (base standard → attribute set → subcategory) comes later. Start with the whole group as one unit. Source: 2026-09-30-listing-reset-neuman-enrichment-first-doplnky-stravy.
 ---
 
 ### ASM-067
@@ -3350,7 +3748,7 @@ Today's model is flat — 1 listovací minimum per category, no matter how deep 
 | Created | 2026-09-15 |
 | Source | product/solution-space/listing-specifikace.md review (Jan S. comment thread on FigJam board, relayed by Marek Pillár) |
 | By | Jan S. |
-| Status | Decided (2026-09-15) |
+| Status | Superseded by ASM-207 (2026-09-30) |
 
 **Description**
 "Produkční nasazení" (production deployment) previously had no defined completion criterion. Jan S. proposed, and Marek confirmed, the bar: the listingový tým can, by themselves, import a product, edit it in the tool, and get the result back into Magento — even if the first version is "na tupáka" (e.g. copying through an Excel sheet) — as long as nobody has to manually ctrl-c/ctrl-v content between systems. Jan S. framed this explicitly as the *starting line* for reasonable usability in the current version, not the target fully-automated integration.
@@ -3362,6 +3760,8 @@ Without a defined finish line, "produkční nasazení" was an ambiguous status l
 - **Scope**: `product/solution-space/listing-specifikace.md` section 1.4 now documents this criterion directly.
 - **Sequencing**: Clarifies that "produkční nasazení" can be reached via a manual/semi-manual transfer method before the fully automated Magento integration ([[ASM-065]]) is built.
 
+
+**Update (2026-09-30)**: The production finish line ("return to Magento without copy-paste") no longer holds. The near-term output is an export shaped for the parameter specialist, and Magento write-back is postponed ([[ASM-207]]). Source: 2026-09-30-listing-reset-neuman-enrichment-first-doplnky-stravy.
 ---
 
 ### ASM-066
@@ -3394,7 +3794,7 @@ Marek initially proposed moving the item to backlog/a later phase pending clarif
 | Created | 2026-09-14 |
 | Source | product/solution-space/listing-specifikace.md enrichment session (codebase read of `cz-ai-listing`) |
 | By | Marek Pillár (PM decision) |
-| Status | Decided (2026-09-14) |
+| Status | Superseded by ASM-207 (2026-09-30) |
 
 **Description**
 A direct read of the `cz-ai-listing` codebase confirmed there is no Magento integration of any kind today (no API client, no export, no file-based sync) — the tool is a closed loop against its own Postgres database, with product/category identity seeded once from a legacy export as a stand-in. PM confirmed this is expected: the current phase is deliberately import-only. Full Magento connection (the tool working live against Magento, not a stand-in projection) is a confirmed must-have before the tool can go to production — not an open question, a committed requirement for launch.
@@ -3406,6 +3806,8 @@ Building against a stand-in projection is fine for iterating on generation/valid
 - **Scope**: Magento integration (exact mechanism — file upload vs. direct write vs. API — still `-tbd-`) is a hard dependency for the Produkční nasazení item in the MVP phase, not a nice-to-have.
 - **Timeline**: Production go-live cannot be scheduled until this integration is scoped and built.
 
+
+**Update (2026-09-30)**: Overturned: Magento integration is out of the MVP. The Magento import limitation ([[ASM-210]]) and the lack of any global Magento contact make write-back infeasible for now. See [[ASM-207]]. Source: 2026-09-30-listing-reset-neuman-enrichment-first-doplnky-stravy.
 ---
 
 ### ASM-064
@@ -4089,6 +4491,8 @@ Filip flagged real doubt about whether scraping sites like Notino for enrichment
 - **Legal/compliance**: Needs a legal read before wider rollout — could require re-architecting the enrichment source entirely.
 - **Delivery timeline**: This portion of Listing stays gated regardless of technical readiness.
 
+
+**Update (2026-09-30)**: Neuman will take the scraping variant to Dr. Max legal once BigHub describes it (answer within ~1 month). Third-party extraction services, which take on responsibility and are not expensive, are the fallback. BigHub researches options and cost, including a human-assisted URL variant. The earlier legal check (via Alana Sihelská / Lukáš Szücs) has an unknown outcome. Scraping is a secondary goal, not a blocker. Source: 2026-09-30-listing-reset-neuman-enrichment-first-doplnky-stravy.
 ---
 
 ### ASM-032
@@ -4099,7 +4503,7 @@ Filip flagged real doubt about whether scraping sites like Notino for enrichment
 | Created | 2026-09-07 |
 | Source | 2026-09-07-ai-portfolio-roadmap-scope-review |
 | By | Petr Neuman (STK-023, relayed via Filip Černý) |
-| Status | Decided (tentative, 2026-09-07) |
+| Status | Superseded by ASM-208 (2026-09-30) |
 
 **Description**
 Listing's multi-category rollout will start with a deliberately small, non-pharma category set (foods, supplements, sporting goods) rather than jumping straight to a large or complex category set.
@@ -4111,6 +4515,8 @@ Petr Neuman's suggestion: early categories involving medication carry far more p
 - **Scope/sequencing**: Sets the de facto order for category rollout once multi-category support is built — non-pharma first.
 - **Risk**: Reduces risk of early AI-quality problems being blamed on the approach rather than category complexity.
 
+
+**Update (2026-09-30)**: The next batch is the whole food-supplements legislative group (~2,000 SKUs, the top 20 % that make 80 % of revenue), not a small non-pharma category ([[ASM-208]]). Source: 2026-09-30-listing-reset-neuman-enrichment-first-doplnky-stravy.
 ---
 
 ### ASM-031

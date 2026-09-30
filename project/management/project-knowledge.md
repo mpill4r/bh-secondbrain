@@ -1,5 +1,5 @@
 ---
-last_updated: 2026-09-29
+last_updated: 2026-10-01
 last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
@@ -131,6 +131,8 @@ Scope narrowed to one category first: automatic doors, two vendors — extractin
 
 **Cadence and phasing (2026-09-25, Alana Sihelská)**: Service protocols reach Dr. Max's technical department in **two batches a year, spring and autumn**. BigHub's samples came from spring 2025, autumn 2025 and spring 2026, and the **autumn 2026 cycle is already running**. So the review step stays on Excel for autumn 2026, and a non-Excel review solution is targeted before spring 2027 ([[ASM-165]]). **Open conflict**: this cadence doesn't match the volume model above (steady ~250 docs/week averaging out annually, ~40 h/month; BQ tracker 40 → 12 h/month). Both are kept until the Radim call clarifies ([[ASM-168]]). Also in question: the earlier "November inspection cycle" target, since the autumn cycle has already started. Source: 2026-09-25-alana-1on1-teo-phasing-capacity-pool-team-dynamics
 
+**Autumn 2026 offline batches (2026-10-01)**: Rakun: 84 protocols, 18 fields flagged, no silent errors, ~4 fixes (sevens read as twos). Cost ~0.50 Kč per page (Termetal), ~0.60 (Rakun), ~2 (Spedos spring), ~1 Kč on average ([[ASM-220]]). Air-conditioning protocols: 4 per pharmacy with different names, and a dedicated defects field. Many vendor protocols lack an address ([[ASM-222]]). Annual volume ~10,000–12,000 documents; the BQ volume was reduced from 13,000 to 10,000 items with negligible impact on value. Per Jura, MaxBuddy, the chatbot and Lexie are live on the platform, apart from certificates. Source: 2026-10-01-teo-ocr-sync-autumn-batches-costs-next-vendors.
+
 ### Reklamace (claims) — business objective & phasing
 
 | Field | Value |
@@ -162,6 +164,8 @@ Scope narrowed to one category first: automatic doors, two vendors — extractin
 - **Reply outcomes seen**: disposal 2×, "please wait for our statement" ~2×, forwarded to the wrong person 1×, needed a person 2× (a supplier offering a replacement with a new expiry; a long "no form" rejection), supplier address in the reply 1× (matched the stored one). Outcomes are usually stated explicitly.
 - **Reminders**: in one thread staff chased a supplier who didn't reply ("did you forget about us?").
 See [[ASM-204]], [[ASM-205]]. Source: 2026-09-29-reklamace-email-agent-demo-review-filip.
+
+**Email-agent prototype (2026-09-30)**: The first email is deterministic, e.g. "v příloze posílám reklamační protokol a fotodokumentaci k reklamaci RD…" ("attached are the claim protocol and photo documentation for claim RD…"). Reply states: terminal (disposal, send to supplier warehouse, carrier pickup / own pickup), waiting (e.g. waiting for a pickup label, or an internal forward on the supplier side), and hand-off to a person (e.g. a supplier offering to swap expired stock). Source: 2026-09-30-reklamace-thursday-prep-data-map-demo-review.
 
 **Knowledge-base standoff (2026-09-24)**: the "knowledge base" the app consumes today is only address + email per supplier, delivered from Axapta via the agreed Swagger API. Procedural know-how per supplier (which suppliers need special handling, and what it is) was never captured anywhere structured; it lived in notebooks and Excel sheets. Jana Egrmaierová proposed flagging each supplier as "standard procedure" (use the main contact) or "specific procedure" (steps noted). She estimates ~280 suppliers, ~75 with their own transport arrangement and ~35 needing specific handling, all unvalidated with the suppliers. Petr Sláma considers email-workflow automation the real savings, not protocol creation. See [[ASM-181]]. Source: 2026-09-24-viapharma-reklamace-knowledge-base-standoff.
 
@@ -232,6 +236,15 @@ Original 2026-09-16 note (superseded pending reconciliation): multi-scan/histori
 | Status | Active |
 
 Demoed screen flow: category selection → product catalog table (per-product SKÓRE health/completeness score, STAV workflow status, PROBLÉMY validation badges) → product detail dual-pane AI generation editor (diff view, one-click "Generovat", version history with rollback) → category rules configuration ("Listovací minima": 6 description fields with per-field AI prompts, 2 meta-description fields with fixed character ranges, a 28-attribute product parameter taxonomy with per-attribute auto/manual toggle, and the compliance blacklist — see the Regulatory & Compliance entry below). Confirms the tool's current live scale: 72 products in the single pilot category ("Proteiny / Doplňky stravy"), consistent with the "hardcoded to 1 category" scope noted elsewhere ([[ASM-032]]). Only two product-level workflow statuses were observed (*Import*, *Rozpracováno*) — full status lifecycle unconfirmed.
+
+**Listing reset (2026-09-30)**:
+- **Magento**: merchant-tools saves were fixed ~1.5 months earlier but remain slow, and attribute groups are being removed. A Magento import changes one attribute per import with no "don't change" value, so ~20 columns means ~20 imports ([[ASM-210]]). CZ is due to move to a global PIM ~9 months out ([[ASM-211]]).
+- **Supplier data**: suppliers send only name, EAN, SKU and texts; products have 2–3 parameters today (often non-user-facing), against a target of ~10.
+- **Categories**: there are ~6–7 legislative groups (e.g. cosmetics, food supplements, foods), and each product is in exactly one.
+- **Vendor portal** (formerly "promotu"): will become the supplier input channel.
+- **Liability**: a supplier-sourced fact can be defended at an SZPI/SÚKL inspection, a scraped one can't ([[ASM-209]]).
+- **Direction**: enrichment first, Magento out of the MVP, next batch = food supplements ([[ASM-207]], [[ASM-208]]).
+Source: 2026-09-30-listing-reset-neuman-enrichment-first-doplnky-stravy.
 
 **SKU ownership & data flow (2026-09-16)**: Dr. Max provides/owns SKU identifiers — BigHub does not generate them. Dr. Max sometimes uses "SKU" loosely as a synonym for "product," but it's literally just the product's identifier. Confirmed flow: listing build/edit happens in the new app first, then gets imported into Magento — the tool exists because Magento itself can't keep up with fast/bulk writes at Dr. Max's current catalog scale (see [[ASM-073]]). Per Jindřich Tůma, the spec should be framed simply: BigHub takes over exactly what already exists in Magento today, since new products are treated the same as existing ones once a baseline listing exists — rather than trying to model every adjacent system Dr. Max references (Farmis, "Quant," "paní Lucy," and others). Source: 2026-09-16-devops-kanban-rollout-status-sync.
 
