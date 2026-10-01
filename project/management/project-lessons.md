@@ -1,10 +1,50 @@
 ---
-last_updated: 2026-09-29
+last_updated: 2026-10-01
 last_updated_by: auto — project-meeting lessons
 owner: Marek Pillár
 ---
 
 # Lessons Learned
+
+---
+
+### LL-77
+
+| Field | Value |
+|-------|-------|
+| ID | LL-77 |
+| Created | 2026-10-01 |
+| Category | stakeholder-management |
+| Source | 2026-10-01-viapharma-reklamace-email-agent-demo-data-map-review |
+
+**Lesson**
+When a client opens by pointing to a past miss on your side, briefly own it as shared, accept their position as the way forward, and park the history for a separate session if they want one. Arguing about who dropped the ball keeps the meeting stuck; conceding direction early frees the rest of the agenda and often turns the tone.
+
+**Context**
+Petr Sláma opened the 2026-10-01 Reklamace meeting by noting his May spec comments were never answered. Jindřich Tůma confirmed the comment, called it a miss on both sides, and said "let's go the way of your comment", noting the budget impact would have been the same at the start. Sláma's tone turned openly positive for the rest of the call, a week after a tense standoff.
+
+**Cross-reference**
+[[ASM-223]], [[ASM-181]], LL-66, STK-034 (Petr Sláma), STK-003 (Jindřich Tůma)
+
+---
+
+### LL-76
+
+| Field | Value |
+|-------|-------|
+| ID | LL-76 |
+| Created | 2026-10-01 |
+| Category | facilitation |
+| Source | 2026-10-01-viapharma-reklamace-email-agent-demo-data-map-review |
+
+**Lesson**
+When the same debate keeps looping across meetings, put every contested item in one table: where it came from, what was agreed, where it can technically live, and your recommendation. Send it ahead as low-pressure reading, walk through it without asking for a decision on the day, and give the client a column for their own notes. Making the full set of items visible tends to show both sides they were arguing about different parts of it.
+
+**Context**
+The Reklamace "knowledge base" question looped over 3–4 meetings and peaked in the 2026-09-24 standoff. BigHub built a data-map Excel (source → epic → item → agreement → store feasibility → recommendation, with a pros/cons summary), sent it the day before as "read if you have time", and asked for no decision on 2026-10-01. Sláma converged on the single-store SharePoint-List direction in the meeting itself and offered to add his notes in a new column J.
+
+**Cross-reference**
+[[ASM-228]], [[ASM-214]], [[ASM-213]]
 
 ---
 

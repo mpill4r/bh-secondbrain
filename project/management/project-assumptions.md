@@ -10,6 +10,13 @@ owner: Marek Pillár
 
 | ID | Status | Created | Description (short) |
 |----|--------|---------|---------------------|
+| ASM-229 | Decided (2026-10-01) | 2026-10-01 | Sláma reviews the Reklamace data map first (early week of 2026-10-05, notes in column J), then the Fakturace doprav proposal |
+| ASM-228 | Open (2026-10-01) | 2026-10-01 | Reklamace supplier data converging on one SharePoint List keyed by supplier account (incl. address + main contact), Excel out, AX minimal — pending Sláma's column-J feedback |
+| ASM-227 | Decided (2026-10-01) | 2026-10-01 | Reklamace phase 1 testing extended by one week at ViaPharma's request; Jindřich updates the harmonogram |
+| ASM-226 | Decided (2026-10-01) | 2026-10-01 | Reklamace UX-level testing feedback handled operationally, not via spec rewrites; bugs in the shared Excel (ping Filip), X-Manager later |
+| ASM-225 | Decided (2026-10-01) | 2026-10-01 | Reklamace problem-type phasing: damaged on receipt → damaged in warehouse → other ~19 Axapta problem types (code list in app → Axapta) |
+| ASM-224 | Decided (2026-10-01) | 2026-10-01 | Reklamace email-agent additions: ViaPharma CC (shared claims mailbox), thread archived as PDF on the Axapta claim, alternative drafts per recipient |
+| ASM-223 | Decided (2026-10-01) | 2026-10-01 | Sláma's May spec comment (automatic emails, Zentiva multi-recipient sequence) accepted as Reklamace direction; MD impact via CR process |
 | ASM-222 | Open (2026-10-01) | 2026-10-01 | Many TEO protocols carry no address; from spring 2027 TEO will push technicians/vendors to put an ID number or address on every protocol |
 | ASM-221 | Open (2026-10-01) | 2026-10-01 | TEO/OCR extra fields (pass/fail, device/inspection names, device count, EPS) beyond date + address — pending Míša's naming guide |
 | ASM-220 | Decided (2026-10-01) | 2026-10-01 | TEO/OCR cost ~0.50–0.60 Kč/page (Termetal/Rakun), ~2 Kč (Spedos), ~1 Kč avg — accepted; platform adds per-use-case cost tracking + spending caps |
@@ -51,7 +58,7 @@ owner: Marek Pillár
 | ASM-184 | Decided (2026-09-29) | 2026-09-29 | Reklamace spec approval sequence: options Excel (10-01) → agreed via meeting + recap → added to final spec → final sign-off by logistics / Sláma; knowledge base decided by 2026-10-09 |
 | ASM-183 | Open (2026-09-25) | 2026-09-25 | Reklamace shipments split across two addresses — handled only if Axapta supplies per-shipment address; otherwise unresolved |
 | ASM-182 | Decided (2026-09-25) | 2026-09-25 | Reklamace testing: shared internal phone (no personal devices); per-user login re-enabled for testing |
-| ASM-181 | Open (2026-09-25) | 2026-09-25 | Sláma: original Reklamace vision was automated branching email workflow (April kickoff, 2026-05-20 "Zentiva" comment) vs. approved Phase 1.1 "manual negotiation" |
+| ASM-181 | Decided (2026-10-01) | 2026-09-25 | Sláma: original Reklamace vision was automated branching email workflow (April kickoff, 2026-05-20 "Zentiva" comment) vs. approved Phase 1.1 "manual negotiation" |
 | ASM-180 | Open (2026-09-25) | 2026-09-25 | Whether further Fakturace doprav specification is BigHub's (Marek's) topic or stays with Honza Sovka's earlier framing |
 | ASM-179 | Open (2026-09-25) | 2026-09-25 | Whether the cross-department AI-initiative tracker can be shared with individual departments |
 | ASM-178 | Decided (2026-09-25) | 2026-09-25 | Tereza's SharePoint copy is the working logistics initiatives table; 2026-10-02 is an internal validation debate (Spilka → Žůrek) |
@@ -237,6 +244,170 @@ owner: Marek Pillár
 
 ---
 
+### ASM-223
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-223 |
+| Created | 2026-10-01 |
+| Source | 2026-10-01-viapharma-reklamace-email-agent-demo-data-map-review |
+| By | Petr Sláma (STK-034), Jindřich Tůma (STK-003) |
+| Status | Decided (2026-10-01) |
+
+**Description**
+Petr Sláma's May spec comments, which say supplier emails should go out automatically and describe the Zentiva case (sending to several addresses in turn), are accepted as the direction for Reklamace. Jindřich: "let's go the way of your comment." A separate meeting on how the comment went unanswered is possible if Sláma wants it.
+
+**Rationale**
+Sláma said the comments were never answered by BigHub, so he treats them as valid. Jindřich called it a shared miss (BigHub should have worked it in, ViaPharma should have checked) and argued the budget impact is the same now as it would have been at the start, so arguing the history gains nothing.
+
+**Impact**
+- **Scope**: Email-workflow automation (the email agent, [[ASM-204]]) is now the agreed direction, not a debated add-on. Resolves the direction question in [[ASM-181]].
+- **Commercial**: Any MD increase still follows the change-request rule with written approval ([[ASM-186]]); the cost was acknowledged only in principle.
+- **Relationship**: De-escalated the 09-24 standoff; Sláma will expect his remaining comments answered in writing in the new spec.
+
+---
+
+### ASM-224
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-224 |
+| Created | 2026-10-01 |
+| Source | 2026-10-01-viapharma-reklamace-email-agent-demo-data-map-review |
+| By | Jana Egrmaierová (STK-044), Petr Sláma (STK-034), Filip Černý (STK-006) |
+| Status | Decided (2026-10-01) |
+
+**Description**
+Three additions to the Reklamace email agent:
+1. ViaPharma in CC, ideally a shared claims mailbox (e.g. reklamace@praha-viafarma.cz, Ostrava, quality). The exact rule is still to be agreed.
+2. The email thread is attached to the claim in Axapta via API, as PDF (not MSG), like photos and documents today.
+3. Where a supplier has several possible recipients, phase 1 generates alternative identical drafts per recipient for the worker to choose; rule-based selection later, once rules are known.
+
+**Rationale**
+CC keeps colleagues informed. The Axapta archive stops history living only in personal mailboxes; terminals have no Outlook, so MSG can't be opened, and finance ("Hanka") uses the claim history to check how credit notes were resolved. Filip noted the archive was already in the original spec.
+
+**Impact**
+- **Scope**: New integration point (thread → PDF → Axapta claim) to specify: API, trigger timing.
+- **Spec**: All three go into the new Reklamace spec.
+
+---
+
+### ASM-225
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-225 |
+| Created | 2026-10-01 |
+| Source | 2026-10-01-viapharma-reklamace-email-agent-demo-data-map-review |
+| By | Tereza Foltýnová (STK-013), Petr Sláma (STK-034), Jana Egrmaierová (STK-044) |
+| Status | Decided (2026-10-01) |
+
+**Description**
+Axapta knows ~19 claim "typy problémů" (problem types: non-delivery, expiry, etc.), but testing covers only damaged goods. Agreed order: finish damaged-on-receipt claims, then damaged-in-warehouse, then the other problem types, for which a code list (číselník) can be added to the app and the selected type sent to Axapta via the interface. The spec gets an open point; timing is set within delivery 1 / 1.1. Tereza and Jana will email Marek the type list (being narrowed on their side).
+
+**Rationale**
+Sláma: deliver something quickly in phases, as agreed at the start. Tereza raised it as "not a blocker" after re-reading the spec: phase 3 is named "nedodané zboží" (undelivered goods), which is a separate topic, so the split by type wasn't visible.
+
+**Impact**
+- **Scope**: Open question whether problem types also change the email flow.
+- **UX**: The app already has tabs for receiving, warehouse and receiving-with-reservation; Jana had expected separate apps, so the UX may still change.
+
+---
+
+### ASM-226
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-226 |
+| Created | 2026-10-01 |
+| Source | 2026-10-01-viapharma-reklamace-email-agent-demo-data-map-review |
+| By | Marek Pillár (STK-001), Jindřich Tůma (STK-003) |
+| Status | Decided (2026-10-01) |
+
+**Description**
+User-level feedback from testing (UX details, field choices) is handled operationally, by email or in a working session, and does not trigger rewrites of the contract-level spec; the spec confirms only the logical points. Bugs go into the shared testing Excel, one place both sides see; Jana Egrmaierová pings Filip Černý when she adds one. Jindřich will push X-Manager as the ticketing tool for later phases.
+
+**Rationale**
+Rewriting the spec for every point is impractical for both sides, and development is agile. Jana asked whether to route feedback via Tereza or directly to Filip.
+
+**Impact**
+- **Process**: Complements [[ASM-186]] (spec as contract): logical changes → CR; UX feedback → operational.
+- **Tooling**: X-Manager adoption for logistics testing is still to be pushed.
+
+---
+
+### ASM-227
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-227 |
+| Created | 2026-10-01 |
+| Source | 2026-10-01-viapharma-reklamace-email-agent-demo-data-map-review |
+| By | Tereza Foltýnová (STK-013), Jindřich Tůma (STK-003) |
+| Status | Decided (2026-10-01) |
+
+**Description**
+Reklamace phase 1 testing is extended by one week at ViaPharma's request, given how much is going on around it. Jindřich updates the harmonogram (timeline). Whether this moves the 2026-10-15–16 full UAT start ([[ASM-056]]) was not discussed.
+
+**Rationale**
+Tereza asked so testing can be finished properly; Jindřich: "you just need more time, totally fine."
+
+**Impact**
+- **Timeline**: Possible knock-on to the full UAT start — to confirm with Jindřich.
+
+---
+
+### ASM-228
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-228 |
+| Created | 2026-10-01 |
+| Source | 2026-10-01-viapharma-reklamace-email-agent-demo-data-map-review |
+| By | Petr Sláma (STK-034), Filip Černý (STK-006), Marek Pillár (STK-001) |
+| Status | Open (2026-10-01) |
+
+**Description**
+Direction for Reklamace supplier data after the 10-01 data-map walkthrough:
+- **Excel**: out ("last choice": no change history, no permissions).
+- **Axapta**: minimal development is acceptable to Sláma. Axapta keeps the supplier register (supplier account, the ID already on every API) and the case fields only it holds (e.g. claim number).
+- **SharePoint List** (Confluence also acceptable to Sláma): one row per supplier keyed by supplier account, holding address, contacts, main contact, pickup type and notes. Quality staff edit, warehouse staff read.
+- **Principle**: data is entered in one place only, not half in Axapta and half in SharePoint.
+
+Not final: Sláma reviews the data-map Excel early in the week of 2026-10-05 with notes in column J.
+
+**Rationale**
+Sláma: Axapta is not user-friendly for addresses and contacts (separate fields, valid-from timestamps), and a split store "drifts apart and nobody maintains it". He first offered addresses in Axapta with validation, then argued for everything in SharePoint. Filip: the approved API contract "isn't set in stone"; address and main contact can move to the List. Matches BigHub's recommendation ([[ASM-214]]).
+
+**Impact**
+- **Scope**: Approved API-contract fields (address, main contact) may be dropped from Axapta; the API contract needs revisiting once confirmed.
+- **Ownership**: Needs a named Dr. Max owner ([[ASM-215]]).
+- **Infra**: Graph API read access for the List ([[ASM-216]]).
+- **Timeline**: On track for the 2026-10-09 knowledge-base decision ([[ASM-184]]) if column-J feedback arrives early next week.
+
+---
+
+### ASM-229
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-229 |
+| Created | 2026-10-01 |
+| Source | 2026-10-01-viapharma-reklamace-email-agent-demo-data-map-review |
+| By | Petr Sláma (STK-034) |
+| Status | Decided (2026-10-01) |
+
+**Description**
+Sláma reviews the Reklamace data-map Excel first (early week of 2026-10-05; he is on leave 2026-10-02), then Filip Černý's Fakturace doprav proposal, which he has been promising for ~14 days. Filip and Jindřich agreed.
+
+**Rationale**
+Sláma was "completely out" for 14 days launching the new A-frame. Jindřich: the Excel is the priority because it was the block the project was stuck on.
+
+**Impact**
+- **Timeline**: Fakturace doprav API-contract feedback ([[ASM-142]]) slips at least another week.
+
+---
+
 ### ASM-218
 
 | Field | Value |
@@ -390,6 +561,8 @@ AX has likely not implemented the agreed fields anyway ([[ASM-170]]), and Sláma
 - **Relationship**: Presented as going halfway toward logistics, with no decision requested before the meeting.
 - **Related**: Consistent with the data-map result paragraph and [[ASM-169]].
 
+**Update (2026-10-01)**: Presented to logistics. Sláma ruled Excel out and leans further than the recommendation: everything supplier-specific, address and main contact included, in one SharePoint List; Axapta minimal ([[ASM-228]]). Source: 2026-10-01-viapharma-reklamace-email-agent-demo-data-map-review.
+
 ---
 
 ### ASM-215
@@ -411,6 +584,8 @@ Filip's principle: BigHub needs the data but must not own it, or staff can't cha
 **Impact**
 - **Delivery**: Graph API access via infra (ServiceNow, [[ASM-216]]).
 - **Scope**: The ownership handover needs defining in the spec.
+
+**Update (2026-10-01)**: Raised openly in the meeting; Sláma agreed a Dr. Max owner is needed and that Dr. Max must ask infra to create the List. Still nobody named. Source: 2026-10-01-viapharma-reklamace-email-agent-demo-data-map-review.
 
 ---
 
@@ -453,6 +628,8 @@ Technically cleaner and fewer infra requests.
 
 **Impact**
 - **UAT**: Filip tells logistics on 2026-10-01 that it is in progress ([[ASM-182]]).
+
+**Update (2026-10-01)**: Filip works on the login with a colleague on Monday 2026-10-05; told logistics it should be ready next week. Source: 2026-10-01-viapharma-reklamace-email-agent-demo-data-map-review.
 
 ---
 
@@ -621,6 +798,8 @@ In the real threads the outcomes are stated explicitly ("please dispose", "send 
 **Impact**
 - **Scope**: Gives concrete content for Reklamace Phase 1.1 (see [[ASM-184]]).
 - **Delivery**: Outlook integration still blocked on Graph API access from client infra.
+
+**Update (2026-10-01)**: Demoed to logistics and well received (Sláma: "a big step forward"). Additions agreed: CC, PDF archive on the Axapta claim, alternative drafts per recipient ([[ASM-224]]). Future ideas shown: Outlook integration, varied first emails (warehouse A/B), automatic reminder after 2 days without reply. Source: 2026-10-01-viapharma-reklamace-email-agent-demo-data-map-review.
 
 ---
 
@@ -1229,7 +1408,7 @@ Logged per PM confirmation during routing: not settled either way.
 | Created | 2026-09-25 |
 | Source | 2026-09-24-viapharma-reklamace-knowledge-base-standoff |
 | By | Petr Sláma (STK-034) |
-| Status | Open (2026-09-25) |
+| Status | Decided (2026-10-01) |
 
 **Description**
 Sláma argues the original Reklamace vision (the April kickoff document, "business cases for the AI") was that a person never touches the process: the warehouse worker photographs the issue and AI dispatches a branching sequence of emails to different parties based on their responses. He says he flagged this in writing in his spec comments on 2026-05-20 ("Zentiva" example) and wants it on record. BigHub (Jindřich Tůma, Jakub Turner) points to the approved Phase 1.1 spec line "vyjednávání s dodavatelem probíhá ručně" (negotiation with the supplier is manual). Whether the comment contradicts Phase 1.1 or addressed a later phase has not been checked against the actual comment thread.
@@ -1240,6 +1419,8 @@ Raised in the 2026-09-24 standoff; not resolved. It feeds the Dudaško/Žůrek c
 **Impact**
 - **Relationship**: Risk of a "we told you" narrative on the client side if the comment turns out to be unaddressed.
 - **Scope**: If upheld, email-workflow automation becomes the savings case (Sláma says the real savings are there, not in protocol creation), tied to [[ASM-122]] and [[ASM-173]].
+
+**Update (2026-10-01)**: Direction resolved. Jindřich accepted Sláma's May comment as the way forward ([[ASM-223]]); the comment had reportedly been handled on BigHub's side (Honza Sovka) without feedback reaching Sláma. A history meeting is optional. Status → Decided. Source: 2026-10-01-viapharma-reklamace-email-agent-demo-data-map-review.
 
 ---
 
@@ -1264,6 +1445,9 @@ Requested by Sláma for traceability on a shared device.
 
 
 **Update (2026-09-30)**: Per-user login for UAT will come through one shared Entra registration for logistics and platform apps, delivered the week of 2026-10-05 ([[ASM-217]]). Source: 2026-09-30-reklamace-thursday-prep-data-map-demo-review.
+
+**Update (2026-10-01)**: Shared phone: Dušan confirmed he'll send it, no ETA. Login is handled via the platform ([[ASM-217]]). Source: 2026-10-01-viapharma-reklamace-email-agent-demo-data-map-review.
+
 ---
 
 ### ASM-183
@@ -1309,6 +1493,8 @@ Logistics keeps treating "Excel was agreed" as settled, though it was never pres
 - **Relationship**: Moves the decision (and accountability) to the client, de-escalating the "BigHub doesn't want to deliver" narrative ([[ASM-122]]).
 - **Tech**: Whatever store is chosen must be a secured table with easy automated reads, authorization and ideally an audit trail — ~2 editors per warehouse, viewers = all claims workers (count -tbd-).
 - **Update 2026-09-29** (2026-09-29-management-meeting-debrief-reklamace-thursday-plan): Marek's options Excel carries BigHub's recommendation — Axapta holds all critical data (accounts, addresses, main contacts); the knowledge base, larger documents and references to Axapta keys go to Confluence or SharePoint; Excel as a database is not recommended. Filip Černý validates technical feasibility before 10-01.
+
+**Update (2026-10-01)**: Sláma: Excel is the "last choice"; SharePoint or Confluence preferred ([[ASM-228]]). Source: 2026-10-01-viapharma-reklamace-email-agent-demo-data-map-review.
 
 ---
 
@@ -1469,6 +1655,8 @@ Petr Sláma's team won't develop further on Axapta given its planned retirement 
 **Impact**
 - **Data**: These fields are the main content of the external store under [[ASM-169]].
 - **Delivery**: Typ odvozu is printed on the rozvozový list (warehouses sort own-pickup vs. standard shipments), so it must be sourced somewhere.
+
+**Update (2026-10-01)**: Proposed home is the SharePoint List keyed by supplier account ([[ASM-228]]), pending Sláma's column-J feedback. Source: 2026-10-01-viapharma-reklamace-email-agent-demo-data-map-review.
 
 ---
 
@@ -2076,6 +2264,8 @@ The original API contract doesn't provide enough information to validate certain
 - **Delivery**: Fakturace doprav's backlog is ~95% done but genuinely blocked on this contract approval — no further work possible until resolved.
 - **Timeline**: See [[ASM-141]] — this delay now explicitly counts against the schedule.
 
+**Update (2026-10-01)**: Sláma will review the Fakturace doprav proposal only after the Reklamace data map, i.e. after early week of 2026-10-05 ([[ASM-229]]). Source: 2026-10-01-viapharma-reklamace-email-agent-demo-data-map-review.
+
 ---
 
 ### ASM-141
@@ -2148,6 +2338,9 @@ Directly shapes the pending Reklamace continue-or-close decision ([[ASM-122]]) �
 
 
 **Update (2026-09-25)**: Per Sláma (2026-09-24), Dudaško confirmed to him that Axapta should not hold significant logic for Reklamace or doprava; that logic belongs in the application, fed by a knowledge base. Source: 2026-09-24-viapharma-reklamace-knowledge-base-standoff.
+
+**Update (2026-10-01)**: Sláma clarified the retirement scope: Axapta today is ERP + WMS. Only the **WMS part** is being replaced by a new WMS. The **ERP part** (finance, sales, purchasing, claims) stays for the foreseeable future, at least partly, so the supplier register and claim documents "surely" remain in Axapta. He also said minimal Axapta development for Reklamace is fine ([[ASM-228]]). Source: 2026-10-01-viapharma-reklamace-email-agent-demo-data-map-review.
+
 ---
 
 ### ASM-138
@@ -4000,6 +4193,8 @@ Landed after a tense negotiation: Sláma initially rejected a 2-day testing-wind
 **Impact**
 - **Delivery timeline**: This is now the committal date for full reklamace functionality being client-validated — plan around it.
 - **Process**: Sláma committed to reporting blockers continuously during UAT rather than batching them.
+
+**Update (2026-10-01)**: Phase 1 testing extended by one week at ViaPharma's request ([[ASM-227]]); effect on the 15–16 Oct full UAT start not discussed. Source: 2026-10-01-viapharma-reklamace-email-agent-demo-data-map-review.
 
 ---
 
