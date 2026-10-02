@@ -197,6 +197,16 @@ See [[ASM-204]], [[ASM-205]]. Source: 2026-09-29-reklamace-email-agent-demo-revi
 
 **Okamžité avízo explained (2026-10-02, Jan Sovka)**: *Příjem s výhradou* (receiving with reservation) is a warehouse term: when a truck arrives with a visibly damaged pallet, the receiver photographs it and notes it in the driver's protocol before unpacking; the item-level claim for the damaged goods may come only ~2 days later. Some suppliers require notice of such receipts within ~24 h. The avízo is an optional per-supplier flag: a nightly job emails flagged suppliers automatically ("received with reservation today, detailed analysis within 1–3 working days"). It doesn't block Phase 1 testing ([[ASM-240]]). Source: 2026-10-02-jan-sovka-1on1-monday-reklamace-meeting-okamzite-avizo.
 
+**App UX baseline (demo 2026-09-03, PM review ingested 2026-10-02)**: Příjmová reklamace flow as demoed:
+- **Krok 1**: SP label by camera, with a manual code fallback ("Načíst →").
+- **Krok 2**: read-only goods card from Axapta (expedition, item number, name, supplier, supplier DL number) with a quantity stepper.
+- **Krok 3**: 1–10 photos, on-screen rule "SP štítek nepřekrývejte" (don't cover the SP label), optional note, "Odesílám…" state prevents double submits.
+- **Success screen**: "Další položka" loops back to Krok 1 without a new login.
+
+Příjem s výhradou: MS label → 1–10 photos → record.
+
+PM's UX proposals (not agreed with Filip): an aiming frame on the camera view, all errors in Czech with a recovery step, a less prominent "Naskenovat znovu", a clearer photo counter. Outdated in that review: users as drivers, photos via Boomi, Axapta ID on the success screen (now RD only), two tabs (now three). Source: documents/internal/2026-10-02-reklamace-app-ux-walkthrough-review.md.
+
 ### Reklamace "OCR" (SP/MS štítky)
 
 | Field | Value |

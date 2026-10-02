@@ -949,6 +949,8 @@ Technically cleaner and fewer infra requests.
 
 **Update (2026-10-01)**: Filip works on the login with a colleague on Monday 2026-10-05; told logistics it should be ready next week. Source: 2026-10-01-viapharma-reklamace-email-agent-demo-data-map-review.
 
+**Update (2026-10-02)**: Per-user identity is required so Axapta records who created each claim (audit trail), not only for app security (Petr Sláma, 2026-09-03 demo). Source: 2026-10-02-reklamace-app-ux-walkthrough-review.
+
 ---
 
 ### ASM-207

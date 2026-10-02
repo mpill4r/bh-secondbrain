@@ -82,6 +82,7 @@ project_status: Amber
 - [ ] `task` `highest-prio` **Marek Pillár / Jindřich Tůma**: Prepare the Monday 10:00 in-person Reklamace "next steps" meeting (Žůrek, Dudaško, Spilka, Tereza) — likely value/continuation question ([[ASM-242]]); stakeholder read in the 1:1 note — due 2026-10-05 — from 2026-10-02-jan-sovka-1on1-monday-reklamace-meeting-okamzite-avizo
 - [ ] `task` **Marek Pillár**: Read Jan's forwarded March 2026 logistics use-case email before Monday — due 2026-10-05 — from 2026-10-02-jan-sovka-1on1-monday-reklamace-meeting-okamzite-avizo
 - [ ] `task` **Marek Pillár**: Ask logistics which suppliers need the okamžité avízo, their notice deadline, and in which phase; and whether the automatic send is an accepted exception ([[ASM-240]]) — from 2026-10-02-jan-sovka-1on1-monday-reklamace-meeting-okamzite-avizo
+- [ ] `task` **Marek Pillár**: Ask Filip Černý to check the current Reklamace build: Czech error messages shipped? quantity max enforced ("MAX 1" showed 2)? "Samoobslužný terminál řidiče" subheader gone? Agree which UX proposals (aiming frame, button hierarchy, photo counter) go in before UAT — from 2026-10-02-reklamace-app-ux-walkthrough-review
 
 ## Key Events
 
@@ -113,7 +114,7 @@ The immediate-avízo thread is left open and unchanged per PM. 6 earlier tracked
 
 **1:1 with Jan Sovka** ([2026-10-02-jan-sovka-1on1-monday-reklamace-meeting-okamzite-avizo](../../meetings/internal/2026-10-02-jan-sovka-1on1-monday-reklamace-meeting-okamzite-avizo.md)): Jan steps back from logistics and won't join Monday's Reklamace meeting, leaving it to Marek and Jindřich as a clean break ([[ASM-241]]). He gave a read on the attendees (Žůrek calls the shots; Spilka may posture), forwarded logistics' March 2026 use-case email, and explained okamžité avízo: a nightly automatic notice after příjem s výhradou for suppliers that need ~24 h notice, not blocking testing ([[ASM-240]]).
 
-**Session summary (close)**: A heavy Reklamace day. The new Axapta / inbound API contracts were saved, and spec v4 then v5 were built as tracked changes. All 27 Filip comments were answered, data-map items are marked purple, and the avízo section now carries Jan Sovka's explanation. The 1:1 with Jan set up Monday's meeting without him and gave a stakeholder read on Žůrek and Spilka. The parallel session processed the cenařky green-field reset and the Lexie/Max sync, and the TEO/OCR spring proposal went to Radim. Status stays **Amber**: Monday may question whether Reklamace continues, and the supplier store, its owner and the recap email are still open. Not routed: the Reklamace app UX walkthrough document (summary saved, routing awaiting PM). Not done: today's weekly (W40).
+**Session summary (close)**: A heavy Reklamace day. The new Axapta / inbound API contracts were saved, and spec v4 then v5 were built as tracked changes. All 27 Filip comments were answered, data-map items are marked purple, and the avízo section now carries Jan Sovka's explanation. The 1:1 with Jan set up Monday's meeting without him and gave a stakeholder read on Žůrek and Spilka. The parallel session processed the cenařky green-field reset and the Lexie/Max sync, and the TEO/OCR spring proposal went to Radim. Status stays **Amber**: Monday may question whether Reklamace continues, and the supplier store, its owner and the recap email are still open. Not done: today's weekly (W40).
 
 ## Audit Log
 
@@ -141,3 +142,7 @@ The immediate-avízo thread is left open and unchanged per PM. 6 earlier tracked
 [AUTO] project-lessons — added LL-80, from 2026-10-02-jan-sovka-1on1-monday-reklamace-meeting-okamzite-avizo (2026-10-02)
 [MANUAL] 3. Reklamace v5.docx — okamžité avízo section updated with Jan Sovka's context (purpose, ~24 h notice, automatic-send exception to confirm, questions for logistics) as tracked changes; reply added in the avízo thread (kept open) (2026-10-02)
 [AUTO] project-daily — closed 2026-10-02: session summary written; 1 item resolved (TEO/OCR proposal to Radim), 2 progress notes (spec, recap); staleness items already carried (no change); status re-derived Amber (unchanged); priority shifted to the 2026-10-05 Reklamace meeting + recap/spec; lessons already captured today (LL-78–LL-80) (2026-10-02)
+[AUTO] project-knowledge — Reklamace: app UX baseline from the 2026-09-03 demo review, from 2026-10-02-reklamace-app-ux-walkthrough-review (2026-10-02, after close)
+[AUTO] project-assumptions — update note on ASM-217, from 2026-10-02-reklamace-app-ux-walkthrough-review (2026-10-02, after close)
+[AUTO] project-daily — 1 action item added (Filip build check + UX picks), from 2026-10-02-reklamace-app-ux-walkthrough-review (2026-10-02, after close)
+[AUTO] documents/index — added 2026-10-02-reklamace-app-ux-walkthrough-review (2026-10-02, after close)

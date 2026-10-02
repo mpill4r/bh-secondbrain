@@ -80,4 +80,8 @@ Filip Černý (STK-006), Jakub Turner (STK-007), Petr Sláma (STK-034), Jan Sovk
 
 ## Routing Log
 
-{Written after PM confirms routing review}
+Routed 2026-10-02 (PM: route everything).
+- **project-knowledge**: Reklamace entry: app UX baseline + PM's UX proposals + superseded points.
+- **project-assumptions**: Update note on ASM-217 (per-user login is for the Axapta audit trail) (DR-3 → ASM-217).
+- **project-daily**: 1 PM-owned action item (Filip to check the current build: Czech errors, quantity max, driver subheader; pick UX items before UAT) (DR-1).
+- **documents/index**: Entry added.
