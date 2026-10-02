@@ -1,5 +1,5 @@
 ---
-last_updated: 2026-10-01
+last_updated: 2026-10-02
 last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
@@ -10,6 +10,20 @@ owner: Marek Pillár
 
 | ID | Status | Created | Description (short) |
 |----|--------|---------|---------------------|
+| ASM-243 | Open (2026-10-02) | 2026-10-02 | Jindřich floated running the supplier data through Dr. Max's own "manager" tool (X-Manager?) — may compete with the SharePoint List direction |
+| ASM-242 | Open (2026-10-02) | 2026-10-02 | Purpose of the 2026-10-05 Reklamace "next steps" meeting unconfirmed; Marek expects a continue/stop question given Reklamace's low value (~700k) |
+| ASM-241 | Decided (2026-10-02) | 2026-10-02 | Jan Sovka steps back from logistics to near zero; Marek + Jindřich represent BigHub from the 2026-10-05 meeting on |
+| ASM-240 | Decided (2026-10-02) | 2026-10-02 | Okamžité avízo = optional per-supplier flag, nightly automatic notice of that day's příjem s výhradou (some suppliers require ~24 h notice); doesn't block Phase 1 testing |
+| ASM-239 | Open (2026-10-02) | 2026-10-02 | Dr. Max box troubleshooting as a low-priority Max/Maxie topic; box line's separate number could be Maxie's first full-AI branch |
+| ASM-238 | Open (2026-10-02) | 2026-10-02 | Back-office Lexie agent on its own SharePoint requested; feasible but needs BigHub work (Entra groups, Dr. Max permission), not self-service |
+| ASM-237 | Decided (2026-10-02) | 2026-10-02 | Max order-status answers generated from CC's 3 X-Manager tables; order-status/carrier testing paused until rewrite; process Qs in separate methodology; carriers to become self-service |
+| ASM-236 | Decided (2026-10-02) | 2026-10-02 | Max tested on Dr. Max staging website drmax-space.cz; network/cert work for live drmax.cz to start now |
+| ASM-235 | Decided (2026-10-02) | 2026-10-02 | Max gets per-IP throttling; auto-ending chats after repeated off-topic requests deferred pending monitoring |
+| ASM-234 | Decided (2026-10-02) | 2026-10-02 | Max trials cheaper newer small model ("Luna") vs GPT-5 mini via test switcher; Mertová approves cost-down, cost-up needs Dudaško |
+| ASM-233 | Open (2026-10-02) | 2026-10-02 | Whether Dr. Max's AI-initiative budget covers pure automation (e.g. cenařky via Power Automate) — Jindřich asking Dudaško |
+| ASM-232 | Decided (2026-10-02) | 2026-10-02 | If cenařky ranks top in logistics with quantified benefits, Marek does the on-site process analysis (AI or automation); logistics owns output; Jan earliest, window Nov–Dec or Mar |
+| ASM-231 | Decided (2026-10-02) | 2026-10-02 | AI-initiative tracker is AI + BigHub only; initiatives run with "Duo" stay outside it |
+| ASM-230 | Decided (2026-10-02) | 2026-10-02 | Master tracker rows from row 13 down are historical/non-binding; logistics rebuilds from a green field, Marek copies agreed rows into the master |
 | ASM-229 | Decided (2026-10-01) | 2026-10-01 | Sláma reviews the Reklamace data map first (early week of 2026-10-05, notes in column J), then the Fakturace doprav proposal |
 | ASM-228 | Open (2026-10-01) | 2026-10-01 | Reklamace supplier data converging on one SharePoint List keyed by supplier account (incl. address + main contact), Excel out, AX minimal — pending Sláma's column-J feedback |
 | ASM-227 | Decided (2026-10-01) | 2026-10-01 | Reklamace phase 1 testing extended by one week at ViaPharma's request; Jindřich updates the harmonogram |
@@ -60,7 +74,7 @@ owner: Marek Pillár
 | ASM-182 | Decided (2026-09-25) | 2026-09-25 | Reklamace testing: shared internal phone (no personal devices); per-user login re-enabled for testing |
 | ASM-181 | Decided (2026-10-01) | 2026-09-25 | Sláma: original Reklamace vision was automated branching email workflow (April kickoff, 2026-05-20 "Zentiva" comment) vs. approved Phase 1.1 "manual negotiation" |
 | ASM-180 | Open (2026-09-25) | 2026-09-25 | Whether further Fakturace doprav specification is BigHub's (Marek's) topic or stays with Honza Sovka's earlier framing |
-| ASM-179 | Open (2026-09-25) | 2026-09-25 | Whether the cross-department AI-initiative tracker can be shared with individual departments |
+| ASM-179 | Resolved (2026-10-02) | 2026-09-25 | Whether the cross-department AI-initiative tracker can be shared with individual departments |
 | ASM-178 | Decided (2026-09-25) | 2026-09-25 | Tereza's SharePoint copy is the working logistics initiatives table; 2026-10-02 is an internal validation debate (Spilka → Žůrek) |
 | ASM-177 | Decided (2026-09-25) | 2026-09-25 | Logistics Part A/B split agreed: Marek owns Reklamace documentation (~2-week focus, ahead of Fakturace doprav); Tereza self-drafts Part B |
 | ASM-176 | Open (2026-09-25) | 2026-09-25 | Reklamace Kontakty, Poznámky, Typ odvozu have no agreed home; Axapta manual address entry unowned |
@@ -241,6 +255,310 @@ owner: Marek Pillár
 | ASM-001 | Decided (2026-08-25) | 2026-09-01 | Dr. Max client-side coordination unified into one role (Jindřich Tůma) |
 
 ## Entries
+
+---
+
+### ASM-240
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-240 |
+| Created | 2026-10-02 |
+| Source | 2026-10-02-jan-sovka-1on1-monday-reklamace-meeting-okamzite-avizo |
+| By | Jan Sovka (STK-002), Marek Pillár (STK-001), Filip Černý (STK-006) |
+| Status | Decided (2026-10-02) |
+
+**Description**
+Okamžité avízo is meant as an optional per-supplier flag. When goods are received with reservation (příjem s výhradou: a visibly damaged pallet photographed at the ramp before unpacking), a nightly job collects that day's records and sends an **automatic** email to the flagged suppliers: received with reservation today, detailed analysis within 1–3 working days. The item-level claim may follow ~2 days later. It does not block Phase 1 testing; which suppliers need it and in which phase is to be confirmed with logistics.
+
+**Rationale**
+Per Jan Sovka (original analyst): some suppliers require notice of such a receipt within ~24 h of hand-over under their supplier terms; the supplier list was never fully analysed. Filip recommends keeping it out of Phase 1; Marek and Jan agree it doesn't block testing.
+
+**Impact**
+- **Spec**: The automatic send conflicts with the spec's "no automatic emails" rule — needs an explicit exception or a draft variant, decided with logistics.
+- **Data**: Needs the avízo flag in the supplier table ([[ASM-228]]) and the supplier on the příjem s výhradou record (already in contract v0.9.10).
+
+---
+
+### ASM-241
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-241 |
+| Created | 2026-10-02 |
+| Source | 2026-10-02-jan-sovka-1on1-monday-reklamace-meeting-okamzite-avizo |
+| By | Jan Sovka (STK-002) |
+| Status | Decided (2026-10-02) |
+
+**Description**
+Jan Sovka reduces his involvement in logistics to near zero (to be aligned with Jindřich Tůma) and will not attend the 2026-10-05 Reklamace meeting. Marek and Jindřich represent BigHub.
+
+**Rationale**
+The account ran well during his two-week absence. His absence lets Marek and Jindřich frame the meeting as the start of the dedicated full-time phase without speaking about the earlier Honza/Alana phase in front of him; he is also onboarding a new colleague that Monday.
+
+**Impact**
+- **Relationship**: Marek and Jindřich become the sole BigHub faces for logistics.
+
+---
+
+### ASM-242
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-242 |
+| Created | 2026-10-02 |
+| Source | 2026-10-02-jan-sovka-1on1-monday-reklamace-meeting-okamzite-avizo |
+| By | Marek Pillár (STK-001) |
+| Status | Open (2026-10-02) |
+
+**Description**
+The aim of the 2026-10-05 10:00 in-person "reklamační proces — další kroky" meeting (organised by Tereza Foltýnová; Žůrek, Dudaško, Spilka, Marek) is unconfirmed. Marek's theory: Tereza fears Reklamace will be stopped, since the initiatives Excel puts it at ~700k Kč vs. tens of millions for MaxBuddy/Listing, and the senior attendance suggests a value/continuation discussion.
+
+**Rationale**
+Spilka called Reklamace's ~8 h/day saving small next to cenařky on the morning of 2026-10-02 (2026-10-02-logistics-initiatives-green-field-cenarky-analysis).
+
+**Impact**
+- **Scope**: May reopen the continue-or-close question ([[ASM-122]]).
+- **Preparation**: Marek and Jindřich prepare together.
+
+---
+
+### ASM-243
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-243 |
+| Created | 2026-10-02 |
+| Source | 2026-10-02-jan-sovka-1on1-monday-reklamace-meeting-okamzite-avizo |
+| By | Jindřich Tůma (STK-003), relayed by Marek Pillár |
+| Status | Open (2026-10-02) |
+
+**Description**
+On 2026-10-02 Jindřich floated running the Reklamace supplier data through Dr. Max's own "manager" tool instead (transcript unclear — likely X-Manager). Marek is indifferent.
+
+**Rationale**
+Raised internally only; not discussed with logistics.
+
+**Impact**
+- **Scope**: Could compete with the SharePoint List direction ([[ASM-228]]); clarify with Jindřich before Sláma's column-J feedback lands.
+
+---
+
+### ASM-239
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-239 |
+| Created | 2026-10-02 |
+| Source | 2026-10-02-lexie-max-maxie-weekly-sync |
+| By | Kateřina Kadlecová (STK-037), Jura Brázdil (STK-026) |
+| Status | Open (2026-10-02) |
+
+**Description**
+CC wants a Dr. Max box (own boxes; Z-BOX also used) troubleshooting topic for Max and Maxie: a methodology of customer tips (e.g. toggle Czech↔English to wake the screen), with no system integration. It is low priority behind order status and e-recepty. The box line has a separate phone number, so it could be Maxie's first full-AI branch, without the click-through IVR and with low traffic. Kadlecová says CC has base notes and the old IVR/voice there needs sorting anyway. Jura likes it as an isolated test case. Scheduling is with Jindřich Tůma; Honza Zelený would implement it.
+
+**Rationale**
+Isolation from the live customer line makes it a safe first Maxie deployment.
+
+**Impact**
+- **Delivery**: Possible change to which Maxie branch goes first ([[ASM-188]]).
+
+---
+
+### ASM-238
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-238 |
+| Created | 2026-10-02 |
+| Source | 2026-10-02-lexie-max-maxie-weekly-sync |
+| By | Kateřina Kadlecová (STK-037), Viliam Gago (STK-027), Jura Brázdil (STK-026) |
+| Status | Open (2026-10-02) |
+
+**Description**
+Dr. Max's back-office department wants its own Lexie agent, separate from the CC front-office agent, drawing on its own SharePoint. Viliam Gago: realistic, but it needs BigHub intervention today, not self-service. Jura: probably Entra group membership plus Dr. Max permission for the SharePoint. BigHub will review the steps and aim to make it user-configurable later.
+
+**Rationale**
+CC can't connect SharePoint sources themselves.
+
+**Impact**
+- **Scope**: New Lexie use case (second department).
+- **Platform**: Argues for self-service agent/source setup in the AI Platform.
+- **Dependency**: Dr. Max SharePoint permission; Entra groups ([[ASM-217]]).
+
+---
+
+### ASM-237
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-237 |
+| Created | 2026-10-02 |
+| Source | 2026-10-02-lexie-max-maxie-weekly-sync |
+| By | Lucie Fendrichová (STK-045), Šárka Andělová (STK-050), Jura Brázdil (STK-026) |
+| Status | Decided (2026-10-02) |
+
+**Description**
+Max (and later Maxie) generates order-status answers from three CC-maintained tables in a new X-Manager "AI" module: (1) categories (order / reservation / parent transaction, API name, bot term, number-series hint, meaning, what may be said); (2) carriers (ID, description, customer messaging); (3) statuses × categories (meaning, template answer). Jura exports and builds them in, asking for gaps as needed. Testers pause order-status and carrier testing until the rewrite. Carrier names must show the human text, not raw API values. Process questions (changing delivery, what to offer, when to escalate) go in a separate CC methodology document. Payment status and order history are to be checked in the API. Carriers, and possibly payment methods, should become CC-editable in the new platform's settings.
+
+**Rationale**
+CC wants answers generated from sources rather than unique hand-written texts per case; new carriers appear every year or two.
+
+**Impact**
+- **Delivery**: Order-status feature rewritten.
+- **Platform**: Self-service configuration requirement for the AI Platform settings.
+
+---
+
+### ASM-236
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-236 |
+| Created | 2026-10-02 |
+| Source | 2026-10-02-lexie-max-maxie-weekly-sync |
+| By | Simona Mertová (STK-017), Jura Brázdil (STK-026) |
+| Status | Decided (2026-10-02) |
+
+**Description**
+Max will be deployed for testing on Dr. Max's staging website drmax-space.cz, reachable via VPN or the Dr. Max network, so testers needn't hide it from customers. Separately, network/certificate work to get Max onto live drmax.cz should start now to avoid delaying the launch. Jura also floated embedding it hidden on drmax.cz, toggled via the dev console, pending Vladislav Tvarůžek's view.
+
+**Rationale**
+Mertová: simplest, no customer exposure. Jura: drmax.cz integration carries substantial infra work.
+
+**Impact**
+- **Timeline**: Live-site integration is on the critical path for the end-of-October public launch ([[ASM-100]]).
+
+---
+
+### ASM-235
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-235 |
+| Created | 2026-10-02 |
+| Source | 2026-10-02-lexie-max-maxie-weekly-sync |
+| By | Simona Mertová (STK-017), Jura Brázdil (STK-026) |
+| Status | Decided (2026-10-02) |
+
+**Description**
+Max gets per-IP throttling (Jura: "an absolute standard", missing today) so nobody can hammer it from code and run up costs. Off-topic answers are already largely blocked. Auto-ending a chat after e.g. three consecutive off-topic requests is possible; Mertová wants to decide after monitoring real usage.
+
+**Rationale**
+Protects against spam and cost abuse before public launch.
+
+**Impact**
+- **Delivery**: Pre-launch hardening item.
+
+---
+
+### ASM-234
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-234 |
+| Created | 2026-10-02 |
+| Source | 2026-10-02-lexie-max-maxie-weekly-sync |
+| By | Simona Mertová (STK-017), Jura Brázdil (STK-026) |
+| Status | Decided (2026-10-02) |
+
+**Description**
+Max will trial a newer small model (heard as "GPT Luna" / "GPT-6 Luna", exact name unclear), which Jura says is ~half the price of GPT-5 mini, faster and more capable. A test-page switcher lets testers compare, especially on problem cases. Costs shown, per 10,000 conversations × 5 user turns: current ~$100, "Luna" ~$43, a large model (heard as "Soul") ~$800–850. Mertová can approve cost reductions herself; anything costlier needs Tomáš Dudaško because IT holds the budget. Jindřich is to discuss the allowed range with him. Jura's hybrid option: the small model escalates to a large one for hard cases, under a platform budget cap (e.g. 8,000 Kč/year).
+
+**Rationale**
+Addresses the GPT-5 mini instruction ceiling raised on 2026-09-24 without raising cost.
+
+**Impact**
+- **Commercial**: Model spend governance sits with Dudaško/IT.
+- **Platform**: Per-use-case caps are needed ([[ASM-220]]).
+
+---
+
+### ASM-233
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-233 |
+| Created | 2026-10-02 |
+| Source | 2026-10-02-logistics-initiatives-green-field-cenarky-analysis |
+| By | Jindřich Tůma (STK-003), Petr Spilka (STK-014) |
+| Status | Open (2026-10-02) |
+
+**Description**
+Petr Spilka asked whether cenařky belongs with BigHub at all if the result is "just Power Automate". Jindřich can't rule on it: it depends on whether Tomáš Dudaško's budget is released for AI-only initiatives or for anything that contains or enables AI. He will raise it with Dudaško on 2026-10-02.
+
+**Rationale**
+Spilka: "technically, automation always comes before AI". Reklamace was already reframed as digitization rather than AI ([[ASM-122]]), so the question recurs across logistics.
+
+**Impact**
+- **Commercial**: Decides whether automation-only initiatives can be funded from the AI pool.
+- **Scope**: Affects which logistics initiatives are eligible for BigHub capacity.
+
+---
+
+### ASM-232
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-232 |
+| Created | 2026-10-02 |
+| Source | 2026-10-02-logistics-initiatives-green-field-cenarky-analysis |
+| By | Petr Spilka (STK-014), Jindřich Tůma (STK-003), Marek Pillár (STK-001) |
+| Status | Decided (2026-10-02) |
+
+**Description**
+Cenařky (pricing clerks) enters the logistics initiatives list like any other initiative. If it ranks top with quantified benefits, BigHub (Marek, as PM/analyst, no developers) does a proper on-site process analysis: a process map, inputs/outputs, decision rules, pitfalls and user journeys. This applies regardless of whether the outcome is AI or plain automation. Logistics owns the output and may implement it themselves (Power Automate) or with BigHub. Observation must happen in a high-traffic window: November–December or March; after New Year is slow. Tereza Foltýnová: realistic start January at the earliest.
+
+**Rationale**
+Spilka claims hundreds of hours a month of savings and says no consultancy has properly analysed the process (earlier work covered ~5–10%). Jindřich: the analysis is valuable to logistics whatever the implementation route.
+
+**Impact**
+- **Capacity**: Potential multi-week analyst workload for Marek in Q1 2027, competing with Reklamace / Fakturace doprav.
+- **Commercial**: Conditional commitment; Spilka may read it as firm.
+- **Dependency**: Open budget question ([[ASM-233]]).
+
+---
+
+### ASM-231
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-231 |
+| Created | 2026-10-02 |
+| Source | 2026-10-02-logistics-initiatives-green-field-cenarky-analysis |
+| By | Tereza Foltýnová (STK-013), Jindřich Tůma (STK-003) |
+| Status | Decided (2026-10-02) |
+
+**Description**
+The shared AI-initiative tracker covers AI initiatives delivered with BigHub only. Logistics initiatives run with "DOOM"/"Duo" (likely Deloitte's LLM platform, [[ASM-187]], unconfirmed) are kept outside it. Tereza called Duo "our AI initiative, but not BigHub's".
+
+**Rationale**
+Keeps the tracker a clean BigHub capacity/prioritization tool.
+
+**Impact**
+- **Commercial**: Confirms a parallel AI channel already active in logistics ([[ASM-187]]).
+
+---
+
+### ASM-230
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-230 |
+| Created | 2026-10-02 |
+| Source | 2026-10-02-logistics-initiatives-green-field-cenarky-analysis |
+| By | Marek Pillár (STK-001), Jindřich Tůma (STK-003), Tereza Foltýnová (STK-013) |
+| Status | Decided (2026-10-02) |
+
+**Description**
+The master AI-initiative tracker rows from row 13 down are historical data of unknown origin and carry no weight; nobody, Dudaško included, works with them. Logistics treats the tracker as a green field: they delete those rows and replace them with their own prioritized list, with brief benefits per item (goal, business value, hours), in their SharePoint copy ([[ASM-178]]). Marek copies agreed rows into the master and cleans stale rows. Benefits drive priority; Jindřich commits timing based on capacity once the list exists. The same October–November round runs through all departments.
+
+**Rationale**
+The stale rows confused departments (no department assigned, unclear status). Tereza: "there was terrible confusion", so one table only.
+
+**Impact**
+- **Process**: Template for the department-backlog round due end of November.
+- **Delivery**: Master needs cleanup by Marek.
 
 ---
 
@@ -875,6 +1193,8 @@ Vosmek is MaxBuddy's champion and the osmec who talks to the pharmacy network. I
 - **Relationship**: Confirm the real rollout date with Jura Brázdil and tell Vosmek before he commits it to the network.
 - **Timeline**: Still gated on AKS access ([[ASM-027]]).
 
+
+**Update (2026-10-02)**: Jura Brázdil says MaxBuddy is ~14 days behind, with the target still all ~600 pharmacies. He is migrating MaxBuddy, Lexie and Max into the new environment in parallel. Source: 2026-10-02-lexie-max-maxie-weekly-sync.
 ---
 
 ### ASM-202
@@ -1213,6 +1533,8 @@ Separate from the MaxBuddy AKS requests (5 requests, ~6 weeks), which Jindřich 
 
 
 **Update (2026-09-30)**: BigHub gets visibility into infra requests: from 2026-09-30 they go through ServiceNow tickets, and Tvarůžek gets access ([[ASM-216]]). Source: 2026-09-30-reklamace-thursday-prep-data-map-demo-review.
+
+**Update (2026-10-02)**: BDC came back after ~4 weeks saying the Maxie setup isn't done and asking for another meeting with Atlantis to clarify. It is scheduled for Monday 2026-10-05 with Mertová added. The issue was escalated at the 2026-09-29 management meeting, including by CEO Žák. BigHub wants direct communication with BDC; Jura had a first direct deployment call with Vladislav Tvarůžek and BDC on 2026-10-01. Source: 2026-10-02-lexie-max-maxie-weekly-sync.
 ---
 
 ### ASM-187
@@ -1235,6 +1557,8 @@ Jindřich reads the request as a signal Deloitte is designing something overlapp
 - **Commercial**: Competitive/replacement risk for the BigHub AI Platform.
 - **Delivery**: Raises the bar on delivery quality and communication across all streams.
 - **Open**: Overlap with the AI Platform and whether architecture sharing is OK.
+
+**Update (2026-10-02)**: Logistics (Tereza Foltýnová) already runs initiatives with "DOOM"/"Duo", which she called "our AI initiative, but not BigHub's", and Spilka contrasted it with a proper process analysis. Likely the same Deloitte platform; unconfirmed. Kept out of the BigHub tracker ([[ASM-231]]). Source: 2026-10-02-logistics-initiatives-green-field-cenarky-analysis.
 
 ---
 
@@ -1375,6 +1699,8 @@ The master tracker holds values and priorities for all departments; sharing it i
 
 **Impact**
 - **Process**: Decides whether departments work directly in the master or in separate copies ([[ASM-178]]).
+
+**Update (2026-10-02)**: Resolved. The master tracker is now shared read-only with departments; logistics writes in its SharePoint copy and Marek copies agreed rows into the master ([[ASM-230]]). Source: 2026-10-02-logistics-initiatives-green-field-cenarky-analysis.
 
 ---
 
@@ -3222,6 +3548,8 @@ Jura pushed for an end-of-September public date; Mertová held firm on needing m
 
 **Update (2026-09-24)**: The end-of-September internal-phase target is **at risk**. Production infra/database access has been blocked more than 6 weeks (escalated to Dudaško; MaxBuddy's AKS request is ahead in the BDC queue), and Jura says "nám na tom stojí úplně všechno" [translated from Czech: "everything hinges on it"]. The public end-of-October date is not yet affected. Source: 2026-09-24-lexie-max-maxie-weekly-sync
 
+
+**Update (2026-10-02)**: **Slipped.** BigHub's end-of-September internal deployment phases were not met. On 2026-10-02 Max was only moving onto the new test environment, with certificates/DNS expected the following week. Testing moves to drmax-space.cz ([[ASM-236]]), and live drmax.cz integration work has yet to start. The end-of-October public launch is at risk. Source: 2026-10-02-lexie-max-maxie-weekly-sync.
 ---
 
 ### ASM-099
@@ -3412,6 +3740,8 @@ Mertová disclosed this mid-call while confirming domain-expert contacts for the
 - **Continuity**: All three CC-owned AI initiatives lose their most engaged domain-expert contact simultaneously — testing, ticket triage, and roadmap input may stall until a successor is named.
 - **Timeline**: Could delay finalizing KPI targets and business-value figures still owed for the Tomáš Dudaško deliverable if a successor isn't named quickly.
 
+
+**Update (2026-10-02)**: Kateřina Kadlecová leaves on maternity leave at the end of October 2026. Šárka Andělová, Lucie Fendrichová and Veronika Strmisková take over her agenda. A one-to-one replacement is being hired but doesn't exist yet. Simona Mertová will name one main CC contact later. Source: 2026-10-02-lexie-max-maxie-weekly-sync.
 ---
 
 ### ASM-090

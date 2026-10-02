@@ -1,5 +1,5 @@
 ---
-last_updated: 2026-10-01
+last_updated: 2026-10-02
 last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
@@ -87,6 +87,11 @@ Original infrastructure/model provisioning for MaxBuddy was done manually (ad ho
 
 **Maxie — design direction (2026-09-24)**: exact replica of Dr. Max's existing Atlantis IVR "Maxí", split per IVR topic branch, see [[ASM-154]]. Barge-in: on ElevenLabs it will stop and listen; whether it handles the interruption's context is unconfirmed.
 
+
+**Model cost and order-status sources (2026-10-02)**: Max runs on GPT-5 mini. Cost shown per 10,000 conversations × 5 user turns (each turn several model calls): ~$100 on the current model, ~$43 on a newer small model heard as "Luna", ~$800–850 on a large model heard as "Soul" ([[ASM-234]]). Order-status answers come from three CC tables in X-Manager's "AI" module: categories, carriers and statuses × categories ([[ASM-237]]). Order-number hint: Dr. Max orders start with 5; other brands (e.g. benu.cz) differ. Some carriers share IDs, and the Rx ("ARIX") reservation carrier has none, so OTC vs. Rx reservation is derived from category, then carrier.
+
+**SPC leaflets and Legal (2026-10-02)**: Max's leaflet card states it gives no dosage advice and links the SPC section. It uses no patient data, only the drug the user names, and shows leaflets unmodified as received from SÚKL. Open Legal question (Tuesday 2026-10-06): may the bot jump to a specific SPC section? Source: 2026-10-02-lexie-max-maxie-weekly-sync.
+
 ### TEO / OCR (pharmacy service-protocol extraction)
 
 | Field | Value |
@@ -144,7 +149,7 @@ Scope narrowed to one category first: automatic doors, two vendors — extractin
 
 **Owner**: Petr Spilka (STK-014), tentatively also domain expert — Jana Egrmaierová (STK-044) floated as a possible alternative, unconfirmed.
 
-**Business value (Fermi estimate, unconfirmed)**: ~4 people × ~2 hours/day saved ≈ 1 FTE. A wage-cost figure (~3000, unit/currency unclear from the source transcript) was mentioned but needs verification with Petr Spilka.
+**Business value (Fermi estimate, unconfirmed)**: ~4 people × ~2 hours/day saved ≈ 1 FTE. **Caveat (2026-10-02)**: Petr Spilka himself called the ~8 h/day phase-1 saving "a promise not backed by data", still with a question mark, and "a small saving to me" compared with cenařky. Source: 2026-10-02-logistics-initiatives-green-field-cenarky-analysis. A wage-cost figure (~3000, unit/currency unclear from the source transcript) was mentioned but needs verification with Petr Spilka.
 
 **KPIs**: Primary — end-to-end process time (baseline needed pre-launch, no existing measurement tool today; target threshold not cleanly settled between "50% faster" and "~25% faster"). Secondary — post-launch (≥3 months) satisfaction survey, ~66% target (majority of a 6-7 person sample). Document/claim error rate was explicitly discussed and rejected as a KPI — see [[ASM-072]].
 
@@ -172,6 +177,25 @@ See [[ASM-204]], [[ASM-205]]. Source: 2026-09-29-reklamace-email-agent-demo-revi
 **Spec coverage (2026-09-25)**: per Tereza Foltýnová, only part of the Reklamace process is specified ("not even half"): phase 2 is partly worked out, phases 3–5 untouched, and scope "keeps swelling". Of ~10 real emails Jana forwarded, only ~2 were straightforward. The client side says it didn't want agile delivery without a full spec, but agile was chosen, and it "has bitten us". From 2026-09-25 Marek owns the Reklamace documentation ([[ASM-177]]). Source: 2026-09-25-tereza-foltynova-reklamace-focus-logistics-initiatives-table.
 
 **Logistics meeting outcome (2026-10-01)**: The 09-24 standoff largely unlocked. Sláma's May comment (automatic emails, Zentiva sequence) was accepted as direction ([[ASM-223]]). The email-agent PoC was demoed with four real cases (disposal; send to supplier warehouse; "please wait" then a pickup label with carrier pickup on 16. 9.; internal forward then a stock-swap offer handed to a person). Additions agreed: ViaPharma CC to a shared claims mailbox, the thread archived as PDF on the Axapta claim (terminals have no Outlook, so no MSG; finance — "Hanka" — reads claim history to check credit notes), and alternative drafts per recipient ([[ASM-224]]). **Problem types**: Axapta has ~19 "typy problémů"; testing covers only damaged goods; order is damaged on receipt → damaged in warehouse → other types via a code list ([[ASM-225]]). The app has tabs for receiving / warehouse / receiving-with-reservation; warehouse claims have no master or SP label. **Supplier data**: Excel out; one SharePoint List keyed by supplier account, data entered in one place only, quality staff edit, warehouse read; Axapta minimal ([[ASM-228]], pending Sláma's column-J notes). Correction to the "won't develop on a retiring Axapta" premise above: only Axapta's WMS part is being replaced, and Sláma now accepts minimal Axapta development (see Axapta). Source: 2026-10-01-viapharma-reklamace-email-agent-demo-data-map-review.
+
+### Cenařky (pricing clerks) — logistics initiative candidate
+
+| Field | Value |
+|-------|-------|
+| Definition | Warehouse pricing clerks who mechanically identify and confirm supplier delivery prices in Axapta, using information from Axapta, email, a shared drive and price lists, plus a "tangle" of per-supplier rules and exceptions (~230 suppliers; exceptions rarely change). The receiving price can differ from the final price because prices change in the meantime. |
+| Source | 2026-10-02-logistics-initiatives-green-field-cenarky-analysis |
+| Added | 2026-10-02 |
+| Status | Active |
+
+**Scale (Petr Spilka's claim, unquantified)**: ~5–6 people. Savings of 2–3 people at Pavlov; Ostrava has the same volume spread across ~6 people not allocated to it, so it is invisible in FTEs. "Hundreds of hours a month", vs. ~8 h/day for Reklamace. Spilka will email the hourly rate.
+
+**History**: An earlier consultancy analysis (the March "Dr. Max initiative / project overview" Word doc; consultancy name heard as "Ablena", unclear) covered only invoice entry/identification, ~5–10% of the work, and rated the benefit low. Questionnaires plus ~3 hours on site.
+
+**Spilka's target picture**: ~80% automation (Power Automate, ~50,000 Kč/year licence, also usable for Reklamace), ~20% AI, ~1% human input. Delivery documents are scanned at an OCR station, then identification and pre-pricing run automatically, and downstream steps run once the warehouse lead confirms receipt. One supervisor handles errors and new suppliers. He accepts an inefficient automated process as long as it runs by itself.
+
+**Analysis timing**: needs a high-traffic window. November–December is peak; after New Year is slow; March is next. See [[ASM-232]], [[ASM-233]].
+
+**Okamžité avízo explained (2026-10-02, Jan Sovka)**: *Příjem s výhradou* (receiving with reservation) is a warehouse term: when a truck arrives with a visibly damaged pallet, the receiver photographs it and notes it in the driver's protocol before unpacking; the item-level claim for the damaged goods may come only ~2 days later. Some suppliers require notice of such receipts within ~24 h. The avízo is an optional per-supplier flag: a nightly job emails flagged suppliers automatically ("received with reservation today, detailed analysis within 1–3 working days"). It doesn't block Phase 1 testing ([[ASM-240]]). Source: 2026-10-02-jan-sovka-1on1-monday-reklamace-meeting-okamzite-avizo.
 
 ### Reklamace "OCR" (SP/MS štítky)
 
@@ -563,6 +587,8 @@ Listing's core blocker (reconfirmed 2026-09-02) is not code but Dr. Max's undefi
 | Source | 2026-09-25-tereza-foltynova-reklamace-focus-logistics-initiatives-table |
 | Added | 2026-09-25 |
 | Status | Active |
+
+**Original source list (March 2026)**: logistics sent BigHub an email in March 2026 listing possible logistics use cases, with Jan Sovka's management summary per project. Items such as "výstupní kontrola" (outbound check) were likely copied from it into the initiatives Excel. Jan forwarded it to Marek on 2026-10-02 as context for the 2026-10-05 meeting. Source: 2026-10-02-jan-sovka-1on1-monday-reklamace-meeting-okamzite-avizo.
 
 ### Email to Marek from Dr. Max / ViaPharma: external account
 

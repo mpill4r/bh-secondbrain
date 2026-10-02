@@ -1,10 +1,70 @@
 ---
-last_updated: 2026-10-01
+last_updated: 2026-10-02
 last_updated_by: auto — project-meeting lessons
 owner: Marek Pillár
 ---
 
 # Lessons Learned
+
+---
+
+### LL-80
+
+| Field | Value |
+|-------|-------|
+| ID | LL-80 |
+| Created | 2026-10-02 |
+| Category | stakeholder-management |
+| Source | 2026-10-02-jan-sovka-1on1-monday-reklamace-meeting-okamzite-avizo |
+
+**Lesson**
+When a new team takes over a client relationship, consider keeping the previous owner out of the first high-stakes client meeting. Without them in the room, the new team can frame a clean break ("that was the introductory phase, now we're dedicated full-time") without seeming to criticise a colleague.
+
+**Context**
+Jan Sovka chose not to attend the 2026-10-05 Reklamace meeting with Žůrek, Dudaško and Spilka, so Marek and Jindřich could own it as the start of the full-time phase after the earlier Honza/Alana period.
+
+**Cross-reference**
+[[ASM-241]], STK-002 (Jan Sovka)
+
+---
+
+### LL-79
+
+| Field | Value |
+|-------|-------|
+| ID | LL-79 |
+| Created | 2026-10-02 |
+| Category | stakeholder-management |
+| Source | 2026-10-02-lexie-max-maxie-weekly-sync |
+
+**Lesson**
+When a client coordinator announces they're leaving close to a launch, ask that same week for one named successor and a handover date. Don't accept "the team will split it" as the end state. A shared agenda with no main contact slows triage just when feedback volume peaks.
+
+**Context**
+Kateřina Kadlecová, who has coordinated Max/Maxie/Lexie testing and X-Manager feedback, leaves at the end of October, the same month as Max's public launch target. Her agenda splits across three colleagues, and Mertová will name a main contact "later".
+
+**Cross-reference**
+[[ASM-091]], [[ASM-100]], STK-037 (Kateřina Kadlecová), STK-017 (Simona Mertová)
+
+---
+
+### LL-78
+
+| Field | Value |
+|-------|-------|
+| ID | LL-78 |
+| Created | 2026-10-02 |
+| Category | stakeholder-management |
+| Source | 2026-10-02-logistics-initiatives-green-field-cenarky-analysis |
+
+**Lesson**
+When a client asks "can I remember that we agreed on X?" for something that is still conditional, restate the condition out loud before the call ends and in the follow-up. An enthusiastic sponsor turns a conditional "if it ranks top, we'll do it" into a firm commitment in their own memory.
+
+**Context**
+On 2026-10-02 Petr Spilka asked to remember that BigHub would do the cenařky process analysis. Jindřich answered with the prioritization process, but Spilka's framing stayed "agreed" ([[ASM-232]]). Logistics has already shown informal agreements hardening into commitments (client-overview §9).
+
+**Cross-reference**
+[[ASM-232]], LL-77, STK-014 (Petr Spilka)
 
 ---
 

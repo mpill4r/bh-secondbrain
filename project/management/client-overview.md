@@ -1,5 +1,5 @@
 ---
-last_updated: 2026-10-01
+last_updated: 2026-10-02
 last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
@@ -55,6 +55,9 @@ N/A — no client stakeholders. See `project-stakeholders.md` for the full team/
 - **Spec-first expectation vs. agile delivery (2026-09-25)**: ViaPharma logistics wanted a full spec up front; agile delivery was chosen instead, and the client side now feels it "has bitten us" on Reklamace. Both sides accept the spec as a living document, but changes are expected to be raised openly at the weekly Thursday sync. Source: 2026-09-25-tereza-foltynova-reklamace-focus-logistics-initiatives-table.
 - **Written client comments are treated as the record (2026-09-24)**: Petr Sláma resurfaced a 2026-05-20 written spec comment as proof he had flagged the gap, and wants alternatives and BigHub's reasoning documented. Takeaway: track client spec comments to an explicit resolution ([[ASM-181]]). Source: 2026-09-24-viapharma-reklamace-knowledge-base-standoff.
 - **Unanswered spec comments are read as accepted (2026-10-01)**: Petr Sláma: "since you didn't respond, it stands" — his May comments on automatic emails were taken as valid because BigHub never replied, and BigHub accepted them as direction ([[ASM-223]]). Takeaway: every client spec comment gets an explicit written answer (accept / reject / CR), never silence. Source: 2026-10-01-viapharma-reklamace-email-agent-demo-data-map-review.
+
+- **Parallel AI channel in logistics (2026-10-02)**: ViaPharma logistics already runs some AI initiatives with "Duo" (likely Deloitte's platform, [[ASM-187]]), kept outside the BigHub tracker ([[ASM-231]]). BigHub competes for logistics priority on demonstrated depth: Spilka contrasts consultants' questionnaire-level analysis with the on-site work he wants. Source: 2026-10-02-logistics-initiatives-green-field-cenarky-analysis.
+- **Logistics decision-making (2026-10-02, Jan Sovka)**: Rudolf Žůrek is the real decision-maker in logistics — direct but fair and open to arguments. Petr Spilka, his direct report, may posture as the decisive one in front of his bosses but holds less power than he projects. Take bluntness at face value and argue with data. Source: 2026-10-02-jan-sovka-1on1-monday-reklamace-meeting-okamzite-avizo.
 
 ## 10. Active Initiatives & Project History
 
