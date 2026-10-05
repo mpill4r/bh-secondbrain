@@ -1,17 +1,17 @@
 ---
 last_updated: 2026-10-02
 type: external
-attendees: [Marek Pillár, Jindřich Tůma, Tereza Foltýnová, Petr Spilka]
+attendees: [Marek Pillár, Jindřich Tůma, Tereza Foltová, Petr Spilka]
 recording_link:
 ---
 
 # Logistics AI Initiatives: Green-Field Tracker Reset & Pricing-Clerk (Cenařky) Process Analysis
 
 **Date**: 2026-10-02
-**Attendees**: Marek Pillár (BigHub, PM Dr. Max account), Jindřich Tůma (BigHub/Dr. Max coordination), Tereza Foltýnová (ViaPharma CZE, logistics), Petr Spilka (ViaPharma CZE, warehouses, business owner of Reklamace)
+**Attendees**: Marek Pillár (BigHub, PM Dr. Max account), Jindřich Tůma (BigHub/Dr. Max coordination), Tereza Foltová (ViaPharma CZE, logistics), Petr Spilka (ViaPharma CZE, warehouses, business owner of Reklamace)
 **Type**: external
 **Recording**: N/A (Teams transcript, ~37 min, Czech/Slovak)
-**Previous session**: [2026-09-25 Logistics Part A/B split with Tereza Foltýnová](2026-09-25-tereza-foltynova-reklamace-focus-logistics-initiatives-table.md). This is the "2026-10-02 internal validation debate" agreed there.
+**Previous session**: [2026-09-25 Logistics Part A/B split with Tereza Foltová](2026-09-25-tereza-foltova-reklamace-focus-logistics-initiatives-table.md). This is the "2026-10-02 internal validation debate" agreed there.
 **Meeting prep**: N/A
 
 ## TL;DR
@@ -78,7 +78,7 @@ Tereza thinks January is the realistic earliest start, given how many initiative
 
 ## Action Items
 
-- [ ] **Tereza Foltýnová / Petr Spilka**: Finish the logistics initiatives list (green field) in the SharePoint copy, with brief benefits per item (goal, business value, hours), cenařky included and prioritized; ask Marek when unsure — next Wednesday session if ready — from 2026-10-02-logistics-initiatives-green-field-cenarky-analysis
+- [ ] **Tereza Foltová / Petr Spilka**: Finish the logistics initiatives list (green field) in the SharePoint copy, with brief benefits per item (goal, business value, hours), cenařky included and prioritized; ask Marek when unsure — next Wednesday session if ready — from 2026-10-02-logistics-initiatives-green-field-cenarky-analysis
 - [ ] **Petr Spilka**: Email the hourly rate for the cenařky savings calculation — from 2026-10-02-logistics-initiatives-green-field-cenarky-analysis
 - [ ] **Marek Pillár**: Clean the master AI-initiative tracker (rows from 13 down) so stale rows don't confuse departments — from 2026-10-02-logistics-initiatives-green-field-cenarky-analysis
 - [ ] **Jindřich Tůma**: Ask Tomáš Dudaško whether non-AI automation (e.g. cenařky via Power Automate) can be funded from the AI-initiative budget — due 2026-10-02 — from 2026-10-02-logistics-initiatives-green-field-cenarky-analysis

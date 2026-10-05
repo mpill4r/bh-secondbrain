@@ -16,19 +16,19 @@ recording_link:
 
 ## TL;DR
 
-Jindřich briefed the team on a client-side calibration meeting he ran today with Petr Spilka and Tereza Foltýnová to correct a circulating narrative that "BigHub doesn't want to deliver" Reklamace's AI scope — both understood the digitization reframe, but the continue-or-close decision now needs a management-level meeting (Dudaško, Žůrek, Spilka, Žižka), complicated by Dudaško's plan to retire Axapta within ~6 months. Fakturace doprav's API-contract renegotiation with Petr Sláma remains stuck (no counter-proposal, slow replies); Listing stays deliberately paused pending Petr Neuman's input; order prediction is in good shape modulo one blocked Excel ask (Šimoník now on vacation). Marek's cross-portfolio Business Quantification tracker is ~99% done, pending final owner sign-off.
+Jindřich briefed the team on a client-side calibration meeting he ran today with Petr Spilka and Tereza Foltová to correct a circulating narrative that "BigHub doesn't want to deliver" Reklamace's AI scope — both understood the digitization reframe, but the continue-or-close decision now needs a management-level meeting (Dudaško, Žůrek, Spilka, Žižka), complicated by Dudaško's plan to retire Axapta within ~6 months. Fakturace doprav's API-contract renegotiation with Petr Sláma remains stuck (no counter-proposal, slow replies); Listing stays deliberately paused pending Petr Neuman's input; order prediction is in good shape modulo one blocked Excel ask (Šimoník now on vacation). Marek's cross-portfolio Business Quantification tracker is ~99% done, pending final owner sign-off.
 
 ## Key Discussion Points
 
 ### Reklamace reframe — calibration meeting and the "BigHub doesn't want to deliver" narrative
 
-Jindřich ran a meeting today with Petr Spilka (STK-014) and Tereza Foltýnová (STK-013) specifically to address information he says has been circulating — that BigHub doesn't want to do or deliver something on Reklamace. He explained openly that the project shifted to a digitization framing for reasons that emerged over its course: the supplier Excel was cleaned up and consolidated, and it makes sense for the supplier data source to be Axapta alone (more stable than Excel); similarly, the "knowledge base" need turned out to be overstated — really just two sentences of warehouse-worker procedure, solvable with one added Axapta parameter rather than a genuine knowledge-base build. Spilka and Foltýnová both understood this framing when explained directly.
+Jindřich ran a meeting today with Petr Spilka (STK-014) and Tereza Foltová (STK-013) specifically to address information he says has been circulating — that BigHub doesn't want to do or deliver something on Reklamace. He explained openly that the project shifted to a digitization framing for reasons that emerged over its course: the supplier Excel was cleaned up and consolidated, and it makes sense for the supplier data source to be Axapta alone (more stable than Excel); similarly, the "knowledge base" need turned out to be overstated — really just two sentences of warehouse-worker procedure, solvable with one added Axapta parameter rather than a genuine knowledge-base build. Spilka and Foltová both understood this framing when explained directly.
 
 The next step — a decision meeting with Jindřich, Dudaško, Žůrek (STK-024), Spilka, and Žižka (STK-015) — is complicated by new information: Dudaško wants Axapta retired within roughly the next 6 months (calling it too expensive to keep developing against) and is willing to accept **higher near-term dev cost now** for a Reklamace solution that can carry over cleanly onto whatever replaces Axapta — "even at the cost of more expensive development here, having a solution I can then reapply on another platform behind Axapta is a go for me" [translated from Czech]. Jindřich flagged this decision is now bigger than what he can resolve alone, hence the need for that management-level meeting.
 
-Separately, Tereza Foltýnová wants to communicate with Rudolf Žůrek directly first, before that group meeting — Jindřich reads this as her having her own reasons, not something to push back on. She had also been the source of the "BigHub doesn't want to" framing; Jindřich corrected this with her directly today: if BigHub actually wanted to under-deliver, the play would be integrating an external knowledge base and padding time/cost — instead, whenever a more efficient solution exists, BigHub says so, explains why, and does so on the record in weekly statuses. His view: everything here was handled correctly from a vendor standpoint — the project's nature genuinely changed mid-flight (from an initial AI-leaning prediction concept to something else), and now the conversation should be about what happens next, not about blame.
+Separately, Tereza Foltová wants to communicate with Rudolf Žůrek directly first, before that group meeting — Jindřich reads this as her having her own reasons, not something to push back on. She had also been the source of the "BigHub doesn't want to" framing; Jindřich corrected this with her directly today: if BigHub actually wanted to under-deliver, the play would be integrating an external knowledge base and padding time/cost — instead, whenever a more efficient solution exists, BigHub says so, explains why, and does so on the record in weekly statuses. His view: everything here was handled correctly from a vendor standpoint — the project's nature genuinely changed mid-flight (from an initial AI-leaning prediction concept to something else), and now the conversation should be about what happens next, not about blame.
 
-Foltýnová's own reaction, per Jindřich, showed some confusion — she asked whether this means someone else would now handle it, or whether it would move onto Dr. Max's own infra and get "tuned up" there. Jindřich was explicit this is **not** what changing AI→digitization means — it only means the project's character changed; whether BigHub finishes it or someone else takes over is a decision for the management meeting, not something to resolve by chat with her alone. Jindřich asked the team to present this openly and consistently to logistics stakeholders going forward (it's already known after today's meeting, not a secret), and — critically — to flag it to him directly if anyone feels Tereza is pushing a decision or a claim onto them that isn't accurate, rather than resolve it individually. He noted the communication channel around this is currently running largely through her, and wants the team aligned rather than getting inconsistent messages from different angles.
+Foltová's own reaction, per Jindřich, showed some confusion — she asked whether this means someone else would now handle it, or whether it would move onto Dr. Max's own infra and get "tuned up" there. Jindřich was explicit this is **not** what changing AI→digitization means — it only means the project's character changed; whether BigHub finishes it or someone else takes over is a decision for the management meeting, not something to resolve by chat with her alone. Jindřich asked the team to present this openly and consistently to logistics stakeholders going forward (it's already known after today's meeting, not a secret), and — critically — to flag it to him directly if anyone feels Tereza is pushing a decision or a claim onto them that isn't accurate, rather than resolve it individually. He noted the communication channel around this is currently running largely through her, and wants the team aligned rather than getting inconsistent messages from different angles.
 
 ### Business Quantification tracker — near final, one number worth double-checking
 
@@ -44,7 +44,7 @@ The email-draft creation group setup is still queued behind Vladislav Tvarůžek
 
 ### Reklamace — warehouse WiFi/mobile access
 
-Terka (Foltýnová) has committed to sorting out the mobile/Wi-Fi access question for the warehouse — Jindřich expects an update at tomorrow's logistics status call.
+Terka (Foltová) has committed to sorting out the mobile/Wi-Fi access question for the warehouse — Jindřich expects an update at tomorrow's logistics status call.
 
 ### Reklamace — new gap: rozvozový list free-text data source
 
@@ -72,8 +72,8 @@ The spec remains with Petr Neuman (STK-023), who is currently away/unavailable; 
 
 ## Decisions Made
 
-- Reklamace's AI-vs-digitization framing was calibrated directly with Petr Spilka and Tereza Foltýnová; both understood it. The continue-or-close decision is deferred to a management meeting (Jindřich, Dudaško, Žůrek, Spilka, Žižka) — complicated by Dudaško's ~6-month plan to retire Axapta.
-- The team will present the Reklamace reframe openly and consistently to logistics stakeholders, and flag directly to Jindřich (rather than resolve individually) if Tereza Foltýnová pushes a decision or an inaccurate claim onto them.
+- Reklamace's AI-vs-digitization framing was calibrated directly with Petr Spilka and Tereza Foltová; both understood it. The continue-or-close decision is deferred to a management meeting (Jindřich, Dudaško, Žůrek, Spilka, Žižka) — complicated by Dudaško's ~6-month plan to retire Axapta.
+- The team will present the Reklamace reframe openly and consistently to logistics stakeholders, and flag directly to Jindřich (rather than resolve individually) if Tereza Foltová pushes a decision or an inaccurate claim onto them.
 - Logistics delivery timelines will now explicitly factor in client-side response delays, not just BigHub-side ones.
 - Listing development stays fully paused until data-availability and scope questions are resolved with Neuman — a deliberate choice to avoid wasted work.
 - Ondráček's mobile/phone report-access request stays declined — laptop + VPN only, for security reasons.
@@ -94,7 +94,7 @@ The spec remains with Petr Neuman (STK-023), who is currently away/unavailable; 
 ## Open Questions
 
 - MaxBuddy's annual business-value figure: ~130M Kč (this session) vs. ~81M Kč (2026-09-22 walkthrough) — not yet reconciled.
-- What "jejich IT" means in Tereza Foltýnová's suggestion that the digitization work could move to Dr. Max's own team — Jindřich himself was unsure whether she meant Max, BDC, or something else.
+- What "jejich IT" means in Tereza Foltová's suggestion that the digitization work could move to Dr. Max's own team — Jindřich himself was unsure whether she meant Max, BDC, or something else.
 - The unique-document-ID gap for fakturace doprav — still unresolved, no owner or timeline mentioned.
 - Whether Jakub Turner was actually expected at this meeting or informed of it — the opening exchange was inconclusive.
 
@@ -107,7 +107,7 @@ Informal and warm at the open (light banter about a client party that evening, r
 Routed on PM confirmation ("confirm both"), 2026-09-24:
 
 - **project-assumptions**: ASM-139 (Axapta retirement plan), ASM-140 (MaxBuddy value discrepancy), ASM-141 (client-delay timeline policy), ASM-142 (Fakturace doprav contract stuck with Sláma), ASM-143 (rozvozový list data-source gap)
-- **project-stakeholders**: STK-003 (Jindřich), STK-006 (Filip), STK-009 (Kmec), STK-010 (Dudaško), STK-013 (Foltýnová), STK-014 (Spilka), STK-016 (Tvarůžek), STK-019 (Šimoník), STK-023 (Neuman), STK-024 (Žůrek), STK-034 (Sláma), STK-035 (Ondráček); added STK-051 ("pan Žák," low-confidence)
+- **project-stakeholders**: STK-003 (Jindřich), STK-006 (Filip), STK-009 (Kmec), STK-010 (Dudaško), STK-013 (Foltová), STK-014 (Spilka), STK-016 (Tvarůžek), STK-019 (Šimoník), STK-023 (Neuman), STK-024 (Žůrek), STK-034 (Sláma), STK-035 (Ondráček); added STK-051 ("pan Žák," low-confidence)
 - **project-knowledge**: "Reklamace" entry updated with the digitization-reframe fallout and Axapta-retirement context
 - **project-daily (2026-09-24)**: 10 action items added; Key Events and Audit Log entries written
 - **project-lessons**: LL-056 captured

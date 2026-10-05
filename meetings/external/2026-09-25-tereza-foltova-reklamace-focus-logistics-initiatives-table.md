@@ -1,14 +1,14 @@
 ---
 last_updated: 2026-09-25
 type: external
-attendees: [Marek Pillár, Tereza Foltýnová]
+attendees: [Marek Pillár, Tereza Foltová]
 recording_link:
 ---
 
-# Logistics Part A/B Split with Tereza Foltýnová: Reklamace Focus & Logistics Initiatives Table
+# Logistics Part A/B Split with Tereza Foltová: Reklamace Focus & Logistics Initiatives Table
 
 **Date**: 2026-09-25
-**Attendees**: Marek Pillár (BigHub, PM Dr. Max account), Tereza Foltýnová (ViaPharma CZE, logistics)
+**Attendees**: Marek Pillár (BigHub, PM Dr. Max account), Tereza Foltová (ViaPharma CZE, logistics)
 **Type**: external
 **Recording**: N/A (Teams transcript, ~27 min, Slovak/Czech)
 **Previous session**: [2026-09-24 ViaPharma Reklamace sync](2026-09-24-viapharma-reklamace-knowledge-base-standoff.md), where Marek announced this follow-up. Earlier 1:1: [2026-09-15 Business Quantification call](2026-09-15-business-quantification-reklamace-fakturace-doprav.md). Set up by [2026-09-24 BQ review with Dudaško](2026-09-24-ai-initiatives-bq-review-platform-prototype-demo-dudasko.md) (Part A/B split, [[ASM-161]])
@@ -72,12 +72,12 @@ The agreed mechanics:
 
 ## Action Items
 
-- [ ] **Marek Pillár**: Work up the Reklamace documentation to near-final depth, collect questions for Tereza, Jana Egrmaierová and Petr Spilka, and set up follow-up sessions as needed — from 2026-09-25-tereza-foltynova-reklamace-focus-logistics-initiatives-table
-- [ ] **Tereza Foltýnová**: Draft the new logistics AI initiatives in the shared SharePoint table (2-row template), flag existing topics to drop or move to backlog, and share the updated file with Marek — due before 2026-10-02 — from 2026-09-25-tereza-foltynova-reklamace-focus-logistics-initiatives-table
-- [ ] **Tereza Foltýnová**: Validate the logistics initiatives with Petr Spilka, then Rudolf Žůrek — from 2026-09-25-tereza-foltynova-reklamace-focus-logistics-initiatives-table
-- [ ] **Marek Pillár**: Ask Tomáš Dudaško whether the cross-department AI-initiative tracker can be shared with other departments — from 2026-09-25-tereza-foltynova-reklamace-focus-logistics-initiatives-table
-- [ ] **Marek Pillár / Tereza Foltýnová**: Review her draft table together (Wed/Thu) before the 2026-10-02 session — from 2026-09-25-tereza-foltynova-reklamace-focus-logistics-initiatives-table
-- [ ] **Tereza Foltýnová**: Send the invite for the in-person catch-up at Florentinum, Wednesday 2026-09-30 10:00 (30 min) — from 2026-09-25-tereza-foltynova-reklamace-focus-logistics-initiatives-table
+- [ ] **Marek Pillár**: Work up the Reklamace documentation to near-final depth, collect questions for Tereza, Jana Egrmaierová and Petr Spilka, and set up follow-up sessions as needed — from 2026-09-25-tereza-foltova-reklamace-focus-logistics-initiatives-table
+- [ ] **Tereza Foltová**: Draft the new logistics AI initiatives in the shared SharePoint table (2-row template), flag existing topics to drop or move to backlog, and share the updated file with Marek — due before 2026-10-02 — from 2026-09-25-tereza-foltova-reklamace-focus-logistics-initiatives-table
+- [ ] **Tereza Foltová**: Validate the logistics initiatives with Petr Spilka, then Rudolf Žůrek — from 2026-09-25-tereza-foltova-reklamace-focus-logistics-initiatives-table
+- [ ] **Marek Pillár**: Ask Tomáš Dudaško whether the cross-department AI-initiative tracker can be shared with other departments — from 2026-09-25-tereza-foltova-reklamace-focus-logistics-initiatives-table
+- [ ] **Marek Pillár / Tereza Foltová**: Review her draft table together (Wed/Thu) before the 2026-10-02 session — from 2026-09-25-tereza-foltova-reklamace-focus-logistics-initiatives-table
+- [ ] **Tereza Foltová**: Send the invite for the in-person catch-up at Florentinum, Wednesday 2026-09-30 10:00 (30 min) — from 2026-09-25-tereza-foltova-reklamace-focus-logistics-initiatives-table
 
 ## Open Questions
 

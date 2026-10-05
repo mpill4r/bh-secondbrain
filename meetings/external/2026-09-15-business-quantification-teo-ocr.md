@@ -22,7 +22,7 @@ Third Business Quantification interview run today, this time for TEO/OCR — Mar
 
 ### Business owner correction
 
-Marek opened by asking Radim to confirm he was the business owner; Radim initially agreed ("Můžete si to tam napsat") but immediately qualified it — major directional decisions need sign-off from Tomáš Burda, head of the technical department. Marek reflected this back explicitly ("takže business owner tohoto byl pan Burda a vy budete ten můj daily contact?") and Radim confirmed. Marek asked Radim to loop in Burda today/tomorrow to confirm ownership and expectations, referencing the same pattern used with Tereza Foltýnová on the logistics side earlier today.
+Marek opened by asking Radim to confirm he was the business owner; Radim initially agreed ("Můžete si to tam napsat") but immediately qualified it — major directional decisions need sign-off from Tomáš Burda, head of the technical department. Marek reflected this back explicitly ("takže business owner tohoto byl pan Burda a vy budete ten můj daily contact?") and Radim confirmed. Marek asked Radim to loop in Burda today/tomorrow to confirm ownership and expectations, referencing the same pattern used with Tereza Foltová on the logistics side earlier today.
 
 **This plausibly resolves an existing stakeholder record**: STK-025 (Tomáš Burda) is currently tracked only as owner of an initiative called "TD revisions" — sourced from the BigHub roadmap sheet with no further detail. "TD revisions" (Technical Department revisions) is a strong match for TEO/OCR itself (TEO = Dr. Max's technical department; the documents being processed are service/revision protocols). Flagged for PM confirmation rather than auto-merged.
 

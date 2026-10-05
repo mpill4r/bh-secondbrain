@@ -1,5 +1,5 @@
 ---
-last_updated: 2026-10-02
+last_updated: 2026-10-05
 last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
@@ -155,7 +155,7 @@ Scope narrowed to one category first: automatic doors, two vendors — extractin
 
 **Phasing**: Ships in 5 phases (0 through 4/5); the full ~1 FTE saving only materializes once all phases are live — see [[ASM-072]]. Documentation should label phases explicitly (e.g. Phase 0 = Příprava/preparation, Phase 1 = příjmové reklamace/receiving claims) since staff currently confuse "příjmové" (receiving) vs. "dodavatelské" (supplier) claim types.
 
-**Digitization reframe and its fallout (2026-09-22/23)**: the project's real efficiency driver turned out to be data digitization/consolidation (originally framed as a single supplier source of truth in Axapta, replacing Excel — narrowed 2026-09-25, see below; a "knowledge base" need that turned out to be two sentences of warehouse-worker procedure, solved with one Axapta parameter) rather than AI — see [[ASM-122]]. This shift generated a real relationship-management episode: Tereza Foltýnová (STK-013) began circulating that "BigHub doesn't want to deliver," requiring a direct calibration meeting with her and Petr Spilka (STK-014) to correct it. The continue-or-close decision now waits on a management meeting (Jindřich, Dudaško, Rudolf Žůrek, Spilka, Jan Žižka), complicated by Dudaško's plan to retire Axapta within ~6 months (see [[ASM-139]]) — he's willing to pay more now for a solution portable to Axapta's eventual replacement. A previously invisible requirement also surfaced: the "rozvozový list" needs free-text input from warehouse workers with no defined data source now that BigHub generates the document (see [[ASM-143]]). Source: 2026-09-23-cross-project-status-sync-reklamace-fallout-listing-blockers.
+**Digitization reframe and its fallout (2026-09-22/23)**: the project's real efficiency driver turned out to be data digitization/consolidation (originally framed as a single supplier source of truth in Axapta, replacing Excel — narrowed 2026-09-25, see below; a "knowledge base" need that turned out to be two sentences of warehouse-worker procedure, solved with one Axapta parameter) rather than AI — see [[ASM-122]]. This shift generated a real relationship-management episode: Tereza Foltová (STK-013) began circulating that "BigHub doesn't want to deliver," requiring a direct calibration meeting with her and Petr Spilka (STK-014) to correct it. The continue-or-close decision now waits on a management meeting (Jindřich, Dudaško, Rudolf Žůrek, Spilka, Jan Žižka), complicated by Dudaško's plan to retire Axapta within ~6 months (see [[ASM-139]]) — he's willing to pay more now for a solution portable to Axapta's eventual replacement. A previously invisible requirement also surfaced: the "rozvozový list" needs free-text input from warehouse workers with no defined data source now that BigHub generates the document (see [[ASM-143]]). Source: 2026-09-23-cross-project-status-sync-reklamace-fallout-listing-blockers.
 
 **Supplier data: where each attribute lives (2026-09-25)**: Axapta will not become the single supplier source. Petr Sláma's team won't develop further on a system slated for retirement, so only three fields are committed. **Účet dodavatele** (supplier account, the join key) already exists in Axapta and just needs exposing via the API contract. **Adresa**: Axapta holds supplier HQ addresses, while the real warehouse return addresses live in Excel; Axapta agreed to take them over, which needs ~2 hours of manual data entry (no owner yet). **Hlavní kontakt** (a single email that drives the email draft) is in the approved contract; <5 suppliers route by goods category instead ([[ASM-171]]). Not agreed: **Kontakty** (free text, typically 0–2 per supplier, some stale), **Poznámky**, and **Typ odvozu**. That last one is the own-pickup flag for ~70–75 suppliers who collect returns themselves; it's printed on the rozvozový list so warehouses can sort own-pickup parcels from standard shipments ([[ASM-176]]). These go to an external store that extends Axapta ([[ASM-170]]). Options offered to logistics with risks: Excel on SharePoint (not recommended), SharePoint Lists, or Confluence ([[ASM-169]]). Sizing: about 2 editors per warehouse; viewers = all claims workers. Supplier-data sections are basic info / main contact for the email draft / **Instrukce** / follow-up email process. History: the original Excel had ~300 sheets, one per supplier, each a pre-filled rozvozový list with free notes around it. Jana Egrmaierová consolidated it into a single ~300-row × ~10-column table.
 
@@ -174,9 +174,19 @@ See [[ASM-204]], [[ASM-205]]. Source: 2026-09-29-reklamace-email-agent-demo-revi
 
 **Knowledge-base standoff (2026-09-24)**: the "knowledge base" the app consumes today is only address + email per supplier, delivered from Axapta via the agreed Swagger API. Procedural know-how per supplier (which suppliers need special handling, and what it is) was never captured anywhere structured; it lived in notebooks and Excel sheets. Jana Egrmaierová proposed flagging each supplier as "standard procedure" (use the main contact) or "specific procedure" (steps noted). She estimates ~280 suppliers, ~75 with their own transport arrangement and ~35 needing specific handling, all unvalidated with the suppliers. Petr Sláma considers email-workflow automation the real savings, not protocol creation. See [[ASM-181]]. Source: 2026-09-24-viapharma-reklamace-knowledge-base-standoff.
 
-**Spec coverage (2026-09-25)**: per Tereza Foltýnová, only part of the Reklamace process is specified ("not even half"): phase 2 is partly worked out, phases 3–5 untouched, and scope "keeps swelling". Of ~10 real emails Jana forwarded, only ~2 were straightforward. The client side says it didn't want agile delivery without a full spec, but agile was chosen, and it "has bitten us". From 2026-09-25 Marek owns the Reklamace documentation ([[ASM-177]]). Source: 2026-09-25-tereza-foltynova-reklamace-focus-logistics-initiatives-table.
+**Spec coverage (2026-09-25)**: per Tereza Foltová, only part of the Reklamace process is specified ("not even half"): phase 2 is partly worked out, phases 3–5 untouched, and scope "keeps swelling". Of ~10 real emails Jana forwarded, only ~2 were straightforward. The client side says it didn't want agile delivery without a full spec, but agile was chosen, and it "has bitten us". From 2026-09-25 Marek owns the Reklamace documentation ([[ASM-177]]). Source: 2026-09-25-tereza-foltova-reklamace-focus-logistics-initiatives-table.
 
 **Logistics meeting outcome (2026-10-01)**: The 09-24 standoff largely unlocked. Sláma's May comment (automatic emails, Zentiva sequence) was accepted as direction ([[ASM-223]]). The email-agent PoC was demoed with four real cases (disposal; send to supplier warehouse; "please wait" then a pickup label with carrier pickup on 16. 9.; internal forward then a stock-swap offer handed to a person). Additions agreed: ViaPharma CC to a shared claims mailbox, the thread archived as PDF on the Axapta claim (terminals have no Outlook, so no MSG; finance — "Hanka" — reads claim history to check credit notes), and alternative drafts per recipient ([[ASM-224]]). **Problem types**: Axapta has ~19 "typy problémů"; testing covers only damaged goods; order is damaged on receipt → damaged in warehouse → other types via a code list ([[ASM-225]]). The app has tabs for receiving / warehouse / receiving-with-reservation; warehouse claims have no master or SP label. **Supplier data**: Excel out; one SharePoint List keyed by supplier account, data entered in one place only, quality staff edit, warehouse read; Axapta minimal ([[ASM-228]], pending Sláma's column-J notes). Correction to the "won't develop on a retiring Axapta" premise above: only Axapta's WMS part is being replaced, and Sláma now accepts minimal Axapta development (see Axapta). Source: 2026-10-01-viapharma-reklamace-email-agent-demo-data-map-review.
+
+**Management direction (2026-10-05, Rudolf Žůrek)**: Reklamace continues as a pilot ([[ASM-247]]). Key points:
+- **Scope reality**: supplier claims are ~25% of the claims topic. There are 4–5 claim streams (supplier, customer/pharmacy, warehouse…), and nearly all end with the supplier, so look at them together.
+- **Where AI fits**: communication with the outside world. Watching supplier replies (of 10 emails a day 7 get answers; chase the other 3 with reminders), and later an agent for incoming email shared by several claim processes.
+- **Ideal process, not 1:1**: design for the ideal future process; visit warehouses with logistics' process person; keep knowledge outside Axapta/WMS ([[ASM-249]]). A single SharePoint source of truth is a win on its own.
+- **Pharmacy returns gap**: data sits in Pharmis (pharmacy POS); the warehouse gets a box with a handwritten A4 ([[ASM-252]]).
+- **New legal obligation**: defective medical devices must also be reported to the manufacturer's factory, which varies by batch (SÚKL finding, [[ASM-251]]).
+- **X-Manager**: Dr. Max-internal tool used by the call centre, becoming a data source; being checked as an option for Reklamace ([[ASM-243]]).
+- **Logistics scale**: hundreds of thousands of transactions a day, so small improvements matter. "PV logic" (how warehouses react to pharmacy demand) is a future business topic.
+Source: 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap.
 
 ### Cenařky (pricing clerks) — logistics initiative candidate
 
@@ -282,6 +292,8 @@ Demoed screen flow: category selection → product catalog table (per-product SK
 - **Direction**: enrichment first, Magento out of the MVP, next batch = food supplements ([[ASM-207]], [[ASM-208]]).
 Source: 2026-09-30-listing-reset-neuman-enrichment-first-doplnky-stravy.
 
+**Neuman's Claude PoC — environmental claims (2026-10-05)**: Petr Neuman fixed ~1,500 critical SKUs himself with Claude (company Pro plan, chat + markdown). He spent ~2 h defining rules, kept a running rules journal, piloted on 10–20 SKUs, then ran 10 batches of 150 with checks; Claude asked about 10–20 unclear SKUs per batch. The last batches took ~10 min each. Total ~12 h. Human review took ~2–3 days and ~12% needed edits (at least half outside the given scope), vs. ~1.5 months by hand. Reference input for Listing 2.0 bulk edits ([[ASM-244]]). Source: 2026-10-05-listing-neuman-environmental-claims-bulk-edit-listing-2-0.
+
 **SKU ownership & data flow (2026-09-16)**: Dr. Max provides/owns SKU identifiers — BigHub does not generate them. Dr. Max sometimes uses "SKU" loosely as a synonym for "product," but it's literally just the product's identifier. Confirmed flow: listing build/edit happens in the new app first, then gets imported into Magento — the tool exists because Magento itself can't keep up with fast/bulk writes at Dr. Max's current catalog scale (see [[ASM-073]]). Per Jindřich Tůma, the spec should be framed simply: BigHub takes over exactly what already exists in Magento today, since new products are treated the same as existing ones once a baseline listing exists — rather than trying to model every adjacent system Dr. Max references (Farmis, "Quant," "paní Lucy," and others). Source: 2026-09-16-devops-kanban-rollout-status-sync.
 
 ### Expertní skupiny (expert groups)
@@ -332,6 +344,17 @@ Dudaško was unambiguous on this boundary when Jindřich raised a concrete pilot
 ## Data Model Concepts
 
 ## Regulatory & Compliance
+
+### EU environmental claims (greenwashing) regulation
+
+| Field | Value |
+|-------|-------|
+| Definition | EU regulation requiring that any environmental claim about a product (eco-friendly / "šetrný k planetě"-type greenwashing terms) is clearly proven, or not made. Member states must put it into effect; in CZ it was due on 2026-09-27 but is stuck in government negotiations. |
+| Source | 2026-10-05-listing-neuman-environmental-claims-bulk-edit-listing-2-0 |
+| Added | 2026-10-05 |
+| Status | Active |
+
+Affects 10,000+ Dr. Max SKUs (~¼ of the 1P catalogue). ~4,000 had critical terms: 2,000+ fixable by copying shared text (e.g. brand mentions repeated across hundreds of SKUs), ~1,500 needing contextual rewriting. A second wave of ~6,000–10,000 SKUs has non-critical terms. Keyword search over Magento exports in Excel yields false positives (e.g. "ohleduplný k pokožce"). A related earlier rule: cosmetics with ≥ ~4% of a specific substance must be reclassified as a medicine. Such regulatory changes recur and often have short deadlines — the basis for the Listing 2.0 bulk-edit idea ([[ASM-244]]).
 
 ### Listing — non-compliant medical claim blacklist
 
@@ -593,8 +616,8 @@ Listing's core blocker (reconfirmed 2026-09-02) is not code but Dr. Max's undefi
 
 | Field | Value |
 |-------|-------|
-| Definition | The working table for logistics AI initiatives is Tereza Foltýnová's copy of the 2-row BQ check table on the shared ViaPharma–BigHub SharePoint ("SZE AI logistika" folder, which also holds Jana Egrmaierová's Reklamace material). It is used until a cross-department master is shared; then the two get reconciled and only the master is used ([[ASM-178]], [[ASM-179]]). |
-| Source | 2026-09-25-tereza-foltynova-reklamace-focus-logistics-initiatives-table |
+| Definition | The working table for logistics AI initiatives is Tereza Foltová's copy of the 2-row BQ check table on the shared ViaPharma–BigHub SharePoint ("SZE AI logistika" folder, which also holds Jana Egrmaierová's Reklamace material). It is used until a cross-department master is shared; then the two get reconciled and only the master is used ([[ASM-178]], [[ASM-179]]). |
+| Source | 2026-09-25-tereza-foltova-reklamace-focus-logistics-initiatives-table |
 | Added | 2026-09-25 |
 | Status | Active |
 
@@ -605,7 +628,7 @@ Listing's core blocker (reconfirmed 2026-09-02) is not code but Dr. Max's undefi
 | Field | Value |
 |-------|-------|
 | Definition | Dr. Max and ViaPharma contacts should email and invite Marek at his external (Dr. Max-issued) account. Invitations to his BigHub address have bounced. Marek has both mailboxes connected. The same applies to other BigHub staff on the account (Jindřich, Jan Sovka), who also use external accounts. |
-| Source | 2026-09-25-tereza-foltynova-reklamace-focus-logistics-initiatives-table |
+| Source | 2026-09-25-tereza-foltova-reklamace-focus-logistics-initiatives-table |
 | Added | 2026-09-25 |
 | Status | Active |
 

@@ -61,7 +61,7 @@ Jindřich asked Marek to own this discipline: push business users on specificati
 
 ### Milestones and measurement column
 
-Marek (product background) asked whether phased initiatives should have milestone checkpoints, e.g. after phase 1 of a 2027 Q1 project, to judge early whether it will succeed. Dudaško: case by case, but every KPI must have a measurement method and a way to show whether it's being met. Marek will add a **measurement column** to the tracker and ask each business owner how their KPI can be measured. He expects most can report it in a basic, MVP-style way (e.g. 3 FTEs across 3 warehouses). He starts tomorrow with Tereza Foltýnová on logistics.
+Marek (product background) asked whether phased initiatives should have milestone checkpoints, e.g. after phase 1 of a 2027 Q1 project, to judge early whether it will succeed. Dudaško: case by case, but every KPI must have a measurement method and a way to show whether it's being met. Marek will add a **measurement column** to the tracker and ask each business owner how their KPI can be measured. He expects most can report it in a basic, MVP-style way (e.g. 3 FTEs across 3 warehouses). He starts tomorrow with Tereza Foltová on logistics.
 
 ### Department AI-initiative backlogs, targeting end of November
 
@@ -126,7 +126,7 @@ That's ~14 days to a unified platform with costs and reporting, then wiring in t
 - [ ] **Jura Brázdil / Jindřich Tůma**: Share the prototype link (with PIN) with Tomáš Dudaško to click through — from 2026-09-24-ai-initiatives-bq-review-platform-prototype-demo-dudasko
 - [ ] **Jindřich Tůma**: Prepare a "PR" story per live or near-live initiative for the 2026-09-29 project meeting; preview the updated presentation with Dudaško — due 2026-09-29 — from 2026-09-24-ai-initiatives-bq-review-platform-prototype-demo-dudasko
 - [ ] **Marek Pillár**: Add a KPI measurement-method column to the BQ tracker and collect how each KPI will be measured from every business owner — from 2026-09-24-ai-initiatives-bq-review-platform-prototype-demo-dudasko
-- [ ] **Marek Pillár**: With Tereza Foltýnová (logistics), agree the Part A / Part B split: finish the Reklamace and Fakturace doprav specs first, then capture new logistics AI initiatives in the tracker format — due 2026-09-25 (session) — from 2026-09-24-ai-initiatives-bq-review-platform-prototype-demo-dudasko
+- [ ] **Marek Pillár**: With Tereza Foltová (logistics), agree the Part A / Part B split: finish the Reklamace and Fakturace doprav specs first, then capture new logistics AI initiatives in the tracker format — due 2026-09-25 (session) — from 2026-09-24-ai-initiatives-bq-review-platform-prototype-demo-dudasko
 - [ ] **Marek Pillár**: Collect and prioritize AI-initiative backlogs from the departments (logistics, marketing via Marek Dvořák, others) in the BQ tracker format — target end of November 2026 — from 2026-09-24-ai-initiatives-bq-review-platform-prototype-demo-dudasko
 - [ ] **Marek Pillár**: Get email sign-off on BQ figures from Marek Šimoník (after his vacation) and Simona Mertová — from 2026-09-24-ai-initiatives-bq-review-platform-prototype-demo-dudasko
 - [ ] **Jindřich Tůma / Jura Brázdil**: Plan the first platform release internally in detail (new-cluster deploy, MaxBuddy migration, chatbot deploy, security fixes, frontend wiring; ~4 weeks after DB access) — from 2026-09-24-ai-initiatives-bq-review-platform-prototype-demo-dudasko

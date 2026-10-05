@@ -13,11 +13,11 @@ project_status: Green
 
 ## Current Priority
 
-Run today's Business Quantification workshop with Tereza Foltýnová. **Tool switched from FigJam to Excel**: the sticky-note board approach is retired for this session — live capture now happens directly in a new "Business Quantification" sheet added to `~/Desktop/worskop.xlsx` (alongside the existing "Portfolio" sheet, untouched). All 11 initiatives are pre-loaded with 9 columns (Initiative, Status, Objective, OKR One, OKR Two, KPI One/Two/Three, Notes); Reklamace and Fakturace od dodavatelů carry longer prefilled Czech objectives/values from existing briefs, the other 9 are `-tbd-` placeholders to fill live on the call. The interview technique/script in `product/solution-space/ai-initiatives-okr-framework.md` still applies — only the capture surface changed.
+Run today's Business Quantification workshop with Tereza Foltová. **Tool switched from FigJam to Excel**: the sticky-note board approach is retired for this session — live capture now happens directly in a new "Business Quantification" sheet added to `~/Desktop/worskop.xlsx` (alongside the existing "Portfolio" sheet, untouched). All 11 initiatives are pre-loaded with 9 columns (Initiative, Status, Objective, OKR One, OKR Two, KPI One/Two/Three, Notes); Reklamace and Fakturace od dodavatelů carry longer prefilled Czech objectives/values from existing briefs, the other 9 are `-tbd-` placeholders to fill live on the call. The interview technique/script in `product/solution-space/ai-initiatives-okr-framework.md` still applies — only the capture surface changed.
 
 ## Action Items
 
-- [ ] `carry-forward` `highest-prio` **Marek Pillár**: Run the 2026-09-14 Business Quantification call with Tereza Foltýnová — copy-paste from the sticky-note board live, fill the 9 blank cards, confirm the 2 prefilled ones — due today
+- [ ] `carry-forward` `highest-prio` **Marek Pillár**: Run the 2026-09-14 Business Quantification call with Tereza Foltová — copy-paste from the sticky-note board live, fill the 9 blank cards, confirm the 2 prefilled ones — due today
 - [ ] `carry-forward` **Jindřich Tůma**: Sit with Lukáš Szücs in person to go deeper on freight-invoicing scope and the DHL/site question — due 2026-09-02 (overdue) — from 2026-09-01-dr-max-x-bighub-project-status-sync
 - [ ] `carry-forward` **Jindřich Tůma**: Deliver the promised project timeline document to Tereza Foltová — due ~2026-09-05 — from 2026-09-01-dr-max-x-bighub-project-status-sync
 - [ ] `carry-forward` **Honza Sovka**: Complete the Magento vs. Farmis functionality gap analysis for the listing project — from 2026-09-01-dr-max-x-bighub-project-status-sync
@@ -129,7 +129,7 @@ Replaced the FigJam sticky-note board with a native Excel workbook for the Busin
 
 ## Audit Log
 
-[MANUAL] ~/Desktop/worskop.xlsx — added "Business Quantification" sheet (9 columns × 11 initiatives) for the 2026-09-14 workshop with Tereza Foltýnová, replacing the FigJam board as the live-capture tool; source content from `ai-initiatives-okr-framework.md` and prior routed meeting notes (2026-09-14)
+[MANUAL] ~/Desktop/worskop.xlsx — added "Business Quantification" sheet (9 columns × 11 initiatives) for the 2026-09-14 workshop with Tereza Foltová, replacing the FigJam board as the live-capture tool; source content from `ai-initiatives-okr-framework.md` and prior routed meeting notes (2026-09-14)
 [MANUAL] product/solution-space/ai-initiatives-okr-framework.md — added extended interview scripts for Field 4 (SPIN Selling + Cost of Delay) and Field 5 (Goal/Question/Metric + Google HEART), layered on top of the existing Fermi/SMART techniques, with a worked Kontrola beden example (2026-09-14)
 [MANUAL] product/solution-space/ai-initiatives-okr-framework.md — translated the entire document to Slovak per PM request; initiative names, person names, and English framework/technique names (OKR, SPIN Selling, Cost of Delay, GQM, HEART, JTBD, SMART) kept as-is for cross-artifact consistency (2026-09-14)
 [MANUAL] product/solution-space/listing-specifikace.md — rewritten to Reklamace-depth single-file spec (screen flows, state comparison table, GQM KPI table, per-phase error/open-question tables); FAQ section folded into narrative; declined to route through /product-scope + FEAT-NNN (reserved for the Second Brain harness tool, not client deliverables) (2026-09-14)

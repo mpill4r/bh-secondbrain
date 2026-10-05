@@ -5,7 +5,7 @@ last_updated_by: manual — conversational
 
 # Meeting Prep — AI Initiatives Business Quantification (FigJam working session)
 
-**Meeting**: Monday 2026-09-14, with Tereza Foltýnová (STK-013)
+**Meeting**: Monday 2026-09-14, with Tereza Foltová (STK-013)
 **Purpose**: Define, together with business owners, how much and what each Žůrek/logistics AI initiative saves or brings (Kč, time, FTE, etc.) — live in FigJam.
 
 ---

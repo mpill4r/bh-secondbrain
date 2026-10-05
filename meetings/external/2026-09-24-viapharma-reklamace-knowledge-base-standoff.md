@@ -1,14 +1,14 @@
 ---
 last_updated: 2026-09-24
 type: external
-attendees: [Jindřich Tůma, Marek Pillár, Filip Černý, Jakub Turner, Tereza Foltýnová, Jana Egrmaierová, Petr Sláma]
+attendees: [Jindřich Tůma, Marek Pillár, Filip Černý, Jakub Turner, Tereza Foltová, Jana Egrmaierová, Petr Sláma]
 recording_link:
 ---
 
 # ViaPharma Reklamace Sync — Knowledge-Base Architecture Standoff & Testing Status
 
 **Date**: 2026-09-24
-**Attendees**: Jindřich Tůma, Marek Pillár, Filip Černý (STK-006), Jakub Turner (STK-007) — BigHub; Tereza Foltýnová (STK-013), Jana Egrmaierová (STK-044), Petr Sláma (STK-034) — ViaPharma CZE
+**Attendees**: Jindřich Tůma, Marek Pillár, Filip Černý (STK-006), Jakub Turner (STK-007) — BigHub; Tereza Foltová (STK-013), Jana Egrmaierová (STK-044), Petr Sláma (STK-034) — ViaPharma CZE
 **Type**: external
 **Recording**: N/A
 **Previous session**: [2026-09-10-viapharma-reklamace-uat-fakturace-doprav-demo](2026-09-10-viapharma-reklamace-uat-fakturace-doprav-demo.md) (closest prior recurring ViaPharma sync)
@@ -79,11 +79,11 @@ Jindřich closed the topic: BigHub will formalize a recommendation, and will fol
 ## Action Items
 
 - [ ] **Filip Černý**: Investigate the "invalid request" error Jana hit submitting a photo-attached "příjem s výhradou" request — possibly AKS-related — from 2026-09-24-viapharma-reklamace-knowledge-base-standoff
-- [ ] **Tereza Foltýnová**: Coordinate handoff of the shared testing phone to Jana Egrmaierová — from 2026-09-24-viapharma-reklamace-knowledge-base-standoff
+- [ ] **Tereza Foltová**: Coordinate handoff of the shared testing phone to Jana Egrmaierová — from 2026-09-24-viapharma-reklamace-knowledge-base-standoff
 - [ ] **Filip Černý / Jakub Turner**: Finish and merge the reklamace app's auth/login work, then enable it for testing — from 2026-09-24-viapharma-reklamace-knowledge-base-standoff
 - [ ] **Filip Černý**: Resolve (with Honza Sovka) how the two-different-addresses rozvozový-list case will be handled — app-side, process-side, or excluded from testing scope — from 2026-09-24-viapharma-reklamace-knowledge-base-standoff
 - [ ] **Jindřich Tůma / Marek Pillár**: Formalize BigHub's knowledge-base architecture recommendation ahead of the Dudaško/Žůrek decision meeting — from 2026-09-24-viapharma-reklamace-knowledge-base-standoff
-- [ ] **Jindřich Tůma / Tereza Foltýnová**: Ensure Petr Sláma is invited to the Dudaško/Žůrek Reklamace decision meeting — from 2026-09-24-viapharma-reklamace-knowledge-base-standoff
+- [ ] **Jindřich Tůma / Tereza Foltová**: Ensure Petr Sláma is invited to the Dudaško/Žůrek Reklamace decision meeting — from 2026-09-24-viapharma-reklamace-knowledge-base-standoff
 - [ ] **Jana Egrmaierová**: Validate the standard/specific-procedure supplier flags against actual suppliers (currently based on her own experience, not confirmed) — from 2026-09-24-viapharma-reklamace-knowledge-base-standoff
 
 ## Open Questions

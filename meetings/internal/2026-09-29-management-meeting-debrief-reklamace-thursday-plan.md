@@ -16,7 +16,7 @@ recording_link:
 
 ## TL;DR
 
-Jindřich debriefed today's Dr. Max management meeting (CEO plus all department heads). The BQ benefits table landed very well. He escalated the BDC turnaround problem to the CEO, who stepped in, and BDC is already reaching out. He also flagged quiet competitive pressure from Deloitte, which is running its own AI initiatives at Dr. Max. The team locked the 2026-10-01 Reklamace agenda: Filip's AI email-thread demo, the data-source options Excel with a BigHub recommendation, and a spec sent by Friday 2026-10-02 with agreed changes or open questions. Decisions will be confirmed in writing, and the signed-off spec is treated as a contract, with later changes going through change requests. Tereza Foltýnová misrepresented Jindřich's words for a second time; the team will keep her close but put everything in writing.
+Jindřich debriefed today's Dr. Max management meeting (CEO plus all department heads). The BQ benefits table landed very well. He escalated the BDC turnaround problem to the CEO, who stepped in, and BDC is already reaching out. He also flagged quiet competitive pressure from Deloitte, which is running its own AI initiatives at Dr. Max. The team locked the 2026-10-01 Reklamace agenda: Filip's AI email-thread demo, the data-source options Excel with a BigHub recommendation, and a spec sent by Friday 2026-10-02 with agreed changes or open questions. Decisions will be confirmed in writing, and the signed-off spec is treated as a contract, with later changes going through change requests. Tereza Foltová misrepresented Jindřich's words for a second time; the team will keep her close but put everything in writing.
 
 **Continuity with 2026-09-23**: the two escalation items from last week are done. The AKS/BDC bottleneck was raised at today's management meeting and reached the CEO. The Reklamace reframe was discussed with Tereza on Friday. The continue-or-close management decision meeting wasn't mentioned; instead, Thursday's 10-01 session is now framed as the fix. The rozvozový list gap and the Sláma contract push weren't revisited.
 
@@ -60,7 +60,7 @@ Jindřich's reflection: the core difficulty was that everyone used "knowledge ba
 
 Jindřich: "let's not cry over spilt milk." Talking to the client "like an idiot" ("I don't know why we're discussing this, it's in the spec") isn't OK. If they still don't understand the knowledge base after the fourth meeting on it, assume BigHub is explaining it badly and find another way. Recommend and explain the positives, meet them halfway, and be a partner without "crawling up their backside" [translated from Czech].
 
-### Tereza Foltýnová — keep close, write everything down
+### Tereza Foltová — keep close, write everything down
 
 Jindřich asked the team to keep Tereza close: communicate and give her whatever she needs. He feels she passes information on "a bit differently than it is", though he doesn't see a motive. On Friday she told him that he had told her BigHub doesn't want to do Reklamace. He denied saying it and, in case anything he said could be read that way, clarified his point: the AI project turned into a digitization project, and the people above should know and decide how to proceed. If they're fine continuing, BigHub continues. "My goal is that we don't meet in a month and someone tells me 'Sir, this isn't AI.'" [translated from Czech]. He says this is about the second time she has twisted information.
 
@@ -126,7 +126,7 @@ Marek will be at Max until lunch tomorrow. First a quick meeting with Tereza, wh
 - [ ] **Marek Pillár**: Get the Reklamace spec draft to Filip Černý by end of day — due 2026-09-29 — from 2026-09-29-management-meeting-debrief-reklamace-thursday-plan
 - [ ] **Marek Pillár**: Set up a Marek / Filip / Jindřich sync on the options Excel before Thursday — due before 2026-10-01 — from 2026-09-29-management-meeting-debrief-reklamace-thursday-plan
 - [ ] **Marek Pillár**: After the Thursday session, email logistics the agreed decisions for confirmation, and send the Reklamace spec with agreed changes or open questions (yellow-highlighted) — due 2026-10-02 — from 2026-09-29-management-meeting-debrief-reklamace-thursday-plan
-- [ ] **Marek Pillár**: Meet Tereza Foltýnová at Max to review the initiatives she has collected since Friday — due 2026-09-30 — from 2026-09-29-management-meeting-debrief-reklamace-thursday-plan
+- [ ] **Marek Pillár**: Meet Tereza Foltová at Max to review the initiatives she has collected since Friday — due 2026-09-30 — from 2026-09-29-management-meeting-debrief-reklamace-thursday-plan
 - [ ] **Marek Pillár**: Run the Listing workshop with Petr Neuman and Michaela Vdovicynová — due 2026-09-30 — from 2026-09-29-management-meeting-debrief-reklamace-thursday-plan
 - [ ] **Marek Pillár**: Define the value driver ("system seller") of each later phase with each initiative owner, via discovery sessions; give logistics outlook anchor points next week; coordinate capacity with Jindřich Tůma before promising anything — from 2026-09-29-management-meeting-debrief-reklamace-thursday-plan
 - [ ] **Marek Pillár**: Put blockers / personal time into the calendar so Jindřich can plan meetings around it — from 2026-09-29-management-meeting-debrief-reklamace-thursday-plan
@@ -135,7 +135,7 @@ Marek will be at Max until lunch tomorrow. First a quick meeting with Tereza, wh
 - [ ] **Jindřich Tůma**: Validate with Tomáš Dudaško whether BigHub's architecture write-up may be handed to Deloitte; find out where Deloitte's LLM platform runs — from 2026-09-29-management-meeting-debrief-reklamace-thursday-plan
 - [ ] **Jindřich Tůma**: Schedule a joint voicebot meeting with Atlantis, ElevenLabs, BigHub and BDC — from 2026-09-29-management-meeting-debrief-reklamace-thursday-plan
 - [ ] **Jindřich Tůma**: Restart the adoption campaign: check whether Sony Vu Hong is back and brief Sony on the Max newsletter promised to Dudaško — from 2026-09-29-management-meeting-debrief-reklamace-thursday-plan
-- [ ] **Jindřich Tůma**: Produce a high-level whole-project timeline for Tereza Foltýnová — from 2026-09-29-management-meeting-debrief-reklamace-thursday-plan
+- [ ] **Jindřich Tůma**: Produce a high-level whole-project timeline for Tereza Foltová — from 2026-09-29-management-meeting-debrief-reklamace-thursday-plan
 - [ ] **Jindřich Tůma**: Reshuffle the team's meetings and tell Alana Sihelská which invites to cancel — due 2026-09-29 — from 2026-09-29-management-meeting-debrief-reklamace-thursday-plan
 - [ ] **Jindřich Tůma**: Look into a Fireflies licence / shared setup — from 2026-09-29-management-meeting-debrief-reklamace-thursday-plan
 

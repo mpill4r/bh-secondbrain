@@ -1,14 +1,14 @@
 ---
 last_updated: 2026-09-14
 type: external
-attendees: [Tereza Foltýnová, Jindřich Tůma, Jan Sovka, Marek Pillár]
+attendees: [Tereza Foltová, Jindřich Tůma, Jan Sovka, Marek Pillár]
 tldv_link:
 ---
 
-# AI Initiatives Roadmap Table Alignment with Tereza Foltýnová
+# AI Initiatives Roadmap Table Alignment with Tereza Foltová
 
 **Date**: 2026-09-14
-**Attendees**: Tereza Foltýnová (ViaPharma CZE — logistics/claims data consolidation), Jindřich Tůma (BigHub — Dr. Max account coordination), Jan Sovka (BigHub — account lead), Marek Pillár (BigHub — PM)
+**Attendees**: Tereza Foltová (ViaPharma CZE — logistics/claims data consolidation), Jindřich Tůma (BigHub — Dr. Max account coordination), Jan Sovka (BigHub — account lead), Marek Pillár (BigHub — PM)
 **Type**: external
 **Recording**: N/A (transcript only)
 **Previous session**: N/A — first meeting under this specific title/attendee combination
@@ -69,13 +69,13 @@ Jindřich's position: the table work is a genuine, ongoing part of Marek's role,
 
 ## Action Items
 
-- [ ] **Marek Pillár**: Send Tereza Foltýnová a short framework of business-quantification interview questions ahead of the working session — from 2026-09-14-ai-initiatives-roadmap-table-alignment
-- [ ] **Marek Pillár**: Hold a ~30-minute working session with Tereza Foltýnová on Reklamace and Fakturace (doprav/od dodavatelů) — targeted for this week (possibly ahead of their existing recurring 3pm call on 2026-09-15, or by 2026-09-16) — from 2026-09-14-ai-initiatives-roadmap-table-alignment
+- [ ] **Marek Pillár**: Send Tereza Foltová a short framework of business-quantification interview questions ahead of the working session — from 2026-09-14-ai-initiatives-roadmap-table-alignment
+- [ ] **Marek Pillár**: Hold a ~30-minute working session with Tereza Foltová on Reklamace and Fakturace (doprav/od dodavatelů) — targeted for this week (possibly ahead of their existing recurring 3pm call on 2026-09-15, or by 2026-09-16) — from 2026-09-14-ai-initiatives-roadmap-table-alignment
 - [ ] **Marek Pillár**: Schedule and hold 1:1s this week with the reklamace business-owner contact (Petr Spilka, STK-014) and the fakturace/doprava business-owner contact (Jan Žižka, STK-015 — name transcribed as "Ježíšek") — from 2026-09-14-ai-initiatives-roadmap-table-alignment
 - [ ] **Jindřich Tůma / Marek Pillár**: Reconcile BigHub's internal roadmap tracker and Tereza's/Dr. Max's copy so the same initiative information is consistent across both documents — from 2026-09-14-ai-initiatives-roadmap-table-alignment
 - [ ] **Jindřich Tůma**: Send Marek his existing stakeholder-management tracker (business owners per department/initiative) to help map who's who across departments — from 2026-09-14-ai-initiatives-roadmap-table-alignment
 - [ ] **Marek Pillár**: When presenting FTE savings, translate to a monetary figure using an average salary rate, so business stakeholders see the cost impact, not just headcount — from 2026-09-14-ai-initiatives-roadmap-table-alignment
-- [ ] **Tereza Foltýnová**: Add current owner names into her working copy of the table and align naming to the agreed CZ/EN, Core/Ecom-in-title convention — from 2026-09-14-ai-initiatives-roadmap-table-alignment
+- [ ] **Tereza Foltová**: Add current owner names into her working copy of the table and align naming to the agreed CZ/EN, Core/Ecom-in-title convention — from 2026-09-14-ai-initiatives-roadmap-table-alignment
 - [ ] **Marek Pillár / Jan Sovka**: Set up a separate session on the freight/doprava (Axapta) topic to address Tereza's concern about excessive Axapta-side dev load, looping in Jan Žižka — from 2026-09-14-ai-initiatives-roadmap-table-alignment
 
 ## Open Questions

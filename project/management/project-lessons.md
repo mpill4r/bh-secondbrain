@@ -1,10 +1,50 @@
 ---
-last_updated: 2026-10-02
-last_updated_by: auto — project-meeting lessons
+last_updated: 2026-10-05
+last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
 
 # Lessons Learned
+
+---
+
+### LL-82
+
+| Field | Value |
+|-------|-------|
+| ID | LL-82 |
+| Created | 2026-10-05 |
+| Category | stakeholder-management |
+| Source | 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap |
+
+**Lesson**
+Senior sponsors under upward pressure care less about cost or labels ("AI vs. automation") than about predictability. Give them dates, even distant or provisional ones, plus a date by which firmer dates will exist; "I don't know when" erodes trust faster than a slipped date that is explained.
+
+**Context**
+The feared continue-or-close meeting on Reklamace turned into direction-setting. Rudolf Žůrek accepted that the pilot may not pay back, but insisted on a roadmap with dates because he reports monthly to the Group CEO after three quarters of incomplete information.
+
+**Cross-reference**
+[[ASM-247]], [[ASM-248]]
+
+---
+
+### LL-81
+
+| Field | Value |
+|-------|-------|
+| ID | LL-81 |
+| Created | 2026-10-05 |
+| Category | product-strategy |
+| Source | 2026-10-05-listing-neuman-environmental-claims-bulk-edit-listing-2-0 |
+
+**Lesson**
+When a client brings a one-off pain (e.g. a sudden regulation) as a feature idea, reframe it as a generic, owned capability before sizing it. A single-purpose feature rarely pays back, while a reusable capability is easier to justify to management and can serve other teams.
+
+**Context**
+Petr Neuman described EU environmental-claims edits on 10,000+ SKUs. Marek reframed it from "an AI CMS parameter" to rule-based bulk automation with an owner; Neuman agreed immediately ([[ASM-244]]).
+
+**Cross-reference**
+[[ASM-244]], STK-023 (Petr Neuman)
 
 ---
 
@@ -275,7 +315,7 @@ The Reklamace "knowledge base" was discussed across four meetings; everyone mean
 | ID | LL-67 |
 | Created | 2026-09-25 |
 | Category | stakeholder |
-| Source | 2026-09-25-tereza-foltynova-reklamace-focus-logistics-initiatives-table |
+| Source | 2026-09-25-tereza-foltova-reklamace-focus-logistics-initiatives-table |
 
 **Lesson**
 When a delivery narrative turns negative ("BigHub doesn't want to deliver"), a named owner and a single point of contact, backed by a promise of a shared transparent document, defuse it faster than arguing the history. Give the counterpart one person to bring every question to.
@@ -284,7 +324,7 @@ When a delivery narrative turns negative ("BigHub doesn't want to deliver"), a n
 Two days after the narrative circulated and one day after the tense 09-24 standoff, Marek told Tereza he owns the Reklamace documentation and all logistics initiatives. She dropped the grievance, invited every question and proposed an in-person meeting.
 
 **Cross-reference**
-[[ASM-177]], STK-013 (Tereza Foltýnová)
+[[ASM-177]], STK-013 (Tereza Foltová)
 
 ---
 
@@ -315,7 +355,7 @@ Petr Sláma cited his 2026-05-20 "Zentiva" spec comment at the 2026-09-24 stando
 | ID | LL-65 |
 | Created | 2026-09-25 |
 | Category | process |
-| Source | 2026-09-25-tereza-foltynova-reklamace-focus-logistics-initiatives-table |
+| Source | 2026-09-25-tereza-foltova-reklamace-focus-logistics-initiatives-table |
 
 **Lesson**
 If agile delivery starts without a full spec, keep a visible map of which phases or decisions are still undefined and who owns defining them. Otherwise the client later sees missing spec as the vendor's failure, even if agile was agreed.
@@ -501,10 +541,10 @@ Max chatbot ran on GPT-5 mini. Dr. Max's tone complaints (passive-aggressive phr
 When a client-side contact starts attributing a scope or delivery change to "the vendor doesn't want to do X," calibrate the narrative directly and explicitly with them as soon as it's noticed, rather than letting it propagate informally through the team's various contacts — and ask the team to flag it centrally rather than each person quietly correcting it their own way.
 
 **Context**
-Tereza Foltýnová had been telling multiple Reklamace stakeholders that BigHub didn't want to deliver certain functionality, when the real cause was a scope reframe (AI to digitization). Jindřich ran a direct calibration meeting with her and Petr Spilka to correct it, and asked the whole team to route any future instances through him rather than resolve them individually.
+Tereza Foltová had been telling multiple Reklamace stakeholders that BigHub didn't want to deliver certain functionality, when the real cause was a scope reframe (AI to digitization). Jindřich ran a direct calibration meeting with her and Petr Spilka to correct it, and asked the whole team to route any future instances through him rather than resolve them individually.
 
 **Cross-reference**
-[[ASM-122]], STK-013 (Tereza Foltýnová)
+[[ASM-122]], STK-013 (Tereza Foltová)
 
 ---
 

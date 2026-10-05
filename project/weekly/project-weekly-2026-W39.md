@@ -16,7 +16,7 @@ project_status: Amber
 
 ## Week Summary
 
-The week opened with Dudaško setting out his AI Platform vision for the first time. It closed with him accepting Jura's Phase 1 prototype ("after a very long time I can tell BigHub: good job") and making the BQ tracker the mandatory intake standard for every new AI initiative. So the relationship at the top has turned clearly positive. Logistics went the other way. Reklamace was reframed from AI to digitization, and that led to a "BigHub doesn't want to deliver" narrative on Tuesday and a tense standoff with Petr Sláma on Thursday. By Friday there was a way forward: BigHub will bring the supplier-data options, each with its risks, to the 2026-10-01 meeting and let the client choose. Marek has taken ownership of the Reklamace documentation and is the single logistics contact, which Tereza Foltýnová received well. The open risk going into next week is infrastructure, not the client: until DB access on the new cluster is confirmed, the September go-live phases and the first platform release can't move.
+The week opened with Dudaško setting out his AI Platform vision for the first time. It closed with him accepting Jura's Phase 1 prototype ("after a very long time I can tell BigHub: good job") and making the BQ tracker the mandatory intake standard for every new AI initiative. So the relationship at the top has turned clearly positive. Logistics went the other way. Reklamace was reframed from AI to digitization, and that led to a "BigHub doesn't want to deliver" narrative on Tuesday and a tense standoff with Petr Sláma on Thursday. By Friday there was a way forward: BigHub will bring the supplier-data options, each with its risks, to the 2026-10-01 meeting and let the client choose. Marek has taken ownership of the Reklamace documentation and is the single logistics contact, which Tereza Foltová received well. The open risk going into next week is infrastructure, not the client: until DB access on the new cluster is confirmed, the September go-live phases and the first platform release can't move.
 
 ## Key Decisions
 
@@ -64,7 +64,7 @@ Only PM-owned items are tracked. Items owned by others were moved to `action-ite
 
 The week is short: **Monday 09-28 is a Czech public holiday.**
 - **Tue 09-29**: management meeting. PR value stories; escalation of the infra bottleneck.
-- **Wed 09-30**: in-person meeting with Tereza Foltýnová at Florentinum (10:00).
+- **Wed 09-30**: in-person meeting with Tereza Foltová at Florentinum (10:00).
 - **Thu 10-01**: logistics status. Supplier-data options table, Filip's email-agent demo, Axapta requirement list. Also the Lexie/Max/Maxie weekly (Max model cost projection due).
 - **Fri 10-02**: logistics initiatives validation debate with Tereza (internal, not final).
 - **During the week**: Vosmek MaxBuddy wishlist call; Reklamace continue-or-close meeting (Dudaško, Žůrek, Spilka, Žižka, Sláma) to be scheduled; end-of-September internal Max go-live phases (at risk).

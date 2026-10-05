@@ -46,7 +46,7 @@ The data-map Excel was co-created rather than directed, and it landed well with 
 ### Jan stepping back; Monday 10:00 Reklamace meeting
 
 - Jan will reduce his logistics involvement "ad absurdum" (to agree with Jindřich). He wasn't at the last two weeks of logistics calls anyway.
-- **Monday 2026-10-05, 10:00, in person**: "reklamační proces — další kroky", organised by Tereza Foltýnová, with Rudolf Žůrek, Tomáš Dudaško, Petr Spilka and Marek. Jan won't attend. He is onboarding new BigHub colleague Lukáš on Monday, and he leaves relationships to Ján Kabát. He also thinks his absence helps: Marek and Jindřich can say "that was the introductory phase with Honza and Alana; now we're here full-time" without speaking about the predecessor in front of him.
+- **Monday 2026-10-05, 10:00, in person**: "reklamační proces — další kroky", organised by Tereza Foltová, with Rudolf Žůrek, Tomáš Dudaško, Petr Spilka and Marek. Jan won't attend. He is onboarding new BigHub colleague Lukáš on Monday, and he leaves relationships to Ján Kabát. He also thinks his absence helps: Marek and Jindřich can say "that was the introductory phase with Honza and Alana; now we're here full-time" without speaking about the predecessor in front of him.
 - **Marek's read of the meeting's purpose (unconfirmed)**: Tereza fears Reklamace will end, because it has little financial upside. The initiatives Excel puts Reklamace at ~700k vs. tens of millions for MaxBuddy/Listing. That's why Dudaško, Žůrek and Spilka are attending. Spilka said this morning that Reklamace's ~8 h/day saving is small next to cenařky's "hundreds of hours".
 
 ### Stakeholder read for Monday (Jan)

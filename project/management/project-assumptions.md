@@ -1,5 +1,5 @@
 ---
-last_updated: 2026-10-02
+last_updated: 2026-10-05
 last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
@@ -10,8 +10,18 @@ owner: Marek Pillár
 
 | ID | Status | Created | Description (short) |
 |----|--------|---------|---------------------|
+| ASM-253 | Decided (2026-10-05) | 2026-10-05 | Monthly 30-min status Žůrek + BigHub, Mondays 10:00 |
+| ASM-252 | Open (2026-10-05) | 2026-10-05 | Pharmacy returns: data in Pharmis, warehouse gets handwritten A4 — integrate, export to AX, or work around (Dudaško / DAX team) |
+| ASM-251 | Open (2026-10-05) | 2026-10-05 | New SÚKL obligation: report defective medical devices to the manufacturer's factory (varies by batch); no manufacturer database |
+| ASM-250 | Open (2026-10-05) | 2026-10-05 | Axapta/WMS horizon conflict: ~6 months (Dudaško) vs. WMS replaced, ERP stays (Sláma) vs. WMS in 2–3 years (Žůrek) |
+| ASM-249 | Decided (2026-10-05) | 2026-10-05 | Reklamace designed for the ideal future process; warehouse visits with logistics' process person; knowledge outside Axapta/WMS |
+| ASM-248 | Decided (2026-10-05) | 2026-10-05 | Reklamace roadmap with dates for all phases mandatory (slips accepted); feeds Group CEO monthly review |
+| ASM-247 | Decided (2026-10-05) | 2026-10-05 | Reklamace continues as a pilot: finish 1/1.1, specify next phases in parallel; visible AI process + lessons learned over cost |
+| ASM-246 | Decided (2026-10-05) | 2026-10-05 | BigHub does not help with Dr. Max's current environmental-claims waves; Dr. Max handles them internally (no urgency) |
+| ASM-245 | Open (2026-10-05) | 2026-10-05 | Listing foundation should account now for catalogue-wide rule-based operations (to avoid later rework) — to check with the developers |
+| ASM-244 | Decided (2026-10-05) | 2026-10-05 | Regulation-driven catalogue-wide bulk editing (rule → find / replace / edit) framed as owned, flexible automation, not an "AI CMS"; candidate add-on for a next-year "Listing 2.0" initiative, not in the current MVP |
 | ASM-243 | Open (2026-10-02) | 2026-10-02 | Jindřich floated running the supplier data through Dr. Max's own "manager" tool (X-Manager?) — may compete with the SharePoint List direction |
-| ASM-242 | Open (2026-10-02) | 2026-10-02 | Purpose of the 2026-10-05 Reklamace "next steps" meeting unconfirmed; Marek expects a continue/stop question given Reklamace's low value (~700k) |
+| ASM-242 | Decided (2026-10-05) | 2026-10-02 | Purpose of the 2026-10-05 Reklamace "next steps" meeting unconfirmed; Marek expects a continue/stop question given Reklamace's low value (~700k) |
 | ASM-241 | Decided (2026-10-02) | 2026-10-02 | Jan Sovka steps back from logistics to near zero; Marek + Jindřich represent BigHub from the 2026-10-05 meeting on |
 | ASM-240 | Decided (2026-10-02) | 2026-10-02 | Okamžité avízo = optional per-supplier flag, nightly automatic notice of that day's příjem s výhradou (some suppliers require ~24 h notice); doesn't block Phase 1 testing |
 | ASM-239 | Open (2026-10-02) | 2026-10-02 | Dr. Max box troubleshooting as a low-priority Max/Maxie topic; box line's separate number could be Maxie's first full-AI branch |
@@ -258,6 +268,162 @@ owner: Marek Pillár
 
 ---
 
+### ASM-253
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-253 |
+| Created | 2026-10-05 |
+| Source | 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap |
+| By | Rudolf Žůrek (STK-024), Tereza Foltová (STK-013) |
+| Status | Decided (2026-10-05) |
+
+**Description**
+A monthly 30-minute status meeting between Rudolf Žůrek and BigHub, Mondays at 10:00 (Dr. Max management meets at 11:30). Simple format: the topics being solved and where they stand. Tereza sends the invite.
+
+**Rationale**
+Žůrek isn't in the weekly meetings and needs a direct, regular view; it also cuts down ad-hoc WhatsApp traffic.
+
+**Impact**
+- **Relationship**: Direct monthly channel to the head of logistics.
+- **Delivery**: Dates and roadmap ([[ASM-248]]) get reported there.
+
+---
+
+### ASM-252
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-252 |
+| Created | 2026-10-05 |
+| Source | 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap |
+| By | Rudolf Žůrek (STK-024) |
+| Status | Open (2026-10-05) |
+
+**Description**
+Pharmacy returns (customer claims, later supplier claims in 99% of cases) arrive at the warehouse as a box with a handwritten A4, although all data already exists in Pharmis (pharmacy POS). Options: integrate into the WMS, export from Pharmis into Axapta and convert the customer claim into a supplier claim, or work around it.
+
+**Rationale**
+Žůrek's example of development debt in back-office systems; to be discussed with Tomáš Dudaško and the DAX team.
+
+**Impact**
+- **Scope**: Shapes Phase 4 (pharmacy claims) and the end-to-end claim streams.
+- **Dependency**: Decision by Dudaško / DAX team.
+
+---
+
+### ASM-251
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-251 |
+| Created | 2026-10-05 |
+| Source | 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap |
+| By | Tereza Foltová (STK-013) |
+| Status | Open (2026-10-05) |
+
+**Description**
+New legal obligation found in a SÚKL inspection of medical devices: a defective device (e.g. a tonometer) must be reported to the actual manufacturer's factory, not only the supplier. One brand can be produced in 2–3 factories, varying by batch, and Dr. Max has no manufacturer database. A predefined email is enough (Czech is fine). Other product classes (e.g. veterinary) have their own rules.
+
+**Rationale**
+Raised by Tereza in the pre-meeting as an example of the supplier/claim matrix evolving over time.
+
+**Impact**
+- **Data**: The supplier matrix / SharePoint List ([[ASM-228]]) may need manufacturer per batch.
+- **Scope**: Additional recipient for the email agent; likely Phase 4 (pharmacy claims).
+- **Requirement**: See REQ-002.
+
+---
+
+### ASM-250
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-250 |
+| Created | 2026-10-05 |
+| Source | 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap |
+| By | Rudolf Žůrek (STK-024) |
+| Status | Open (2026-10-05) |
+
+**Description**
+Conflicting statements on how long Axapta/WMS has left: Dudaško (2026-09-23) said Axapta retired in ~6 months; Sláma (2026-10-01) said the WMS part is replaced, the ERP part stays; Žůrek (2026-10-05) said the WMS changes in 2–3 years. Kept open per PM; to confirm with Dudaško.
+
+**Rationale**
+The roadmap and the 'nothing new in Axapta' principle depend on the horizon.
+
+**Impact**
+- **Roadmap**: Dates ([[ASM-248]]) need a stated assumption.
+- **Scope**: Supports the knowledge-outside-Axapta direction ([[ASM-249]]) under any of the three readings.
+
+---
+
+### ASM-249
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-249 |
+| Created | 2026-10-05 |
+| Source | 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap |
+| By | Rudolf Žůrek (STK-024) |
+| Status | Decided (2026-10-05) |
+
+**Description**
+Reklamace is designed towards an ideal future process, not today's process 1:1. BigHub visits the warehouses with logistics' process person and challenges the operation. Knowledge stays outside Axapta/WMS in one maintained store (SharePoint List / wiki); no Axapta development that isn't necessary. A single source of truth counts as a win on its own.
+
+**Rationale**
+Žůrek: 'we want an ideal, maybe utopian process… maybe nobody sits there in the end'; the WMS will be replaced and the Axapta people are overloaded; the business is conservative and needs an outside challenge.
+
+**Impact**
+- **Scope**: Confirms the SharePoint List direction ([[ASM-228]]).
+- **Discovery**: Warehouse visits feed later-phase specification ([[ASM-190]]).
+
+---
+
+### ASM-248
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-248 |
+| Created | 2026-10-05 |
+| Source | 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap |
+| By | Rudolf Žůrek (STK-024) |
+| Status | Decided (2026-10-05) |
+
+**Description**
+BigHub delivers a Reklamace roadmap of all phases with dates (most detail for the next phase), or states by when it will have dates. Slips are accepted if explained. The timeline is re-answered after Thursday's (2026-10-08) UAT feedback.
+
+**Rationale**
+Žůrek reports monthly to the Group CEO; leadership won't accept 'I don't know when' after three quarters of a year of incomplete information. 'Even January 2028 is fine, I just need dates.'
+
+**Impact**
+- **Delivery**: Supersedes the rolling-4-week view for logistics; builds on Tereza's whole-project timeline ask ([[ASM-190]]).
+- **Relationship**: Kept or openly re-baselined dates are now a trust factor.
+
+---
+
+### ASM-247
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-247 |
+| Created | 2026-10-05 |
+| Source | 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap |
+| By | Rudolf Žůrek (STK-024), Jindřich Tůma (STK-003) |
+| Status | Decided (2026-10-05) |
+
+**Description**
+Reklamace continues as a pilot: finish and test the running phases (Phase 1, 1.1), specify the next phases in parallel, no rushed solution under time pressure. The goal is a visible, working AI process with lessons learned; costs and immediate FTE savings are secondary ('the costs probably won't return'). Success = the system does something new and people stopped doing something. 'AI vs. digitisation' is no longer a question; the AI lives in the email thread / outside communication. Switching focus to transport (Fakturace doprav) is only a fallback if Reklamace stays stuck.
+
+**Rationale**
+Holding-wide 'where is your AI?' pressure; Žůrek wants something delivered in reasonable time rather than freestyle. Logistics: 'for us it doesn't matter whether it's AI'.
+
+**Impact**
+- **Scope**: Resolves the continue-or-close question ([[ASM-122]], [[ASM-242]]).
+- **Priority**: Reply monitoring / reminders is where Žůrek sees the AI value (REQ-003).
+- **Commercial**: Benefits first, costs (development + operating) as a second wave.
+
+---
+
 ### ASM-240
 
 | Field | Value |
@@ -309,10 +475,10 @@ The account ran well during his two-week absence. His absence lets Marek and Jin
 | Created | 2026-10-02 |
 | Source | 2026-10-02-jan-sovka-1on1-monday-reklamace-meeting-okamzite-avizo |
 | By | Marek Pillár (STK-001) |
-| Status | Open (2026-10-02) |
+| Status | Decided (2026-10-05) |
 
 **Description**
-The aim of the 2026-10-05 10:00 in-person "reklamační proces — další kroky" meeting (organised by Tereza Foltýnová; Žůrek, Dudaško, Spilka, Marek) is unconfirmed. Marek's theory: Tereza fears Reklamace will be stopped, since the initiatives Excel puts it at ~700k Kč vs. tens of millions for MaxBuddy/Listing, and the senior attendance suggests a value/continuation discussion.
+The aim of the 2026-10-05 10:00 in-person "reklamační proces — další kroky" meeting (organised by Tereza Foltová; Žůrek, Dudaško, Spilka, Marek) is unconfirmed. Marek's theory: Tereza fears Reklamace will be stopped, since the initiatives Excel puts it at ~700k Kč vs. tens of millions for MaxBuddy/Listing, and the senior attendance suggests a value/continuation discussion.
 
 **Rationale**
 Spilka called Reklamace's ~8 h/day saving small next to cenařky on the morning of 2026-10-02 (2026-10-02-logistics-initiatives-green-field-cenarky-analysis).
@@ -320,6 +486,73 @@ Spilka called Reklamace's ~8 h/day saving small next to cenařky on the morning 
 **Impact**
 - **Scope**: May reopen the continue-or-close question ([[ASM-122]]).
 - **Preparation**: Marek and Jindřich prepare together.
+
+**Update (2026-10-05)**: Resolved. The meeting was calibration and direction-setting, not continue-or-close. Žůrek: finish the pilot, design the ideal process, deliver dates and a roadmap ([[ASM-247]], [[ASM-248]]). Source: 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap.
+
+---
+
+### ASM-246
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-246 |
+| Created | 2026-10-05 |
+| Source | 2026-10-05-listing-neuman-environmental-claims-bulk-edit-listing-2-0 |
+| By | Petr Neuman (STK-023), Marek Pillár (STK-001) |
+| Status | Decided (2026-10-05) |
+
+**Description**
+Dr. Max finishes the current EU environmental-claims waves (critical ~4,000 SKUs, then ~6,000–10,000 non-critical) internally, using Petr Neuman's Claude method. BigHub is not expected to help with them now.
+
+**Rationale**
+Petr Neuman: no urgency; "the 10,000 we will solve ourselves" [translated from Czech]. The capability matters for future cases, not this one.
+
+**Impact**
+- **Scope**: No change to the current Listing MVP ([[ASM-207]]).
+
+---
+
+### ASM-245
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-245 |
+| Created | 2026-10-05 |
+| Source | 2026-10-05-listing-neuman-environmental-claims-bulk-edit-listing-2-0 |
+| By | Marek Pillár (STK-001) |
+| Status | Open (2026-10-05) |
+
+**Description**
+The Listing foundation being built now (data model, batch processing over the catalogue) should be checked for whether it can later support catalogue-wide rule-based find / replace / edit without rework. Marek will discuss it with the developers (Filip Černý).
+
+**Rationale**
+Petr Neuman asked whether the need "changes anything fundamental" BigHub should think about now.
+
+**Impact**
+- **Architecture**: May shape how the tool stores and processes the full catalogue.
+- **Delivery**: Low effort to check now; costly if missed.
+
+---
+
+### ASM-244
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-244 |
+| Created | 2026-10-05 |
+| Source | 2026-10-05-listing-neuman-environmental-claims-bulk-edit-listing-2-0 |
+| By | Marek Pillár (STK-001), agreed by Petr Neuman (STK-023) |
+| Status | Decided (2026-10-05) |
+
+**Description**
+Regulation-driven bulk edits across the catalogue (e.g. EU environmental claims, cosmetics reclassified as medicines) are framed as a flexible, owned automation capability, where the team defines a rule and runs find / replace / edit with human review of the results. It is not an "AI CMS" feature. It is a candidate add-on after the main Listing case, inside a next-year "Listing 2.0" initiative that goes to Tomáš Dudaško with a rough estimate.
+
+**Rationale**
+As a single-purpose feature its ROI is weak (regulations come rarely). As generic automation it is reusable beyond e-commerce and easier to sell to management. Petr Neuman: "our goal shouldn't be to build a quasi-AI CMS" [translated from Czech]. His Claude PoC (1,500 SKUs in ~12 h, ~12% human edits) shows the value.
+
+**Impact**
+- **Scope**: Listing 2.0 candidate; not in the MVP.
+- **Business value**: Time saved (weeks → days of review), lower risk of fines and bureaucracy, lower cognitive load.
 
 ---
 
@@ -341,6 +574,8 @@ Raised internally only; not discussed with logistics.
 
 **Impact**
 - **Scope**: Could compete with the SharePoint List direction ([[ASM-228]]); clarify with Jindřich before Sláma's column-J feedback lands.
+
+**Update (2026-10-05)**: Jindřich clarified X-Manager is Dr. Max-internal (used by the call centre) and becoming a data source; a meeting with its product owner is set to check whether it fits Reklamace. If it does, it is presented as an option. Source: 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap.
 
 ---
 
@@ -507,7 +742,7 @@ Spilka: "technically, automation always comes before AI". Reklamace was already 
 | Status | Decided (2026-10-02) |
 
 **Description**
-Cenařky (pricing clerks) enters the logistics initiatives list like any other initiative. If it ranks top with quantified benefits, BigHub (Marek, as PM/analyst, no developers) does a proper on-site process analysis: a process map, inputs/outputs, decision rules, pitfalls and user journeys. This applies regardless of whether the outcome is AI or plain automation. Logistics owns the output and may implement it themselves (Power Automate) or with BigHub. Observation must happen in a high-traffic window: November–December or March; after New Year is slow. Tereza Foltýnová: realistic start January at the earliest.
+Cenařky (pricing clerks) enters the logistics initiatives list like any other initiative. If it ranks top with quantified benefits, BigHub (Marek, as PM/analyst, no developers) does a proper on-site process analysis: a process map, inputs/outputs, decision rules, pitfalls and user journeys. This applies regardless of whether the outcome is AI or plain automation. Logistics owns the output and may implement it themselves (Power Automate) or with BigHub. Observation must happen in a high-traffic window: November–December or March; after New Year is slow. Tereza Foltová: realistic start January at the earliest.
 
 **Rationale**
 Spilka claims hundreds of hours a month of savings and says no consultancy has properly analysed the process (earlier work covered ~5–10%). Jindřich: the analysis is valuable to logistics whatever the implementation route.
@@ -526,7 +761,7 @@ Spilka claims hundreds of hours a month of savings and says no consultancy has p
 | ID | ASM-231 |
 | Created | 2026-10-02 |
 | Source | 2026-10-02-logistics-initiatives-green-field-cenarky-analysis |
-| By | Tereza Foltýnová (STK-013), Jindřich Tůma (STK-003) |
+| By | Tereza Foltová (STK-013), Jindřich Tůma (STK-003) |
 | Status | Decided (2026-10-02) |
 
 **Description**
@@ -547,7 +782,7 @@ Keeps the tracker a clean BigHub capacity/prioritization tool.
 | ID | ASM-230 |
 | Created | 2026-10-02 |
 | Source | 2026-10-02-logistics-initiatives-green-field-cenarky-analysis |
-| By | Marek Pillár (STK-001), Jindřich Tůma (STK-003), Tereza Foltýnová (STK-013) |
+| By | Marek Pillár (STK-001), Jindřich Tůma (STK-003), Tereza Foltová (STK-013) |
 | Status | Decided (2026-10-02) |
 
 **Description**
@@ -617,7 +852,7 @@ CC keeps colleagues informed. The Axapta archive stops history living only in pe
 | ID | ASM-225 |
 | Created | 2026-10-01 |
 | Source | 2026-10-01-viapharma-reklamace-email-agent-demo-data-map-review |
-| By | Tereza Foltýnová (STK-013), Petr Sláma (STK-034), Jana Egrmaierová (STK-044) |
+| By | Tereza Foltová (STK-013), Petr Sláma (STK-034), Jana Egrmaierová (STK-044) |
 | Status | Decided (2026-10-01) |
 
 **Description**
@@ -661,7 +896,7 @@ Rewriting the spec for every point is impractical for both sides, and developmen
 | ID | ASM-227 |
 | Created | 2026-10-01 |
 | Source | 2026-10-01-viapharma-reklamace-email-agent-demo-data-map-review |
-| By | Tereza Foltýnová (STK-013), Jindřich Tůma (STK-003) |
+| By | Tereza Foltová (STK-013), Jindřich Tůma (STK-003) |
 | Status | Decided (2026-10-01) |
 
 **Description**
@@ -1477,7 +1712,7 @@ Once the budget Excel items ([[ASM-192]]) and the logistics per-day export are d
 | Status | Open |
 
 **Description**
-The Reklamace spec still carries phases 1–4, but the later phases are not specified or agreed with logistics. None of them has a defined value driver ("system seller") explaining why the phase is worth doing; the same gap applies to other logistics initiatives. Marek will run discovery sessions with each initiative owner (starting with Petr Neuman on 2026-09-30) and give logistics outlook anchor points next week. Separately, Tereza Foltýnová wants a timeline for the whole project; Jindřich's rolling 4-week outlook was not enough, so he will produce a high-level whole-project version.
+The Reklamace spec still carries phases 1–4, but the later phases are not specified or agreed with logistics. None of them has a defined value driver ("system seller") explaining why the phase is worth doing; the same gap applies to other logistics initiatives. Marek will run discovery sessions with each initiative owner (starting with Petr Neuman on 2026-09-30) and give logistics outlook anchor points next week. Separately, Tereza Foltová wants a timeline for the whole project; Jindřich's rolling 4-week outlook was not enough, so he will produce a high-level whole-project version.
 
 **Rationale**
 Outlook points without a value driver aren't load-bearing, and promising phases without capacity cover risks over-commitment.
@@ -1486,6 +1721,8 @@ Outlook points without a value driver aren't load-bearing, and promising phases 
 - **Scope**: Later-phase scope stays provisional until discovery.
 - **Workload**: Marek owns discovery; capacity commitments coordinated with Jindřich ([[ASM-167]]).
 - **Relationship**: A whole-project timeline answers Tereza's ask but will need frequent revision.
+
+**Update (2026-10-05)**: Žůrek: initiatives get development and operating cost as a second wave after benefits; the biggest 2027 initiatives ("unicorns") are decided in Q4; headcount per department is a key lens. Marek opens all logistics initiatives at the Wednesday session. Source: 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap.
 
 ---
 
@@ -1500,7 +1737,7 @@ Outlook points without a value driver aren't load-bearing, and promising phases 
 | Status | Decided (2026-09-29) |
 
 **Description**
-Across logistics AI initiatives, the business sets priorities; BigHub recommends and steers, and states openly from the start what tempo each priority level gets ("you're in the list, a bit lower, which means this tempo"). Fakturace doprav follows once the Reklamace blockers are cleared — proposed by Tereza Foltýnová herself on 2026-09-25: Marek defines it, hands it to development and walks logistics through it. Developer capacity/allocation for it is still open, since other initiatives in the table are more financially interesting for Max.
+Across logistics AI initiatives, the business sets priorities; BigHub recommends and steers, and states openly from the start what tempo each priority level gets ("you're in the list, a bit lower, which means this tempo"). Fakturace doprav follows once the Reklamace blockers are cleared — proposed by Tereza Foltová herself on 2026-09-25: Marek defines it, hands it to development and walks logistics through it. Developer capacity/allocation for it is still open, since other initiatives in the table are more financially interesting for Max.
 
 **Rationale**
 Logistics is mandated to run AI initiatives and must cooperate with BigHub; open, explicit prioritisation avoids a "you don't care about us" reading. Alana Sihelská's worry that Reklamace friction would kill Fakturace was judged a communication problem, not a structural one.
@@ -1560,7 +1797,7 @@ Jindřich reads the request as a signal Deloitte is designing something overlapp
 - **Delivery**: Raises the bar on delivery quality and communication across all streams.
 - **Open**: Overlap with the AI Platform and whether architecture sharing is OK.
 
-**Update (2026-10-02)**: Logistics (Tereza Foltýnová) already runs initiatives with "DOOM"/"Duo", which she called "our AI initiative, but not BigHub's", and Spilka contrasted it with a proper process analysis. Likely the same Deloitte platform; unconfirmed. Kept out of the BigHub tracker ([[ASM-231]]). Source: 2026-10-02-logistics-initiatives-green-field-cenarky-analysis.
+**Update (2026-10-02)**: Logistics (Tereza Foltová) already runs initiatives with "DOOM"/"Duo", which she called "our AI initiative, but not BigHub's", and Spilka contrasted it with a proper process analysis. Likely the same Deloitte platform; unconfirmed. Kept out of the BigHub tracker ([[ASM-231]]). Source: 2026-10-02-logistics-initiatives-green-field-cenarky-analysis.
 
 ---
 
@@ -1600,7 +1837,7 @@ Avoids the recent pattern of logistics urging while Sláma doesn't react to comm
 Client decisions are confirmed in writing. After the 2026-10-01 Reklamace session, the agreed decisions are emailed to logistics for confirmation by Friday 2026-10-02. Team-wide practice from now on: write everything down in emails or notes.
 
 **Rationale**
-Tereza Foltýnová has twice passed on statements BigHub never made (most recently that Jindřich said BigHub doesn't want to do Reklamace). Alana: written records have "saved us about four times".
+Tereza Foltová has twice passed on statements BigHub never made (most recently that Jindřich said BigHub doesn't want to do Reklamace). Alana: written records have "saved us about four times".
 
 **Impact**
 - **Relationship**: Protects against misrepresentation; keeps Tereza close but on record.
@@ -1645,8 +1882,8 @@ The 2026-09-24 standoff showed that open choices, like the supplier-data store (
 |-------|-------|
 | ID | ASM-177 |
 | Created | 2026-09-25 |
-| Source | 2026-09-25-tereza-foltynova-reklamace-focus-logistics-initiatives-table |
-| By | Marek Pillár (STK-001), Tereza Foltýnová (STK-013) |
+| Source | 2026-09-25-tereza-foltova-reklamace-focus-logistics-initiatives-table |
+| By | Marek Pillár (STK-001), Tereza Foltová (STK-013) |
 | Status | Decided (2026-09-25) |
 
 **Description**
@@ -1667,8 +1904,8 @@ Reklamace scope is not closed: only part of the process is specified, and phases
 |-------|-------|
 | ID | ASM-178 |
 | Created | 2026-09-25 |
-| Source | 2026-09-25-tereza-foltynova-reklamace-focus-logistics-initiatives-table |
-| By | Tereza Foltýnová (STK-013), Marek Pillár (STK-001) |
+| Source | 2026-09-25-tereza-foltova-reklamace-focus-logistics-initiatives-table |
+| By | Tereza Foltová (STK-013), Marek Pillár (STK-001) |
 | Status | Decided (2026-09-25) |
 
 **Description**
@@ -1689,8 +1926,8 @@ Tereza can't validate with Spilka and Žůrek before 10-02 (Monday 09-28 is a pu
 |-------|-------|
 | ID | ASM-179 |
 | Created | 2026-09-25 |
-| Source | 2026-09-25-tereza-foltynova-reklamace-focus-logistics-initiatives-table |
-| By | Tereza Foltýnová (STK-013) |
+| Source | 2026-09-25-tereza-foltova-reklamace-focus-logistics-initiatives-table |
+| By | Tereza Foltová (STK-013) |
 | Status | Open (2026-09-25) |
 
 **Description**
@@ -1712,8 +1949,8 @@ The master tracker holds values and priorities for all departments; sharing it i
 |-------|-------|
 | ID | ASM-180 |
 | Created | 2026-09-25 |
-| Source | 2026-09-25-tereza-foltynova-reklamace-focus-logistics-initiatives-table |
-| By | Tereza Foltýnová (STK-013) |
+| Source | 2026-09-25-tereza-foltova-reklamace-focus-logistics-initiatives-table |
+| By | Tereza Foltová (STK-013) |
 | Status | Open (2026-09-25) |
 
 **Description**
@@ -1759,7 +1996,7 @@ Raised in the 2026-09-24 standoff; not resolved. It feeds the Dudaško/Žůrek c
 | ID | ASM-182 |
 | Created | 2026-09-25 |
 | Source | 2026-09-24-viapharma-reklamace-knowledge-base-standoff |
-| By | Petr Sláma (STK-034), Tereza Foltýnová (STK-013), Filip Černý (STK-006) |
+| By | Petr Sláma (STK-034), Tereza Foltová (STK-013), Filip Černý (STK-006) |
 | Status | Decided (2026-09-25) |
 
 **Description**
@@ -1785,7 +2022,7 @@ Requested by Sláma for traceability on a shared device.
 | ID | ASM-183 |
 | Created | 2026-09-25 |
 | Source | 2026-09-24-viapharma-reklamace-knowledge-base-standoff |
-| By | Filip Černý (STK-006), Tereza Foltýnová (STK-013) |
+| By | Filip Černý (STK-006), Tereza Foltová (STK-013) |
 | Status | Open (2026-09-25) |
 
 **Description**
@@ -1864,7 +2101,7 @@ A separate BigHub database or table creates Axapta-sync problems and stale snaps
 The Reklamace "main contact" (hlavní kontakt, one email per supplier driving the email draft) concept is kept. It covers ~95–97% of suppliers; the <5 suppliers whose contact depends on goods category (e.g. food vs. drugs) are handled as exceptions in the spec.
 
 **Rationale**
-Agreed with Jana Egrmaierová and Tereza Foltýnová ~2–3 weeks earlier; the category-conditional exceptions surfaced later but are too few to abandon the simple model.
+Agreed with Jana Egrmaierová and Tereza Foltová ~2–3 weeks earlier; the category-conditional exceptions surfaced later but are too few to abandon the simple model.
 
 **Impact**
 - **Scope**: The spec needs a defined exception mechanism (conditional contacts), not a redesign.
@@ -2166,7 +2403,7 @@ Logistics proactively wants to map more AI initiatives with Marek. Jindřich exp
 - **Timeline**: The end-of-November target is at risk if running projects need more attention.
 
 
-**Update (2026-09-25)**: Part A/B split agreed with Tereza Foltýnová — see [[ASM-177]], [[ASM-178]]. Source: 2026-09-25-tereza-foltynova-reklamace-focus-logistics-initiatives-table.
+**Update (2026-09-25)**: Part A/B split agreed with Tereza Foltová — see [[ASM-177]], [[ASM-178]]. Source: 2026-09-25-tereza-foltova-reklamace-focus-logistics-initiatives-table.
 ---
 
 ### ASM-160
@@ -2202,7 +2439,7 @@ Dudaško wants realized value demonstrable to management, not just modeled.
 | Status | Decided (2026-09-24) |
 
 **Description**
-Beyond business value and KPIs, each initiative must define how each KPI will be measured, including the current-state baseline measured before implementation (e.g. "25× faster" needs today's speed measured first). Marek will add a measurement column and collect methods from each business owner, starting with logistics (Tereza Foltýnová). Phase-level success milestones are case by case.
+Beyond business value and KPIs, each initiative must define how each KPI will be measured, including the current-state baseline measured before implementation (e.g. "25× faster" needs today's speed measured first). Marek will add a measurement column and collect methods from each business owner, starting with logistics (Tereza Foltová). Phase-level success milestones are case by case.
 
 **Rationale**
 Dudaško's "B/C": without a measurement plan you can't prove the value is delivered. Petr Neuman's quarterly cost-per-item tracking (Listing) is the model case.
@@ -2728,7 +2965,7 @@ Meeting note capture plus direct code search (smtp/sendgrid/mailgun/mail/notify/
 A more detailed Business Quantification workshop breakdown (status "K doplnění" — not yet formally approved) quantifies Fakturace doprav's saving as 10.5 h/day across 3 warehouses — Expedice Ostrava 1.5 h/den (1 pracovník), Xdock Brno 1 h/den (1 pracovník), Doprava Pavlov 4+2+2 h/den (3 pracovníci) — at a 50,000 Kč/month rate, ≈ 787,500 Kč/year, covering Fáze 1 and 2 combined (Fáze 2 doesn't add a separately-counted saving). Four concrete KPI targets were captured for the first time: Fáze 1 ≥40% of cases processed fully without manual intervention; Fáze 2 ≥40% of shipments with auto-verified km; overall administrative time-fund reduced ~40%; ≥60% of temperature records auto-checked without manual reading.
 
 **Rationale**
-Both this figure and the earlier ~16 h/day / ~1.5M Kč/year Fermi estimate (captured 2026-09-15 from Tereza Foltýnová, who herself flagged it as possibly too large and pending verification with Jan Žižka) trace back to the same underlying Ableneo ~90h/month source figure — but this workshop number is a direct per-warehouse breakdown from the initiative owner himself, and is likely the more reliable of the two.
+Both this figure and the earlier ~16 h/day / ~1.5M Kč/year Fermi estimate (captured 2026-09-15 from Tereza Foltová, who herself flagged it as possibly too large and pending verification with Jan Žižka) trace back to the same underlying Ableneo ~90h/month source figure — but this workshop number is a direct per-warehouse breakdown from the initiative owner himself, and is likely the more reliable of the two.
 
 **Impact**
 - **Data**: recommend project-knowledge and any client-facing materials adopt 787,500 Kč/year, superseding the 2026-09-15 estimate — pending formal confirmation, since status is still "K doplnění."
@@ -4101,7 +4338,7 @@ Neuman said fixing a number this early "feels like making it up" — he wants to
 **Impact**
 - **Reporting**: The corporate KPI Excel (`businessQuantificationWorskop.xlsx`, E-commerce BQ sheet) currently carries this placeholder — flagged in its Notes field as orientational, not committed. Replace with ASM-123's figures.
 - **Delivery**: A real benchmark should be captured as soon as the tool is live and processing real listing volume, then used to replace this placeholder.
-- **Relationship**: Resisting an invented number is consistent with the pattern seen across this week's other Business Quantification interviews (Tereza Foltýnová, Radim Švarc) — treated as a positive trust signal, not stalling.
+- **Relationship**: Resisting an invented number is consistent with the pattern seen across this week's other Business Quantification interviews (Tereza Foltová, Radim Švarc) — treated as a positive trust signal, not stalling.
 
 ---
 
@@ -4159,7 +4396,7 @@ Petr Neuman was explicit that Magento's growing instability at Dr. Max's ~80,000
 | ID | ASM-072 |
 | Created | 2026-09-15 |
 | Source | 2026-09-15-business-quantification-reklamace-fakturace-doprav |
-| By | Marek Pillár, Tereza Foltýnová (STK-013) |
+| By | Marek Pillár, Tereza Foltová (STK-013) |
 | Status | Decided (2026-09-15) |
 
 **Description**
@@ -5597,13 +5834,13 @@ Resolved by Marek (2026-09-02): **Turner works on MaxBuddy**, not reklamace — 
 
 **Description**
 A BigHub "Initiative → Owner/Customer" roadmap sheet was cross-checked against existing meeting-derived stakeholder records. Two entries matched cleanly (MaxBuddy → Tomáš Dudaško; E-Shop order forecast → Marek Šimoník). Two entries were net-new (Product listing → Petr Neuman; TD revisions → Tomáš Burda). Four points conflicted with existing records and were recorded on both sides rather than resolved:
-1. **Invoicing solution / "fakturace od dodavatelů" → Rudolf Zurek** (STK-024) vs. Fakturace doprav → Jan Žižka (STK-015) / Petr Spilka (STK-014) reviewing — possibly the same initiative under different names, possibly distinct. **Leaning resolved (2026-09-15)**: in the Business Quantification call, Tereza Foltýnová (ViaPharma) discussed the roadmap's "fakturace od dodavatelů" line as the freight/transport initiative ("je to ta doprava"), with Jan Žižka named as its owner — matching Fakturace doprav, not a separate supplier-invoicing stream. Not yet a formal, explicit confirmation (Rudolf Žůrek's own framing wasn't directly addressed), so kept as "leaning resolved" rather than closed. **Further corroboration (2026-09-22)**: Marek reiterated to Jindřich that this is the same initiative Tereza Foltýnová had insisted on unifying under one name ("fakturace doprava"), owned by Jan Žižka — consistent with the 2026-09-15 read, but still Marek's own restatement rather than a fresh independent client confirmation, so kept "leaning resolved" rather than closed.
+1. **Invoicing solution / "fakturace od dodavatelů" → Rudolf Zurek** (STK-024) vs. Fakturace doprav → Jan Žižka (STK-015) / Petr Spilka (STK-014) reviewing — possibly the same initiative under different names, possibly distinct. **Leaning resolved (2026-09-15)**: in the Business Quantification call, Tereza Foltová (ViaPharma) discussed the roadmap's "fakturace od dodavatelů" line as the freight/transport initiative ("je to ta doprava"), with Jan Žižka named as its owner — matching Fakturace doprav, not a separate supplier-invoicing stream. Not yet a formal, explicit confirmation (Rudolf Žůrek's own framing wasn't directly addressed), so kept as "leaning resolved" rather than closed. **Further corroboration (2026-09-22)**: Marek reiterated to Jindřich that this is the same initiative Tereza Foltová had insisted on unifying under one name ("fakturace doprava"), owned by Jan Žižka — consistent with the 2026-09-15 read, but still Marek's own restatement rather than a fresh independent client confirmation, so kept "leaning resolved" rather than closed.
 2. **Receiving compliants in stock → Rudolf Zurek** (STK-024) vs. Reklamace → Marie Hulešová (STK-020) — possibly the same initiative, possibly distinct. **Still open** — the 2026-09-15 call reinforced Petr Spilka (not Hulešová) as Reklamace's owner from the ViaPharma side, but didn't address Žůrek's framing directly — needs its own follow-up.
 3. ~~Maxie/Max → Simona Mertova (STK-017) — surname spelling conflict.~~ **Resolved 2026-09-02**: "Mertová" confirmed correct; "Martová" was a transcription error.
 4. ~~Lexie → Tomáš Dudaško (STK-010) vs. Martová/Mertová owning Max/Maxie/Lexie together.~~ **Resolved 2026-09-02**: not a real conflict — Dudaško holds IT/budget-side ownership, Mertová holds operational/product ownership; both own it.
 
 **Rationale**
-PM explicitly asked to record both sides of each conflict rather than pick one now — "record both and let me decide later." Consistent with the same approach taken for ASM-005. On 2026-09-02, Marek resolved the two naming/ownership-framing conflicts (surname, Lexie co-ownership) but was not yet sure on the two possible-duplicate-initiative conflicts (invoicing solution, reklamace/complaints). On 2026-09-15, the invoicing-solution/Fakturace-doprav conflict moved from fully open to leaning resolved based on Tereza Foltýnová's own framing during live business-quantification — a client-side data point, not just an internal guess.
+PM explicitly asked to record both sides of each conflict rather than pick one now — "record both and let me decide later." Consistent with the same approach taken for ASM-005. On 2026-09-02, Marek resolved the two naming/ownership-framing conflicts (surname, Lexie co-ownership) but was not yet sure on the two possible-duplicate-initiative conflicts (invoicing solution, reklamace/complaints). On 2026-09-15, the invoicing-solution/Fakturace-doprav conflict moved from fully open to leaning resolved based on Tereza Foltová's own framing during live business-quantification — a client-side data point, not just an internal guess.
 
 **Impact**
 - **Data quality**: STK-017 and STK-010 updated to reflect resolved co-ownership and correct spelling. STK-014, STK-015, STK-020, STK-024 still carry a note pointing to this assumption. Point 1 (invoicing solution/Fakturace doprav) can likely be treated as resolved with one more explicit confirmation from Žižka or Žůrek; point 2 (Reklamace/complaints) remains genuinely open.

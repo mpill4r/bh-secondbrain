@@ -1,14 +1,14 @@
 ---
 last_updated: 2026-09-15
 type: external
-attendees: [Marek Pillár, Tereza Foltýnová]
+attendees: [Marek Pillár, Tereza Foltová]
 tldv_link:
 ---
 
-# Business Quantification Call with Tereza Foltýnová — Reklamace & Fakturace Doprav
+# Business Quantification Call with Tereza Foltová — Reklamace & Fakturace Doprav
 
 **Date**: 2026-09-15
-**Attendees**: Marek Pillár (BigHub, running the interview), Tereza Foltýnová (ViaPharma CZE — logistics/claims data consolidation)
+**Attendees**: Marek Pillár (BigHub, running the interview), Tereza Foltová (ViaPharma CZE — logistics/claims data consolidation)
 **Type**: external
 **Recording**: N/A (pasted transcript, no timestamps beyond MM:SS speaker tags)
 **Previous session**: N/A directly (first live execution of the Business Quantification workshop) — see [2026-09-14-ai-initiatives-business-quantification-prep](../prep/2026-09-14-ai-initiatives-business-quantification-prep.md)
@@ -69,14 +69,14 @@ The call ended earlier than planned — Tereza had another call to join — afte
 
 ## Action Items
 
-- [ ] **Tereza Foltýnová**: Confirm the Reklamace domain expert (Petr Spilka vs. Jana Egrmaierová) directly with Petr Spilka — from 2026-09-15-business-quantification-reklamace-fakturace-doprav
-- [ ] **Tereza Foltýnová**: Verify the Reklamace business-value estimate (~1 FTE / ~2 hours saved per person per day, ~3000 wage-cost figure) with Petr Spilka — from 2026-09-15-business-quantification-reklamace-fakturace-doprav
-- [ ] **Tereza Foltýnová**: Verify the Fakturace doprav business-value estimate (~16 hours/day, ~2 FTE, ~1.5M annual) with Jan Žižka — flagged by Tereza herself as feeling too large — from 2026-09-15-business-quantification-reklamace-fakturace-doprav
+- [ ] **Tereza Foltová**: Confirm the Reklamace domain expert (Petr Spilka vs. Jana Egrmaierová) directly with Petr Spilka — from 2026-09-15-business-quantification-reklamace-fakturace-doprav
+- [ ] **Tereza Foltová**: Verify the Reklamace business-value estimate (~1 FTE / ~2 hours saved per person per day, ~3000 wage-cost figure) with Petr Spilka — from 2026-09-15-business-quantification-reklamace-fakturace-doprav
+- [ ] **Tereza Foltová**: Verify the Fakturace doprav business-value estimate (~16 hours/day, ~2 FTE, ~1.5M annual) with Jan Žižka — flagged by Tereza herself as feeling too large — from 2026-09-15-business-quantification-reklamace-fakturace-doprav
 - [ ] **Marek Pillár**: Send today's captured Reklamace and Fakturace doprav cards to Tereza for review — due today, 2026-09-15 — from 2026-09-15-business-quantification-reklamace-fakturace-doprav
-- [ ] **Tereza Foltýnová**: Loop in Petr Spilka and Jan Žižka to review/confirm names and content on the tracker — target end of this week (Friday), may slip to next week given her own availability — from 2026-09-15-business-quantification-reklamace-fakturace-doprav
+- [ ] **Tereza Foltová**: Loop in Petr Spilka and Jan Žižka to review/confirm names and content on the tracker — target end of this week (Friday), may slip to next week given her own availability — from 2026-09-15-business-quantification-reklamace-fakturace-doprav
 - [ ] **Marek Pillár**: Add explicit phase labels (0 through 4/5, e.g. Phase 0 = Příprava, Phase 1 = příjmové reklamace) to the Reklamace documentation, distinguishing "příjmové" vs. "dodavatelské" claim types — from 2026-09-15-business-quantification-reklamace-fakturace-doprav
 - [ ] **Marek Pillár**: Adjust initiative naming on the roadmap tracker to add domain qualifiers — "fakturace od dodavatelů" → clarify as transport/doprava, Reklamace → clarify as core sklady — matching the Core/Ecom convention — from 2026-09-15-business-quantification-reklamace-fakturace-doprav
-- [ ] **Marek Pillár / Tereza Foltýnová**: Schedule a follow-up session to cover the remaining ~9 initiatives from the Business Quantification prep template — from 2026-09-15-business-quantification-reklamace-fakturace-doprav
+- [ ] **Marek Pillár / Tereza Foltová**: Schedule a follow-up session to cover the remaining ~9 initiatives from the Business Quantification prep template — from 2026-09-15-business-quantification-reklamace-fakturace-doprav
 
 ## Open Questions
 
@@ -93,6 +93,6 @@ Positive, collaborative, and notably well-calibrated — Tereza pushed back on h
 ## Routing Log
 
 - **project-assumptions**: Added ASM-072 (Decided) — error rate excluded as a KPI for both initiatives, driver time/cost excluded from Fakturace doprav's FTE calc, Reklamace's FTE saving contingent on all 5 phases. Updated ASM-006 — the invoicing-solution/Fakturace-doprav naming conflict moved from fully open to "leaning resolved" based on today's evidence.
-- **project-stakeholders**: Enriched STK-013 (Tereza Foltýnová), STK-015 (Jan Žižka), STK-044 (Jana Egrmaierová — floated as a possible domain expert). Narrowed STK-014 (Petr Spilka)'s role description, which had overstated Fakturace doprav ownership against today's call and ASM-006.
+- **project-stakeholders**: Enriched STK-013 (Tereza Foltová), STK-015 (Jan Žižka), STK-044 (Jana Egrmaierová — floated as a possible domain expert). Narrowed STK-014 (Petr Spilka)'s role description, which had overstated Fakturace doprav ownership against today's call and ASM-006.
 - **project-knowledge**: Added "Reklamace (claims) — business objective & phasing" and "Fakturace doprav — business objective & KPIs" entries.
 - **project-daily**: 8 action items added to 2026-09-15's daily; the original "run the Business Quantification call" item marked partially done rather than checked off.

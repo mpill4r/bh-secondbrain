@@ -1,14 +1,14 @@
 ---
 last_updated: 2026-10-01
 type: external
-attendees: [Jindřich Tůma, Marek Pillár, Filip Černý, Petr Sláma, Tereza Foltýnová, Jana Egrmaierová, Kim Sullivan]
+attendees: [Jindřich Tůma, Marek Pillár, Filip Černý, Petr Sláma, Tereza Foltová, Jana Egrmaierová, Kim Sullivan]
 recording_link:
 ---
 
 # ViaPharma Reklamace Sync — Email-Agent Demo & Supplier-Data Map Review
 
 **Date**: 2026-10-01
-**Attendees**: Jindřich Tůma (STK-003, BigHub PM), Marek Pillár (STK-001, BigHub — Reklamace spec owner), Filip Černý (STK-006, BigHub — Reklamace dev); Petr Sláma (STK-034, ViaPharma CZE), Tereza Foltýnová (STK-013, ViaPharma CZE), Jana Egrmaierová (STK-044, ViaPharma CZE), Kim Sullivan (ViaPharma CZE, present only at the start)
+**Attendees**: Jindřich Tůma (STK-003, BigHub PM), Marek Pillár (STK-001, BigHub — Reklamace spec owner), Filip Černý (STK-006, BigHub — Reklamace dev); Petr Sláma (STK-034, ViaPharma CZE), Tereza Foltová (STK-013, ViaPharma CZE), Jana Egrmaierová (STK-044, ViaPharma CZE), Kim Sullivan (ViaPharma CZE, present only at the start)
 **Type**: external
 **Recording**: N/A
 **Previous session**: [2026-09-24-viapharma-reklamace-knowledge-base-standoff](2026-09-24-viapharma-reklamace-knowledge-base-standoff.md)
@@ -53,7 +53,7 @@ Next ideas, with user feedback first:
 - **Petr Sláma** asked for the email communication to be attached to the claim in Axapta via the API, the way photos and documents are. Otherwise the history lives only in individual mailboxes. It must be PDF, not MSG, because the terminals have no Outlook. Finance also uses this to check how a credit note was resolved ("Hanka"). Filip: this is in the original spec too, "let's add it".
 - **Petr Sláma**: "I like it at first sight… a big step forward" [translated from Czech]. He asked for the deck in the shared Teams channel folder. Jana wants time to think it over.
 
-### Problem types beyond "damaged goods" (Tereza Foltýnová)
+### Problem types beyond "damaged goods" (Tereza Foltová)
 
 Tereza flagged that "damaged goods" may be misleading. Axapta has ~19 "typy problémů" (problem types: non-delivery, expiry, etc.), yet all current testing uses damaged goods only, and she can't see in the spec where receiving claims get split by type. Phase 3 is named "nedodané zboží" (undelivered goods), which is a separate topic. She asked whether the app could get a dropdown. "Don't take it as a blocker."
 
@@ -151,8 +151,8 @@ Per-user login for testing ([[ASM-182]]) is being solved together with other pro
 - [ ] **Marek Pillár**: Put into the new Reklamace spec: the email-agent flow and additions (CC, PDF archive to Axapta, alternative drafts), the SharePoint List direction, the problem-types open point, and answers to Sláma's open May comments — from 2026-10-01-viapharma-reklamace-email-agent-demo-data-map-review
 - [ ] **Petr Sláma**: Review the data-map Excel and add notes in column J — due early week of 2026-10-05 — from 2026-10-01-viapharma-reklamace-email-agent-demo-data-map-review
 - [ ] **Petr Sláma**: Then review Filip's Fakturace doprav proposal — after the data-map review — from 2026-10-01-viapharma-reklamace-email-agent-demo-data-map-review
-- [ ] **Dr. Max (Petr Sláma / Tereza Foltýnová)**: Name a business owner for the supplier-data SharePoint List and request it from infra — from 2026-10-01-viapharma-reklamace-email-agent-demo-data-map-review
-- [ ] **Tereza Foltýnová / Jana Egrmaierová**: Email Marek the list of Axapta problem types (typy problémů) — from 2026-10-01-viapharma-reklamace-email-agent-demo-data-map-review
+- [ ] **Dr. Max (Petr Sláma / Tereza Foltová)**: Name a business owner for the supplier-data SharePoint List and request it from infra — from 2026-10-01-viapharma-reklamace-email-agent-demo-data-map-review
+- [ ] **Tereza Foltová / Jana Egrmaierová**: Email Marek the list of Axapta problem types (typy problémů) — from 2026-10-01-viapharma-reklamace-email-agent-demo-data-map-review
 - [ ] **Filip Černý**: Send the email-agent deck and upload it to the shared Teams channel folder — due 2026-10-01 — from 2026-10-01-viapharma-reklamace-email-agent-demo-data-map-review
 - [ ] **Filip Černý**: Raise the Graph API read-access request for the SharePoint List with infra, ideally bundled with the mailbox access — from 2026-10-01-viapharma-reklamace-email-agent-demo-data-map-review
 - [ ] **Filip Černý**: Fix the "příjem s výhradou" master-label bug (can't exit after a wrong response; old photos persist on a new label) — from 2026-10-01-viapharma-reklamace-email-agent-demo-data-map-review
