@@ -1,19 +1,19 @@
 ---
-status: closed
-last_updated: 2026-10-05
-last_updated_by: auto — project-meeting routing
+status: open
+last_updated: 2026-10-06
+last_updated_by: manual — conversational
 project_status: Amber
 ---
 
-# Daily — 2026-10-05 (Monday)
+# Daily — 2026-10-06 (Tuesday)
 
 ## Project Status
 
-**Amber** (re-confirmed 2026-10-05 after the Žůrek meeting). Driver: **Reklamace**. Continuation risk resolved: Reklamace continues as a pilot ([[ASM-247]]); now the risk is delivering dates and a roadmap ([[ASM-248]]). The 10-01 logistics meeting unlocked the standoff: Sláma's May comment was accepted, Excel is out, and supplier data is converging on one SharePoint List keyed by supplier account ([[ASM-223]], [[ASM-228]]). Still pending: Sláma's column-J feedback (early week of 10-05), a named Dr. Max owner for the List ([[ASM-215]]), and the knowledge-base decision by 2026-10-09 ([[ASM-184]]). Phase 1 testing was extended by a week ([[ASM-227]]); the effect on the 10-15–16 UAT is unconfirmed.
+**Amber** (carried forward from 2026-10-05). Driver: **Reklamace**. Continuation risk resolved: Reklamace continues as a pilot ([[ASM-247]]); now the risk is delivering dates and a roadmap ([[ASM-248]]). The 10-01 logistics meeting unlocked the standoff: Sláma's May comment was accepted, Excel is out, and supplier data is converging on one SharePoint List keyed by supplier account ([[ASM-223]], [[ASM-228]]). Still pending: Sláma's column-J feedback (early week of 10-05), a named Dr. Max owner for the List ([[ASM-215]]), and the knowledge-base decision by 2026-10-09 ([[ASM-184]]). Phase 1 testing was extended by a week ([[ASM-227]]); the effect on the 10-15–16 UAT is unconfirmed.
 
 ## Current Priority
 
-**Reklamace, Monday 2026-10-05 10:00 meeting + recap/spec**: prepare the in-person "next steps" meeting with Jindřich (Žůrek, Dudaško, Spilka, Tereza; likely a value/continuation question, [[ASM-242]]), then accept/reject v5 and send logistics the 10-01 recap + spec with the open questions (supplier store, avízo, labels sample). Shifted at close from "recap + spec by 10-02": the spec work ran through v4/v5 today, and the Monday meeting surfaced as the bigger risk.
+**Reklamace roadmap + recap/spec**: a roadmap with dates for every phase, re-answered after Thursday's (2026-10-08) UAT feedback ([[ASM-248]]); send logistics the 10-01 recap and the client spec; open all logistics initiatives at Wednesday's session.
 
 ## Action Items
 
@@ -75,67 +75,37 @@ project_status: Amber
 - [ ] `carry-forward` **Jura Brázdil**: Deploy Max for testing on drmax-space.cz and ask Vladislav Tvarůžek about starting the network/certificate work for drmax.cz ([[ASM-236]]) — from 2026-10-02-lexie-max-maxie-weekly-sync
 - [ ] `carry-forward` **Jindřich Tůma**: Hold the Atlantis/BDC Maxie meeting and push for delivery of the setup within that week ([[ASM-188]]) — due 2026-10-05 — from 2026-10-02-lexie-max-maxie-weekly-sync
 - [ ] `carry-forward` **Simona Mertová**: Name the main CC contact replacing Kateřina Kadlecová from the end of October ([[ASM-091]]) — from 2026-10-02-lexie-max-maxie-weekly-sync
-- [x] `carry-forward` `task` `highest-prio` **Marek Pillár / Jindřich Tůma**: Prepare the Monday 10:00 in-person Reklamace "next steps" meeting (Žůrek, Dudaško, Spilka, Tereza) — likely value/continuation question ([[ASM-242]]); stakeholder read in the 1:1 note — due 2026-10-05 — from 2026-10-02-jan-sovka-1on1-monday-reklamace-meeting-okamzite-avizo — done 2026-10-05: prep doc [2026-10-05-reklamace-next-steps-zurek-dudasko-meeting-prep](../../meetings/prep/2026-10-05-reklamace-next-steps-zurek-dudasko-meeting-prep.md) (Slovak)
 - [ ] `carry-forward` `task` **Marek Pillár**: Read Jan's forwarded March 2026 logistics use-case email before Monday — due 2026-10-05 — from 2026-10-02-jan-sovka-1on1-monday-reklamace-meeting-okamzite-avizo
 - [ ] `carry-forward` `task` **Marek Pillár**: Ask logistics which suppliers need the okamžité avízo, their notice deadline, and in which phase; and whether the automatic send is an accepted exception ([[ASM-240]]) — from 2026-10-02-jan-sovka-1on1-monday-reklamace-meeting-okamzite-avizo
 - [ ] `carry-forward` `task` **Marek Pillár**: Ask Filip Černý to check the current Reklamace build: Czech error messages shipped? quantity max enforced ("MAX 1" showed 2)? "Samoobslužný terminál řidiče" subheader gone? Agree which UX proposals (aiming frame, button hierarchy, photo counter) go in before UAT — from 2026-10-02-reklamace-app-ux-walkthrough-review
-- [ ] **Marek Pillár**: Discuss with the developers (Filip Černý) whether the Listing foundation can account for catalogue-wide rule-based find / replace / edit later ([[ASM-245]]) — from 2026-10-05-listing-neuman-environmental-claims-bulk-edit-listing-2-0
-- [ ] **Marek Pillár**: Meet Petr Neuman on further Listing initiatives (Listing 2.0, bulk regulatory edits sized with a very rough estimate) to prepare a plan for Tomáš Dudaško — due 2026-11-30 — from 2026-10-05-listing-neuman-environmental-claims-bulk-edit-listing-2-0
-- [ ] `waiting` **Tomáš Burda**: Confirm the TEO/OCR BQ figures (teo_initiative_check.xlsx updated with TEO's email reaction: cost growth risk, 3–5 pages/doc, ~50k Kč/yr, savings uncertain) — Marek's part done 2026-10-05; waiting on Burda — from PM, 2026-10-05
-- [ ] `waiting` **Jura Brázdil**: Reply to Marek's AI Platform status questions (new-cluster DB access, first-release plan/date, MCP secret-leak fix, prototype link to Dudaško + non-admin fixes/test account, Zabbix + incident history priority) — sent 2026-10-05; answers feed the WIP platform spec/roadmap for Dudaško — from PM, 2026-10-05
-- [ ] `highest-prio` **Jindřich Tůma / Marek Pillár**: Deliver a Reklamace roadmap of all phases with dates (most detail for the next phase), or say by when it will be ready; re-answer the timeline after Thursday's UAT feedback ([[ASM-248]]) — from 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap
-- [ ] **Marek Pillár / Jindřich Tůma**: Plan warehouse visits with logistics' process person to map all claim streams towards an ideal future process ([[ASM-249]]) — from 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap
-- [ ] `mid-prio` **Marek Pillár**: Open all logistics initiatives at the Wednesday session: write down, break down, benefits and cost, prioritise; decide Phases 2–4 vs. other initiatives — due 2026-10-07 — from 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap
-- [ ] **Marek Pillár / Jindřich Tůma**: Add development and operating cost to the logistics initiatives (second wave); prepare slides for the Q4 decision on 2027 initiatives — from 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap
-- [ ] `waiting` **Tereza Foltová**: Chase Petr Sláma for the data-map column-J feedback, ready for Thursday — due 2026-10-06 — from 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap
-- [ ] `waiting` **Tereza Foltová**: Send the monthly 30-min status invite (Žůrek + BigHub, Mondays 10:00) ([[ASM-253]]) — from 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap
-- [ ] **Tereza Foltová / Jana Egrmaierová**: Hold a pre-meeting on the claim structure and reasons before the app goes to more users — from 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap
-- [ ] `waiting` **Tereza Foltová**: Send details of the new medical-device manufacturer notification obligation ([[ASM-251]]) — from 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap
-- [ ] **Jindřich Tůma**: Meet the X-Manager product owner on whether it fits Reklamace ([[ASM-243]]) — from 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap
-- [ ] **Tereza Foltová / Jindřich Tůma**: Make sure Tomáš Dudaško gets the recording or a summary — from 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap
+- [ ] `carry-forward` **Marek Pillár**: Discuss with the developers (Filip Černý) whether the Listing foundation can account for catalogue-wide rule-based find / replace / edit later ([[ASM-245]]) — from 2026-10-05-listing-neuman-environmental-claims-bulk-edit-listing-2-0
+- [ ] `carry-forward` **Marek Pillár**: Meet Petr Neuman on further Listing initiatives (Listing 2.0, bulk regulatory edits sized with a very rough estimate) to prepare a plan for Tomáš Dudaško — due 2026-11-30 — from 2026-10-05-listing-neuman-environmental-claims-bulk-edit-listing-2-0
+- [ ] `carry-forward` `waiting` **Tomáš Burda**: Confirm the TEO/OCR BQ figures (teo_initiative_check.xlsx updated with TEO's email reaction: cost growth risk, 3–5 pages/doc, ~50k Kč/yr, savings uncertain) — Marek's part done 2026-10-05; waiting on Burda — from PM, 2026-10-05
+- [ ] `carry-forward` `waiting` **Jura Brázdil**: Reply to Marek's AI Platform status questions (new-cluster DB access, first-release plan/date, MCP secret-leak fix, prototype link to Dudaško + non-admin fixes/test account, Zabbix + incident history priority) — sent 2026-10-05; answers feed the WIP platform spec/roadmap for Dudaško — from PM, 2026-10-05
+- [ ] `carry-forward` `highest-prio` **Jindřich Tůma / Marek Pillár**: Deliver a Reklamace roadmap of all phases with dates (most detail for the next phase), or say by when it will be ready; re-answer the timeline after Thursday's UAT feedback ([[ASM-248]]) — from 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap
+- [ ] `carry-forward` **Marek Pillár / Jindřich Tůma**: Plan warehouse visits with logistics' process person to map all claim streams towards an ideal future process ([[ASM-249]]) — from 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap
+- [ ] `carry-forward` `mid-prio` **Marek Pillár**: Open all logistics initiatives at the Wednesday session: write down, break down, benefits and cost, prioritise; decide Phases 2–4 vs. other initiatives — due 2026-10-07 — from 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap
+- [ ] `carry-forward` **Marek Pillár / Jindřich Tůma**: Add development and operating cost to the logistics initiatives (second wave); prepare slides for the Q4 decision on 2027 initiatives — from 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap
+- [ ] `carry-forward` `waiting` **Tereza Foltová**: Chase Petr Sláma for the data-map column-J feedback, ready for Thursday — due 2026-10-06 — from 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap
+- [ ] `carry-forward` `waiting` **Tereza Foltová**: Send the monthly 30-min status invite (Žůrek + BigHub, Mondays 10:00) ([[ASM-253]]) — from 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap
+- [ ] `carry-forward` **Tereza Foltová / Jana Egrmaierová**: Hold a pre-meeting on the claim structure and reasons before the app goes to more users — from 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap
+- [ ] `carry-forward` `waiting` **Tereza Foltová**: Send details of the new medical-device manufacturer notification obligation ([[ASM-251]]) — from 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap
+- [ ] `carry-forward` **Jindřich Tůma**: Meet the X-Manager product owner on whether it fits Reklamace ([[ASM-243]]) — from 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap
+- [ ] `carry-forward` **Tereza Foltová / Jindřich Tůma**: Make sure Tomáš Dudaško gets the recording or a summary — from 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap
 
 ## Key Events
 
-**Prep for the 10:00 Reklamace "next steps" meeting** (Žůrek, Dudaško, Spilka, Tereza): prep doc [2026-10-05-reklamace-next-steps-zurek-dudasko-meeting-prep](../../meetings/prep/2026-10-05-reklamace-next-steps-zurek-dudasko-meeting-prep.md), written in Slovak. It covers phase-by-phase status from spec v5 (done / in progress before UAT / 1.1b + Phase 2 next / Phases 3–5 need discovery), how to defuse the unanswered Sláma May comments, logistics' March 2026 AI use cases (from Jan's email screenshots) mapped to current work, stakeholder watch-outs and 8 questions to answer.
+**Reklamace client spec — Filip's comments worked in** (`3. Reklamace - klientská verze.docx`, edited in place as tracked changes, author Claude). Filip has 6 comments; all 6 got threaded replies, and 5 are marked resolved:
+- 1.6 audit trail: "PDF or summary" became "PDF first (Sláma's request), AI summary page in a later iteration".
+- Supplier attachments (credit notes, forms, invoices) added as an open point (yellow) in 1.6 and in the MVP open questions. Recommendation in the reply: separate attachments on the AX case, listed in the PDF.
+- The "extract structured data + draft next reply" bullet moved from 1.1a (1.6) to 1.1b (2.1).
+- Phase 2 step 1: a request for examples of real pallet/location identifiers added (yellow), plus a new open question.
+- Label sample: "at least 10, ideally ~30" became "~10 to start if they cover all label types; more only if variability is high", in the step and in the open question.
+- The flowchart comment (agent states) stays unresolved, as asked; the reply recommends adding it once 1.1b is in development.
 
-**Name correction**: Tereza's surname is **Foltová**, not "Foltýnová". Fixed everywhere in the harness (199 occurrences in 39 files, incl. STK-013), and the 2026-09-25 meeting note renamed to `2026-09-25-tereza-foltova-…` with links updated.
-
-**Listing call with Petr Neuman** ([2026-10-05-listing-neuman-environmental-claims-bulk-edit-listing-2-0](../../meetings/external/2026-10-05-listing-neuman-environmental-claims-bulk-edit-listing-2-0.md)): Neuman used the EU environmental-claims rules (10,000+ SKUs) to show a recurring need: rule-based bulk find / replace / edit across the catalogue. His own Claude PoC handled 1,500 SKUs in ~12 h, with ~12% needing human edits. It is framed as owned automation, not an AI CMS, and is a non-urgent candidate for a next-year Listing 2.0 ([[ASM-244]]). Marek will check the foundation with the developers ([[ASM-245]]).
-
-**AI Platform status check**: Marek reviewed the platform thread (last recorded state 2026-09-24: Phase 1 prototype accepted, first release ~4 weeks after DB access, which is disputed — [[ASM-164]]) and sent Jura Brázdil five status questions. His answers feed the overdue WIP platform spec/roadmap for Dudaško.
-
-**Listing enrichment legal review**: Filip Černý drafted the external-enrichment options & legal review (own scraper + LLM extraction, AKS proxy, product catalogues GS1/Syndigo/Icecat/SÚKL, Apify/Tavily = no added legal protection). Marek reviewed it against the 09-30 commitments to Neuman and sent feedback: add pricing (own vs. 3rd-party), expand the catalogue section, describe the legal process per variant, propose a user-vs-LLM responsibility split by data source, and end with a management recommendation.
-
-**Reklamace next-steps meeting with Rudolf Žůrek** ([2026-10-05-reklamace-next-steps-zurek-pilot-roadmap](../../meetings/external/2026-10-05-reklamace-next-steps-zurek-pilot-roadmap.md)): No continue-or-close question. Žůrek set the direction: finish Phase 1 / 1.1 as a pilot without time pressure, specify the next phases in parallel, design for the ideal future process (warehouse visits with logistics' process person), keep knowledge outside Axapta, and deliver dates and a roadmap for every phase (Group CEO monthly review). "AI vs. digitisation" no longer matters to the customer. A monthly 30-min status with Žůrek starts (Mondays 10:00). Switching to transport is only a fallback. Open: Axapta/WMS horizon conflict ([[ASM-250]]), Sláma's column J, the recap + spec.
-
-**Session summary (close)**: Reklamace day. The prep for the 10:00 meeting was written (Slovak), then the meeting itself was processed: Žůrek set the direction instead of a continue-or-close question — finish the pilot, specify next phases in parallel, ideal future process, knowledge outside Axapta, and dates + roadmap for every phase (ASM-247–253). Tereza's surname was corrected to Foltová across the harness. A parallel session handled the Listing 2.0 call with Neuman and Filip's enrichment legal review. Status stays **Amber**.
-
-**Priority shift (close)**: from "prepare the Monday meeting + recap/spec" to "Reklamace roadmap with dates (after Thursday's UAT feedback) + recap/spec to logistics + Wednesday initiatives session". Trigger: the meeting happened and Žůrek made dates the top ask ([[ASM-248]]).
+Not yet in the client spec from the 2026-10-05 Žůrek meeting: reply monitoring / reminders (REQ-003, now only in Nice to Have), the SÚKL manufacturer notification (REQ-002), the roadmap with dates, and the +1 week testing effect on UAT 15.–16. 10.
 
 ## Audit Log
 
-[AUTO] project-daily — created today's daily; 2026-10-02 already closed; carried forward 62 unchecked items; status Amber and priority carried forward (2026-10-05)
-[MANUAL] meetings/prep — added 2026-10-05-reklamace-next-steps-zurek-dudasko-meeting-prep (Slovak) + meetings/index entry (2026-10-05)
-[MANUAL] all artifacts — surname corrected Foltýnová → Foltová (39 files, 199 occurrences); meeting note 2026-09-25-tereza-foltynova-… renamed to 2026-09-25-tereza-foltova-… (2026-10-05)
-[MANUAL] project-daily — prep action item for the 2026-10-05 Reklamace meeting checked off (2026-10-05)
-[MANUAL] 3. Reklamace - klientská verze.docx — restructured to spec-template layout (MVP / Plná verze / NtH / Další fáze, GQM KPI, API appendix) (2026-10-05)
-[MANUAL] 3. Reklamace - klientská verze.docx — okamžité avízo moved from MVP to Plná verze per PM (section 2.3, table rows; "Patří do Fáze 1?" removed) (2026-10-05)
-[MANUAL] 3. Reklamace - klientská verze.docx — all bullets set to round • (List Bullet style); green BigHub note on avízo deprioritization added in 2.3 (2026-10-05)
-[AUTO] project-assumptions — added ASM-244, ASM-245, ASM-246 from 2026-10-05-listing-neuman-environmental-claims-bulk-edit-listing-2-0 (2026-10-05)
-[AUTO] project-knowledge — new "EU environmental claims (greenwashing) regulation" entry; AI Listing Tool: Neuman's Claude PoC from 2026-10-05-listing-neuman-environmental-claims-bulk-edit-listing-2-0 (2026-10-05)
-[AUTO] project-stakeholders — updated STK-023 from 2026-10-05-listing-neuman-environmental-claims-bulk-edit-listing-2-0 (2026-10-05)
-[AUTO] client-overview — Ways of Working: business users can't ship their own AI tools from 2026-10-05-listing-neuman-environmental-claims-bulk-edit-listing-2-0 (2026-10-05)
-[AUTO] product-requirements — added REQ-001 (Listing 2.0 rule-based bulk edits) from 2026-10-05-listing-neuman-environmental-claims-bulk-edit-listing-2-0 (2026-10-05)
-[AUTO] project-daily — 2 action items added, scraping-research item updated from 2026-10-05-listing-neuman-environmental-claims-bulk-edit-listing-2-0 (2026-10-05)
-[AUTO] project-lessons — LL-81 from 2026-10-05-listing-neuman-environmental-claims-bulk-edit-listing-2-0 (2026-10-05)
-[AUTO] meeting-index — entry added for 2026-10-05-listing-neuman-environmental-claims-bulk-edit-listing-2-0 (2026-10-05)
-[MANUAL] teo_initiative_check.xlsx — TEO e-mail reaction (cost growth risk, 3–5 pages/doc, ~50k Kč/yr cost, savings "with a question mark", main value = replacing unavailable labour) appended to Poznámky + 1./2. Byznys hodnota; nothing deleted (2026-10-05)
-[AUTO] project-assumptions — added ASM-247–ASM-253; ASM-242 decided; updates on ASM-243, ASM-190 from 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap (2026-10-05)
-[AUTO] project-stakeholders — updated STK-024, STK-014, STK-013, STK-010, STK-044 from 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap (2026-10-05)
-[AUTO] client-overview — Ways of Working: holding AI pressure / dates mandatory; monthly Žůrek channel from 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap (2026-10-05)
-[AUTO] project-knowledge — Reklamace: management direction (claim streams, AI in outside communication, Pharmis gap, SÚKL obligation, X-Manager) from 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap (2026-10-05)
-[AUTO] product-requirements — added REQ-002, REQ-003 from 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap (2026-10-05)
-[AUTO] project-daily — 10 action items added; 3 progress notes; status re-confirmed Amber from 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap (2026-10-05)
-[AUTO] meetings/index — added 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap (2026-10-05)
-[AUTO] project-lessons — added LL-82 from 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap (2026-10-05)
-[AUTO] project-daily — closed 2026-10-05: session summary written; no further items resolved; staleness items already carried; status Amber (unchanged); priority shifted to roadmap/dates + recap/spec; lessons already captured (LL-82) (2026-10-06)
+[AUTO] project-daily — created today's daily; 2026-10-05 closed; carried forward 75 unchecked items; status Amber carried forward; priority updated per close (2026-10-06)
+[MANUAL] 3. Reklamace - klientská verze.docx — Filip's 6 comments worked in as tracked changes + threaded replies (5 resolved, flowchart comment kept open) (2026-10-06)
