@@ -105,7 +105,10 @@ project_status: Amber
 
 Not yet in the client spec from the 2026-10-05 Žůrek meeting: reply monitoring / reminders (REQ-003, now only in Nice to Have), the SÚKL manufacturer notification (REQ-002), the roadmap with dates, and the +1 week testing effect on UAT 15.–16. 10.
 
+**Reklamace client spec — roadmap added**: a new "Roadmap — sekvence fází" section before "1. MVP" (tracked insertion, author Claude). It has a 4-block sequence strip (MVP → Plná verze → Nice to Have → Další fáze) and a 10-step table with the chapter reference and what each step achieves. UAT is shown as a milestone between MVP and Plná verze. It shows sequence only, with no dates, and notes that discovery of later phases runs in parallel (agreed 2026-10-05). It was built on the PM's latest save, where Filip's comments were already accepted.
+
 ## Audit Log
 
 [AUTO] project-daily — created today's daily; 2026-10-05 closed; carried forward 75 unchecked items; status Amber carried forward; priority updated per close (2026-10-06)
 [MANUAL] 3. Reklamace - klientská verze.docx — Filip's 6 comments worked in as tracked changes + threaded replies (5 resolved, flowchart comment kept open) (2026-10-06)
+[MANUAL] 3. Reklamace - klientská verze.docx — roadmap section (sequence strip + step table) inserted before "1. MVP" as tracked changes (2026-10-06)
