@@ -92,6 +92,7 @@ project_status: Amber
 - [ ] `carry-forward` `waiting` **Tereza Foltová**: Send details of the new medical-device manufacturer notification obligation ([[ASM-251]]) — from 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap
 - [ ] `carry-forward` **Jindřich Tůma**: Meet the X-Manager product owner on whether it fits Reklamace ([[ASM-243]]) — from 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap
 - [ ] `carry-forward` **Tereza Foltová / Jindřich Tůma**: Make sure Tomáš Dudaško gets the recording or a summary — from 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap
+- [ ] `waiting` `highest-prio` **Marek Pillár**: When the completed data-map Excel (Sláma's column J) arrives, expected Thursday 2026-10-08, route the decided values back into `3. Reklamace - klientská verze.docx` and clear the purple ("depends on the data map") markings ([[ASM-228]], [[ASM-229]]) — due 2026-10-08 — from PM, 2026-10-06
 
 ## Key Events
 
@@ -107,9 +108,12 @@ Not yet in the client spec from the 2026-10-05 Žůrek meeting: reply monitoring
 
 **Reklamace client spec — roadmap added, then removed per PM**: a new "Roadmap — sekvence fází" section before "1. MVP" (tracked insertion, author Claude). It has a 4-block sequence strip (MVP → Plná verze → Nice to Have → Další fáze) and a 10-step table with the chapter reference and what each step achieves. UAT is shown as a milestone between MVP and Plná verze. It shows sequence only, with no dates, and notes that discovery of later phases runs in parallel (agreed 2026-10-05). It was built on the PM's latest save, where Filip's comments were already accepted. The PM rejected the in-doc version, so the docx was reverted to the pre-roadmap save. The roadmap now lives outside the doc as a swimlane diagram (`product/solution-space/reklamace-roadmap-diagram.html`) for the PM to screenshot into the spec.
 
+**Reklamace roadmap diagram done**: final version in the bighub.cz style (`product/solution-space/reklamace-roadmap-diagram.html`); the PM screenshots it into the spec. Next spec update waits for the completed data-map Excel (expected Thursday 2026-10-08) to resolve the purple items.
+
 ## Audit Log
 
 [AUTO] project-daily — created today's daily; 2026-10-05 closed; carried forward 75 unchecked items; status Amber carried forward; priority updated per close (2026-10-06)
 [MANUAL] 3. Reklamace - klientská verze.docx — Filip's 6 comments worked in as tracked changes + threaded replies (5 resolved, flowchart comment kept open) (2026-10-06)
 [MANUAL] 3. Reklamace - klientská verze.docx — roadmap section (sequence strip + step table) inserted before "1. MVP" as tracked changes (2026-10-06)
 [MANUAL] 3. Reklamace - klientská verze.docx — roadmap insertion reverted (file restored to pre-roadmap save); roadmap rebuilt as product/solution-space/reklamace-roadmap-diagram.html (2026-10-06)
+[MANUAL] project-daily — roadmap marked done; waiting item added for data-map Excel → purple items in client spec (2026-10-06)
