@@ -1,6 +1,6 @@
 ---
-last_updated: 2026-10-05
-last_updated_by: auto — project-meeting routing
+last_updated: 2026-10-06
+last_updated_by: manual — conversational
 owner: Marek Pillár
 ---
 
@@ -10,6 +10,7 @@ owner: Marek Pillár
 
 | ID | Status | Created | Description (short) |
 |----|--------|---------|---------------------|
+| ASM-254 | Open (2026-10-06) | 2026-10-06 | Supplier attachments in the claim email thread: separate AX attachments (recommended) or inside the PDF — confirm with Sláma |
 | ASM-253 | Decided (2026-10-05) | 2026-10-05 | Monthly 30-min status Žůrek + BigHub, Mondays 10:00 |
 | ASM-252 | Open (2026-10-05) | 2026-10-05 | Pharmacy returns: data in Pharmis, warehouse gets handwritten A4 — integrate, export to AX, or work around (Dudaško / DAX team) |
 | ASM-251 | Open (2026-10-05) | 2026-10-05 | New SÚKL obligation: report defective medical devices to the manufacturer's factory (varies by batch); no manufacturer database |
@@ -265,6 +266,28 @@ owner: Marek Pillár
 | ASM-001 | Decided (2026-08-25) | 2026-09-01 | Dr. Max client-side coordination unified into one role (Jindřich Tůma) |
 
 ## Entries
+
+---
+
+### ASM-254
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-254 |
+| Created | 2026-10-06 |
+| Source | 3. Reklamace - klientská verze.docx (Filip Černý's comment, 2026-10-06) |
+| By | Filip Černý (STK-006), Marek Pillár (STK-001) |
+| Status | Open (2026-10-06) |
+
+**Description**
+Phase 1.1a audit trail: photos and app-generated documents are already in AX, but supplier documents in the email thread (credit notes, forms, invoices) also need to reach the AX claim. Open: attach them as separate files on the case, or include them in the PDF of the communication. BigHub recommends separate attachments (originals usable by finance), listed in the PDF.
+
+**Rationale**
+Raised by Filip in the client spec. Sláma explicitly wants the PDF of the communication in AX (2026-10-01); finance uses it to check how credit notes were resolved.
+
+**Impact**
+- **Scope**: Phase 1.1a, part of UAT.
+- **Dependency**: To confirm with Petr Sláma together with how and when the PDF is passed to AX.
 
 ---
 

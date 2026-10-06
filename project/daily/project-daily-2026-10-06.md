@@ -125,3 +125,4 @@ Status stays **Amber**: no change to the open risks (roadmap with dates, recap +
 [MANUAL] 3. Reklamace - klientská verze.docx — roadmap insertion reverted (file restored to pre-roadmap save); roadmap rebuilt as product/solution-space/reklamace-roadmap-diagram.html (2026-10-06)
 [MANUAL] project-daily — roadmap marked done; waiting item added for data-map Excel → purple items in client spec (2026-10-06)
 [AUTO] project-daily — closed 2026-10-06: session summary written; no items resolved; 1 new staleness item (project-overview); status Amber (unchanged); priority unchanged; no new lessons (2026-10-06)
+[MANUAL] project-assumptions — added ASM-254 (supplier attachments in the 1.1a audit trail) per PM, after close (2026-10-06)
