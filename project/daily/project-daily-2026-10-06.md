@@ -1,7 +1,7 @@
 ---
-status: open
+status: closed
 last_updated: 2026-10-06
-last_updated_by: manual — conversational
+last_updated_by: auto — project-daily close
 project_status: Amber
 ---
 
@@ -46,7 +46,7 @@ project_status: Amber
 - [ ] `carry-forward` **Marek Pillár**: Send the recap email of the MaxBuddy backlog call to Luboš Vosmek and Jura Brázdil — due 2026-09-29 — from 2026-09-29-maxbuddy-roadmap-backlog-vosmek
 - [ ] `carry-forward` `staleness` `low-prio` Review project-assumptions — ~18 Open items without a status change for >14 days (e.g. ASM-006, ASM-023–037, ASM-043, ASM-052–064, ASM-087)
 - [ ] `carry-forward` `staleness` `low-prio` Review product-brief — >14 days since last_updated (2026-09-02)
-- [ ] `carry-forward` `staleness` `low-prio` Review project-stakeholders — 284 `-tbd-` fields (threshold 5)
+- [ ] `carry-forward` `staleness` `low-prio` Review project-stakeholders — 291 `-tbd-` fields (threshold 5)
 - [ ] `carry-forward` `staleness` `low-prio` Review client-overview — 13 `-tbd-` fields (threshold 5)
 - [ ] `carry-forward` **Marek Pillár**: Rewrite the Listing spec and roadmap: Magento out of the MVP, enrichment first, food-supplements batch + export ([[ASM-207]], [[ASM-208]]) — from 2026-09-30-listing-reset-neuman-enrichment-first-doplnky-stravy
 - [ ] `carry-forward` **Marek Pillár / Filip Černý**: Describe the scraping variant precisely for Dr. Max legal (process, sources, human review) and hand it to Petr Neuman — from 2026-09-30-listing-reset-neuman-enrichment-first-doplnky-stravy — partial 2026-10-05: Filip drafted ENRICHMENT_LEGAL_REVIEW.md (legal questions, proxy/AKS, product catalogues, 3rd-party scrapers); Marek sent feedback asking for a fuller legal process per variant (own scraping e.g. Notino vs. 3rd-party service), a user-vs-LLM responsibility split by data source, and a management recommendation with 1–2 alternatives
@@ -93,6 +93,7 @@ project_status: Amber
 - [ ] `carry-forward` **Jindřich Tůma**: Meet the X-Manager product owner on whether it fits Reklamace ([[ASM-243]]) — from 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap
 - [ ] `carry-forward` **Tereza Foltová / Jindřich Tůma**: Make sure Tomáš Dudaško gets the recording or a summary — from 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap
 - [ ] `waiting` `highest-prio` **Marek Pillár**: When the completed data-map Excel (Sláma's column J) arrives, expected Thursday 2026-10-08, route the decided values back into `3. Reklamace - klientská verze.docx` and clear the purple ("depends on the data map") markings ([[ASM-228]], [[ASM-229]]) — due 2026-10-08 — from PM, 2026-10-06
+- [ ] `staleness` `low-prio` Review project-overview — >30 days since last_updated (2026-09-02)
 
 ## Key Events
 
@@ -110,6 +111,12 @@ Not yet in the client spec from the 2026-10-05 Žůrek meeting: reply monitoring
 
 **Reklamace roadmap diagram done**: final version in the bighub.cz style (`product/solution-space/reklamace-roadmap-diagram.html`); the PM screenshots it into the spec. Next spec update waits for the completed data-map Excel (expected Thursday 2026-10-08) to resolve the purple items.
 
+**Session summary (close)**: A Reklamace client-spec day.
+- Filip's 6 comments in `3. Reklamace - klientská verze.docx` were worked in as tracked changes with threaded replies. The PM accepted them; the flowchart comment stays open.
+- A roadmap was first added inside the spec, rejected by the PM, and reverted. It was rebuilt as a standalone swimlane diagram, restyled twice, and finalised in the bighub.cz style (violet, white, rounded) for the PM to screenshot. The PM ruled out the dark + red style permanently.
+- Next spec step waits for the completed data-map Excel (Thursday 2026-10-08) to resolve the purple items.
+Status stays **Amber**: no change to the open risks (roadmap with dates, recap + spec to logistics, Sláma's column J).
+
 ## Audit Log
 
 [AUTO] project-daily — created today's daily; 2026-10-05 closed; carried forward 75 unchecked items; status Amber carried forward; priority updated per close (2026-10-06)
@@ -117,3 +124,4 @@ Not yet in the client spec from the 2026-10-05 Žůrek meeting: reply monitoring
 [MANUAL] 3. Reklamace - klientská verze.docx — roadmap section (sequence strip + step table) inserted before "1. MVP" as tracked changes (2026-10-06)
 [MANUAL] 3. Reklamace - klientská verze.docx — roadmap insertion reverted (file restored to pre-roadmap save); roadmap rebuilt as product/solution-space/reklamace-roadmap-diagram.html (2026-10-06)
 [MANUAL] project-daily — roadmap marked done; waiting item added for data-map Excel → purple items in client spec (2026-10-06)
+[AUTO] project-daily — closed 2026-10-06: session summary written; no items resolved; 1 new staleness item (project-overview); status Amber (unchanged); priority unchanged; no new lessons (2026-10-06)
