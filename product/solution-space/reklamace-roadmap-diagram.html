@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<title>Reklamace Roadmap</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --lav: #DCCCFC; --lav-b: #8B5CF6;
+    --blue: #C3E4FD; --blue-b: #3BA3F5;
+    --pink: #FCC2E8; --pink-b: #E64CB4;
+    --green: #C9F0D6; --green-b: #2FB565;
+    --grey: #E4E4E7; --grey-b: #8A8A93;
+    --ink: #1F1F24; --muted: #5B5B66;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #FFFFFF; color: var(--ink); font-family: Inter, -apple-system, "Segoe UI", sans-serif; }
+  .board {
+    display: grid;
+    grid-template-columns: 110px 230px 330px 240px 92px 320px 290px 210px 280px 240px 250px;
+    column-gap: 14px; row-gap: 22px;
+    padding: 24px; width: max-content;
+  }
+  .lane {
+    grid-column: 1; border: 1.5px solid; border-radius: 4px;
+    display: flex; flex-direction: column; gap: 4px; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700; text-align: center; padding: 8px; line-height: 1.35;
+  }
+  .col { display: flex; flex-direction: column; gap: 8px; }
+  .head {
+    border-radius: 3px; min-height: 64px; padding: 10px 12px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    font-size: 17px; font-weight: 700; text-align: center; line-height: 1.25;
+  }
+  .head small { display: block; font-size: 12px; font-weight: 600; color: var(--muted); margin-top: 3px; }
+  .card { background: #fff; border: 1.5px solid; border-radius: 3px; padding: 12px 14px; font-size: 12.5px; line-height: 1.5; }
+  .card h4 { margin: 0 0 6px; font-size: 13px; font-weight: 700; }
+  .card ul { margin: 0; padding-left: 18px; }
+  .card li { margin: 1px 0; }
+  .card.int h4::before { content: "🔌 "; }
+  .card.goal { border-style: dashed; margin-top: auto; }
+  .card.goal h4::before { content: "🎯 "; }
+  .open { background: #FFF59D; padding: 0 3px; border-radius: 2px; }
+  .ms {
+    border: 2px solid var(--blue-b); border-radius: 4px; background: #fff;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
+    font-weight: 700; font-size: 14px; text-align: center; padding: 10px 6px;
+  }
+  .ms .dia { width: 26px; height: 26px; background: var(--blue-b); transform: rotate(45deg); }
+  .bar {
+    border-radius: 3px; min-height: 56px; display: flex; align-items: center; justify-content: center;
+    font-size: 16px; font-weight: 700; text-align: center; padding: 8px 16px;
+  }
+  .bar span { font-weight: 400; font-size: 13px; margin-left: 10px; color: var(--muted); }
+  .t-lav  { background: var(--lav);  border-color: var(--lav-b); }
+  .t-blue { background: var(--blue); border-color: var(--blue-b); }
+  .t-pink { background: var(--pink); border-color: var(--pink-b); }
+  .t-green{ background: var(--green);border-color: var(--green-b); }
+  .t-grey { background: var(--grey); border-color: var(--grey-b); }
+  .b-blue  .card { border-color: var(--blue-b); }
+  .b-pink  .card { border-color: var(--pink-b); }
+  .b-green .card { border-color: var(--green-b); }
+  .b-grey  .card { border-color: var(--grey-b); }
+  .legend { grid-column: 2 / -1; font-size: 12px; color: var(--muted); display: flex; gap: 22px; align-items: center; }
+  .legend i { display: inline-block; width: 12px; height: 12px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; }
+</style>
+</head>
+<body>
+<div class="board">
+
+  <!-- Parallel track -->
+  <div class="lane t-lav" style="grid-row: 1;">Souběžně</div>
+  <div class="bar t-lav" style="grid-row: 1; grid-column: 3 / 12;">Discovery a specifikace dalších fází · mapování procesu přímo na skladech<span>(dohodnuto 5. 10. 2026)</span></div>
+
+  <!-- Lane 1: MVP -->
+  <div class="lane t-blue" style="grid-row: 2;">1. MVP<br><span style="font-weight:600;font-size:11px">Fáze 0 · 1 · 1.1a</span></div>
+
+  <div class="col b-blue" style="grid-row: 2; grid-column: 2;">
+    <div class="head t-blue">Příprava<small>Fáze 0 · kap. 1.1</small></div>
+    <div class="card"><h4>Integrace a infrastruktura</h4><ul>
+      <li>API Axapta</li><li>API Boomi</li><li>Produkční nasazení</li><li>Logging / monitoring / alerting</li></ul></div>
+    <div class="card int"><h4>Integrace</h4><ul><li>Axapta</li><li>Boomi</li><li>Azure (AKS)</li></ul></div>
+    <div class="card goal"><h4>Co se tím dosáhne</h4><ul><li>Základ, na kterém běží všechny další fáze</li></ul></div>
+  </div>
+
+  <div class="col b-blue" style="grid-row: 2; grid-column: 3;">
+    <div class="head t-blue">Příjmové reklamace — poškozené zboží<small>Fáze 1 · kap. 1.2–1.5</small></div>
+    <div class="card"><h4>PWA na příjmu</h4><ul>
+      <li>Příjem s výhradou (MS štítek)</li><li>Načtení SP štítku</li><li>Potvrzení zboží</li>
+      <li>Focení poškozeného zboží</li><li>Automatické založení reklamace v AX</li></ul></div>
+    <div class="card"><h4>Dokumenty a e-mail</h4><ul>
+      <li>Rozvozový list</li><li>Návratka dodavateli</li><li>Draft e-mailu dodavateli (kontroluje a odesílá pracovník)</li></ul></div>
+    <div class="card"><h4>Údaje o dodavatelích</h4><ul>
+      <li>Minimum v AX (číslo dodavatele)</li><li>Ostatní v jednom SharePoint Listu</li><li><span class="open">Vlastník Listu na straně Dr. Max</span></li></ul></div>
+    <div class="card int"><h4>Integrace</h4><ul><li>Axapta API</li><li>Graph API / Outlook</li><li>SharePoint List</li></ul></div>
+    <div class="card goal"><h4>Co se tím dosáhne</h4><ul><li>Reklamace z mobilu za pár kroků</li><li>Případ, doklady i e-mail vzniknou automaticky</li></ul></div>
+  </div>
+
+  <div class="col b-blue" style="grid-row: 2; grid-column: 4;">
+    <div class="head t-blue">Auditní stopa komunikace<small>Fáze 1.1a · kap. 1.6</small></div>
+    <div class="card"><h4>Záznam komunikace</h4><ul>
+      <li>Agent v kopii e-mailů z reklamačního mailboxu</li><li>Přiřazení e-mailu k případu</li>
+      <li>PDF otisk komunikace v AX</li><li><span class="open">Přílohy od dodavatele</span></li></ul></div>
+    <div class="card int"><h4>Integrace</h4><ul><li>Graph API</li><li>Axapta API</li></ul></div>
+    <div class="card goal"><h4>Co se tím dosáhne</h4><ul><li>Celá komunikace dohledatelná u případu v AX — i pro finance</li></ul></div>
+  </div>
+
+  <div class="ms" style="grid-row: 2; grid-column: 5;"><div class="dia"></div>UAT<br><span style="font-weight:600;font-size:11px">Fáze 1 + 1.1a</span></div>
+
+  <!-- Lane 2: Plná verze -->
+  <div class="lane t-pink" style="grid-row: 3;">2. Plná verze<br><span style="font-weight:600;font-size:11px">Fáze 1.1b · 2 · avízo</span></div>
+
+  <div class="col b-pink" style="grid-row: 3; grid-column: 6;">
+    <div class="head t-pink">Navazující e-mailový sled<small>Fáze 1.1b · kap. 2.1</small></div>
+    <div class="card"><h4>E-mailový agent</h4><ul>
+      <li>Rozpozná odpověď dodavatele</li><li>Známé výsledky: sklad · svoz · likvidace · čekání · přeposlání</li>
+      <li>Další krok + draft správnému adresátovi</li><li>Strukturované údaje z odpovědi</li>
+      <li>Alternativní drafty při více adresátech</li><li>Co nezná → pracovník reklamací</li></ul></div>
+    <div class="card"><h4>Podmínky</h4><ul>
+      <li>Postupy per dodavatel</li><li>Kontakty podle role</li><li>~30 reálných e-mailových vláken</li></ul></div>
+    <div class="card goal"><h4>Co se tím dosáhne</h4><ul><li>Agent vede sled komunikace — reklamaci zvládne kdokoli</li></ul></div>
+  </div>
+
+  <div class="col b-pink" style="grid-row: 3; grid-column: 7;">
+    <div class="head t-pink">Skladové reklamace<small>Fáze 2 · kap. 2.2</small></div>
+    <div class="card"><h4>PWA ve skladu (RV)</h4><ul>
+      <li>Načtení palety / lokace</li><li>Identifikace zboží (2D kód / štítek)</li><li>Volba šarže</li><li>Počet kusů a focení</li></ul></div>
+    <div class="card"><h4>Čtení štítků</h4><ul>
+      <li>OCR ručně psaných štítků</li><li><span class="open">Vzorek štítků a identifikátorů</span></li></ul></div>
+    <div class="card goal"><h4>Co se tím dosáhne</h4><ul><li>Vady zjištěné ve skladu se zakládají stejně snadno jako na příjmu</li></ul></div>
+  </div>
+
+  <div class="col b-pink" style="grid-row: 3; grid-column: 8;">
+    <div class="head t-pink">Okamžité avízo<small>volitelné · kap. 2.3</small></div>
+    <div class="card"><h4>Per dodavatel</h4><ul>
+      <li>Noční automatické upozornění po příjmu s výhradou</li><li><span class="open">Kteří dodavatelé a jaká lhůta</span></li></ul></div>
+    <div class="card goal"><h4>Co se tím dosáhne</h4><ul><li>Dodavatel ví o poškozené dodávce včas (~24 h)</li></ul></div>
+  </div>
+
+  <!-- Lane 3: Nice to Have -->
+  <div class="lane t-green" style="grid-row: 4;">3. Nice to Have</div>
+
+  <div class="col b-green" style="grid-row: 4; grid-column: 9;">
+    <div class="head t-green">Rozšíření e-mailového agenta<small>kap. 3.1</small></div>
+    <div class="card"><h4>Pohodlí pracovníka</h4><ul>
+      <li>Údaje o dodavateli v Outlooku (add-in)</li><li>Dotaz specifický pro dodavatele v 1. e-mailu</li>
+      <li>Upomínky na neodpovězené e-maily</li><li>Automatický výběr adresáta</li></ul></div>
+    <div class="card goal"><h4>Co se tím dosáhne</h4><ul><li>Méně přepínání mezi aplikacemi a hlídání odpovědí</li></ul></div>
+  </div>
+
+  <!-- Lane 4: Další fáze -->
+  <div class="lane t-grey" style="grid-row: 5;">Další fáze<br><span style="font-weight:600;font-size:11px">po discovery</span></div>
+
+  <div class="col b-grey" style="grid-row: 5; grid-column: 10;">
+    <div class="head t-grey">Nedodané zboží<small>Fáze 3</small></div>
+    <div class="card"><h4>Příjmové reklamace</h4><ul>
+      <li>Viditelná chyba (při vybalení)</li><li>Neviditelná chyba (rozdíl v AX)</li><li>Další typy problémů z AX</li></ul></div>
+    <div class="card goal"><h4>Co se tím dosáhne</h4><ul><li>Chybějící zboží se reklamuje bez ručního dohledávání</li></ul></div>
+  </div>
+
+  <div class="col b-grey" style="grid-row: 5; grid-column: 11;">
+    <div class="head t-grey">Lékárny a e-shop<small>Fáze 4 · 5</small></div>
+    <div class="card"><h4>Reklamace odběratelů</h4><ul>
+      <li>Posouzení dodavatelem (30 dní)</li><li>Bez okamžitého zaúčtování</li><li>Párování duplicit</li></ul></div>
+    <div class="card goal"><h4>Co se tím dosáhne</h4><ul><li>Reklamace z lékáren a e-shopu ve stejném toku</li></ul></div>
+  </div>
+
+  <div class="legend" style="grid-row: 6;">
+    <span>Sekvence zleva doprava · bez termínů</span>
+    <span><i style="background:#FFF59D"></i>otevřený bod</span>
+    <span>🔌 integrace</span>
+    <span>🎯 co se tím dosáhne</span>
+  </div>
+</div>
+</body>
+</html>
