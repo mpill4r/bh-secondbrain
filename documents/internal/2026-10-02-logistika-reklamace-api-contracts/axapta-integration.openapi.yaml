@@ -1,7 +1,7 @@
 openapi: 3.1.0
 info:
   title: Axapta Integration API
-  version: 0.9.10
+  version: 0.9.11
   summary: Contract for the endpoints MS Dynamics AX (Axapta) must expose for the ViaPharma platform
   description: |
     # Purpose
@@ -116,6 +116,25 @@ info:
     - Identifiers: strings. Our app does not assume UUIDs on the Axapta side.
 
     # Changelog
+
+    ## [v0.9.11] — transport document identification and verification
+    - **This is a proposal for agreement, not a final integration revision.**
+      Axapta assigns each expected physical document a stable `document_id` and
+      prints the ID of every expected page as `page_id` (for example,
+      `AR382902422_B3A11D_3`). The Platform can then match a scan and prove page
+      completeness directly from IDs, without type-specific workarounds.
+    - **`ExpectedTransportDocument`: replace `expected_page_count`,
+      `pharmacy_address`, and `PO_number` with required `document_id` and
+      `expected_page_ids`.** The list contains every page ID Axapta expects for
+      that document instance.
+    - **`SubmittedTransportDocument`: replace `pharmacy_address`, `PO_number`,
+      and `page_numbers` with `document_id` and `page_ids`; add document-level
+      `status` and optional `status_reason`.** 
+    - **`OPEN` can be submitted** through `POST /transport-routes/{ar}/documents`
+      so Axapta can retain incomplete document sets between kiosk scans.
+    - **Document versions prevent concurrent overwrites.** Axapta accepts a new
+      version only when it immediately follows the current one; a stale version
+      returns `409 Conflict`.
 
     ## [v0.9.10] — unknown MS labels return 404
     - **`POST /goods-receipt-reservations`: unknown MS label → `404 Not Found`.**
@@ -760,10 +779,15 @@ paths:
         - `carrier` (DHL / Cedex / own / …), `planned_driver`, `planned_spz`,
         - `planned_departure` + `planned_return` — the planned time window,
         - `expected_km` + `km_tolerance`,
-        - `expected_documents[]` — each with `expected_count` and `expected_stamps`
-          (the stamp count Axapta expects, e.g. the delivery list = number of
-          pharmacy sections; `null` where stamps are not checked, e.g. ZOPV),
-        - current `status` and any `submitted_documents[]` already written.
+        - `expected_documents[]` — one item per expected document, with its
+          Axapta-issued `document_id`, every expected printed `page_id`, and stamp
+          count (the stamp count Axapta expects for the whole document, e.g. the
+          delivery list = number of pharmacy sections; `null` where stamps are not
+          checked, e.g. ZOPV)
+        - `submitted_documents[]` — current full-PDF versions of prior scans, so a
+          new kiosk session can download, preview, amend, and re-submit a document
+          without Platform-side persistence.
+        - current `status`
 
         Stateless read; no polling — the Platform writes the verdict back via
         `POST /transport-routes/{ar}/documents` and reads final state ad-hoc.
@@ -788,18 +812,27 @@ paths:
         **upsert of the verification result against it**, not a create.
 
         The body carries:
-        - `documents[]` — every recognized document with its shared-disk
-          `storage_link`, `recognized_stamps` and a `version`; for the **ZOPV** the
-          parsed `zopv` block (actual driver, SPZ, date, declared `distance_km` and —
-          from Fáze 2 on — the GPS-measured `gps_distance_km`),
+        - `documents[]` — every recognized document with its Axapta-issued
+          `document_id`, scanned `page_ids`, shared-disk `storage_link`,
+          document-level `recognized_stamps` and `status`, and Platform-proposed
+          `version`; for the **ZOPV** the parsed `zopv` block (actual driver, SPZ,
+          date, declared `distance_km` and — from Fáze 2 on — the GPS-measured
+          `gps_distance_km`),
         - `status` — the Platform's verdict from documents + stamps
-          (`READY_FOR_BILLING` or `MANUAL_REVIEW`), plus `status_reason` when
-          `MANUAL_REVIEW`,
+          (`OPEN`, `READY_FOR_BILLING`, or `MANUAL_REVIEW`), plus
+          `status_reason` when `MANUAL_REVIEW`,
         - optional route-wide driver notes, propagated into Axapta.
 
-        **Versioning**: a re-submitted document with identical content is ignored;
-        changed content is stored as a **new version** (the older version is kept,
-        never overwritten). This also covers incremental / multi-day scanning.
+        **Versioning**: the Platform compares recognized content with the
+        current route read and owns the decision to propose the next version. It
+        downloads the previous PDF, replaces re-scanned pages or adds missing pages,
+        uploads the complete current PDF, and sends its complete `page_ids`. For
+        example, version 1 with pages `[_1, _2, _4]`, followed by a re-scan of pages
+        3 and 4, is submitted as version 2 with an assembled PDF and page IDs
+        `[_1, _2, _3, _4]` for the same `document_id`. Axapta stores the submitted
+        document unchanged and returns it on future reads.
+        Axapta accepts a new document version only when it is exactly one greater than
+        the current version of that `document_id`; otherwise it returns `409 Conflict`.
 
         **Idempotency**: a repeated call with the same `Idempotency-Key` does not
         duplicate documents — it returns the same result.
@@ -914,7 +947,7 @@ components:
       description: RFC 9457 Problem Details
       type: object
       properties:
-        type: {type: string, format: uri, default: about:blank}
+        type: {type: string, format: uri, default: "about:blank"}
         title: {type: string}
         status: {type: integer}
         detail: {type: string}
@@ -1494,6 +1527,21 @@ components:
         - POPLSOL
         - TEMPERATURE_LOG
 
+    TransportDocumentStatus:
+      type: string
+      description: |
+        Platform verification state for one expected physical document. It is based
+        on the Axapta-issued page IDs and the document-level stamp count.
+        - `INCOMPLETE` — at least one expected page is still missing.
+        - `COMPLETE` — all expected pages are present and the stamp count matches,
+          or stamps are not checked for this document type.
+        - `MANUAL_REVIEW` — the document is complete enough to assess but has a
+          mismatch, such as an unexpected page ID or an incorrect stamp count.
+      enum:
+        - INCOMPLETE
+        - COMPLETE
+        - MANUAL_REVIEW
+
     TransportRouteStatus:
       type: string
       description: |
@@ -1556,20 +1604,38 @@ components:
     ExpectedTransportDocument:
       type: object
       description: |
-        One document Axapta expects for the route, with the stamp count it expects.
-      required: [type, expected_count]
+        One identifiable physical document Axapta expects for the route. Axapta
+        assigns the document ID and prints a unique page ID on every page, so the
+        Platform can match a scan and check completeness without type-specific
+        attributes such as an address or PO number.
+      required: [document_id, type, expected_page_ids]
       properties:
+        document_id:
+          type: string
+          description: |
+            Stable unique ID for this physical document, assigned by Axapta and
+            printed on every page. Example: `AR382902422_B3A11D`.
+          example: "AR382902422_B3A11D"
         type: {$ref: '#/components/schemas/TransportDocumentType'}
-        expected_count:
-          type: integer
-          minimum: 0
-          description: How many of this document type the route should have (1, or 0..N).
+        expected_page_ids:
+          type: array
+          minItems: 1
+          uniqueItems: true
+          items: {type: string}
+          description: |
+            Complete set of IDs Axapta printed on this document's pages, in PDF
+            order. The Platform compares its scanned `page_ids` with this set to
+            detect missing, duplicate, or unexpected pages.
+          example:
+            - "AR382902422_B3A11D_1"
+            - "AR382902422_B3A11D_2"
+            - "AR382902422_B3A11D_3"
         expected_stamps:
           type: [integer, "null"]
           minimum: 0
           description: |
-            Expected stamp count per document, derived by Axapta from the issued
-            document — e.g. the delivery list = number of pharmacy sections.
+            Expected stamp count for the whole document, derived by Axapta from the
+            issued document — e.g. the delivery list = number of pharmacy sections.
             `null` where stamps are not checked (e.g. `ZOPV`).
 
     ZopvData:
@@ -1603,10 +1669,17 @@ components:
     SubmittedTransportDocument:
       type: object
       description: |
-        One recognized document the Platform writes back to the route. Documents are
-        versioned — a newer version never overwrites an older one; Axapta keeps all.
-      required: [type, storage_link]
+        One recognized physical document. This same shape is sent by the Platform
+        and returned by Axapta. The Platform identifies it and its scanned pages by
+        the IDs Axapta printed on the document.
+      required: [document_id, type, storage_link, version, page_ids, status]
       properties:
+        document_id:
+          type: string
+          description: |
+            Axapta-issued ID of the expected document this submission represents.
+            Must match one `ExpectedTransportDocument.document_id` on the route.
+          example: "AR382902422_B3A11D"
         type: {$ref: '#/components/schemas/TransportDocumentType'}
         storage_link:
           type: string
@@ -1618,8 +1691,8 @@ components:
           type: [integer, "null"]
           minimum: 0
           description: |
-            Stamp count recognized on the document. `null` where stamps are not
-            checked (e.g. `ZOPV`).
+            Stamp count recognized across the whole document. `null` where stamps
+            are not checked (e.g. `ZOPV`).
         version:
           type: integer
           minimum: 1
@@ -1627,10 +1700,26 @@ components:
           description: |
             Document version. A changed re-scan is submitted as a higher version;
             the older version is retained.
-        page_count:
-          type: [integer, "null"]
-          minimum: 1
-          description: Number of pages merged into this document (optional).
+        page_ids:
+          type: array
+          minItems: 1
+          uniqueItems: true
+          items: {type: string}
+          description: |
+            IDs read from the pages included in the full PDF, in PDF order. The
+            Platform compares them with `expected_page_ids` for `document_id`.
+          example:
+            - "AR382902422_B3A11D_1"
+            - "AR382902422_B3A11D_2"
+            - "AR382902422_B3A11D_3"
+        status:
+          $ref: '#/components/schemas/TransportDocumentStatus'
+        status_reason:
+          type: [string, "null"]
+          description: |
+            Why the document needs manual review, for example a missing or
+            unexpected page ID or a stamp-count mismatch. Filled when `status =
+            MANUAL_REVIEW`.
         note:
           type: [string, "null"]
           description: |
@@ -1656,10 +1745,11 @@ components:
         status:
           type: string
           description: |
-            The Platform's verdict from documents + stamps. Only these two values may
-            be submitted (subset of `TransportRouteStatus`); Axapta may still move the
-            route to `MANUAL_REVIEW` from its own km check.
-          enum: [READY_FOR_BILLING, MANUAL_REVIEW]
+            The Platform's current verdict from documents + stamps. `OPEN` records an
+            in-progress document set; `READY_FOR_BILLING` and `MANUAL_REVIEW` are final
+            Platform verdicts. Axapta may still move the route to `MANUAL_REVIEW` from
+            its own km check.
+          enum: [OPEN, READY_FOR_BILLING, MANUAL_REVIEW]
         status_reason:
           type: [string, "null"]
           description: |

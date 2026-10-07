@@ -1,10 +1,50 @@
 ---
-last_updated: 2026-10-05
-last_updated_by: auto — project-meeting routing
+last_updated: 2026-10-07
+last_updated_by: auto — project-lessons capture
 owner: Marek Pillár
 ---
 
 # Lessons Learned
+
+---
+
+### LL-84
+
+| Field | Value |
+|-------|-------|
+| ID | LL-84 |
+| Created | 2026-10-07 |
+| Category | source-verification |
+| Source | project-daily-2026-10-07 |
+
+**Lesson**
+When a "new version" of a source file arrives, hash-compare it with the copies you already have before you update anything. Re-downloads often fetch the same file again, and "it's different" can mean "different from the old baseline", not "different from what you already used".
+
+**Context**
+The "newest" Axapta Swagger (`openapi-2.yaml`) was byte-identical to `openapi-1.yaml` (v0.9.11), which the Fakturace specs already used. The dev said it was different; the MD5 check showed it was v0.9.11 against the stored v0.9.10. Only the harness copy needed replacing.
+
+**Cross-reference**
+documents/index.md (2026-10-02 API contracts), project-daily-2026-10-07
+
+---
+
+### LL-83
+
+| Field | Value |
+|-------|-------|
+| ID | LL-83 |
+| Created | 2026-10-07 |
+| Category | document-generation |
+| Source | project-daily-2026-10-07 |
+
+**Lesson**
+When you generate a document from a template, check that the template's list styles render as intended: a "List Bullet" style can be linked to a numbered list. And once the PM has edited a delivered file, make later changes surgically, to the requested sections only, in their latest copy, and diff to prove nothing else moved.
+
+**Context**
+The Fakturace client version was built from `spec-template.docx`, whose List Bullet style points to a decimal numbering (`%1.`), so every bullet came out numbered. It was fixed by taking numbering and styles from the Reklamace client version. Later, Byznys hodnota and KPI were replaced in the PM-edited Final file without touching the rest (a diff confirmed it). The template itself still carries the bug.
+
+**Cross-reference**
+1. Feature Specs/spec-template.docx; 2. Fakturace doprav/Final/2. Fakturace doprav - klientská verze.docx
 
 ---
 
