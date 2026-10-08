@@ -1,5 +1,5 @@
 ---
-last_updated: 2026-10-05
+last_updated: 2026-10-08
 last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
@@ -187,6 +187,14 @@ See [[ASM-204]], [[ASM-205]]. Source: 2026-09-29-reklamace-email-agent-demo-revi
 - **X-Manager**: Dr. Max-internal tool used by the call centre, becoming a data source; being checked as an option for Reklamace ([[ASM-243]]).
 - **Logistics scale**: hundreds of thousands of transactions a day, so small improvements matter. "PV logic" (how warehouses react to pharmacy demand) is a future business topic.
 Source: 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap.
+
+**Status sync (2026-10-08)**:
+- **Savings basis**: the Reklamace savings in the BQ tracker assume all five phases are delivered. They aren't split by phase and are a structured estimate, never measured ([[ASM-255]]).
+- **Phase 2 (warehouse claims)**: a fraction of Phase 1 for BigHub and largely done. Axapta must look up goods from the label data BigHub reads (EAN, batch, expiry), so more of the work is on the Axapta side ([[ASM-256]]).
+- **Shared mailbox**: set up via Microsoft Graph API; reading emails works; write rights requested, still pending.
+- **Test phone**: IT ticket (via Dušan) processed, on its way to Brno, no delivery date.
+- **Fakturace scanner (Canon)**: integrates with BigHub's API only, not Axapta ([[ASM-259]]).
+Source: 2026-10-08-viapharma-reklamace-sync-data-map-slip-all-phases-slama-capacity.
 
 ### Cenařky (pricing clerks) — logistics initiative candidate
 

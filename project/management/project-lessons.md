@@ -1,10 +1,90 @@
 ---
-last_updated: 2026-10-07
+last_updated: 2026-10-08
 last_updated_by: auto — project-lessons capture
 owner: Marek Pillár
 ---
 
 # Lessons Learned
+
+---
+
+### LL-88
+
+| Field | Value |
+|-------|-------|
+| ID | LL-88 |
+| Created | 2026-10-08 |
+| Category | Tooling / workflow |
+| Source | project-daily-2026-10-08 |
+
+**Lesson**
+When several AI sessions work in the same repo, never restore a file from git (`git checkout`, reset) to undo your own edit: it also wipes another session's uncommitted changes. Revert your own edit surgically, and check `git diff` first to see whether the file holds other work.
+
+**Context**
+A stakeholders insert went to the wrong section, and `git checkout` on `project-stakeholders.md` also deleted the parallel session's uncommitted routing (STK-034, STK-013 to STK-015) from today's Reklamace sync. That session re-applied it.
+
+**Cross-reference**
+project-daily-2026-10-08 (Audit Log)
+
+---
+
+### LL-87
+
+| Field | Value |
+|-------|-------|
+| ID | LL-87 |
+| Created | 2026-10-08 |
+| Category | Communication / tooling |
+| Source | project-daily-2026-10-08 |
+
+**Lesson**
+To get prepared e-mails into New Outlook for Mac as editable drafts, `mailto:` links work (subject + plain-text body); `.eml` files with `X-Unsent: 1` open read-only. For outreach to people a client contact referred, keep the e-mail to what the referrer said, and don't add your own agenda (deadlines, other initiatives).
+
+**Context**
+11 outreach e-mails for the 2027 initiatives round: the `.eml` route failed, `mailto:` worked. The PM cut the Lexie e-mails for Šišo, Švarcová and Svoboda back to what Lukáš Szücs described, without the 2027 initiatives or deadline. The PM also removed the "AI" / "pomocou AI" wording and internal process steps (prioritisation timing) from all e-mails.
+
+**Cross-reference**
+`documents/client/2026-10-06-lexie-new-departments-szucs-brief.md`
+
+---
+
+### LL-86
+
+| Field | Value |
+|-------|-------|
+| ID | LL-86 |
+| Created | 2026-10-08 |
+| Category | Communication / framing |
+| Source | 2026-10-08-viapharma-reklamace-sync-data-map-slip-all-phases-slama-capacity |
+
+**Lesson**
+When a client is already worried that the vendor wants to leave, any talk of "freeing our capacity for other work" is heard as "stopping". Lead with the commitment to finish, and only then explain how the effort will shift.
+
+**Context**
+Marek explained that BigHub's work on Reklamace Phases 3–5 is small, so BigHub could also focus on higher-value initiatives. Tereza Foltová heard "put 3–5 to sleep", and Jindřich had to firmly restate that all five phases get finished. This was the third continuation scare since 2026-09-23.
+
+**Cross-reference**
+[[ASM-255]], [[ASM-256]]
+
+---
+
+### LL-85
+
+| Field | Value |
+|-------|-------|
+| ID | LL-85 |
+| Created | 2026-10-08 |
+| Category | Stakeholder management |
+| Source | 2026-10-08-viapharma-reklamace-sync-data-map-slip-all-phases-slama-capacity |
+
+**Lesson**
+When management meetings "might change direction", people at working level who weren't invited tend to pause their tasks until they hear an outcome. Send them an explicit "nothing changes, carry on" right after such meetings, or the critical path loses a week.
+
+**Context**
+Petr Sláma didn't touch the Reklamace data map for a week. He had heard that IT and logistics management would decide whether to continue, and nobody told him that the 2026-10-05 meeting changed nothing. The spec and the knowledge-base date slipped by a week as a result.
+
+**Cross-reference**
+[[ASM-229]], [[ASM-184]], [[ASM-257]]
 
 ---
 

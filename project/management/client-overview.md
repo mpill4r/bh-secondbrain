@@ -1,5 +1,5 @@
 ---
-last_updated: 2026-10-05
+last_updated: 2026-10-08
 last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
@@ -61,6 +61,8 @@ N/A — no client stakeholders. See `project-stakeholders.md` for the full team/
 - **Business users can't ship their own AI tools (2026-10-05)**: Dr. Max staff have the standard Claude Pro plan, but GitHub and publishing anything are forbidden, and API use (e.g. Claude via API) needs IT/security. Business-built AI work stays in chat (markdown, skills) unless BigHub or IT hosts it. Source: 2026-10-05-listing-neuman-environmental-claims-bulk-edit-listing-2-0.
 - **Holding-wide AI delivery pressure; dates are mandatory (2026-10-05)**: Rudolf Žůrek reports monthly to the Group CEO on AI progress. After three quarters of a year of "where is your AI?", leadership wants something visible and, above all, dates: "even January 2028 is fine, I just need dates". A budget meeting also discussed whether people may become cheaper than tokens. See [[ASM-247]], [[ASM-248]]. Source: 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap.
 - **Direct monthly channel to the head of logistics (2026-10-05)**: 30-minute status with Žůrek and BigHub, Mondays at 10:00 ([[ASM-253]]). Žůrek explicitly asks BigHub to challenge a conservative, legislation-bound operation. Source: 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap.
+- **Management decisions don't trickle down (2026-10-08)**: Working-level contacts (Petr Sláma, Jana Egrmaierová) aren't invited to management meetings and don't hear their outcomes. Sláma paused Reklamace for a week while waiting for a "continue or not" decision that never came. After any management meeting, BigHub should tell the working level explicitly. Source: 2026-10-08-viapharma-reklamace-sync-data-map-slip-all-phases-slama-capacity.
+- **Recurring continuation doubt (2026-10-08)**: For the third time since 2026-09-23, the client side read BigHub's statements as "BigHub doesn't want to continue". Here it was a point about shifting capacity on Phases 3–5. Lead every capacity or prioritisation message with the commitment to deliver ([[ASM-255]]). Source: 2026-10-08-viapharma-reklamace-sync-data-map-slip-all-phases-slama-capacity.
 
 ## 10. Active Initiatives & Project History
 

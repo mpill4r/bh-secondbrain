@@ -1,6 +1,6 @@
 ---
-last_updated: 2026-10-06
-last_updated_by: manual — conversational
+last_updated: 2026-10-08
+last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
 
@@ -10,6 +10,11 @@ owner: Marek Pillár
 
 | ID | Status | Created | Description (short) |
 |----|--------|---------|---------------------|
+| ASM-259 | Decided (2026-10-08) | 2026-10-08 | Fakturace scanner: BigHub defines technical requirements, Jan Žižka gives operational input; scanner talks only to BigHub's API (no Axapta change) |
+| ASM-258 | Decided (2026-10-08) | 2026-10-08 | Phases 2–5 discovery input-first: Tereza + Spilka write up the phases, then Marek runs discovery (MVP / Pareto, Sláma's capacity in mind) |
+| ASM-257 | Open (2026-10-08) | 2026-10-08 | Sláma's capacity: project ~6 months behind its April plan; one thing at a time; parallel work needs logistics (Spilka) to reprioritise his projects |
+| ASM-256 | Open (2026-10-08) | 2026-10-08 | BigHub's work on Phases 2–5 much smaller than Phase 1 (more on the Axapta side); BigHub supports them and takes other initiatives in parallel |
+| ASM-255 | Decided (2026-10-08) | 2026-10-08 | All five Reklamace phases get finished: tracker savings assume all five (not split, estimated, not measured) |
 | ASM-254 | Open (2026-10-06) | 2026-10-06 | Supplier attachments in the claim email thread: separate AX attachments (recommended) or inside the PDF — confirm with Sláma |
 | ASM-253 | Decided (2026-10-05) | 2026-10-05 | Monthly 30-min status Žůrek + BigHub, Mondays 10:00 |
 | ASM-252 | Open (2026-10-05) | 2026-10-05 | Pharmacy returns: data in Pharmis, warehouse gets handwritten A4 — integrate, export to AX, or work around (Dudaško / DAX team) |
@@ -269,6 +274,119 @@ owner: Marek Pillár
 
 ---
 
+### ASM-259
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-259 |
+| Created | 2026-10-08 |
+| Source | 2026-10-08-viapharma-reklamace-sync-data-map-slip-all-phases-slama-capacity |
+| By | Filip Černý (STK-006), Petr Sláma (STK-034), Tereza Foltová (STK-013) |
+| Status | Decided (2026-10-08) |
+
+**Description**
+Fakturace doprav scanner (Canon): BigHub (Filip Černý) defines the technical requirements. ViaPharma's operational input (screen size, placement) comes from Jan Žižka (STK-015), not from a technical person. The scanner talks only to BigHub's API, which talks to Axapta, so nothing changes in Axapta. Tereza arranges a call with Žižka, the Canon contact and Filip, aiming for an offer.
+
+**Rationale**
+Sláma: requirements must come from BigHub; he doesn't handle hardware. Filip: Axapta isn't touched by the scanner.
+
+**Impact**
+- **Delivery**: Hardware procurement stays with ViaPharma ([[ASM-055]]).
+- **Dependency**: Canon offer; Žižka's availability.
+
+---
+
+### ASM-258
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-258 |
+| Created | 2026-10-08 |
+| Source | 2026-10-08-viapharma-reklamace-sync-data-map-slip-all-phases-slama-capacity |
+| By | Marek Pillár (STK-001), Tereza Foltová (STK-013) |
+| Status | Decided (2026-10-08) |
+
+**Description**
+Discovery for Reklamace Phases 2–5 starts from inputs. Tereza Foltová and Petr Spilka first write up, at a high level, what belongs in each phase. Then Marek schedules and runs discovery with an MVP / Pareto lens (80% of the value for 20% of the effort), taking Sláma's capacity ([[ASM-257]]) into account. Goal: at one of the next joint meetings, the phases' content is known and BigHub can build a roadmap beyond 2–4 weeks.
+
+**Rationale**
+Avoids inefficient joint sessions where nobody knows what Phase 3 is. Once the inputs exist, the discovery depends only on Marek.
+
+**Impact**
+- **Timeline**: A longer roadmap ([[ASM-248]]) depends on the logistics inputs.
+- **Scope**: The MVP framing may cut perfection-level scope from the later phases.
+
+---
+
+### ASM-257
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-257 |
+| Created | 2026-10-08 |
+| Source | 2026-10-08-viapharma-reklamace-sync-data-map-slip-all-phases-slama-capacity |
+| By | Petr Sláma (STK-034) |
+| Status | Open (2026-10-08) |
+
+**Description**
+Petr Sláma's capacity is a key client-side bottleneck. By the original plan, the project should have been done around April 2026. He now has conflicts with other projects (e.g. "BrightPig" in Ostrava, as transcribed; possibly Brightpick) and can work on only one thing at a time. He isn't sure he has capacity even for one, and is working on "příjmy" (unclear whether this is Reklamace receiving or a separate project). Any parallel work (e.g. Reklamace plus transport) requires logistics, i.e. his manager or Petr Spilka, to deprioritise his other projects. He had capacity in May–August.
+
+**Rationale**
+Stated on record at the 2026-10-08 sync. Jindřich called it "completely legitimate"; the slip hits BigHub's capacity too.
+
+**Impact**
+- **Timeline**: The data map, spec comments and Swagger review run sequentially through one person. Fakturace doprav waits behind Reklamace.
+- **Delivery**: Axapta-side development for Phase 2+ ([[ASM-256]]) competes for the same capacity.
+- **Relationship**: Prioritising his time is a logistics-management decision (Spilka / Žůrek). Raise it at the steering if it blocks.
+
+---
+
+### ASM-256
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-256 |
+| Created | 2026-10-08 |
+| Source | 2026-10-08-viapharma-reklamace-sync-data-map-slip-all-phases-slama-capacity |
+| By | Filip Černý (STK-006), Marek Pillár (STK-001), Jindřich Tůma (STK-003) |
+| Status | Open (2026-10-08) |
+
+**Description**
+BigHub's work on Reklamace Phases 2–5 is expected to be much smaller than Phase 1. Phase 2 (warehouse claims) is a fraction of the work and largely done; more of the work sits on the Axapta side (looking up goods from the label's EAN, batch and expiry). BigHub would support the remaining phases as secondary work and put the rest of its capacity on other, higher-value logistics initiatives in parallel. To be confirmed by discovery ([[ASM-258]]).
+
+**Rationale**
+Filip: "Phase 2" is misleading in size; count internal Axapta development when weighing it. Jindřich and Marek: this doesn't change that all phases get finished ([[ASM-255]]).
+
+**Impact**
+- **Workload**: Frees BigHub capacity for other initiatives (cenařky, warehouses), subject to discovery.
+- **Dependency**: Axapta development capacity ([[ASM-257]]).
+- **Relationship**: Must always be framed as "all five get delivered". Tereza heard it as "put 3–5 to sleep".
+
+---
+
+### ASM-255
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-255 |
+| Created | 2026-10-08 |
+| Source | 2026-10-08-viapharma-reklamace-sync-data-map-slip-all-phases-slama-capacity |
+| By | Jindřich Tůma (STK-003), Marek Pillár (STK-001), Tereza Foltová (STK-013), Petr Spilka (STK-014) |
+| Status | Decided (2026-10-08) |
+
+**Description**
+All five Reklamace phases will be finished. The Reklamace savings in the BQ tracker were calculated assuming all five phases are delivered. They are not split by phase and are a structured estimate, not measured. Whether to continue is not in question (Jindřich: "definitely continue"), as agreed with Žůrek. Logistics will try to split the savings by phase to compare against other initiatives.
+
+**Rationale**
+Raised when Marek asked whether Phases 3–5 add to the tracked value. Tereza and Spilka confirmed that they do. A misreading that BigHub wanted to drop 3–5 was corrected by Jindřich and Marek.
+
+**Impact**
+- **Scope**: Refines [[ASM-247]]: the pilot (1 / 1.1) first, then all phases through 5.
+- **Value**: Not finishing would change the savings calculation.
+- **Relationship**: Third time since 2026-09-23 that the client side doubted BigHub's continuation.
+
+---
+
 ### ASM-254
 
 | Field | Value |
@@ -422,6 +540,8 @@ BigHub delivers a Reklamace roadmap of all phases with dates (most detail for th
 - **Delivery**: Supersedes the rolling-4-week view for logistics; builds on Tereza's whole-project timeline ask ([[ASM-190]]).
 - **Relationship**: Kept or openly re-baselined dates are now a trust factor.
 
+
+**Update (2026-10-08)**: Jindřich: realistic planning horizon is 2–4 weeks; the full roadmap gives dates as an estimate (e.g. 2 weeks for UAT) with planned test/cooperation windows; slips and their reasons are reported monthly at the Žůrek steering. Tereza pushes for it ("we're standing still"); a longer horizon depends on Phase 2–5 discovery ([[ASM-258]]). Source: 2026-10-08-viapharma-reklamace-sync-data-map-slip-all-phases-slama-capacity.
 ---
 
 ### ASM-247
@@ -467,6 +587,8 @@ Per Jan Sovka (original analyst): some suppliers require notice of such a receip
 - **Spec**: The automatic send conflicts with the spec's "no automatic emails" rule — needs an explicit exception or a draft variant, decided with logistics.
 - **Data**: Needs the avízo flag in the supplier table ([[ASM-228]]) and the supplier on the příjem s výhradou record (already in contract v0.9.10).
 
+
+**Update (2026-10-08)**: Marek proposes lowering the priority of okamžité avízo: manual handling covers most cases. Logistics' agreement still to confirm. Source: 2026-10-08-viapharma-reklamace-sync-data-map-slip-all-phases-slama-capacity.
 ---
 
 ### ASM-241
@@ -931,6 +1053,8 @@ Tereza asked so testing can be finished properly; Jindřich: "you just need more
 **Impact**
 - **Timeline**: Possible knock-on to the full UAT start — to confirm with Jindřich.
 
+
+**Update (2026-10-08)**: Phase 1 testing not yet closed (Tereza needs to confirm with Jana Egrmaierová; Jana logged bugs, one bigger). Wrap-up: separate ~15-min call Tereza + Filip + Sláma on Monday 2026-10-12 (Filip is on leave 10-09). Source: 2026-10-08-viapharma-reklamace-sync-data-map-slip-all-phases-slama-capacity.
 ---
 
 ### ASM-228
@@ -982,6 +1106,8 @@ Sláma was "completely out" for 14 days launching the new A-frame. Jindřich: th
 **Impact**
 - **Timeline**: Fakturace doprav API-contract feedback ([[ASM-142]]) slips at least another week.
 
+
+**Update (2026-10-08)**: Slipped by a week: Sláma did nothing in the week of 10-05 because he was waiting for the management meetings' outcome (not invited, assumed the project might stop). New order: data-map Excel early week of 2026-10-12, then Reklamace spec comments, then the simplified Fakturace doprav Swagger (v0.9.11). Source: 2026-10-08-viapharma-reklamace-sync-data-map-slip-all-phases-slama-capacity.
 ---
 
 ### ASM-218
@@ -1747,6 +1873,8 @@ Outlook points without a value driver aren't load-bearing, and promising phases 
 
 **Update (2026-10-05)**: Žůrek: initiatives get development and operating cost as a second wave after benefits; the biggest 2027 initiatives ("unicorns") are decided in Q4; headcount per department is a key lens. Marek opens all logistics initiatives at the Wednesday session. Source: 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap.
 
+
+**Update (2026-10-08)**: Value-driver question for Reklamace answered: the tracker's savings assume all five phases ([[ASM-255]]). Phase scope comes from input-first discovery ([[ASM-258]]). Source: 2026-10-08-viapharma-reklamace-sync-data-map-slip-all-phases-slama-capacity.
 ---
 
 ### ASM-189
@@ -1897,6 +2025,8 @@ The 2026-09-24 standoff showed that open choices, like the supplier-data store (
 - **Workload**: Implements Marek's Reklamace focus under [[ASM-177]]. The 10-01 meeting carries both the options Excel and Filip's email-agent demo ([[ASM-173]]).
 - **Scope**: The open items [[ASM-174]], [[ASM-175]], [[ASM-176]] and [[ASM-183]] are candidates for rows in the options Excel.
 
+
+**Update (2026-10-08)**: The knowledge-base target of 2026-10-09 will be missed: Sláma's data-map review moved to early week of 2026-10-12 ([[ASM-229]]). New target ~2026-10-16. Source: 2026-10-08-viapharma-reklamace-sync-data-map-slip-all-phases-slama-capacity.
 ---
 
 ### ASM-177
@@ -4788,6 +4918,8 @@ Landed after a tense negotiation: Sláma initially rejected a 2-day testing-wind
 
 **Update (2026-10-01)**: Phase 1 testing extended by one week at ViaPharma's request ([[ASM-227]]); effect on the 15–16 Oct full UAT start not discussed. Source: 2026-10-01-viapharma-reklamace-email-agent-demo-data-map-review.
 
+
+**Update (2026-10-08)**: At risk: Phase 1 testing wrap-up moved to 2026-10-12 and nobody re-confirmed the 10-15–16 full UAT start. Source: 2026-10-08-viapharma-reklamace-sync-data-map-slip-all-phases-slama-capacity.
 ---
 
 ### ASM-055
