@@ -1,5 +1,5 @@
 ---
-last_updated: 2026-10-08
+last_updated: 2026-10-12
 last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
@@ -348,6 +348,60 @@ Dudaško named "Luca" as the specific osmec for MaxBuddy — **resolved 2026-09-
 | Status | Active |
 
 Dudaško was unambiguous on this boundary when Jindřich raised a concrete pilot-pharmacist confusion incident: BigHub's adoption-campaign role stops at awareness/comms; training and hypercare delivery stay entirely with Dr. Max. See [[ASM-117]].
+
+### Způsob vyřízení (claim resolution method)
+
+| Field | Value |
+|-------|-------|
+| Definition | An Axapta code list recording how a supplier claim was resolved (e.g. credit note). Surfaced only recently in status meetings (Sláma, Jana Egrmaierová). Its purpose for the AI platform, and which way it flows, is still unclear ([[ASM-262]]). |
+| Source | 2026-10-12-reklamace-slama-data-map-feedback-fakturace-state-conflict |
+| Added | 2026-10-12 |
+| Status | Active |
+
+### Data-map Excel columns J / K
+
+| Field | Value |
+|-------|-------|
+| Definition | In the Reklamace data-map Excel ("mapa zdrojů"), **column J** holds Petr Sláma's feedback per row (delivered 2026-10-12) and **column K** holds BigHub's answers and questions back to him. Once Sláma responds on the open rows, the data map counts as done ([[ASM-229]]). |
+| Source | 2026-10-12-reklamace-slama-data-map-feedback-fakturace-state-conflict |
+| Added | 2026-10-12 |
+| Status | Active |
+
+### Zebra terminals
+
+| Field | Value |
+|-------|-------|
+| Definition | ViaPharma's IT-managed handheld picking terminals. On the internal network (no public internet), with a hardware barcode reader (physical button, beep). Candidate device for the Reklamace app; the warehouse resists using them for claims ([[ASM-265]]). |
+| Source | 2026-10-12-reklamace-phase-1-testing-wrap-up-login-zebra-fakturace-state |
+| Added | 2026-10-12 |
+| Status | Active |
+
+### Anywhere
+
+| Field | Value |
+|-------|-------|
+| Definition | ViaPharma warehouse system login: simple name + password, or a login card scanned with the reader. Not required for the Reklamace app, which uses Microsoft login ([[ASM-266]]). |
+| Source | 2026-10-12-reklamace-phase-1-testing-wrap-up-login-zebra-fakturace-state |
+| Added | 2026-10-12 |
+| Status | Active |
+
+### ViaPharma networks (guest wifi vs. internal)
+
+| Field | Value |
+|-------|-------|
+| Definition | The warehouse guest wifi is password-protected and reachable only on site, but it is not the internal network: reaching Axapta (or BigHub's app and backend) needs VPN. Zebras sit inside the internal network. |
+| Source | 2026-10-12-reklamace-phase-1-testing-wrap-up-login-zebra-fakturace-state |
+| Added | 2026-10-12 |
+| Status | Active |
+
+### Předáci na příjmu
+
+| Field | Value |
+|-------|-------|
+| Definition | Receiving foremen: the main users of the Reklamace app. Quality staff (kvalitáři) sit upstairs and use it less. |
+| Source | 2026-10-12-reklamace-phase-1-testing-wrap-up-login-zebra-fakturace-state |
+| Added | 2026-10-12 |
+| Status | Active |
 
 ## Data Model Concepts
 

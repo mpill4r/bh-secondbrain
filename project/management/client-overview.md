@@ -1,5 +1,5 @@
 ---
-last_updated: 2026-10-08
+last_updated: 2026-10-12
 last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
@@ -63,6 +63,7 @@ N/A — no client stakeholders. See `project-stakeholders.md` for the full team/
 - **Direct monthly channel to the head of logistics (2026-10-05)**: 30-minute status with Žůrek and BigHub, Mondays at 10:00 ([[ASM-253]]). Žůrek explicitly asks BigHub to challenge a conservative, legislation-bound operation. Source: 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap.
 - **Management decisions don't trickle down (2026-10-08)**: Working-level contacts (Petr Sláma, Jana Egrmaierová) aren't invited to management meetings and don't hear their outcomes. Sláma paused Reklamace for a week while waiting for a "continue or not" decision that never came. After any management meeting, BigHub should tell the working level explicitly. Source: 2026-10-08-viapharma-reklamace-sync-data-map-slip-all-phases-slama-capacity.
 - **Recurring continuation doubt (2026-10-08)**: For the third time since 2026-09-23, the client side read BigHub's statements as "BigHub doesn't want to continue". Here it was a point about shifting capacity on Phases 3–5. Lead every capacity or prioritisation message with the commitment to deliver ([[ASM-255]]). Source: 2026-10-08-viapharma-reklamace-sync-data-map-slip-all-phases-slama-capacity.
+- **Recap e-mails welcomed (2026-10-12)**: Logistics (Tereza Foltová and the Thursday group) likes Marek's post-meeting recap e-mails as a shared record and small to-do list, not as anything authoritative. No reply expected unless someone objects. Source: 2026-10-12-reklamace-phase-1-testing-wrap-up-login-zebra-fakturace-state
 
 ## 10. Active Initiatives & Project History
 

@@ -1,10 +1,50 @@
 ---
-last_updated: 2026-10-08
-last_updated_by: auto — project-lessons capture
+last_updated: 2026-10-12
+last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
 
 # Lessons Learned
+
+---
+
+### LL-90
+
+| Field | Value |
+|-------|-------|
+| ID | LL-90 |
+| Created | 2026-10-12 |
+| Category | Testing / UAT |
+| Source | 2026-10-12-reklamace-phase-1-testing-wrap-up-login-zebra-fakturace-state |
+
+**Lesson**
+Before handing a build to client testers, send a short brief: what is ready, what to test, on which device, and what is known not to work. Without it, testers spend time on things that aren't ready or don't need testing, and read known gaps (or unlabelled controls) as bugs.
+
+**Context**
+Jana Egrmaierová over-invested in Reklamace Phase 1 testing; the test-phone mix-up meant some testing wasn't needed, and the app was down on the wrap-up day because of an in-progress auth change. She also read the photo-delete X as an error marker.
+
+**Cross-reference**
+[[ASM-227]], [[ASM-267]], 2026-10-12-reklamace-phase-1-testing-wrap-up-login-zebra-fakturace-state
+
+---
+
+### LL-89
+
+| Field | Value |
+|-------|-------|
+| ID | LL-89 |
+| Created | 2026-10-12 |
+| Category | Stakeholder management |
+| Source | 2026-10-12-reklamace-slama-data-map-feedback-fakturace-state-conflict |
+
+**Lesson**
+When two client stakeholders give contradicting design direction, don't point out the contradiction to either one in writing. Put both in the same meeting and ask "so how will it be?". The conflict usually comes from different viewpoints inside the client, not from a mistake, and only they can resolve it.
+
+**Context**
+Petr Sláma's Fakturace doprav proposal (BigHub holds the case until it's closed) contradicted Jan Žižka's earlier "Axapta gets every scan immediately". Filip Černý chose a joint Sláma + Žižka meeting rather than a written correction.
+
+**Cross-reference**
+[[ASM-053]], 2026-10-12-reklamace-slama-data-map-feedback-fakturace-state-conflict
 
 ---
 
