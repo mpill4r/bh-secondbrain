@@ -1,6 +1,6 @@
 ---
-last_updated: 2026-10-12
-last_updated_by: auto — project-meeting routing
+last_updated: 2026-10-13
+last_updated_by: auto — project-document routing
 owner: Marek Pillár
 ---
 
@@ -10,6 +10,15 @@ owner: Marek Pillár
 
 | ID | Status | Created | Description (short) |
 |----|--------|---------|---------------------|
+| ASM-279 | Open (2026-10-13) | 2026-10-13 | Product catalogues as a Listing enrichment alternative: Synfony (GS1 CZ, GDSN) first, then Icecat; SÚKL out of scope; no public prices, coverage to verify with sales |
+| ASM-278 | Open (2026-10-13) | 2026-10-13 | Listing enrichment from AKS needs a residential proxy (data-centre IPs get blocked) and a Dr. Max outbound network opening; ~low thousands CZK/month for 1–3k listings |
+| ASM-277 | Open (2026-10-13) | 2026-10-13 | Listing enrichment source — Filip's recommendation: (1) own scraper + proxy + legally approved sources now; (2) hybrid with catalogues as target if a pilot confirms; (3) managed scraper only for reliability/cost |
+| ASM-276 | Open (2026-10-13) | 2026-10-13 | Lexie over TEO's ~200 intranet manuals as a possible TEO candidate (Burda found it appealing; no request yet) |
+| ASM-275 | Open (2026-10-13) | 2026-10-13 | Jindřich asks Dudaško whether external analysts (BigHub / Duo) can map processes for departments that lack time |
+| ASM-274 | Decided (2026-10-13) | 2026-10-13 | TEO 2027 rows: BigHub drafts the BQ row from the meeting, Burda refines it by e-mail (no extra meeting) |
+| ASM-273 | Decided (2026-10-13) | 2026-10-13 | TEO stance: OCR is the top priority (sooner if possible); TEO submits few initiatives — no client capacity to co-develop/test many |
+| ASM-272 | Open (2026-10-13) | 2026-10-13 | Driving logbook (kniha jízd) as a company-wide 2027 candidate: Burda spends ~3 h/month; reach and Dr. Max owner unverified |
+| ASM-271 | Open (2026-10-13) | 2026-10-13 | TEO 2027 candidate: automate pharmacy power-outage notifications (~300/yr, ~600 pharmacies); value = preparedness + key-person risk; reuse Reklamace e-mail pipeline |
 | ASM-270 | Open (2026-10-12) | 2026-10-12 | Reklamace error messages: should Axapta return readable messages that the app just displays, instead of BigHub translating Axapta error codes? |
 | ASM-269 | Open (2026-10-12) | 2026-10-12 | Fakturace doprav (Sláma): send each complete document to Axapta immediately; BigHub holds incomplete ones until forced (month-end / per document); no versioning in AX |
 | ASM-268 | Decided (2026-10-12) | 2026-10-12 | No QR code on the Reklamace rozvozový list until a follow-up process defines its content and use (optional-field idea parked) |
@@ -282,6 +291,201 @@ owner: Marek Pillár
 | ASM-001 | Decided (2026-08-25) | 2026-09-01 | Dr. Max client-side coordination unified into one role (Jindřich Tůma) |
 
 ## Entries
+
+---
+
+### ASM-279
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-279 |
+| Created | 2026-10-13 |
+| Source | 2026-10-13-listing-enrichment-legal-options-filip |
+| By | Filip Černý (STK-006) |
+| Status | Open (2026-10-13) |
+
+**Description**
+Catalogues give structured supplier data without scraping. GS1 CZ / Synfony: food, drinks, cosmetics, drugstore, FMCG (depends on participating suppliers). Icecat: mainly electronics, also cosmetics/FMCG; not Czech. SÚKL open data: medicines, out of early scope. Both B2B, no public price list. Recommendation: contact Synfony sales first; later link to the supplier portal ([[ASM-081]]).
+
+**Rationale**
+Avoids dependence on competitor websites and most legal questions.
+
+**Impact**
+- **Dependency**: An owner to check coverage and pricing with Synfony sales.
+- **Scope**: Adds multi-source integration if chosen.
+
+---
+
+### ASM-278
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-278 |
+| Created | 2026-10-13 |
+| Source | 2026-10-13-listing-enrichment-legal-options-filip |
+| By | Filip Černý (STK-006) |
+| Status | Open (2026-10-13) |
+
+**Description**
+The scraper was tested only from a consumer IP. From AKS, target sites may block data-centre IPs, so a residential proxy is needed and must be tested. AKS currently can't reach outside the internal network: Dr. Max must allow outbound connections to the proxy provider. Pay-as-you-go cost ~low thousands of CZK/month at 1–3k listings/month. Proxy confers no right to content.
+
+**Rationale**
+Local success doesn't guarantee AKS success.
+
+**Impact**
+- **Dependency**: Dr. Max infra (network change).
+- **Cost**: Small ongoing proxy cost.
+
+---
+
+### ASM-277
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-277 |
+| Created | 2026-10-13 |
+| Source | 2026-10-13-listing-enrichment-legal-options-filip |
+| By | Filip Černý (STK-006) |
+| Status | Open (2026-10-13) |
+
+**Description**
+Variants: (1) own scraper + proxy + approved sources: smallest change, reuses the implementation; needs legal approval and Dr. Max network cooperation. (2) Hybrid: catalogues / supplier exports with scraping as an approved supplement; recommended target if a pilot confirms coverage and price. (3) Managed scraper (Apify, Tavily) only if more reliable or cheaper; never just for legal risk (no liability transfer). Extraction today keeps original text passages; extracting structured facts would lower the risk of copying wording.
+
+**Rationale**
+Third-party scrapers add no legal protection; catalogues avoid most access questions.
+
+**Impact**
+- **Dependency**: Dr. Max legal review ([[ASM-033]]); proxy + network ([[ASM-278]]); catalogue check ([[ASM-279]]).
+- **Gaps**: No volume-based cost breakdown, no human-assisted URL variant, no implementation estimate.
+
+---
+
+### ASM-276
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-276 |
+| Created | 2026-10-13 |
+| Source | 2026-10-13-teo-2027-initiatives-burda-power-outages-logbook |
+| By | Tomáš Burda (STK-025), Jindřich Tůma (STK-003) |
+| Status | Open (2026-10-13) |
+
+**Description**
+Jindřich and Marek explained Lexie (knowledge base over a department's own documents, cites sources, doesn't invent). Burda: TEO has ~200 manuals on the intranet and the concept "works nicely". No request made.
+
+**Rationale**
+Lexie is already being rolled out across departments, so effort is mostly configuration.
+
+**Impact**
+- **Scope**: Possible add-on row in the 2027 register if Burda wants it.
+
+---
+
+### ASM-275
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-275 |
+| Created | 2026-10-13 |
+| Source | 2026-10-13-teo-2027-initiatives-burda-power-outages-logbook |
+| By | Jindřich Tůma (STK-003) |
+| Status | Open (2026-10-13) |
+
+**Description**
+Many departments want an analyst to map their processes before naming initiatives. Jindřich will discuss with Tomáš Dudaško using external analyst capacity (BigHub, Duo) where departments lack time, producing recommendations on what suits automation or AI.
+
+**Rationale**
+Departments (e.g. TEO) don't know what AI can do and have no time to analyse.
+
+**Impact**
+- **Capacity**: Would draw on BigHub analyst time ([[ASM-190]]).
+- **Dependency**: Dudaško's decision; Duo overlap ([[ASM-187]]).
+
+---
+
+### ASM-274
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-274 |
+| Created | 2026-10-13 |
+| Source | 2026-10-13-teo-2027-initiatives-burda-power-outages-logbook |
+| By | Tomáš Burda (STK-025), Marek Pillár (STK-001) |
+| Status | Decided (2026-10-13) |
+
+**Description**
+For TEO's 2027 initiatives, Marek drafts the BQ row (benefit, KPIs, measurement) from what Burda said and sends it; Burda expands and comments over a few e-mail rounds.
+
+**Rationale**
+Burda prefers reacting to a draft over open-ended sessions.
+
+**Impact**
+- **Process**: Template for other time-poor owners.
+
+---
+
+### ASM-273
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-273 |
+| Created | 2026-10-13 |
+| Source | 2026-10-13-teo-2027-initiatives-burda-power-outages-logbook |
+| By | Tomáš Burda (STK-025) |
+| Status | Decided (2026-10-13) |
+
+**Description**
+Burda: TEO's priority is the OCR project, ideally faster than "over the whole next year". He won't submit 10 initiatives: each needs a client-side partner with time to test and answer questions, and parallel projects slow TEO down. Of 10–12 people, only two (Albrechtová, Kocián) do regular processing; eight are field technicians.
+
+**Rationale**
+Past experience: IT projects stall near production and MDs keep growing.
+
+**Impact**
+- **Delivery**: OCR pace is how Burda judges BigHub.
+- **2027**: TEO contributes few, well-described items.
+
+---
+
+### ASM-272
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-272 |
+| Created | 2026-10-13 |
+| Source | 2026-10-13-teo-2027-initiatives-burda-power-outages-logbook |
+| By | Tomáš Burda (STK-025), Marek Pillár (STK-001) |
+| Status | Open (2026-10-13) |
+
+**Description**
+Burda asked for a tool that writes the monthly driving logbook from where he went, refuelling stops, towns visited and start/end km; he spends ~3 h/month reconstructing it from fuel receipts. Marek sees it as company-wide (CZ and beyond) and will add a row, possibly with Burda as owner. Marek's "1,000 drivers × 3 h" was illustrative.
+
+**Rationale**
+Repetitive, cross-department task; Jindřich knows of similar solutions at other firms.
+
+**Impact**
+- **Dependency**: How many employees keep logbooks; data sources (fuel cards, GPS); a Dr. Max owner.
+
+---
+
+### ASM-271
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-271 |
+| Created | 2026-10-13 |
+| Source | 2026-10-13-teo-2027-initiatives-burda-power-outages-logbook |
+| By | Tomáš Burda (STK-025) |
+| Status | Open (2026-10-13) |
+
+**Description**
+Today the energy specialist manually reads outage notices (mostly standardised EGD e-mails keyed by supply-point EAN + address; some free-form landlord e-mails, e.g. Kaufland service day, sometimes in attachments; occasional calls), identifies the pharmacy / středisko, logs it in TEO's Excel and forwards the e-mail to the středisko, technician and regional director (cc facility). ~250 so far in 2026, ~300/yr across ~600 pharmacies. Vision: read e-mails + attachments, route automatically; human validation first, then automatic. Burda: possibly just a script; ~3 MD for BigHub given the Reklamace pipeline.
+
+**Rationale**
+Time saved is small; value is preparedness (avoid 8 idle pharmacists, IT call-outs for servers that don't restart) and key-person risk (one person; 1–2 months off means ~30 unannounced outages).
+
+**Impact**
+- **Effort**: Low; Jindřich: reuse of the Reklamace e-mail agent.
+- **BQ**: Needs a preparedness/risk KPI, not just hours.
 
 ---
 
@@ -2691,6 +2895,8 @@ Alana expects the stream to be a success and Dr. Max to want more, "but we don't
 - **Scope**: Follow-on TEO work, on this stream or a new one with the same team, is undefined until discovery happens.
 - **Business value**: Per-cycle effort is needed to judge ROI. See the volume conflict in the TEO/OCR project-knowledge entry (steady ~250 docs/week vs. two batches a year).
 - **Relationship**: Discovery doubles as relationship building with Radim, the route to Burda ([[ASM-166]]).
+
+**Update (2026-10-13)**: Burda's view: the OCR process (and the power-outage process) "was analysed long ago"; TEO knows exactly what it does and why. Most of TEO's 10–12 people are field technicians whose work isn't automatable; only Albrechtová and Kocián do regular processing. Stays Open: BigHub has still done no discovery of its own. Source: 2026-10-13-teo-2027-initiatives-burda-power-outages-logbook.
 
 ---
 
@@ -5709,6 +5915,9 @@ Filip flagged real doubt about whether scraping sites like Notino for enrichment
 
 
 **Update (2026-09-30)**: Neuman will take the scraping variant to Dr. Max legal once BigHub describes it (answer within ~1 month). Third-party extraction services, which take on responsibility and are not expensive, are the fallback. BigHub researches options and cost, including a human-assisted URL variant. The earlier legal check (via Alana Sihelská / Lukáš Szücs) has an unknown outcome. Scraping is a secondary goal, not a blocker. Source: 2026-09-30-listing-reset-neuman-enrichment-first-doplnky-stravy.
+
+**Update (2026-10-13)**: Filip Černý's write-up for Dr. Max legal is ready (process, what Legal must verify, variants); being sent to Petr Neuman. Legal review not yet started. See [[ASM-277]]. Source: 2026-10-13-listing-enrichment-legal-options-filip.
+
 ---
 
 ### ASM-032

@@ -1,6 +1,6 @@
 ---
-last_updated: 2026-10-12
-last_updated_by: auto — project-meeting routing
+last_updated: 2026-10-13
+last_updated_by: auto — project-document routing
 owner: Marek Pillár
 ---
 
@@ -401,6 +401,51 @@ Dudaško was unambiguous on this boundary when Jindřich raised a concrete pilot
 | Definition | Receiving foremen: the main users of the Reklamace app. Quality staff (kvalitáři) sit upstairs and use it less. |
 | Source | 2026-10-12-reklamace-phase-1-testing-wrap-up-login-zebra-fakturace-state |
 | Added | 2026-10-12 |
+| Status | Active |
+
+### TEO team structure
+
+| Field | Value |
+|-------|-------|
+| Definition | Dr. Max CZE technical department (head: Tomáš Burda): 10–12 people. Only two do regular processing (Michaela Albrechtová; Kocián in Prague, inspections); about eight are field technicians (building pharmacies, repairs, suppliers, authorities), human-factor work Burda sees as not automatable. |
+| Source | 2026-10-13-teo-2027-initiatives-burda-power-outages-logbook |
+| Added | 2026-10-13 |
+| Status | Active |
+
+### Pharmacy power-outage notifications
+
+| Field | Value |
+|-------|-------|
+| Definition | Known outages reach TEO from distributors (standardised e-mails, e.g. EGD, keyed by the supply point's EAN, i.e. electricity supply-point ID, + address), landlords (free-form, sometimes attachments) or calls. The energy specialist (energetik) maps them to a pharmacy / středisko (numbered cost centre with its own e-mail, e.g. 293), logs them in an Excel and forwards to the středisko, technician and regional director (cc facility). ~300/yr across ~600 Dr. Max CZ pharmacies ([[ASM-271]]). |
+| Source | 2026-10-13-teo-2027-initiatives-burda-power-outages-logbook |
+| Added | 2026-10-13 |
+| Status | Active |
+
+### 2027 AI-initiative selection
+
+| Field | Value |
+|-------|-------|
+| Definition | Departments own their initiatives; BigHub helps define benefit, KPIs and measurement. By end of November 2026 (maybe end of year) Tomáš Dudaško and management pick about ten for 2027 from a cross-country register (initiatives can be reused between countries); the rest stay in the register. Effort counts alongside benefit. Dr. Max is starting an AI-adoption programme (newsletter, intranet). |
+| Source | 2026-10-13-teo-2027-initiatives-burda-power-outages-logbook |
+| Added | 2026-10-13 |
+| Status | Active |
+
+### Listing enrichment pipeline
+
+| Field | Value |
+|-------|-------|
+| Definition | External enrichment for Listing: (1) DuckDuckGo search for a competitor listing, picking the most relevant result containing the same EAN; (2) crawl HTML + JavaScript into Markdown (browser emulation); (3) a small LLM strips non-listing content, keeping description and parameter tables; (4) generation from the original listing + extracted listing + optional user comment. A human confirms everything; fields can be set manual-only. Extraction keeps original text passages. |
+| Source | 2026-10-13-listing-enrichment-legal-options-filip |
+| Added | 2026-10-13 |
+| Status | Active |
+
+### Synfony / GDSN, Icecat
+
+| Field | Value |
+|-------|-------|
+| Definition | Product-data catalogues. GS1 CZ Synfony (GDSN standard): Czech, FMCG incl. cosmetics, drugstore, food; coverage depends on participating suppliers. Icecat: international, mainly electronics, also cosmetics/FMCG. Both B2B, no public prices ([[ASM-279]]). |
+| Source | 2026-10-13-listing-enrichment-legal-options-filip |
+| Added | 2026-10-13 |
 | Status | Active |
 
 ## Data Model Concepts

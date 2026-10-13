@@ -1,10 +1,30 @@
 ---
-last_updated: 2026-10-12
+last_updated: 2026-10-13
 last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
 
 # Lessons Learned
+
+---
+
+### LL-91
+
+| Field | Value |
+|-------|-------|
+| ID | LL-91 |
+| Created | 2026-10-13 |
+| Category | Stakeholder management / discovery |
+| Source | 2026-10-13-teo-2027-initiatives-burda-power-outages-logbook |
+
+**Lesson**
+In a meeting to collect initiatives, don't question an idea's value or the vendor's capacity up front. It reads as rejecting the owner's idea and puts them on the defensive. Collect first, quantify later, and let the selection process do the filtering.
+
+**Context**
+Marek asked whether TEO's power-outage case justified BigHub capacity. Burda replied "then why are you asking us for more tasks?" and it took Jindřich's reframing and Marek's apology to recover.
+
+**Cross-reference**
+[[ASM-271]], [[ASM-273]], 2026-10-13-teo-2027-initiatives-burda-power-outages-logbook
 
 ---
 
