@@ -1,5 +1,5 @@
 ---
-last_updated: 2026-10-13
+last_updated: 2026-10-14
 last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
@@ -66,6 +66,7 @@ N/A — no client stakeholders. See `project-stakeholders.md` for the full team/
 - **Recap e-mails welcomed (2026-10-12)**: Logistics (Tereza Foltová and the Thursday group) likes Marek's post-meeting recap e-mails as a shared record and small to-do list, not as anything authoritative. No reply expected unless someone objects. Source: 2026-10-12-reklamace-phase-1-testing-wrap-up-login-zebra-fakturace-state
 - **Client-side testing capacity is the bottleneck (2026-10-13)**: Tomáš Burda (TEO) limits initiatives because each needs a department partner with time to test and answer questions; parallel projects stall. Expect department heads to submit few, well-prepared items. Source: 2026-10-13-teo-2027-initiatives-burda-power-outages-logbook
 - **Business owners don't know what AI can do (2026-10-13)**: Burda asked for examples of what BigHub automates elsewhere so TEO can recognise similar processes; showing concrete examples helps surface candidates. Source: 2026-10-13-teo-2027-initiatives-burda-power-outages-logbook
+- **Decisions made without Sláma cause rework (2026-10-14)**: Petr Sláma repeatedly points out that requirements change in meetings he isn't in. Remedy: every decision goes into the written spec he works from. Source: 2026-10-14-fakturace-doprav-document-state-zizka-slama
 
 ## 10. Active Initiatives & Project History
 

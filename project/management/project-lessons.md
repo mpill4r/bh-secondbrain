@@ -1,10 +1,90 @@
 ---
-last_updated: 2026-10-13
-last_updated_by: auto — project-meeting routing
+last_updated: 2026-10-15
+last_updated_by: auto — project-document routing
 owner: Marek Pillár
 ---
 
 # Lessons Learned
+
+---
+
+### LL-95
+
+| Field | Value |
+|-------|-------|
+| ID | LL-95 |
+| Created | 2026-10-15 |
+| Category | Planning / stakeholder management |
+| Source | 2026-10-15-viapharma-reklamace-sync-pickup-warehouse-zebra-brightpick-capacity |
+
+**Lesson**
+When the client's key technical person is shared with a higher-priority programme, present the roadmap as durations plus explicit per-phase client dependencies ("what we need from you, A–D"), not dates, and let the client decide timing. That keeps BigHub credible and turns the capacity conflict into the client's planning decision instead of a delivery slip blamed on the vendor.
+
+**Context**
+Sláma goes onsite for BrightPick from 2026-11-16 until year-end, and Spilka put BrightPick first. Jindřich answered with "the ball is on our side: we put the work on the table, you decide timing", and Spilka and Tereza accepted.
+
+**Cross-reference**
+[[ASM-248]], [[ASM-257]], [[LL-94]], 2026-10-15-viapharma-reklamace-sync-pickup-warehouse-zebra-brightpick-capacity
+
+---
+
+### LL-94
+
+| Field | Value |
+|-------|-------|
+| ID | LL-94 |
+| Created | 2026-10-15 |
+| Category | Requirements / data |
+| Source | 2026-10-14-reklamace-sync-filip-warehouse-address-xmanager-error-messages |
+
+**Lesson**
+Deciding *where* a data field is stored is not the same as deciding *where its value comes from*. When closing a data-map row, check that both the storage and the source (who supplies the value and how its quality is validated) are answered; otherwise the row looks closed but the build is still blocked.
+
+**Context**
+The final Reklamace data map put the warehouse address in the knowledge base, and the spec marked it resolved. Filip pointed out that nobody supplies a reliable value: Sláma's Excel has it, but not always correctly, so [[ASM-263]] was reopened with six sourcing variants.
+
+**Cross-reference**
+[[ASM-263]], [[ASM-282]], [[LL-93]], 2026-10-14-reklamace-sync-filip-warehouse-address-xmanager-error-messages
+
+---
+
+### LL-93
+
+| Field | Value |
+|-------|-------|
+| ID | LL-93 |
+| Created | 2026-10-14 |
+| Category | Requirements / decision-making |
+| Source | 2026-10-14-reklamace-data-map-final-slama |
+
+**Lesson**
+In an options sheet the client fills in, add an explicit "Decision" column next to the client-comment and vendor-reply columns. Meeting recaps and comment threads kept the Reklamace storage question open for weeks. Once each row had to end in a single written value, the client closed all 18 rows in one round.
+
+**Context**
+The Reklamace data map ran from 09-25 through 10-01 and 10-12 with feedback in column J (Sláma) and column K (BigHub). Column L ("Rozhodnutí") turned it into a binding record that could be copied straight into the spec.
+
+**Cross-reference**
+[[ASM-282]], [[ASM-229]], [[LL-89]], 2026-10-14-reklamace-data-map-final-slama
+
+---
+
+### LL-92
+
+| Field | Value |
+|-------|-------|
+| ID | LL-92 |
+| Created | 2026-10-14 |
+| Category | Stakeholder management / requirements |
+| Source | 2026-10-14-fakturace-doprav-document-state-zizka-slama |
+
+**Lesson**
+When two client stakeholders disagree on system behaviour, ask the business owner a concrete question from the user's point of view ("when a newer file arrives, delete the old attachment or keep history?") instead of debating architecture. A user-level answer settles most technical disputes quickly.
+
+**Context**
+Sláma and Žižka disagreed on where Fakturace doprav document state lives. Žižka called it "technical"; once Sláma asked the user question, Žižka answered in seconds (overwrite, no history) and Sláma accepted.
+
+**Cross-reference**
+[[ASM-053]], [[ASM-269]], 2026-10-14-fakturace-doprav-document-state-zizka-slama
 
 ---
 

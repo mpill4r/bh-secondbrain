@@ -32,7 +32,7 @@
 
   .board {
     display: grid;
-    grid-template-columns: 132px 248px 344px 256px 112px 336px 304px 232px 296px 256px 264px;
+    grid-template-columns: 132px 248px 344px 256px 336px 304px 232px 296px 256px 264px;
     column-gap: 16px; row-gap: 28px;
   }
 
@@ -86,6 +86,39 @@
   .bar .t { font-size: 17px; font-weight: 600; }
   .bar .s { font-size: 14px; opacity: 0.75; }
 
+  /* UAT after each phase: small filled violet step at the bottom of the phase */
+  .uat { display: flex; align-items: center; gap: 10px; background: var(--violet); color: var(--white); border-radius: 12px; padding: 10px 14px; font-size: 14px; font-weight: 700; box-shadow: 0 0 0 4px var(--violet-100); }
+  .uat .dia { width: 11px; height: 11px; background: var(--white); transform: rotate(45deg); border-radius: 2px; flex: none; }
+  .uat .s { font-weight: 400; font-size: 12.5px; opacity: 0.85; }
+  .maplink { margin-left: 6px; font-size: 12px; font-weight: 600; color: var(--violet-600); text-decoration: none; border-bottom: 1px solid var(--violet-300); }
+  .maplink:hover { color: var(--violet); }
+
+  /* blockers: what stops BigHub from developing further */
+  .blk { margin-top: 56px; }
+  .blk h2 { margin: 12px 0 6px; font-size: 32px; font-weight: 400; letter-spacing: -0.01em; }
+  .blk h2 b { font-weight: 700; }
+  .blk .lede { margin-bottom: 24px; }
+  .blk-grid { display: grid; grid-template-columns: repeat(4, 340px); gap: 16px; }
+  .blk-group { grid-column: 1 / -1; margin: 12px 0 0; font-size: 15px; font-weight: 700; color: var(--violet-600); }
+  .bc { background: var(--white); border: 1px solid var(--line); border-left: 4px solid var(--violet); border-radius: 14px; padding: 14px 16px; font-size: 14px; line-height: 1.5; color: var(--ink-2); display: flex; flex-direction: column; gap: 8px; }
+  .bc.later { border-left-color: var(--violet-300); background: var(--violet-50); }
+  .bc .top { display: flex; gap: 6px; flex-wrap: wrap; }
+  .bc .ph { border: 1.5px solid var(--violet-300); color: var(--violet-600); border-radius: 999px; padding: 1px 9px; font-size: 11.5px; font-weight: 600; }
+  .bc .t { font-size: 15px; font-weight: 700; color: var(--ink); line-height: 1.3; }
+  .bc .who { font-size: 12.5px; color: var(--ink-3); }
+  .bc .who b { color: var(--ink-2); font-weight: 600; }
+
+  /* blockers under each phase: yellow */
+  .blocker { background: #FFF6C7; border: 1.5px solid #F2C94C; border-radius: 14px; padding: 14px 16px; font-size: 13.5px; line-height: 1.45; color: #4A3B00; }
+  .blocker h4 { margin: 0 0 8px; font-size: 14px; font-weight: 700; color: #6B5200; display: flex; align-items: center; gap: 8px; }
+  .blocker h4::before { content: "!"; display: inline-flex; align-items: center; justify-content: center; width: 18px; height: 18px; border-radius: 50%; background: #F2C94C; color: #4A3B00; font-size: 12px; font-weight: 800; }
+  .blocker ul { margin: 0; padding: 0; list-style: none; }
+  .blocker li { margin: 0 0 8px; padding-left: 0; }
+  .blocker li:last-child { margin-bottom: 0; }
+  .blocker li b { color: #3A2E00; }
+  .blocker .who { display: block; font-size: 12px; color: #7A6410; }
+  .blocker .pre { display: inline-block; margin-left: 4px; border-radius: 999px; background: #FFFFFF; border: 1px solid #F2C94C; color: #6B5200; font-size: 10.5px; font-weight: 600; padding: 0 7px; vertical-align: 1px; }
+
   .legend { margin-top: 40px; display: flex; gap: 28px; align-items: center; font-size: 14px; color: var(--ink-2); }
   .legend .sw { display: inline-block; width: 16px; height: 16px; border-radius: 5px; margin-right: 8px; vertical-align: -3px; }
 </style>
@@ -94,12 +127,12 @@
 <div class="page">
   <span class="tag">Roadmap reklamací</span>
   <h1>Sekvence fází <b>od MVP po další typy reklamací</b></h1>
-  <p class="lede">Pořadí dodání zleva doprava. Bez termínů — ty doplní harmonogram.</p>
+  <p class="lede">Pořadí dodání zleva doprava. Každá fáze končí vlastním UAT (cca 2 týdny testování na straně ViaPharma). Bez termínů — délky fází a potřeby od ViaPharma doplní harmonogram.</p>
 
   <div class="board">
 
     <div class="lane" style="grid-row: 1;"><div class="n">Souběžně</div></div>
-    <div class="bar" style="grid-row: 1; grid-column: 3 / 12;">
+    <div class="bar" style="grid-row: 1; grid-column: 3 / 11;">
       <span class="pill">Discovery</span>
       <span class="t">Specifikace dalších fází · mapování procesu přímo na skladech</span>
       <span class="s">dohodnuto 5. 10. 2026</span>
@@ -114,96 +147,114 @@
         <li>API Axapta</li><li>API Boomi</li><li>Produkční nasazení</li><li>Logging / monitoring / alerting</li></ul></div>
       <div class="card int"><h4>Integrace</h4><div class="chips"><span class="chip">Axapta</span><span class="chip">Boomi</span><span class="chip">Azure AKS</span></div></div>
       <div class="card goal"><h4>Co se tím dosáhne</h4><p>Základ, na kterém běží všechny další fáze.</p></div>
+      <div class="blocker"><h4>Co nás blokuje</h4><ul><li><b>Produkční schránka a nasazení</b><span class="pre">před produkcí</span> — přístup ke Graph API pro produkční schránku, produkční nasazení, logging / monitoring<span class="who">Kdo: infra Dr. Max</span></li></ul></div>
     </div>
 
     <div class="col lane-mvp" style="grid-row: 2; grid-column: 3;">
       <div class="head"><span class="tag">Fáze 1 · kap. 1.2–1.5</span><div class="t">Příjmové reklamace — poškozené zboží</div></div>
       <div class="card"><h4>Aplikace na příjmu</h4><ul>
         <li>Příjem s výhradou (MS štítek)</li><li>Načtení SP štítku</li><li>Potvrzení zboží</li>
-        <li>Focení poškozeného zboží</li><li>Automatické založení reklamace v AX</li></ul></div>
+        <li>Focení poškozeného zboží</li><li>Automatické založení reklamace v AX</li><li>Zařízení: terminál Zebra (starší model od IT)</li></ul></div>
       <div class="card"><h4>Dokumenty a e-mail</h4><ul>
-        <li>Rozvozový list</li><li>Návratka dodavateli</li><li>Draft e-mailu dodavateli — kontroluje a odesílá pracovník</li></ul></div>
-      <div class="card"><h4>Údaje o dodavatelích</h4><ul>
-        <li>Minimum v AX (číslo dodavatele)</li><li>Ostatní v jednom SharePoint Listu</li><li>Vlastník Listu na straně Dr. Max<span class="open">Otevřené</span></li></ul></div>
-      <div class="card int"><h4>Integrace</h4><div class="chips"><span class="chip">Axapta API</span><span class="chip">Graph API / Outlook</span><span class="chip">SharePoint List</span></div></div>
-      <div class="card goal"><h4>Co se tím dosáhne</h4><p>Reklamace z mobilu za pár kroků. Případ, doklady i e-mail vzniknou automaticky.</p></div>
+        <li>Rozvozový list</li><li>Sklad podle uživatele, místo vyzvednutí ze znalostní báze</li><li>Návratka dodavateli</li><li>Draft e-mailu dodavateli — kontroluje a odesílá pracovník</li></ul></div>
+      <div class="card"><h4>Údaje o dodavatelích <a class="maplink" href="https://drmaxglobal.sharepoint.com/:x:/t/CZEAIlogistika/IQD08DYBf1bUSJ1ZWKkB077wAUQTvd90cCnfKKK-LC-WeK4?e=Hb95S0" target="_blank" rel="noopener">Mapa dat ↗</a></h4><ul>
+        <li>V AX jen účet dodavatele</li><li>Ostatní ve znalostní bázi mimo AX</li><li>Poznámky zobrazené v AX (infolog)</li><li>Nástroj a vlastník dat na straně Dr. Max<span class="open">Otevřené</span></li></ul></div>
+      <div class="card int"><h4>Integrace</h4><div class="chips"><span class="chip">Axapta API</span><span class="chip">Graph API / Outlook</span><span class="chip">Znalostní báze</span></div></div>
+      <div class="card goal"><h4>Co se tím dosáhne</h4><p>Reklamace přímo na příjmu za pár kroků. Případ, doklady i e-mail vzniknou automaticky.</p></div>
+      <div class="uat"><span class="dia"></span>UAT Fáze 1</div>
+      <div class="blocker"><h4>Co nás blokuje</h4><ul><li><b>Znalostní báze</b> — potvrdit X-Manager (logování změn, flexibilita), import tabulky dodavatelů, vlastník dat na straně Dr. Max<span class="who">Kdo: Dr. Max (tým X-Manager), logistika</span></li><li><b>Úprava API kontraktu Axapta</b> — číslo reklamace, RD a datum vystavení v API Uzavření reklamace; poznámky v Claim-cases; odkaz na PDF; adresa a hlavní kontakt z AX odpadají<span class="who">Kdo: P. Sláma (AX)</span></li><li><b>Stažení návratky z AX</b> — implementace GET /claim-cases/{axaptaRef}/protocol na straně AX<span class="who">Kdo: P. Sláma (AX)</span></li><li><b>Chybové hlášky</b> — texty a seznam případů z AX (směr dohodnut: hlášky posílá AX)<span class="who">Kdo: P. Sláma, J. Egrmaierová</span></li><li><b>Potvrzení Zebry</b> — e-mailové potvrzení modelu a Zebra pro BigHub na testování<span class="who">Kdo: P. Spilka, T. Foltová</span></li><li><b>Testování e-mailů bez dodavatelů</b> — kam odeslat draft, simulované odpovědi, přístupy do testovací schránky<span class="who">Kdo: logistika (T. Foltová)</span></li><li><b>Práce v AX do konce října</b> — úpravy AX pro Fázi 1 + 1.1a před odjezdem P. Slámy na BrightPick (16. 11.)<span class="who">Kdo: P. Sláma</span></li></ul></div>
     </div>
 
     <div class="col lane-mvp" style="grid-row: 2; grid-column: 4;">
-      <div class="head"><span class="tag">Fáze 1.1a · kap. 1.6</span><div class="t">Auditní stopa komunikace</div></div>
+      <div class="head"><span class="tag">Fáze 1.1a · kap. 1.6</span><div class="t">Auditní stopa a třídění odpovědí</div></div>
       <div class="card"><h4>Záznam komunikace</h4><ul>
         <li>Agent v kopii e-mailů z reklamačního mailboxu</li><li>Přiřazení e-mailu k případu</li>
         <li>PDF otisk komunikace v AX</li><li>Přílohy od dodavatele<span class="open">Otevřené</span></li></ul></div>
+      <div class="card"><h4>Třídění odpovědí dodavatele</h4><ul>
+        <li>Klasifikace: sklad · svoz · likvidace · čekání · přeposlání</li><li>Složky ve sdíleném mailboxu + příznak „hotovo“</li>
+        <li>Co agent nezná, předá pracovníkovi</li><li>Ladění na reálných vláknech<span class="open">Otevřené</span></li></ul></div>
       <div class="card int"><h4>Integrace</h4><div class="chips"><span class="chip">Graph API</span><span class="chip">Axapta API</span></div></div>
-      <div class="card goal"><h4>Co se tím dosáhne</h4><p>Celá komunikace dohledatelná u případu v AX — i pro finance.</p></div>
+      <div class="card goal"><h4>Co se tím dosáhne</h4><p>Celá komunikace dohledatelná u případu v AX — i pro finance. Odpovědi dodavatelů roztříděné, ~5 ze 7 případů vyřeší jedna odpověď.</p></div>
+      <div class="uat"><span class="dia"></span>UAT Fáze 1.1a</div>
+      <div class="blocker"><h4>Co nás blokuje</h4><ul><li><b>Předání komunikace do AX</b> — PDF otisk na vyžádání vs. při uzavření případu; přílohy od dodavatele samostatně vs. v PDF<span class="who">Kdo: P. Sláma</span></li><li><b>Reálná e-mailová vlákna</b> — další vlákna (cca 30) pro ladění třídění odpovědí — dnes jen ~7<span class="who">Kdo: J. Egrmaierová</span></li></ul></div>
     </div>
-
-    <div class="ms" style="grid-row: 2; grid-column: 5;"><div class="dia"></div><div class="t">UAT</div><div class="s">Fáze 1<br>+ 1.1a</div></div>
 
     <!-- 2. Plná verze -->
     <div class="lane" style="grid-row: 3;"><div class="n">2. Plná verze</div><div class="s">Fáze 1.1b · 2 · avízo</div></div>
 
-    <div class="col" style="grid-row: 3; grid-column: 6;">
+    <div class="col" style="grid-row: 3; grid-column: 5;">
       <div class="head"><span class="tag">Fáze 1.1b · kap. 2.1</span><div class="t">Navazující e-mailový sled</div></div>
       <div class="card"><h4>E-mailový agent</h4><ul>
-        <li>Rozpozná odpověď dodavatele</li><li>Známé výsledky: sklad · svoz · likvidace · čekání · přeposlání</li>
         <li>Další krok a draft správnému adresátovi</li><li>Strukturované údaje z odpovědi</li>
         <li>Alternativní drafty při více adresátech</li><li>Co nezná, předá pracovníkovi</li></ul></div>
       <div class="card"><h4>Podmínky</h4><ul>
-        <li>Postupy per dodavatel</li><li>Kontakty podle role</li><li>~30 reálných e-mailových vláken</li></ul></div>
+        <li>Postupy per dodavatel ve znalostní bázi</li><li>Kontakty podle kroku</li><li>~30 reálných e-mailových vláken</li></ul></div>
       <div class="card goal"><h4>Co se tím dosáhne</h4><p>Agent vede sled komunikace — reklamaci zvládne kdokoli.</p></div>
+      <div class="uat"><span class="dia"></span>UAT Fáze 1.1b</div>
+      <div class="blocker"><h4>Co nás blokuje</h4><ul><li><b>Kapacita P. Slámy (BrightPick)</b> — od 16. 11. onsite v Ostravě, do konce roku omezená kapacita; termín fáze určí ViaPharma podle priorit<span class="who">Kdo: P. Spilka, P. Sláma</span></li><li><b>Postupy per dodavatel</b> — sepsané postupy a kontakty podle kroku do znalostní báze<span class="who">Kdo: logistika</span></li><li><b>Reálná e-mailová vlákna</b> — neobvyklé případy pro návrh navazujícího sledu<span class="who">Kdo: J. Egrmaierová</span></li></ul></div>
     </div>
 
-    <div class="col" style="grid-row: 3; grid-column: 7;">
+    <div class="col" style="grid-row: 3; grid-column: 6;">
       <div class="head"><span class="tag">Fáze 2 · kap. 2.2</span><div class="t">Skladové reklamace</div></div>
       <div class="card"><h4>Aplikace ve skladu (RV)</h4><ul>
         <li>Načtení palety / lokace</li><li>Identifikace zboží (2D kód / štítek)</li><li>Volba šarže</li><li>Počet kusů a focení</li></ul></div>
       <div class="card"><h4>Čtení štítků</h4><ul>
         <li>OCR ručně psaných štítků</li><li>Vzorek štítků a identifikátorů<span class="open">Otevřené</span></li></ul></div>
       <div class="card goal"><h4>Co se tím dosáhne</h4><p>Vady zjištěné ve skladu se zakládají stejně snadno jako na příjmu.</p></div>
+      <div class="uat"><span class="dia"></span>UAT Fáze 2</div>
+      <div class="blocker"><h4>Co nás blokuje</h4><ul><li><b>Kapacita P. Slámy (BrightPick)</b> — od 16. 11. onsite v Ostravě, do konce roku omezená kapacita; termín fáze určí ViaPharma podle priorit<span class="who">Kdo: P. Spilka, P. Sláma</span></li><li><b>Vzorek štítků a identifikátorů</b> — ~10 reálných štítků (všechny typy) a příklady identifikátorů palet / lokací<span class="who">Kdo: logistika</span></li></ul></div>
     </div>
 
-    <div class="col" style="grid-row: 3; grid-column: 8;">
+    <div class="col" style="grid-row: 3; grid-column: 7;">
       <div class="head"><span class="tag">Volitelné · kap. 2.3</span><div class="t">Okamžité avízo</div></div>
       <div class="card"><h4>Per dodavatel</h4><ul>
-        <li>Noční automatické upozornění po příjmu s výhradou</li><li>Kteří dodavatelé a jaká lhůta<span class="open">Otevřené</span></li></ul></div>
+        <li>Noční automatické upozornění po příjmu s výhradou</li><li>Flag ve znalostní bázi</li><li>Kteří dodavatelé a jaká lhůta<span class="open">Otevřené</span></li></ul></div>
       <div class="card goal"><h4>Co se tím dosáhne</h4><p>Dodavatel ví o poškozené dodávce včas (~24 h).</p></div>
+      <div class="uat"><span class="dia"></span>UAT avíza</div>
+      <div class="blocker"><h4>Co nás blokuje</h4><ul><li><b>Kapacita P. Slámy (BrightPick)</b> — od 16. 11. onsite v Ostravě, do konce roku omezená kapacita; termín fáze určí ViaPharma podle priorit<span class="who">Kdo: P. Spilka, P. Sláma</span></li><li><b>Podklady k avízu</b> — seznam dodavatelů a lhůty, vzor textu, souhlas s automatickým odesláním<span class="who">Kdo: logistika</span></li></ul></div>
     </div>
 
     <!-- 3. Nice to Have -->
     <div class="lane" style="grid-row: 4;"><div class="n">3. Nice to Have</div></div>
 
-    <div class="col" style="grid-row: 4; grid-column: 9;">
+    <div class="col" style="grid-row: 4; grid-column: 8;">
       <div class="head"><span class="tag">Kap. 3.1</span><div class="t">Rozšíření e-mailového agenta</div></div>
       <div class="card"><h4>Pohodlí pracovníka</h4><ul>
-        <li>Údaje o dodavateli v Outlooku (add-in)</li><li>Dotaz specifický pro dodavatele v 1. e-mailu</li>
+        <li>Dotaz specifický pro dodavatele v 1. e-mailu</li>
         <li>Upomínky na neodpovězené e-maily</li><li>Automatický výběr adresáta</li></ul></div>
-      <div class="card goal"><h4>Co se tím dosáhne</h4><p>Méně přepínání mezi aplikacemi a hlídání odpovědí.</p></div>
+      <div class="card goal"><h4>Co se tím dosáhne</h4><p>Méně ruční práce: dotazy, upomínky a výběr adresáta.</p></div>
+      <div class="uat"><span class="dia"></span>UAT rozšíření</div>
     </div>
 
     <!-- Další fáze -->
     <div class="lane" style="grid-row: 5;"><div class="n">Další fáze</div><div class="s">po discovery</div></div>
 
-    <div class="col" style="grid-row: 5; grid-column: 10;">
+    <div class="col" style="grid-row: 5; grid-column: 9;">
       <div class="head"><span class="tag">Fáze 3</span><div class="t">Nedodané zboží</div></div>
       <div class="card"><h4>Příjmové reklamace</h4><ul>
         <li>Viditelná chyba (při vybalení)</li><li>Neviditelná chyba (rozdíl v AX)</li><li>Další typy problémů z AX</li></ul></div>
       <div class="card goal"><h4>Co se tím dosáhne</h4><p>Chybějící zboží se reklamuje bez ručního dohledávání.</p></div>
+      <div class="uat"><span class="dia"></span>UAT Fáze 3</div>
+      <div class="blocker"><h4>Co nás blokuje</h4><ul><li><b>Kapacita P. Slámy (BrightPick)</b> — od 16. 11. onsite v Ostravě, do konce roku omezená kapacita; termín fáze určí ViaPharma podle priorit<span class="who">Kdo: P. Spilka, P. Sláma</span></li><li><b>Popis fáze</b> — vysokoúrovňový popis jako vstup do discovery (cca 26. 10.)<span class="who">Kdo: J. Egrmaierová, T. Foltová, P. Spilka</span></li><li><b>Typy problémů</b><span class="pre">před produkcí</span> — seznam typů z AX a jejich vliv na e-mailový tok<span class="who">Kdo: logistika, P. Sláma</span></li></ul></div>
     </div>
 
-    <div class="col" style="grid-row: 5; grid-column: 11;">
+    <div class="col" style="grid-row: 5; grid-column: 10;">
       <div class="head"><span class="tag">Fáze 4 · 5</span><div class="t">Lékárny a e-shop</div></div>
       <div class="card"><h4>Reklamace odběratelů</h4><ul>
         <li>Posouzení dodavatelem (30 dní)</li><li>Bez okamžitého zaúčtování</li><li>Párování duplicit</li></ul></div>
       <div class="card goal"><h4>Co se tím dosáhne</h4><p>Reklamace z lékáren a e-shopu ve stejném toku.</p></div>
+      <div class="uat"><span class="dia"></span>UAT Fáze 4 · 5</div>
+      <div class="blocker"><h4>Co nás blokuje</h4><ul><li><b>Kapacita P. Slámy (BrightPick)</b> — od 16. 11. onsite v Ostravě, do konce roku omezená kapacita; termín fáze určí ViaPharma podle priorit<span class="who">Kdo: P. Spilka, P. Sláma</span></li><li><b>Popis fází</b> — vysokoúrovňový popis jako vstup do discovery (cca 26. 10.)<span class="who">Kdo: J. Egrmaierová, T. Foltová, P. Spilka</span></li></ul></div>
     </div>
   </div>
 
+
   <div class="legend">
     <span><span class="sw" style="border:2px solid var(--violet); box-shadow:0 0 0 3px var(--violet-100)"></span>Aktuální fáze</span>
-    <span><span class="sw" style="background:var(--violet)"></span>Milník</span>
+    <span><span class="uat" style="display:inline-flex;padding:3px 10px;margin-right:8px;font-size:12px;box-shadow:none"><span class="dia"></span>UAT</span>UAT po dodání fáze</span>
     <span><span class="open" style="margin:0 8px 0 0">Otevřené</span>Čeká na rozhodnutí</span>
     <span><span class="sw" style="border:1.5px dashed var(--violet-300); background:var(--violet-50)"></span>Co se tím dosáhne</span>
+    <span><span class="sw" style="background:#FFF6C7; border:1.5px solid #F2C94C"></span>Co nás blokuje (BigHub)</span>
   </div>
 </div>
 </body>

@@ -1,6 +1,6 @@
 ---
-last_updated: 2026-10-13
-last_updated_by: auto — project-document routing
+last_updated: 2026-10-15
+last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
 
@@ -10,6 +10,13 @@ owner: Marek Pillár
 
 | ID | Status | Created | Description (short) |
 |----|--------|---------|---------------------|
+| ASM-286 | Decided (2026-10-15) | 2026-10-15 | Reklamace: target to finish Phase 1 + 1.1a by end of October 2026; Filip's estimate next week |
+| ASM-285 | Decided (2026-10-14) | 2026-10-14 | Reklamace: the "who changed what" audit trail to Axapta (user identity per change) is built after login; preliminarily agreed with Sláma |
+| ASM-284 | Decided (2026-10-15) | 2026-10-14 | Reklamace phase scope: reply sorting into folders (+ done flag) moves to 1.1a with the audit trail; 1.1b = follow-up sequence (Filip's split) |
+| ASM-283 | Decided (2026-10-14) | 2026-10-14 | Reklamace: UAT after every phase (not one UAT), ~4 days per phase for feedback; email-agent tuning falls into it |
+| ASM-282 | Decided (2026-10-14) | 2026-10-14 | Reklamace supplier-data storage final (data map column L): AX = supplier account + claim number / RD / issue date via claim-closing API; everything else supplier-specific in the KB outside AX |
+| ASM-281 | Decided (2026-10-14) | 2026-10-14 | Fakturace doprav: standalone scanning demo (no Axapta) offered for next week, tied to the Canon scanner meeting |
+| ASM-280 | Open (2026-10-14) | 2026-10-14 | Fakturace doprav billing row before the ZPPV arrives: Žižka wants it created from the AR number on the first scanned paper and completed later; not in the approved spec — Žižka + Tereza to write requirements in user language |
 | ASM-279 | Open (2026-10-13) | 2026-10-13 | Product catalogues as a Listing enrichment alternative: Synfony (GS1 CZ, GDSN) first, then Icecat; SÚKL out of scope; no public prices, coverage to verify with sales |
 | ASM-278 | Open (2026-10-13) | 2026-10-13 | Listing enrichment from AKS needs a residential proxy (data-centre IPs get blocked) and a Dr. Max outbound network opening; ~low thousands CZK/month for 1–3k listings |
 | ASM-277 | Open (2026-10-13) | 2026-10-13 | Listing enrichment source — Filip's recommendation: (1) own scraper + proxy + legally approved sources now; (2) hybrid with catalogues as target if a pilot confirms; (3) managed scraper only for reliability/cost |
@@ -19,17 +26,17 @@ owner: Marek Pillár
 | ASM-273 | Decided (2026-10-13) | 2026-10-13 | TEO stance: OCR is the top priority (sooner if possible); TEO submits few initiatives — no client capacity to co-develop/test many |
 | ASM-272 | Open (2026-10-13) | 2026-10-13 | Driving logbook (kniha jízd) as a company-wide 2027 candidate: Burda spends ~3 h/month; reach and Dr. Max owner unverified |
 | ASM-271 | Open (2026-10-13) | 2026-10-13 | TEO 2027 candidate: automate pharmacy power-outage notifications (~300/yr, ~600 pharmacies); value = preparedness + key-person risk; reuse Reklamace e-mail pipeline |
-| ASM-270 | Open (2026-10-12) | 2026-10-12 | Reklamace error messages: should Axapta return readable messages that the app just displays, instead of BigHub translating Axapta error codes? |
-| ASM-269 | Open (2026-10-12) | 2026-10-12 | Fakturace doprav (Sláma): send each complete document to Axapta immediately; BigHub holds incomplete ones until forced (month-end / per document); no versioning in AX |
+| ASM-270 | Decided (2026-10-15) | 2026-10-12 | Reklamace error messages come from Axapta (readable texts); the platform only displays them |
+| ASM-269 | Retired (2026-10-14, superseded by ASM-053) | 2026-10-12 | Fakturace doprav (Sláma): send each complete document to Axapta immediately; BigHub holds incomplete ones until forced (month-end / per document); no versioning in AX |
 | ASM-268 | Decided (2026-10-12) | 2026-10-12 | No QR code on the Reklamace rozvozový list until a follow-up process defines its content and use (optional-field idea parked) |
 | ASM-267 | Decided (2026-10-12) | 2026-10-12 | Reklamace Phase 1 UX change set: tiles, one end action, SP number + field order, scan-success indicator, trash icon + delete confirmation, lowercase SP labels, max 10 photos |
 | ASM-266 | Decided (2026-10-12) | 2026-10-12 | Reklamace login via Microsoft accounts (everyone on receiving has a Windows login); purpose is the audit trail in Axapta; explicit log-in / log-out on shared devices |
-| ASM-265 | Open (2026-10-12) | 2026-10-12 | Reklamace device: Zebra (technically preferred, internal network, hardware reader; warehouse calls it a no-go) vs. phones (new restricted wifi / VPN, or public internet) |
+| ASM-265 | Decided (2026-10-15) | 2026-10-12 | Reklamace device: Zebra (older IT-supplied model for the start; phones fail security); pending Spilka's email confirmation |
 | ASM-264 | Open (2026-10-12) | 2026-10-12 | Reklamace KB gaps: no photo instructions exist for any supplier (Filip guesses ~5 of ~300 need them); only ~7 real follow-up email threads, more needed from logistics |
-| ASM-263 | Open (2026-10-12) | 2026-10-12 | Reklamace delivery note: nobody records which warehouse (Brno / Pavlov) handles a claim — warehouse sends it, IP detection or per-warehouse subdomain |
-| ASM-262 | Open (2026-10-12) | 2026-10-12 | Reklamace row 17 "Způsob vyřízení": unclear what it is and whether it flows Axapta → platform (Sláma) or platform → Axapta as a proposed resolution (Filip) |
+| ASM-263 | Decided (2026-10-15) | 2026-10-12 | Reklamace warehouse address: originating warehouse = per user (login / AX API); pickup location = supplier sentence in the KB, default originating warehouse |
+| ASM-262 | Decided (2026-10-14) | 2026-10-12 | Reklamace row 17 "Způsob vyřízení": unclear what it is and whether it flows Axapta → platform (Sláma) or platform → Axapta as a proposed resolution (Filip) |
 | ASM-261 | Decided (2026-10-12) | 2026-10-12 | Reklamace: no separate "standard / specific procedure" flag — if a supplier has an instruction, follow it, otherwise standard procedure |
-| ASM-260 | Open (2026-10-12) | 2026-10-12 | Reklamace supplier notes stored by BigHub and displayed in Axapta: platform pushes per-supplier notes per case (Sláma) — alternative to the Outlook side panel |
+| ASM-260 | Decided (2026-10-14) | 2026-10-12 | Reklamace supplier notes stored by BigHub and displayed in Axapta: platform pushes per-supplier notes per case (Sláma) — alternative to the Outlook side panel |
 | ASM-259 | Decided (2026-10-08) | 2026-10-08 | Fakturace scanner: BigHub defines technical requirements, Jan Žižka gives operational input; scanner talks only to BigHub's API (no Axapta change) |
 | ASM-258 | Decided (2026-10-08) | 2026-10-08 | Phases 2–5 discovery input-first: Tereza + Spilka write up the phases, then Marek runs discovery (MVP / Pareto, Sláma's capacity in mind) |
 | ASM-257 | Open (2026-10-08) | 2026-10-08 | Sláma's capacity: project ~6 months behind its April plan; one thing at a time; parallel work needs logistics (Spilka) to reprioritise his projects |
@@ -236,7 +243,7 @@ owner: Marek Pillár
 | ASM-056 | Decided (2026-09-10) | 2026-09-10 | Reklamace full-functionality UAT: starts Oct 15-16, target completion Oct 2 — landed after tense negotiation with Petr Sláma over testing scope/capacity |
 | ASM-055 | Decided (2026-09-10) | 2026-09-10 | Fakturace doprav kiosk hardware (scanner + PC) stays ViaPharma's procurement responsibility |
 | ASM-054 | Decided (2026-09-10) | 2026-09-10 | Fakturace doprav confirmation-screen scope confirmed with client: keep table with specific missing page numbers, drop driver-notes field, touchscreen-only UI |
-| ASM-053 | Open (disputed 2026-10-12) | 2026-09-10 | Axapta is the sole source of truth for Fakturace doprav route/document state — the BigHub app holds no state, just forwards scans as they arrive |
+| ASM-053 | Decided (2026-10-14) | 2026-09-10 | Axapta is the sole source of truth for Fakturace doprav route/document state — the BigHub app holds no state, just forwards scans as they arrive |
 | ASM-052 | Open (risk, 2026-09-10) | 2026-09-10 | Fakturace doprav kiosk has no authentication — open access confirmed acceptable to client, but LLM-injection/security-surface risk remains technically unaddressed |
 | ASM-051 | Decided (2026-09-10) | 2026-09-10 | Fakturace doprav OCR confidence-flagging + AR-number/barcode fallback design confirmed working via demo, accepted by client without objection |
 | ASM-050 | Decided (2026-09-09) | 2026-09-09 | A calendar/timeline view (item + filled time-axis cells) is needed alongside the MD-estimate roadmap board — raw man-days aren't meaningful to non-technical stakeholders |
@@ -291,6 +298,178 @@ owner: Marek Pillár
 | ASM-001 | Decided (2026-08-25) | 2026-09-01 | Dr. Max client-side coordination unified into one role (Jindřich Tůma) |
 
 ## Entries
+
+---
+
+### ASM-286
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-286 |
+| Created | 2026-10-15 |
+| Source | 2026-10-15-viapharma-reklamace-sync-pickup-warehouse-zebra-brightpick-capacity |
+| By | Jindřich Tůma (STK-003) |
+| Status | Decided (2026-10-15) |
+
+**Description**
+Target: finish Reklamace Phase 1 + 1.1a within ~14 days, i.e. by the end of October 2026. Filip's estimate for Phase 1 + 1.1a comes next week (he is back 2026-10-20).
+
+**Rationale**
+Jindřich set it as the near-term commitment while the roadmap slips a week; Phase 1 + 1.1a mostly depend on BigHub, before Sláma's BrightPick onsite window (from 2026-11-16).
+
+**Impact**
+- **Timeline**: needs Axapta-side work (API contract changes, protocol endpoint, error messages) before Sláma's capacity drops ([[ASM-257]]).
+- **Dependency**: X-Manager tables ([[ASM-243]]), login next week, Zebra for testing ([[ASM-265]]).
+
+---
+
+### ASM-285
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-285 |
+| Created | 2026-10-14 |
+| Source | 2026-10-14-reklamace-sync-filip-warehouse-address-xmanager-error-messages |
+| By | Filip Černý (STK-006), Petr Sláma (STK-034) |
+| Status | Decided (2026-10-14) |
+
+**Description**
+Axapta should receive who made each change, not only what changed. BigHub sends the user identity with each change once login works. Preliminarily agreed with Sláma; Filip proposes building it after login is finished.
+
+**Rationale**
+It depends on login (Microsoft accounts, [[ASM-266]]), which becomes functional the week of 2026-10-19.
+
+**Impact**
+- **Dependency**: login first, then a short alignment with Sláma on how the identity is sent.
+- **Scope**: small; already expected by logistics.
+
+---
+
+### ASM-284
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-284 |
+| Created | 2026-10-14 |
+| Source | 2026-10-14-reklamace-sync-filip-warehouse-address-xmanager-error-messages |
+| By | Filip Černý (STK-006), Marek Pillár (STK-001) |
+| Status | Decided (2026-10-15) |
+
+**Description**
+Filip describes 1.1a as what the demo showed: drafts (done) plus sorting incoming supplier replies into Outlook folders by classification (human, liquidation, send to warehouse, own transport), possibly colour-coded, with a done flag that works as a to-do list. It could be delivered right away after tuning. The client spec (FINAL) defines 1.1a as the communication audit trail (PDF record in AX) and puts reply classification in 1.1b (follow-up sequence).
+
+**Rationale**
+Of Jana Egrmaierová's ~7 sample threads, ~5 were resolved by one question and one supplier reply, so classification covers most cases without a multi-step sequence.
+
+**Impact**
+- **Scope / spec**: either move reply sorting into 1.1a in the spec and roadmap, or keep it in 1.1b; to decide before the spec goes out.
+- **Delivery**: sorting could ship early if moved.
+
+**Update (2026-10-15)**: PM decided to go with Filip's split. 1.1a = communication audit trail + sorting supplier replies into folders (classification, done flag); 1.1b = follow-up sequence (next step, draft of the next reply). Applied in `3. Reklamace - klientská verze v2.docx` (tracked changes) and in the roadmap. Source: PM, 2026-10-15.
+
+---
+
+### ASM-283
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-283 |
+| Created | 2026-10-14 |
+| Source | 2026-10-14-reklamace-sync-filip-warehouse-address-xmanager-error-messages |
+| By | Marek Pillár (STK-001), Filip Černý (STK-006) |
+| Status | Decided (2026-10-14) |
+
+**Description**
+Every Reklamace phase ends with its own UAT, instead of one UAT for Phase 1 + 1.1a. About 4 days per phase are allocated to work in user feedback. Tuning of the email agent (e.g. reply sorting) happens inside these windows. The roadmap diagram shows a UAT step after each phase (2026-10-14).
+
+**Rationale**
+Tuning needs real examples and user feedback, which a single big UAT doesn't give per feature. Smaller UATs also match Sláma's "one thing at a time" capacity ([[ASM-257]]).
+
+**Impact**
+- **Spec**: FINAL still says one "plné UAT od 15.–16. 10."; to align.
+- **Timeline**: ~4 days of feedback work per phase go into the roadmap dates ([[ASM-248]]).
+
+**Update (2026-10-15)**: PM confirmed; the "UAT 15.–16. 10." date is dropped from the spec and roadmap. Source: PM, 2026-10-15.
+
+**Update (2026-10-15)**: Reconciled with Jindřich's framing: each phase gets ~2 weeks of ViaPharma testing, of which ~4 days are BigHub's work on the feedback. Two UAT types: quick functional checks along the way (Marek: test smaller pieces promptly, like this week) and a full detailed test at the end of each phase; BigHub announces which in advance. Source: 2026-10-15-viapharma-reklamace-sync-pickup-warehouse-zebra-brightpick-capacity.
+
+---
+
+### ASM-282
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-282 |
+| Created | 2026-10-14 |
+| Source | 2026-10-14-reklamace-data-map-final-slama (document) |
+| By | Petr Sláma (STK-034), Marek Pillár (STK-001), Filip Černý (STK-006) |
+| Status | Decided (2026-10-14) |
+
+**Description**
+Final Reklamace supplier-data storage, per column L ("Rozhodnutí") of the final data map:
+- **Axapta (key)**: supplier account only; it is the AX primary key and already in the API.
+- **Axapta → platform (claim-closing API, Uzavření reklamace)**: claim number, document number RD (`Case_number`, together with the link to the Návratka dodavateli file) and issue date.
+- **AI platform + link in AX**: the platform generates and stores the delivery-note (rozvozový list) PDF and AX holds the link.
+- **Knowledge base (outside AX)**: return address, pickup type, main contact, other contacts (external + internal), contact by step / role, okamžité avízo flag, follow-up email procedures, photo instructions, warehouse address / pickup location.
+- **Knowledge base, shown in AX**: notes, which are sent in the Claim-cases API and displayed as an infolog ([[ASM-260]]).
+- **Dropped**: the standard / specific-procedure flag ([[ASM-261]]).
+- **Not sent to the platform**: způsob vyřízení ([[ASM-262]]).
+- **Manual (outside the project)**: box count and operator text, written with a marker; another internal ViaPharma project moves them into AX.
+
+**Rationale**
+Sláma's column J asked for everything supplier-specific in the knowledge base. BigHub agreed in column K (all contacts in one place, not split between AX and the KB), and the outcome was written in column L as the binding decision. AX development is limited to fields only AX holds, which suits Sláma's capacity ([[ASM-257]]) and AX's horizon ([[ASM-250]]).
+
+**Impact**
+- **Scope / API**: the approved Swagger changes. Address and main contact leave the AX supplier data, the closing API gains the claim number, RD and issue date, and the Claim-cases API gains a notes field. The AX ~2 h manual address copy is no longer needed.
+- **Open**: KB tool ([[ASM-243]]) and Dr. Max data owner ([[ASM-215]]); who supplies the pickup location, photo instructions and email threads ([[ASM-264]]); whether `case_number` carries the claim number or RD; confirmation that the PDF link is already in the API (AX-side implementation only).
+- **Timeline**: the KB decision is in before the 2026-10-16 target ([[ASM-184]]); the client spec v2 carries it as tracked changes.
+
+---
+
+### ASM-281
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-281 |
+| Created | 2026-10-14 |
+| Source | 2026-10-14-fakturace-doprav-document-state-zizka-slama |
+| By | Filip Černý (STK-006), Jan Žižka (STK-015), Tereza Foltová (STK-013) |
+| Status | Decided (2026-10-14) |
+
+**Description**
+Filip offered a demo not connected to Axapta: upload scans and see how pages merge and sort into routes; nothing sent or stored. Infra is ready on both sides. Žižka: "Gladly." Tereza arranges the Canon meeting next week (on site if possible) to go with it.
+
+**Rationale**
+Lets the business try scanning before Axapta-side changes land.
+
+**Impact**
+- **Delivery**: Early business feedback on the kiosk flow.
+
+**Update (2026-10-15)**: Canon visit on Tuesday 2026-10-20: Mr. Hnilička (Canon) comes to the warehouse and Žižka shows him where devices could go; then a 30-minute call where Filip is needed, to move the kiosk idea forward. Source: 2026-10-15-viapharma-reklamace-sync-pickup-warehouse-zebra-brightpick-capacity.
+
+---
+
+### ASM-280
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-280 |
+| Created | 2026-10-14 |
+| Source | 2026-10-14-fakturace-doprav-document-state-zizka-slama |
+| By | Jan Žižka (STK-015), Petr Sláma (STK-034) |
+| Status | Open (2026-10-14) |
+
+**Description**
+Approved spec: billing row filled with km etc. read from the ZPPV. Žižka: create the row from the AR number on the first scanned paper (any document), fill the rest when the ZPPV arrives. Sláma: not in the spec he was given; would otherwise create the row only once the ZPPV is complete. He wants Žižka to write, in his own words: the billing-row behaviour, status per document (complete / incomplete) and per route (all documents returned). Marek offered a mapping Excel like the Reklamace data map; then Filip updates the Swagger with Sláma.
+
+**Rationale**
+Sláma: requirements keep changing in meetings he isn't in; "the devil is in the details".
+
+**Impact**
+- **Scope**: Axapta-side display of document/route status (Sláma's capacity, [[ASM-257]]).
+- **Dependency**: Written requirements before the Swagger update.
+
+**Update (2026-10-15)**: Sláma's open question for the user description: when the billing record already exists for an incomplete document and the complete one arrives, should Axapta update it? And overwrite values that transport staff edited manually? Tereza and Žižka write the user description on 10-16 and email it to Marek. Source: 2026-10-15-viapharma-reklamace-sync-pickup-warehouse-zebra-brightpick-capacity.
 
 ---
 
@@ -497,7 +676,7 @@ Time saved is small; value is preparedness (avoid 8 idle pharmacists, IT call-ou
 | Created | 2026-10-12 |
 | Source | 2026-10-12-reklamace-phase-1-testing-wrap-up-login-zebra-fakturace-state |
 | By | Jana Egrmaierová (STK-044), Petr Sláma (STK-034), Filip Černý (STK-006) |
-| Status | Open (2026-10-12) |
+| Status | Decided (2026-10-15) |
 
 **Description**
 "Produkt nenalezen" shows for every scan error; Jana wants specific messages (label doesn't exist, empty, already scanned). Today the app shows BigHub's translations of Axapta API errors. Sláma asked whether Axapta should return sensible messages and the app only display them. Filip finds that "a completely logical outcome" and will post the source and a proposal on Teams.
@@ -507,6 +686,10 @@ Gives logistics control over the wording without BigHub changes.
 
 **Impact**
 - **Dependency**: Axapta-side change (Sláma's capacity, [[ASM-257]]).
+
+**Update (2026-10-14)**: Jana Egrmaierová is unhappy with the error messages; Filip calls it the most constructive feedback so far. Causes: Axapta doesn't always follow the API contract, and some cases were never in discovery ("SP label not found" also fires for more granular reasons such as "SP label empty"). Only a few messages were defined early, with Honza. Preferred direction (lightly discussed with Sláma on 10-12): Axapta sends ready, readable messages that the app only displays, which also lets ViaPharma change them without BigHub. Next: Marek collects cases with Jana (screen share, Fri or Mon), then Filip agrees the mechanism with Sláma. Source: 2026-10-14-reklamace-sync-filip-warehouse-address-xmanager-error-messages.
+
+**Update (2026-10-15)**: Decided: error messages come from Axapta and the platform displays them. Sláma: "the warehouse changes the texts often… I'd rather pull them from Axapta, where we can change them quickly and internally" [translated from Czech]. Filip and Sláma align the details next week; Marek also offered an hour with Jana Egrmaierová on which message belongs where. Source: 2026-10-15-viapharma-reklamace-sync-pickup-warehouse-zebra-brightpick-capacity.
 
 ---
 
@@ -518,7 +701,7 @@ Gives logistics control over the wording without BigHub changes.
 | Created | 2026-10-12 |
 | Source | 2026-10-12-reklamace-phase-1-testing-wrap-up-login-zebra-fakturace-state |
 | By | Petr Sláma (STK-034) |
-| Status | Open (2026-10-12) |
+| Status | Retired (2026-10-14, superseded by ASM-053) |
 
 **Description**
 Petr Sláma's model for Fakturace doprav state:
@@ -534,6 +717,8 @@ Axapta has no versioning mechanism; an Axapta-heavy draft was rejected by Tomá�
 **Impact**
 - **Scope**: BigHub needs its own document store ("a light extension, nothing unmanageable", Filip); Swagger changes again.
 - **Conflict**: Contradicts [[ASM-053]] (Žižka: every scan immediately).
+
+**Update (2026-10-14)**: Dropped: Sláma accepted Žižka's immediate-send model once overwrite replaced versioning. Superseded by [[ASM-053]]. Source: 2026-10-14-fakturace-doprav-document-state-zizka-slama.
 
 ---
 
@@ -616,7 +801,7 @@ Users already have AD accounts (needed for Axapta).
 | Created | 2026-10-12 |
 | Source | 2026-10-12-reklamace-phase-1-testing-wrap-up-login-zebra-fakturace-state |
 | By | Filip Černý (STK-006), Tereza Foltová (STK-013), Petr Sláma (STK-034) |
-| Status | Open (2026-10-12) |
+| Status | Decided (2026-10-15) |
 
 **Description**
 Filip's three options (via Jindřich's e-mail to Tereza): (1) **Zebra terminals**: already on the internal network, hardware barcode reader; need an opening for the Microsoft login page (ViaPharma IT said fine); photo quality untested. (2) **Phones on the internal network**: a new BYOD wifi or managed mobile VPN; the original plan. (3) **Phones on the public internet** via HTTPS gateway + login: most work and security risk. Phones would reach only BigHub's app and API.
@@ -628,6 +813,12 @@ Tereza: "the camera will never be as user-friendly as a physical reader with a b
 **Impact**
 - **Delivery**: Blocks real-world rollout beyond testing.
 - **Dependency**: ViaPharma IT; warehouse buy-in (Spilka).
+
+**Update (2026-10-14)**: Tereza: the warehouse wants phones (more available; staff already have work phones), but phones only get the guest network. Rejecting the Zebra is the warehouse's decision for now, not final; worry is one shared Zebra lying around while people do claims without it. Tereza is chasing Dušan (IT) for a call today 11:00, else next week (Filip back Tue 2026-10-20). Source: 2026-10-14-fakturace-doprav-document-state-zizka-slama.
+
+**Update (2026-10-14)**: Zebra now looks likely. Tereza Foltová first said the department has only one Zebra, but many older Zebras are being decommissioned from pharmacies and could be reused in the warehouse. Filip: the hardware scanner is more reliable than the camera, and better for users too. Filip built a preview at the Zebra's screen resolution. Not confirmed yet. Source: 2026-10-14-reklamace-sync-filip-warehouse-address-xmanager-error-messages.
+
+**Update (2026-10-15)**: Decided: Zebra. Tereza Foltová, Dušan (IT) and Filip went through the options on 10-14. Phones were the priority, but "we can't get around the security". IT (Dušan) found an older Zebra model he can distribute to the warehouses; the reader is no longer hardware-supported and would run through a browser. Spilka: "if we can't, we'll go with the reader", best price/performance, enough for the start; hardware investment possible later if the benefit materialises. Pending Spilka's reply-all confirmation on Dušan's email; Filip gets a Zebra for testing. Source: 2026-10-15-viapharma-reklamace-sync-pickup-warehouse-zebra-brightpick-capacity.
 
 ---
 
@@ -654,6 +845,8 @@ Filip: the gap is the information itself, not the build effort.
 - **Dependency**: Logistics (Jana Egrmaierová, Petr Sláma) to supply photo instructions and more email threads.
 - **Scope**: Without more threads, follow-up drafting stays at the simple question-answer MVP.
 
+**Update (2026-10-14)**: The final data map places photo instructions, follow-up procedures, contacts by step and the pickup-warehouse location in the KB, but the content is still missing. BigHub asked in column K which suppliers have photo instructions, whether more real email threads exist, and who knows where each supplier collects the goods (internal transfers). BigHub designs the contacts-by-step structure. Source: 2026-10-14-reklamace-data-map-final-slama (document).
+
 ---
 
 ### ASM-263
@@ -664,7 +857,7 @@ Filip: the gap is the information itself, not the build effort.
 | Created | 2026-10-12 |
 | Source | 2026-10-12-reklamace-slama-data-map-feedback-fakturace-state-conflict |
 | By | Petr Sláma (STK-034), Filip Černý (STK-006) |
-| Status | Open (2026-10-12) |
+| Status | Decided (2026-10-15) |
 
 **Description**
 The rozvozový list (delivery note) needs the address of the warehouse processing the claim (e.g. Brno vs. Pavlov). Sláma raised this as a big open question: neither Axapta nor BigHub has this information, so someone must find out who does. Options from Filip:
@@ -680,6 +873,12 @@ Filip: "there are plenty of solutions, it isn't a big problem, but we have to de
 - **Dependency**: Logistics to say who knows the processing warehouse; Marek raises it in column K.
 - **Scope**: Small build whichever option is chosen.
 
+**Update (2026-10-14)**: Storage settled in the final data map (column L): the warehouse address and contact, and where the supplier collects the goods, live in the knowledge base. Axapta knows the workplace (PVL / OST / BRN), but that isn't enough because of internal transfers (e.g. delivered to Pavlov, collected in Brno). Still open: who supplies and maintains this data (tracked under [[ASM-264]]); the device / IP / subdomain options are no longer needed. Source: 2026-10-14-reklamace-data-map-final-slama (document).
+
+**Update (2026-10-14)**: Reopened. The storage location is decided (KB), but the source of the value is not. Filip: "where the warehouse addresses come from — we simply have to know that" [translated from Czech]. Sláma's Excel has it, but not always correctly (Pavlov vs. Brno). Variants: (1) logistics supplies correct data (preferred); (2) employee → warehouse table keyed by login email (needs upkeep); (3) device / network IP (network setup unknown); (4) one login per warehouse; (5) warehouse dropdown in the app; (6) per-warehouse subdomain. Not blocking: used only in the delivery-note footer, needed before production. It goes into the spec as a question for logistics. Source: 2026-10-14-reklamace-sync-filip-warehouse-address-xmanager-error-messages.
+
+**Update (2026-10-15)**: Resolved by Sláma: two different facts were mixed up. (1) The originating warehouse is fixed per user ("each person works in one warehouse") and comes from the login, or Axapta returns it via the API when the SP label is scanned. (2) The pickup location is a supplier property, written as a sentence in the KB (e.g. "Dodavatel vyzvedává ve skladu Brno"). If nothing is written, the default is the originating warehouse; logistics corrects wrong entries, and expedition knows each case so the KB fills in over time. Jana Egrmaierová already has Brno noted. Not a blocker. The six variants from 2026-10-14 are no longer needed. Source: 2026-10-15-viapharma-reklamace-sync-pickup-warehouse-zebra-brightpick-capacity.
+
 ---
 
 ### ASM-262
@@ -690,7 +889,7 @@ Filip: "there are plenty of solutions, it isn't a big problem, but we have to de
 | Created | 2026-10-12 |
 | Source | 2026-10-12-reklamace-slama-data-map-feedback-fakturace-state-conflict |
 | By | Petr Sláma (STK-034), Filip Černý (STK-006) |
-| Status | Open (2026-10-12) |
+| Status | Decided (2026-10-14) |
 
 **Description**
 "Způsob vyřízení" (resolution method) is an Axapta code list that came up only recently in status meetings. Sláma proposes extending the app to display it and sending it from Axapta to the AI platform. Filip doesn't know what to do with it in that direction: knowing logistics has already decided is of little use to BigHub. He reads the logical direction as reversed: the platform proposes the resolution (e.g. credit note) so the person doesn't have to fill it in. Sláma may have written it backwards.
@@ -701,6 +900,8 @@ Flagged by Filip as one of two rows he didn't understand.
 **Impact**
 - **Scope**: Could become a platform feature (proposing the resolution), possibly feeding follow-up email drafting.
 - **Dependency**: Marek asks Sláma in column K.
+
+**Update (2026-10-14)**: Closed in the final data map (column L): Sláma decided the resolution method does not need to go to the AI platform. The quality officer fills it in Axapta from the code list on each claim. Filip's reverse direction (the platform proposes the resolution) is not pursued. Source: 2026-10-14-reklamace-data-map-final-slama (document).
 
 ---
 
@@ -723,6 +924,8 @@ Sláma seemed to misread the flag; Filip: the flag isn't needed, the presence of
 **Impact**
 - **Scope**: One fewer KB field; the blue-colouring is retired as a data source.
 
+**Update (2026-10-14)**: Confirmed in the final data map (column L: "Zrušeno (bez flagu)"). Source: 2026-10-14-reklamace-data-map-final-slama (document).
+
 ---
 
 ### ASM-260
@@ -733,7 +936,7 @@ Sláma seemed to misread the flag; Filip: the flag isn't needed, the presence of
 | Created | 2026-10-12 |
 | Source | 2026-10-12-reklamace-slama-data-map-feedback-fakturace-state-conflict |
 | By | Petr Sláma (STK-034), Filip Černý (STK-006) |
-| Status | Open (2026-10-12) |
+| Status | Decided (2026-10-14) |
 
 **Description**
 Sláma's proposal: supplier notes (static, "what the ladies would pass on verbally") live in BigHub's knowledge base, and Axapta acts as the frontend. When a case is processed, the platform identifies the supplier and sends that supplier's notes to Axapta, which displays them without any internal logic. Alternative to Filip's earlier idea of an Outlook side-panel module.
@@ -744,6 +947,8 @@ Filip: "a really nice proposal… minimal implementation on both sides" [transla
 **Impact**
 - **Scope**: Replaces the Outlook side-panel idea if confirmed.
 - **Dependency**: Small Axapta-side display change (Sláma's capacity, [[ASM-257]]).
+
+**Update (2026-10-14)**: Confirmed in the final data map (column L "Knowledge base (outside AX), shown in AX"): notes are stored in the KB, the platform sends them as a note field in the Claim-cases API, and Axapta displays them (e.g. as an infolog). This replaces the Outlook side-panel / add-in idea: the PM removed it from the client spec on 2026-10-14 and added "Zobrazení poznámek k dodavateli v AX (infolog)" as a new Phase 1 item. Source: 2026-10-14-reklamace-data-map-final-slama (document).
 
 ---
 
@@ -814,6 +1019,8 @@ Stated on record at the 2026-10-08 sync. Jindřich called it "completely legitim
 - **Delivery**: Axapta-side development for Phase 2+ ([[ASM-256]]) competes for the same capacity.
 - **Relationship**: Prioritising his time is a logistics-management decision (Spilka / Žůrek). Raise it at the steering if it blocks.
 
+**Update (2026-10-15)**: Sláma goes onsite to Ostrava for BrightPick: development must finish in the next ~14 days; from 2026-11-16 there are 14 days of intensive onsite testing (the only window with the robots); go-live at the turn of Nov/Dec, then support, with more phases in January. He is "out until the end of the year", with limited (not zero) capacity. Spilka: BrightPick has priority (external suppliers, budget, promised dates); Reklamace has "no date set in stone"; dates will be "rubbery". BigHub could meanwhile work on things that don't depend on Sláma. Source: 2026-10-15-viapharma-reklamace-sync-pickup-warehouse-zebra-brightpick-capacity.
+
 ---
 
 ### ASM-256
@@ -881,6 +1088,8 @@ Raised by Filip in the client spec. Sláma explicitly wants the PDF of the commu
 **Impact**
 - **Scope**: Phase 1.1a, part of UAT.
 - **Dependency**: To confirm with Petr Sláma together with how and when the PDF is passed to AX.
+
+**Update (2026-10-14)**: Still undefined how the communication PDF record reaches Axapta: an endpoint Axapta calls on demand, or generated on case close together with the delivery note and the draft. Both questions (mechanism / timing, supplier attachments) are in the client spec as yellow questions for Sláma. Source: 2026-10-14-reklamace-sync-filip-warehouse-address-xmanager-error-messages.
 
 ---
 
@@ -1017,6 +1226,9 @@ BigHub delivers a Reklamace roadmap of all phases with dates (most detail for th
 
 
 **Update (2026-10-08)**: Jindřich: realistic planning horizon is 2–4 weeks; the full roadmap gives dates as an estimate (e.g. 2 weeks for UAT) with planned test/cooperation windows; slips and their reasons are reported monthly at the Žůrek steering. Tereza pushes for it ("we're standing still"); a longer horizon depends on Phase 2–5 discovery ([[ASM-258]]). Source: 2026-10-08-viapharma-reklamace-sync-data-map-slip-all-phases-slama-capacity.
+
+**Update (2026-10-15)**: The roadmap slips to next week (Jindřich apologised). It shows durations, not dates: e.g. Phase 2 ≈ 4 weeks of BigHub development + 2 weeks of ViaPharma testing, plus what BigHub needs from Sláma per phase ("A, B, C, D") and his estimate. ViaPharma (Spilka) then decides timing given BrightPick; postponing to next year is acceptable to BigHub. This replaces "dates for every phase" with durations plus client-side dependencies. Source: 2026-10-15-viapharma-reklamace-sync-pickup-warehouse-zebra-brightpick-capacity.
+
 ---
 
 ### ASM-247
@@ -1201,6 +1413,10 @@ Raised internally only; not discussed with logistics.
 **Update (2026-10-05)**: Jindřich clarified X-Manager is Dr. Max-internal (used by the call centre) and becoming a data source; a meeting with its product owner is set to check whether it fits Reklamace. If it does, it is presented as an option. Source: 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap.
 
 **Update (2026-10-12)**: Marek: BigHub will "very probably" go with X-Manager after last week's talk with its product owner, who was pleased BigHub wants to build in it; BigHub expects to be able to bend it to its needs. Not decided yet. Source: 2026-10-12-reklamace-slama-data-map-feedback-fakturace-state-conflict.
+
+**Update (2026-10-14)**: Filip is moving ahead with X-Manager for the KB. First step: an almost 1:1 import of Jana Egrmaierová's supplier Excel (~10 columns × ~300 rows), without the "Zdroj" and "Ekonomický dodavatel" columns, supplier (purchase) account as the first column, basic validation (email with one "@", numeric account). Before importing, a short list of platform checks (change logging / audit, flexibility) confirms the fit. Later: a form view for adding suppliers. Marek: keep it scalable, no lock-in. Source: 2026-10-14-reklamace-sync-filip-warehouse-address-xmanager-error-messages.
+
+**Update (2026-10-15)**: Jindřich met the X-Manager owner this week: "looks like the most suitable candidate". BigHub sends the table request today (2026-10-15) so Filip can work with the tables next week. Source: 2026-10-15-viapharma-reklamace-sync-pickup-warehouse-zebra-brightpick-capacity.
 
 ---
 
@@ -1572,6 +1788,8 @@ Sláma: Axapta is not user-friendly for addresses and contacts (separate fields,
 
 **Update (2026-10-12)**: Sláma's column-J feedback approves the direction with no objections: supplier data (return address, contacts, contact by step, notes, photo instructions, okamžité avízo) lives in BigHub's knowledge base, a side table logistics maintain; Axapta keeps only the supplier account (confirmed as its primary key). Filip: no data is technically required in Axapta, and the KB won't map one Excel row to one column. The storage tool (SharePoint List vs. X-Manager) stays open under [[ASM-243]]. Source: 2026-10-12-reklamace-slama-data-map-feedback-fakturace-state-conflict.
 
+**Update (2026-10-14)**: Final data map received: column L is binding (see [[ASM-282]]). Address and main contact also move to the KB, so the approved API contract (address, main contact from Axapta) changes. The KB tool is still not named ([[ASM-243]]). Source: 2026-10-14-reklamace-data-map-final-slama (document).
+
 ---
 
 ### ASM-229
@@ -1597,6 +1815,8 @@ Sláma was "completely out" for 14 days launching the new A-frame. Jindřich: th
 **Update (2026-10-08)**: Slipped by a week: Sláma did nothing in the week of 10-05 because he was waiting for the management meetings' outcome (not invited, assumed the project might stop). New order: data-map Excel early week of 2026-10-12, then Reklamace spec comments, then the simplified Fakturace doprav Swagger (v0.9.11). Source: 2026-10-08-viapharma-reklamace-sync-data-map-slip-all-phases-slama-capacity.
 
 **Update (2026-10-12)**: Column J delivered. Sláma contested nothing; two rows are unclear (row 17 "Způsob vyřízení" [[ASM-262]], warehouse address [[ASM-263]]). Marek answers in a new column K; once Sláma responds on the 2–3 open rows, the data map counts as done. A call with Sláma is offered at his choice. Source: 2026-10-12-reklamace-slama-data-map-feedback-fakturace-state-conflict.
+
+**Update (2026-10-14)**: The data map is done: Sláma's final decisions are in column L (Sláma replied on rows 17 and 21). See [[ASM-282]]. Source: 2026-10-14-reklamace-data-map-final-slama (document).
 
 ---
 
@@ -2521,6 +2741,8 @@ The 2026-09-24 standoff showed that open choices, like the supplier-data store (
 **Update (2026-10-08)**: The knowledge-base target of 2026-10-09 will be missed: Sláma's data-map review moved to early week of 2026-10-12 ([[ASM-229]]). New target ~2026-10-16. Source: 2026-10-08-viapharma-reklamace-sync-data-map-slip-all-phases-slama-capacity.
 
 **Update (2026-10-12)**: Sláma's column J arrived and approves the KB direction ([[ASM-228]]). The KB decision now hinges on his reply to column K on 2–3 rows; the 2026-10-16 target looks reachable. Source: 2026-10-12-reklamace-slama-data-map-feedback-fakturace-state-conflict.
+
+**Update (2026-10-14)**: Knowledge-base decision reached on 2026-10-14, ahead of the 2026-10-16 target ([[ASM-282]]). The decisions were worked into `3. Reklamace - klientská verze v2.docx` as tracked changes, for PM review before the spec goes to Sláma. Source: 2026-10-14-reklamace-data-map-final-slama (document).
 
 ---
 
@@ -3707,6 +3929,8 @@ Found during code audit. Notably, the May/June 2026 spec draft actually matches 
 **Impact**
 - **Data**: which version is the target architecture matters for the spec's accuracy and for any storage/retention conversation with the client.
 - **Delivery**: needs reconciling before the spec is finalized — currently the spec, the 09-16 project-knowledge note, and the code all disagree.
+
+**Update (2026-10-14)**: Žižka needs no version history; the latest, most complete document overwrites the old one in Axapta. Whether the Swagger's version field stays is for Filip and Sláma to settle. Source: 2026-10-14-fakturace-doprav-document-state-zizka-slama.
 
 ---
 
@@ -5471,7 +5695,7 @@ Fakturace doprav confirmation-screen scope confirmed directly with the client: k
 | Created | 2026-09-10 |
 | Source | 2026-09-10-viapharma-reklamace-uat-fakturace-doprav-demo |
 | By | Jan Žižka |
-| Status | Open (disputed 2026-10-12) |
+| Status | Decided (2026-10-14) |
 
 **Description**
 Axapta — not the BigHub Fakturace doprav app — is the sole source of truth for route/document state. The app holds no state of its own; it simply forwards scanned documents as they arrive, whenever they arrive. Axapta needs a row to appear the moment the *first* document for a route lands (so ViaPharma has reaction time to chase a slow carrier before month-end close), and Axapta itself reconciles documents arriving across multiple separate scan sessions for the same route.
@@ -5487,6 +5711,8 @@ Resolves a real architecture misunderstanding: Filip had built against an assump
 **Update (2026-10-12)**: Disputed. Petr Sláma's new Fakturace doprav proposal (email + Teams, 2026-10-12) says BigHub holds each case until it is closed, then hands it to Axapta, which contradicts Jan Žižka's 09-10 position that Axapta gets every scan immediately (open cases live in Axapta). Filip: don't make a point of the contradiction; get Sláma and Žižka in one meeting (likely Thursday 2026-10-15) to agree. Sláma also approved the simplified Swagger v0.9.11. Source: 2026-10-12-reklamace-slama-data-map-feedback-fakturace-state-conflict.
 
 **Update (2026-10-12, wrap-up)**: Meeting with Jan Žižka moved to **Wednesday 2026-10-14, 8:30** (Tereza invites; Filip is off Thu–Fri). Sláma's model in detail: see [[ASM-269]]. Filip had read "send when complete" at route level; Sláma means document level. Sláma: the earlier draft based on Žižka's "Axapta holds all states" was rejected by Tomáš Hraško as too much Axapta development. Source: 2026-10-12-reklamace-phase-1-testing-wrap-up-login-zebra-fakturace-state.
+
+**Update (2026-10-14)**: Settled with Žižka and Sláma: every scan goes to Axapta immediately (Žižka: ~150 routes/day invoiced continuously; km checked on every rozvozový list; drivers chased for missing pages before month-end). BigHub merges new pages into the document and resends the full latest version; Axapta replaces the old file (no version history, Žižka). Each document carries a complete / incomplete status; the route shows whether all documents are back. Sláma accepted ("I won't dispute it further"). Open detail: billing row before the ZPPV arrives ([[ASM-280]]). Source: 2026-10-14-fakturace-doprav-document-state-zizka-slama.
 
 ---
 

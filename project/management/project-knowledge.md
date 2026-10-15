@@ -1,6 +1,6 @@
 ---
-last_updated: 2026-10-13
-last_updated_by: auto — project-document routing
+last_updated: 2026-10-15
+last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
 
@@ -353,18 +353,27 @@ Dudaško was unambiguous on this boundary when Jindřich raised a concrete pilot
 
 | Field | Value |
 |-------|-------|
-| Definition | An Axapta code list recording how a supplier claim was resolved (e.g. credit note). Surfaced only recently in status meetings (Sláma, Jana Egrmaierová). Its purpose for the AI platform, and which way it flows, is still unclear ([[ASM-262]]). |
+| Definition | An Axapta code list recording how a supplier claim was resolved (e.g. credit note). Surfaced only recently in status meetings (Sláma, Jana Egrmaierová). The quality officer fills it in Axapta on each claim. Final data map (2026-10-14): it is not sent to the AI platform ([[ASM-262]]). |
 | Source | 2026-10-12-reklamace-slama-data-map-feedback-fakturace-state-conflict |
 | Added | 2026-10-12 |
 | Status | Active |
 
-### Data-map Excel columns J / K
+### Data-map Excel columns J / K / L
 
 | Field | Value |
 |-------|-------|
-| Definition | In the Reklamace data-map Excel ("mapa zdrojů"), **column J** holds Petr Sláma's feedback per row (delivered 2026-10-12) and **column K** holds BigHub's answers and questions back to him. Once Sláma responds on the open rows, the data map counts as done ([[ASM-229]]). |
-| Source | 2026-10-12-reklamace-slama-data-map-feedback-fakturace-state-conflict |
+| Definition | In the Reklamace data-map Excel ("mapa zdrojů"), **column J** holds Petr Sláma's feedback per row (delivered 2026-10-12), **column K** holds BigHub's answers and questions back to him, and **column L ("Rozhodnutí")** holds the final, binding decision per field. The final map arrived on 2026-10-14; the data map is done ([[ASM-229]], [[ASM-282]]). Where L and K differ, L wins; K is context. |
+| Source | 2026-10-12-reklamace-slama-data-map-feedback-fakturace-state-conflict; 2026-10-14-reklamace-data-map-final-slama |
 | Added | 2026-10-12 |
+| Status | Active |
+
+### Uzavření reklamace (claim-closing API)
+
+| Field | Value |
+|-------|-------|
+| Definition | The call Axapta makes to the platform when a claim case is closed (`POST /claim-cases/{axaptaRef}/process`, Claims Platform Inbound API). Per the final data map it also carries the claim number, the document number RD (`Case_number`, together with the link to the "Návratka dodavateli" file) and the issue date, which the delivery note needs. Whether `Case_number` holds the claim number or RD is still to be confirmed with Sláma ([[ASM-282]]). |
+| Source | 2026-10-14-reklamace-data-map-final-slama |
+| Added | 2026-10-14 |
 | Status | Active |
 
 ### Zebra terminals
@@ -374,6 +383,28 @@ Dudaško was unambiguous on this boundary when Jindřich raised a concrete pilot
 | Definition | ViaPharma's IT-managed handheld picking terminals. On the internal network (no public internet), with a hardware barcode reader (physical button, beep). Candidate device for the Reklamace app; the warehouse resists using them for claims ([[ASM-265]]). |
 | Source | 2026-10-12-reklamace-phase-1-testing-wrap-up-login-zebra-fakturace-state |
 | Added | 2026-10-12 |
+| Status | Active |
+
+**Update (2026-10-14)**: many older Zebras are being decommissioned from pharmacies and could be reused in the warehouse (the department itself has only one). Filip Černý built an app preview at the Zebra's screen resolution. Source: 2026-10-14-reklamace-sync-filip-warehouse-address-xmanager-error-messages.
+
+**Update (2026-10-15)**: chosen as the Reklamace device ([[ASM-265]]). IT supplies an older model that is no longer hardware-supported, running the app through a browser; enough for the start, with possible hardware investment later. Source: 2026-10-15-viapharma-reklamace-sync-pickup-warehouse-zebra-brightpick-capacity.
+
+### BrightPick
+
+| Field | Value |
+|-------|-------|
+| Definition | ViaPharma's robotic warehouse technology project in Ostrava. Development finishes in the ~14 days after 2026-10-15; from 2026-11-16 there are 14 days of intensive onsite testing (the only window with the robots), go-live at the turn of Nov/Dec 2026, more phases in January, full operation around end of February 2027. It has priority over Reklamace (external suppliers, budget, promised dates) and takes Petr Sláma onsite until year-end ([[ASM-257]]). |
+| Source | 2026-10-15-viapharma-reklamace-sync-pickup-warehouse-zebra-brightpick-capacity |
+| Added | 2026-10-15 |
+| Status | Active |
+
+### Test mailbox kvalitasklad (Reklamace)
+
+| Field | Value |
+|-------|-------|
+| Definition | A normal Outlook mailbox for the kvalitasklad address on the **test** environment (not production), used to test email drafts and the email agent. Access goes through Dr. Max accounts: Filip Černý has it, and more Dr. Max accounts can be added. Set up by the infra stand-in for V. Tvarůžek. How users test without real suppliers (target for sent drafts, mock replies) is still open. |
+| Source | 2026-10-14-reklamace-sync-filip-warehouse-address-xmanager-error-messages |
+| Added | 2026-10-14 |
 | Status | Active |
 
 ### Anywhere
@@ -446,6 +477,24 @@ Dudaško was unambiguous on this boundary when Jindřich raised a concrete pilot
 | Definition | Product-data catalogues. GS1 CZ Synfony (GDSN standard): Czech, FMCG incl. cosmetics, drugstore, food; coverage depends on participating suppliers. Icecat: international, mainly electronics, also cosmetics/FMCG. Both B2B, no public prices ([[ASM-279]]). |
 | Source | 2026-10-13-listing-enrichment-legal-options-filip |
 | Added | 2026-10-13 |
+| Status | Active |
+
+### Fakturace doprav document flow
+
+| Field | Value |
+|-------|-------|
+| Definition | ~150 routes a day. Logistics invoices continuously, not at month-end, and checks km on every rozvozový list (comparison controls flag mismatches). Each scan goes to Axapta immediately; BigHub merges pages and resends the latest full document, which replaces the old one; documents carry complete / incomplete status, routes show whether all documents are back ([[ASM-053]]). Drivers' paper originals stay with ViaPharma, sorted and archived for audits. |
+| Source | 2026-10-14-fakturace-doprav-document-state-zizka-slama |
+| Added | 2026-10-14 |
+| Status | Active |
+
+### Lexie users: L1 support
+
+| Field | Value |
+|-------|-------|
+| Definition | Dr. Max L1 support (Petr Macháň, STK-069) already uses Lexie and has requirements for it (to be collected, 2026-10-14). |
+| Source | PM, 2026-10-14 (Jindřich Tůma message) |
+| Added | 2026-10-14 |
 | Status | Active |
 
 ## Data Model Concepts

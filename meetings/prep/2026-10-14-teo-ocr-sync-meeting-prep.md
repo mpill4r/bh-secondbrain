@@ -31,6 +31,14 @@ attendees: [Alana Sihelská, Jura Brázdil, Radim Švarc, Michaela Albrechtová,
 | Radim | Excel z JSON k dávke z 09-30 | `-tbd-` |
 | Marek | Návrh na jar 2027 Radimovi, review s ním, potom Burda | Poslané 10-02; review s Radimom `-tbd-`; Burda 10-13 |
 
+## Výstup od Burdu (2026-10-13), doplnené
+
+- **OCR je pre TEO priorita č. 1** a Burda ho chce **čo najskôr**, nie „počas celého budúceho roka“ ([[ASM-273]]).
+- **BQ riadok k OCR** berie ako dohodnutý; Marek ho preniesol do master trackeru (čakanie na potvrdenie je uzavreté).
+- **Nové kandidáty na 2027**: notifikácie o výpadkoch elektriny na lekárňach ([[ASM-271]]) a kniha jázd ([[ASM-272]]). BigHub pripraví riadky, Burda ich doplní e-mailom.
+- **Kocián** (Praha, prehliadky) sa pridá do OCR projektu so svojimi prehliadkami (STK-068).
+- K návrhu na jar 2027 sa Burda nevyjadril.
+
 ## Kontext z harnessu
 
 - Náklady ~1 Kč/strana priemer, Spedos ~2 Kč ([[ASM-220]]). Platforma pridáva sledovanie nákladov a limity.
