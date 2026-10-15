@@ -114,4 +114,9 @@ Practical and friendly, and more concrete than 09-29. Vosmek is still the hands-
 
 ## Routing Log
 
-{Written after PM confirms routing review}
+- **Transcript fixes**: Speaker attribution (Jura / Marek / Vosmek), Martin Dubina's name, "Juraj" = Jindřich Tůma, Farmis contact left unnamed: confirmed by PM.
+- **project-assumptions**: Added ASM-287 (card layout + zoom), ASM-288 (tap-back warning), ASM-289 (rollout plan by thirds), ASM-290 (platform access management, decided with Dudaško), ASM-291 (argument length limit, open). Updated ASM-198, ASM-203, ASM-027, ASM-196, ASM-200.
+- **project-stakeholders**: Updated STK-011 (Vosmek), STK-026 (Jura), STK-010 (Dudaško); STK-070 identified as Martin Dubina; added STK-073 Míra Suchý, STK-074 Kuba Mísař.
+- **project-knowledge**: MaxBuddy kiosk/rollout facts; AI Platform access model.
+- **project-daily** (2026-10-15): Jura, Vosmek and Dubina items added as waiting; the 2027 e-mail to Vosmek logged as sent on 2026-10-14; the "confirm rollout date" item closed on 2026-10-14.
+- **Not routed**: product-scope / product-feature (no MaxBuddy scope or FEAT files exist).

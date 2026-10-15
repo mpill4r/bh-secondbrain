@@ -1,10 +1,50 @@
 ---
 last_updated: 2026-10-15
-last_updated_by: auto — project-document routing
+last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
 
 # Lessons Learned
+
+---
+
+### LL-97
+
+| Field | Value |
+|-------|-------|
+| ID | LL-97 |
+| Created | 2026-10-15 |
+| Category | Delivery / dependency management |
+| Source | 2026-10-15-lexie-max-maxie-weekly-sync |
+
+**Lesson**
+When a third party's "small" fix blocks your own feature, say explicitly that it is a blocker and give its impact. Framed as a minor issue, it gets no priority and nobody chases it.
+
+**Context**
+The Farmis focus fix blocks the MaxBuddy zoom. Jura reported it as a detail, not a blocker; two weeks later Farmis hadn't started. Vosmek only began escalating once it was named as blocking.
+
+**Cross-reference**
+[[ASM-198]], [[ASM-287]], 2026-10-14-maxbuddy-redesign-zoom-rollout-thirds-vosmek
+
+---
+
+### LL-96
+
+| Field | Value |
+|-------|-------|
+| ID | LL-96 |
+| Created | 2026-10-15 |
+| Category | Stakeholder management / decisions |
+| Source | 2026-10-14-maxbuddy-redesign-zoom-rollout-thirds-vosmek |
+
+**Lesson**
+When a request needs a decision from someone not in the room, ask that person directly right after the meeting, with a short written proposal (current state, change, benefit, safeguards). A clear, bounded ask often gets a yes in minutes.
+
+**Context**
+Jura proposed moving platform access management out of Entra to the MaxBuddy business owner, who said Dudaško decides. Jura sent Dudaško a five-line Teams message within the hour (22 groups today → 3 groups, audit logs ready, what it unlocks) and got approval in minutes, plus a useful extra requirement (API for IDM).
+
+**Cross-reference**
+[[ASM-290]], 2026-10-14-maxbuddy-redesign-zoom-rollout-thirds-vosmek
 
 ---
 

@@ -49,6 +49,8 @@ Original infrastructure/model provisioning for MaxBuddy was done manually (ad ho
 
 **Host environment and backlog (2026-09-29)**: MaxBuddy runs inside a **Farmis webview** on pharmacy **touchscreen** kiosks. There is no hover, so any "show more" interaction has to work by tap. It may not be able to open its own pop-up windows ([[ASM-199]]). Farmis appears to read the barcode scanner as keyboard input: once a pharmacist taps into MaxBuddy, it keeps focus and swallows scans, and the dispensing case switches off ([[ASM-198]]). This may explain part of the low tree click-through since August. The landing screen rotates **5 logos**; pilot pharmacists noticed they aren't in Dr. Max colours, and a restyle plus seasonal AI-generated logos are planned ([[ASM-200]]). Profitability-based offering concept: absolute CZK profit, not % margin, with 3 tiers per product shown 7/2/1 in 10 expeditions, or receipt-based learning ([[ASM-197]]). Source: 2026-09-29-maxbuddy-roadmap-backlog-vosmek
 
+**Kiosk space, input and rollout facts (2026-10-14)**: Farmis gives MaxBuddy only ~656 px of height on the test kiosks (about 3 cards with a long argument). Half of dispensing staff use the touchscreen, half a mouse, so interactions are designed for tap. To pharmacists a red exclamation mark means "hands off, do nothing". Dr. Max splits Czechia into **3 regions** (Vosmek runs one). Lowest pharmacy traffic is **01:00–03:00** (only 24/7 pharmacies open). Capacity for ~600 pharmacies was extrapolated from the 21 pilot pharmacies, which are stronger, busier ones. About 8 pharmacies have small monitors. Platform monitoring shows per-pharmacy problems. Source: 2026-10-14-maxbuddy-redesign-zoom-rollout-thirds-vosmek.
+
 ### Max / Maxie / Lexie
 
 | Field | Value |
@@ -91,6 +93,10 @@ Original infrastructure/model provisioning for MaxBuddy was done manually (ad ho
 **Model cost and order-status sources (2026-10-02)**: Max runs on GPT-5 mini. Cost shown per 10,000 conversations × 5 user turns (each turn several model calls): ~$100 on the current model, ~$43 on a newer small model heard as "Luna", ~$800–850 on a large model heard as "Soul" ([[ASM-234]]). Order-status answers come from three CC tables in X-Manager's "AI" module: categories, carriers and statuses × categories ([[ASM-237]]). Order-number hint: Dr. Max orders start with 5; other brands (e.g. benu.cz) differ. Some carriers share IDs, and the Rx ("ARIX") reservation carrier has none, so OTC vs. Rx reservation is derived from category, then carrier.
 
 **SPC leaflets and Legal (2026-10-02)**: Max's leaflet card states it gives no dosage advice and links the SPC section. It uses no patient data, only the drug the user names, and shows leaflets unmodified as received from SÚKL. Open Legal question (Tuesday 2026-10-06): may the bot jump to a specific SPC section? Source: 2026-10-02-lexie-max-maxie-weekly-sync.
+
+**AI Platform for Max (2026-10-15)**: the platform runs on test and production. For Max it offers live reporting, settings (model, version dropdown, "stable" = customer version, tone), a changelog, a technical health view of connected services and a red kill switch that removes Max from drmax.cz. Max is enabled on the site by a URL parameter (like `?chatbot=test`), invisible to customers, and published by switching the stable version. Max now runs on "GPT-6 Luna" (~6× cheaper than "5.4"). It orders search results for relevance and variety (forms, not pack sizes). Conversation end is detected by a regex ("na shledanou", "děkuju", "to je vše"). What Max stores: only error events (no message content) and testers' ratings; chats pass through Azure OpenAI back to the browser without storage. SPC leaflets sync every morning ~06:00 from the DVH team's SPC API (mirrors SÚKL), shown unmodified. **Branch types**: the branch API (likely DVH-based) has a pharmacy type; type 1 "standard" is a regular pharmacy; empty, lab, "not on web" etc. are never shown to customers. Source: 2026-10-15-lexie-max-maxie-weekly-sync.
+
+**Lexie structure (2026-10-15)**: departments, sub-departments, and knowledge bases per department; Lexie opens on the last-used agent. The CC (CCC) has a front office and a back office; back office (supervisor Jana Vaňková) has its own SharePoint and methodologies. Document sets (front office / back office / legal) are a possible later addition. Source: 2026-10-15-lexie-max-maxie-weekly-sync.
 
 ### TEO / OCR (pharmacy service-protocol extraction)
 
@@ -556,6 +562,8 @@ Unclear whether this blacklist is signed off by Dr. Max or a BigHub-authored dra
 | Status | Active |
 
 Other BigHub clients referenced (2026-09-04) as also running the shared AI/chatbot platform used for Dr. Max's Max/Maxie/Lexie: **Brněnská komunikace** (Brno communications), **Kooperativa** (accounting department variant), **Unica** (legal department variant, still in progress). No named individual contacts captured for these accounts yet.
+
+**Access model (decided 2026-10-14)**: Entra ID holds only 3 AI Platform groups (Users, Admins, SuperAdmins). The platform manages everything below: a SuperAdmin assigns parts of the platform to Admins; Admins grant users access to those parts (by Dr. Max e-mail, choosing e.g. chat / reporting / settings); access to use cases and functions lives in the platform database with audit logs. Replaces per-department Entra groups (Lexie alone had 22). An API with API keys is planned so access can later be driven from an IDM. Approved by Tomáš Dudaško on Teams. Sources: 2026-10-14-maxbuddy-redesign-zoom-rollout-thirds-vosmek, 2026-10-15-lexie-max-maxie-weekly-sync.
 
 ### AI platforma (new initiative)
 

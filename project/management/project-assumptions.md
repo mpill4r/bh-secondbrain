@@ -10,6 +10,17 @@ owner: Marek Pillár
 
 | ID | Status | Created | Description (short) |
 |----|--------|---------|---------------------|
+| ASM-297 | Decided (2026-10-15) | 2026-10-15 | X-Manager for logistics: Machata gave the green light; while he's away (to 2026-10-27), the CC creates a temporary app and imports BigHub's table, ownership to Machata later |
+| ASM-296 | Open (2026-10-15) | 2026-10-15 | Max reporting vs. personal data: legal meeting with Dr. Max's external law firm Fri 2026-10-23 9:00–10:00; CC to say what to measure |
+| ASM-295 | Open (2026-10-15) | 2026-10-15 | Back-office Lexie: start with its own agent (default on open, switch to CCC), test before giving all files; rights model (departments, knowledge bases, document sets) to design |
+| ASM-294 | Decided (2026-10-15) | 2026-10-15 | Max replies: widgets come with a short polite line + an answer to any question, no duplicated info; phone numbers always shown as text |
+| ASM-293 | Decided (2026-10-15) | 2026-10-15 | Max/Maxie pharmacy filter via branch API rules: type 1 "standard" only; exclude in-preparation, closed, special regions; manual on/off toggle optional |
+| ASM-292 | Decided (2026-10-15) | 2026-10-15 | AI Platform live on test + production; Max: live reporting, version switch (stable/test), tone, health view, kill switch; sequence MaxBuddy+Lexie to prod next week, then Max on drmax-space via URL parameter (~14 days) |
+| ASM-291 | Open (2026-10-14) | 2026-10-14 | MaxBuddy: hard character limit on cross-sell arguments as an alternative or complement to the zoom |
+| ASM-290 | Decided (2026-10-14) | 2026-10-14 | AI Platform access management moves out of Entra: 3 Entra groups (Users/Admins/SuperAdmins), roles + use-case access in the platform, audit logs, test users, API for future IDM |
+| ASM-289 | Decided (2026-10-14) | 2026-10-14 | MaxBuddy rollout plan: night switchover to new AKS (01:00–03:00), 20 pilots first, then by thirds by region (Vosmek's ~200 first); ~8 small-monitor pharmacies excluded |
+| ASM-288 | Decided (2026-10-14) | 2026-10-14 | MaxBuddy focus warning: replace "scanner disconnected" with a large, bold "Please tap back into Farmis" |
+| ASM-287 | Decided (2026-10-14) | 2026-10-14 | MaxBuddy card layout: keep the box with the title beside it, benefit partly below; tap-to-enlarge zoom; built after the Farmis focus fix |
 | ASM-286 | Decided (2026-10-15) | 2026-10-15 | Reklamace: target to finish Phase 1 + 1.1a by end of October 2026; Filip's estimate next week |
 | ASM-285 | Decided (2026-10-14) | 2026-10-14 | Reklamace: the "who changed what" audit trail to Axapta (user identity per change) is built after login; preliminarily agreed with Sláma |
 | ASM-284 | Decided (2026-10-15) | 2026-10-14 | Reklamace phase scope: reply sorting into folders (+ done flag) moves to 1.1a with the audit trail; 1.1b = follow-up sequence (Filip's split) |
@@ -233,7 +244,7 @@ owner: Marek Pillár
 | ASM-066 | Decided (2026-09-15) | 2026-09-15 | Listing's "Tvorba popisů pro nové produkty" reclassified from Backlog to Hotovo — new products always enter the tool as existing products since Magento entry happens first |
 | ASM-065 | Superseded by ASM-207 (2026-09-30) | 2026-09-14 | Listing must be connected to Magento before production — current phase is import-only by design, full Magento connection is a confirmed must-have for launch |
 | ASM-064 | Open (2026-09-14) | 2026-09-14 | Listing blacklist enforcement stays advisory (warning) for now — whether it should become a blocking pre-publish check is an open business/compliance decision |
-| ASM-063 | Open (2026-09-10) | 2026-09-10 | Lexie test-account approach: shared account + in-app role switcher preferred over 4 separate accounts, pending feasibility confirmation |
+| ASM-063 | Retired (2026-10-15) | 2026-09-10 | Lexie test-account approach: shared account + in-app role switcher preferred over 4 separate accounts, pending feasibility confirmation |
 | ASM-062 | Decided (2026-09-10) | 2026-09-10 | X-Manager not extended to other Dr. Max streams yet — waiting on Tomáš Dudaško's promised DevOps environment project |
 | ASM-061 | Decided (2026-09-10) | 2026-09-10 | Cross-project harmonogram (Lexie + Max + Maxie) will be built at weekly/workday granularity including testing windows — orientational, not fixed |
 | ASM-060 | Decided (2026-09-10) | 2026-09-10 | Lexie design/UX polish stays at a compromise-ticket level; full redesign deferred until AI-platform-wide design consolidation lands |
@@ -298,6 +309,245 @@ owner: Marek Pillár
 | ASM-001 | Decided (2026-08-25) | 2026-09-01 | Dr. Max client-side coordination unified into one role (Jindřich Tůma) |
 
 ## Entries
+
+---
+
+### ASM-297
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-297 |
+| Created | 2026-10-15 |
+| Source | 2026-10-15-lexie-max-maxie-weekly-sync |
+| By | Jindřich Tůma (STK-003), Šárka Andělová (STK-050) |
+| Status | Decided (2026-10-15) |
+
+**Description**
+Michal Machata gave X-Manager the green light for BigHub projects; a reusable project template is still being solved (apps can only be duplicated). Machata is on holiday until 2026-10-27. The CC creates an app, gives BigHub access and creates the table from BigHub's Excel; BigHub e-mails the Excel and the app name. When Machata returns, ownership passes to him and the CC steps out.
+
+**Rationale**
+Unblocks the Reklamace KB development during Machata's absence.
+
+**Impact**
+- **Schedule**: The kick-off Marek proposed for 2026-10-20/21 needs a new date after 2026-10-27.
+- **Decision**: Resolves the tool direction in [[ASM-243]].
+
+---
+
+### ASM-296
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-296 |
+| Created | 2026-10-15 |
+| Source | 2026-10-15-lexie-max-maxie-weekly-sync |
+| By | Jura Brázdil (STK-026), Šárka Andělová (STK-050) |
+| Status | Open (2026-10-15) |
+
+**Description**
+Dr. Max's lawyer engaged an external law firm on customer data and consent and wants a meeting with BigHub (Jura, Jindřich, Marek) on data flows and integrations, proposed Fri 2026-10-23 9:00–10:00. Today Max stores only error events (no message content) and the CC's ratings; the test feedback form won't be in production. Chats go through Azure OpenAI (no access/training guarantee) back to the browser without storage. Richer reporting (e.g. user region) is personal data, especially if linkable to eRecepty, and must be anonymised. The CC will think about what to measure.
+
+**Rationale**
+The lawyer wants everything specified in detail.
+
+**Impact**
+- **Compliance**: Continues [[ASM-102]].
+- **Scope**: Reporting features depend on the outcome.
+
+---
+
+### ASM-295
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-295 |
+| Created | 2026-10-15 |
+| Source | 2026-10-15-lexie-max-maxie-weekly-sync |
+| By | Šárka Andělová (STK-050), Jura Brázdil (STK-026), Jindřich Tůma (STK-003) |
+| Status | Open (2026-10-15) |
+
+**Description**
+Back office (supervisor Jana Vaňková) gets its own Lexie department and knowledge base on its SharePoint, and must also reach the front-office (CCC) methodologies. Andělová prefers starting with a separate agent that opens by default (Lexie remembers the last agent), switching to CCC when needed, and testing before giving back office all files, since mixed methodologies could blur answers. Jura will design rights (departments, sub-departments, knowledge bases; maybe document sets like front office / back office / legal). Jindřich asked to revisit the agent switcher if users get roles per department.
+
+**Rationale**
+Admins will be able to add departments in Lexie settings once the platform launches.
+
+**Impact**
+- **Scope**: Builds on [[ASM-238]] and in-platform user management ([[ASM-290]]).
+
+---
+
+### ASM-294
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-294 |
+| Created | 2026-10-15 |
+| Source | 2026-10-15-lexie-max-maxie-weekly-sync |
+| By | Šárka Andělová (STK-050), Jura Brázdil (STK-026) |
+| Status | Decided (2026-10-15) |
+
+**Description**
+When Max shows widgets (products, pharmacies), it adds a very short polite line and answers any question asked, without repeating widget content. Phone numbers must be shown as text; today the message briefly shows the number and then gets replaced, and the card's call link only opens a calling app (no number on Windows).
+
+**Rationale**
+"What medicines can you find?" fired a search instead of an answer. Jura had pushed Max to skip comments to avoid verbosity.
+
+**Impact**
+- **Quality**: Prompt and UI changes; extends the golden-conversation set.
+
+---
+
+### ASM-293
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-293 |
+| Created | 2026-10-15 |
+| Source | 2026-10-15-lexie-max-maxie-weekly-sync |
+| By | Šárka Andělová (STK-050), Jura Brázdil (STK-026) |
+| Status | Decided (2026-10-15) |
+
+**Description**
+Max showed a warehouse customers can't visit, inconsistently. Pharmacies are filtered on the branch API (likely DVH-based): only type 1 ("standard", a regular pharmacy) is shown; empty type, labs, "not on web" etc. never. Also excluded: pharmacies in preparation, temporarily closed (exceptions/opening hours in the API) and special regions. The same rules apply to Maxie. Jura also proposed an on/off list of branches in Max settings (a mirror of the API with a manual toggle); the CC likes it for ad-hoc cases but not as a replacement for rules. The CC files an X-Manager ticket with the code list.
+
+**Rationale**
+The CC wants fewer manual records, not more. Rules on the API's JSON are easy to implement.
+
+**Impact**
+- **Data**: Depends on the type and exception fields being present in the branch API JSON.
+
+---
+
+### ASM-292
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-292 |
+| Created | 2026-10-15 |
+| Source | 2026-10-15-lexie-max-maxie-weekly-sync |
+| By | Jura Brázdil (STK-026) |
+| Status | Decided (2026-10-15) |
+
+**Description**
+The AI Platform is deployed on test and production. For Max: live reporting (connected to the CC's test service), settings with model choice, a version dropdown and a "stable" (customer) version switchable by admins, tone/character, a changelog, a technical health view (it showed production Max can't load orders) and a red kill switch that removes Max from drmax.cz. Incident e-mails are planned (the platform has an e-mail server). Sequence: MaxBuddy and Lexie to production, tested by the end of the week of 2026-10-19 (night switch with BDC); then Max on the drmax-space test site, enabled by a URL parameter, then published via the stable switch. Jura estimates ~14 days. Production Max still uses test orders; production eRecept/order access is requested together with the domain.
+
+**Rationale**
+The infrastructure finally moved; Max work had waited for it. Almost none of the CC's Max tickets were handled yet.
+
+**Impact**
+- **Timeline**: Depends on infra while Tvarůžek is away (Martin Dubina covers).
+- **CC relationship**: Long fix backlog competes with the MaxBuddy/Lexie production move ([[ASM-236]]).
+
+---
+
+### ASM-291
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-291 |
+| Created | 2026-10-14 |
+| Source | 2026-10-14-maxbuddy-redesign-zoom-rollout-thirds-vosmek |
+| By | Jura Brázdil (STK-026) |
+| Status | Open (2026-10-14) |
+
+**Description**
+Jura offered a fixed maximum length for cross-sell arguments (cut or rewrite the long ones); any shortening lets the text grow. Not decided: Vosmek preferred the zoom. Arguments aren't written to be read partially, so cutting them can change meaning.
+
+**Rationale**
+In the current design only ~2 cases no longer fit, but text is small.
+
+**Impact**
+- **Content**: Needs someone on Dr. Max's side to rewrite long arguments if adopted.
+
+---
+
+### ASM-290
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-290 |
+| Created | 2026-10-14 |
+| Source | 2026-10-14-maxbuddy-redesign-zoom-rollout-thirds-vosmek; Teams 2026-10-14 |
+| By | Jura Brázdil (STK-026), Tomáš Dudaško (STK-010) |
+| Status | Decided (2026-10-14) |
+
+**Description**
+Instead of per-department Entra groups (Lexie alone has 22; ~50 with MaxBuddy and the chatbot), Entra holds only 3 AI groups: Users, Admins, SuperAdmins. The platform manages roles below them: a SuperAdmin assigns parts of the platform to Admins, an Admin grants users access to those parts, the SuperAdmin can do everything. Access to use cases and functions lives in the platform database, with auditable logs of all interactions. It also unlocks test users (wanted by the CC). Dudaško asked for an API so access can later be driven from an IDM (Dr. Max has none yet); Jura: no problem, the platform needs to issue API keys.
+
+**Rationale**
+Raised by Jura with Vosmek, who said Dudaško decides; Jura asked Dudaško on Teams the same day and got approval within minutes. It removes constant Entra add/remove requests and speeds up development.
+
+**Impact**
+- **Delivery**: Jura targets next week (per 2026-10-15); until then everyone in the group is a superadmin.
+- **Supersedes**: Lexie test-account workarounds ([[ASM-063]]).
+- **Security**: Responsibility for access mapping shifts to BigHub's platform; audit logs mitigate.
+
+---
+
+### ASM-289
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-289 |
+| Created | 2026-10-14 |
+| Source | 2026-10-14-maxbuddy-redesign-zoom-rollout-thirds-vosmek |
+| By | Jura Brázdil (STK-026), Luboš Vosmek (STK-011) |
+| Status | Decided (2026-10-14) |
+
+**Description**
+Status 2026-10-14: everything works end-to-end on test; production setup requirements went to Martin Dubina (BDC) on 2026-10-13. New production runs in parallel with the current one, then a night switch in AKS to the new node pool between 01:00 and 03:00 (only 24/7 pharmacies open; 1–2 h downtime possible; someone from Dr. Max on the phone for network issues). The 20 pilot pharmacies move first. Then rollout by thirds, by region: Vosmek's own (~200, where Míra Suchý and Kuba Mísař helped), then eastwards. Jura prepares two MaxBuddy environments (canary) and enlarges the database for ~200. About 8 pharmacies with small monitors are excluded.
+
+**Rationale**
+Vosmek moved from big-bang to thirds himself. Pharmacies must know in advance, so waves are by region, not percentage. Capacity is sized for ~600 pharmacies plus reserve, extrapolated from the 21 busier pilots.
+
+**Impact**
+- **Timeline**: Date depends on Dubina's production setup and the parallel-run test ([[ASM-027]]).
+- **Relationship**: Narrows Vosmek's "within days" expectation gap ([[ASM-203]]).
+- **Dependency**: Logos in Dr. Max style are a rollout gate for Vosmek ([[ASM-200]]).
+
+---
+
+### ASM-288
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-288 |
+| Created | 2026-10-14 |
+| Source | 2026-10-14-maxbuddy-redesign-zoom-rollout-thirds-vosmek |
+| By | Jura Brázdil (STK-026), Luboš Vosmek (STK-011) |
+| Status | Decided (2026-10-14) |
+
+**Description**
+While Farmis can't return focus, MaxBuddy blocks its panel when tapped. The warning text changes from "scanner disconnected" to a large, bold call to action: "Please tap back into Farmis".
+
+**Rationale**
+Vosmek: a red exclamation mark tells pharmacists "hands off" and scares them. Users need to know what to do, not why.
+
+**Impact**
+- **Adoption**: Fewer staff avoiding taps out of fear; complex-care click-through may recover ([[ASM-198]]).
+
+---
+
+### ASM-287
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-287 |
+| Created | 2026-10-14 |
+| Source | 2026-10-14-maxbuddy-redesign-zoom-rollout-thirds-vosmek |
+| By | Luboš Vosmek (STK-011), Jura Brázdil (STK-026) |
+| Status | Decided (2026-10-14) |
+
+**Description**
+MaxBuddy cards keep the product box with the title beside it (the title may be cut off; the start of the name is always right) and part of the benefit text below. Tapping a card enlarges it at the expense of the others and shows the full benefit; the next tap or dispensing case resets it. Tap, not hover, because half of dispensing staff use the touchscreen and half a mouse. The zoom waits until Farmis returns focus on an outside click: the scanner matters more than cross-sell.
+
+**Rationale**
+Kiosks give MaxBuddy only ~656 px. Pilot pharmacists disliked two stacked texts in the redesign. MaxBuddy recommends a product type, not the exact box to dispense, so a cut-off title is acceptable.
+
+**Impact**
+- **UX**: Long arguments still shrink fonts until the zoom ships.
+- **Dependency**: Farmis focus fix ([[ASM-198]]), not started as of 2026-10-14.
 
 ---
 
@@ -1418,6 +1668,7 @@ Raised internally only; not discussed with logistics.
 
 **Update (2026-10-15)**: Jindřich met the X-Manager owner this week: "looks like the most suitable candidate". BigHub sends the table request today (2026-10-15) so Filip can work with the tables next week. Source: 2026-10-15-viapharma-reklamace-sync-pickup-warehouse-zebra-brightpick-capacity.
 
+**Update (2026-10-15)**: Machata gave X-Manager the green light; the CC creates a temporary app for BigHub's logistics table ([[ASM-297]]). Source: 2026-10-15-lexie-max-maxie-weekly-sync.
 ---
 
 ### ASM-239
@@ -1462,6 +1713,7 @@ CC can't connect SharePoint sources themselves.
 - **Platform**: Argues for self-service agent/source setup in the AI Platform.
 - **Dependency**: Dr. Max SharePoint permission; Entra groups ([[ASM-217]]).
 
+**Update (2026-10-15)**: Back-office supervisor is Jana Vaňková; the X-Manager ticket has the SharePoint link. Approach: own agent first, then test ([[ASM-295]]). Source: 2026-10-15-lexie-max-maxie-weekly-sync.
 ---
 
 ### ASM-237
@@ -1484,6 +1736,7 @@ CC wants answers generated from sources rather than unique hand-written texts pe
 - **Delivery**: Order-status feature rewritten.
 - **Platform**: Self-service configuration requirement for the AI Platform settings.
 
+**Update (2026-10-15)**: Jura reviewed the CC's order states: the format is fine and he'll implement it; payments are not in yet. Source: 2026-10-15-lexie-max-maxie-weekly-sync.
 ---
 
 ### ASM-236
@@ -1505,6 +1758,7 @@ Mertová: simplest, no customer exposure. Jura: drmax.cz integration carries sub
 **Impact**
 - **Timeline**: Live-site integration is on the critical path for the end-of-October public launch ([[ASM-100]]).
 
+**Update (2026-10-15)**: Jura sends the domain request on 2026-10-15, drmax-space test site first, together with production eRecept/order access. Tvarůžek is on holiday; Martin Dubina covers. Estimate ~14 days ([[ASM-292]]). Source: 2026-10-15-lexie-max-maxie-weekly-sync.
 ---
 
 ### ASM-235
@@ -1548,6 +1802,7 @@ Addresses the GPT-5 mini instruction ceiling raised on 2026-09-24 without raisin
 - **Commercial**: Model spend governance sits with Dudaško/IT.
 - **Platform**: Per-use-case caps are needed ([[ASM-220]]).
 
+**Update (2026-10-15)**: Max now runs on "GPT-6 Luna", about 6× cheaper than the previous "5.4". Jura will test Luna with reasoning on (against loops and obvious failures) and measure cost; the CC's ceiling is the GPT-5 cost level agreed earlier. Source: 2026-10-15-lexie-max-maxie-weekly-sync.
 ---
 
 ### ASM-233
@@ -2293,6 +2548,8 @@ Vosmek is MaxBuddy's champion and the osmec who talks to the pharmacy network. I
 
 
 **Update (2026-10-02)**: Jura Brázdil says MaxBuddy is ~14 days behind, with the target still all ~600 pharmacies. He is migrating MaxBuddy, Lexie and Max into the new environment in parallel. Source: 2026-10-02-lexie-max-maxie-weekly-sync.
+
+**Update (2026-10-14)**: Gap narrowing: test works end-to-end, production setup is with Martin Dubina (BDC), and the plan is a night switchover, then rollout by thirds starting with Vosmek's region ([[ASM-289]]). Vosmek now asks for the steps rather than expecting days. Still open until a switchover date is set. Source: 2026-10-14-maxbuddy-redesign-zoom-rollout-thirds-vosmek.
 ---
 
 ### ASM-202
@@ -2359,6 +2616,7 @@ Vosmek sees themed visuals as an adoption lever against "stereotype screen" fati
 - **Timeline**: Mikuláš (2026-12-06) is the first real deadline.
 - **Platform**: Adds a campaign-scheduling feature to the AI Platform admin scope.
 
+**Update (2026-10-14)**: The Dr. Max-styled logos are a rollout gate for Vosmek: "I don't want to launch it looking like Benu" [translated from Czech]. Not done yet. Source: 2026-10-14-maxbuddy-redesign-zoom-rollout-thirds-vosmek.
 ---
 
 ### ASM-199
@@ -2403,6 +2661,7 @@ Vosmek called it the single most important item; everything else is "beauty".
 - **Adoption data**: Low click-through on trees (2026-09-07 analytics) may be partly a focus bug, not only pharmacist behaviour. Re-check the numbers after the fix.
 - **Dependency**: The fix is on Farmis's side.
 
+**Update (2026-10-14)**: Farmis has **not started** the focus fix (per Lukáš Szücs). Jura admitted he hadn't escalated it as a blocker; Vosmek called a Farmis contact during the meeting and is chasing it. The MaxBuddy zoom waits for it ([[ASM-287]]). Source: 2026-10-14-maxbuddy-redesign-zoom-rollout-thirds-vosmek.
 ---
 
 ### ASM-197
@@ -2448,6 +2707,7 @@ Pilot-pharmacy feedback; Vosmek wants to finish the simple, visible items first.
 - **Scope**: Small UX items, mostly Jura.
 - **Stakeholder**: Modest, realistic appetite, which is easy to meet if tracked ([[ASM-202]]).
 
+**Update (2026-10-14)**: The benefit-text zoom is now blocked by Farmis ([[ASM-198]], [[ASM-287]]), which puts the year-end UX polish at risk. Source: 2026-10-14-maxbuddy-redesign-zoom-rollout-thirds-vosmek.
 ---
 
 ### ASM-195
@@ -4617,6 +4877,7 @@ Andělová flagged that no consent checkbox or anonymization step currently exis
 - **Compliance**: Blocks any public go-live copy/UX around data collection until DPO input arrives — should be prioritized given the end-of-September internal deployment target (see [[ASM-100]]).
 - **Timeline**: Sits on the critical path to phase 2/3 of the go-live plan (public visibility on doktormax.cz).
 
+**Update (2026-10-15)**: Dr. Max's lawyer engaged an external law firm, which now has an output; a meeting with BigHub is proposed for 2026-10-23 ([[ASM-296]]). Source: 2026-10-15-lexie-max-maxie-weekly-sync.
 ---
 
 ### ASM-101
@@ -5478,7 +5739,7 @@ The validation code itself notes forbidden-phrase matching is a simple substring
 | Created | 2026-09-10 |
 | Source | 2026-09-10-lexie-max-maxie-weekly-sync |
 | By | Jura Brázdil, Simona Mertová |
-| Status | Open (2026-09-10) |
+| Status | Retired (2026-10-15) |
 
 **Description**
 For Lexie role-based testing across 4 CC sub-departments (call centre agent, back office agent, testing, and a fourth), two technical options were identified: (A) four fully separate accounts requiring logout/login to switch, or (B) one account placed in all relevant Entra groups with an in-app role switcher BigHub would build. Dr. Max prefers option B.
@@ -5490,6 +5751,7 @@ Testers need to run two roles side-by-side on one screen for testing to be pract
 - **Scope**: Option B requires new BigHub-side work (an in-app role switcher) not otherwise planned.
 - **Timeline**: Blocks meaningful Lexie role-based testing until Jura confirms feasibility.
 
+**Update (2026-10-15)**: Superseded by in-platform user management ([[ASM-290]]): CC admins will add testers themselves, including test users. Source: 2026-10-15-lexie-max-maxie-weekly-sync.
 ---
 
 ### ASM-062
@@ -6279,6 +6541,7 @@ Canary rollout plan (20 pilot pharmacies first, already live and matching confir
 
 **Update (2026-09-29)**: Luboš Vosmek expects rollout to the other pharmacies "within days", which conflicts with this entry. Logged as an expectation gap in [[ASM-203]]. Source: 2026-09-29-maxbuddy-roadmap-backlog-vosmek
 
+**Update (2026-10-14)**: Test works end-to-end; production requirements went to Martin Dubina on 2026-10-13. Jura hopes MaxBuddy and Lexie are tested on production by the end of the week of 2026-10-19 ([[ASM-289]], [[ASM-292]]). Source: 2026-10-14-maxbuddy-redesign-zoom-rollout-thirds-vosmek; 2026-10-15-lexie-max-maxie-weekly-sync.
 ---
 
 ### ASM-026
@@ -6426,6 +6689,7 @@ Same legal/regulatory guardrail that reshaped MaxBuddy — the CC team explicitl
 **Impact**
 - **Compliance**: Reuses an existing, already-cleared pattern rather than opening new regulatory risk. See also the MaxBuddy dosage-checking history in [[project-knowledge]].
 
+**Update (2026-10-15)**: **Legal approved** the SPC leaflet display: the unmodified SÚKL leaflet, scrolled to the relevant section, no calculation, paraphrase or highlighting. Leaflets sync every morning ~06:00 from the DVH team's SPC API (the same source as MaxBuddy). Source: 2026-10-15-lexie-max-maxie-weekly-sync.
 ---
 
 ### ASM-019

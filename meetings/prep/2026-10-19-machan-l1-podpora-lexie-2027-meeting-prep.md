@@ -18,14 +18,14 @@ attendees: [Petr Macháň, Marek Pillár]
 
 **Typ**: externé (prvé stretnutie)
 **Dátum**: pondelok 2026-10-19 (čas `-tbd-`)
-**Účastníci**: Petr Macháň (STK-069, Dr. Max, zodpovedný za L1 podporu), Marek Pillár
+**Účastníci**: Petr Macháň (STK-069, Dr. Max, vedúci prevádzky / L1 podpora), Marek Pillár
 
 ## Kontext z harnessu
 
 - **Odkiaľ prišiel**: Jindřich Tůma ho 2026-10-14 (Teams) odporučil: L1 podpora už Lexie používa a má na ňu požiadavky. Marek ho v ten deň oslovil (požiadavky na Lexie + iniciatívy 2027) a stretnutie je na pondelok.
 - **Lexie**: interný asistent Dr. Max nad dokumentmi/SharePointom. Vlastníci: Simona Mertová (produkt/prevádzka, STK-017), Tomáš Dudaško (IT/rozpočet, STK-010). Beží na zdieľanej AI platforme BigHubu (Jura Brázdil, Viliam Gago).
 - **Ako chodia požiadavky**: všetky požiadavky na Max/Lexie/Maxie idú cez X-Manager a jediný kontakt je Simona Mertová ([[ASM-018]]). Požiadavky od L1 teda treba poslať touto cestou, nie priamo do vývoja.
-- **Oprávnenia**: prístupy riadia Entra ID skupiny Dr. Max, BigHub ich nevie nastaviť sám. Na testovanie sa používajú 4 samostatné účty oddelení bez 2FA ([[ASM-063]]).
+- **Oprávnenia**: dnes prístupy riadia Entra ID skupiny Dr. Max (Lexie má 22 skupín). Na testovanie sa používajú 4 samostatné účty oddelení bez 2FA ([[ASM-063]]). **Novinka 2026-10-14**: Dudaško schválil správu používateľov priamo v platforme (3 Entra skupiny: Users/Admins/SuperAdmins, admin oddelenia si sám pridáva ľudí a prístupy, audit logy, testovací používatelia). Ak L1 potrebuje pridávať ľudí alebo testovacie účty, pôjde to cez platformu, keď ju Jura dorobí.
 - **Dizajn**: Mertová už skôr povedala, že Lexie vyzerá menej uhladene ako Max. O dizajne rozhoduje úroveň AI platformy (Dudaško), nie samotná aplikácia.
 - **Nejasné**: či L1 podpora patrí do jedného zo 4 CC pododdelení Lexie, alebo je to samostatný tím (`-tbd-`, over na stretnutí).
 - **Iniciatívy 2027**: termín pre oddelenia koniec októbra (v e-mailoch 23. 10.), celý backlog koniec novembra. Tracker: `OneDrive/2. Business Quantification/2027/AI_Initiatives_Backlog_2027.xlsx`.
