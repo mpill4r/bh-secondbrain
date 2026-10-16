@@ -1,5 +1,5 @@
 ---
-last_updated: 2026-10-15
+last_updated: 2026-10-16
 last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
@@ -10,6 +10,10 @@ owner: Marek Pillár
 
 | ID | Status | Created | Description (short) |
 |----|--------|---------|---------------------|
+| ASM-301 | Open (2026-10-16) | 2026-10-16 | Lexie for pharmacies: staff ask Lexie Farmis/accounting how-to questions via the AI Platform; Jindřich raises it with Vosmek |
+| ASM-300 | Open (2026-10-16) | 2026-10-16 | 2027 candidate (accounting): daily monitoring of pharmacy → accounting file transfers; GoAnywhere replaced 2027-01-01, likely automation not AI |
+| ASM-299 | Decided (2026-10-16) | 2026-10-16 | No TAS integration for now; contract expiry covered by TAS views/reminders, not AI; lease contracts too sensitive for AI (conflicts with Šišo use case 1) |
+| ASM-298 | Open (2026-10-16) | 2026-10-16 | Lexie for Brno accounting over SharePoint + S: drive directives; cite source + date, flag archive, ISO folder excluded; no date promised |
 | ASM-297 | Decided (2026-10-15) | 2026-10-15 | X-Manager for logistics: Machata gave the green light; while he's away (to 2026-10-27), the CC creates a temporary app and imports BigHub's table, ownership to Machata later |
 | ASM-296 | Open (2026-10-15) | 2026-10-15 | Max reporting vs. personal data: legal meeting with Dr. Max's external law firm Fri 2026-10-23 9:00–10:00; CC to say what to measure |
 | ASM-295 | Open (2026-10-15) | 2026-10-15 | Back-office Lexie: start with its own agent (default on open, switch to CCC), test before giving all files; rights model (departments, knowledge bases, document sets) to design |
@@ -309,6 +313,97 @@ owner: Marek Pillár
 | ASM-001 | Decided (2026-08-25) | 2026-09-01 | Dr. Max client-side coordination unified into one role (Jindřich Tůma) |
 
 ## Entries
+
+---
+
+### ASM-301
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-301 |
+| Created | 2026-10-16 |
+| Source | 2026-10-16-svarcova-brno-accounting-lexie-2027-initiatives |
+| By | Renata Švarcová (STK-063), Jindřich Tůma (STK-003) |
+| Status | Open (2026-10-16) |
+
+**Description**
+Lexie for pharmacies: pharmacy staff often ask Brno accounting basic how-to questions (credit note in Farmis, printing Dr. Max vouchers) and skip the long directives. Pharmacies have a normal PC with Farmis, so they could open Lexie on the AI Platform website. Possible knowledge base: in-house directives, procedures, manuals, and Mertová's e-shop order manuals (sorted for what pharmacies need). Jindřich hadn't considered pharmacies and will discuss it with Luboš Vosmek.
+
+**Rationale**
+Would cut repeated questions to accounting and to the CC.
+
+**Impact**
+- **Scope**: New Lexie audience (~600 pharmacies); owner -tbd- (Vosmek? Mertová?).
+- **Dependencies**: AI Platform access for pharmacy users ([[ASM-290]]); the Lexie rights model ([[ASM-295]]).
+
+---
+
+### ASM-300
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-300 |
+| Created | 2026-10-16 |
+| Source | 2026-10-16-svarcova-brno-accounting-lexie-2027-initiatives |
+| By | Renata Švarcová (STK-063) |
+| Status | Open (2026-10-16) |
+
+**Description**
+2027 initiative candidate for Brno accounting: daily monitoring of pharmacy → accounting file transfers. Every morning, take the current list of open pharmacies, check which files should have arrived on the shared drive (issued and supplier invoice PDFs daily, ~5 DBF files per active pharmacy daily, some files on the 1st and 5th of the month), report what's missing, and ideally raise the IT ticket automatically. Today accountants notice gaps only when they need the data, and up to ~20 people may chase the cause.
+
+**Rationale**
+Prevention: accountants don't stall and everything is processed on time. An earlier request to IT for automatic monitoring left accounting doing the watching itself.
+
+**Impact**
+- **Risk**: GoAnywhere is replaced from 2027-01-01 (new tool name unclear); its own monitoring may cover this.
+- **Budget**: Likely automation rather than AI ([[ASM-233]]).
+- **Context**: Accounting moves to a new cloud version of its accounting software in 2027, so Švarcová sees little point in other accounting initiatives on the current system. She prefers hard-coded automation over AI where that's enough.
+
+---
+
+### ASM-299
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-299 |
+| Created | 2026-10-16 |
+| Source | 2026-10-16-svarcova-brno-accounting-lexie-2027-initiatives |
+| By | Jindřich Tůma (STK-003), Renata Švarcová (STK-063) |
+| Status | Decided (2026-10-16) |
+
+**Description**
+No TAS integration for now: Jindřich said TAS "won't work for now"; several departments ask for it and BigHub will look into it. TAS moves to a new version in 2027 and the vendor promises AI cooperation. The contract-expiry overview raised by another department is not an AI case: TAS already supports custom views/filters (validity from/to; ask the helpdesk for an "expired contracts" view) and reminders before a contract ends, which legal enters. Švarcová: lease contracts are very sensitive and nobody will want them in any AI.
+
+**Rationale**
+Avoids building what TAS already does; the gap is user awareness.
+
+**Impact**
+- **Conflict**: Švarcová's view on lease contracts cuts against Šišo's use case 1 (compare / extract lease contracts from TAS). Left open until decided with Šišo.
+- **Scope**: Lexie sources stay SharePoint + local files ([[ASM-298]]).
+
+---
+
+### ASM-298
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-298 |
+| Created | 2026-10-16 |
+| Source | 2026-10-16-svarcova-brno-accounting-lexie-2027-initiatives |
+| By | Renata Švarcová (STK-063), Jindřich Tůma (STK-003), Marek Pillár (STK-001) |
+| Status | Open (2026-10-16) |
+
+**Description**
+Lexie for Brno accounting: a knowledge base over accounting directives and procedures, so accountants ask Lexie before asking Švarcová. Sources: the company-wide directives on the intranet "Zaměstnanecké info" (SharePoint), plus her folder "Směrnice účetní" on the shared S: drive (~10 current directives in the root, procedures in "Formuláře a pokyny", archives), which she may move to SharePoint. Answer rules: answer only from the documents, cite the source document and its date, and flag archive content as no longer valid. The "ISO standardní postupy" folder is excluded (use the current intranet directives instead). She may add CC manuals. No delivery date promised: BigHub validates internally and estimates after the links arrive.
+
+**Rationale**
+Too many directives to navigate; Švarcová is the bottleneck for questions.
+
+**Impact**
+- **Scope**: Third department Lexie after CC and back office ([[ASM-238]], [[ASM-295]]); TAS out ([[ASM-299]]).
+- **Capacity**: BigHub capacity is limited ([[ASM-190]]); Marek didn't commit to end of 2026 vs. early 2027.
+- **Access**: Marek can't reach the internal share from an external laptop.
+- **Requirements**: REQ-004, REQ-005.
 
 ---
 

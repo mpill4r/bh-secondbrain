@@ -1,5 +1,5 @@
 ---
-last_updated: 2026-10-05
+last_updated: 2026-10-16
 last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
@@ -17,6 +17,16 @@ Listing (future / Listing 2.0): the business team can define a rule (terms to fi
 **Source**: Rudolf Žůrek via 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap
 
 Reklamace email agent: track which supplier claim emails got no reply and send reminders, so the claims clerk no longer has to watch the mailbox. Can be algorithmic. See [[ASM-247]].
+
+**REQ-004** · Product · Open · 2026-10-16
+**Source**: Renata Švarcová via 2026-10-16-svarcova-brno-accounting-lexie-2027-initiatives
+
+Lexie for accounting: every answer cites the source document (link) and the document's date, and Lexie answers only from the documents, never beyond them. See [[ASM-298]].
+
+**REQ-005** · Product · Open · 2026-10-16
+**Source**: Renata Švarcová via 2026-10-16-svarcova-brno-accounting-lexie-2027-initiatives
+
+Lexie for accounting: Lexie may use archived directive/procedure versions, but must say explicitly that the content is archived and no longer valid. The "ISO standardní postupy" folder is excluded; current company-wide directives come from the intranet. See [[ASM-298]].
 
 ## Business Requirements
 

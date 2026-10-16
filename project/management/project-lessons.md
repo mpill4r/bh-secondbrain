@@ -1,10 +1,27 @@
 ---
-last_updated: 2026-10-15
+last_updated: 2026-10-16
 last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
 
 # Lessons Learned
+
+---
+
+### LL-98
+
+| Field | Value |
+|-------|-------|
+| ID | LL-98 |
+| Created | 2026-10-16 |
+| Category | Stakeholder engagement / discovery |
+| Source | 2026-10-16-svarcova-brno-accounting-lexie-2027-initiatives |
+
+**Lesson**
+When collecting "AI initiatives" from a department, check first whether a requested capability already exists in their current tools, and present the effort as process improvement rather than AI. Some asks turn out to be training gaps, and AI-skeptical owners engage once the label stops being the point.
+
+**Context**
+The contract-expiry overview another department asked for already exists in TAS (views, filters, reminders); Švarcová showed it live. She was skeptical of AI being "pushed everywhere" until Jindřich reframed the collection as automation in general; she then offered concrete ideas (file-transfer monitoring, Lexie for pharmacies).
 
 ---
 

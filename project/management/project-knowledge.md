@@ -1,5 +1,5 @@
 ---
-last_updated: 2026-10-15
+last_updated: 2026-10-16
 last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
@@ -503,6 +503,17 @@ Dudaško was unambiguous on this boundary when Jindřich raised a concrete pilot
 | Added | 2026-10-14 |
 | Status | Active |
 
+### Směrnice účetní (accounting directives)
+
+| Field | Value |
+|-------|-------|
+| Definition | Brno accounting's folder of directives on the shared S: drive: ~10 currently valid directives in the root, an archive of older versions, "Formuláře a pokyny" (procedures: what to do, when, why) with its own archive, and "ISO standardní postupy". Company-wide directives live on the intranet "Zaměstnanecké info" (SharePoint) and partly in TAS |
+| Source | 2026-10-16-svarcova-brno-accounting-lexie-2027-initiatives |
+| Added | 2026-10-16 |
+| Status | Active |
+
+Planned Lexie source ([[ASM-298]]); the ISO folder is excluded. Accounting also moves to a new cloud version of its accounting software in 2027.
+
 ## Data Model Concepts
 
 ## Regulatory & Compliance
@@ -700,6 +711,8 @@ Reklamace document flow (as of 2026-09-02): contract config in Axapta is complet
 | Added | 2026-09-29 |
 | Status | Active |
 
+**Update (2026-10-16)**: Deloitte is reviewing Brno accounting processes, also with an AI focus (Švarcová). Jindřich: BigHub will work with Deloitte. Source: 2026-10-16-svarcova-brno-accounting-lexie-2027-initiatives.
+
 ### Atlantis
 
 | Field | Value |
@@ -762,6 +775,28 @@ Listing's core blocker (reconfirmed 2026-09-02) is not code but Dr. Max's undefi
 | Status | Active |
 
 **Capabilities (2026-09-24)**: barge-in: the voice agent reliably stops and listens when interrupted; whether it also picks up the interruption's context is unconfirmed (Marek/Jura investigating). Voices: the samples sent to Dr. Max were marketing material. The product has a much larger catalog, character-tuning sliders, voice cloning from recordings and a voice designer; 3 voices are natively optimized for Czech/Slovak. Extended options are likely paid (Jura's rough guess: thousands of Kč). Licence budget ownership is open, see [[ASM-155]].
+
+### TAS
+
+| Field | Value |
+|-------|-------|
+| Definition | External document-management system used across the Dr. Max group. Holds contracts, directives (not all of them) and invoices/orders. Supports custom views and filters (e.g. contract validity from/to) and task reminders before a contract ends (entered by legal). Incoming accounting mail is loaded into TAS. A person at BDC owns it across all entities (name unclear, heard as "simona Ilík"); an external vendor sold and runs it (heard as "Nate Group"). A new version comes in 2027, with promised AI cooperation |
+| Source | 2026-10-16-svarcova-brno-accounting-lexie-2027-initiatives |
+| Added | 2026-10-16 |
+| Status | Needs confirmation |
+
+No BigHub integration for now ([[ASM-299]]). Acquisitions stores lease contracts here (Šišo, STK-061); Švarcová considers them too sensitive for AI.
+
+### GoAnywhere (pharmacy → accounting file transfer)
+
+| Field | Value |
+|-------|-------|
+| Definition | Tool that transfers files from pharmacies' Farmis systems to Brno accounting's folders on the shared S: drive: issued and supplier invoice PDFs daily, ~5 DBF files per active pharmacy daily (overwritten each day), and some files on the 1st and 5th of the month. Being replaced by a new tool from 2027-01-01 (name unclear, heard as "TABID") |
+| Source | 2026-10-16-svarcova-brno-accounting-lexie-2027-initiatives |
+| Added | 2026-10-16 |
+| Status | Needs confirmation |
+
+Missing files are noticed only when accountants need them; closed pharmacies stop sending (e.g. pharmacy 581, last file 2024). See [[ASM-300]].
 
 ## Seasonal & Cyclical Patterns
 
