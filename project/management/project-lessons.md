@@ -1,10 +1,44 @@
 ---
-last_updated: 2026-10-16
+last_updated: 2026-10-19
 last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
 
 # Lessons Learned
+
+---
+
+### LL-100
+
+| Field | Value |
+|-------|-------|
+| ID | LL-100 |
+| Created | 2026-10-19 |
+| Category | Process discovery / change management |
+| Source | 2026-10-19-finance-duvo-deloitte-analysis-global-ai-registry |
+
+**Lesson**
+Capture processes away from the team's peak period. Explain upfront what the inputs will be used for. Sample people by real variation, not by headcount. Warn about practical side effects such as audio recording in open-plan offices. Tool-driven process discovery that ignores these points costs goodwill and produces noisy output, and the team then distrusts the benefit numbers that come out of it.
+
+**Context**
+Deloitte's DUVo-based finance analysis recorded accountants in real time during the October month-end close (20–30 min per process). It sampled 8 of ~20 accountants who do identical work, generated hundreds of processes from manuals, and its audio picked up whole open-space rooms. Finance called the work disruptive and the first FTE estimate inflated ([[ASM-307]]).
+
+---
+
+### LL-99
+
+| Field | Value |
+|-------|-------|
+| ID | LL-99 |
+| Created | 2026-10-19 |
+| Category | Ways of working / client IT governance |
+| Source | 2026-10-19-machan-l1-lexie-feedback-servicenow-intake |
+
+**Lesson**
+When a vendor team relies on a single client contact to relay infra and change requests (by email), find the client's ITSM process owner early and get a proper queue in their tool. Power users from support/IT functions are often the fastest route to that person, and they also tell you where the standards are being bypassed before it costs you.
+
+**Context**
+A Lexie feedback session with an L1 power user turned out to reach Dr. Max's informal ServiceNow owner. He offered BigHub its own resolver group under an existing "BigHub AI" service, after weeks of chasing requests through Tvarůžek by email with no visibility ([[ASM-305]]).
 
 ---
 

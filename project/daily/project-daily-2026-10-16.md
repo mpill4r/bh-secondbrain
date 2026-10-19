@@ -50,7 +50,7 @@ project_status: Amber
 - [ ] `carry-forward` `waiting` **Tereza Foltová**: Send details of the new medical-device manufacturer notification obligation ([[ASM-251]]) — from 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap
 - [ ] `carry-forward` **Jindřich Tůma**: Meet the X-Manager product owner on whether it fits Reklamace ([[ASM-243]]) — from 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap
 - [ ] `carry-forward` **Tereza Foltová / Jindřich Tůma**: Make sure Tomáš Dudaško gets the recording or a summary — from 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap
-- [ ] `carry-forward` `highest-prio` **Marek Pillár**: 2027 initiatives — collect from all owners (deadline for departments 23 Oct, full backlog Nov 2026): Spilka/Foltová, Žižka/Foltová, Burda/Švarc, Neuman, Mertová, Šimoník, Vosmek, Dvořák, Šišo, Švarcová, Svoboda; send the last draft (Neuman), ping non-responders, draft the 2 logistics e-mails, run the Šišo Lexie intro — due 2026-11 — merged 2026-10-14 from 16 items — 2026-10-16: Švarcová met; follow-up Thu 2026-10-22 14:00 (deadline mismatch: she was told end of November vs. 23 Oct in the outreach e-mails)
+- [ ] `carry-forward` `highest-prio` **Marek Pillár**: 2027 initiatives — collect from all owners (deadline for departments 23 Oct, full backlog Nov 2026): Spilka/Foltová, Žižka/Foltová, Burda/Švarc, Neuman, Mertová, Šimoník, Vosmek, Dvořák, Šišo, Švarcová, Svoboda; send the last draft (Neuman), ping non-responders, draft the 2 logistics e-mails, run the Šišo Lexie intro — due 2026-11 — merged 2026-10-14 from 16 items — 2026-10-16: Švarcová met; follow-up Thu 2026-10-22 14:00 (deadline mismatch: she was told end of November vs. 23 Oct in the outreach e-mails) — 2026-10-19: Mertová met, no time for initiatives now; follow-up item due 2026-11-01
 - [ ] `carry-forward` `waiting` **Luboš Vosmek**: Send his 2027 initiative ideas in a few points + 2–3 dates for a 30-min Teams BQ meeting — from PM, 2026-10-14
 - [ ] `carry-forward` `mid-prio` **Marek Pillár / Jindřich Tůma**: Burda package (one e-mail) — power-outage BQ row, driving-logbook row, overview of what BigHub automates elsewhere — merged 2026-10-14 from 3 items
 - [ ] `carry-forward` `highest-prio` **Marek Pillár**: 2027 BQ tracker — add and fill "Metodika změření benefitu", "Číslo impactu", "Integrační komplexita" per initiative; clean stale rows; get BQ sign-off from Šimoník and Mertová — merged 2026-10-14 from 6 items
@@ -104,6 +104,7 @@ project_status: Amber
 - [ ] `waiting` **Renata Švarcová**: E-mail the SharePoint / intranet links for Lexie (directives, procedures, manuals, relevant CC guides) or a list of all documents — from 2026-10-16-svarcova-brno-accounting-lexie-2027-initiatives
 - [ ] `waiting` **Renata Švarcová**: Decide on moving her S: drive directives to SharePoint; check with the TAS colleague whether all directives are in TAS — from 2026-10-16-svarcova-brno-accounting-lexie-2027-initiatives
 - [ ] `waiting` **Renata Švarcová**: Think through 3–4 initiative candidates for 2027 — due 2026-10-22 — from 2026-10-16-svarcova-brno-accounting-lexie-2027-initiatives
+- [ ] **Marek Pillár**: Remind Simona Mertová about the 2027 initiatives (CC); she had no time when they met — due 2026-11-01 — from PM, 2026-10-19
 
 ## Key Events
 
@@ -123,3 +124,4 @@ project_status: Amber
 - [AUTO] product-requirements — added REQ-004, REQ-005 (Lexie for accounting) from 2026-10-16-svarcova-brno-accounting-lexie-2027-initiatives (2026-10-16)
 - [AUTO] project-daily — 9 items added (6 BigHub, 3 waiting); 2027-initiatives item annotated from 2026-10-16-svarcova-brno-accounting-lexie-2027-initiatives (2026-10-16)
 - [AUTO] project-daily — closed; Švarcová invite marked done; RAG Amber and priority unchanged; staleness items skipped (dismissed by PM via /todo review 2026-10-12) (2026-10-16)
+- [AUTO] project-daily — Mertová 2027-initiatives reminder added (due 2026-11-01); initiatives item annotated, from PM (2026-10-19)

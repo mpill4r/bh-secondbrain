@@ -1,5 +1,5 @@
 ---
-last_updated: 2026-10-16
+last_updated: 2026-10-19
 last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
@@ -44,6 +44,7 @@ Second Brain has no client — it is a personal knowledge tool for Marek Pillár
 ## 7. Product & Tech Landscape
 
 - **Accounting systems change in 2027 (2026-10-16)**: Brno accounting moves to a new cloud version of its accounting software next year; GoAnywhere (pharmacy → accounting file transfer) is replaced from 2027-01-01; TAS moves to a new version with promised AI cooperation. Initiatives on the current systems are held back. Source: 2026-10-16-svarcova-brno-accounting-lexie-2027-initiatives.
+- **Accounting ERP upgrade (2026-10-19)**: Dr. Max (Česká lékárna holding) accounting likely moves to a new version of its heavily customised accounting ERP next year; finance wants to feed the Deloitte/DUVo analysis results into it. Accounting has used RPA bots for ~5 years. Consistent with the 2026-10-16 note above. Source: 2026-10-19-finance-duvo-deloitte-analysis-global-ai-registry.
 
 ## 8. Stakeholder Map
 
@@ -68,6 +69,7 @@ N/A — no client stakeholders. See `project-stakeholders.md` for the full team/
 - **Business owners don't know what AI can do (2026-10-13)**: Burda asked for examples of what BigHub automates elsewhere so TEO can recognise similar processes; showing concrete examples helps surface candidates. Source: 2026-10-13-teo-2027-initiatives-burda-power-outages-logbook
 - **Decisions made without Sláma cause rework (2026-10-14)**: Petr Sláma repeatedly points out that requirements change in meetings he isn't in. Remedy: every decision goes into the written spec he works from. Source: 2026-10-14-fakturace-doprav-document-state-zizka-slama
 - **AI skepticism in accounting (2026-10-16)**: Renata Švarcová sees AI pushed everywhere when plain programming would often do, and recalls earlier simplification requests that got no capacity. Frame department work as automation in general (backed by management) and show concrete examples. A Deloitte process review with an AI focus runs in the same department ([[ASM-187]]). Source: 2026-10-16-svarcova-brno-accounting-lexie-2027-initiatives.
+- **Finance stance on AI and process capture (2026-10-19)**: Accounting works to one KPI (a correct close on time), is conservative about AI and prefers rule-based automation with human approval ([[ASM-308]]). Real-time process recording during the month-end close (DUVo) was badly received; any BigHub analysis there should avoid the close and work alongside people. Finance distrusts consultant benefit numbers it cannot verify. Source: 2026-10-19-finance-duvo-deloitte-analysis-global-ai-registry.
 
 ## 10. Active Initiatives & Project History
 

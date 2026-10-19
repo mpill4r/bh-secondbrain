@@ -1,5 +1,5 @@
 ---
-last_updated: 2026-10-16
+last_updated: 2026-10-19
 last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
@@ -97,6 +97,8 @@ Original infrastructure/model provisioning for MaxBuddy was done manually (ad ho
 **AI Platform for Max (2026-10-15)**: the platform runs on test and production. For Max it offers live reporting, settings (model, version dropdown, "stable" = customer version, tone), a changelog, a technical health view of connected services and a red kill switch that removes Max from drmax.cz. Max is enabled on the site by a URL parameter (like `?chatbot=test`), invisible to customers, and published by switching the stable version. Max now runs on "GPT-6 Luna" (~6× cheaper than "5.4"). It orders search results for relevance and variety (forms, not pack sizes). Conversation end is detected by a regex ("na shledanou", "děkuju", "to je vše"). What Max stores: only error events (no message content) and testers' ratings; chats pass through Azure OpenAI back to the browser without storage. SPC leaflets sync every morning ~06:00 from the DVH team's SPC API (mirrors SÚKL), shown unmodified. **Branch types**: the branch API (likely DVH-based) has a pharmacy type; type 1 "standard" is a regular pharmacy; empty, lab, "not on web" etc. are never shown to customers. Source: 2026-10-15-lexie-max-maxie-weekly-sync.
 
 **Lexie structure (2026-10-15)**: departments, sub-departments, and knowledge bases per department; Lexie opens on the last-used agent. The CC (CCC) has a front office and a back office; back office (supervisor Jana Vaňková) has its own SharePoint and methodologies. Document sets (front office / back office / legal) are a possible later addition. Source: 2026-10-15-lexie-max-maxie-weekly-sync.
+
+**Lexie source data in practice (2026-10-19, L1 / Macháň)**: Lexie reads its sources from SharePoint folders. The file format matters little (Word, PDF and text all work; one format is preferred), but Lexie **does not read images**, and Claude-generated **Markdown files worked poorly**. New files show up quickly (fast refresh). Quality drops with duplicate copies and old versions of the same document; the recommended fix is separate current and archive folders ([[ASM-302]]). With a large Excel (pharmacy contacts), inconsistent column names and overlapping copies led to partial answers ([[ASM-304]]). Known bug: Lexie repeats the question below its answer; a fix is expected in the next upgrade (being solved for CC). Source: 2026-10-19-machan-l1-lexie-feedback-servicenow-intake
 
 ### TEO / OCR (pharmacy service-protocol extraction)
 
@@ -467,6 +469,8 @@ Dudaško was unambiguous on this boundary when Jindřich raised a concrete pilot
 | Added | 2026-10-13 |
 | Status | Active |
 
+**Global registry (2026-10-19)**: Dr. Max is building a registry of all AI initiatives across all countries, each with quantified benefits (money, time, FTE, or capability). Dudaško presents it as CIO; the next global meeting is Wed 2026-10-21. Jindřich enters the CZ rows, including non-BigHub initiatives such as the Deloitte/DUVo finance analysis ([[ASM-307]], [[ASM-309]]). Source: 2026-10-19-finance-duvo-deloitte-analysis-global-ai-registry
+
 ### Listing enrichment pipeline
 
 | Field | Value |
@@ -498,8 +502,8 @@ Dudaško was unambiguous on this boundary when Jindřich raised a concrete pilot
 
 | Field | Value |
 |-------|-------|
-| Definition | Dr. Max L1 support (Petr Macháň, STK-069) already uses Lexie and has requirements for it (to be collected, 2026-10-14). |
-| Source | PM, 2026-10-14 (Jindřich Tůma message) |
+| Definition | Dr. Max L1 support (Petr Macháň, STK-069) already uses Lexie and has requirements for it (to be collected, 2026-10-14). Requirements collected 2026-10-19: source-data questions and UX asks ([[ASM-302]]–[[ASM-304]]); L1 uses it over sorted folders, converted PDFs and a large pharmacy-contacts Excel. |
+| Source | PM, 2026-10-14 (Jindřich Tůma message); 2026-10-19-machan-l1-lexie-feedback-servicenow-intake |
 | Added | 2026-10-14 |
 | Status | Active |
 
@@ -713,6 +717,17 @@ Reklamace document flow (as of 2026-09-02): contract config in Axapta is complet
 
 **Update (2026-10-16)**: Deloitte is reviewing Brno accounting processes, also with an AI focus (Švarcová). Jindřich: BigHub will work with Deloitte. Source: 2026-10-16-svarcova-brno-accounting-lexie-2027-initiatives.
 
+**Update (2026-10-19)**: Deloitte runs the finance process analysis for Dr. Max (Česká lékárna holding) and ViaPharma on the **DUVo** platform: a process map, suitability for automation/AI, and 2 demonstration pilots ~mid/late November ([[ASM-307]]). Contacts: Drahoňovský (practical lead), partners Kardoš/Kaválek, Barbora Neumannová (delivery). Finance says Deloitte added little value. A previous Deloitte accounting analysis was done 1–2 years ago. Source: 2026-10-19-finance-duvo-deloitte-analysis-global-ai-registry
+
+### DUVo
+
+| Field | Value |
+|-------|-------|
+| Definition | AI process-analysis platform (separate vendor) used by Deloitte at Dr. Max and ViaPharma; Deloitte provides the method. Each employee uploads a manual, then presents the process on real data while DUVo records the screen and audio (~20–30 min per process, in real time) and asks follow-up questions; it produces process write-ups with flagged "serious errors" and risks (often single-person dependency). Problems seen in finance (2026-10): picks up speech within 3–5 m (unusable in open space; moved to home office), off-target questions (KPIs, inventory shortfalls), spurious errors, many irrelevant processes generated by AI from manuals, early e-mail overload (later one checklist e-mail). Earlier heard as "Duvo"/"Duvio"/"Duo"/"DOOM" ([[ASM-187]], [[ASM-231]]). |
+| Source | 2026-10-19-finance-duvo-deloitte-analysis-global-ai-registry |
+| Added | 2026-10-19 |
+| Status | Active |
+
 ### Atlantis
 
 | Field | Value |
@@ -810,6 +825,15 @@ Missing files are noticed only when accountants need them; closed pharmacies sto
 | Status | Active |
 
 ## Project Conventions
+
+### ServiceNow at Dr. Max (BigHub AI service)
+
+| Field | Value |
+|-------|-------|
+| Definition | Dr. Max's ITSM tool for tickets, requests and **changes**. Structure: **business service** → **offerings** (sub-parts) → **resolver group** (queue, needs resolver licences) with **SLAs**. A "BigHub AI" business service already exists (created by Petr Macháň, currently under Lukáš Szücs); offerings per app (e.g. "BigHub AI – Lexie", Maxie) route tickets to BigHub's queue and allow per-app reporting. Publishing anything company-wide needs a change record. ServiceNow now falls under BDC; Macháň is the informal CZ process owner (L1, Change and Problem Manager). XApps is the internal name for the X-Manager application set. Development work is tracked in **Azure DevOps** (introduced by Míša Třísková; fortnightly Thursday reviews in Tvarůžek's team); some teams (e.g. Axapta) use Confluence. Proposed BigHub flow: [[ASM-305]]. |
+| Source | 2026-10-19-machan-l1-lexie-feedback-servicenow-intake |
+| Added | 2026-10-19 |
+| Status | Active |
 
 ### Logistics AI-initiatives table (ViaPharma SharePoint)
 

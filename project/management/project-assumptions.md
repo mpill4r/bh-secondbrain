@@ -1,5 +1,5 @@
 ---
-last_updated: 2026-10-16
+last_updated: 2026-10-19
 last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
@@ -10,6 +10,14 @@ owner: Marek Pillár
 
 | ID | Status | Created | Description (short) |
 |----|--------|---------|---------------------|
+| ASM-309 | Open (2026-10-19) | 2026-10-19 | A second DUVo-linked CZ AI initiative exists; Jindřich must identify it for the global registry |
+| ASM-308 | Open (2026-10-19) | 2026-10-19 | Finance/accounting work: rule-based automation first, AI last, mandatory human-in-the-loop (AI Act) |
+| ASM-307 | Decided (2026-10-19) | 2026-10-19 | Global-registry row for the finance initiative = Deloitte/DUVo analysis + 2 pilots; benefits -tbd-; 0.2–0.4 FTE estimate not used |
+| ASM-306 | Open (2026-10-19) | 2026-10-19 | "BigHub AI" ServiceNow service needs an IT owner (payer/approver), not Mertová; she keeps a sub-offering |
+| ASM-305 | Open (2026-10-19) | 2026-10-19 | Lexie/BigHub AI requests via ServiceNow: BigHub resolver group, offerings per app under "BigHub AI", SLAs, onward to DevOps |
+| ASM-304 | Open (2026-10-19) | 2026-10-19 | Lexie prompt tuning: "contact/phone" returns all matching columns; flag or ask when sources overlap |
+| ASM-303 | Open (2026-10-19) | 2026-10-19 | Lexie UX requests from L1 (split-screen source, jump to passage, input area, fuller/consistent answers) await owner decision |
+| ASM-302 | Decided (2026-10-19) | 2026-10-19 | L1 keeps Lexie sources current itself; versioning via current/archive folders, not date headers |
 | ASM-301 | Open (2026-10-16) | 2026-10-16 | Lexie for pharmacies: staff ask Lexie Farmis/accounting how-to questions via the AI Platform; Jindřich raises it with Vosmek |
 | ASM-300 | Open (2026-10-16) | 2026-10-16 | 2027 candidate (accounting): daily monitoring of pharmacy → accounting file transfers; GoAnywhere replaced 2027-01-01, likely automation not AI |
 | ASM-299 | Decided (2026-10-16) | 2026-10-16 | No TAS integration for now; contract expiry covered by TAS views/reminders, not AI; lease contracts too sensitive for AI (conflicts with Šišo use case 1) |
@@ -313,6 +321,182 @@ owner: Marek Pillár
 | ASM-001 | Decided (2026-08-25) | 2026-09-01 | Dr. Max client-side coordination unified into one role (Jindřich Tůma) |
 
 ## Entries
+
+---
+
+### ASM-309
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-309 |
+| Created | 2026-10-19 |
+| Source | 2026-10-19-finance-duvo-deloitte-analysis-global-ai-registry |
+| By | Jindřich Tůma (STK-003) |
+| Status | Open (2026-10-19) |
+
+**Description**
+Besides the finance analysis ([[ASM-307]]), one more CZ AI initiative linked to DUVo is unknown to Jindřich and must be entered in the global AI-initiative registry. It was not covered on 2026-10-19. It may be the logistics initiatives run with "Duo" ([[ASM-231]]).
+
+**Rationale**
+The registry must list all CZ AI initiatives, not only BigHub's.
+
+**Impact**
+- **Delivery**: Registry due for the global meeting on Wed 2026-10-21.
+
+---
+
+### ASM-308
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-308 |
+| Created | 2026-10-19 |
+| Source | 2026-10-19-finance-duvo-deloitte-analysis-global-ai-registry |
+| By | Tomáš Kořenek (STK-079), Jindřich Tůma (STK-003), Marek Pillár (STK-001) |
+| Status | Open (2026-10-19) |
+
+**Description**
+Any BigHub work for Dr. Max finance/accounting should be clear rule-based automation first, with AI only as a final logic layer, and always a human in the loop who reviews and approves before anything is posted or delivered (AI Act; signed financial close). Kořenek is conservative about AI in accounting, where entries drive taxes and audits; accounting already uses RPA (~5 years).
+
+**Rationale**
+Errors in accounting have tax and audit consequences; finance trusts rules it can stand behind.
+
+**Impact**
+- **Scope**: Frames any accounting use case (incl. Lexie for accounting, [[ASM-298]], and file-transfer monitoring, [[ASM-300]]).
+- **Stakeholders**: Pitch as automation, not AI (see also LL-98).
+
+---
+
+### ASM-307
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-307 |
+| Created | 2026-10-19 |
+| Source | 2026-10-19-finance-duvo-deloitte-analysis-global-ai-registry |
+| By | Jindřich Tůma (STK-003), Tomáš Kořenek (STK-079), Hana Stanislavová (STK-080) |
+| Status | Decided (2026-10-19) |
+
+**Description**
+In the global AI-initiative registry, the finance initiative is entered as an analysis: Deloitte, using the DUVo platform, analyses current finance processes at Dr. Max (Česká lékárna holding: pharmacy and overhead accountants) and ViaPharma; outputs are a process map, a suitability assessment for automation/AI/agents, and 2 demonstration agentic pilots (one per company, in the contract price, ~mid/late November 2026). Started end of September to capture the October close; Dr. Max inputs due 2026-10-20, ViaPharma +2 days; first analyses the week of 2026-10-26, numeric estimates later, at least 2 more targeted rounds. Benefits stay -tbd-. Deloitte's early 0.2–0.4 FTE estimate for one process is considered inflated by finance and is internal only, not to be used. Owner Pavel Hofman (STK-081) is away until the end of October. Finance plans to reuse results in next year's ERP upgrade.
+
+**Rationale**
+Kořenek sees it as a trial ("reconnaissance by battle"), possibly repeated in other countries; no targets are known yet.
+
+**Impact**
+- **Delivery**: Jindřich fills the row before the global meeting on Wed 2026-10-21; Dudaško presents.
+- **Competition**: Deloitte/DUVo active in finance ([[ASM-187]]).
+
+---
+
+### ASM-306
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-306 |
+| Created | 2026-10-19 |
+| Source | 2026-10-19-machan-l1-lexie-feedback-servicenow-intake |
+| By | Petr Macháň (STK-069), Jindřich Tůma (STK-003) |
+| Status | Open (2026-10-19) |
+
+**Description**
+The "BigHub AI" business service in ServiceNow needs a top owner from Dr. Max IT: someone who pays for, approves and operates it. Today Simona Mertová acts as business owner only because the first project (CC) started with her. She can keep her own part as a smaller offering (e.g. Maxie/Max) with manager/approver roles. Jindřich agreed. Macháň will raise it inside Dr. Max IT.
+
+**Rationale**
+Lexie is spreading to other departments (Legal and 2–3 more), and operations require an IT person. Macháň also says Mertová tends to bypass IT standards.
+
+**Impact**
+- **Stakeholders**: Politically sensitive toward Mertová (STK-017); handle carefully.
+- **Process**: Affects who approves Lexie backlog items ([[ASM-018]], [[ASM-303]]).
+- **Dependencies**: [[ASM-305]].
+
+---
+
+### ASM-305
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-305 |
+| Created | 2026-10-19 |
+| Source | 2026-10-19-machan-l1-lexie-feedback-servicenow-intake |
+| By | Petr Macháň (STK-069) |
+| Status | Open (2026-10-19) |
+
+**Description**
+Direction proposed by Macháň (informal ServiceNow owner for CZ): BigHub gets at least one resolver licence and its own resolver group/queue in ServiceNow. Under the existing "BigHub AI" business service (created by Macháň, currently under Lukáš Szücs), offerings are set up per app (e.g. "BigHub AI – Lexie", Maxie), so tickets land in BigHub's queue and can be reported per app. SLAs to agree. Tickets are worked in the queue and moved into Azure DevOps for development. Anything published company-wide needs a ServiceNow change record (BigHub alone or with Macháň). Details at a ServiceNow deep-dive this week.
+
+**Rationale**
+Today BigHub's infra requests go by email through Vladislav Tvarůžek with no visibility, and Lexie needs one intake for all departments (Jindřich's three-layer model: questions → Jura; backlog → owner decides; one ticket intake).
+
+**Impact**
+- **Process**: Extends [[ASM-216]] (infra requests through ServiceNow) to direct BigHub access and its own queue. Possible conflict with [[ASM-018]] (all Max/Lexie/Maxie requests via Mertová in X-Manager): the single front door is still open. Related: [[ASM-163]] (roadmap view in Azure DevOps), [[ASM-062]].
+- **Cost**: Resolver licence(s); payer -tbd- ([[ASM-306]]).
+- **Delivery**: Better visibility into infra/change requests.
+
+---
+
+### ASM-304
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-304 |
+| Created | 2026-10-19 |
+| Source | 2026-10-19-machan-l1-lexie-feedback-servicenow-intake |
+| By | Jindřich Tůma (STK-003), Petr Macháň (STK-069) |
+| Status | Open (2026-10-19) |
+
+**Description**
+Lexie should be prompt-tuned (Jura Brázdil) so that a question about a "contact" or "phone" returns all matching columns (pharmacy, manager, technician; mobile/landline), even when column names are inconsistent ("vedoucí telefon", "mobil", "mobilní"). When it finds several overlapping sources (Excel vs. Markdown vs. text copy), it should say so or ask which one to use.
+
+**Rationale**
+In the demo, "phone number of pharmacy 191" returned only 2 of 4 numbers and answered from a Markdown copy instead of the Excel.
+
+**Impact**
+- **Scope**: Lexie prompt changes; also needs source cleanup by L1 ([[ASM-302]]).
+
+---
+
+### ASM-303
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-303 |
+| Created | 2026-10-19 |
+| Source | 2026-10-19-machan-l1-lexie-feedback-servicenow-intake |
+| By | Petr Macháň (STK-069) |
+| Status | Open (2026-10-19) |
+
+**Description**
+Lexie UX requests from L1 support: (1) open the cited source in a right-hand split-screen panel (as in Claude) instead of a covering pop-up; (2) highlight/jump to the passage where the answer was found (Jindřich thinks a version may already have this, to check with Jura); (3) a smaller, wider input area separate from the chat; (4) fuller first answers, and consistent answers to the same question. Going to the backlog; the Lexie owner (currently Mertová) decides.
+
+**Rationale**
+Macháň is a heavy L1 user; switching between sources and re-asking for more costs time.
+
+**Impact**
+- **Process**: Owner decision per [[ASM-018]] / [[ASM-306]]; popular asks across departments go into a release.
+- **Design**: Design decisions sit at AI Platform level.
+
+---
+
+### ASM-302
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-302 |
+| Created | 2026-10-19 |
+| Source | 2026-10-19-machan-l1-lexie-feedback-servicenow-intake |
+| By | Marek Pillár (STK-001), Jindřich Tůma (STK-003), Petr Macháň (STK-069) |
+| Status | Decided (2026-10-19) |
+
+**Description**
+L1 support keeps its Lexie source documentation current itself. Old versions of the same document are not handled with date headers; the recommended approach is separate current and archive (historical) folders, with the current folder treated as primary. File format matters little (Word/PDF/text all work; one format is preferred); Lexie does not read images, and Claude-generated Markdown worked poorly.
+
+**Rationale**
+Duplicates and old versions make Lexie hallucinate more; the folder split is proven on another project.
+
+**Impact**
+- **Quality**: Answer quality depends on source hygiene.
+- **Related**: Similar archive handling for accounting ([[ASM-298]]).
 
 ---
 
@@ -1964,6 +2148,8 @@ Keeps the tracker a clean BigHub capacity/prioritization tool.
 **Impact**
 - **Commercial**: Confirms a parallel AI channel already active in logistics ([[ASM-187]]).
 
+**Update (2026-10-19)**: "Duo"/"DOOM" is most likely **DUVo**, the platform Deloitte uses (see [[ASM-187]]). The logistics initiatives may be the second DUVo-linked initiative Jindřich must register ([[ASM-309]]). Source: 2026-10-19-finance-duvo-deloitte-analysis-global-ai-registry
+
 ---
 
 ### ASM-230
@@ -3016,6 +3202,8 @@ Jindřich reads the request as a signal Deloitte is designing something overlapp
 - **Open**: Overlap with the AI Platform and whether architecture sharing is OK.
 
 **Update (2026-10-02)**: Logistics (Tereza Foltová) already runs initiatives with "DOOM"/"Duo", which she called "our AI initiative, but not BigHub's", and Spilka contrasted it with a proper process analysis. Likely the same Deloitte platform; unconfirmed. Kept out of the BigHub tracker ([[ASM-231]]). Source: 2026-10-02-logistics-initiatives-green-field-cenarky-analysis.
+
+**Update (2026-10-19)**: "DUVo" is a separate AI process-analysis platform (vendor) that records people working and asks follow-up questions; Deloitte supplies the method and consulting on top. Used for the finance analysis at Dr. Max and ViaPharma ([[ASM-307]]). Finance feedback is mostly negative (disruptive real-time recording, off-target questions, Deloitte adding little value), which weakens it as a replacement threat for BigHub's human-led analysis. Source: 2026-10-19-finance-duvo-deloitte-analysis-global-ai-registry
 
 ---
 
