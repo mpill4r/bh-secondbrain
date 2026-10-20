@@ -1,7 +1,7 @@
 ---
-status: open
+status: closed
 last_updated: 2026-10-19
-last_updated_by: auto — project-meeting routing
+last_updated_by: auto — project-daily close
 project_status: Amber
 ---
 
@@ -96,7 +96,7 @@ project_status: Amber
 - [ ] `carry-forward` `waiting` **Martin Dubina**: Set up MaxBuddy production in the new AKS from Jura's requirements (sent 2026-10-13); Vosmek chases if no response ([[ASM-289]]) — from 2026-10-14-maxbuddy-redesign-zoom-rollout-thirds-vosmek
 - [ ] `carry-forward` `waiting` **Luboš Vosmek**: Define first-wave pharmacies (his region, ~200), exclude ~8 small-monitor pharmacies, name a Dr. Max contact for the night switchover ([[ASM-289]]) — from 2026-10-14-maxbuddy-redesign-zoom-rollout-thirds-vosmek
 - [ ] `carry-forward` **Marek Pillár**: Find out how BigHub can reach the internal share / intranet documents for Lexie accounting from an external laptop — from 2026-10-16-svarcova-brno-accounting-lexie-2027-initiatives
-- [ ] `carry-forward` **Marek Pillár**: Draft the "pharmacy file-transfer monitoring" row in the 2027 tracker (volumes, people, time spent) to quantify with Švarcová ([[ASM-300]]) — due 2026-10-22 — from 2026-10-16-svarcova-brno-accounting-lexie-2027-initiatives
+- [x] `carry-forward` **Marek Pillár**: Draft the "pharmacy file-transfer monitoring" row in the 2027 tracker (volumes, people, time spent) to quantify with Švarcová ([[ASM-300]]) — due 2026-10-22 — from 2026-10-16-svarcova-brno-accounting-lexie-2027-initiatives
 - [ ] `carry-forward` **Marek Pillár / Jindřich Tůma**: Once Švarcová's links arrive, validate Lexie for accounting internally and estimate where it fits the roadmap ([[ASM-298]]) — from 2026-10-16-svarcova-brno-accounting-lexie-2027-initiatives
 - [ ] `carry-forward` **Jindřich Tůma**: Put together a list of typical accounting AI/automation use cases from other clients and send it to Švarcová — from 2026-10-16-svarcova-brno-accounting-lexie-2027-initiatives
 - [ ] `carry-forward` **Jindřich Tůma**: Discuss Lexie for pharmacies with Luboš Vosmek ([[ASM-301]]) — from 2026-10-16-svarcova-brno-accounting-lexie-2027-initiatives
@@ -147,3 +147,4 @@ project_status: Amber
 - [AUTO] project-daily — 4 items added (3 Jindřich, 1 waiting) from 2026-10-19-finance-duvo-deloitte-analysis-global-ai-registry (2026-10-19)
 - [AUTO] project-lessons — added LL-100 from 2026-10-19-finance-duvo-deloitte-analysis-global-ai-registry (2026-10-19)
 - [MANUAL] CZ AI Use Case Register (working file) — added AI-094 Finance process analysis (Deloitte / DUVO) in orange, linked to overlap group G01, from 2026-10-19-finance-duvo-deloitte-analysis-global-ai-registry (2026-10-19)
+- [AUTO] project-daily — closed; file-transfer monitoring row marked done (drafted in the 2027 backlog); status Amber and priority unchanged (2026-10-20)

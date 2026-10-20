@@ -1,5 +1,5 @@
 ---
-last_updated: 2026-10-19
+last_updated: 2026-10-20
 last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
@@ -218,6 +218,25 @@ owner: Marek Pillár
 | Left | — |
 | Notes | Low-confidence entry. Possibly the same person as STK-008 ("Lukáš", architecture/infrastructure developer named at onboarding 2026-08-25), not reconciled. Jan Sovka plans a BigHub team meeting once he is onboarded. Source: 2026-10-02-jan-sovka-1on1-monday-reklamace-meeting-okamzite-avizo |
 
+### STK-084
+
+| Field | Value |
+|-------|-------|
+| ID | STK-084 |
+| Name | Kateřina Lesch |
+| Aliases | — |
+| Organization | Dr. Max — BDC (group) |
+| Role | Group AI: owns the cross-country AI use-case register ("AI Use Case Register – Triage Edition") and the cross-group scoring / rollout methodology; runs a DUVo pilot in supply chain |
+| Location | -tbd- |
+| Influence | High at group level — prepares the AI portfolio view for CIOs, the AI committee and leadership |
+| Sentiment | Positive |
+| Sentiment context | Appreciates CZ/BigHub's activity ("if all countries worked like this…"); frustrated by noisy submissions and countries not responding |
+| Communication preference | Informal (first-name "ty" agreed 2026-10-20); prefers inputs filled directly into her shared cloud Excel |
+| Expectations | Quantified business value per use case; reusable rollout candidates (MaxBuddy-type) to show leadership |
+| Last interaction | 2026-10-20 (first call) |
+| Status | Active |
+| Notes | Uses a Claude artifact as a "portfolio manager" over the register to flag duplicates across countries. IT owner on the register's BDC-AI DUVO Clarity rows (AI-001/002). Wants a scoring matrix that separates local-only use cases (too complex to integrate) from group rollout candidates; plans a demand-management tool with upfront scoring. Possible lunch when Marek is at the Dr. Max office. Source: 2026-10-20-lesch-group-ai-register-scoring-cz-input |
+
 ### Inactive
 
 {Inactive internal team members}
@@ -296,7 +315,7 @@ owner: Marek Pillár
 | Sentiment context | Constructive and supportive after the 2026-09-23 narrative. Open about frustration with the agile/no-spec history on Reklamace, but explicitly invites questions and proposed an in-person meeting herself. On 2026-10-08, anxious and pushing for a roadmap ("we're standing still", "a plan for the planning"), relaying Žůrek's pressure for dates. Misread BigHub's capacity point as "put Phases 3–5 to sleep" even after clarification. She is the one most primed for the "BigHub doesn't want to continue" narrative. |
 | Communication preference | -tbd- |
 | Expectations | -tbd- |
-| Last interaction | 2026-10-08 (ViaPharma Reklamace sync) |
+| Last interaction | 2026-10-20 (2026-10-20-fakturace-doprav-canon-scanner-zebra-kiosk-hyza) |
 | Status | Active |
 | Notes | Name corrected 2026-09-11 from "Tereza Foltová" to "Tereza Foltová" per PM (surfaced via a Jindřich Tůma message referencing an upcoming Monday meeting with her on AI initiatives). Supplier Excel for the reklamace rollout still expected Monday, per her earlier commitment (reconfirmed 2026-09-02). On 2026-09-03: consolidating ~120 suppliers into a single structure, working three-deep on it (including Jana, despite being on vacation); original 2026-09-07 deadline at risk given the manual-verification load — committed to a status update Monday 2026-09-08 (~80% clean estimate). Also coordinating with Dr. Max accounting to add an Axapta reference number and customer-vs-vendor distinction to the same data; staying in Excel for now rather than moving to a database. Confirmed 2026-09-09 as the primary requester behind the 2026-09-10 Logistika roadmap walkthrough — reklamace scope is expected to largely match what she asked for. On 2026-09-10, still consolidating the supplier Excel with Jana Egrmaierová (STK-044, ViaPharma) — data across 3-4 source tables doesn't fully reconcile yet; targeting a demo to Filip Černý (STK-006) next Tuesday, wants a short session with him specifically rather than a broader walkthrough. On 2026-09-15, ran the first live Business Quantification interview with Marek Pillár, covering Reklamace and Fakturace doprav — gave detailed, well-grounded JTBD answers and pushed back on her own initiative's inflated savings estimate rather than accepting it (see [[ASM-072]]); requested naming clarity on the roadmap (domain qualifiers matching the Core/Ecom convention), which incidentally helped resolve part of [[ASM-006]]; only covered 2 of ~11 prepped initiatives before running out of time, unavailable from Friday. On 2026-09-23, was the source of a "BigHub doesn't want to deliver" narrative on Reklamace circulating client-side — calibrated directly by Jindřich, who explained the digitization framing; she understood it but showed some confusion afterward (asking whether the project would move to "their IT" or Dr. Max's own infra) and wants to communicate with Rudolf Žůrek (STK-024) directly before the planned management decision meeting. On 2026-09-24, named as Marek's logistics counterpart for a 2026-09-25 session: agree the Part A (finish Reklamace/Fakturace specs) / Part B (new logistics AI initiatives) split and collect KPI measurement methods. Source: 2026-09-01-dr-max-x-bighub-project-status-sync, 2026-09-02-logistics-listing-team-sync, 2026-09-03-viapharma-logistics-status-reklamace-demo, 2026-09-09-logistics-cc-roadmap-presentation-prep, 2026-09-10-viapharma-reklamace-uat-fakturace-doprav-demo, 2026-09-15-business-quantification-reklamace-fakturace-doprav, 2026-09-23-cross-project-status-sync-reklamace-fallout-listing-blockers (relayed via Jindřich), 2026-09-24-ai-initiatives-bq-review-platform-prototype-demo-dudasko On 2026-09-24, arranged the shared testing phone with Petr Spilka ([[ASM-182]]). On 2026-09-25, 1:1 with Marek: agreed the Part A/B split ([[ASM-177]]); openly frustrated that Reklamace went agile without a full spec ("it has bitten us") and with the 09-24 "exactly as in the spec" framing, but moved on and invited all questions. She drafts the logistics initiatives table herself ([[ASM-178]]); her reach to Spilka and Žůrek is limited. Proposed an in-person catch-up at Florentinum (2026-09-30 10:00). Source: 2026-09-24-viapharma-reklamace-knowledge-base-standoff, 2026-09-25-tereza-foltova-reklamace-focus-logistics-initiatives-table. On 2026-09-29, Jindřich reported she told him on Friday that he had said BigHub doesn't want to do Reklamace — which he denies; about the second time she has twisted information (motive unclear). Team line: keep her close, give her what she needs, but put everything in writing ([[ASM-185]]). She proposed Fakturace doprav follows once Reklamace blockers clear ([[ASM-189]]) and wants a whole-project timeline ([[ASM-190]]). Meeting Marek at Max on 2026-09-30 to show initiatives collected since Friday. Source: 2026-09-29-management-meeting-debrief-reklamace-thursday-plan. On 2026-10-01: raised that "damaged goods" hides ~19 Axapta problem types (explicitly "not a blocker"); will email Marek the type list with Jana ([[ASM-225]]). Requested a one-week phase 1 testing extension ([[ASM-227]]). Shared phone: Dušan will send it, no ETA; her kiosk request is stuck at infra. Source: 2026-10-01-viapharma-reklamace-email-agent-demo-data-map-review. On 2026-10-02, presented her "very rough" logistics initiatives list; agreed to rebuild it from a green field with brief benefits per item, cenařky included, and owns the next step ("it's on our side now"). Runs some initiatives with "Duo" outside the BigHub tracker ([[ASM-231]]). Expects January as the realistic earliest start for new logistics work. Source: 2026-10-02-logistics-initiatives-green-field-cenarky-analysis. **2026-10-05** (2026-10-05-reklamace-next-steps-zurek-pilot-roadmap): Came in anxious about framing (AI vs. digi, costs vs. tokens); reassured. Raised the new SÚKL medical-device manufacturer obligation ([[ASM-251]]). Owns follow-ups: chase Sláma for column J, monthly Žůrek invite, claim-structure pre-meeting. **2026-10-08**: owns the Phase 1 testing wrap-up (Mon 10-12, with Filip + Sláma, after confirming with Jana), the test-phone chase (IT ticket via Dušan), the Canon scanner call (with Žižka + Filip), and, with Spilka, writing up Phases 2–5 for Marek's discovery ([[ASM-258]]). Source: 2026-10-08-viapharma-reklamace-sync-data-map-slip-all-phases-slama-capacity. 2026-10-12: checked logins live with Lukáš Gebovský; personally favours the Zebra but faces warehouse resistance; owns the IT call (Dušan + Spilka) and Žižka's invite for 10-14. Wants better test preparation next time. Welcomes Marek's recap e-mails. 2026-10-14: organised and brokered the Žižka–Sláma meeting; owns writing Žižka's requirements into the spec; arranging the Canon meeting next week and chasing Dušan on devices. |
 
@@ -334,9 +353,9 @@ owner: Marek Pillár
 | Sentiment context | -tbd- |
 | Communication preference | -tbd- |
 | Expectations | -tbd- |
-| Last interaction | 2026-10-15 (2026-10-15-viapharma-reklamace-sync-pickup-warehouse-zebra-brightpick-capacity) |
+| Last interaction | 2026-10-20 (2026-10-20-fakturace-doprav-canon-scanner-zebra-kiosk-hyza) |
 | Status | Active |
-| Notes | Agreed the freight-invoicing scope with Lukáš Szücs. Also named 2026-09-07 as the contact for Fakturace od dodavatelů (supplier invoicing) — Filip Černý has never spoken with him directly and is unsure of his seniority/hierarchy; that area is still very early ("in diapers"). Possible overlap/confusion between the two "fakturace" streams (freight vs. supplier invoicing) not yet fully disentangled. On 2026-09-10, first substantive engagement — attended Filip Černý's live Fakturace doprav kiosk demo and gave clear, opinionated, largely positive feedback: confirmed open/no-login kiosk access is fine, rejected an optional driver-notes field, wants specific missing-page numbers in the confirmation table, and delivered a major architecture clarification that Axapta (not the app) owns all route/document state (see ASM-053) — a correction that resolved real confusion on Filip's side and simplified the design. Also revealed an independent ViaPharma initiative (with Petr Sláma, STK-034) to build a new standardized, pre-filled ZOPV form that should eliminate most of the illegible-handwriting problem at the source. Has no personal visibility into kiosk hardware procurement and flagged an internal ownership gap on his side. Reinforced 2026-09-15 (via Tereza Foltová, ViaPharma, in the Business Quantification call) as the owner/domain expert for the roadmap's "fakturace od dodavatelů" line — which she described as actually the transport/freight initiative, matching Fakturace doprav rather than a separate supplier-invoicing stream (see [[ASM-006]]); hasn't seen the quantification tracker yet as of that call. Source: 2026-09-01-dr-max-x-bighub-project-status-sync, 2026-09-07-ai-portfolio-roadmap-scope-review, 2026-09-10-viapharma-reklamace-uat-fakturace-doprav-demo, 2026-09-15-business-quantification-reklamace-fakturace-doprav **2026-10-08**: named (by Sláma, agreed by Filip / Tereza) as ViaPharma's operational input for the Fakturace doprav Canon scanner (screen size, placement); Tereza arranges a call with him, Canon and Filip ([[ASM-259]]). Source: 2026-10-08-viapharma-reklamace-sync-data-map-slip-all-phases-slama-capacity. 2026-10-14: settled the Fakturace doprav state question: every scan to Axapta immediately (~150 routes/day, continuous invoicing and km checks), latest document overwrites, no history. Business-focused, impatient with technicalities, but answered the key user question decisively. Writes the requirements into the spec with Tereza. **Update (2026-10-15)**: Will join the Thursday Reklamace / logistics syncs when he can; writes the Fakturace user description with Tereza (10-16); Canon visit 10-20. Source: 2026-10-15-viapharma-reklamace-sync-pickup-warehouse-zebra-brightpick-capacity |
+| Notes | Agreed the freight-invoicing scope with Lukáš Szücs. Also named 2026-09-07 as the contact for Fakturace od dodavatelů (supplier invoicing) — Filip Černý has never spoken with him directly and is unsure of his seniority/hierarchy; that area is still very early ("in diapers"). Possible overlap/confusion between the two "fakturace" streams (freight vs. supplier invoicing) not yet fully disentangled. On 2026-09-10, first substantive engagement — attended Filip Černý's live Fakturace doprav kiosk demo and gave clear, opinionated, largely positive feedback: confirmed open/no-login kiosk access is fine, rejected an optional driver-notes field, wants specific missing-page numbers in the confirmation table, and delivered a major architecture clarification that Axapta (not the app) owns all route/document state (see ASM-053) — a correction that resolved real confusion on Filip's side and simplified the design. Also revealed an independent ViaPharma initiative (with Petr Sláma, STK-034) to build a new standardized, pre-filled ZOPV form that should eliminate most of the illegible-handwriting problem at the source. Has no personal visibility into kiosk hardware procurement and flagged an internal ownership gap on his side. Reinforced 2026-09-15 (via Tereza Foltová, ViaPharma, in the Business Quantification call) as the owner/domain expert for the roadmap's "fakturace od dodavatelů" line — which she described as actually the transport/freight initiative, matching Fakturace doprav rather than a separate supplier-invoicing stream (see [[ASM-006]]); hasn't seen the quantification tracker yet as of that call. Source: 2026-09-01-dr-max-x-bighub-project-status-sync, 2026-09-07-ai-portfolio-roadmap-scope-review, 2026-09-10-viapharma-reklamace-uat-fakturace-doprav-demo, 2026-09-15-business-quantification-reklamace-fakturace-doprav **2026-10-08**: named (by Sláma, agreed by Filip / Tereza) as ViaPharma's operational input for the Fakturace doprav Canon scanner (screen size, placement); Tereza arranges a call with him, Canon and Filip ([[ASM-259]]). Source: 2026-10-08-viapharma-reklamace-sync-data-map-slip-all-phases-slama-capacity. 2026-10-14: settled the Fakturace doprav state question: every scan to Axapta immediately (~150 routes/day, continuous invoicing and km checks), latest document overwrites, no history. Business-focused, impatient with technicalities, but answered the key user question decisively. Writes the requirements into the spec with Tereza. **Update (2026-10-15)**: Will join the Thursday Reklamace / logistics syncs when he can; writes the Fakturace user description with Tereza (10-16); Canon visit 10-20. Source: 2026-10-15-viapharma-reklamace-sync-pickup-warehouse-zebra-brightpick-capacity **2026-10-20**: Keeps the focus on drivers as users: "it must be fast and work first time, or they won't use it" [translated from Czech] ([[ASM-315]]); wants a loaner scanner tested by 3 drivers. Source: 2026-10-20-fakturace-doprav-canon-scanner-zebra-kiosk-hyza |
 
 ### STK-016
 
@@ -1179,19 +1198,19 @@ owner: Marek Pillár
 | Field | Value |
 |-------|-------|
 | ID | STK-066 |
-| Name | Dušan (surname -tbd-) |
-| Aliases | — |
-| Organization | ViaPharma CZE |
+| Name | Dušan Hýža |
+| Aliases | "pan Kýža" (transcript, 2026-10-20) |
+| Organization | ViaPharma CZE (shown as DrMax CZE in Teams) |
 | Role | IT |
 | Location | -tbd- |
 | Influence | -tbd- |
-| Sentiment | -tbd- |
-| Sentiment context | -tbd- |
+| Sentiment | Positive |
+| Sentiment context | Firm on security ("we are quite tough on this" [translated from Czech]) but solution-minded; looked up devices live during the call. |
 | Communication preference | -tbd- |
-| Expectations | -tbd- |
-| Last interaction | -tbd- |
+| Expectations | Kiosk device locked so users can't leave the app; robust, remotely managed hardware; spare device if a PC is used |
+| Last interaction | 2026-10-20 (2026-10-20-fakturace-doprav-canon-scanner-zebra-kiosk-hyza) |
 | Status | Active |
-| Notes | Handled the test-phone IT ticket; Tereza sets up a call with him and Spilka on Zebra vs. phones ([[ASM-265]]). Source: 2026-10-12-reklamace-phase-1-testing-wrap-up-login-zebra-fakturace-state |
+| Notes | Handled the test-phone IT ticket; Tereza sets up a call with him and Spilka on Zebra vs. phones ([[ASM-265]]). Source: 2026-10-12-reklamace-phase-1-testing-wrap-up-login-zebra-fakturace-state **2026-10-20**: Surname confirmed as Hýža. Network access is no blocker (Ethernet Canon or USB on a domain PC both fine). Ruled out an open Windows PC as kiosk; proposed Zebra devices with forced kiosk mode (found Zebra ET80, Windows 11 Pro); asks Zebra for a large-screen Windows device / external touch monitor ([[ASM-314]]). Source: 2026-10-20-fakturace-doprav-canon-scanner-zebra-kiosk-hyza |
 
 ### STK-067
 
@@ -1280,13 +1299,13 @@ owner: Marek Pillár
 | Role | Canon contact for the Fakturace doprav scanner / kiosk |
 | Location | -tbd- |
 | Influence | -tbd- |
-| Sentiment | -tbd- |
-| Sentiment context | -tbd- |
+| Sentiment | Positive |
+| Sentiment context | Pragmatic, experience-led; steered away from the cheap models and proposed a real-driver trial before any loan. |
 | Communication preference | -tbd- |
 | Expectations | -tbd- |
-| Last interaction | -tbd- (warehouse visit planned 2026-10-20) |
+| Last interaction | 2026-10-20 (2026-10-20-fakturace-doprav-canon-scanner-zebra-kiosk-hyza) |
 | Status | Active |
-| Notes | Low-confidence entry (surname from transcript). Visits the warehouse on 2026-10-20 with Jan Žižka, then a 30-min call with Filip ([[ASM-281]]). Source: 2026-10-15-viapharma-reklamace-sync-pickup-warehouse-zebra-brightpick-capacity |
+| Notes | Low-confidence entry (surname from transcript). Visits the warehouse on 2026-10-20 with Jan Žižka, then a 30-min call with Filip ([[ASM-281]]). Source: 2026-10-15-viapharma-reklamace-sync-pickup-warehouse-zebra-brightpick-capacity **2026-10-20**: Walked the warehouse with Žižka; recommended Canon DR-G2090/2110 over the small models ([[ASM-313]]); offers Capture On Touch SDK, trial and loan units ([[ASM-316]]). Source: 2026-10-20-fakturace-doprav-canon-scanner-zebra-kiosk-hyza |
 
 ### STK-072
 
@@ -1515,6 +1534,25 @@ owner: Marek Pillár
 | Last interaction | -tbd- |
 | Status | Active |
 | Notes | Named by Stanislavová and confirmed by Kořenek; contact shared in the Teams chat. Source: 2026-10-19-finance-duvo-deloitte-analysis-global-ai-registry |
+
+### STK-085
+
+| Field | Value |
+|-------|-------|
+| ID | STK-085 |
+| Name | Mrdlička (first name -tbd-) |
+| Aliases | — |
+| Organization | ViaPharma CZE |
+| Role | -tbd- (Pavlov; contact for the Fakturace scanner driver test) |
+| Location | Pavlov |
+| Influence | -tbd- |
+| Sentiment | -tbd- |
+| Sentiment context | -tbd- |
+| Communication preference | -tbd- |
+| Expectations | -tbd- |
+| Last interaction | -tbd- |
+| Status | Active |
+| Notes | Low-confidence entry (name from transcript). Tereza Foltová arranges the driver scanning test at Pavlov with him ([[ASM-316]]). Source: 2026-10-20-fakturace-doprav-canon-scanner-zebra-kiosk-hyza |
 
 ### Inactive
 

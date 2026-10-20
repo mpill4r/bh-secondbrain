@@ -1,5 +1,5 @@
 ---
-last_updated: 2026-10-19
+last_updated: 2026-10-20
 last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
@@ -10,6 +10,13 @@ owner: Marek Pillár
 
 | ID | Status | Created | Description (short) |
 |----|--------|---------|---------------------|
+| ASM-316 | Decided (2026-10-20) | 2026-10-20 | Fakturace scanner: hands-on trial with 3 real drivers at Pavlov (Canon DR-G2090 first) before any loan or purchase |
+| ASM-315 | Decided (2026-10-20) | 2026-10-20 | Fakturace kiosk needs a large screen (12" minimum, bigger preferred); one tap to check, one to confirm, no zooming |
+| ASM-314 | Open (2026-10-20) | 2026-10-20 | Fakturace kiosk device: locked-down Zebra (Windows, e.g. ET80) + USB scanner + large touch screen; no open PC; fallback network scanning + Android tablet |
+| ASM-313 | Decided (2026-10-20) | 2026-10-20 | Fakturace scanner narrowed to Canon DR-G2090 (USB) vs. DR-G2110 (+Ethernet); small SF-350/400 models dropped |
+| ASM-312 | Open (2026-10-20) | 2026-10-20 | Group demand-management tool (in preparation): no use case enters without a quantified business value; scoring upfront |
+| ASM-311 | Open (2026-10-20) | 2026-10-20 | Who scores the CZ rows in the group register (Impact/Scale/Feasibility…): Dudaško, Lesch or BigHub — Marek asks Dudaško |
+| ASM-310 | Decided (2026-10-20) | 2026-10-20 | CZ rows go directly into Kateřina Lesch's shared cloud register (manual copy by Marek), not sent separately |
 | ASM-309 | Open (2026-10-19) | 2026-10-19 | A second DUVo-linked CZ AI initiative exists; Jindřich must identify it for the global registry |
 | ASM-308 | Open (2026-10-19) | 2026-10-19 | Finance/accounting work: rule-based automation first, AI last, mandatory human-in-the-loop (AI Act) |
 | ASM-307 | Decided (2026-10-19) | 2026-10-19 | Global-registry row for the finance initiative = Deloitte/DUVo analysis + 2 pilots; benefits -tbd-; 0.2–0.4 FTE estimate not used |
@@ -321,6 +328,160 @@ owner: Marek Pillár
 | ASM-001 | Decided (2026-08-25) | 2026-09-01 | Dr. Max client-side coordination unified into one role (Jindřich Tůma) |
 
 ## Entries
+
+---
+
+### ASM-316
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-316 |
+| Created | 2026-10-20 |
+| Source | 2026-10-20-fakturace-doprav-canon-scanner-zebra-kiosk-hyza |
+| By | Hnilička (STK-071), Jan Žižka (STK-015), Tereza Foltová (STK-013) |
+| Status | Decided (2026-10-20) |
+
+**Description**
+Before any loan or purchase, Canon brings a DR-G2090 (optionally a DR-G2110) for a first trial in Capture On Touch, then lends it for a test at Pavlov where 3 drivers run their real papers. Tereza Foltová arranges the test with Mr. Mrdlička (STK-085).
+
+**Rationale**
+Hnilička: drivers are "a special category", and loading the tray is a known failure point, so ease of use and robustness must be seen with real drivers. Žižka wants live feedback.
+
+**Impact**
+- **Delivery**: Next hands-on step for Fakturace; the standalone scanning demo ([[ASM-281]]) has not happened yet.
+- **Dependency**: Canon device availability; Tereza / Mrdlička scheduling.
+
+---
+
+### ASM-315
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-315 |
+| Created | 2026-10-20 |
+| Source | 2026-10-20-fakturace-doprav-canon-scanner-zebra-kiosk-hyza |
+| By | Jan Žižka (STK-015), Filip Černý (STK-006) |
+| Status | Decided (2026-10-20) |
+
+**Description**
+The Fakturace kiosk UI needs a large screen. Filip Černý: 12" is the lower bound, 14"+ preferred. The flow must be one tap to check and one to confirm, showing everything at first glance.
+
+**Rationale**
+Žižka: "We're building it for drivers… it must be fast and work first time, or they won't use it. Nobody will ever zoom or study anything" [translated from Czech].
+
+**Impact**
+- **Design**: Kiosk UI designed for a large touch screen.
+- **Hardware**: Drives the Zebra device choice ([[ASM-314]]).
+
+---
+
+### ASM-314
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-314 |
+| Created | 2026-10-20 |
+| Source | 2026-10-20-fakturace-doprav-canon-scanner-zebra-kiosk-hyza |
+| By | Jan Žižka (STK-015), Hnilička (STK-071), Dušan Hýža (STK-066), Filip Černý (STK-006), Tereza Foltová (STK-013) |
+| Status | Open (2026-10-20) |
+
+**Description**
+Kiosk device for Fakturace doprav: drivers must not be able to leave the app, so an open Windows PC with a browser is ruled out. Working direction: the scanner on USB to a locked-down Zebra running Windows (e.g. Zebra ET80, 12", Windows 11 Pro) running BigHub's web app, ideally with a large external touch monitor; only the Zebra talks to ViaPharma's network. Dušan Hýža asks Zebra. Fallback if Zebra has no large Windows device (its larger screens, e.g. 22", are Android only): network scanning (variant A: shared folder that BigHub watches; variant B: scanner calls BigHub's endpoint directly) plus confirmation on a tablet via the web app.
+
+**Rationale**
+Hýža (IT): ViaPharma is "quite tough" on security; Zebra tablets already run a forced kiosk page and are rugged and remotely managed. A domain PC must still get Windows security updates (no "island" machines); a driver or OS update can break USB scanning (Windows 11 24H2 broke printing and scanning for ~2 months). Canon: DR-G2 scanners' interface is Windows-first, so Android support is doubtful. Canon also doesn't recommend running Capture On Touch on a server for this load.
+
+**Impact**
+- **Security**: Device lock-down becomes the kiosk's security control (scanning stays anonymous, see [[ASM-087]]).
+- **Delivery**: Device choice gates the Pavlov rollout; Hýža wants a spare device if a PC is used.
+- **Technical**: Filip says both USB-kiosk and network variants work for BigHub; variant B would store only finished, sorted documents.
+- **Dependency**: Zebra's answer; procurement stays with ViaPharma ([[ASM-055]]).
+
+---
+
+### ASM-313
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-313 |
+| Created | 2026-10-20 |
+| Source | 2026-10-20-fakturace-doprav-canon-scanner-zebra-kiosk-hyza |
+| By | Hnilička (STK-071), Jan Žižka (STK-015), Filip Černý (STK-006) |
+| Status | Decided (2026-10-20) |
+
+**Description**
+The two small Canon scanners from the email thread (SF-350 / SF-400 class) are dropped. The choice is narrowed to the Canon DR-G2 series: DR-G2090 (USB only, 300-sheet feeder) or DR-G2110 (same, plus Ethernet, but still needs a host PC/client app). DR-G2 has staple detection (stops so the driver can react) and can use white rollers to avoid dark edge artefacts. In the kiosk setup either model connects over USB to the Zebra.
+
+**Rationale**
+Hnilička (Canon), after a warehouse walk-through with Žižka: up to 3 drivers at once with ~100 sheets each, many stapled; small trays and 60-ppm speed would create queues and jams.
+
+**Impact**
+- **Delivery**: Hardware direction set for the trial ([[ASM-316]]).
+- **Technical**: Canon's built-in IRIS OCR in Capture On Touch is not used; BigHub does barcode, OCR, stamps and ICR.
+- **Dependency**: Procurement stays with ViaPharma ([[ASM-055]]).
+
+---
+
+### ASM-312
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-312 |
+| Created | 2026-10-20 |
+| Source | 2026-10-20-lesch-group-ai-register-scoring-cz-input |
+| By | Kateřina Lesch (STK-084) |
+| Status | Open (2026-10-20) |
+
+**Description**
+The group register will move into a demand-management tool (in preparation) with scoring built in upfront. No use case should enter it without a quantified business value.
+
+**Rationale**
+Ideas were submitted without evidence they pay off; e.g. automating an accountant's work can cost more in tokens than the person does. Consistent with [[ASM-158]] (BQ format as intake standard).
+
+**Impact**
+- **Delivery**: Every CZ initiative needs a quantified value before group intake; unquantified candidates (e.g. the 2027 backlog ideas) stay in the country backlog until quantified.
+
+---
+
+### ASM-311
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-311 |
+| Created | 2026-10-20 |
+| Source | 2026-10-20-lesch-group-ai-register-scoring-cz-input |
+| By | Marek Pillár (STK-001), Kateřina Lesch (STK-084) |
+| Status | Open (2026-10-20) |
+
+**Description**
+Who fills the scoring columns (Impact, Scale, Feasibility, Time-to-value, Strategic and the decision columns) for the CZ rows in the group register is undecided: Tomáš Dudaško, Kateřina Lesch, or BigHub. Marek leaves them empty and asks Dudaško.
+
+**Rationale**
+Scoring and decisions belong to the CIO / AI committee; BigHub has estimated benefits but no delivery estimates or costs.
+
+**Impact**
+- **Delivery**: CZ register input due before the global meeting on 2026-10-21.
+
+---
+
+### ASM-310
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-310 |
+| Created | 2026-10-20 |
+| Source | 2026-10-20-lesch-group-ai-register-scoring-cz-input |
+| By | Kateřina Lesch (STK-084), Marek Pillár (STK-001) |
+| Status | Decided (2026-10-20) |
+
+**Description**
+The CZ rows (BigHub initiatives, the Deloitte/DUVo finance analysis and unopened backlog candidates) are filled directly into Kateřina Lesch's shared cloud register. Marek copies them by hand from his working file; nothing is sent separately.
+
+**Rationale**
+Lesch keeps one cross-country overview; the file lives on her cloud.
+
+**Impact**
+- **Delivery**: Marek copies the rows before the global meeting on 2026-10-21 and tells Lesch.
 
 ---
 
@@ -976,6 +1137,8 @@ Lets the business try scanning before Axapta-side changes land.
 
 **Update (2026-10-15)**: Canon visit on Tuesday 2026-10-20: Mr. Hnilička (Canon) comes to the warehouse and Žižka shows him where devices could go; then a 30-minute call where Filip is needed, to move the kiosk idea forward. Source: 2026-10-15-viapharma-reklamace-sync-pickup-warehouse-zebra-brightpick-capacity.
 
+
+**Update (2026-10-20)**: Canon visit and call held (Hnilička on site with Žižka, then the call with Filip, Tereza and Dušan Hýža). The standalone demo was not shown or discussed; the driver test at Pavlov ([[ASM-316]]) is the next hands-on step. Source: 2026-10-20-fakturace-doprav-canon-scanner-zebra-kiosk-hyza.
 ---
 
 ### ASM-280
@@ -1501,6 +1664,8 @@ Sláma: requirements must come from BigHub; he doesn't handle hardware. Filip: A
 - **Delivery**: Hardware procurement stays with ViaPharma ([[ASM-055]]).
 - **Dependency**: Canon offer; Žižka's availability.
 
+
+**Update (2026-10-20)**: Canon's built-in OCR (IRIS engine in Capture On Touch) will not be used; BigHub does barcode, OCR, stamp counting and ICR itself. Scanner narrowed to DR-G2090/2110 ([[ASM-313]]). Source: 2026-10-20-fakturace-doprav-canon-scanner-zebra-kiosk-hyza.
 ---
 
 ### ASM-258
@@ -5491,6 +5656,8 @@ Comment thread on the roadmap's "Autentizace uživatele" card. Marek Pillár's o
 - **Scope**: Added to `2. Fakturace doprav.docx` (§1.4 edge cases, Nice to Have section, Otevřené otázky) and `product-roadmap-portfolio-full.xlsx` (Fakturace doprav sheet, "Autentizace uživatele" row) as an explicit open item pending the 9/17 debate.
 - **Timeline**: This debate is scheduled for tomorrow relative to when this was routed (2026-09-16) — flagged as an action item in today's daily so it doesn't get lost.
 
+
+**Update (2026-10-20)**: Filip Černý told IT that scanning is anonymous (no driver login, read-only view, confirm at the end). IT accepted this, provided the device locks drivers into the app; device lock-down is the security control ([[ASM-314]]). Still conflicts with the Entra ID requirement in code ([[ASM-131]]). Source: 2026-10-20-fakturace-doprav-canon-scanner-zebra-kiosk-hyza.
 ---
 
 ### ASM-086
@@ -6281,6 +6448,8 @@ Mirrors the physical process today (anyone can hand over paper documents); the c
 - **Security**: A real security review of the LLM-facing upload surface is still needed; BigHub has flagged responsibility for what's uploaded sits with the client given the open-access design.
 - **Follow-up**: Žižka is taking the driver-identifier suggestion internally, not yet decided.
 
+
+**Update (2026-10-20)**: Mitigation direction: a locked-down kiosk device (Zebra) so drivers can't leave the app or reach the network ([[ASM-314]]). Source: 2026-10-20-fakturace-doprav-canon-scanner-zebra-kiosk-hyza.
 ---
 
 ### ASM-051

@@ -1,10 +1,44 @@
 ---
-last_updated: 2026-10-19
+last_updated: 2026-10-20
 last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
 
 # Lessons Learned
+
+---
+
+### LL-102
+
+| Field | Value |
+|-------|-------|
+| ID | LL-102 |
+| Created | 2026-10-20 |
+| Category | Hardware / kiosk deployments |
+| Source | 2026-10-20-fakturace-doprav-canon-scanner-zebra-kiosk-hyza |
+
+**Lesson**
+For shared, unattended kiosks, involve the client's IT security person and the hardware vendor (after a site visit) before choosing devices. Specs on paper miss the real constraints: peak load, document condition (staples), whether users can escape the app, and the OS update policy. A browser app on an open PC is rarely acceptable to IT, and the device's OS can limit which peripherals work.
+
+**Context**
+Fakturace doprav: the two scanners shortlisted by email turned out too weak once Canon saw ~3 drivers with ~100 stapled sheets each, and IT ruled out an open Windows PC because drivers could leave the app. The direction moved to a Canon DR-G2 scanner on a locked-down Windows Zebra, constrained further because Zebra's large screens run only Android.
+
+---
+
+### LL-101
+
+| Field | Value |
+|-------|-------|
+| ID | LL-101 |
+| Created | 2026-10-20 |
+| Category | Portfolio governance / stakeholder roles |
+| Source | 2026-10-20-lesch-group-ai-register-scoring-cz-input |
+
+**Lesson**
+When feeding a client's governance register (scoring, priority bands, committee decisions), separate the factual columns you can own from the evaluative ones, and ask the register owner and the decision-maker who fills the evaluative ones before entering anything. Filling scores yourself pre-empts the client's decision and can surface unfavourable verdicts nobody asked for.
+
+**Context**
+For the group AI register, BigHub's proposed scores pushed several CZ initiatives into "Stop / Re-evaluate" through the register's own formulas. The PM removed every column from Impact rightwards ("I have no right to make decisions") and the register owner, Kateřina Lesch, confirmed BigHub can't yet know those values; the question of who scores went to Dudaško.
 
 ---
 

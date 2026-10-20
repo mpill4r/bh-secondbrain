@@ -1,5 +1,5 @@
 ---
-last_updated: 2026-10-19
+last_updated: 2026-10-20
 last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
@@ -397,6 +397,8 @@ Dudaško was unambiguous on this boundary when Jindřich raised a concrete pilot
 
 **Update (2026-10-15)**: chosen as the Reklamace device ([[ASM-265]]). IT supplies an older model that is no longer hardware-supported, running the app through a browser; enough for the start, with possible hardware investment later. Source: 2026-10-15-viapharma-reklamace-sync-pickup-warehouse-zebra-brightpick-capacity.
 
+**Update (2026-10-20)**: Also the preferred Fakturace kiosk device: Zebra tablets run a forced kiosk page, are rugged and remotely managed; a Windows model (ET80) could host the USB scanner ([[ASM-314]]). Source: 2026-10-20-fakturace-doprav-canon-scanner-zebra-kiosk-hyza.
+
 ### BrightPick
 
 | Field | Value |
@@ -469,7 +471,9 @@ Dudaško was unambiguous on this boundary when Jindřich raised a concrete pilot
 | Added | 2026-10-13 |
 | Status | Active |
 
-**Global registry (2026-10-19)**: Dr. Max is building a registry of all AI initiatives across all countries, each with quantified benefits (money, time, FTE, or capability). Dudaško presents it as CIO; the next global meeting is Wed 2026-10-21. Jindřich enters the CZ rows, including non-BigHub initiatives such as the Deloitte/DUVo finance analysis ([[ASM-307]], [[ASM-309]]). Source: 2026-10-19-finance-duvo-deloitte-analysis-global-ai-registry
+**Global registry (2026-10-19)**: Dr. Max is building a registry of all AI initiatives across all countries, each with quantified benefits (money, time, FTE, or capability). Dudaško presents it as CIO; the next global meeting is Wed 2026-10-21. Jindřich enters the CZ rows **[Corrected 2026-10-20: Marek copies the CZ rows into the register, see below]**, including non-BigHub initiatives such as the Deloitte/DUVo finance analysis ([[ASM-307]], [[ASM-309]]). Source: 2026-10-19-finance-duvo-deloitte-analysis-global-ai-registry
+
+**Register owner and purpose (2026-10-20, Kateřina Lesch)**: the registry is Kateřina Lesch's (STK-084) "AI Use Case Register – Triage Edition", kept on her cloud and shared across countries; Marek copies the CZ rows into it by hand ([[ASM-310]]). Purpose: a scoring methodology that separates use cases too complex to integrate (they stay in the country) from group rollout candidates (ROI + ease of implementation). Each further country rollout is ~40% cheaper when reused; she wants proven CZ cases (MaxBuddy first) shown to leadership. A Claude "portfolio manager" artifact over the register flags duplicates (e.g. ROU and CZ pharmacist assistants). Countries submitted much noise (e.g. 6 HR use cases on the same RAG chatbot) that should score as low value. Who fills the CZ scores is open ([[ASM-311]]). Later the register moves into a demand-management tool with upfront scoring, where nothing enters without a quantified business value ([[ASM-312]]). DUVo: Lesch runs her own supply-chain DUVo pilot with direct access; in the finance analysis Deloitte enters the data. Source: 2026-10-20-lesch-group-ai-register-scoring-cz-input
 
 ### Listing enrichment pipeline
 
@@ -496,6 +500,15 @@ Dudaško was unambiguous on this boundary when Jindřich raised a concrete pilot
 | Definition | ~150 routes a day. Logistics invoices continuously, not at month-end, and checks km on every rozvozový list (comparison controls flag mismatches). Each scan goes to Axapta immediately; BigHub merges pages and resends the latest full document, which replaces the old one; documents carry complete / incomplete status, routes show whether all documents are back ([[ASM-053]]). Drivers' paper originals stay with ViaPharma, sorted and archived for audits. |
 | Source | 2026-10-14-fakturace-doprav-document-state-zizka-slama |
 | Added | 2026-10-14 |
+| Status | Active |
+
+### Fakturace doprav scanner hardware (Canon DR-G2, Capture On Touch, Zebra kiosk)
+
+| Field | Value |
+|-------|-------|
+| Definition | **Canon DR-G2 series**: A3 production scanners with a 300-sheet feeder and staple detection; DR-G2090 = USB only, DR-G2110 / G2140 = add Ethernet but still need a host PC/client app (TWAIN or Capture On Touch). White rollers (instead of black) avoid dark edge artefacts. Small SF-350/400 class dropped as too weak ([[ASM-313]]). **Capture On Touch**: Canon's scanning software; has an SDK to script post-scan actions (send to a system, protocol, storage) and a basic IRIS OCR engine (not used by BigHub). **ICR**: recognition of handwritten text (BigHub does barcode, OCR, stamps, ICR). **Zebra ET80**: 12" rugged tablet with Windows 11 Pro; Zebra's larger devices (e.g. 22") are Android only ([[ASM-314]]). **Windows 11 24H2**: update that broke printing and scanning across vendors for ~2 months, cited as the USB-kiosk risk. |
+| Source | 2026-10-20-fakturace-doprav-canon-scanner-zebra-kiosk-hyza |
+| Added | 2026-10-20 |
 | Status | Active |
 
 ### Lexie users: L1 support

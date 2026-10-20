@@ -1,5 +1,5 @@
 ---
-last_updated: 2026-10-19
+last_updated: 2026-10-20
 last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
@@ -70,6 +70,8 @@ N/A — no client stakeholders. See `project-stakeholders.md` for the full team/
 - **Decisions made without Sláma cause rework (2026-10-14)**: Petr Sláma repeatedly points out that requirements change in meetings he isn't in. Remedy: every decision goes into the written spec he works from. Source: 2026-10-14-fakturace-doprav-document-state-zizka-slama
 - **AI skepticism in accounting (2026-10-16)**: Renata Švarcová sees AI pushed everywhere when plain programming would often do, and recalls earlier simplification requests that got no capacity. Frame department work as automation in general (backed by management) and show concrete examples. A Deloitte process review with an AI focus runs in the same department ([[ASM-187]]). Source: 2026-10-16-svarcova-brno-accounting-lexie-2027-initiatives.
 - **Finance stance on AI and process capture (2026-10-19)**: Accounting works to one KPI (a correct close on time), is conservative about AI and prefers rule-based automation with human approval ([[ASM-308]]). Real-time process recording during the month-end close (DUVo) was badly received; any BigHub analysis there should avoid the close and work alongside people. Finance distrusts consultant benefit numbers it cannot verify. Source: 2026-10-19-finance-duvo-deloitte-analysis-global-ai-registry.
+- **Group AI portfolio dynamics (2026-10-20)**: At group level (BDC, Kateřina Lesch) countries are slow to submit AI use cases (busy with e.g. acquisitions in Italy) while top-down pressure to deliver is strong. The group pushes reuse (~40% cheaper per further rollout), and CZ/BigHub is seen as the model and a rollout source, which favours reusable, quantified use cases (MaxBuddy first) over country-specific ones. Source: 2026-10-20-lesch-group-ai-register-scoring-cz-input.
+- **ViaPharma IT security posture (2026-10-20)**: no machines left outside the update regime (Windows security updates always applied, builds rolled out 6–12 months late after testing); shared devices used by drivers or warehouse staff must lock users into the app (forced kiosk mode, as on Zebras), so an open PC with a browser is not acceptable. Plan device choices with IT (Dušan Hýža) early. Source: 2026-10-20-fakturace-doprav-canon-scanner-zebra-kiosk-hyza.
 
 ## 10. Active Initiatives & Project History
 
