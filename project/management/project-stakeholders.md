@@ -1,5 +1,5 @@
 ---
-last_updated: 2026-10-20
+last_updated: 2026-10-21
 last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
@@ -132,7 +132,7 @@ owner: Marek Pillár
 | Status | Active |
 | Joined | -tbd- |
 | Left | — |
-| Notes | Owns the e-commerce predictive model; opportunity to extend into a fuller application. Order-prediction dashboard v1 is done as of 2026-09-02, demoing live to the business 2026-09-03; static React BI-style view with no interactivity, ~30 min data delay. Demo on 2026-09-03 to Marek Šimoník (STK-019) landed very well — a real 8-minute outage correctly showing as a dip validated the model live. Model trained purely on recognized revenue (tested blending order-backlog data, revenue-only performed better); reliable within a 14-day horizon, extrapolated and unguaranteed beyond that. Owns a small feature backlog (order-count toggle, D-7/D-365 historical overlay, split warehouse/method filters, tooltip clarity) and needs to verify model responsiveness to the current Brno order-backlog spike. On 2026-09-15, ran a detailed client feedback session with Marek Šimoník and Petr Ondráček — delivered the previously-backlogged T-7/T-364 historical comparison feature live, took on roughly 10 new feature requests (mobile/non-VPN access, budget/forecast/predikce unified view, warehouse-level reservation breakdown, a "Metrix" redesign for reservations vs. delivery method, Business Overview polish), and agreed the current build stands as formally accepted "version 1" (see [[ASM-069]]). Confirmed the "predikce" naming convention going forward (see [[ASM-070]]). On 2026-09-16 (transcript originally misattributed to Alana Sihelská, corrected by PM during routing): confirmed order-prediction scope is on track, with extra runway since Marek Šimoník is on vacation the following week; the one meaningfully-sized remaining item is Marketplace aggregation (not blocked, just larger). Invited to a same-day 4pm infra sync to raise mobile/non-VPN access questions, though uncertain of the full scope beforehand. On 2026-09-23, reported order prediction in good shape — e-commerce stakeholders happy, nothing needs chasing — aside from the per-channel budget Excel still owed by Marek Šimoník (now on vacation, at risk before the 2026-09-29 follow-up). Relieved that Petr Ondráček's (STK-035) mobile/VPN-bypass report-access request stayed declined, calling open-to-the-world access stressful. Source: 2026-08-25-marek-onboarding-with-jan-sovka; surname resolved via Who's Who reference card, 2026-09-01-dr-max-x-bighub-project-status-sync; dashboard status from 2026-09-02-order-prediction-dashboard-walkthrough, 2026-09-03-order-prediction-dashboard-live-demo, 2026-09-15-order-prediction-dashboard-follow-up, 2026-09-16-devops-kanban-rollout-status-sync, 2026-09-23-cross-project-status-sync-reklamace-fallout-listing-blockers On 2026-09-29, ran the order-prediction v2 review alone (Jindřich absent). Delivered the hierarchical channel view, run-rate projection, 30-min/1-h toggle and the logistics chart that follows the selected series. Still owes the per-day budget and per-channel revenue split (after Šimoník's Excel, [[ASM-192]]), the logistics per-day export, and a copy button. Plans Christmas model tuning and an internal accuracy evaluation using the stored predictions ([[ASM-195]]). Source: 2026-09-29-order-prediction-dashboard-v2-review. |
+| Notes | Owns the e-commerce predictive model; opportunity to extend into a fuller application. Order-prediction dashboard v1 is done as of 2026-09-02, demoing live to the business 2026-09-03; static React BI-style view with no interactivity, ~30 min data delay. Demo on 2026-09-03 to Marek Šimoník (STK-019) landed very well — a real 8-minute outage correctly showing as a dip validated the model live. Model trained purely on recognized revenue (tested blending order-backlog data, revenue-only performed better); reliable within a 14-day horizon, extrapolated and unguaranteed beyond that. Owns a small feature backlog (order-count toggle, D-7/D-365 historical overlay, split warehouse/method filters, tooltip clarity) and needs to verify model responsiveness to the current Brno order-backlog spike. On 2026-09-15, ran a detailed client feedback session with Marek Šimoník and Petr Ondráček — delivered the previously-backlogged T-7/T-364 historical comparison feature live, took on roughly 10 new feature requests (mobile/non-VPN access, budget/forecast/predikce unified view, warehouse-level reservation breakdown, a "Metrix" redesign for reservations vs. delivery method, Business Overview polish), and agreed the current build stands as formally accepted "version 1" (see [[ASM-069]]). Confirmed the "predikce" naming convention going forward (see [[ASM-070]]). On 2026-09-16 (transcript originally misattributed to Alana Sihelská, corrected by PM during routing): confirmed order-prediction scope is on track, with extra runway since Marek Šimoník is on vacation the following week; the one meaningfully-sized remaining item is Marketplace aggregation (not blocked, just larger). Invited to a same-day 4pm infra sync to raise mobile/non-VPN access questions, though uncertain of the full scope beforehand. On 2026-09-23, reported order prediction in good shape — e-commerce stakeholders happy, nothing needs chasing — aside from the per-channel budget Excel still owed by Marek Šimoník (now on vacation, at risk before the 2026-09-29 follow-up). Relieved that Petr Ondráček's (STK-035) mobile/VPN-bypass report-access request stayed declined, calling open-to-the-world access stressful. Source: 2026-08-25-marek-onboarding-with-jan-sovka; surname resolved via Who's Who reference card, 2026-09-01-dr-max-x-bighub-project-status-sync; dashboard status from 2026-09-02-order-prediction-dashboard-walkthrough, 2026-09-03-order-prediction-dashboard-live-demo, 2026-09-15-order-prediction-dashboard-follow-up, 2026-09-16-devops-kanban-rollout-status-sync, 2026-09-23-cross-project-status-sync-reklamace-fallout-listing-blockers On 2026-09-29, ran the order-prediction v2 review alone (Jindřich absent). Delivered the hierarchical channel view, run-rate projection, 30-min/1-h toggle and the logistics chart that follows the selected series. Still owes the per-day budget and per-channel revenue split (after Šimoník's Excel, [[ASM-192]]), the logistics per-day export, and a copy button. Plans Christmas model tuning and an internal accuracy evaluation using the stored predictions ([[ASM-195]]). Source: 2026-09-29-order-prediction-dashboard-v2-review. | 2026-10-21: order prediction runs without issues; free for other Dr. Max work from mid-November 2026 (Mattoni ends first half of November, Albert blocked). Source: 2026-10-21-bighub-weekly-sync-reklamace-fakturace-listing-aks-rollout
 
 ### STK-022
 
@@ -202,7 +202,7 @@ owner: Marek Pillár
 | Status | -tbd- |
 | Joined | -tbd- |
 | Left | -tbd- |
-| Notes | Low-confidence entry, from a single mention. Alana Sihelská named him alongside herself as someone the longer-standing BigHub devs had worked with and whose style they're used to, in contrast to Jindřich Tůma's. Current role and involvement unknown. Source: 2026-09-25-alana-1on1-teo-phasing-capacity-pool-team-dynamics |
+| Notes | Low-confidence entry, from a single mention. Alana Sihelská named him alongside herself as someone the longer-standing BigHub devs had worked with and whose style they're used to, in contrast to Jindřich Tůma's. Current role and involvement unknown. Source: 2026-09-25-alana-1on1-teo-phasing-capacity-pool-team-dynamics | 2026-10-21: hosts the intro sync with the new 0.5 FTE joining BigHub's Dr. Max team (aim: 1 FTE split between logistics and Jura's streams). Source: 2026-10-21-bighub-weekly-sync-reklamace-fakturace-listing-aks-rollout
 
 ### STK-060
 
@@ -236,6 +236,25 @@ owner: Marek Pillár
 | Last interaction | 2026-10-20 (first call) |
 | Status | Active |
 | Notes | Uses a Claude artifact as a "portfolio manager" over the register to flag duplicates across countries. IT owner on the register's BDC-AI DUVO Clarity rows (AI-001/002). Wants a scoring matrix that separates local-only use cases (too complex to integrate) from group rollout candidates; plans a demand-management tool with upfront scoring. Possible lunch when Marek is at the Dr. Max office. Source: 2026-10-20-lesch-group-ai-register-scoring-cz-input |
+
+### STK-085
+
+| Field | Value |
+|-------|-------|
+| ID | STK-085 |
+| Name | Míra Švestka |
+| Aliases | — |
+| Organization | Dr. Max CZE — Legal department (Právní oddělení) |
+| Role | Primary working contact for Legal's Lexie / AI use cases (knowledge-master role); business owner is Martin Svoboda (STK-062) |
+| Location | -tbd- |
+| Influence | -tbd- |
+| Sentiment | -tbd- |
+| Sentiment context | -tbd- |
+| Communication preference | -tbd- |
+| Expectations | -tbd- |
+| Last interaction | -tbd- (named by Svoboda 2026-10-21; presence at the meeting unclear) |
+| Status | Active |
+| Notes | Named by Martin Svoboda as the person BigHub works with day to day on Legal's use cases. Source: 2026-10-21-svoboda-legal-lexie-copilot-scraping-contract-headers |
 
 ### Inactive
 
@@ -619,9 +638,9 @@ owner: Marek Pillár
 | Sentiment context | Described by Filip Černý as responsive — "reacts quickly and adjusts things." Confirmed the reklamace end-to-end test found/created the expected cases correctly (2026-09-02). On 2026-09-03, proactively flagged a likely Entra ID integration friction point early rather than let it surface later, and pushed to keep the stalled Jump Server request moving in parallel with other access work. |
 | Communication preference | -tbd- |
 | Expectations | -tbd- |
-| Last interaction | 2026-09-03 |
+| Last interaction | 2026-10-21 (mentioned in 2026-10-21-bighub-weekly-sync-reklamace-fakturace-listing-aks-rollout)
 | Status | Active |
-| Notes | Full name and organization resolved 2026-09-03 (previously "Kopecký", org unknown). Source: 2026-09-02-logistics-listing-team-sync, 2026-09-03-viapharma-logistics-status-reklamace-demo |
+| Notes | Full name and organization resolved 2026-09-03 (previously "Kopecký", org unknown). Source: 2026-09-02-logistics-listing-team-sync, 2026-09-03-viapharma-logistics-status-reklamace-demo | 2026-10-21: decides on the Reklamace/Fakturace Swagger changes together with Petr Sláma (~2 h expected). Source: 2026-10-21-bighub-weekly-sync-reklamace-fakturace-listing-aks-rollout
 
 ### STK-033
 
@@ -752,9 +771,9 @@ owner: Marek Pillár
 | Sentiment context | Per Jura Brázdil (2026-09-03): extremely inflexible and slow — a trivial one-column database change reportedly takes a week just to file as a ticket and 2-3 months to resolve, unless personally escalated through Luboš Vosmek (STK-011), in which case it's resolved the next day. |
 | Communication preference | -tbd- |
 | Expectations | -tbd- |
-| Last interaction | 2026-10-15 (Marek's kick-off email on the X-Manager knowledge base; meeting proposed Tue 2026-10-20 / Wed 2026-10-21) |
+| Last interaction | 2026-10-21 (mentioned in 2026-10-21-bighub-weekly-sync-reklamace-fakturace-listing-aks-rollout)
 | Status | Active |
-| Notes | Low-confidence entry — single mention, surname uncertain from transcript. Kept per PM instruction to route everything; needs verification. **Possible identity match (2026-09-17, unconfirmed)**: in the Lexie/Max/Maxie weekly sync, Mertová named "Míša Machata" (Prague) as the new owner of X-Manager — same surname, but a distinct role (tooling ownership vs. DVH/data-warehouse change requests) and no confirmation these are the same person. Marek is coordinating with him directly; flag for reconciliation once confirmed either way. Source: 2026-09-03-maxbuddy-chatbot-ocr-project-handoff, 2026-09-17-lexie-max-maxie-weekly-sync **Update (2026-10-15)**: identity confirmed by PM: Michal Machata (michal.machata@drmax.cz), X-Manager owner. Low-confidence flag removed. Jindřich met him in the week of 2026-10-12 (X-Manager "the most suitable candidate", [[ASM-243]]); Marek emailed him the 7 KB fields with indicative types and proposed a kick-off with Filip Černý. Source: PM, 2026-10-15 **2026-10-15**: Gave X-Manager the green light for BigHub projects; a project template is still being solved. On holiday until 2026-10-27, so the kick-off Marek proposed for 2026-10-20/21 needs a new date. Source: 2026-10-15-lexie-max-maxie-weekly-sync. |
+| Notes | Low-confidence entry — single mention, surname uncertain from transcript. Kept per PM instruction to route everything; needs verification. **Possible identity match (2026-09-17, unconfirmed)**: in the Lexie/Max/Maxie weekly sync, Mertová named "Míša Machata" (Prague) as the new owner of X-Manager — same surname, but a distinct role (tooling ownership vs. DVH/data-warehouse change requests) and no confirmation these are the same person. Marek is coordinating with him directly; flag for reconciliation once confirmed either way. Source: 2026-09-03-maxbuddy-chatbot-ocr-project-handoff, 2026-09-17-lexie-max-maxie-weekly-sync **Update (2026-10-15)**: identity confirmed by PM: Michal Machata (michal.machata@drmax.cz), X-Manager owner. Low-confidence flag removed. Jindřich met him in the week of 2026-10-12 (X-Manager "the most suitable candidate", [[ASM-243]]); Marek emailed him the 7 KB fields with indicative types and proposed a kick-off with Filip Černý. Source: PM, 2026-10-15 **2026-10-15**: Gave X-Manager the green light for BigHub projects; a project template is still being solved. On holiday until 2026-10-27, so the kick-off Marek proposed for 2026-10-20/21 needs a new date. Source: 2026-10-15-lexie-max-maxie-weekly-sync. | 2026-10-21: holds the X-Manager API key BigHub needs for Reklamace; on holiday until the end of that week — Jindřich contacts him on Monday 2026-10-26 (kick-off rescheduling stays with Marek). Source: 2026-10-21-bighub-weekly-sync-reklamace-fakturace-listing-aks-rollout
 
 ### STK-041
 
@@ -1125,16 +1144,16 @@ owner: Marek Pillár
 | Name | Martin Svoboda |
 | Aliases | — |
 | Organization | Dr. Max CZE |
-| Role | Legal department (Právní oddělení): Lexie contact |
+| Role | Legal department (Právní oddělení): business owner for Legal's Lexie / AI use cases
 | Location | -tbd- |
 | Influence | -tbd- |
-| Sentiment | -tbd- |
-| Sentiment context | -tbd- |
+| Sentiment | Neutral–positive
+| Sentiment context | Open and practical but testing: weighing Lexie against Microsoft Copilot; burned by over-promising tools (Copilot register test, TAS 5 delays)
 | Communication preference | -tbd- |
 | Expectations | -tbd- |
-| Last interaction | -tbd- (no direct contact yet; outreach e-mail drafted 2026-10-08) |
+| Last interaction | 2026-10-21 (first meeting, 2026-10-21-svoboda-legal-lexie-copilot-scraping-contract-headers)
 | Status | Active |
-| Notes | Named by Lukáš Szücs (STK-012) as the legal department contact; the department wants to use Lexie. Use case -tbd-. Whether anything was already agreed with legal is -tbd-. Referred via Szücs. Source: 2026-10-06-lexie-new-departments-szucs-brief (documents/client) |
+| Notes | Named by Lukáš Szücs (STK-012) as the legal department contact; the department wants to use Lexie. Use case -tbd-. Whether anything was already agreed with legal is -tbd-. Referred via Szücs. Source: 2026-10-06-lexie-new-departments-szucs-brief (documents/client) | 2026-10-21 first meeting: three use cases — directive search (Lexie extension, low value), marketing-material compliance against live public databases, contract-header autofill from OR/ARES in Word; named Míra Švestka (STK-085) as the working contact. Uses TAS heavily and dislikes it. Source: 2026-10-21-svoboda-legal-lexie-copilot-scraping-contract-headers
 
 ### STK-063
 
@@ -1267,7 +1286,7 @@ owner: Marek Pillár
 | Expectations | Accurate, complete first answers from Lexie; split-screen source view and jump to passage; BigHub following ServiceNow standards (changes, network access, diagrams) |
 | Last interaction | 2026-10-19 (first meeting: Lexie feedback + ServiceNow intake) |
 | Status | Active |
-| Notes | Referred by Jindřich Tůma on 2026-10-14 (Teams): L1 support already uses Lexie and has requirements; Jindřich asked Marek to schedule a meeting. Source: PM, 2026-10-14 **2026-10-19 (first meeting)**: demoed L1's Lexie use (folder-sorted sources, PDF→text conversions, glossaries); raised source-format, versioning and pharmacy-contacts Excel issues plus UX asks ([[ASM-302]]–[[ASM-304]]). Offered BigHub a ServiceNow resolver group + offerings under the existing "BigHub AI" business service, which he created ([[ASM-305]]); says the service needs an IT owner, not Mertová ([[ASM-306]]). Will set up BigHub's access/resolver groups and explain the process at a deep-dive this week; may delegate tickets/dashboards to the incident manager on his team. Merged with STK-018 ("Petr Machán", Dr. Max IT, active Lexie user, source 2026-09-01-dr-max-x-bighub-project-status-sync). 2027 initiatives not yet covered. Source: 2026-10-19-machan-l1-lexie-feedback-servicenow-intake |
+| Notes | Referred by Jindřich Tůma on 2026-10-14 (Teams): L1 support already uses Lexie and has requirements; Jindřich asked Marek to schedule a meeting. Source: PM, 2026-10-14 **2026-10-19 (first meeting)**: demoed L1's Lexie use (folder-sorted sources, PDF→text conversions, glossaries); raised source-format, versioning and pharmacy-contacts Excel issues plus UX asks ([[ASM-302]]–[[ASM-304]]). Offered BigHub a ServiceNow resolver group + offerings under the existing "BigHub AI" business service, which he created ([[ASM-305]]); says the service needs an IT owner, not Mertová ([[ASM-306]]). Will set up BigHub's access/resolver groups and explain the process at a deep-dive this week; may delegate tickets/dashboards to the incident manager on his team. Merged with STK-018 ("Petr Machán", Dr. Max IT, active Lexie user, source 2026-09-01-dr-max-x-bighub-project-status-sync). 2027 initiatives not yet covered. Source: 2026-10-19-machan-l1-lexie-feedback-servicenow-intake | 2026-10-21: per Legal, he runs the intranet (SharePoint) and receives updated directives from Legal — the contact for where Legal's directives are stored and whether only current versions are kept. Source: 2026-10-21-svoboda-legal-lexie-copilot-scraping-contract-headers
 
 ### STK-070
 

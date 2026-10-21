@@ -1,7 +1,7 @@
 ---
-status: open
+status: closed
 last_updated: 2026-10-20
-last_updated_by: auto — session startup
+last_updated_by: auto — project-daily close
 project_status: Amber
 ---
 
@@ -172,3 +172,4 @@ project_status: Amber
 - [AUTO] meetings/index — entry added from 2026-10-20-fakturace-doprav-canon-scanner-zebra-kiosk-hyza (2026-10-20)
 - [AUTO] project-lessons — added LL-102 from 2026-10-20-fakturace-doprav-canon-scanner-zebra-kiosk-hyza (2026-10-20)
 - [MANUAL] project-daily — Dudaško scoring question closed (file sent); waiting item for his confirmation + follow-up routing item added (2026-10-20)
+- [AUTO] project-daily — closed; status Amber and priority unchanged (2026-10-21)

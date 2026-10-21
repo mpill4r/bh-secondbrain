@@ -1,5 +1,5 @@
 ---
-last_updated: 2026-10-20
+last_updated: 2026-10-21
 last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
@@ -203,6 +203,8 @@ Source: 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap.
 - **Test phone**: IT ticket (via Dušan) processed, on its way to Brno, no delivery date.
 - **Fakturace scanner (Canon)**: integrates with BigHub's API only, not Axapta ([[ASM-259]]).
 Source: 2026-10-08-viapharma-reklamace-sync-data-map-slip-all-phases-slama-capacity.
+
+**Estimates and phase notes (2026-10-21, roadmap/timeline session)**: first BigHub-side estimates — **Phase 1 (kap. 1.2–1.5) ~6 MD (pessimistic 8)**; **1.1a 1–3 MD** (communication record and reply sorting are built on branches, only integration left); **Phase 2 3–4 MD** (Filip's own estimate 2 days; the part shared with receiving claims is built reusable, UI nearly identical; unknowns are Axapta's product lookup and the missing label samples); **Avízo 1–2 MD** if specified. **1.1b, 3, 4, 5 and 3.1 have no estimate** until discovery ([[ASM-326]]). Delivery target for the next batch 4 November ([[ASM-323]]); client format = Excel with BigHub dev / client dev / UAT per phase ([[ASM-324]]). **Avízo** most likely belongs to *příjem s výhradou* (notify the supplier that goods were received with reservation and a claim may follow); today workers do it from memory; open: which suppliers, send time (e.g. 23:00), exact case, text — needs a ~4 h session with whoever designed it with Honza (client owner unknown). Ideas for later phases: an Outlook add-in or simple frontend with supplier info / thread summary, and Axapta **infolog** via API. Source: 2026-10-21-reklamace-roadmap-timeline-estimates
 
 ### Cenařky (pricing clerks) — logistics initiative candidate
 
@@ -502,6 +504,8 @@ Dudaško was unambiguous on this boundary when Jindřich raised a concrete pilot
 | Added | 2026-10-14 |
 | Status | Active |
 
+**Hardware and mock deployment (2026-10-21)**: logistics chose a Canon scanner and a Zebra PC (same vendor as the Reklamace terminals) on 2026-10-20; screen size open, Dušan Hýža checking an extra monitor. BigHub only gives minimum parameters; the web app is device-independent ([[ASM-319]]). A mock deployment without Axapta lets logistics try recognition and the UI early ([[ASM-318]]). Internally, logistics argued over the document-state model and Jan Žižka's version won — the one BigHub had already built. Source: 2026-10-21-bighub-weekly-sync-reklamace-fakturace-listing-aks-rollout
+
 ### Fakturace doprav scanner hardware (Canon DR-G2, Capture On Touch, Zebra kiosk)
 
 | Field | Value |
@@ -629,6 +633,19 @@ Deliberately kept out of the 9-product roadmap set (`product-roadmap-portfolio-f
 **Prototype architecture walkthrough (2026-09-23)**: Jura's prototype is manifest-driven and modular — each project (Lexie, MaxBuddy, Chatbot Max, Maxie, OCR, etc.) exposes its own reporting/docs/technical-status pages to the platform via a manifest, and the platform surfaces them consistently rather than dictating their content. Role-based visibility is inherited entirely from Dr. Max's existing AD/IdM groups — BigHub consumes the group structure rather than redefining permissions. Super-admin panels include per-project cost breakdown (currently mocked; a real Azure-cost breakdown is feasible with BDC read access), a permissions view, an audit log (logins, settings changes), and a roadmap/pilot-status view. **Important framing correction**: "platform" and "Lexie" had been conflated as one concept by the team — now explicitly separated, since Dudaško's frustration partly stemmed from wanting an actual platform while what existed under that name was really just Lexie (see [[ASM-144]]). A cross-platform RAG "ask anything" agent concept is deliberately kept in reserve, not built, given the small number of currently-active projects (see [[ASM-146]]). A real security gap was found: MCP server registration currently leaks secret/header values to any agent reading server descriptions — needs sealing before further build-out (see [[ASM-145]]). This MVP stage deliberately excludes all visual/design work, validating navigation/structure with Dudaško first (see [[ASM-147]]); demo targeted for Friday 2026-09-25. Jura remains fully blocked on further real deployment until database access comes through from BDC. Source: 2026-09-23-ai-platform-prototype-walkthrough-navigation-modular-reporting.
 
 **Phase 1 prototype demoed to Dudaško (2026-09-24)**: hosted on Jura's private infra (not Azure), public but PIN-protected, mocked data. Role-based entry: single-app users (e.g. a CC Lexie user, or MaxBuddy reporting-only) go straight into their app; super-admins land in the platform. Features: project overview tiles; per-project cost report (spent/forecast/budget, OpenAI + Azure, prod/test/total, plus prototyping spend); platform usage reporting (incl. internal projects like Listing and TEO/OCR; will reflect BQ KPIs and adoption-campaign reach); per-project technical status with external dependencies (Dr. Max services, AKS); per-tile tenant/role permissions; a live audit trail. Agreed additions: Zabbix alerting integration and auditable incident history ([[ASM-162]]); the roadmap/blockers view goes to Azure DevOps instead ([[ASM-163]]). Dudaško accepted the direction. First release is ~3–4 weeks after DB access on the new cluster works, and that access is disputed ([[ASM-164]]). Source: 2026-09-24-ai-initiatives-bq-review-platform-prototype-demo-dudasko
+
+**Production state and node pools (2026-10-21, Jura Brázdil)**: network access for MaxBuddy appeared on 2026-10-20, so **MaxBuddy, Lexie and the platform shell are fully functional on production**. User management uses 3 Entra groups as ceilings (superadmin: everything; admin: everything except platform settings; users: everything except app settings, as assigned by an admin); rights names below that are arbitrary per app. New isolated node pools on test and production (a serving pool, plus a batch pool up to ~18 GB reserved for big jobs) don't necessarily have the old pool's network rules; production uses a different GitOps setup with a namespace-level node selector only, so new URLs are registered. The production switch (~20 min downtime, with Vladislav Tvarůžek and someone from BDC, around midnight) plus a DB scale-up precede adding more MaxBuddy pharmacies ([[ASM-320]]). Apps don't have to register in the platform; they can later register an endpoint for settings, docs and technical status. The latest MaxBuddy documentation is from 8 September, under the platform's Documentation tile with a changelog. Source: 2026-10-21-bighub-weekly-sync-reklamace-fakturace-listing-aks-rollout
+
+### Microsoft Copilot at Dr. Max
+
+| Field | Value |
+|-------|-------|
+| Definition | Microsoft 365 Copilot (a premium tier) being rolled out at Dr. Max. It reads the SharePoint sites and shared folders the user already has access to; agents can be shared with other users. Exact configuration known by Dr. Max IT. |
+| Source | 2026-10-21-svoboda-legal-lexie-copilot-scraping-contract-headers |
+| Added | 2026-10-21 |
+| Status | Active |
+
+An internal alternative to Lexie ([[ASM-329]]): Legal asked what Lexie adds before choosing. Svoboda's own test months ago failed at fetching data from the web and filling a contract header from a register extract. The intranet is SharePoint (drmaxglobal.sharepoint.com); directives of Dr. Max, ČLH and ViaPharma are published there in their current version only, maintained via Petr Macháň.
 
 ### Alfred
 
@@ -814,6 +831,8 @@ Listing's core blocker (reconfirmed 2026-09-02) is not code but Dr. Max's undefi
 | Status | Needs confirmation |
 
 No BigHub integration for now ([[ASM-299]]). Acquisitions stores lease contracts here (Šišo, STK-061); Švarcová considers them too sensitive for AI.
+
+**TAS 5 (2026-10-21, Legal)**: Legal uses TAS heavily and dislikes it. The vendor has promised TAS 5 with an AI agent for document extraction for ~1.5 years; the launch keeps slipping. Source: 2026-10-21-svoboda-legal-lexie-copilot-scraping-contract-headers
 
 ### GoAnywhere (pharmacy → accounting file transfer)
 

@@ -1,5 +1,5 @@
 ---
-last_updated: 2026-10-20
+last_updated: 2026-10-21
 last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
@@ -10,6 +10,19 @@ owner: Marek Pillár
 
 | ID | Status | Created | Description (short) |
 |----|--------|---------|---------------------|
+| ASM-329 | Open (2026-10-21) | 2026-10-21 | Copilot is an internal alternative to Lexie; Legal chooses between them |
+| ASM-328 | Decided (2026-10-21) | 2026-10-21 | Legal UC2 (marketing compliance vs. public DBs) + UC3 (contract headers OR/ARES) = separate 2027 initiatives |
+| ASM-327 | Decided (2026-10-21) | 2026-10-21 | Legal UC1 (directive search, ~70 directives, current versions) = Lexie extension; low value |
+| ASM-326 | Open (2026-10-21) | 2026-10-21 | Phase 1.1b can't be estimated before discovery + real threads; parallel with Phase 2 |
+| ASM-325 | Open (2026-10-21) | 2026-10-21 | Axapta owns error messages: error code + exact user text, BigHub just displays |
+| ASM-324 | Decided (2026-10-21) | 2026-10-21 | Roadmap for the client = Excel: BigHub dev + client dev (blank) + UAT per phase; blockers tagged with owner |
+| ASM-323 | Decided (2026-10-21) | 2026-10-21 | Next Reklamace batch by 4 Nov 2026 (client-input dependent); client reserves 4–6 Nov for UAT |
+| ASM-322 | Open (2026-10-21) | 2026-10-21 | Listing at risk of closing: Magento import/export blocked, Neuman's team unresponsive |
+| ASM-321 | Open (2026-10-21) | 2026-10-21 | Axapta likely not ready for the inbound call (document trigger); blocks e-mail testing |
+| ASM-320 | Open (2026-10-21) | 2026-10-21 | MaxBuddy rollout to more pharmacies end of next week, after ~20-min node-pool switch + DB scale-up |
+| ASM-319 | Decided (2026-10-21) | 2026-10-21 | Fakturace hardware: BigHub gives minimum params, logistics decides; web app device-independent |
+| ASM-318 | Decided (2026-10-21) | 2026-10-21 | Fakturace mock deployment without Axapta for logistics to try recognition + UI |
+| ASM-317 | Superseded (2026-10-21, by ASM-323) | 2026-10-21 | Reklamace Phase 1.1 = new UI + login + mailbox integration; internal target end of October |
 | ASM-316 | Decided (2026-10-20) | 2026-10-20 | Fakturace scanner: hands-on trial with 3 real drivers at Pavlov (Canon DR-G2090 first) before any loan or purchase |
 | ASM-315 | Decided (2026-10-20) | 2026-10-20 | Fakturace kiosk needs a large screen (12" minimum, bigger preferred); one tap to check, one to confirm, no zooming |
 | ASM-314 | Open (2026-10-20) | 2026-10-20 | Fakturace kiosk device: locked-down Zebra (Windows, e.g. ET80) + USB scanner + large touch screen; no open PC; fallback network scanning + Android tablet |
@@ -328,6 +341,279 @@ owner: Marek Pillár
 | ASM-001 | Decided (2026-08-25) | 2026-09-01 | Dr. Max client-side coordination unified into one role (Jindřich Tůma) |
 
 ## Entries
+
+---
+
+### ASM-329
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-329 |
+| Created | 2026-10-21 |
+| Source | 2026-10-21-svoboda-legal-lexie-copilot-scraping-contract-headers |
+| By | Martin Svoboda (STK-062) |
+| Status | Open (2026-10-21) |
+
+**Description**
+Microsoft Copilot (premium M365 tier, sees what the user can access in SharePoint and shared folders) is being rolled out at Dr. Max and is an internal alternative to Lexie. Legal decides between Lexie and Copilot for its use cases; other departments may ask the same question.
+
+**Rationale**
+Legal asked explicitly what Lexie adds over Copilot before choosing a path; they haven't tested their cases in Copilot yet.
+
+**Impact**
+- **Scope**: BigHub's argument: role-based access on the AI platform (Dudaško), one development team, source citations; Copilot failed Legal's register-autofill test.
+
+---
+
+### ASM-328
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-328 |
+| Created | 2026-10-21 |
+| Source | 2026-10-21-svoboda-legal-lexie-copilot-scraping-contract-headers |
+| By | Marek Pillár (STK-001), Martin Svoboda (STK-062) |
+| Status | Decided (2026-10-21) |
+
+**Description**
+Legal use case 2 (checking marketing materials against legislation, internal manuals and live public databases — SÚKL, Ministry of Agriculture health claims — shareable with Marketing) and use case 3 (contract-header autofill by IČO from the commercial register / ARES inside Word) are separate 2027 initiatives, not Lexie by default. Both need a business case first.
+
+**Rationale**
+Both are daily work (use case 2 ~50 % of one colleague's time); live querying of external web forms and a Word add-in go beyond Lexie's document search.
+
+**Impact**
+- **Delivery**: Dedicated BQ session with Legal; rows added to the 2027 backlog.
+
+---
+
+### ASM-327
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-327 |
+| Created | 2026-10-21 |
+| Source | 2026-10-21-svoboda-legal-lexie-copilot-scraping-contract-headers |
+| By | Marek Pillár (STK-001), Martin Svoboda (STK-062) |
+| Status | Decided (2026-10-21) |
+
+**Description**
+Legal use case 1 — smart search over ~70 internal directives (Dr. Max, ČLH, ViaPharma) on the intranet SharePoint, current versions only, not sensitive (accessible to all employees) — is handled as an extension of Lexie, with a role-based legal knowledge base and source citations.
+
+**Rationale**
+Exactly the case Lexie was built for; low effort. Value is low (at most units of hours per month).
+
+**Impact**
+- **Delivery**: Validate with Jura Brázdil and Petr Macháň (folders, structure, access); no date promised.
+
+---
+
+### ASM-326
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-326 |
+| Created | 2026-10-21 |
+| Source | 2026-10-21-reklamace-roadmap-timeline-estimates |
+| By | Filip Černý (STK-012) |
+| Status | Open (2026-10-21) |
+
+**Description**
+Phase 1.1b (follow-up e-mail sequence) can't be estimated before discovery: of the 7 real threads received, 5 were plain question–answer without a follow-up, and the harder cases depend on knowledge nobody has written down (e.g. accepting a different batch for expired goods). Estimate and testing are marked "based on discovery / further analysis". It runs in parallel with Phase 2, not before it.
+
+**Rationale**
+An estimate without a defined set of frequent cases would be a guess.
+
+**Impact**
+- **Delivery**: Needs ~30 real threads incl. unusual cases from Jana Egrmaierová; Filip and Marek draw a decision diagram once examples exist.
+
+---
+
+### ASM-325
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-325 |
+| Created | 2026-10-21 |
+| Source | 2026-10-21-reklamace-roadmap-timeline-estimates |
+| By | Filip Černý (STK-012), Petr Sláma (proposed by) |
+| Status | Open (2026-10-21) |
+
+**Description**
+Axapta takes over ownership of Reklamace error messages: on failure it returns an error code plus the exact user-facing text, and BigHub only displays it. BigHub already handles every case in Honza's original spec and the approved contract; the 3–4 cases Jana Egrmaierová sent were never defined.
+
+**Rationale**
+Keeps message wording and new cases on the Axapta side, where the conditions are known; Sláma suggested it himself.
+
+**Impact**
+- **Delivery**: Filip proposes it to Sláma together with the Swagger changes; continues [[ASM-270]].
+
+---
+
+### ASM-324
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-324 |
+| Created | 2026-10-21 |
+| Source | 2026-10-21-reklamace-roadmap-timeline-estimates |
+| By | Jindřich Tůma (STK-003), Filip Černý (STK-012), Marek Pillár (STK-001) |
+| Status | Decided (2026-10-21) |
+
+**Description**
+The Reklamace roadmap goes to the client as an Excel: per phase BigHub development, client (Axapta/Sláma) development left blank for them to estimate, and UAT; every blocker is tagged with its owner so Sláma gets a to-do list. One UAT at the end of each phase with a default time box (Phase 1: 1 week; 1.1a and 2: 2 weeks); its length is the client's responsibility.
+
+**Rationale**
+BigHub can't promise dates while the client's inputs are open; a dynamic timeline (BigHub + client + testing) makes delays visible where they arise. Logistics is used to Excel.
+
+**Impact**
+- **Delivery**: Marek converts the roadmap diagram to Excel by 2026-10-23.
+
+---
+
+### ASM-323
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-323 |
+| Created | 2026-10-21 |
+| Source | 2026-10-21-reklamace-roadmap-timeline-estimates |
+| By | Jindřich Tůma (STK-003), Filip Černý (STK-012) |
+| Status | Decided (2026-10-21) |
+
+**Description**
+The next Reklamace batch (Phase 1 + 1.1: new UI, login, mailbox integration, X-Manager) is targeted for delivery by 4 November 2026, dependent on the client's inputs (Swagger approval, X-Manager API key, Axapta readiness); the client is asked to reserve 4–6 November for testing (UAT 1 week). Mon–Tue of the week of 2026-10-26 is possible but very optimistic and not promised.
+
+**Rationale**
+Filip's possible leave on 2026-10-29/30; BigHub-side work estimated at ~6 MD (pessimistic 8).
+
+**Impact**
+- **Delivery**: Presented at the 2026-10-22 ViaPharma sync; supersedes [[ASM-317]]'s end-of-October target.
+
+---
+
+### ASM-322
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-322 |
+| Created | 2026-10-21 |
+| Source | 2026-10-21-bighub-weekly-sync-reklamace-fakturace-listing-aks-rollout |
+| By | Marek Pillár (STK-001), Jindřich Tůma (STK-003) |
+| Status | Open (2026-10-21) |
+
+**Description**
+Listing is at risk of closing: Magento import/export is still not passable, so BigHub's enrichment work can't reach production end-to-end, and Petr Neuman's team doesn't reply to e-mails or review the spec despite reminders. BigHub can still bill hours on its side.
+
+**Rationale**
+Without a working route into Magento and faster feedback the project stays partial; Neuman himself expects it may fail on non-cooperation outside BigHub.
+
+**Impact**
+- **Delivery**: Rated high risk in the group AI register; Jindřich takes Neuman to lunch and an all-team Listing sync follows the week of 2026-10-26.
+
+---
+
+### ASM-321
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-321 |
+| Created | 2026-10-21 |
+| Source | 2026-10-21-bighub-weekly-sync-reklamace-fakturace-listing-aks-rollout |
+| By | Filip Černý (STK-012) |
+| Status | Open (2026-10-21) |
+
+**Description**
+Axapta is probably not ready for the inbound call (a button in Axapta that triggers document generation on BigHub's side). This also blocks testing of the Reklamace e-mail flows.
+
+**Rationale**
+Filip doesn't know what Axapta has built; items BigHub doesn't explicitly push for tend not to exist.
+
+**Impact**
+- **Delivery**: To be stated in the Reklamace roadmap (what Axapta must deliver now and per phase) and raised politely at the steerco with Rudolf Žůrek.
+
+---
+
+### ASM-320
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-320 |
+| Created | 2026-10-21 |
+| Source | 2026-10-21-bighub-weekly-sync-reklamace-fakturace-listing-aks-rollout |
+| By | Jura Brázdil (STK-007) |
+| Status | Open (2026-10-21) |
+
+**Description**
+More pharmacies can be added to MaxBuddy at the end of the week of 2026-10-26: after users are done, a ~20-minute production downtime to switch to the new node pools, with a DB scale-up in the same window. No Dr. Max dependency.
+
+**Rationale**
+Network access for MaxBuddy appeared 2026-10-20; MaxBuddy, Lexie and the platform shell already run on production. Jura told Dudaško and Vosmek the same.
+
+**Impact**
+- **Delivery**: Jindřich communicates it with caveats; MaxBuddy and Lexie roll out only together with the platform.
+
+---
+
+### ASM-319
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-319 |
+| Created | 2026-10-21 |
+| Source | 2026-10-21-bighub-weekly-sync-reklamace-fakturace-listing-aks-rollout |
+| By | Jindřich Tůma (STK-003), Filip Černý (STK-012) |
+| Status | Decided (2026-10-21) |
+
+**Description**
+Fakturace doprav hardware: BigHub gives minimum parameters, logistics decides (Canon scanner + Zebra PC chosen on 2026-10-20). The web app is device-independent, so device lifespan doesn't matter; phones are ruled out for network-security reasons (Dušan Hýža).
+
+**Rationale**
+Logistics wants BigHub's view but chooses itself; BigHub can work with several variants.
+
+**Impact**
+- **Delivery**: No further BigHub effort on hardware selection; Jindřich explains it at the steerco.
+
+---
+
+### ASM-318
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-318 |
+| Created | 2026-10-21 |
+| Source | 2026-10-21-bighub-weekly-sync-reklamace-fakturace-listing-aks-rollout |
+| By | Filip Černý (STK-012), Jindřich Tůma (STK-003), Marek Pillár (STK-001) |
+| Status | Decided (2026-10-21) |
+
+**Description**
+Fakturace doprav gets a mock deployment without Axapta (no saving or loading) so logistics can try document recognition and the UI early. ~Half a day of work on a separate branch.
+
+**Rationale**
+Early feedback through a working tool in their hands; iterative delivery.
+
+**Impact**
+- **Delivery**: After Reklamace priorities; Filip chooses timing.
+
+---
+
+### ASM-317
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-317 |
+| Created | 2026-10-21 |
+| Source | 2026-10-21-bighub-weekly-sync-reklamace-fakturace-listing-aks-rollout |
+| By | Jindřich Tůma (STK-003), Filip Černý (STK-012) |
+| Status | Superseded (2026-10-21, by ASM-323) — internal target moved from end of October to 4 November |
+
+**Description**
+Reklamace Phase 1.1 closes with: everything logistics already had + the new UI + login + the shared-mailbox integration. BigHub's internal target is the end of October 2026; logistics is asked on 2026-10-22 to answer the three Swagger change proposals quickly (Petr Sláma + Jan Kopecký, ~2 h).
+
+**Rationale**
+BigHub's own remaining work is only login + mailbox; everything else waits on logistics (Swaggers, X-Manager API key, Axapta).
+
+**Impact**
+- **Delivery**: Filip sends the Swagger proposals by 2026-10-23; Reklamace is Filip's top priority.
 
 ---
 

@@ -1,5 +1,5 @@
 ---
-last_updated: 2026-10-20
+last_updated: 2026-10-21
 last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
@@ -72,6 +72,7 @@ N/A — no client stakeholders. See `project-stakeholders.md` for the full team/
 - **Finance stance on AI and process capture (2026-10-19)**: Accounting works to one KPI (a correct close on time), is conservative about AI and prefers rule-based automation with human approval ([[ASM-308]]). Real-time process recording during the month-end close (DUVo) was badly received; any BigHub analysis there should avoid the close and work alongside people. Finance distrusts consultant benefit numbers it cannot verify. Source: 2026-10-19-finance-duvo-deloitte-analysis-global-ai-registry.
 - **Group AI portfolio dynamics (2026-10-20)**: At group level (BDC, Kateřina Lesch) countries are slow to submit AI use cases (busy with e.g. acquisitions in Italy) while top-down pressure to deliver is strong. The group pushes reuse (~40% cheaper per further rollout), and CZ/BigHub is seen as the model and a rollout source, which favours reusable, quantified use cases (MaxBuddy first) over country-specific ones. Source: 2026-10-20-lesch-group-ai-register-scoring-cz-input.
 - **ViaPharma IT security posture (2026-10-20)**: no machines left outside the update regime (Windows security updates always applied, builds rolled out 6–12 months late after testing); shared devices used by drivers or warehouse staff must lock users into the app (forced kiosk mode, as on Zebras), so an open PC with a browser is not acceptable. Plan device choices with IT (Dušan Hýža) early. Source: 2026-10-20-fakturace-doprav-canon-scanner-zebra-kiosk-hyza.
+- **Copilot as an in-house alternative (2026-10-21)**: Dr. Max is rolling out Microsoft 365 Copilot; departments (first Legal) ask what Lexie adds before choosing. BigHub's case: role-based access on the AI platform, one development team that extends it, source citations, and custom builds where Copilot fails (e.g. register lookups into Word). Source: 2026-10-21-svoboda-legal-lexie-copilot-scraping-contract-headers.
 
 ## 10. Active Initiatives & Project History
 

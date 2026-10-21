@@ -1,10 +1,61 @@
 ---
-last_updated: 2026-10-20
-last_updated_by: auto — project-meeting routing
+last_updated: 2026-10-21
+last_updated_by: auto — project-daily close
 owner: Marek Pillár
 ---
 
 # Lessons Learned
+
+---
+
+### LL-105
+
+| Field | Value |
+|-------|-------|
+| ID | LL-105 |
+| Created | 2026-10-21 |
+| Category | Client communication / roadmaps |
+| Source | project-daily close 2026-10-21 (Reklamace roadmap Excel) |
+
+**Lesson**
+When an internal estimation meeting feeds a client-facing timeline, share only the commitments: delivery dates, testing windows, MD figures and what you need from whom by when. Remove the internal reasoning first: how long you think their testing really takes, your guesses at their effort, which numbers are padded, and internal sequencing choices. For non-technical client teams, keep the timeline simple: a static day-by-day Gantt (weekends visible, delivery then testing in sequence, colour only, a filter per phase) reads better than a formula-driven or macro-based sheet.
+
+**Context**
+The first Reklamace roadmap Excel carried notes from the internal session ("realisticky cca 2 h", "schválení cca 2 h", "odhady pesimistické") and auto-calculated dates. The PM simplified it over several rounds to a static per-day view and stripped every internal note before it could go to ViaPharma.
+
+---
+
+### LL-104
+
+| Field | Value |
+|-------|-------|
+| ID | LL-104 |
+| Created | 2026-10-21 |
+| Category | Discovery / positioning against in-house tools |
+| Source | 2026-10-21-svoboda-legal-lexie-copilot-scraping-contract-headers |
+
+**Lesson**
+When a department arrives asking for "our tool" but is also evaluating a generic in-house option (e.g. Copilot), ask for the value of each use case before arguing features. The case they name first is often the low-value one; the daily pain (here: compliance checks against live public sources, register lookups into Word) is where custom work beats the generic tool — and that is what to quantify and pitch.
+
+**Context**
+Legal opened with directive search for Lexie (units of hours a month) and asked what Lexie adds over Copilot. The questions on time spent revealed two daily tasks worth far more, one of which Copilot had already failed.
+
+---
+
+### LL-103
+
+| Field | Value |
+|-------|-------|
+| ID | LL-103 |
+| Created | 2026-10-21 |
+| Category | Delivery management / client dependencies |
+| Source | 2026-10-21-bighub-weekly-sync-reklamace-fakturace-listing-aks-rollout |
+
+**Lesson**
+When most of the remaining work waits on the client, separate "our part" from "their part", set an internal target date for the whole, and ask the client to speed up their part against that target — rather than promising a hard date you don't control. Report it upward as "we are on time and waiting on X", framed politely, so pressure lands where the dependency is.
+
+**Context**
+Reklamace Phase 1.1: BigHub's own remaining work was only login and the mailbox integration; Swagger approvals, the X-Manager API key and Axapta readiness all sat with logistics. Jindřich framed an internal end-of-October target for the Thursday meeting and planned to tell the steerco (Žůrek) that BigHub is on time and waiting on Axapta.
 
 ---
 
