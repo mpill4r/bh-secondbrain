@@ -104,7 +104,7 @@ Constructive and practical. Hnilička brought vendor experience and pushed back 
 
 Confirmed by PM 2026-10-20 (confirm all).
 - **project-assumptions**: added ASM-313 (DR-G2090/2110), ASM-314 (locked-down Zebra kiosk, Open), ASM-315 (large screen), ASM-316 (driver test at Pavlov); updated ASM-281, ASM-087, ASM-052, ASM-259
-- **project-stakeholders**: STK-066 named Dušan Hýža with sentiment and expectations; STK-071 Hnilička, STK-015 Žižka, STK-013 Foltová updated; added STK-085 Mrdlička
+- **project-stakeholders**: STK-066 named Dušan Hýža with sentiment and expectations; STK-071 Hnilička, STK-015 Žižka, STK-013 Foltová updated; added STK-085 Mrdlička (renumbered STK-090 on 2026-10-23)
 - **project-knowledge**: new entry "Fakturace doprav scanner hardware"; Zebra terminals updated
 - **client-overview**: §9 ViaPharma IT security posture
 - **project-daily**: 4 waiting action items; Tereza's 2 Canon-meeting items closed

@@ -1,5 +1,5 @@
 ---
-last_updated: 2026-10-21
+last_updated: 2026-10-26
 last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
@@ -100,6 +100,18 @@ Original infrastructure/model provisioning for MaxBuddy was done manually (ad ho
 
 **Lexie source data in practice (2026-10-19, L1 / Macháň)**: Lexie reads its sources from SharePoint folders. The file format matters little (Word, PDF and text all work; one format is preferred), but Lexie **does not read images**, and Claude-generated **Markdown files worked poorly**. New files show up quickly (fast refresh). Quality drops with duplicate copies and old versions of the same document; the recommended fix is separate current and archive folders ([[ASM-302]]). With a large Excel (pharmacy contacts), inconsistent column names and overlapping copies led to partial answers ([[ASM-304]]). Known bug: Lexie repeats the question below its answer; a fix is expected in the next upgrade (being solved for CC). Source: 2026-10-19-machan-l1-lexie-feedback-servicenow-intake
 
+**Lexie Next and libraries (2026-10-22)**: Lexie Next runs next to the original Lexie on the AI Platform: rewritten core, noticeably faster, citations working. A *library* is a named set of documents picked from SharePoint folders; each knowledge base / agent gets one or more libraries, each on or off by default, and users can toggle optional ones in the chat. Libraries are the mechanism for sharing documents across departments ([[ASM-333]]). Planned: temporary priority notes per department ([[ASM-334]]). Source: 2026-10-22-lexie-max-maxie-weekly-sync.
+
+**Lexie sources on SharePoint (2026-10-22)**: Lexie reads one SharePoint folder named "Lexie" with department subfolders (CC source documents, e-commerce, finance Brno, HR, IT, online marketing, legal; some empty) and indexes it every morning. Adding another folder means asking Dr. Max infra to grant Lexie access; documents from local drives are uploaded into the department's subfolder instead ([[ASM-338]]). Fully scanned PDFs (images only) are not indexed. Quality is tuned with "golden conversations" (expected answers, positive and negative cases from user feedback). The CC's old Lexie runs until the week of 2026-10-26. Source: 2026-10-22-svarcova-lexie-demo-sharepoint-upload-archive-tas5.
+
+**AI Platform roles and user onboarding (2026-10-22)**: three Entra groups (SuperAdmins / Admins / Users) set a ceiling; inside it, rights are managed in the platform. Admins (per product, e.g. Lexie, Max) can give any Dr. Max account up to their own rights and switch roles down, not up; Users only use apps (no settings). Adding a user: platform (e-mail, chat access, department/agent, reporting) + Entra Users group via Tvarůžek. An operator with only Lexie lands straight in Lexie. A technical health view shows API, indexer, last document sync and DB; a broadcast message for all app users is planned. Source: 2026-10-22-lexie-max-maxie-weekly-sync.
+
+**Max internals (2026-10-22)**: a hard post-filter checks each sentence before display (phone numbers and pharmacy addresses become cards; banned words get the sentence reworded, [[ASM-332]]). Stock and product search currently use the public e-shop APIs the website calls (search-service / stock-status endpoints); stock moves to Magento sellable quantity ([[ASM-335]]). SPC leaflets come from the DVH SPC mirror, which could also carry SÚKL shortage data ([[ASM-336]]). Source: 2026-10-22-lexie-max-maxie-weekly-sync.
+
+**Lexie indexing and platform access (2026-10-23)**: Lexie keeps references to SharePoint files, the index (embeddings) and thumbnails, not copies; answers come from chunks, so it knows the section, not the exact location. Any text format is indexed; images are not (need captions; OCR on every document would be costly). The platform reaches SharePoint through a managed identity; today it reads one "Lexie" folder with department subfolders ([[ASM-346]]). Platform links currently borrow Lexie's registered URLs ("Lexie test/platform") and return to the original production URLs after the production switch. Platform admins see the whole Lexie row (Lexie, Lexie Next, reporting, documentation, technical status). Lexie Next has a new framework-free frontend and a rebuilt retrieval engine benchmarked against Viliam Gago's original. Source: 2026-10-23-lexie-departments-intake-sharepoint-access-satura-onboarding.
+
+**Max GDPR framework (2026-10-23)**: legal basis, data inventory and privacy-policy contents agreed with Dr. Max's DPO and external lawyer — see "Max chatbot — GDPR framework" under Regulatory & Compliance.
+
 ### TEO / OCR (pharmacy service-protocol extraction)
 
 | Field | Value |
@@ -170,6 +182,8 @@ Scope narrowed to one category first: automatic doors, two vendors — extractin
 **Two people handle a claim**: the **příjem foreman** (receiving foreman) uses BigHub's mobile app, scanning the label and photographing damage, which creates the case in Axapta. The **zaměstnanec reklamací** (claims worker) is a different person who has never used the app; they work in Axapta and relied on the old per-supplier Excel. The flat table loses that view ([[ASM-175]]).
 
 **Email flow (as of 2026-09-25)**: the worker clicks in Axapta, which sends a request with supplier data. BigHub generates the rozvozový list and returns it to Axapta for printing, and the same request triggers an Outlook draft that the worker reviews and sends ([[ASM-010]]). A supplier reply in the inbox can trigger an LLM to extract structured info (e.g. which warehouse, for ~5 multi-warehouse suppliers) and draft the next reply in the thread. Jakub Turner has finished the main part; it is blocked on infra delivering Microsoft Graph API access. Whether a draft appears directly inside the reply thread is not implemented or verified yet. A ~1 MD demo is in progress ([[ASM-173]]). Rozvozový list fields that come from Axapta but are missing from the contract: reklamace number, RD document number, issue date ([[ASM-174]]). The per-case timeline dashboard idea was killed ([[ASM-172]]). Source: 2026-09-25-reklamace-supplier-data-source-options.
+
+**Email flow, next phase and its test (2026-10-22)**: when a case closes in Axapta, BigHub generates the rozvozový list, attaches it to an e-mail and saves it as a draft in the shared mailbox kvalitasklad@viafarma.cz; the worker approves and sends it; the supplier's reply is linked to the case and the agent's sorting is shown. For testing, ~3 known suppliers temporarily get a ViaPharma person's e-mail in the knowledge base, and that person replies to simulate the supplier ([[ASM-331]]). Source: 2026-10-22-viapharma-reklamace-sync-slama-out-email-test-setup-fakturace-excel.
 
 **Real supplier email threads (2026-09-29)**: Jana Egrmaierová sent Filip Černý 7 threads, 6 usable. What they show:
 - **First email**: always the same and very short ("notification of claim case no. X, documentation attached"). Staff don't write more because everyone has the context.
@@ -313,6 +327,8 @@ Source: 2026-09-30-listing-reset-neuman-enrichment-first-doplnky-stravy.
 **Neuman's Claude PoC — environmental claims (2026-10-05)**: Petr Neuman fixed ~1,500 critical SKUs himself with Claude (company Pro plan, chat + markdown). He spent ~2 h defining rules, kept a running rules journal, piloted on 10–20 SKUs, then ran 10 batches of 150 with checks; Claude asked about 10–20 unclear SKUs per batch. The last batches took ~10 min each. Total ~12 h. Human review took ~2–3 days and ~12% needed edits (at least half outside the given scope), vs. ~1.5 months by hand. Reference input for Listing 2.0 bulk edits ([[ASM-244]]). Source: 2026-10-05-listing-neuman-environmental-claims-bulk-edit-listing-2-0.
 
 **SKU ownership & data flow (2026-09-16)**: Dr. Max provides/owns SKU identifiers — BigHub does not generate them. Dr. Max sometimes uses "SKU" loosely as a synonym for "product," but it's literally just the product's identifier. Confirmed flow: listing build/edit happens in the new app first, then gets imported into Magento — the tool exists because Magento itself can't keep up with fast/bulk writes at Dr. Max's current catalog scale (see [[ASM-073]]). Per Jindřich Tůma, the spec should be framed simply: BigHub takes over exactly what already exists in Magento today, since new products are treated the same as existing ones once a baseline listing exists — rather than trying to model every adjacent system Dr. Max references (Farmis, "Quant," "paní Lucy," and others). Source: 2026-09-16-devops-kanban-rollout-status-sync.
+
+**Rule hierarchy and repo (2026-10-26)**: the Listing repo now lives in Dr. Max's Azure DevOps (previously Filip's own). Rules are meant to layer all products → attribute set (Dr. Max plans ~14; e.g. doplněk stravy) → main category (protein, magnesium, vitamin C…). Today the tool is flat: one attribute set (food supplements), identical instructions per product, because Dr. Max hasn't defined main categories ([[ASM-349]]). Source: 2026-10-26-listing-filip-supplements-batch-demo-export-plan
 
 ### Expertní skupiny (expert groups)
 
@@ -477,6 +493,8 @@ Dudaško was unambiguous on this boundary when Jindřich raised a concrete pilot
 
 **Register owner and purpose (2026-10-20, Kateřina Lesch)**: the registry is Kateřina Lesch's (STK-084) "AI Use Case Register – Triage Edition", kept on her cloud and shared across countries; Marek copies the CZ rows into it by hand ([[ASM-310]]). Purpose: a scoring methodology that separates use cases too complex to integrate (they stay in the country) from group rollout candidates (ROI + ease of implementation). Each further country rollout is ~40% cheaper when reused; she wants proven CZ cases (MaxBuddy first) shown to leadership. A Claude "portfolio manager" artifact over the register flags duplicates (e.g. ROU and CZ pharmacist assistants). Countries submitted much noise (e.g. 6 HR use cases on the same RAG chatbot) that should score as low value. Who fills the CZ scores is open ([[ASM-311]]). Later the register moves into a demand-management tool with upfront scoring, where nothing enters without a quantified business value ([[ASM-312]]). DUVo: Lesch runs her own supply-chain DUVo pilot with direct access; in the finance analysis Deloitte enters the data. Source: 2026-10-20-lesch-group-ai-register-scoring-cz-input
 
+**Technical owner column (2026-10-22)**: Dudaško wants a "Technical owner" column in the register. Working definition (Jindřich): the Dr. Max IT person who takes the initiative over as a product. BigHub hands over documentation, their IT support runs it, and BigHub stays the vendor for further changes. Szücs's rows come from Dudaško's global register; the rest Marek collects; Reklamace = Sláma for now ([[ASM-332]]). Source: Teams chat Jindřich Tůma, 2026-10-22
+
 ### Listing enrichment pipeline
 
 | Field | Value |
@@ -538,6 +556,17 @@ Planned Lexie source ([[ASM-298]]); the ISO folder is excluded. Accounting also 
 ## Data Model Concepts
 
 ## Regulatory & Compliance
+
+### Max chatbot — GDPR framework
+
+| Field | Value |
+|-------|-------|
+| Definition | How Max handles personal data, as agreed on 2026-10-23 with Dr. Max's DPO (Lenka Henychová) and external data-protection lawyer (Petra Kytýrová). **Legal basis**: performance of contract (chatbot = sub-service of the pharmacy service) + Art. 9 exception for management of health-care systems; no consent. **Health data**: under EU case law any product a person asks about is health-related data; eRecepty beyond doubt. **Data inventory**: no database; order/eRecept numbers passed to other systems and the answer returned; state (e.g. location) kept only in the browser; LLM on Azure (Microsoft Foundry), EU, no data leaving. eRecepty via the public SÚKL interface without a pharmacist certificate, so no patient identifiers — but eRecept numbers are still personal data. Orders need number + phone/e-mail on the order (numbers are sequential). Stored: aggregate counters only (query types, factual answers, errors, conversations + messages) and star ratings. **Privacy policy must cover**: statistics, ratings, location consent and retention, processor categories, any non-EU access (avoid), retention and data scope per activity. Planned: ~30-day conversation retention ([[ASM-340]]). |
+| Source | 2026-10-23-max-chatbot-gdpr-legal-review-henychova-kytyrova |
+| Added | 2026-10-23 |
+| Status | Active |
+
+Dr. Max updates its records of processing and balancing tests once a year and on change (Horčica); the lawyer's policy draft feeds those records. See [[ASM-102]], [[ASM-341]].
 
 ### EU environmental claims (greenwashing) regulation
 
@@ -834,6 +863,8 @@ No BigHub integration for now ([[ASM-299]]). Acquisitions stores lease contracts
 
 **TAS 5 (2026-10-21, Legal)**: Legal uses TAS heavily and dislikes it. The vendor has promised TAS 5 with an AI agent for document extraction for ~1.5 years; the launch keeps slipping. Source: 2026-10-21-svoboda-legal-lexie-copilot-scraping-contract-headers
 
+**TAS 5 (2026-10-22, accounting)**: per Šimon Ilík (BDC, TAS owner) via Švarcová, TAS 5 will connect to Dr. Max's own AI models rather than carry its own AI. Conflicts with Legal's account above; to clarify with Ilík. Source: 2026-10-22-svarcova-lexie-demo-sharepoint-upload-archive-tas5.
+
 ### GoAnywhere (pharmacy → accounting file transfer)
 
 | Field | Value |
@@ -857,6 +888,15 @@ Missing files are noticed only when accountants need them; closed pharmacies sto
 | Status | Active |
 
 ## Project Conventions
+
+### Easy Project (BigHub time reporting)
+
+| Field | Value |
+|-------|-------|
+| Definition | BigHub's time-reporting tool; Dr. Max work is logged against Dr. Max projects there (search e.g. "Lexie", "OCR"). Jindřich Tůma grants access. |
+| Source | 2026-10-23-lexie-departments-intake-sharepoint-access-satura-onboarding |
+| Added | 2026-10-23 |
+| Status | Active |
 
 ### ServiceNow at Dr. Max (BigHub AI service)
 

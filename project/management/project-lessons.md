@@ -1,10 +1,95 @@
 ---
-last_updated: 2026-10-21
-last_updated_by: auto — project-daily close
+last_updated: 2026-10-23
+last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
 
 # Lessons Learned
+
+---
+
+### LL-110
+
+| Field | Value |
+|-------|-------|
+| ID | LL-110 |
+| Created | 2026-10-26 |
+| Category | Scope / client-defined taxonomy |
+| Source | 2026-10-26-listing-filip-supplements-batch-demo-export-plan |
+
+**Lesson**
+When the client can't define its taxonomy (categories, per-category rules), deliver at the broadest level it has defined and keep the finer level as the stated direction. Don't invent the missing rules yourself: guessed rules are likely wasted and blur who owns the content. Say plainly what the coarser level costs (e.g. more generic texts), and remind the client the finer level is waiting on their definition.
+
+**Context**
+Dr. Max sent 500 food supplements across many main categories without per-category listing instructions; main categories have been undefined since April. BigHub runs the batch at the attribute-set level instead of guessing protein- or magnesium-specific rules.
+
+---
+
+### LL-109
+
+| Field | Value |
+|-------|-------|
+| ID | LL-109 |
+| Created | 2026-10-23 |
+| Category | Platform delivery / backlog hygiene |
+| Source | 2026-10-23-lexie-departments-intake-sharepoint-access-satura-onboarding |
+
+**Lesson**
+When a platform turns rollout into configuration, keep two intake paths. Onboarding a new team (users, a source folder, a library, an agent) is a few minutes of console work: handle it from a short checklist, not tickets. Only feature requests go on the board, and build them for everyone, not per team. Otherwise the backlog fills with setup chores and per-team variants.
+
+**Context**
+Lexie is spreading to Dr. Max departments. The team first planned per-department ticket boards; it settled on one board for features only, with onboarding done in the platform console by the PM.
+
+---
+
+### LL-108
+
+| Field | Value |
+|-------|-------|
+| ID | LL-108 |
+| Created | 2026-10-23 |
+| Category | Compliance / GDPR for customer-facing AI |
+| Source | 2026-10-23-max-chatbot-gdpr-legal-review-henychova-kytyrova |
+
+**Lesson**
+In a pharmacy or health shop, treat any customer chatbot as processing health data, even when it only searches products. Don't plan a consent checkbox: the cleaner basis is that the chatbot is part of the service (contract), plus the health-care exception. The information duty is separate from consent and is met with one clearly legible line and a link at the start of the chat. Bring a written data inventory (what is stored, where, how long, which processors) to the first legal meeting; the lawyer needs exactly that to write the policy.
+
+**Context**
+The Max chatbot's consent question sat open for over a month (ASM-102). In one 45-minute meeting the external lawyer ruled out consent, and Jura's data-flow walkthrough (no storage, browser-only state, EU hosting, public SÚKL API) gave her what she needed for a first draft within a week.
+
+---
+
+### LL-107
+
+| Field | Value |
+|-------|-------|
+| ID | LL-107 |
+| Created | 2026-10-22 |
+| Category | LLM product design / wording control |
+| Source | 2026-10-22-lexie-max-maxie-weekly-sync |
+
+**Lesson**
+To keep internal wording out of an assistant's answers, first remove it from your own prompts. The model copies the developer's words, and not mentioning a term works better than mentioning it and then forbidding it. Give the client a list of banned words it maintains itself, and enforce the list with a hard post-filter that sends the sentence back for rewording. Keep the filter as a last resort, because every catch costs a round trip and slows the chat.
+
+**Context**
+Max used internal terms ("focus", "in stock", "skladovost", "pobočka") because they were named in the prompts. The CC asked for a banned-word list that it maintains itself as Max gains topics.
+
+---
+
+### LL-106
+
+| Field | Value |
+|-------|-------|
+| ID | LL-106 |
+| Created | 2026-10-22 |
+| Category | Delivery planning / client dependencies |
+| Source | 2026-10-22-viapharma-reklamace-sync-slama-out-email-test-setup-fakturace-excel |
+
+**Lesson**
+When the client's inputs depend on one overloaded person, stop publishing your own delivery date. Ask the client to commit a date for its inputs, state your remaining effort after that (e.g. 5–7 working days), and plan testing from their date. Back it with a short list of the hottest blockers rather than the full spec: an overloaded client lead can push people with a short list, but not with a long document.
+
+**Context**
+BigHub had set 4 November for the next Reklamace batch. The client's only Axapta person lost the following week to other meetings, on top of an onsite assignment starting mid-November. The client lead asked for "the biggest hot items" so she could chase her people.
 
 ---
 

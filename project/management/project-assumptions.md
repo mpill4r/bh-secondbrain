@@ -1,5 +1,5 @@
 ---
-last_updated: 2026-10-21
+last_updated: 2026-10-26
 last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
@@ -10,13 +10,35 @@ owner: Marek Pillár
 
 | ID | Status | Created | Description (short) |
 |----|--------|---------|---------------------|
+| ASM-350 | Decided (2026-10-26) | 2026-10-26 | Listing export = Dr. Max's input Excel filled in, changed cells highlighted |
+| ASM-349 | Decided (2026-10-26) | 2026-10-26 | Supplements batch at attribute-set level; no invented per-category rules; parameters first |
+| ASM-348 | Decided (2026-10-23) | 2026-10-23 | TAS: build nothing on it for now; low-priority opportunity at most |
+| ASM-347 | Open (2026-10-23) | 2026-10-23 | Reusable platform tools (pharmacy API, eRecepty, SPC) for Lexie and other agents |
+| ASM-346 | Open (2026-10-23) | 2026-10-23 | Lexie SharePoint access: Lexie folder / named folders / blanket access + platform file selection; approver unknown |
+| ASM-345 | Decided (2026-10-23) | 2026-10-23 | Lexie features are global, no per-department variants |
+| ASM-344 | Decided (2026-10-23) | 2026-10-23 | One Lexie board in Dr. Max Azure DevOps, labels per department; onboarding not ticketed; CC stays in X-Manager |
+| ASM-343 | Open (2026-10-23) | 2026-10-23 | Max: Legal sees no major AI-regulation risk; AI disclaimer only; advertising-regulation check pending |
+| ASM-342 | Open (2026-10-23) | 2026-10-23 | BigHub–Dr. Max data-processing agreement for Max: exists? (Švestka thinks via framework contract) |
+| ASM-341 | Decided (2026-10-23) | 2026-10-23 | Max privacy notice: one legible sentence + link in the empty chat background at conversation start |
+| ASM-340 | Open (2026-10-23) | 2026-10-23 | Max conversations kept ~30 days on legitimate interest (complaints, quality), then deleted/anonymised |
+| ASM-332 | Open (2026-10-22) | 2026-10-22 | AI register gets a "Technical owner" column: the Dr. Max IT person who takes each initiative over as a product |
+| ASM-339 | Open (2026-10-22) | 2026-10-22 | Lexie archive handling: archive library vs. per-folder/file comment; emphatic "from archive" warning |
+| ASM-338 | Decided (2026-10-22) | 2026-10-22 | Documents from local/shared drives go into the department's folder in the SharePoint "Lexie" folder; drives not connected |
+| ASM-337 | Open (2026-10-22) | 2026-10-22 | Max end-of-November rollout: CC doubts it; Jura thinks realistic with a new BigHub colleague |
+| ASM-336 | Open (2026-10-22) | 2026-10-22 | SÚKL data (shortages etc.) as a shared platform capability alongside the DVH SPC mirror |
+| ASM-335 | Decided (2026-10-22) | 2026-10-22 | Max stock from Magento sellable quantity instead of the public e-shop API |
+| ASM-334 | Decided (2026-10-22) | 2026-10-22 | Lexie temporary notes: admin list per department, priority, explicit callout, operator pull-down, attachments |
+| ASM-333 | Decided (2026-10-22) | 2026-10-22 | Lexie Next libraries: document sets per agent, default on/off; cross-department sharing |
+| ASM-332 | Decided (2026-10-22) | 2026-10-22 | Max banned-word list in settings, enforced by the hard filter; prompts cleaned first |
+| ASM-331 | Decided (2026-10-22) | 2026-10-22 | E-mail-agent test: ~3 suppliers' e-mails temporarily switched to ViaPharma staff in the KB; no new mailbox |
+| ASM-330 | Open (2026-10-22) | 2026-10-22 | Reklamace next-batch date reset: ViaPharma commits a date for inputs; BigHub needs 5–7 working days after |
 | ASM-329 | Open (2026-10-21) | 2026-10-21 | Copilot is an internal alternative to Lexie; Legal chooses between them |
 | ASM-328 | Decided (2026-10-21) | 2026-10-21 | Legal UC2 (marketing compliance vs. public DBs) + UC3 (contract headers OR/ARES) = separate 2027 initiatives |
 | ASM-327 | Decided (2026-10-21) | 2026-10-21 | Legal UC1 (directive search, ~70 directives, current versions) = Lexie extension; low value |
 | ASM-326 | Open (2026-10-21) | 2026-10-21 | Phase 1.1b can't be estimated before discovery + real threads; parallel with Phase 2 |
 | ASM-325 | Open (2026-10-21) | 2026-10-21 | Axapta owns error messages: error code + exact user text, BigHub just displays |
 | ASM-324 | Decided (2026-10-21) | 2026-10-21 | Roadmap for the client = Excel: BigHub dev + client dev (blank) + UAT per phase; blockers tagged with owner |
-| ASM-323 | Decided (2026-10-21) | 2026-10-21 | Next Reklamace batch by 4 Nov 2026 (client-input dependent); client reserves 4–6 Nov for UAT |
+| ASM-323 | At risk (2026-10-22) | 2026-10-21 | Next Reklamace batch by 4 Nov 2026 (client-input dependent); client reserves 4–6 Nov for UAT |
 | ASM-322 | Open (2026-10-21) | 2026-10-21 | Listing at risk of closing: Magento import/export blocked, Neuman's team unresponsive |
 | ASM-321 | Open (2026-10-21) | 2026-10-21 | Axapta likely not ready for the inbound call (document trigger); blocks e-mail testing |
 | ASM-320 | Open (2026-10-21) | 2026-10-21 | MaxBuddy rollout to more pharmacies end of next week, after ~20-min node-pool switch + DB scale-up |
@@ -43,7 +65,7 @@ owner: Marek Pillár
 | ASM-299 | Decided (2026-10-16) | 2026-10-16 | No TAS integration for now; contract expiry covered by TAS views/reminders, not AI; lease contracts too sensitive for AI (conflicts with Šišo use case 1) |
 | ASM-298 | Open (2026-10-16) | 2026-10-16 | Lexie for Brno accounting over SharePoint + S: drive directives; cite source + date, flag archive, ISO folder excluded; no date promised |
 | ASM-297 | Decided (2026-10-15) | 2026-10-15 | X-Manager for logistics: Machata gave the green light; while he's away (to 2026-10-27), the CC creates a temporary app and imports BigHub's table, ownership to Machata later |
-| ASM-296 | Open (2026-10-15) | 2026-10-15 | Max reporting vs. personal data: legal meeting with Dr. Max's external law firm Fri 2026-10-23 9:00–10:00; CC to say what to measure |
+| ASM-296 | Decided (2026-10-23) | 2026-10-15 | Max reporting vs. personal data: legal meeting with Dr. Max's external law firm Fri 2026-10-23 9:00–10:00; CC to say what to measure |
 | ASM-295 | Open (2026-10-15) | 2026-10-15 | Back-office Lexie: start with its own agent (default on open, switch to CCC), test before giving all files; rights model (departments, knowledge bases, document sets) to design |
 | ASM-294 | Decided (2026-10-15) | 2026-10-15 | Max replies: widgets come with a short polite line + an answer to any question, no duplicated info; phone numbers always shown as text |
 | ASM-293 | Decided (2026-10-15) | 2026-10-15 | Max/Maxie pharmacy filter via branch API rules: type 1 "standard" only; exclude in-preparation, closed, special regions; manual on/off toggle optional |
@@ -237,7 +259,7 @@ owner: Marek Pillár
 | ASM-105 | Decided (2026-09-17) | 2026-09-17 | False call-transfer claims and unauthorized medical advice explicitly disallowed in Max chatbot's prompt |
 | ASM-104 | Closed — stale (2026-09-25) | 2026-09-17 | Some shared timeline items are mis-scoped as MVP when they belong to the full product — not yet itemized |
 | ASM-103 | Decided (2026-09-17) | 2026-09-17 | Lexie test-account approach: 4 separate accounts without 2FA, not the in-app role-switcher |
-| ASM-102 | Open (2026-09-17) | 2026-09-17 | Max chatbot GDPR consent/anonymization copy blocked pending DPO (Lenka Henichová) input |
+| ASM-102 | Decided (2026-10-23) | 2026-09-17 | Max chatbot GDPR: no consent; contract + Art. 9 health-care exception; legible notice + link (was: blocked pending DPO input) |
 | ASM-101 | Decided (2026-09-17) | 2026-09-17 | Max chatbot public launch will be a quiet/soft launch — no active promotion until fully mature |
 | ASM-100 | Decided (2026-09-17) | 2026-09-17 | Max chatbot go-live: public launch end of October; BigHub's 3 internal deployment phases targeted for end of September |
 | ASM-099 | Open (2026-09-17) | 2026-09-17 | All three MaxBuddy KPI targets (single-item dispensing, molecule/group volume, conversion-by-benefit) pending quantification from Luboš Vosmek |
@@ -341,6 +363,491 @@ owner: Marek Pillár
 | ASM-001 | Decided (2026-08-25) | 2026-09-01 | Dr. Max client-side coordination unified into one role (Jindřich Tůma) |
 
 ## Entries
+
+### ASM-350
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-350 |
+| Created | 2026-10-26 |
+| Source | 2026-10-26-listing-filip-supplements-batch-demo-export-plan |
+| By | Filip Černý (STK-006), Marek Pillár (STK-001) |
+| Status | Decided (2026-10-26) |
+
+**Description**
+Listing export = Dr. Max's own input Excel, filled in, with added or changed cells highlighted. No accept-per-change in Excel. To be confirmed with Dr. Max.
+
+**Rationale**
+Dr. Max works in Excel; highlighting mirrors the app's old-vs-new review, while accepting 500 rows cell by cell would be impractical.
+
+**Impact**
+- **Delivery**: Filip builds it with the new demo ([[REQ-014]]).
+- **Open**: The parameter specialist's import needs are still unconfirmed ([[ASM-207]]).
+
+---
+
+### ASM-349
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-349 |
+| Created | 2026-10-26 |
+| Source | 2026-10-26-listing-filip-supplements-batch-demo-export-plan |
+| By | Filip Černý (STK-006), Marek Pillár (STK-001) |
+| Status | Decided (2026-10-26) |
+
+**Description**
+The food-supplements batch runs at the attribute-set level: one rule set for all supplements, no invented per-main-category instructions (protein, magnesium…). Parameters first (one-of-n choices work as-is); texts will be more generic. A main-category filter may help Dr. Max's team work through the batch.
+
+**Rationale**
+Dr. Max sent 500 SKUs across many main categories without per-category listing instructions; guessing them would likely be wasted work.
+
+**Impact**
+- **Quality**: Texts lose category-specific content the protein demo had.
+- **Scope**: The layered target stays the stated direction ([[ASM-068]]).
+
+---
+
+### ASM-348
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-348 |
+| Created | 2026-10-23 |
+| Source | 2026-10-23-lexie-departments-intake-sharepoint-access-satura-onboarding |
+| By | Marek Pillár (STK-001), Jura Brázdil (STK-026) |
+| Status | Decided (2026-10-23) |
+
+**Description**
+Build nothing on TAS for now; at most a low-priority opportunity, possibly to discuss with Dudaško.
+
+**Rationale**
+Departments give conflicting accounts (Copilot connects to TAS vs. TAS gets its own agent), and TAS AI has been promised for months without appearing.
+
+**Impact**
+- **Scope**: Accounting and acquisitions use cases that depend on TAS wait ([[ASM-299]]).
+- **Process**: The meeting with Šimon Ilík (BDC) loses urgency.
+
+---
+
+### ASM-347
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-347 |
+| Created | 2026-10-23 |
+| Source | 2026-10-23-lexie-departments-intake-sharepoint-access-satura-onboarding |
+| By | Jura Brázdil (STK-026) |
+| Status | Open (2026-10-23) |
+
+**Description**
+Platform capabilities built for Max/MaxBuddy (live pharmacy API, eRecepty, SPC, SPC changes) become reusable tools for any agent. Example: Lexie answers pharmacy-contact questions from the live pharmacy API instead of PDFs/Excel.
+
+**Rationale**
+Some sources are simply better: contacts in documents go stale and get duplicated; the API is current.
+
+**Impact**
+- **Quality**: Fixes the L1 contacts problem at the source ([[ASM-304]]).
+- **Scope**: Same direction as SÚKL data as a shared capability ([[ASM-336]]).
+
+---
+
+### ASM-346
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-346 |
+| Created | 2026-10-23 |
+| Source | 2026-10-23-lexie-departments-intake-sharepoint-access-satura-onboarding |
+| By | Jura Brázdil (STK-026), Jindřich Tůma (STK-003), Marek Pillár (STK-001) |
+| Status | Open (2026-10-23) |
+
+**Description**
+How Lexie reaches department documents. Today departments copy files into one "Lexie" SharePoint folder (burden; stale answers if they forget). Variants for Dr. Max: (1) the Lexie folder; (2) departments name folders and grant the platform's managed identity access; (3) blanket SharePoint access for the platform identity, with super admins selecting files in the platform (same precedent as user management). Dr. Max could also set a one-way SharePoint sync into the Lexie folder. BigHub prefers "give us rights".
+
+**Rationale**
+Lexie keeps only references, embeddings and thumbnails, and could index on demand. The approver is unknown: folder owner, Macháň (manages Legal's SharePoint), BDC via Tvarůžek (needs a stamp), Dudaško ultimately for permissions.
+
+**Impact**
+- **Delivery**: Every new department depends on it (accounting, Legal, L1).
+- **Compliance**: Variant 3 may raise a security concern at Dr. Max.
+- **Process**: Marek asks Macháň, Jura asks Tvarůžek who approves.
+
+---
+
+### ASM-345
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-345 |
+| Created | 2026-10-23 |
+| Source | 2026-10-23-lexie-departments-intake-sharepoint-access-satura-onboarding |
+| By | Jura Brázdil (STK-026) |
+| Status | Decided (2026-10-23) |
+
+**Description**
+Lexie features are built for everyone, not per department. Feature flags are possible but avoided; no per-department product variants.
+
+**Rationale**
+A feature one department asks for (e.g. split-screen source) is useful to all; separate variants multiply maintenance.
+
+**Impact**
+- **Scope**: Department requests are judged as global backlog items ([[ASM-303]]).
+
+---
+
+### ASM-344
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-344 |
+| Created | 2026-10-23 |
+| Source | 2026-10-23-lexie-departments-intake-sharepoint-access-satura-onboarding |
+| By | Jindřich Tůma (STK-003), Marek Pillár (STK-001), Jura Brázdil (STK-026) |
+| Status | Decided (2026-10-23) |
+
+**Description**
+Lexie requests go to one board in Dr. Max's Azure DevOps, labelled per department; the CC stays in X-Manager. Onboarding a department (user e-mails + SharePoint folder → library + agent, ~5 min) is not ticketed; only feature development is. Recurring source questions get a Q&A in the AI platform documentation. Jindřich creates the board, Marek fills it.
+
+**Rationale**
+Requests are arriving from L1 and other departments; onboarding is configuration in the platform console, not development.
+
+**Impact**
+- **Process**: Marek, as super admin, should onboard departments himself after a walkthrough from Jura.
+- **Related**: [[ASM-305]] (ServiceNow intake), [[ASM-345]].
+
+---
+
+### ASM-343
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-343 |
+| Created | 2026-10-23 |
+| Source | 2026-10-23-max-chatbot-gdpr-legal-review-henychova-kytyrova |
+| By | Míra Švestka (STK-085), Petra Kytýrová (STK-088) |
+| Status | Open (2026-10-23) |
+
+**Description**
+Dr. Max Legal handles AI and advertising regulation for Max internally. So far it sees no major AI-regulation risk and will add only an AI disclaimer (AI can make mistakes; verify the information). Advertising regulation is still to be checked with the responsible colleague (likely product presentation: leaflet link, correct labelling). No ads or Dr. Max brand preference in Max today.
+
+**Rationale**
+Max refuses usage advice with a fixed text and only opens the SPC at the relevant section; dozens of golden conversations test that it gives no health advice (Jura Brázdil).
+
+**Impact**
+- **Compliance**: Disclaimer feeds [[REQ-010]]; advertising check outcome pending.
+- **Scope**: Any future brand preference or promotion in Max would reopen the advertising check.
+
+---
+
+### ASM-342
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-342 |
+| Created | 2026-10-23 |
+| Source | 2026-10-23-max-chatbot-gdpr-legal-review-henychova-kytyrova |
+| By | Lenka Henychová (STK-087), Míra Švestka (STK-085) |
+| Status | Open (2026-10-23) |
+
+**Description**
+Unclear whether Dr. Max and BigHub have a data-processing agreement for Max. Jura Brázdil signed only an NDA; Švestka thinks a DPA was made with the BigHub framework contract. Legal will check.
+
+**Rationale**
+BigHub processes customer data in transit (orders, eRecept numbers, chat content) as Max's operator.
+
+**Impact**
+- **Compliance**: A missing DPA would have to be signed before go-live.
+- **Timeline**: Sits next to the end-of-November production target ([[ASM-337]]).
+
+---
+
+### ASM-341
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-341 |
+| Created | 2026-10-23 |
+| Source | 2026-10-23-max-chatbot-gdpr-legal-review-henychova-kytyrova |
+| By | Jura Brázdil (STK-026), Petra Kytýrová (STK-088) |
+| Status | Decided (2026-10-23) |
+
+**Description**
+Max shows the privacy notice (one sentence + link to the chatbot privacy policy, with a note on special categories) in the empty chat background at the start of each conversation, visually separate from the bot's bubbles; it scrolls away as the chat grows. It replaces the unreadable prototype small print under the input.
+
+**Rationale**
+The notice must be clearly legible to prove the information duty, but only at the start. The background placement avoids a loud banner (marketing concern) and is clearly not part of the bot's answer.
+
+**Impact**
+- **Delivery**: Jura implements once Kytýrová's wording arrives ([[REQ-008]]).
+- **Design**: Legal's AI disclaimer ([[ASM-343]]) can sit in the same place.
+
+---
+
+### ASM-340
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-340 |
+| Created | 2026-10-23 |
+| Source | 2026-10-23-max-chatbot-gdpr-legal-review-henychova-kytyrova |
+| By | Simona Mertová (STK-017), Petra Kytýrová (STK-088), Jura Brázdil (STK-026) |
+| Status | Open (2026-10-23) |
+
+**Description**
+Max keeps full conversations for about 30 days on legitimate interest (complaints, answer-quality checks), then deletes or anonymises them. Later, conversations go to the CC's operator system under a "chat" channel; they are paired with a customer only when the customer gave a phone/e-mail (order) or was handed to an operator.
+
+**Rationale**
+Complaints in practice come within 30 days (Mertová); the 10-year limitation period for health harm would fail a balancing test (Kytýrová). Operator handover needs server-side storage anyway (Jura). Needs a balancing test, a records-of-processing entry (Horčica, STK-089) and the privacy notice.
+
+**Impact**
+- **Scope**: Max has no server-side conversation storage today; it must be built ([[REQ-009]]).
+- **Cost**: Storage is limited; nobody pays for long retention (Mertová).
+- **Compliance**: Data-subject access for paired chats is not thought through yet.
+
+---
+
+---
+
+### ASM-332
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-332 |
+| Created | 2026-10-22 |
+| Source | Teams chat Jindřich Tůma ↔ Marek Pillár, 2026-10-22 (recalling a 2026-10-21 talk with Tomáš Dudaško) |
+| By | Jindřich Tůma (STK-003), Tomáš Dudaško (STK-010) |
+| Status | Open (2026-10-22) |
+
+**Description**
+The AI-initiative register needs a new **Technical owner** column. Jindřich's reading: it should be a Dr. Max IT person (not BigHub) who takes the initiative over as a product. BigHub delivers documentation and the rest; afterwards their IT support runs it and at most tells BigHub, as the vendor, what they want next. Where Lukáš Szücs (STK-012) is the owner, Dudaško fills it into the global register and the CZ rows can copy it. For the rest, Marek finds out. Reklamace: Petr Sláma (STK-034), temporarily.
+
+**Rationale**
+More AI projects are coming, and each needs a clear owner on the Dr. Max IT side for support and operations. The existing "IT Owner" column mixes business people (e.g. Spilka, Žižka, Neuman) and IT people, so it doesn't answer this.
+
+**Impact**
+- **Delivery**: Marek collects or confirms a technical owner per CZ row; unknowns stay -tbd-.
+- **Process**: Same thread as the IT owner for the "BigHub AI" ServiceNow service ([[ASM-306]]) and the CZ register input ([[ASM-310]], [[ASM-311]]).
+- **Open**: The definition is Jindřich's view ("we'll see"); confirm it with Dudaško.
+- **Update 2026-10-22**: Foltová and Neuman asked by Teams. Foltová asked whether it must be someone from IT ("it's always an IT project"). Marek answered: not necessarily IT or a developer, someone who "sees under the hood" of the product; for some products it could even be Jindřich. That conflicts with Jindřich's reading (Dr. Max IT owns, BigHub = vendor). Marek and Jindřich settle the definition on 2026-10-23 before contacting the rest.
+
+---
+
+### ASM-339
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-339 |
+| Created | 2026-10-22 |
+| Source | 2026-10-22-svarcova-lexie-demo-sharepoint-upload-archive-tas5 |
+| By | Renata Švarcová (STK-063), Jura Brázdil (STK-026) |
+| Status | Open (2026-10-22) |
+
+**Description**
+Archive handling in Lexie: departments keep older document versions in an archive subfolder; Lexie must warn emphatically when an answer comes from the archive. Options (Jura): a separate archive library switched on deliberately, or a per-folder / per-file comment for Lexie in settings (e.g. "archived, no longer valid"). Jura designs it.
+
+**Rationale**
+Archives add noise to indexing; Švarcová sometimes needs old versions (REQ-005).
+
+**Impact**
+- **Related**: L1's current/archive folder split ([[ASM-302]]); libraries ([[ASM-333]]).
+
+---
+
+### ASM-338
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-338 |
+| Created | 2026-10-22 |
+| Source | 2026-10-22-svarcova-lexie-demo-sharepoint-upload-archive-tas5 |
+| By | Jura Brázdil (STK-026), Renata Švarcová (STK-063), Marek Pillár (STK-001) |
+| Status | Decided (2026-10-22) |
+
+**Description**
+Departments whose documents sit on local or shared drives upload them into their folder in the SharePoint "Lexie" folder (own subfolders allowed; the platform mirrors the structure) instead of BigHub connecting each drive. Connecting a drive stays technically possible with Dr. Max infra approval.
+
+**Rationale**
+SharePoint is the free path Lexie already indexes daily; local drives come up in several departments.
+
+**Impact**
+- **Process**: the department manages its own folder structure (unlike the intranet, owned by Macháň).
+
+- **Update (2026-10-23)**: The "Lexie" folder is the testing setup for now; the long-term access model is open ([[ASM-346]]). Source: 2026-10-23-lexie-departments-intake-sharepoint-access-satura-onboarding.
+---
+
+### ASM-337
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-337 |
+| Created | 2026-10-22 |
+| Source | 2026-10-22-lexie-max-maxie-weekly-sync |
+| By | CC team (Šárka Andělová, STK-050), Jura Brázdil (STK-026) |
+| Status | Open (2026-10-22) |
+
+**Description**
+Max end-of-November rollout: the CC personally doubts the date given the technical work left before they can test. Jura thinks it is realistic: a new BigHub colleague joins him on the Dr. Max projects and takes one or two whole projects off him; the migration consumed the last three weeks.
+
+**Rationale**
+Raised by the CC when Marek asked about 2027 initiatives.
+
+**Impact**
+- **Dependency**: production switch next week ([[ASM-292]]), website snippet and openings via Tvarůžek ([[ASM-236]]).
+- **Risk**: Tvarůžek is the bottleneck for Entra, website and network openings.
+
+- **Update (2026-10-23)**: The new BigHub colleague is Lukáš Šatura (STK-060), developer alongside Jura and Filip; starts at ~0.5 FTE on TEO/OCR. Source: 2026-10-23-lexie-departments-intake-sharepoint-access-satura-onboarding.
+---
+
+### ASM-336
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-336 |
+| Created | 2026-10-22 |
+| Source | 2026-10-22-lexie-max-maxie-weekly-sync |
+| By | CC team (STK-050), Jura Brázdil (STK-026), Marek Pillár (STK-001) |
+| Status | Open (2026-10-22) |
+
+**Description**
+SÚKL data (nationwide drug shortages with end/restart dates, reimbursement) as a shared AI-platform capability: Dr. Max IT already runs an SPC mirror (DVH SPC service used by MaxBuddy), which could also store other SÚKL data. Jura checks programmatic access and files a data-warehouse ticket. Wanted by the CC (Max answering shortage questions) and Legal (marketing compliance, [[ASM-328]]).
+
+**Rationale**
+SÚKL has come up in several departments; build once, reuse everywhere.
+
+**Impact**
+- **Delivery**: DWH changes took weeks last time.
+- **Scope**: Likely a separate platform component, not a Lexie feature.
+
+---
+
+### ASM-335
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-335 |
+| Created | 2026-10-22 |
+| Source | 2026-10-22-lexie-max-maxie-weekly-sync |
+| By | CC team (STK-050), Jura Brázdil (STK-026) |
+| Status | Decided (2026-10-22) |
+
+**Description**
+Max e-shop stock moves from the public e-shop APIs (search-service / stock-status endpoints the website calls) to Magento "sellable quantity" (already net of open orders), connected internally. Jura arranges it with Tvarůžek (possibly a BDC ticket); the CC files a ticket with the exact field.
+
+**Rationale**
+The public API is unconventional; Magento is the correct source.
+
+**Impact**
+- **Related**: product-card links to e-shop products (possible); pharmacy prices likely only via DVH (Jura checks).
+
+---
+
+### ASM-334
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-334 |
+| Created | 2026-10-22 |
+| Source | 2026-10-22-lexie-max-maxie-weekly-sync |
+| By | CC team (STK-050), Jura Brázdil (STK-026) |
+| Status | Decided (2026-10-22) |
+
+**Description**
+Lexie temporary notes for methodology changes: an admin-managed list of notes, set per department, which Lexie checks on top of retrieved documents and treats as priority, calling them out explicitly in the answer. Operators see the notes as a pull-down list in the chat; notes are editable/deletable and can carry attachments (PDF/image) for operators to open; Lexie need not read attachments. Notes are removed once the methodologies are updated.
+
+**Rationale**
+Conflicting documents can't be solved inside RAG (the model blends them); changes announced by e-mail get lost among operators' mail.
+
+**Impact**
+- **Requirement**: REQ-006.
+- **Scope**: CC files a ticket; Jura builds it.
+
+---
+
+### ASM-333
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-333 |
+| Created | 2026-10-22 |
+| Source | 2026-10-22-lexie-max-maxie-weekly-sync |
+| By | Jura Brázdil (STK-026) |
+| Status | Decided (2026-10-22) |
+
+**Description**
+Lexie Next (rewritten core, faster, citations) introduces libraries: a library is a named set of documents picked from SharePoint folders, with an optional description. A knowledge base / agent gets one or more libraries, each on or off by default; users see the active libraries in the chat and can toggle optional ones. Libraries are the way to share documents across departments.
+
+**Rationale**
+The back office needs front-office methodologies and departments need shared documents ([[ASM-295]]).
+
+**Impact**
+- **Scope**: CC tries it on the back-office agent; UI still being polished.
+- **Related**: Legal and accounting onboarding ([[ASM-327]], [[ASM-298]]).
+
+---
+
+### ASM-332
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-332 |
+| Created | 2026-10-22 |
+| Source | 2026-10-22-lexie-max-maxie-weekly-sync |
+| By | CC team (STK-050), Jura Brázdil (STK-026) |
+| Status | Decided (2026-10-22) |
+
+**Description**
+Max banned-word list in the platform settings, maintained by the CC. Enforced by the hard post-filter: a sentence containing a banned word is sent back to the model to be reworded, so the word never shows. Jura first removes the words from his own prompts (Max copies his wording), starting with "skladovost" (→ "skladová dostupnost" / "dostupnost produktu") and "pobočka" (→ "lékárna"); the filter is used sparingly as it costs a round trip.
+
+**Rationale**
+Internal wording in methodologies and prompts leaks into customer replies; the list grows with new topics.
+
+**Impact**
+- **Requirement**: REQ-007.
+- **Scope**: CC files tickets.
+
+---
+
+### ASM-331
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-331 |
+| Created | 2026-10-22 |
+| Source | 2026-10-22-viapharma-reklamace-sync-slama-out-email-test-setup-fakturace-excel |
+| By | Filip Černý (STK-006), Jindřich Tůma (STK-003), Tereza Foltová (STK-013) |
+| Status | Decided (2026-10-22) |
+
+**Description**
+E-mail-agent testing for the next Reklamace phase uses no new mailbox. ~3 known suppliers (e.g. Zentiva) get a ViaPharma person's e-mail (Foltová, Egrmaierová or similar) in the knowledge base temporarily, keeping all other supplier data. When a case closes in Axapta, BigHub generates the rozvozový list, attaches it to an e-mail draft in the shared mailbox kvalitasklad@viafarma.cz; the worker sends it; the ViaPharma person replies to simulate the supplier; BigHub links the reply and the agent's sorting shows in the shared mailbox.
+
+**Rationale**
+No real supplier gets test e-mails; creating a new mailbox would cost ViaPharma time (Foltová prefers existing, even private, addresses).
+
+**Impact**
+- **Dependency**: ViaPharma names the ~3 suppliers and addresses; Axapta's inbound call for the document trigger ([[ASM-321]]).
+
+---
+
+### ASM-330
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-330 |
+| Created | 2026-10-22 |
+| Source | 2026-10-22-viapharma-reklamace-sync-slama-out-email-test-setup-fakturace-excel |
+| By | Jindřich Tůma (STK-003), Tereza Foltová (STK-013) |
+| Status | Open (2026-10-22) |
+
+**Description**
+The Reklamace next-batch date is reset: ViaPharma (Foltová with Sláma) commits to a date for its inputs (Swagger approval, error-message texts, AX changes, test e-mails); BigHub needs 5–7 working days after that and then proposes when ViaPharma blocks testing in calendars.
+
+**Rationale**
+Sláma is out the week of 26. 10. (international WMS meetings) and at BrightPick from 16. 11.; Spilka is also unavailable. A committed date beats a promise.
+
+**Impact**
+- **Delivery**: [[ASM-323]] (4 November) at risk; the client roadmap Excel ([[ASM-324]]) must be re-dated once the date is known.
+- **Risk**: Sláma's AX work for Phase 1 + 1.1a may not fit before BrightPick.
 
 ---
 
@@ -478,7 +985,7 @@ BigHub can't promise dates while the client's inputs are open; a dynamic timelin
 | Created | 2026-10-21 |
 | Source | 2026-10-21-reklamace-roadmap-timeline-estimates |
 | By | Jindřich Tůma (STK-003), Filip Černý (STK-012) |
-| Status | Decided (2026-10-21) |
+| Status | At risk (2026-10-22) |
 
 **Description**
 The next Reklamace batch (Phase 1 + 1.1: new UI, login, mailbox integration, X-Manager) is targeted for delivery by 4 November 2026, dependent on the client's inputs (Swagger approval, X-Manager API key, Axapta readiness); the client is asked to reserve 4–6 November for testing (UAT 1 week). Mon–Tue of the week of 2026-10-26 is possible but very optimistic and not promised.
@@ -488,6 +995,8 @@ Filip's possible leave on 2026-10-29/30; BigHub-side work estimated at ~6 MD (pe
 
 **Impact**
 - **Delivery**: Presented at the 2026-10-22 ViaPharma sync; supersedes [[ASM-317]]'s end-of-October target.
+
+**Update (2026-10-22)**: At risk. Sláma is unavailable the week of 26. 10. (international WMS meetings), so ViaPharma's inputs won't arrive next week; Jindřich said BigHub could finish by Tue 3. 11. only if inputs came next week. A new date depends on ViaPharma committing to one ([[ASM-330]]). Source: 2026-10-22-viapharma-reklamace-sync-slama-out-email-test-setup-fakturace-excel.
 
 ---
 
@@ -594,6 +1103,9 @@ Early feedback through a working tool in their hands; iterative delivery.
 **Impact**
 - **Delivery**: After Reklamace priorities; Filip chooses timing.
 
+**Update (2026-10-22)**: Dr. Max / ViaPharma infra is ready; Filip deploys the mock the week of 26. 10. so logistics can judge recognition and route matching. Source: 2026-10-22-viapharma-reklamace-sync-slama-out-email-test-setup-fakturace-excel.
+
+- **Update (2026-10-26)**: Mock deploy blocked: BDC infra misconfigured something (Filip, 2026-10-26). Source: 2026-10-26-listing-filip-supplements-batch-demo-export-plan.
 ---
 
 ### ASM-317
@@ -628,7 +1140,7 @@ BigHub's own remaining work is only login + mailbox; everything else waits on lo
 | Status | Decided (2026-10-20) |
 
 **Description**
-Before any loan or purchase, Canon brings a DR-G2090 (optionally a DR-G2110) for a first trial in Capture On Touch, then lends it for a test at Pavlov where 3 drivers run their real papers. Tereza Foltová arranges the test with Mr. Mrdlička (STK-085).
+Before any loan or purchase, Canon brings a DR-G2090 (optionally a DR-G2110) for a first trial in Capture On Touch, then lends it for a test at Pavlov where 3 drivers run their real papers. Tereza Foltová arranges the test with Mr. Mrdlička (STK-090).
 
 **Rationale**
 Hnilička: drivers are "a special category", and loading the tray is a known failure point, so ease of use and robustness must be seen with real drivers. Žižka wants live feedback.
@@ -636,6 +1148,8 @@ Hnilička: drivers are "a special category", and loading the tray is a known fai
 **Impact**
 - **Delivery**: Next hands-on step for Fakturace; the standalone scanning demo ([[ASM-281]]) has not happened yet.
 - **Dependency**: Canon device availability; Tereza / Mrdlička scheduling.
+
+**Update (2026-10-22)**: The test checks mechanical durability with drivers' handling first; the device may be rejected on that alone (Žižka). Reading quality and connectivity are not a concern (Filip; Canon software looks promising). Foltová arranges it with Hnilička, aiming for the week of 26. 10. Source: 2026-10-22-viapharma-reklamace-sync-slama-out-email-test-setup-fakturace-excel.
 
 ---
 
@@ -880,6 +1394,7 @@ Today BigHub's infra requests go by email through Vladislav Tvarůžek with no v
 - **Cost**: Resolver licence(s); payer -tbd- ([[ASM-306]]).
 - **Delivery**: Better visibility into infra/change requests.
 
+- **Update (2026-10-23)**: Lexie feature requests go to one Lexie board in Dr. Max's Azure DevOps, labelled per department ([[ASM-344]]). Source: 2026-10-23-lexie-departments-intake-sharepoint-access-satura-onboarding.
 ---
 
 ### ASM-304
@@ -893,7 +1408,7 @@ Today BigHub's infra requests go by email through Vladislav Tvarůžek with no v
 | Status | Open (2026-10-19) |
 
 **Description**
-Lexie should be prompt-tuned (Jura Brázdil) so that a question about a "contact" or "phone" returns all matching columns (pharmacy, manager, technician; mobile/landline), even when column names are inconsistent ("vedoucí telefon", "mobil", "mobilní"). When it finds several overlapping sources (Excel vs. Markdown vs. text copy), it should say so or ask which one to use.
+Lexie should be prompt-tuned (Jura Brázdil) so that a question about a "contact" or "phone" returns all matching columns (pharmacy, manager, technician; mobile/landline), even when column names are inconsistent ("vedoucí telefon", "mobil", "mobilní"). When it finds several overlapping sources (Excel vs. Markdown vs. text copy), it should say so or ask which one to use. Where the sources conflict, it should show the differences or ask; it must not silently pick one and return an incomplete answer (Jindřich's Teams summary, 2026-10-22).
 
 **Rationale**
 In the demo, "phone number of pharmacy 191" returned only 2 of 4 numbers and answered from a Markdown copy instead of the Excel.
@@ -901,6 +1416,7 @@ In the demo, "phone number of pharmacy 191" returned only 2 of 4 numbers and ans
 **Impact**
 - **Scope**: Lexie prompt changes; also needs source cleanup by L1 ([[ASM-302]]).
 
+- **Update (2026-10-23)**: Lexie already partly asks when sources overlap (e.g. change of delivery address → asks the delivery type, links three PDFs); a concrete failing example is needed. The contacts Excel was duplicated ~100× across formats; Jura retests on Lexie Next and Macháň is asked to retry. See [[REQ-012]]. Source: 2026-10-23-lexie-departments-intake-sharepoint-access-satura-onboarding.
 ---
 
 ### ASM-303
@@ -923,6 +1439,7 @@ Macháň is a heavy L1 user; switching between sources and re-asking for more co
 - **Process**: Owner decision per [[ASM-018]] / [[ASM-306]]; popular asks across departments go into a release.
 - **Design**: Design decisions sit at AI Platform level.
 
+- **Update (2026-10-23)**: Split-screen source view = global feature for the Lexie Azure DevOps board ([[ASM-344]]), not per department. Exact supporting sentence next to the citation is feasible (one extra model call, parked); highlighting the location inside the PDF is hard (chunks + thumbnails). See [[REQ-011]]. Source: 2026-10-23-lexie-departments-intake-sharepoint-access-satura-onboarding.
 ---
 
 ### ASM-302
@@ -938,6 +1455,8 @@ Macháň is a heavy L1 user; switching between sources and re-asking for more co
 **Description**
 L1 support keeps its Lexie source documentation current itself. Old versions of the same document are not handled with date headers; the recommended approach is separate current and archive (historical) folders, with the current folder treated as primary. File format matters little (Word/PDF/text all work; one format is preferred); Lexie does not read images, and Claude-generated Markdown worked poorly.
 
+**Update (2026-10-22)**: Jindřich's Teams summary of the meeting treats the version rule as not closed: the current/historical folder split and a date or version inside the document were both mentioned, but no final rule was set. He also notes the best source format was not technically confirmed (pending Jura). To align with Jindřich on 2026-10-23.
+
 **Rationale**
 Duplicates and old versions make Lexie hallucinate more; the folder split is proven on another project.
 
@@ -945,6 +1464,7 @@ Duplicates and old versions make Lexie hallucinate more; the folder split is pro
 - **Quality**: Answer quality depends on source hygiene.
 - **Related**: Similar archive handling for accounting ([[ASM-298]]).
 
+- **Update (2026-10-23)**: Jura removed duplicates in the Lexie Next engine (the indexer now shows one of identical documents). He can apply rules Dr. Max defines (e.g. prefer the newer document) but can't guarantee currency; the version rule stays with Dr. Max (BigHub recommends current vs. archive folders). Marek e-mails Macháň. Source: 2026-10-23-lexie-departments-intake-sharepoint-access-satura-onboarding.
 ---
 
 ### ASM-301
@@ -966,6 +1486,8 @@ Would cut repeated questions to accounting and to the CC.
 **Impact**
 - **Scope**: New Lexie audience (~600 pharmacies); owner -tbd- (Vosmek? Mertová?).
 - **Dependencies**: AI Platform access for pharmacy users ([[ASM-290]]); the Lexie rights model ([[ASM-295]]).
+
+**Update (2026-10-22)**: Švarcová wants the intranet directives (ČLH) and CC how-tos for pharmacies (e.g. receiving an e-shop parcel) reachable by pharmacies, to stop basic questions to accounting, the IT helpdesk and the CC; a shared library ([[ASM-333]]) would be the vehicle. Source: 2026-10-22-svarcova-lexie-demo-sharepoint-upload-archive-tas5.
 
 ---
 
@@ -990,6 +1512,8 @@ Prevention: accountants don't stall and everything is processed on time. An earl
 - **Budget**: Likely automation rather than AI ([[ASM-233]]).
 - **Context**: Accounting moves to a new cloud version of its accounting software in 2027, so Švarcová sees little point in other accounting initiatives on the current system. She prefers hard-coded automation over AI where that's enough.
 
+**Update (2026-10-22)**: No new initiatives from accounting for now: financial audit, IT audit and Deloitte's process review are running; she waits for TAS 5 and the cloud version of Benefit before anything else. Numbers for this row not supplied; row kept as a candidate. Source: 2026-10-22-svarcova-lexie-demo-sharepoint-upload-archive-tas5.
+
 ---
 
 ### ASM-299
@@ -1012,6 +1536,9 @@ Avoids building what TAS already does; the gap is user awareness.
 - **Conflict**: Švarcová's view on lease contracts cuts against Šišo's use case 1 (compare / extract lease contracts from TAS). Left open until decided with Šišo.
 - **Scope**: Lexie sources stay SharePoint + local files ([[ASM-298]]).
 
+**Update (2026-10-22)**: TAS stays out of scope. Per Šimon Ilík (BDC, TAS owner; via Švarcová), TAS 5 will connect to Dr. Max's own AI models rather than carry its own AI. This conflicts with Legal's account (a TAS 5 AI agent promised for ~1.5 years, 2026-10-21); open — Marek arranges a meeting with Ilík. Source: 2026-10-22-svarcova-lexie-demo-sharepoint-upload-archive-tas5.
+
+- **Update (2026-10-23)**: BigHub-internal: conflicting signals across departments (Copilot connects to TAS vs. TAS gets its own agent), promised for months and not there; build nothing on TAS for now ([[ASM-348]]). Source: 2026-10-23-lexie-departments-intake-sharepoint-access-satura-onboarding.
 ---
 
 ### ASM-298
@@ -1035,6 +1562,8 @@ Too many directives to navigate; Švarcová is the bottleneck for questions.
 - **Capacity**: BigHub capacity is limited ([[ASM-190]]); Marek didn't commit to end of 2026 vs. early 2027.
 - **Access**: Marek can't reach the internal share from an external laptop.
 - **Requirements**: REQ-004, REQ-005.
+
+**Update (2026-10-22)**: Sources: three intranet SharePoint folders (company-wide ČLH directives, CC documents for pharmacies; links sent to Marek, BigHub access pending via Szücs) plus her own directives and procedures, which she uploads into the accounting folder of the SharePoint "Lexie" folder (own subfolders incl. archive); the S: drive is not connected ([[ASM-338]]). BigHub configures libraries, knowledge base, users and admins; she provides user/admin lists and joins testing (golden conversations). Other departments' Lexie admins seeing the documents is fine; no sensitive data; PDFs have a text layer. Demo done; she is positive. Source: 2026-10-22-svarcova-lexie-demo-sharepoint-upload-archive-tas5.
 
 ---
 
@@ -1068,7 +1597,7 @@ Unblocks the Reklamace KB development during Machata's absence.
 | Created | 2026-10-15 |
 | Source | 2026-10-15-lexie-max-maxie-weekly-sync |
 | By | Jura Brázdil (STK-026), Šárka Andělová (STK-050) |
-| Status | Open (2026-10-15) |
+| Status | Decided (2026-10-23) |
 
 **Description**
 Dr. Max's lawyer engaged an external law firm on customer data and consent and wants a meeting with BigHub (Jura, Jindřich, Marek) on data flows and integrations, proposed Fri 2026-10-23 9:00–10:00. Today Max stores only error events (no message content) and the CC's ratings; the test feedback form won't be in production. Chats go through Azure OpenAI (no access/training guarantee) back to the browser without storage. Richer reporting (e.g. user region) is personal data, especially if linkable to eRecepty, and must be anonymised. The CC will think about what to measure.
@@ -1079,6 +1608,7 @@ The lawyer wants everything specified in detail.
 **Impact**
 - **Compliance**: Continues [[ASM-102]].
 - **Scope**: Reporting features depend on the outcome.
+- **Update (2026-10-23)**: Meeting held. Aggregate usage counters (query types, factual answers, errors, conversations + message counts) and star ratings are acceptable if the privacy policy lists them; the rating is the user's choice. Conversation retention moves to [[ASM-340]]. Source: 2026-10-23-max-chatbot-gdpr-legal-review-henychova-kytyrova.
 
 ---
 
@@ -1101,6 +1631,8 @@ Admins will be able to add departments in Lexie settings once the platform launc
 **Impact**
 - **Scope**: Builds on [[ASM-238]] and in-platform user management ([[ASM-290]]).
 
+**Update (2026-10-22)**: Lexie libraries ([[ASM-333]]) cover cross-department document sharing; the CC tries them on the back-office agent. Source: 2026-10-22-lexie-max-maxie-weekly-sync.
+
 ---
 
 ### ASM-294
@@ -1121,6 +1653,8 @@ When Max shows widgets (products, pharmacies), it adds a very short polite line 
 
 **Impact**
 - **Quality**: Prompt and UI changes; extends the golden-conversation set.
+
+**Update (2026-10-22)**: Fixes on a test candidate (not yet stable): phone number on the pharmacy card with a call button (copy-on-click as alternative); "what can you do" list (product, stock, pharmacy, order status, eRecept); accompanying sentence for product results; prompt leaks ("focus", "in stock") removed. The hard post-filter now checks each sentence before display. The CC tests the candidate against tickets. Source: 2026-10-22-lexie-max-maxie-weekly-sync.
 
 ---
 
@@ -1143,6 +1677,8 @@ The CC wants fewer manual records, not more. Rules on the API's JSON are easy to
 **Impact**
 - **Data**: Depends on the type and exception fields being present in the branch API JSON.
 
+**Update (2026-10-22)**: Implemented: only type 1 in the branch API; labs, warehouses and HQ removed. CC caveat: "viewed" (region 996) is a special case in its filters. Source: 2026-10-22-lexie-max-maxie-weekly-sync.
+
 ---
 
 ### ASM-292
@@ -1164,6 +1700,8 @@ The infrastructure finally moved; Max work had waited for it. Almost none of the
 **Impact**
 - **Timeline**: Depends on infra while Tvarůžek is away (Martin Dubina covers).
 - **CC relationship**: Long fix backlog competes with the MaxBuddy/Lexie production move ([[ASM-236]]).
+
+**Update (2026-10-22)**: New environment goes to production by end of the week of 2026-10-26; user management is the last item. The CC uses the platform (Lexie Next, Max) from now on. Source: 2026-10-22-lexie-max-maxie-weekly-sync.
 
 ---
 
@@ -1208,6 +1746,10 @@ Raised by Jura with Vosmek, who said Dudaško decides; Jura asked Dudaško on Te
 - **Delivery**: Jura targets next week (per 2026-10-15); until then everyone in the group is a superadmin.
 - **Supersedes**: Lexie test-account workarounds ([[ASM-063]]).
 - **Security**: Responsibility for access mapping shifts to BigHub's platform; audit logs mitigate.
+
+**Update (2026-10-22)**: Reklamace logins use the platform's shared user management; expected working 22.–23. 10., simplifying the later handover. Source: 2026-10-22-viapharma-reklamace-sync-slama-out-email-test-setup-fakturace-excel.
+
+**Update (2026-10-22)**: Mistake on 2026-10-22: CC users were put in SuperAdmins; being lowered to Admins via Tvarůžek (access may drop briefly). Entra groups act as a ceiling (SuperAdmins = Jura, Dudaško, platform staff; Admins give any Dr. Max account up to their own rights; Users only use apps); an admin can switch roles down, not up. Adding a user = platform (e-mail + chat / department / reporting rights) + Entra Users group via Tvarůžek. Test users / "view as user" before the production release. Source: 2026-10-22-lexie-max-maxie-weekly-sync.
 
 ---
 
@@ -1448,6 +1990,8 @@ Sláma: requirements keep changing in meetings he isn't in; "the devil is in the
 - **Dependency**: Written requirements before the Swagger update.
 
 **Update (2026-10-15)**: Sláma's open question for the user description: when the billing record already exists for an incomplete document and the complete one arrives, should Axapta update it? And overwrite values that transport staff edited manually? Tereza and Žižka write the user description on 10-16 and email it to Marek. Source: 2026-10-15-viapharma-reklamace-sync-pickup-warehouse-zebra-brightpick-capacity.
+
+**Update (2026-10-22)**: Marek showed the Fakturace mapping Excel (columns F–I: paper / Axapta / BigHub app / shared storage, per Žižka's solution) and sends it 22. 10. with column J "komentáře logistiky". Žižka's user description is written but held until Sláma reviews it; not expected the week of 26. 10. (Sláma's WMS meetings). Source: 2026-10-22-viapharma-reklamace-sync-slama-out-email-test-setup-fakturace-excel.
 
 ---
 
@@ -1856,6 +2400,8 @@ Filip: "there are plenty of solutions, it isn't a big problem, but we have to de
 **Update (2026-10-14)**: Reopened. The storage location is decided (KB), but the source of the value is not. Filip: "where the warehouse addresses come from — we simply have to know that" [translated from Czech]. Sláma's Excel has it, but not always correctly (Pavlov vs. Brno). Variants: (1) logistics supplies correct data (preferred); (2) employee → warehouse table keyed by login email (needs upkeep); (3) device / network IP (network setup unknown); (4) one login per warehouse; (5) warehouse dropdown in the app; (6) per-warehouse subdomain. Not blocking: used only in the delivery-note footer, needed before production. It goes into the spec as a question for logistics. Source: 2026-10-14-reklamace-sync-filip-warehouse-address-xmanager-error-messages.
 
 **Update (2026-10-15)**: Resolved by Sláma: two different facts were mixed up. (1) The originating warehouse is fixed per user ("each person works in one warehouse") and comes from the login, or Axapta returns it via the API when the SP label is scanned. (2) The pickup location is a supplier property, written as a sentence in the KB (e.g. "Dodavatel vyzvedává ve skladu Brno"). If nothing is written, the default is the originating warehouse; logistics corrects wrong entries, and expedition knows each case so the KB fills in over time. Jana Egrmaierová already has Brno noted. Not a blocker. The six variants from 2026-10-14 are no longer needed. Source: 2026-10-15-viapharma-reklamace-sync-pickup-warehouse-zebra-brightpick-capacity.
+
+**Update (2026-10-22)**: Confirmed settled (Filip had flagged it as open on 10-21): minimal changes on both sides. Source: 2026-10-22-viapharma-reklamace-sync-slama-out-email-test-setup-fakturace-excel.
 
 ---
 
@@ -2489,6 +3035,8 @@ Mertová: simplest, no customer exposure. Jura: drmax.cz integration carries sub
 - **Timeline**: Live-site integration is on the critical path for the end-of-October public launch ([[ASM-100]]).
 
 **Update (2026-10-15)**: Jura sends the domain request on 2026-10-15, drmax-space test site first, together with production eRecept/order access. Tvarůžek is on holiday; Martin Dubina covers. Estimate ~14 days ([[ASM-292]]). Source: 2026-10-15-lexie-max-maxie-weekly-sync.
+**Update (2026-10-22)**: Website integration needs one line of JavaScript on drmax.cz / drmax-space plus network openings (SPC, orders, internal APIs; usually hours). Jura requests it after next week's service-address change; contact via Tvarůžek (slow to answer), the CC nudges on its side. Source: 2026-10-22-lexie-max-maxie-weekly-sync.
+
 ---
 
 ### ASM-235
@@ -3056,6 +3604,7 @@ A Magento import can change only one attribute per import ([[ASM-210]]). Nobody 
 - **Scope**: Supersedes [[ASM-065]] and [[ASM-067]]. The Listing spec and roadmap need rewriting.
 - **Value**: Neuman sees the enrichment + export path as possibly more helpful than the new-listing flow ("hundreds of hours of manual work").
 
+- **Update (2026-10-26)**: Filip fears Listing dies on integrations and stays a PoC; Marek sees it as the most promising project. Neuman call with Marek + Jindřich on 2026-10-29. Source: 2026-10-26-listing-filip-supplements-batch-demo-export-plan.
 ---
 
 ### ASM-208
@@ -3083,6 +3632,7 @@ This mirrors the protein POC at a bigger scale and uses real work the team is do
 - **Dependencies**: Míša and the parameter specialist deliver the catalogue, batch, examples and export format.
 - **Supersedes**: [[ASM-032]].
 
+- **Update (2026-10-26)**: Michaela Vdovicynová sent the material on 2026-10-23: a filled-in example file and 500 unfilled supplements spread across many main categories (protein, magnesium, collagen, vitamin C…), not one complete category, and no per-category listing instructions. Whether 500 is a first tranche of the ~2,000 is open (Thursday call with Neuman). Batch handled at attribute-set level ([[ASM-349]]). Source: 2026-10-26-listing-filip-supplements-batch-demo-export-plan.
 ---
 
 ### ASM-209
@@ -5599,10 +6149,10 @@ Jura assessed the in-app role-switcher as too risky/complex given how strict BDC
 | Created | 2026-09-17 |
 | Source | 2026-09-17-lexie-max-maxie-weekly-sync |
 | By | Šárka Andělová (STK-050) |
-| Status | Open (2026-09-17) |
+| Status | Decided (2026-10-23) |
 
 **Description**
-GDPR consent/anonymization for the Max chatbot (phone/email collection) is unresolved — needs input from Lenka Henichová (DPO) before any consent copy is drafted.
+GDPR consent/anonymization for the Max chatbot (phone/email collection) is unresolved — needs input from Lenka Henychová (DPO) before any consent copy is drafted.
 
 **Rationale**
 Andělová flagged that no consent checkbox or anonymization step currently exists; Jura confirmed BigHub hadn't planned for it. Jindřich judged this needs DPO sign-off rather than an ad hoc BigHub/Dr. Max text, given Dr. Max's existing "ochrana osobních údajů" page already covers adjacent products (Maxí voicebot). Jura clarified the current architecture reduces but doesn't eliminate the exposure: nothing is stored server-side today (conversations live only in the user's browser); future analytics will store only aggregate statistics. The one genuinely new sensitive-data type is e-recepty (e-prescription) content, not previously consented for this use.
@@ -5612,6 +6162,9 @@ Andělová flagged that no consent checkbox or anonymization step currently exis
 - **Timeline**: Sits on the critical path to phase 2/3 of the go-live plan (public visibility on doktormax.cz).
 
 **Update (2026-10-15)**: Dr. Max's lawyer engaged an external law firm, which now has an output; a meeting with BigHub is proposed for 2026-10-23 ([[ASM-296]]). Source: 2026-10-15-lexie-max-maxie-weekly-sync.
+
+**Update (2026-10-23)**: Decided with the external data-protection lawyer Petra Kytýrová (STK-088) and the DPO Lenka Henychová (STK-087). Consent is not the legal basis: performance of contract (the chatbot is a sub-service of the pharmacy service) plus the Art. 9 exception for management of health-care systems for health data. Any product question counts as health data under EU case law; eRecepty beyond doubt. The information duty is met by one legible sentence + link to a chatbot privacy policy at the start of the chat ([[ASM-341]]). Kytýrová drafts the texts during the week of 2026-10-26. Source: 2026-10-23-max-chatbot-gdpr-legal-review-henychova-kytyrova.
+
 ---
 
 ### ASM-101
@@ -6373,6 +6926,7 @@ Today's model is flat — 1 listovací minimum per category, no matter how deep 
 
 
 **Update (2026-09-30)**: The anchor is the **legislative group** (~6–7 groups, each SKU in exactly one, which gives each SKU a fixed primary category). Sub-splitting (vitamins, minerals, children, herbal, other) with layered rules (base standard → attribute set → subcategory) comes later. Start with the whole group as one unit. Source: 2026-09-30-listing-reset-neuman-enrichment-first-doplnky-stravy.
+- **Update (2026-10-26)**: Layered rules (all products → attribute set, ~14 planned → main category) remain the target, but Dr. Max still hasn't defined main categories (open since April). The supplements batch runs at attribute-set level ([[ASM-349]]). Source: 2026-10-26-listing-filip-supplements-batch-demo-export-plan.
 ---
 
 ### ASM-067

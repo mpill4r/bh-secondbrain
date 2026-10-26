@@ -1,14 +1,14 @@
 ---
 last_updated: 2026-10-16
 type: external
-attendees: [Renata Švarcová, Simona (surname unclear), Jindřich Tůma, Marek Pillár]
+attendees: [Renata Švarcová, Simona Vaxmonská, Jindřich Tůma, Marek Pillár]
 recording_link:
 ---
 
 # Brno Accounting (Švarcová) — Lexie over Accounting Directives, File-Transfer Monitoring Idea & Lexie for Pharmacies
 
 **Date**: 2026-10-16
-**Attendees**: Renata Švarcová (Dr. Max CZE, Brno accounting, STK-063), a colleague "Simona"/"Simča" (Brno accounting; surname unclear, heard as "Vaxmonská"/"Vartsmonská"), Jindřich Tůma (BigHub / Dr. Max), Marek Pillár (BigHub, PM)
+**Attendees**: Renata Švarcová (Dr. Max CZE, Brno accounting, STK-063), a colleague Simona Vaxmonská ("Simča", Brno accounting; name confirmed by PM 2026-10-22), Jindřich Tůma (BigHub / Dr. Max), Marek Pillár (BigHub, PM)
 **Type**: external
 **Recording**: N/A (Teams transcript, pasted)
 **Previous session**: N/A (first meeting)
@@ -92,7 +92,7 @@ First meeting with the Brno accounting team. They want **Lexie over their accoun
 - **TAS owner and vendor**: exact names (heard as "simona Ilík" at BDC and "Nate Group").
 - **GoAnywhere replacement** (from 2027-01-01): which tool, and will its own monitoring make the file-transfer initiative redundant?
 - **New accounting software** (cloud, 2027): which system and when? It gates other accounting initiatives.
-- **Who is "Simona"** in Švarcová's team? Her full name and role?
+- ~~**Who is "Simona"** in Švarcová's team?~~ Answered 2026-10-22: Simona Vaxmonská (role -tbd-).
 - **Pharmacy Lexie**: who owns it (Vosmek? Mertová?), and which documents go in?
 
 ## Sentiment & Tone
