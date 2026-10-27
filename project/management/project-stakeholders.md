@@ -243,7 +243,7 @@ owner: Marek Pillár
 |-------|-------|
 | ID | STK-085 |
 | Name | Míra Švestka |
-| Aliases | — |
+| Aliases | pán Švestka (addressed as „pán Švestka“, per PM 2026-10-27) |
 | Organization | Dr. Max CZE — Legal department (Právní oddělení) |
 | Role | Primary working contact for Legal's Lexie / AI use cases (knowledge-master role); business owner is Martin Svoboda (STK-062) |
 | Location | -tbd- |
