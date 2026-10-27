@@ -1,6 +1,6 @@
 ---
-last_updated: 2026-10-26
-last_updated_by: auto — project-meeting routing
+last_updated: 2026-10-27
+last_updated_by: manual — conversational
 owner: Marek Pillár
 ---
 
@@ -1039,7 +1039,7 @@ owner: Marek Pillár
 | Expectations | -tbd- |
 | Last interaction | -tbd- (not yet directly contacted by BigHub) |
 | Status | Active |
-| Notes | Named as an idea owner in the BQ tracker's ideas backlog; relevant to the end-of-November department backlog effort ([[ASM-161]]). Source: BQ tracker (new_Přehled), 2026-09-25 |
+| Notes | Named as an idea owner in the BQ tracker's ideas backlog; relevant to the end-of-November department backlog effort ([[ASM-161]]). Source: BQ tracker (new_Přehled), 2026-09-25 2026-10-27: no public source links him to Dr. Max; proposed to Jindřich as a 2027 contact to be identified first. |
 
 ### STK-054
 
@@ -1058,7 +1058,7 @@ owner: Marek Pillár
 | Expectations | -tbd- |
 | Last interaction | -tbd- (not yet directly contacted by BigHub) |
 | Status | Active |
-| Notes | Named as an idea owner in the BQ tracker's ideas backlog; relevant to the end-of-November department backlog effort ([[ASM-161]]). Source: BQ tracker (new_Přehled), 2026-09-25 |
+| Notes | Named as an idea owner in the BQ tracker's ideas backlog; relevant to the end-of-November department backlog effort ([[ASM-161]]). Source: BQ tracker (new_Přehled), 2026-09-25 2026-10-27: web research — Obchodní manažer e-shop, Dr. Max CZE (Androsa event, Sep 2025); LinkedIn: E-commerce Sales Director. Proposed to Jindřich as a 2027 contact (via Šimoník/Dvořák). |
 
 ### STK-055
 
@@ -1096,7 +1096,7 @@ owner: Marek Pillár
 | Expectations | -tbd- |
 | Last interaction | -tbd- (not yet directly contacted by BigHub) |
 | Status | Active |
-| Notes | Named as an idea owner in the BQ tracker's ideas backlog; relevant to the end-of-November department backlog effort ([[ASM-161]]). Source: BQ tracker (new_Přehled), 2026-09-25 |
+| Notes | Named as an idea owner in the BQ tracker's ideas backlog; relevant to the end-of-November department backlog effort ([[ASM-161]]). Source: BQ tracker (new_Přehled), 2026-09-25 2026-10-27: web research — IT Operations Teamleader, Dr.Max Česko (RocketReach). Proposed to Jindřich as a 2027 contact (helpdesk idea, bundle with Macháň/ServiceNow). Possibly the "Honza Štangl" DevOps contact — unconfirmed. |
 
 ### STK-058
 
@@ -1191,7 +1191,7 @@ owner: Marek Pillár
 | Expectations | Lexie must be accurate: answer only from documents, cite source + document date, flag archived content. Wants examples of what other companies' accounting teams do with AI |
 | Last interaction | 2026-10-22 (2026-10-22-svarcova-lexie-demo-sharepoint-upload-archive-tas5) |
 | Status | Active |
-| Notes | Named by Lukáš Szücs (STK-012) as the Brno accounting contact; the department wants to use Lexie. Use case -tbd-. Supersedes the PM to-do note "proxy Radim / H. Sovka?": the proxy is Szücs. Referred via Szücs. Source: 2026-10-06-lexie-new-departments-szucs-brief (documents/client) **2026-10-16**: first meeting (with Jindřich, Marek and colleague Simona Vaxmonská, STK-076). Wants Lexie over accounting directives ([[ASM-298]]); says lease contracts are too sensitive for AI ([[ASM-299]]); proposed pharmacy file-transfer monitoring ([[ASM-300]]) and Lexie for pharmacies ([[ASM-301]]). Accounting moves to a new cloud accounting system in 2027; a Deloitte process review with AI focus is running in her department. Source: 2026-10-16-svarcova-brno-accounting-lexie-2027-initiatives. **2026-10-22**: Lexie demo; sentiment improved from guarded to positive ("we're looking forward to Lexie"). Sent links to 3 intranet folders; uploads her own documents into SharePoint; manages her folder structure herself. No new 2027 initiatives (financial + IT audit, Deloitte; waits for TAS 5 and cloud Benefit). Pointed BigHub to Šimon Ilík (BDC) on TAS 5. Source: 2026-10-22-svarcova-lexie-demo-sharepoint-upload-archive-tas5. As of 2026-10-23: accounting can test on the Lexie test link from ~2026-10-26 once Tvarůžek fixes security groups; users added as admins. Source: 2026-10-23-lexie-departments-intake-sharepoint-access-satura-onboarding |
+| Notes | Named by Lukáš Szücs (STK-012) as the Brno accounting contact; the department wants to use Lexie. Use case -tbd-. Supersedes the PM to-do note "proxy Radim / H. Sovka?": the proxy is Szücs. Referred via Szücs. Source: 2026-10-06-lexie-new-departments-szucs-brief (documents/client) **2026-10-16**: first meeting (with Jindřich, Marek and colleague Simona Vaxmonská, STK-076). Wants Lexie over accounting directives ([[ASM-298]]); says lease contracts are too sensitive for AI ([[ASM-299]]); proposed pharmacy file-transfer monitoring ([[ASM-300]]) and Lexie for pharmacies ([[ASM-301]]). Accounting moves to a new cloud accounting system in 2027; a Deloitte process review with AI focus is running in her department. Source: 2026-10-16-svarcova-brno-accounting-lexie-2027-initiatives. **2026-10-22**: Lexie demo; sentiment improved from guarded to positive ("we're looking forward to Lexie"). Sent links to 3 intranet folders; uploads her own documents into SharePoint; manages her folder structure herself. No new 2027 initiatives (financial + IT audit, Deloitte; waits for TAS 5 and cloud Benefit). Pointed BigHub to Šimon Ilík (BDC) on TAS 5. Source: 2026-10-22-svarcova-lexie-demo-sharepoint-upload-archive-tas5. As of 2026-10-23: accounting can test on the Lexie test link from ~2026-10-26 once Tvarůžek fixes security groups; users added as admins. Source: 2026-10-23-lexie-departments-intake-sharepoint-access-satura-onboarding 2026-10-26 (e-mail): has SharePoint access; uploaded the accounting documents from S:\ into the Lexie folder; won't copy company-wide intranet directives (duplication, uncontrolled updates — [[REQ-015]]) and chases Szücs for BigHub access; test users Eva Grimová, Ludmila Pavelková, Naděžda Vožková (sent to Jura 2026-10-27). |
 
 ### STK-064
 
@@ -1572,6 +1572,44 @@ owner: Marek Pillár
 | Last interaction | -tbd- |
 | Status | Active |
 | Notes | Named by Stanislavová and confirmed by Kořenek; contact shared in the Teams chat. Source: 2026-10-19-finance-duvo-deloitte-analysis-global-ai-registry |
+
+### STK-091
+
+| Field | Value |
+|-------|-------|
+| ID | STK-091 |
+| Name | Silvia Stehlíková |
+| Aliases | — |
+| Organization | Dr. Max CZE |
+| Role | HR Manager (most senior HR role found publicly; since 2015) |
+| Location | -tbd- |
+| Influence | -tbd- |
+| Sentiment | -tbd- |
+| Sentiment context | -tbd- |
+| Communication preference | -tbd- |
+| Expectations | -tbd- |
+| Last interaction | -tbd- |
+| Status | Active |
+| Notes | Web research 2026-10-27 (LinkedIn, RocketReach). Proposed to Jindřich as the HR owner for 2027 initiatives; HR already has a subfolder in the SharePoint "Lexie" folder. Not contacted yet. |
+
+### STK-092
+
+| Field | Value |
+|-------|-------|
+| ID | STK-092 |
+| Name | Lucie Plachá |
+| Aliases | — |
+| Organization | ViaPharma CZE |
+| Role | HR Manager – Logistika (ViaPharma) |
+| Location | -tbd- |
+| Influence | -tbd- |
+| Sentiment | -tbd- |
+| Sentiment context | -tbd- |
+| Communication preference | -tbd- |
+| Expectations | -tbd- |
+| Last interaction | -tbd- |
+| Status | Active |
+| Notes | Web research 2026-10-27 (LinkedIn). Proposed to Jindřich as a 2027 contact for logistics HR (shift planning, temporary workers). Not contacted yet. |
 
 ### STK-090
 

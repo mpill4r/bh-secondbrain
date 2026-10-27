@@ -207,3 +207,7 @@ project_status: Amber
 - [MANUAL] project-daily — removed the "fill M/N in logistika_initiatives.xlsx" item (per PM) (2026-10-27)
 - [MANUAL] project-daily — accounting users' e-mails sent to Jura; 2 items closed (2026-10-27)
 - [AUTO] project-daily — closed; RAG Amber unchanged; priority unchanged (Reklamace 4 November batch, at risk); staleness items skipped (dismissed by PM 2026-10-12); no new lesson (2026-10-27)
+- [MANUAL] project-knowledge — added "X-Manager platform (Tabidoo)" (2026-10-27)
+- [MANUAL] project-assumptions — added ASM-351–ASM-354 (Listing spec v2 decisions); updated ASM-064, ASM-243 (2026-10-27)
+- [MANUAL] product-requirements — added REQ-015 (Lexie reads intranet directives in place) (2026-10-27)
+- [MANUAL] project-stakeholders — added STK-091 (Silvia Stehlíková), STK-092 (Lucie Plachá); updated Panzner, Štangel, Tlustý, Švarcová (2026-10-27)

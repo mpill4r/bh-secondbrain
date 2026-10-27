@@ -1,6 +1,6 @@
 ---
-last_updated: 2026-10-26
-last_updated_by: auto — project-meeting routing
+last_updated: 2026-10-27
+last_updated_by: manual — conversational
 owner: Marek Pillár
 ---
 
@@ -10,6 +10,10 @@ owner: Marek Pillár
 
 | ID | Status | Created | Description (short) |
 |----|--------|---------|---------------------|
+| ASM-354 | Decided (2026-10-27) | 2026-10-27 | Listing rollout: by main legislative groups, built up with imported SKUs; Q4 2026 supplements, Q1 2027 beauty & care, top 20–30 % bestsellers first |
+| ASM-353 | Decided (2026-10-27) | 2026-10-27 | Listing variants: start with simple variants only (pack size, flavour, colour); harder ones later |
+| ASM-352 | Decided (2026-10-27) | 2026-10-27 | Listing blacklist: strictness per attribute set (block vs. warn); warnings need double confirmation on save |
+| ASM-351 | Decided (2026-10-27) | 2026-10-27 | Listing score: keep the real score; "Done" adds a "Revidováno člověkem [datum]" flag instead of forcing 100 |
 | ASM-350 | Decided (2026-10-26) | 2026-10-26 | Listing export = Dr. Max's input Excel filled in, changed cells highlighted |
 | ASM-349 | Decided (2026-10-26) | 2026-10-26 | Supplements batch at attribute-set level; no invented per-category rules; parameters first |
 | ASM-348 | Decided (2026-10-23) | 2026-10-23 | TAS: build nothing on it for now; low-priority opportunity at most |
@@ -363,6 +367,91 @@ owner: Marek Pillár
 | ASM-001 | Decided (2026-08-25) | 2026-09-01 | Dr. Max client-side coordination unified into one role (Jindřich Tůma) |
 
 ## Entries
+
+### ASM-354
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-354 |
+| Created | 2026-10-27 |
+| Source | Listing client spec v2 (Vdovicynová 2026-10-08 and Neuman 2026-10-23 Word comments), PM, 2026-10-27 |
+| By | Michaela Vdovicynová (STK-048), Petr Neuman (STK-023) |
+| Status | Decided (2026-10-27) |
+
+**Description**
+Rollout goes through the main legislative groups (largest units) first; smaller units are defined step by step as SKUs get imported. Priorities: Q4 2026 food supplements, Q1 2027 Krása a péče; in each category the top 20–30 % best sellers go first. An import check (does the SKU/EAN already exist?) and version comparison are needed.
+
+**Rationale**
+Neuman: incremental implementation by impact; replaces the open "category granularity" hypothesis in the spec.
+
+**Impact**
+- **Scope**: Complements [[ASM-208]] and [[ASM-068]]; the supplements batch stays at attribute-set level ([[ASM-349]]).
+- **Open**: Import duplicate-check key (SKU vs. EAN) -tbd-.
+
+---
+
+### ASM-353
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-353 |
+| Created | 2026-10-27 |
+| Source | Listing client spec v2 (Vdovicynová 2026-10-08 and Neuman 2026-10-23 Word comments), PM, 2026-10-27 |
+| By | Michaela Vdovicynová (STK-048), Petr Neuman (STK-023) |
+| Status | Decided (2026-10-27) |
+
+**Description**
+Variant handling starts with simple variants only — pack size, flavour, colour. Harder cases (different sources within one line, e.g. pea vs. pumpkin protein, which change health benefits) come once the simple ones work reliably.
+
+**Rationale**
+Michaela Vdovicynová and Petr Neuman agreed in their spec comments.
+
+**Impact**
+- **Scope**: Answers the variant-scope question in the spec (section 3.4).
+
+---
+
+### ASM-352
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-352 |
+| Created | 2026-10-27 |
+| Source | Listing client spec v2 (Vdovicynová 2026-10-08 and Neuman 2026-10-23 Word comments), PM, 2026-10-27 |
+| By | Michaela Vdovicynová (STK-048), Petr Neuman (STK-023) |
+| Status | Decided (2026-10-27) |
+
+**Description**
+Blacklist strictness is configured per attribute set: e.g. cosmetics and food supplements block saving, medical devices only warn. Where it stays a warning, saving needs a double confirmation ("Opravdu chcete uložit? …" with the problem stated).
+
+**Rationale**
+Michaela asked for per-attribute-set rules; Neuman agreed and added the double confirmation.
+
+**Impact**
+- **Scope**: Resolves the warning-vs-blocking question in [[ASM-064]]; per-attribute-set effort -tbd- (dev to confirm).
+
+---
+
+### ASM-351
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-351 |
+| Created | 2026-10-27 |
+| Source | Listing client spec v2 (Vdovicynová 2026-10-08 and Neuman 2026-10-23 Word comments), PM, 2026-10-27 |
+| By | Michaela Vdovicynová (STK-048), Petr Neuman (STK-023) |
+| Status | Decided (2026-10-27) |
+
+**Description**
+A product in state Hotovo keeps its real computed score; a separate "Revidováno člověkem [datum]" flag marks human review. "Hotovo" means sufficient, not that it can't be improved.
+
+**Rationale**
+Michaela and Neuman both chose this variant in their spec comments.
+
+**Impact**
+- **Scope**: Changes today's behaviour (score overwritten to 100 on Hotovo).
+
+---
 
 ### ASM-350
 
@@ -2945,6 +3034,8 @@ Raised internally only; not discussed with logistics.
 **Update (2026-10-15)**: Jindřich met the X-Manager owner this week: "looks like the most suitable candidate". BigHub sends the table request today (2026-10-15) so Filip can work with the tables next week. Source: 2026-10-15-viapharma-reklamace-sync-pickup-warehouse-zebra-brightpick-capacity.
 
 **Update (2026-10-15)**: Machata gave X-Manager the green light; the CC creates a temporary app for BigHub's logistics table ([[ASM-297]]). Source: 2026-10-15-lexie-max-maxie-weekly-sync.
+
+**Update (2026-10-27)**: X-Manager runs on Tabidoo, whose API fits BigHub's needs (Filip); Dr. Max must hand over the access token — Marek asked Machata on his return 2026-10-27. Source: PM, 2026-10-27.
 ---
 
 ### ASM-239
@@ -7019,6 +7110,8 @@ The validation code itself notes forbidden-phrase matching is a simple substring
 - **Scope**: No code change needed now. If this is later decided to become blocking, it's a validation-logic change plus a client-facing conversation about false-positive tolerance.
 - **Risk**: Regulatory/compliance exposure is reduced, not eliminated, while enforcement stays advisory-only.
 
+
+**Update (2026-10-27)**: Decided — strictness per attribute set, double confirmation for warnings ([[ASM-352]]). Source: Listing client spec v2 (Vdovicynová 2026-10-08 and Neuman 2026-10-23 Word comments), PM, 2026-10-27.
 ---
 
 ### ASM-063

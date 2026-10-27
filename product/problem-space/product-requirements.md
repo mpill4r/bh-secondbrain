@@ -1,6 +1,6 @@
 ---
-last_updated: 2026-10-26
-last_updated_by: auto — project-meeting routing
+last_updated: 2026-10-27
+last_updated_by: manual — conversational
 owner: Marek Pillár
 ---
 
@@ -62,6 +62,11 @@ Lexie: next to each citation, show the exact sentence the answer is based on. Hi
 **Source**: Jindřich Tůma via 2026-10-23-lexie-departments-intake-sharepoint-access-satura-onboarding
 
 Lexie: when two or more sources cover the same topic (duplicates or conflicting content), say so and ask which to use or show the differences, instead of silently picking one. See [[ASM-304]].
+
+**REQ-015** · Product · Open · 2026-10-27
+**Source**: Renata Švarcová (e-mail 2026-10-26), relayed by PM
+
+Lexie: company-wide directives are read in place from the intranet SharePoint, not copied into the "Lexie" folder (copying would duplicate them and leave updates uncontrolled). Citations link to the intranet original; changed or deleted documents are picked up on sync. Depends on platform access to the intranet folders ([[ASM-346]]). Lexie board ticket 11.
 
 **REQ-014** · Product · Open · 2026-10-26
 **Source**: Marek Pillár / Filip Černý via 2026-10-26-listing-filip-supplements-batch-demo-export-plan

@@ -1,6 +1,6 @@
 ---
-last_updated: 2026-10-26
-last_updated_by: auto — project-meeting routing
+last_updated: 2026-10-27
+last_updated_by: manual — conversational
 owner: Marek Pillár
 ---
 
@@ -552,6 +552,17 @@ Dudaško was unambiguous on this boundary when Jindřich raised a concrete pilot
 | Status | Active |
 
 Planned Lexie source ([[ASM-298]]); the ISO folder is excluded. Accounting also moves to a new cloud version of its accounting software in 2027.
+
+### X-Manager platform (Tabidoo)
+
+| Field | Value |
+|-------|-------|
+| Definition | X-Manager (Dr. Max-internal tool owned by Michal Machata) runs on the **Tabidoo** platform. Tabidoo has an API that looks ideal for BigHub's integration needs, and the platform overall suits them. Dr. Max has to hand over the API access token, so it waits for Machata. |
+| Source | Filip Černý (Teams), relayed by PM 2026-10-27 |
+| Added | 2026-10-27 |
+| Status | Active |
+
+Marek asked Machata for the token and a kick-off date on 2026-10-27 ([[ASM-243]], [[ASM-297]]).
 
 ## Data Model Concepts
 
