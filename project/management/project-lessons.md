@@ -8,6 +8,23 @@ owner: Marek Pillár
 
 ---
 
+### LL-112
+
+| Field | Value |
+|-------|-------|
+| ID | LL-112 |
+| Created | 2026-10-29 |
+| Category | Requirements / inherited documentation |
+| Source | 2026-10-29-viapharma-sync-fakturace-demo-roadmap-phase2-warehouse-transfer |
+
+**Lesson**
+When a spec is built from a predecessor's documentation, walk each operational flow with the person who runs it before estimating. Inherited docs skip "obvious" steps (here: the stock transfer before a claim), and one skipped step can add or remove a whole feature.
+
+**Context**
+The Reklamace Phase 2 spec, based on Honza Sovka's documentation, assumed claims straight from selling locations with label reading. Egrmaierová explained goods are first transferred to the non-selling warehouse, which makes label reading unnecessary.
+
+---
+
 ### LL-111
 
 | Field | Value |

@@ -68,6 +68,11 @@ Lexie: when two or more sources cover the same topic (duplicates or conflicting 
 
 Lexie: company-wide directives are read in place from the intranet SharePoint, not copied into the "Lexie" folder (copying would duplicate them and leave updates uncontrolled). Citations link to the intranet original; changed or deleted documents are picked up on sync. Depends on platform access to the intranet folders ([[ASM-346]]). Lexie board ticket 11.
 
+**REQ-017** · Product · Open · 2026-10-29
+**Source**: Jana Egrmaierová via 2026-10-29-viapharma-sync-fakturace-demo-roadmap-phase2-warehouse-transfer
+
+Reklamace: error messages distinguish "label doesn't exist" from the generic "item not found", in warehouse terms ("položka" means the product to warehouse staff). Texts come from Axapta. See [[ASM-325]].
+
 **REQ-016** · Product · Open · 2026-10-27
 **Source**: Filip Černý via 2026-10-27-listing-evaluation-fakturace-mock-review-filip
 

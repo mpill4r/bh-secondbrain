@@ -1,6 +1,6 @@
 ---
 last_updated: 2026-10-29
-last_updated_by: manual — conversational
+last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
 
@@ -219,6 +219,8 @@ Source: 2026-10-05-reklamace-next-steps-zurek-pilot-roadmap.
 Source: 2026-10-08-viapharma-reklamace-sync-data-map-slip-all-phases-slama-capacity.
 
 **Estimates and phase notes (2026-10-21, roadmap/timeline session)**: first BigHub-side estimates — **Phase 1 (kap. 1.2–1.5) ~6 MD (pessimistic 8)**; **1.1a 1–3 MD** (communication record and reply sorting are built on branches, only integration left); **Phase 2 3–4 MD** (Filip's own estimate 2 days; the part shared with receiving claims is built reusable, UI nearly identical; unknowns are Axapta's product lookup and the missing label samples); **Avízo 1–2 MD** if specified. **1.1b, 3, 4, 5 and 3.1 have no estimate** until discovery ([[ASM-326]]). Delivery target for the next batch 4 November ([[ASM-323]]); client format = Excel with BigHub dev / client dev / UAT per phase ([[ASM-324]]). **Avízo** most likely belongs to *příjem s výhradou* (notify the supplier that goods were received with reservation and a claim may follow); today workers do it from memory; open: which suppliers, send time (e.g. 23:00), exact case, text — needs a ~4 h session with whoever designed it with Honza (client owner unknown). Ideas for later phases: an Outlook add-in or simple frontend with supplier info / thread summary, and Axapta **infolog** via API. Source: 2026-10-21-reklamace-roadmap-timeline-estimates
+
+**Warehouse claims flow (2026-10-29)**: goods on a selling location are first moved by an operational transfer (scan location, item, quantity) to the non-selling warehouse; the claim protocol is created from there. The claim protocol is not a transaction until it is accepted (it then becomes a negative purchase order), so creating it straight from selling locations, where sales and reservations run, would break quantities. One label per warehouse (5RV, 9RV; Prague / Ostrava) ([[ASM-361]]). Source: 2026-10-29-viapharma-sync-fakturace-demo-roadmap-phase2-warehouse-transfer.
 
 ### Cenařky (pricing clerks) — logistics initiative candidate
 
@@ -531,6 +533,8 @@ Dudaško was unambiguous on this boundary when Jindřich raised a concrete pilot
 **Hardware and mock deployment (2026-10-21)**: logistics chose a Canon scanner and a Zebra PC (same vendor as the Reklamace terminals) on 2026-10-20; screen size open, Dušan Hýža checking an extra monitor. BigHub only gives minimum parameters; the web app is device-independent ([[ASM-319]]). A mock deployment without Axapta lets logistics try recognition and the UI early ([[ASM-318]]). Internally, logistics argued over the document-state model and Jan Žižka's version won — the one BigHub had already built. Source: 2026-10-21-bighub-weekly-sync-reklamace-fakturace-listing-aks-rollout
 
 **Mock flow and limits (2026-10-27)**: no BigHub database — BigHub reads the route's AR number, asks Axapta which documents it expects (and which are in), places each page as "page x of y", and returns clean, assembled documents plus extracted data. Pages process asynchronously (~5–10 s each); a re-uploaded page shows as updated and overwrites. An unrelated document gets "Dokument se nepodařilo přiřadit k trase"; known bug: a non-route document with a printed AR number may be classed as ZOPV. Filip: ~98 % of pages are read correctly or explicitly flagged. Stamp counting is the weak spot ([[ASM-358]]). Real use needs AR numbers on real documents and Axapta's route lookup ([[ASM-318]]). Source: 2026-10-27-listing-evaluation-fakturace-mock-review-filip.
+
+**Scanning details (2026-10-29)**: the app is agnostic to single/double-sided scans and file format (PNG/JPG/PDF) — a scanner setting drivers shouldn't touch. A datalogger temperature printout is attached to the rozvozový list; the new ZOPV leaves space so it doesn't cover readable data (to test on the borrowed scanner). Temperature, expedition-stamp and checkbox checks are a separate scope ([[ASM-364]]). Axapta's route lookup is still a stub ([[ASM-362]]). Source: 2026-10-29-viapharma-sync-fakturace-demo-roadmap-phase2-warehouse-transfer.
 
 ### Fakturace doprav scanner hardware (Canon DR-G2, Capture On Touch, Zebra kiosk)
 

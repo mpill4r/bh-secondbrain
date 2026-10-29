@@ -1,6 +1,6 @@
 ---
 last_updated: 2026-10-29
-last_updated_by: manual — conversational
+last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
 
@@ -10,6 +10,10 @@ owner: Marek Pillár
 
 | ID | Status | Created | Description (short) |
 |----|--------|---------|---------------------|
+| ASM-364 | Decided (2026-10-29) | 2026-10-29 | Fakturace: temperature printouts, expedition stamp and transport-temperature checkbox checks = separate scope, estimated later |
+| ASM-363 | Open (2026-10-29) | 2026-10-29 | Reklamace/Fakturace: Boomi middle layer may lag Axapta — potential ~1-week delay |
+| ASM-362 | Open (2026-10-29) | 2026-10-29 | Fakturace: Axapta route lookup is a stub (any AR passes, nothing searched) — must be built |
+| ASM-361 | Decided (2026-10-29) | 2026-10-29 | Reklamace Phase 2: operational transfer to the non-selling warehouse first, claim from there — no warehouse label reading |
 | ASM-360 | Open (2026-10-27) | 2026-10-27 | Reklamace: when to send the e-mail communication record into Axapta — business decision pending; likely another Swagger change (Kupčík / Boomi) |
 | ASM-359 | Decided (2026-10-27) | 2026-10-27 | Fakturace upload: one page per file (mirrors the scanner); no folder/bulk upload |
 | ASM-358 | Open (2026-10-27) | 2026-10-27 | Fakturace stamps: custom vision model (~1 week, 95 %+) vs. accepting "please check" flags — ask logistics first |
@@ -46,7 +50,7 @@ owner: Marek Pillár
 | ASM-328 | Decided (2026-10-21) | 2026-10-21 | Legal UC2 (marketing compliance vs. public DBs) + UC3 (contract headers OR/ARES) = separate 2027 initiatives |
 | ASM-327 | Decided (2026-10-21) | 2026-10-21 | Legal UC1 (directive search, ~70 directives, current versions) = Lexie extension; low value |
 | ASM-326 | Open (2026-10-21) | 2026-10-21 | Phase 1.1b can't be estimated before discovery + real threads; parallel with Phase 2 |
-| ASM-325 | Open (2026-10-21) | 2026-10-21 | Axapta owns error messages: error code + exact user text, BigHub just displays |
+| ASM-325 | Decided (2026-10-29) | 2026-10-21 | Axapta owns error messages: error code + exact user text, BigHub just displays |
 | ASM-324 | Decided (2026-10-21) | 2026-10-21 | Roadmap for the client = Excel: BigHub dev + client dev (blank) + UAT per phase; blockers tagged with owner |
 | ASM-323 | At risk (2026-10-22) | 2026-10-21 | Next Reklamace batch by 4 Nov 2026 (client-input dependent); client reserves 4–6 Nov for UAT |
 | ASM-322 | Open (2026-10-21) | 2026-10-21 | Listing at risk of closing: Magento import/export blocked, Neuman's team unresponsive |
@@ -374,6 +378,91 @@ owner: Marek Pillár
 
 ## Entries
 
+### ASM-364
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-364 |
+| Created | 2026-10-29 |
+| Source | 2026-10-29-viapharma-sync-fakturace-demo-roadmap-phase2-warehouse-transfer |
+| By | Jana Egrmaierová (STK-044), Jan Žižka (STK-015), Marek Pillár (STK-001) |
+| Status | Decided (2026-10-29) |
+
+**Description**
+Checking the datalogger temperature printout attached to the rozvozový list, the expedition stamp and the "temperature during transport was / wasn't kept" checkbox is a separate scope, to be estimated and added if it fits the timeline. Whether the checkbox sentence stays (then it must be ticked) or is dropped (Sacha to approve) is for Žižka and Egrmaierová; Foltová gets the outcome.
+
+**Rationale**
+Egrmaierová: documents are shown at inspections. Žižka: nobody ticks the box today; AI verifying temperatures from printouts is the planned next step.
+
+**Impact**
+- **Scope**: Not in the current Fakturace MVP.
+
+---
+
+### ASM-363
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-363 |
+| Created | 2026-10-29 |
+| Source | 2026-10-29-viapharma-sync-fakturace-demo-roadmap-phase2-warehouse-transfer |
+| By | Jan Kopecký (STK-032) |
+| Status | Open (2026-10-29) |
+
+**Description**
+Boomi sits between Axapta and the app. Even when the Axapta side of the API contract is done, Boomi may not be, which could add roughly a week.
+
+**Rationale**
+Kopecký asked for it to be noted in the roadmap.
+
+**Impact**
+- **Delivery**: Risk on the Phase 1 delivery date ([[ASM-330]]); shown in the roadmap.
+
+---
+
+### ASM-362
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-362 |
+| Created | 2026-10-29 |
+| Source | 2026-10-29-viapharma-sync-fakturace-demo-roadmap-phase2-warehouse-transfer |
+| By | Jan Kopecký (STK-032) |
+| Status | Open (2026-10-29) |
+
+**Description**
+The Axapta interface for Fakturace only returns a reply: any call with an ID starting with AR passes, but nothing is actually looked up. The real lookup (route → expected documents) still has to be built. Axapta could also confirm the document type (night delivery / ZOPV) as a double check. Finding the AR from a document number is possible but not advised.
+
+**Rationale**
+Kopecký wanted it clear before anyone talks about testing on real routes.
+
+**Impact**
+- **Delivery**: Blocks Fakturace on real routes ([[ASM-318]]); owner Kopecký / Sláma, date -tbd-.
+
+---
+
+### ASM-361
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-361 |
+| Created | 2026-10-29 |
+| Source | 2026-10-29-viapharma-sync-fakturace-demo-roadmap-phase2-warehouse-transfer |
+| By | Jana Egrmaierová (STK-044), Marek Pillár (STK-001) |
+| Status | Decided (2026-10-29) |
+
+**Description**
+Goods on a selling location are first moved by an operational transfer (scan location, item, quantity) to the non-selling warehouse; the claim protocol is created from there. So reading product labels in the warehouse is not needed — there is one label per warehouse (5RV, 9RV; Prague / Ostrava).
+
+**Rationale**
+Creating claims straight from selling locations would break: sales and reservations run there, and the claim protocol is not a transaction until accepted (negative purchase order), so quantities could stop matching. The spec (from Honza Sovka's documentation) skipped the transfer step.
+
+**Impact**
+- **Scope**: Phase 2 spec to be revised; the AX lookup by EAN / batch / expiry is probably no longer needed.
+- **Delivery**: Phase 2 estimate likely shrinks.
+
+---
+
 ### ASM-360
 
 | Field | Value |
@@ -437,6 +526,8 @@ An LLM will never count stamps reliably (Filip, research background in vision mo
 - **Dependency**: Examples of the stamp type(s) from ViaPharma.
 
 - **Update (2026-10-27)**: Filip's estimate ±5 MD; condition: all stamp shapes known up front. Handwriting reading is the second main improvement area ("easy for a human = easy for AI"). Source: Filip Černý, Teams (2026-10-27) — Fakturace demo note.
+
+- **Update (2026-10-29)**: Told the client: stamps are recognised, the count needs a human check for now; ~95 % possible with sample stamps and extra days; a confidence threshold could let users skip checks, by agreement. Foltová asked about learning over time. No decision yet. Source: 2026-10-29-viapharma-sync-fakturace-demo-roadmap-phase2-warehouse-transfer.
 
 ---
 
@@ -1173,7 +1264,7 @@ An estimate without a defined set of frequent cases would be a guess.
 | Created | 2026-10-21 |
 | Source | 2026-10-21-reklamace-roadmap-timeline-estimates |
 | By | Filip Černý (STK-012), Petr Sláma (proposed by) |
-| Status | Open (2026-10-21) |
+| Status | Decided (2026-10-29) |
 
 **Description**
 Axapta takes over ownership of Reklamace error messages: on failure it returns an error code plus the exact user-facing text, and BigHub only displays it. BigHub already handles every case in Honza's original spec and the approved contract; the 3–4 cases Jana Egrmaierová sent were never defined.
@@ -1183,6 +1274,8 @@ Keeps message wording and new cases on the Axapta side, where the conditions are
 
 **Impact**
 - **Delivery**: Filip proposes it to Sláma together with the Swagger changes; continues [[ASM-270]].
+
+- **Update (2026-10-29) — Decided**: Kopecký: Axapta holds and manages error codes and user texts; the app only displays them and texts can be hotfixed with end users. Logistics lists only a few key cases (max ~3), e.g. "label doesn't exist" vs. the generic "položka nenalezena" (404) ([[REQ-017]]). Source: 2026-10-29-viapharma-sync-fakturace-demo-roadmap-phase2-warehouse-transfer.
 
 ---
 
@@ -1339,6 +1432,8 @@ Early feedback through a working tool in their hands; iterative delivery.
 - **Update (2026-10-27)**: Mock is live, connected to Filip's own mock Axapta proxy; works only on his ~10 prepared test routes (AR stamps added by hand). Real use is blocked: real documents still lack the promised AR number/barcode, and Axapta has no route lookup yet. Source: 2026-10-27-listing-evaluation-fakturace-mock-review-filip.
 
 - **Update (2026-10-27)**: Testing only with the `testovací_trasy` zip (printed AR + Filip's mock Axapta standing in for the real test Axapta); anyone on the VPN reaches the app via the link. Source: Filip Černý, Teams (2026-10-27) — Fakturace demo note.
+
+- **Update (2026-10-29)**: Demoed to logistics; link goes in the recap. Kopecký: Axapta's route interface is a stub ([[ASM-362]]). Source: 2026-10-29-viapharma-sync-fakturace-demo-roadmap-phase2-warehouse-transfer.
 
 ---
 
