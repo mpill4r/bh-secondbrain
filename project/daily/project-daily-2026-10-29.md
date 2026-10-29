@@ -189,6 +189,8 @@ project_status: Amber
 
 ## Audit Log
 
+- [MANUAL] Reklamace-roadmapa.xlsx — all hover notes (both sheets) rewritten as "what we need from you" (Co to je / Co přesně potřebujeme / Proč / Termín / Od vás), so Sláma and logistics can see exactly what each input means; PM's own edits (green fills, removed E17 note) kept; comment XML edited directly, tested in Excel (2026-10-29)
+
 - [MANUAL] Reklamace-roadmapa v2.xlsx — new version (OneDrive, Final): Stav column, delivery relative to ViaPharma inputs (orientation: Phase 1 delivery 10. 11., UAT 11.–18. 11.; 1.1a 19. 11.; Phase 2 4. 12.; Avízo 21. 12.), X-Manager done, Swagger handed to Kopecký, login row, Sláma WMS week + Filip holiday, e-mail-record decision moved to 4. 11. with Foltová/Spilka, syncs 29. 10. + 5. 11.; per-person sheet rebuilt; original untouched (2026-10-29)
 
 - [MANUAL] project-assumptions — added ASM-360; updated ASM-297, ASM-318, ASM-355, ASM-356, ASM-358 from Filip's Teams messages (2026-10-29)
