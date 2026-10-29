@@ -1,6 +1,6 @@
 ---
-last_updated: 2026-10-27
-last_updated_by: manual — conversational
+last_updated: 2026-10-29
+last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
 
@@ -67,6 +67,11 @@ Lexie: when two or more sources cover the same topic (duplicates or conflicting 
 **Source**: Renata Švarcová (e-mail 2026-10-26), relayed by PM
 
 Lexie: company-wide directives are read in place from the intranet SharePoint, not copied into the "Lexie" folder (copying would duplicate them and leave updates uncontrolled). Citations link to the intranet original; changed or deleted documents are picked up on sync. Depends on platform access to the intranet folders ([[ASM-346]]). Lexie board ticket 11.
+
+**REQ-016** · Product · Open · 2026-10-27
+**Source**: Filip Černý via 2026-10-27-listing-evaluation-fakturace-mock-review-filip
+
+Listing: generation infers implied parameters from related facts, e.g. "suitable for children under 3" → "suitable for newborns". Today these are mostly missed; needs explicit derivation rules in the instructions. See [[ASM-355]].
 
 **REQ-014** · Product · Open · 2026-10-26
 **Source**: Marek Pillár / Filip Černý via 2026-10-26-listing-filip-supplements-batch-demo-export-plan

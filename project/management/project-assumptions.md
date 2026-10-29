@@ -1,6 +1,6 @@
 ---
-last_updated: 2026-10-27
-last_updated_by: manual — conversational
+last_updated: 2026-10-29
+last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
 
@@ -10,6 +10,11 @@ owner: Marek Pillár
 
 | ID | Status | Created | Description (short) |
 |----|--------|---------|---------------------|
+| ASM-359 | Decided (2026-10-27) | 2026-10-27 | Fakturace upload: one page per file (mirrors the scanner); no folder/bulk upload |
+| ASM-358 | Open (2026-10-27) | 2026-10-27 | Fakturace stamps: custom vision model (~1 week, 95 %+) vs. accepting "please check" flags — ask logistics first |
+| ASM-357 | Decided (2026-10-27) | 2026-10-27 | Listing: SPL/SPC/XML/PDF/XLSX in Neuman's comments are supplier input formats for generation, not export formats |
+| ASM-356 | Decided (2026-10-27) | 2026-10-27 | Listing: per-product versions (Import → Rozpracováno); category export in Dr. Max's format, latest version |
+| ASM-355 | Open (2026-10-27) | 2026-10-27 | Listing evaluation: ~80–85 % exact match on ~200 reference products; reference data error-ridden, so it understates quality |
 | ASM-354 | Decided (2026-10-27) | 2026-10-27 | Listing rollout: by main legislative groups, built up with imported SKUs; Q4 2026 supplements, Q1 2027 beauty & care, top 20–30 % bestsellers first |
 | ASM-353 | Decided (2026-10-27) | 2026-10-27 | Listing variants: start with simple variants only (pack size, flavour, colour); harder ones later |
 | ASM-352 | Decided (2026-10-27) | 2026-10-27 | Listing blacklist: strictness per attribute set (block vs. warn); warnings need double confirmation on save |
@@ -368,6 +373,112 @@ owner: Marek Pillár
 
 ## Entries
 
+### ASM-359
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-359 |
+| Created | 2026-10-27 |
+| Source | 2026-10-27-listing-evaluation-fakturace-mock-review-filip |
+| By | Filip Černý (STK-006), Marek Pillár (STK-001) |
+| Status | Decided (2026-10-27) |
+
+**Description**
+Fakturace doprav keeps uploading one page per file. Each file simulates one scanner page; pages are processed asynchronously and placed as "page x of y" of a route document. No folder or multi-page bulk upload.
+
+**Rationale**
+The real scanner produces one file per sheet and pages can be shuffled; a 20-page PDF never happens (Marek). One-at-a-time also lets the user follow what happens to each page (Filip).
+
+**Impact**
+- **UX**: Testing is slower by hand, but mirrors reality.
+
+---
+
+### ASM-358
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-358 |
+| Created | 2026-10-27 |
+| Source | 2026-10-27-listing-evaluation-fakturace-mock-review-filip |
+| By | Filip Černý (STK-006), Marek Pillár (STK-001) |
+| Status | Open (2026-10-27) |
+
+**Description**
+Stamp counting is the biggest limitation of Fakturace doprav: the LLM miscounts and often flags "zkontrolujte" (please check). Filip can build a custom vision model in ~1 working week, expecting 95 %+ accuracy and cheap inference, from examples of the stamp type(s) plus synthetic data.
+
+**Rationale**
+An LLM will never count stamps reliably (Filip, research background in vision models). Whether that matters depends on whether logistics accepts "check it yourself" in roughly half the cases.
+
+**Impact**
+- **Delivery**: Not started until logistics decides; priority -tbd-.
+- **Dependency**: Examples of the stamp type(s) from ViaPharma.
+
+---
+
+### ASM-357
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-357 |
+| Created | 2026-10-27 |
+| Source | 2026-10-27-listing-evaluation-fakturace-mock-review-filip |
+| By | Filip Černý (STK-006), Marek Pillár (STK-001) |
+| Status | Decided (2026-10-27) |
+
+**Description**
+The formats listed in Neuman's spec comments (SPL/SPC, XML, PDF, XLSX, content-manager XLSX as the main source for new products) are supplier files Dr. Max wants to import as sources for generation. They are not export formats from the tool.
+
+**Rationale**
+Clarified with Filip after Marek read them as export formats; Filip has asked Dr. Max to sort out supplier files at about three meetings.
+
+**Impact**
+- **Scope**: Supplier-file import is a separate input capability; export stays per [[ASM-350]] / [[ASM-356]].
+
+---
+
+### ASM-356
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-356 |
+| Created | 2026-10-27 |
+| Source | 2026-10-27-listing-evaluation-fakturace-mock-review-filip |
+| By | Filip Černý (STK-006), Marek Pillár (STK-001) |
+| Status | Decided (2026-10-27) |
+
+**Description**
+Every save in the Listing tool creates a new version of that product with a timestamp; the status moves from Import to Rozpracováno, and users can switch versions and generate from either one. "Export Excel" exports the whole category in the format Dr. Max delivered, always with the latest version.
+
+**Rationale**
+Built for the supplements demo (500 SKUs). Dr. Max can't import the file yet, so the export mainly shows that any format can be delivered quickly; the target is still a Magento write-back with no BigHub database.
+
+**Impact**
+- **Delivery**: Live in the demo since 2026-10-27; implements [[ASM-350]].
+
+---
+
+### ASM-355
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-355 |
+| Created | 2026-10-27 |
+| Source | 2026-10-27-listing-evaluation-fakturace-mock-review-filip |
+| By | Filip Černý (STK-006), Marek Pillár (STK-001) |
+| Status | Open (2026-10-27) |
+
+**Description**
+Filip removed all parameters from the ~200 products Dr. Max called checked and regenerated them with the live module. Exact 1:1 match: ~80–85 %. Deliverables: method report, pairwise comparison Excel, reference-data audit, full statistics report. Common misses: data only in parameters (less common); contradictory reference data, e.g. vegan + gelatine (more common). Weak spot: "suitable for newborns" mostly missed ([[REQ-016]]).
+
+**Rationale**
+Filip believes BigHub's output is already closer to the truth than the reference, with exceptions. Marek: Dr. Max may hand-check before Magento upload, which would change how the number is read.
+
+**Impact**
+- **Communication**: Marek presents it to Neuman on 2026-10-29; the audit is framed constructively, not as blame.
+
+---
+
 ### ASM-354
 
 | Field | Value |
@@ -472,6 +583,8 @@ Dr. Max works in Excel; highlighting mirrors the app's old-vs-new review, while 
 **Impact**
 - **Delivery**: Filip builds it with the new demo ([[REQ-014]]).
 - **Open**: The parameter specialist's import needs are still unconfirmed ([[ASM-207]]).
+
+- **Update (2026-10-27)**: Built as a category export in Dr. Max's format with the latest product version ([[ASM-356]]); highlighting of changed cells not shown; Dr. Max can't import it yet. Source: 2026-10-27-listing-evaluation-fakturace-mock-review-filip.
 
 ---
 
@@ -1195,6 +1308,8 @@ Early feedback through a working tool in their hands; iterative delivery.
 **Update (2026-10-22)**: Dr. Max / ViaPharma infra is ready; Filip deploys the mock the week of 26. 10. so logistics can judge recognition and route matching. Source: 2026-10-22-viapharma-reklamace-sync-slama-out-email-test-setup-fakturace-excel.
 
 - **Update (2026-10-26)**: Mock deploy blocked: BDC infra misconfigured something (Filip, 2026-10-26). Source: 2026-10-26-listing-filip-supplements-batch-demo-export-plan.
+- **Update (2026-10-27)**: Mock is live, connected to Filip's own mock Axapta proxy; works only on his ~10 prepared test routes (AR stamps added by hand). Real use is blocked: real documents still lack the promised AR number/barcode, and Axapta has no route lookup yet. Source: 2026-10-27-listing-evaluation-fakturace-mock-review-filip.
+
 ---
 
 ### ASM-317

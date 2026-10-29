@@ -1,10 +1,27 @@
 ---
-last_updated: 2026-10-23
+last_updated: 2026-10-29
 last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
 
 # Lessons Learned
+
+---
+
+### LL-111
+
+| Field | Value |
+|-------|-------|
+| ID | LL-111 |
+| Created | 2026-10-29 |
+| Category | Quality measurement / client data |
+| Source | 2026-10-27-listing-evaluation-fakturace-mock-review-filip |
+
+**Lesson**
+When you measure AI output against the client's "ground truth", audit the reference data too and report both together. Otherwise a headline accuracy number on error-ridden data understates the tool and invites the wrong debate. Frame the audit as "why the number reads low", not as blame, and let the PM present it in person rather than mailing it cold.
+
+**Context**
+Listing parameter regeneration matched Dr. Max's ~200 "checked" products ~80–85 % exactly, but many misses were contradictions in the reference itself (e.g. vegan + gelatine). Filip paired the comparison with a reference-data audit; Marek presents both to Neuman.
 
 ---
 

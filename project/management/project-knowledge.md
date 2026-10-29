@@ -1,6 +1,6 @@
 ---
-last_updated: 2026-10-27
-last_updated_by: manual — conversational
+last_updated: 2026-10-29
+last_updated_by: auto — project-meeting routing
 owner: Marek Pillár
 ---
 
@@ -330,6 +330,8 @@ Source: 2026-09-30-listing-reset-neuman-enrichment-first-doplnky-stravy.
 
 **Rule hierarchy and repo (2026-10-26)**: the Listing repo now lives in Dr. Max's Azure DevOps (previously Filip's own). Rules are meant to layer all products → attribute set (Dr. Max plans ~14; e.g. doplněk stravy) → main category (protein, magnesium, vitamin C…). Today the tool is flat: one attribute set (food supplements), identical instructions per product, because Dr. Max hasn't defined main categories ([[ASM-349]]). Source: 2026-10-26-listing-filip-supplements-batch-demo-export-plan
 
+**Versioning, export and evaluation (2026-10-27)**: each save creates a per-product version (status Import → Rozpracováno); category export in Dr. Max's input format with the latest version ([[ASM-356]]). Evaluation on ~200 reference products: ~80–85 % exact match, biased by error-ridden reference data ([[ASM-355]]). Supplier formats (SPL/SPC, XML, PDF, XLSX) are generation inputs, not exports ([[ASM-357]]). Source: 2026-10-27-listing-evaluation-fakturace-mock-review-filip.
+
 ### Expertní skupiny (expert groups)
 
 | Field | Value |
@@ -523,6 +525,8 @@ Dudaško was unambiguous on this boundary when Jindřich raised a concrete pilot
 | Status | Active |
 
 **Hardware and mock deployment (2026-10-21)**: logistics chose a Canon scanner and a Zebra PC (same vendor as the Reklamace terminals) on 2026-10-20; screen size open, Dušan Hýža checking an extra monitor. BigHub only gives minimum parameters; the web app is device-independent ([[ASM-319]]). A mock deployment without Axapta lets logistics try recognition and the UI early ([[ASM-318]]). Internally, logistics argued over the document-state model and Jan Žižka's version won — the one BigHub had already built. Source: 2026-10-21-bighub-weekly-sync-reklamace-fakturace-listing-aks-rollout
+
+**Mock flow and limits (2026-10-27)**: no BigHub database — BigHub reads the route's AR number, asks Axapta which documents it expects (and which are in), places each page as "page x of y", and returns clean, assembled documents plus extracted data. Pages process asynchronously (~5–10 s each); a re-uploaded page shows as updated and overwrites. An unrelated document gets "Dokument se nepodařilo přiřadit k trase"; known bug: a non-route document with a printed AR number may be classed as ZOPV. Filip: ~98 % of pages are read correctly or explicitly flagged. Stamp counting is the weak spot ([[ASM-358]]). Real use needs AR numbers on real documents and Axapta's route lookup ([[ASM-318]]). Source: 2026-10-27-listing-evaluation-fakturace-mock-review-filip.
 
 ### Fakturace doprav scanner hardware (Canon DR-G2, Capture On Touch, Zebra kiosk)
 
