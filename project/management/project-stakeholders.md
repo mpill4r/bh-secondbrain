@@ -1,6 +1,6 @@
 ---
 last_updated: 2026-10-29
-last_updated_by: auto — project-meeting routing
+last_updated_by: manual — conversational
 owner: Marek Pillár
 ---
 
@@ -659,7 +659,7 @@ owner: Marek Pillár
 | Expectations | -tbd- |
 | Last interaction | 2026-10-21 (mentioned in 2026-10-21-bighub-weekly-sync-reklamace-fakturace-listing-aks-rollout)
 | Status | Active |
-| Notes | Full name and organization resolved 2026-09-03 (previously "Kopecký", org unknown). Source: 2026-09-02-logistics-listing-team-sync, 2026-09-03-viapharma-logistics-status-reklamace-demo | 2026-10-21: decides on the Reklamace/Fakturace Swagger changes together with Petr Sláma (~2 h expected). Source: 2026-10-21-bighub-weekly-sync-reklamace-fakturace-listing-aks-rollout
+| Notes | Full name and organization resolved 2026-09-03 (previously "Kopecký", org unknown). Source: 2026-09-02-logistics-listing-team-sync, 2026-09-03-viapharma-logistics-status-reklamace-demo | 2026-10-21: decides on the Reklamace/Fakturace Swagger changes together with Petr Sláma (~2 h expected). Source: 2026-10-21-bighub-weekly-sync-reklamace-fakturace-listing-aks-rollout **2026-10-27**: Filip has passed him the agreed Reklamace Swagger changes; he may implement and deploy them before Filip returns (2026-11-02), which could break the app for a while — acceptable, no official UAT. Source: Filip Černý, Teams (2026-10-27). |
 
 ### STK-033
 

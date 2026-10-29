@@ -1,6 +1,6 @@
 ---
 last_updated: 2026-10-29
-last_updated_by: auto — project-meeting routing
+last_updated_by: manual — conversational
 owner: Marek Pillár
 ---
 
@@ -283,6 +283,8 @@ Original 2026-09-16 note (superseded pending reconciliation): multi-scan/histori
 
 **Multi-vehicle routes (2026-09-23, code audit)**: routes split across multiple vehicles (more than one ZOPV per AR) are treated in the spec as an open design question — but the code already has concrete behavior: a second vehicle's ZOPV silently overwrites the first as a new version of the same document. See [[ASM-135]].
 
+**Handwriting (2026-10-27)**: Filip recalls Žižka saying new document versions will carry less handwriting — to verify with the client; consistent with the pre-filled ZOPV form above. Handwriting and stamp counting are the main improvement areas ([[ASM-358]]). Source: Filip Černý, Teams (2026-10-27).
+
 ### Fakturace doprav — business objective & KPIs
 
 | Field | Value |
@@ -331,6 +333,8 @@ Source: 2026-09-30-listing-reset-neuman-enrichment-first-doplnky-stravy.
 **Rule hierarchy and repo (2026-10-26)**: the Listing repo now lives in Dr. Max's Azure DevOps (previously Filip's own). Rules are meant to layer all products → attribute set (Dr. Max plans ~14; e.g. doplněk stravy) → main category (protein, magnesium, vitamin C…). Today the tool is flat: one attribute set (food supplements), identical instructions per product, because Dr. Max hasn't defined main categories ([[ASM-349]]). Source: 2026-10-26-listing-filip-supplements-batch-demo-export-plan
 
 **Versioning, export and evaluation (2026-10-27)**: each save creates a per-product version (status Import → Rozpracováno); category export in Dr. Max's input format with the latest version ([[ASM-356]]). Evaluation on ~200 reference products: ~80–85 % exact match, biased by error-ridden reference data ([[ASM-355]]). Supplier formats (SPL/SPC, XML, PDF, XLSX) are generation inputs, not exports ([[ASM-357]]). Source: 2026-10-27-listing-evaluation-fakturace-mock-review-filip.
+
+**Supplements input files (2026-10-27)**: "DS parametry k vyplnění.xlsx" — sheet 1 = 500 products to fill (loaded in the demo), sheet 2 = parameter catalogue. "DS -vyplněné parametry-vzor.xlsm" = ~200 products with finished listings, used as the evaluation reference ([[ASM-355]], [[ASM-356]]). Source: Filip Černý, Teams (2026-10-27).
 
 ### Expertní skupiny (expert groups)
 

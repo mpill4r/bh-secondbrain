@@ -1,6 +1,6 @@
 ---
 last_updated: 2026-10-29
-last_updated_by: auto — project-meeting routing
+last_updated_by: manual — conversational
 owner: Marek Pillár
 ---
 
@@ -10,6 +10,7 @@ owner: Marek Pillár
 
 | ID | Status | Created | Description (short) |
 |----|--------|---------|---------------------|
+| ASM-360 | Open (2026-10-27) | 2026-10-27 | Reklamace: when to send the e-mail communication record into Axapta — business decision pending; likely another Swagger change (Kupčík / Boomi) |
 | ASM-359 | Decided (2026-10-27) | 2026-10-27 | Fakturace upload: one page per file (mirrors the scanner); no folder/bulk upload |
 | ASM-358 | Open (2026-10-27) | 2026-10-27 | Fakturace stamps: custom vision model (~1 week, 95 %+) vs. accepting "please check" flags — ask logistics first |
 | ASM-357 | Decided (2026-10-27) | 2026-10-27 | Listing: SPL/SPC/XML/PDF/XLSX in Neuman's comments are supplier input formats for generation, not export formats |
@@ -373,6 +374,27 @@ owner: Marek Pillár
 
 ## Entries
 
+### ASM-360
+
+| Field | Value |
+|-------|-------|
+| ID | ASM-360 |
+| Created | 2026-10-27 |
+| Source | Filip Černý, Teams (2026-10-27) — sync handover |
+| By | Filip Černý (STK-006) |
+| Status | Open (2026-10-27) |
+
+**Description**
+Logistics still has to decide when the record of the e-mail communication (otisk e-mailové komunikace) is sent into Axapta. Filip asks Marek to raise it at the Thursday 2026-10-29 sync, at the business level first.
+
+**Rationale**
+Not critical for current development, but almost certainly another Swagger change. Filip wants to bundle it with the earlier changes and hand it to Mr. Kupčík for implementation behind Boomi; a technical follow-up may still be needed.
+
+**Impact**
+- **Delivery**: Adds to the pending Swagger change set; timing depends on the decision.
+
+---
+
 ### ASM-359
 
 | Field | Value |
@@ -413,6 +435,8 @@ An LLM will never count stamps reliably (Filip, research background in vision mo
 **Impact**
 - **Delivery**: Not started until logistics decides; priority -tbd-.
 - **Dependency**: Examples of the stamp type(s) from ViaPharma.
+
+- **Update (2026-10-27)**: Filip's estimate ±5 MD; condition: all stamp shapes known up front. Handwriting reading is the second main improvement area ("easy for a human = easy for AI"). Source: Filip Černý, Teams (2026-10-27) — Fakturace demo note.
 
 ---
 
@@ -456,6 +480,8 @@ Built for the supplements demo (500 SKUs). Dr. Max can't import the file yet, so
 **Impact**
 - **Delivery**: Live in the demo since 2026-10-27; implements [[ASM-350]].
 
+- **Update (2026-10-27)**: Demo data = all 500 products from sheet 1 of "DS parametry k vyplnění.xlsx"; parameter catalogue = sheet 2 of the same file (fixes the duplicate-values bug). Export button in the left sidebar downloads the currently saved version of the 500 products into an Excel modelled on Dr. Max's input. Source: Filip Černý, Teams (2026-10-27) — Listing cover-mail draft.
+
 ---
 
 ### ASM-355
@@ -476,6 +502,8 @@ Filip believes BigHub's output is already closer to the truth than the reference
 
 **Impact**
 - **Communication**: Marek presents it to Neuman on 2026-10-29; the audit is framed constructively, not as blame.
+
+- **Update (2026-10-27)**: Reference set = "DS -vyplněné parametry-vzor.xlsm" (just over 200 products with finished listings); agent input = all listings with parameters removed + the parameter catalogue; results in report.pdf + Excels. Filip's client-facing framing: "very promising, but the evaluation method has limits"; open to a short call to go through it. Source: Filip Černý, Teams (2026-10-27) — Listing cover-mail draft.
 
 ---
 
@@ -1310,6 +1338,8 @@ Early feedback through a working tool in their hands; iterative delivery.
 - **Update (2026-10-26)**: Mock deploy blocked: BDC infra misconfigured something (Filip, 2026-10-26). Source: 2026-10-26-listing-filip-supplements-batch-demo-export-plan.
 - **Update (2026-10-27)**: Mock is live, connected to Filip's own mock Axapta proxy; works only on his ~10 prepared test routes (AR stamps added by hand). Real use is blocked: real documents still lack the promised AR number/barcode, and Axapta has no route lookup yet. Source: 2026-10-27-listing-evaluation-fakturace-mock-review-filip.
 
+- **Update (2026-10-27)**: Testing only with the `testovací_trasy` zip (printed AR + Filip's mock Axapta standing in for the real test Axapta); anyone on the VPN reaches the app via the link. Source: Filip Černý, Teams (2026-10-27) — Fakturace demo note.
+
 ---
 
 ### ASM-317
@@ -1790,6 +1820,8 @@ Unblocks the Reklamace KB development during Machata's absence.
 **Impact**
 - **Schedule**: The kick-off Marek proposed for 2026-10-20/21 needs a new date after 2026-10-27.
 - **Decision**: Resolves the tool direction in [[ASM-243]].
+
+- **Update (2026-10-27)**: X-Manager API communication tested and working; Filip starts the implementation on Monday 2026-11-02. Source: Filip Černý, Teams (2026-10-27) — sync handover.
 
 ---
 
